@@ -14,7 +14,7 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription} />
   {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
   <style is:inline>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -66,7 +66,7 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo-link"><img src="/logo.png" alt={site.siteName} class="logo-img" loading="eager" /></a>
+      <a href="/" class="logo-link"><img src="/logo.jpeg" alt={site.siteName} class="logo-img" loading="eager" /></a>
       <nav class="nav-desktop">
         {site.nav.links.map(link => (
           link.dropdown ? (
@@ -94,7 +94,7 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/logo.png" alt={site.siteName} width="180" loading="lazy" decoding="async" style="filter:brightness(0) invert(1);opacity:0.9" />
+          <img src="/logo.jpeg" alt={site.siteName} width="180" loading="lazy" decoding="async" style="filter:brightness(0) invert(1);opacity:0.9" />
           <p class="muted" style="margin-top:12px;font-size:14px;max-width:280px">{site.footer.tagline}</p>
         </div>
         {site.footer.columns.map(col => (<div class="footer-col"><h4 style="font-size:14px;font-weight:600;margin-bottom:12px">{col.heading}</h4>{col.links.map(link => (<a href={link.href} style="display:block;font-size:14px;color:var(--dark-muted);margin-bottom:8px;transition:color 0.2s">{link.label}</a>))}</div>))}
