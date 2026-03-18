@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import site from '../../site.config.json';
+const posts = (await getCollection('news')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+<BaseLayout title="News" description="Latest news and updates from Speech Recognition Cloud.">
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <p class="eyebrow">NEWS</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">News and updates</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:48px">Product updates, tips, and industry news from Speech Recognition Cloud.</p>
+      {posts.length > 0 ? (
+        <div class="news-list">
+          {posts.map(post => (
+            <a href={`/news/${post.slug}`} class="news-item">
+              <div class="news-meta">
+                <time datetime={post.data.date} class="muted">{new Date(post.data.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                {post.data.context && <span class="news-tag">{post.data.context}</span>}
+              </div>
+              <h2 class="news-title">{post.data.title}</h2>
+              <p class="muted news-desc">{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center" style="padding:60px 0">
+          <p class="muted">No posts yet. Check back soon for product updates and tips.</p>
+        </div>
+      )}
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .news-list{display:flex;flex-direction:column;gap:0}
+    .news-item{display:block;padding:28px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background 0.15s}
+    .news-item:first-child{padding-top:0}
+    .news-item:hover{background:transparent}
+    .news-item:hover .news-title{color:var(--brand)}
+    .news-meta{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+    .news-meta time{font-size:13px}
+    .news-tag{font-size:11px;font-weight:600;color:var(--brand);background:var(--brand-lightest, #EEF2FF);padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em}
+    .news-title{font-size:20px;font-weight:700;margin-bottom:6px;transition:color 0.2s;line-height:1.3}
+    .news-desc{font-size:14px;line-height:1.6}
+  </style>
+</BaseLayout>

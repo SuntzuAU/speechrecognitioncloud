@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Privacy and data" description="How Speech Recognition Cloud handles your data. No storage, no training, full encryption.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">PRIVACY</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Privacy and data handling</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">How Speech Recognition Cloud handles your voice and text data.</p>
+      <div class="privacy-section">
+        <h2>Audio data</h2>
+        <p>When you dictate, your audio is sent to our cloud processing servers for transcription. The audio is processed in real time and immediately discarded after transcription is complete. No audio recordings are saved at any point. We do not store, archive, or retain any audio data.</p>
+      </div>
+      <div class="privacy-section">
+        <h2>Transcribed text</h2>
+        <p>Transcribed text is delivered directly to your cursor in the active application. The text is not stored on our servers and is not retained after delivery. Once the text appears on your screen, it exists only on your device.</p>
+      </div>
+      <div class="privacy-section">
+        <h2>AI model training</h2>
+        <p>Your data is never used to train AI models. We do not use your audio, text, vocabulary, or any other data to train, fine-tune, or improve any machine learning models. This applies to all plans including the free tier.</p>
+      </div>
+      <div class="privacy-section">
+        <h2>Encryption</h2>
+        <p>All connections between your device and our servers are encrypted in transit using industry-standard TLS encryption. Your data is protected during transmission.</p>
+      </div>
+      <div class="privacy-section">
+        <h2>Account data</h2>
+        <p>We store only the minimum information required to manage your account: your email address, subscription status, and licence information. This data is stored securely and is not shared with third parties except as required for payment processing.</p>
+      </div>
+      <div class="privacy-section">
+        <h2>Custom vocabulary</h2>
+        <p>Custom vocabulary entries you add are stored in your account to sync across devices. This data is encrypted and is only accessible to your account.</p>
+      </div>
+      <div class="privacy-section">
+        <h2>Medical plan</h2>
+        <p>The Medical plan includes additional privacy controls. AI modes are restricted to approved transformations only, and data handling follows stricter controls designed for clinical environments. If you have specific compliance requirements, contact us to discuss your needs.</p>
+      </div>
+      <div class="privacy-section">
+        <h2>Contact</h2>
+        <p>If you have questions about how your data is handled, <a href="/contact" style="color:var(--brand);font-weight:600">contact us</a>.</p>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .privacy-section{margin-bottom:36px}
+    .privacy-section h2{font-size:20px;font-weight:700;margin-bottom:12px}
+    .privacy-section p{font-size:15px;line-height:1.7;color:var(--muted)}
+  </style>
+</BaseLayout>

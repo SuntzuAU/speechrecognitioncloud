@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Terms of service" description="Terms of service for Speech Recognition Cloud.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">LEGAL</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Terms of service</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Last updated: March 2026</p>
+      <div class="terms-section">
+        <h2>1. Acceptance of terms</h2>
+        <p>By downloading, installing, or using Speech Recognition Cloud ("the Software"), you agree to be bound by these terms. If you do not agree, do not use the Software.</p>
+      </div>
+      <div class="terms-section">
+        <h2>2. Licence</h2>
+        <p>We grant you a non-exclusive, non-transferable licence to use the Software for personal or professional use in accordance with your subscription plan. Each licence is for one individual user. You may install the Software on multiple devices but only one device may be active at a time.</p>
+      </div>
+      <div class="terms-section">
+        <h2>3. Subscriptions and payment</h2>
+        <p>Paid plans are billed annually. Prices are listed in USD and will convert to your local currency at checkout. You may cancel at any time. Refunds are handled on a case-by-case basis. The free plan does not require payment information.</p>
+      </div>
+      <div class="terms-section">
+        <h2>4. Acceptable use</h2>
+        <p>You agree not to use the Software for any unlawful purpose, to reverse engineer or decompile the Software, to attempt to circumvent usage limits or licensing restrictions, or to redistribute or resell the Software without written permission.</p>
+      </div>
+      <div class="terms-section">
+        <h2>5. Data and privacy</h2>
+        <p>Your use of the Software is subject to our <a href="/privacy" style="color:var(--brand);font-weight:600">Privacy and Data Handling</a> policy. Audio is processed and not stored. Text is delivered to your device and not retained. Your data is never used for AI model training.</p>
+      </div>
+      <div class="terms-section">
+        <h2>6. Accuracy</h2>
+        <p>Speech recognition accuracy depends on factors including microphone quality, background noise, accent, and speaking pace. We do not guarantee any specific accuracy rate. You are responsible for reviewing and editing all transcribed text before use.</p>
+      </div>
+      <div class="terms-section">
+        <h2>7. Availability</h2>
+        <p>The Software requires an internet connection for cloud processing. We aim to maintain high availability but do not guarantee uninterrupted service. Maintenance and updates may occasionally require downtime.</p>
+      </div>
+      <div class="terms-section">
+        <h2>8. Limitation of liability</h2>
+        <p>To the maximum extent permitted by law, Voice Recognition Australia is not liable for any indirect, incidental, or consequential damages arising from your use of the Software. Our total liability is limited to the amount you paid for your subscription in the 12 months prior to any claim.</p>
+      </div>
+      <div class="terms-section">
+        <h2>9. Changes to terms</h2>
+        <p>We may update these terms from time to time. Continued use of the Software after changes constitutes acceptance of the updated terms. Material changes will be communicated via email or in-app notification.</p>
+      </div>
+      <div class="terms-section">
+        <h2>10. Governing law</h2>
+        <p>These terms are governed by the laws of Queensland, Australia. Any disputes will be resolved in the courts of Queensland.</p>
+      </div>
+      <div class="terms-section">
+        <h2>Contact</h2>
+        <p>Questions about these terms? <a href="/contact" style="color:var(--brand);font-weight:600">Contact us</a>.</p>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .terms-section{margin-bottom:32px}
+    .terms-section h2{font-size:18px;font-weight:700;margin-bottom:10px}
+    .terms-section p{font-size:15px;line-height:1.7;color:var(--muted)}
+  </style>
+</BaseLayout>
