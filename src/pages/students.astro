@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Students and education" description="Essays, notes, and assignments faster. Affordable speech recognition for students.">
+  <section class="section-pad">
+    <div class="container usecase-hero">
+      <div>
+        <p class="eyebrow">STUDENTS</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Essays, notes, and assignments faster</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Get your ideas down at the speed of thought. Dictate essays, research notes, and assignments with automatic punctuation and grammar. Free to start, affordable to upgrade.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/pricing" class="btn-secondary">View pricing</a></div>
+        <p class="muted" style="font-size:13px">Free plan available. No credit card required.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Why students use SRC</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Free plan to get started</h3><p class="muted">20 minutes per month on the free plan. Enough to try it out and see if voice dictation works for your study workflow.</p></div>
+        <div class="benefit"><h3>Affordable unlimited plan</h3><p class="muted">Personal/Educational plan at $79/year for unlimited dictation. A fraction of the cost of legacy dictation software.</p></div>
+        <div class="benefit"><h3>Works in Word, Google Docs, and web forms</h3><p class="muted">Dictate into any Windows application. Works with Word, Chrome, web-based LMS platforms, email, and more.</p></div>
+        <div class="benefit"><h3>Automatic punctuation</h3><p class="muted">Speak naturally and let the AI handle commas, full stops, and capitalisation. Less editing, more writing.</p></div>
+        <div class="benefit"><h3>57 languages</h3><p class="muted">Study in multiple languages. Switch between languages as needed.</p></div>
+        <div class="benefit"><h3>No voice training</h3><p class="muted">Install and start dictating. No profiles to set up, no calibration. Works immediately.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Start for free</h2>
+      <p class="muted" style="margin-bottom:24px">Download the free plan and try it with your next assignment.</p>
+      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero{max-width:700px}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>

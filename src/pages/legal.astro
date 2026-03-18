@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Legal professionals" description="Draft contracts, briefs, and case notes by voice. Speech Recognition Cloud for lawyers and legal teams.">
+  <section class="section-pad">
+    <div class="container usecase-hero">
+      <div>
+        <p class="eyebrow">LEGAL</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Legal dictation that keeps up with your workflow</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Draft contracts, briefs, case notes, and correspondence by voice. Dictate directly into your document management system, Word, Outlook, or any Windows application.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
+        <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Built for legal workflows</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Word, Outlook, LEAP, Actionstep, Smokeball, and any Windows-based legal software. No special plugins needed.</p></div>
+        <div class="benefit"><h3>Custom legal vocabulary</h3><p class="muted">Add case-specific terms, client names, legislation references, and legal jargon. The system learns your terminology.</p></div>
+        <div class="benefit"><h3>Templates for standard clauses</h3><p class="muted">Create text templates for standard paragraphs, clauses, and correspondence. Insert them by voice command. Available on Professional plan.</p></div>
+        <div class="benefit"><h3>Privacy and confidentiality</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for training. Confidentiality controls built in.</p></div>
+        <div class="benefit"><h3>3x faster than typing</h3><p class="muted">Dictate full paragraphs with automatic punctuation and grammar. Reduce the time spent on document production.</p></div>
+        <div class="benefit"><h3>AI modes for productivity</h3><p class="muted">Use AI to rewrite, formalise, or summarise dictated text. Available on Professional plan.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Start with the free plan</h2>
+      <p class="muted" style="margin-bottom:24px">Try Speech Recognition Cloud free. Upgrade to Professional for templates, AI modes, and Ultra Accuracy.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero{max-width:700px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>
