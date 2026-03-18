@@ -6,7 +6,7 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.0.0 - initial SRC build",
+  "_buildNote": "v1.0.1 - fix dashes in content",
 
   "colours": {
     "brandGreen": "#7BBA45",
@@ -50,21 +50,21 @@
     "headlineAccent": "Get documentation done faster.",
     "subheadline": "Speech Recognition Cloud turns your voice into accurate, punctuated text in Word, Outlook, web forms, and any Windows application. Install in minutes. No voice training.",
     "bullets": [
-      "3x faster than typing -- full paragraphs appear instantly",
-      "AI handles punctuation and grammar automatically",
-      "Dictate at your cursor in any Windows application"
+      "3x faster than typing. Full paragraphs appear instantly.",
+      "AI handles punctuation and grammar automatically.",
+      "Dictate at your cursor in any Windows application."
     ],
     "ctaPrimary": "Download free",
     "ctaPrimaryUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",
     "ctaSecondary": "Contact us",
     "ctaSecondaryUrl": "/contact",
     "microcopy": "No credit card required. Installs in 2 minutes. Windows 10/11.",
-    "trustLine": "Built by Voice Recognition Australia -- 26 years in speech recognition"
+    "trustLine": "Built by Voice Recognition Australia. 26 years in speech recognition."
   },
 
   "clarityStrip": {
     "items": [
-      { "label": "Works in", "value": "Word, Outlook, Teams, Chrome, EMRs -- any Windows app" },
+      { "label": "Works in", "value": "Word, Outlook, Teams, Chrome, EMRs, and any Windows app" },
       { "label": "Available on", "value": "Windows 10/11" },
       { "label": "Setup", "value": "Install, choose mic, dictate anywhere" }
     ]
@@ -189,7 +189,7 @@
   "features": [
     {
       "title": "Works where you work",
-      "description": "Dictate into any Windows application at your cursor. Word, Outlook, Chrome, EMRs, web forms -- anywhere you can type."
+      "description": "Dictate into any Windows application at your cursor. Word, Outlook, Chrome, EMRs, web forms. Anywhere you can type."
     },
     {
       "title": "No training needed",
@@ -283,7 +283,7 @@
           "ULTRA Accuracy Mode",
           "Templates (auto input text)",
           "AI Modes for productivity",
-          "Screen OCR -- AI adds vocab"
+          "Screen OCR (AI adds vocab)"
         ],
         "ctaText": "Get started",
         "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items[][id]=49057249329398&items[][quantity]=1&items[][selling_plan]=7323943158&return_to=/checkout",
@@ -314,7 +314,7 @@
   "faq": [
     {
       "question": "Why doesn't text appear while I'm speaking?",
-      "answer": "Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off -- and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context."
+      "answer": "Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context."
     },
     {
       "question": "Do I need to train it or set anything up?",
@@ -342,7 +342,7 @@
     },
     {
       "question": "What does 'up to 20 minutes continuous' mean?",
-      "answer": "Once you turn the microphone on, you can talk for up to 20 minutes in one uninterrupted session before you need to turn the mic off. During that whole period, SRC listens to full sentences and paragraphs for better context and cleaner text. You can turn the mic on and off whenever you want -- this limit only affects extremely long continuous speeches. This does not affect your monthly usage. Paid plans give you unlimited dictation every month."
+      "answer": "Once you turn the microphone on, you can talk for up to 20 minutes in one uninterrupted session before you need to turn the mic off. During that whole period, SRC listens to full sentences and paragraphs for better context and cleaner text. You can turn the mic on and off whenever you want. This limit only affects extremely long continuous speeches. This does not affect your monthly usage. Paid plans give you unlimited dictation every month."
     },
     {
       "question": "How many languages are supported?",
