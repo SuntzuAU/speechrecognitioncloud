@@ -5,30 +5,35 @@ const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 ---
 <BaseLayout>
-  <section class="hero section-pad">
-    <div class="container text-center">
-      <h1 class="hero-headline">{site.hero.headline} <span class="accent">{site.hero.headlineAccent}</span></h1>
-      <p class="hero-sub">{site.hero.subheadline}</p>
-      <ul class="hero-bullets">
-        {site.hero.bullets.map(b => (<li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#7BBA45" opacity="0.15"/><path d="M6 10l3 3 5-5" stroke="#7BBA45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{b}</li>))}
-      </ul>
-      <div class="hero-ctas">
-        <a href={site.hero.ctaPrimaryUrl} class="btn-primary btn-lg">{site.hero.ctaPrimary}</a>
-        <a href={site.hero.ctaSecondaryUrl} class="btn-secondary">{site.hero.ctaSecondary}</a>
+  <section class="hero">
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="hero-headline">{site.hero.headline}<br/><span class="accent">{site.hero.headlineAccent}</span></h1>
+        <p class="hero-sub">{site.hero.subheadline}</p>
+        <ul class="hero-bullets">
+          {site.hero.bullets.map(b => (<li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#7BBA45" opacity="0.15"/><path d="M6 10l3 3 5-5" stroke="#7BBA45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{b}</li>))}
+        </ul>
+        <div class="hero-ctas">
+          <a href={site.hero.ctaPrimaryUrl} class="btn-primary btn-lg">{site.hero.ctaPrimary}</a>
+          <a href={site.hero.ctaSecondaryUrl} class="btn-secondary">{site.hero.ctaSecondary}</a>
+        </div>
+        <p class="hero-micro">{site.hero.microcopy}</p>
       </div>
-      <p class="hero-micro">{site.hero.microcopy}</p>
-      <div class="hero-product">
-        <img src="https://cdn.prod.website-files.com/68d24955d56e059ff6c0d8e9/68ec548c77e9899470bc6881_speech%20to%20text%20demo%201.gif" alt="Speech Recognition Cloud dictation demo showing real-time speech to text" loading="eager" />
+      <div class="hero-visual">
+        <div class="hero-product">
+          <img src="https://cdn.prod.website-files.com/68d24955d56e059ff6c0d8e9/68ec548c77e9899470bc6881_speech%20to%20text%20demo%201.gif" alt="Speech Recognition Cloud dictation demo showing real-time speech to text" loading="eager" />
+        </div>
       </div>
-      <p class="hero-trust">{site.hero.trustLine}</p>
     </div>
+    <div class="container"><p class="hero-trust text-center">{site.hero.trustLine}</p></div>
   </section>
   <section class="clarity-strip">
     <div class="container"><div class="clarity-grid">{site.clarityStrip.items.map(item => (<div class="clarity-item"><span class="clarity-label">{item.label}</span><span class="clarity-value">{item.value}</span></div>))}</div></div>
   </section>
   <section class="section-pad section-neutral" id="demo">
     <div class="container text-center">
-      <p class="muted" style="font-size:18px;margin-bottom:24px">{site.demo.caption}</p>
+      <h2 style="margin-bottom:8px">See it in action</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">{site.demo.caption}</p>
       <div class="yt-facade" data-ytid={site.demo.youtubeId}>
         <img src={`https://i.ytimg.com/vi/${site.demo.youtubeId}/maxresdefault.jpg`} alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
         <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
@@ -95,17 +100,20 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
   </section>
   <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":site.structuredData.type,"name":site.structuredData.name,"applicationCategory":site.structuredData.applicationCategory,"operatingSystem":site.structuredData.operatingSystem,"offers":site.structuredData.offers.map(o=>({"@type":"Offer","price":o.price,"priceCurrency":o.priceCurrency,"description":o.description}))})} />
   <style is:inline>
-    .hero{padding-top:80px;padding-bottom:40px;background:#fff}
-    .hero-headline{font-size:clamp(32px,5vw,52px);font-weight:700;margin-bottom:20px;letter-spacing:-0.03em}
-    .hero-sub{font-size:18px;color:var(--muted);max-width:640px;margin:0 auto 28px;line-height:1.7}
-    .hero-bullets{list-style:none;display:inline-flex;flex-direction:column;gap:12px;text-align:left;margin-bottom:32px}
-    .hero-bullets li{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:500}
-    .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
-    .btn-lg{padding:16px 40px;font-size:18px}
-    .hero-micro{font-size:13px;color:var(--muted);margin-bottom:32px}
-    .hero-product{max-width:760px;margin:0 auto 24px;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+    .hero{padding:80px 0 40px;background:#fff}
+    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .hero-text{text-align:left}
+    .hero-headline{font-size:clamp(28px,4vw,46px);font-weight:700;margin-bottom:18px;letter-spacing:-0.03em;line-height:1.15}
+    .hero-sub{font-size:17px;color:var(--muted);margin-bottom:24px;line-height:1.7;max-width:520px}
+    .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+    .hero-bullets li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .hero-micro{font-size:13px;color:var(--muted)}
+    .hero-visual{display:flex;align-items:center;justify-content:center}
+    .hero-product{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 48px rgba(0,0,0,0.1)}
     .hero-product img{width:100%;display:block}
-    .hero-trust{font-size:14px;color:var(--muted);font-style:italic}
+    .hero-trust{font-size:14px;color:var(--muted);font-style:italic;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
     .clarity-strip{background:var(--dark);padding:20px 0}.clarity-grid{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}.clarity-item{display:flex;gap:8px;align-items:baseline;color:var(--dark-text);font-size:14px}.clarity-label{font-weight:600;color:var(--brand-green);white-space:nowrap}.clarity-value{color:var(--dark-muted)}
     .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12)}.yt-facade img{width:100%;aspect-ratio:16/9;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
     .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:60px}.stat-card{text-align:center;padding:24px}.stat-value{font-size:44px;font-weight:700;display:block;letter-spacing:-0.02em}.stat-label{font-size:14px;color:var(--muted);font-weight:500}
@@ -116,7 +124,7 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
     .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}.pricing-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;transition:box-shadow 0.2s}.pricing-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.06)}.pricing-highlighted{border-color:var(--cta-green);box-shadow:0 6px 24px rgba(21,128,61,0.12)}.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cta-green);color:#fff;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;white-space:nowrap}.pricing-card h3{font-size:18px;margin-bottom:12px;font-weight:600}.pricing-amount{font-size:36px;font-weight:700;letter-spacing:-0.02em}.pricing-period{font-size:14px;color:var(--muted);margin-left:4px}.pricing-features{list-style:none;margin-bottom:24px}.pricing-features li{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:8px}.pricing-cta{width:100%;justify-content:center;text-align:center}
     .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
     @media(max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}.usecase-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.security-grid{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}.clarity-grid{flex-direction:column;gap:12px;align-items:flex-start}}
+    @media(max-width:768px){.hero-split{grid-template-columns:1fr;gap:32px;text-align:center}.hero-text{text-align:center}.hero-bullets{align-items:center}.hero-ctas{justify-content:center}.hero-sub{margin-left:auto;margin-right:auto}.stats-grid{grid-template-columns:repeat(2,1fr)}.usecase-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.security-grid{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}.clarity-grid{flex-direction:column;gap:12px;align-items:flex-start}}
   </style>
   <script is:inline>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.style.paddingBottom='56.25%';el.style.height='0';el.appendChild(iframe);});});
