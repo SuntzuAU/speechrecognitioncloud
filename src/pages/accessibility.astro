@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Accessibility and RSI" description="Reduce keyboard use with voice dictation. An alternative input method for anyone with motor limitations or RSI.">
+  <section class="section-pad">
+    <div class="container usecase-hero">
+      <div>
+        <p class="eyebrow">ACCESSIBILITY</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">An alternative to typing for anyone who needs it</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Whether you have a repetitive strain injury, motor limitations, or simply want to reduce keyboard use, Speech Recognition Cloud gives you a practical voice-first input method for any Windows application.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
+        <p class="muted" style="font-size:13px">Free plan available. No credit card required.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">How SRC helps</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Reduce keyboard use</h3><p class="muted">Dictate emails, documents, and web forms without typing. Significantly reduces the physical demands of computer work.</p></div>
+        <div class="benefit"><h3>Works in any application</h3><p class="muted">Dictate at the cursor in Word, Outlook, Chrome, web forms, and any Windows application. No special accessibility software required.</p></div>
+        <div class="benefit"><h3>No training required</h3><p class="muted">Install and start speaking. No voice profiles, no calibration. The cloud AI works immediately with any voice and accent.</p></div>
+        <div class="benefit"><h3>Natural speech</h3><p class="muted">Speak in full sentences. The AI handles punctuation, capitalisation, and formatting automatically. No need to say "comma" or "full stop".</p></div>
+        <div class="benefit"><h3>Voice commands</h3><p class="muted">Built-in voice commands for common actions like "new line", "new paragraph", and "select all". Reduce mouse and keyboard interaction.</p></div>
+        <div class="benefit"><h3>Affordable and accessible</h3><p class="muted">Free plan available with 20 minutes per month. Personal plan at $79/year for unlimited use. No expensive assistive technology pricing.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Try it free</h2>
+      <p class="muted" style="margin-bottom:24px">Download the free plan and see if voice dictation works for your needs.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href={site.download.url} class="btn-primary btn-lg">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero{max-width:700px}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>

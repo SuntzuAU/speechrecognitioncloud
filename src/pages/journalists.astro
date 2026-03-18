@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Journalists" description="Transcribe interviews, draft articles, and file stories faster. Speech Recognition Cloud for journalists.">
+  <section class="section-pad">
+    <div class="container usecase-hero">
+      <div>
+        <p class="eyebrow">JOURNALISTS</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Draft articles and file stories faster</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate articles, interview notes, and stories directly into your writing tools. Get your first draft down at the speed of thought, then edit and polish.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/pricing" class="btn-secondary">View pricing</a></div>
+        <p class="muted" style="font-size:13px">Free plan available. No credit card required.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Why journalists use SRC</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Draft at the speed of speech</h3><p class="muted">Get your first draft down 3x faster than typing. Speak naturally and let the AI handle punctuation and grammar.</p></div>
+        <div class="benefit"><h3>Works in any writing tool</h3><p class="muted">Dictate into Word, Google Docs, WordPress, your CMS, email, or any Windows application. No special plugins.</p></div>
+        <div class="benefit"><h3>Custom vocabulary for beats</h3><p class="muted">Add names, technical terms, and beat-specific jargon for better accuracy on your coverage area.</p></div>
+        <div class="benefit"><h3>AI modes for editing</h3><p class="muted">Use AI to rewrite, summarise, or formalise your dictated text. Turn rough dictation into polished copy faster.</p></div>
+        <div class="benefit"><h3>57 languages</h3><p class="muted">Cover stories in multiple languages. Switch languages as needed for multilingual reporting.</p></div>
+        <div class="benefit"><h3>Affordable freelancer pricing</h3><p class="muted">Free plan to get started. $79/year for unlimited dictation on the Personal plan. No expensive enterprise contracts.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Start dictating your next story</h2>
+      <p class="muted" style="margin-bottom:24px">Download free and try it on your next deadline.</p>
+      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero{max-width:700px}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>
