@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="Spoken punctuation" description="Voice commands for punctuation, formatting, and special characters in Speech Recognition Cloud.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Spoken punctuation</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:16px">Speech Recognition Cloud automatically adds punctuation as you dictate. For more control, you can also speak punctuation commands explicitly.</p>
+      <p class="muted" style="font-size:14px;margin-bottom:40px">In most cases you do not need to say punctuation at all. The AI handles commas, full stops, question marks, and capitalisation automatically from context. Use these commands when you want to override or insert specific punctuation.</p>
+
+      <div class="ref-section">
+        <h2>Common punctuation</h2>
+        <table class="ref-table"><thead><tr><th>You say</th><th>Result</th></tr></thead><tbody>
+          <tr><td>"period" or "full stop"</td><td>.</td></tr>
+          <tr><td>"comma"</td><td>,</td></tr>
+          <tr><td>"question mark"</td><td>?</td></tr>
+          <tr><td>"exclamation mark"</td><td>!</td></tr>
+          <tr><td>"colon"</td><td>:</td></tr>
+          <tr><td>"semicolon"</td><td>;</td></tr>
+          <tr><td>"apostrophe"</td><td>'</td></tr>
+          <tr><td>"hyphen" or "dash"</td><td>-</td></tr>
+          <tr><td>"em dash"</td><td>--</td></tr>
+        </tbody></table>
+        <p class="muted" style="font-size:13px;margin-top:12px">Tip: "full stop" works more reliably than "period" since "period" is a common word in everyday speech.</p>
+      </div>
+
+      <div class="ref-section">
+        <h2>Quotes and brackets</h2>
+        <table class="ref-table"><thead><tr><th>You say</th><th>Result</th></tr></thead><tbody>
+          <tr><td>"open quote"</td><td>"</td></tr>
+          <tr><td>"close quote"</td><td>"</td></tr>
+          <tr><td>"open parenthesis" or "open bracket"</td><td>(</td></tr>
+          <tr><td>"close parenthesis" or "close bracket"</td><td>)</td></tr>
+          <tr><td>"open square bracket"</td><td>[</td></tr>
+          <tr><td>"close square bracket"</td><td>]</td></tr>
+        </tbody></table>
+      </div>
+
+      <div class="ref-section">
+        <h2>Special characters</h2>
+        <table class="ref-table"><thead><tr><th>You say</th><th>Result</th></tr></thead><tbody>
+          <tr><td>"at sign"</td><td>@</td></tr>
+          <tr><td>"ampersand"</td><td>&amp;</td></tr>
+          <tr><td>"asterisk"</td><td>*</td></tr>
+          <tr><td>"underscore"</td><td>_</td></tr>
+          <tr><td>"slash" or "forward slash"</td><td>/</td></tr>
+          <tr><td>"backslash"</td><td>\</td></tr>
+          <tr><td>"ellipsis"</td><td>...</td></tr>
+          <tr><td>"dollar sign"</td><td>$</td></tr>
+          <tr><td>"hash" or "hashtag"</td><td>#</td></tr>
+          <tr><td>"plus sign"</td><td>+</td></tr>
+          <tr><td>"equals sign"</td><td>=</td></tr>
+        </tbody></table>
+      </div>
+
+      <div class="ref-section">
+        <h2>Formatting commands</h2>
+        <table class="ref-table"><thead><tr><th>You say</th><th>Result</th></tr></thead><tbody>
+          <tr><td>"new line"</td><td>Line break</td></tr>
+          <tr><td>"new paragraph"</td><td>Double line break</td></tr>
+        </tbody></table>
+      </div>
+
+      <div class="ref-section">
+        <h2>Bullet points</h2>
+        <p class="muted" style="margin-bottom:16px">Create bullet point lists by saying these commands. Each starts a new line with the appropriate marker.</p>
+        <table class="ref-table"><thead><tr><th>You say</th><th>Result</th></tr></thead><tbody>
+          <tr><td>"bullet point" or "bullet"</td><td>New line with bullet marker</td></tr>
+          <tr><td>"dash point"</td><td>New line with dash</td></tr>
+          <tr><td>"number point"</td><td>New line with auto-incrementing number</td></tr>
+        </tbody></table>
+        <div class="example-box">
+          <p style="font-size:13px;font-weight:600;margin-bottom:8px">Example</p>
+          <p class="muted" style="font-size:14px">You say: "Here are three items. Bullet point. First item. Bullet point. Second item. Bullet point. Third item."</p>
+          <p style="font-size:14px;margin-top:8px;font-family:monospace;white-space:pre-line">Here are three items.
+- First item
+- Second item
+- Third item</p>
+        </div>
+      </div>
+
+      <div class="ref-section">
+        <h2>Spelling mode</h2>
+        <p class="muted" style="margin-bottom:16px">Need to spell out a name, email address, or uncommon word? Say "spell" followed by individual letters. The sequence ends when you continue with normal speech.</p>
+        <div class="example-box">
+          <p style="font-size:13px;font-weight:600;margin-bottom:8px">Examples</p>
+          <p class="muted" style="font-size:14px">You say: "My name is spell capital S-A-R-A-H and I live in Brisbane."</p>
+          <p style="font-size:14px;margin-top:4px">Result: My name is Sarah and I live in Brisbane.</p>
+          <p class="muted" style="font-size:14px;margin-top:12px">You say: "Send it to spell J-O-H-N at G-M-A-I-L dot C-O-M please."</p>
+          <p style="font-size:14px;margin-top:4px">Result: Send it to john@gmail.com please.</p>
+        </div>
+        <p class="muted" style="font-size:14px;margin-top:16px">Within a spelling sequence, you can say "space", "dot", "dash", "at", "underscore", "slash", and "hash" to insert those characters.</p>
+      </div>
+
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">More support</h2>
+      <p class="muted" style="margin-bottom:24px">Learn about voice commands, text replacements, and AI modes.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/support/text-replacements" class="btn-secondary">Text replacements</a>
+        <a href="/support/ai-modes" class="btn-secondary">AI modes</a>
+        <a href="/support" class="btn-primary">All support</a>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .ref-section{margin-bottom:48px}
+    .ref-section h2{font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .ref-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:8px}
+    .ref-table th{text-align:left;font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;padding:10px 12px;border-bottom:2px solid var(--border)}
+    .ref-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+    .ref-table td:first-child{font-weight:500;white-space:nowrap}
+    .ref-table td:last-child{color:var(--muted);font-family:monospace;font-size:15px}
+    .example-box{background:var(--neutral);border-radius:10px;padding:16px 20px;margin-top:16px}
+  </style>
+</BaseLayout>

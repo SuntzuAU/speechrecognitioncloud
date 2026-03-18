@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="Text replacements" description="Set up automatic text replacements in Speech Recognition Cloud to expand abbreviations, fix errors, and insert templates.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Text replacements</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Text replacements automatically transform your dictated text before it appears. Use them to expand abbreviations, insert standard phrases, fix recurring errors, or create voice-triggered shortcuts. Available on Personal, Professional, and Medical plans.</p>
+
+      <div class="ref-section">
+        <h2>Common uses</h2>
+        <div class="use-case">
+          <h3>Insert personal information</h3>
+          <p class="muted">Create voice shortcuts for information you type often.</p>
+          <table class="ref-table"><thead><tr><th>You say</th><th>SRC types</th></tr></thead><tbody>
+            <tr><td>"insert phone number"</td><td>+61 4XX XXX XXX</td></tr>
+            <tr><td>"insert work email"</td><td>your.name@company.com.au</td></tr>
+            <tr><td>"insert address"</td><td>123 Main Street, Brisbane QLD 4000</td></tr>
+          </tbody></table>
+        </div>
+
+        <div class="use-case">
+          <h3>Expand abbreviations</h3>
+          <p class="muted">When you naturally say full phrases, replacements can shorten them.</p>
+          <table class="ref-table"><thead><tr><th>You say</th><th>SRC types</th></tr></thead><tbody>
+            <tr><td>"by the way"</td><td>btw</td></tr>
+            <tr><td>"as soon as possible"</td><td>ASAP</td></tr>
+            <tr><td>"for your information"</td><td>FYI</td></tr>
+          </tbody></table>
+        </div>
+
+        <div class="use-case">
+          <h3>Fix recurring errors</h3>
+          <p class="muted">If the transcription engine consistently gets a word wrong, a text replacement forces the correct spelling.</p>
+          <table class="ref-table"><thead><tr><th>Gets transcribed as</th><th>Replacement fixes it to</th></tr></thead><tbody>
+            <tr><td>"speech recognition clout"</td><td>Speech Recognition Cloud</td></tr>
+            <tr><td>"brisbane" (lowercase)</td><td>Brisbane</td></tr>
+          </tbody></table>
+          <p class="muted" style="font-size:13px;margin-top:8px">Tip: Add multiple variations to catch different ways a word might be mistranscribed.</p>
+        </div>
+
+        <div class="use-case">
+          <h3>Insert blocks of text</h3>
+          <p class="muted">Insert email signatures, standard paragraphs, or boilerplate text with a single phrase. Available on Professional and Medical plans with templates.</p>
+        </div>
+      </div>
+
+      <div class="ref-section">
+        <h2>Creating a replacement rule</h2>
+        <p class="muted" style="margin-bottom:16px">Open the SRC settings and navigate to the Replacements section. Each rule has these options:</p>
+        <div class="setting-item"><h3>Match text (aliases)</h3><p class="muted">Enter one or more text patterns to match. Each alias is checked independently. Useful when a word might be transcribed differently or you want multiple phrases to produce the same output.</p></div>
+        <div class="setting-item"><h3>Replacement text</h3><p class="muted">The text that replaces any matched alias. Can be plain text, empty (to delete matched text), or multi-line text for templates.</p></div>
+        <div class="setting-item"><h3>Whole word matching</h3><p class="muted">Only match when the pattern is a complete word, not part of another word. Prevents "cat" from matching inside "category".</p></div>
+        <div class="setting-item"><h3>Preserve case</h3><p class="muted">Maintain the capitalisation of the matched text in the replacement.</p></div>
+        <div class="setting-item"><h3>Flexible match</h3><p class="muted">Match aliases regardless of spaces, dashes, or periods between characters. "email" matches "e-mail" and "e mail" with a single rule.</p></div>
+      </div>
+
+      <div class="ref-section">
+        <h2>How it works</h2>
+        <p class="muted">After Speech Recognition Cloud transcribes your speech, all enabled replacement rules are applied before the text appears at your cursor. The processing order is:</p>
+        <div class="pipeline">
+          <span class="pipe-step">Speech</span>
+          <span class="pipe-arrow">-></span>
+          <span class="pipe-step">Transcription</span>
+          <span class="pipe-arrow">-></span>
+          <span class="pipe-step">Text replacements</span>
+          <span class="pipe-arrow">-></span>
+          <span class="pipe-step">AI processing</span>
+          <span class="pipe-arrow">-></span>
+          <span class="pipe-step">Output at cursor</span>
+        </div>
+        <p class="muted" style="margin-top:16px">Rules are applied in the order they appear in your list. You can drag and drop to reorder them.</p>
+      </div>
+
+      <div class="ref-section">
+        <h2>Tips</h2>
+        <div class="setting-item"><p class="muted">Use whole word matching to prevent unintended matches within longer words.</p></div>
+        <div class="setting-item"><p class="muted">Add multiple aliases for words that might be transcribed differently.</p></div>
+        <div class="setting-item"><p class="muted">Enable flexible match for compound words to catch variations with a single rule.</p></div>
+        <div class="setting-item"><p class="muted">Disable rules instead of deleting them. You might need them again later.</p></div>
+        <div class="setting-item"><p class="muted">Start simple. Only use advanced options when you need them.</p></div>
+      </div>
+
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Related guides</h2>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/support/spoken-punctuation" class="btn-secondary">Spoken punctuation</a>
+        <a href="/support/settings" class="btn-secondary">Settings guide</a>
+        <a href="/support" class="btn-primary">All support</a>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .ref-section{margin-bottom:48px}
+    .ref-section h2{font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .use-case{margin-bottom:28px}
+    .use-case h3{font-size:16px;font-weight:600;margin-bottom:6px}
+    .ref-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+    .ref-table th{text-align:left;font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;padding:10px 12px;border-bottom:2px solid var(--border)}
+    .ref-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+    .ref-table td:first-child{font-weight:500}
+    .setting-item{margin-bottom:16px;padding:16px 20px;background:var(--neutral);border-radius:10px}
+    .setting-item h3{font-size:15px;font-weight:600;margin-bottom:4px}
+    .setting-item .muted{font-size:14px;line-height:1.6}
+    .pipeline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;font-size:13px}
+    .pipe-step{background:var(--brand-lightest, #EEF2FF);color:var(--brand);padding:6px 14px;border-radius:8px;font-weight:600}
+    .pipe-arrow{color:var(--muted)}
+  </style>
+</BaseLayout>

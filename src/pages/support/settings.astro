@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="Settings guide" description="Configure Speech Recognition Cloud. Microphone, hotkeys, vocabulary, AI modes, and preferences.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Settings guide</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Configure Speech Recognition Cloud to work exactly how you want it. Open settings by clicking the gear icon in the main window.</p>
+
+      <div class="settings-section">
+        <h2>General</h2>
+        <p class="muted" style="margin-bottom:16px">View your account information, subscription status, and usage statistics.</p>
+        <div class="setting-item"><h3>Account</h3><p class="muted">View your email, subscription tier, and usage allowance.</p></div>
+        <div class="setting-item"><h3>Statistics</h3><p class="muted">Track your transcription count, speech duration, words per minute, and estimated time saved.</p></div>
+        <div class="setting-item"><h3>Manage subscription</h3><p class="muted">Upgrade, downgrade, or cancel your subscription. View and download invoices.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Microphone</h2>
+        <p class="muted" style="margin-bottom:16px">Select and monitor your microphone input.</p>
+        <div class="setting-item"><h3>Microphone selection</h3><p class="muted">Choose which microphone to use for recording. SRC uses your Windows default microphone by default.</p></div>
+        <div class="setting-item"><h3>Level indicator</h3><p class="muted">Real-time visual feedback showing your microphone input level. Useful for checking your mic is working and positioned correctly.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Activation</h2>
+        <p class="muted" style="margin-bottom:16px">Configure how you start and stop recording.</p>
+        <div class="setting-item"><h3>Recording hotkey</h3><p class="muted">Set the key to toggle recording on and off. Default is CapsLock. Popular alternatives include F1-F12, tilde (~), Scroll Lock, or Pause.</p></div>
+        <div class="setting-item"><h3>Modifier key activation</h3><p class="muted">Hold modifier key combinations like Ctrl+Shift, Ctrl+Alt, or Win+Ctrl to record. Release to transcribe. Configure in the Hotkeys section.</p></div>
+        <div class="setting-item"><h3>Mouse activation</h3><p class="muted">Use the middle mouse button to toggle recording for hands-free operation.</p></div>
+        <div class="setting-item"><h3>Escape to cancel</h3><p class="muted">Press Escape during recording to cancel without transcribing.</p></div>
+        <div class="setting-item"><h3>Re-paste hotkey</h3><p class="muted">Press Ctrl+Alt+V to paste the last transcription again. Useful if you forgot to place your cursor in the right field before dictating.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Vocabulary</h2>
+        <p class="muted" style="margin-bottom:16px">Customise language and transcription settings for better accuracy.</p>
+        <div class="setting-item"><h3>Language</h3><p class="muted">Select from 57+ languages or use auto-detect.</p></div>
+        <div class="setting-item"><h3>Transcription model</h3><p class="muted">Choose your transcription engine. Ultra Accuracy mode available on Professional and Medical plans.</p></div>
+        <div class="setting-item"><h3>Custom vocabulary</h3><p class="muted">Add names, technical terms, and context to improve accuracy for specialised terminology. Available on Personal plans and above.</p></div>
+        <div class="setting-item"><h3>Screen OCR</h3><p class="muted">Automatically detect text on screen to improve transcription context. Available on Professional and Medical plans.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Replacements</h2>
+        <p class="muted" style="margin-bottom:16px">Automatically transform transcribed text using find-and-replace rules. <a href="/support/text-replacements" style="color:var(--brand);font-weight:600">See the full text replacements guide.</a></p>
+        <div class="setting-item"><h3>Custom replacements</h3><p class="muted">Create rules to replace words or phrases automatically.</p></div>
+        <div class="setting-item"><h3>Match options</h3><p class="muted">Match anywhere, whole words only, at start, or at end of text. Flexible matching for compound words.</p></div>
+        <div class="setting-item"><h3>Case preservation</h3><p class="muted">Maintain original capitalisation in replacements.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>AI modes</h2>
+        <p class="muted" style="margin-bottom:16px">Configure AI-powered text enhancement features. <a href="/support/ai-modes" style="color:var(--brand);font-weight:600">See the full AI modes guide.</a></p>
+        <div class="setting-item"><h3>Available modes</h3><p class="muted">Enable or disable Write, Rewrite, Answer, Reply, and Run Command modes individually.</p></div>
+        <div class="setting-item"><h3>Medical restrictions</h3><p class="muted">Medical plan uses restricted AI modes designed for clinical privacy requirements.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Preferences</h2>
+        <p class="muted" style="margin-bottom:16px">Customise the look and behaviour of Speech Recognition Cloud.</p>
+        <div class="setting-item"><h3>Run on startup</h3><p class="muted">Automatically launch SRC when Windows starts.</p></div>
+        <div class="setting-item"><h3>Start minimised</h3><p class="muted">Start SRC hidden in the system tray.</p></div>
+        <div class="setting-item"><h3>Sound on activate</h3><p class="muted">Audio feedback when starting and stopping recording.</p></div>
+        <div class="setting-item"><h3>Toolbar</h3><p class="muted">Show or hide the SRC toolbar in the Windows taskbar. Adjust toolbar size.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>Advanced</h2>
+        <p class="muted" style="margin-bottom:16px">Fine-tune transcription behaviour.</p>
+        <div class="setting-item"><h3>Double-tap to send Enter</h3><p class="muted">Double-tap your hotkey to stop recording and automatically press Enter after the transcription. Useful for sending messages in chat applications.</p></div>
+        <div class="setting-item"><h3>Auto-spacing</h3><p class="muted">Automatically adds a space before new transcriptions when you continue dictating without clicking elsewhere.</p></div>
+        <div class="setting-item"><h3>Spoken punctuation</h3><p class="muted">Convert spoken punctuation words into their symbols. <a href="/support/spoken-punctuation" style="color:var(--brand);font-weight:600">See the full punctuation guide.</a></p></div>
+        <div class="setting-item"><h3>Short segment punctuation</h3><p class="muted">Skip adding ending punctuation for very brief transcriptions. Useful for single words or short commands.</p></div>
+        <div class="setting-item"><h3>Media playback</h3><p class="muted">Automatically reduce or mute music and video while recording. Audio returns to normal after transcription.</p></div>
+      </div>
+
+      <div class="settings-section">
+        <h2>History</h2>
+        <p class="muted" style="margin-bottom:16px">View and manage your transcription history.</p>
+        <div class="setting-item"><h3>Transcription history</h3><p class="muted">Browse, copy, or retry previous transcriptions. History is stored locally on your device only.</p></div>
+        <div class="setting-item"><h3>Clear history</h3><p class="muted">Delete all stored transcription history from your device.</p></div>
+      </div>
+
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Need help with settings?</h2>
+      <p class="muted" style="margin-bottom:24px">Check our other guides or get in touch.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/support/troubleshooting" class="btn-secondary">Troubleshooting</a>
+        <a href="/contact" class="btn-primary">Contact us</a>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .settings-section{margin-bottom:48px}
+    .settings-section h2{font-size:22px;font-weight:700;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .setting-item{margin-bottom:12px;padding:14px 20px;background:var(--neutral);border-radius:10px}
+    .setting-item h3{font-size:15px;font-weight:600;margin-bottom:4px}
+    .setting-item .muted{font-size:14px;line-height:1.6}
+  </style>
+</BaseLayout>
