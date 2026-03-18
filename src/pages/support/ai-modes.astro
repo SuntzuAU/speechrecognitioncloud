@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="AI modes" description="Learn how to use AI modes in Speech Recognition Cloud for rewriting, summarising, and productivity.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">AI modes</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">AI modes let you rewrite, improve, and transform your dictated text using voice commands. Available on Professional and Medical plans.</p>
+      <div class="mode-section">
+        <h2>What are AI modes?</h2>
+        <p class="muted" style="margin-bottom:24px">After dictating text, you can use AI modes to transform it. Speak a command and SRC will rewrite, summarise, expand, or reformat your text using AI. This saves editing time and helps produce polished output directly from your voice.</p>
+      </div>
+      <div class="mode-section">
+        <h2>Available modes</h2>
+        <div class="mode-card"><h3>Rewrite</h3><p class="muted">Rephrase your dictated text for clarity, tone, or style. Useful for emails, reports, and professional correspondence.</p></div>
+        <div class="mode-card"><h3>Summarise</h3><p class="muted">Condense longer dictated text into a concise summary. Useful for meeting notes, research summaries, and briefings.</p></div>
+        <div class="mode-card"><h3>Expand</h3><p class="muted">Take brief notes and expand them into fuller text. Useful for turning bullet points into paragraphs.</p></div>
+        <div class="mode-card"><h3>Formalise</h3><p class="muted">Convert casual dictation into formal, professional language. Useful for legal correspondence and official documents.</p></div>
+        <div class="mode-card"><h3>Simplify</h3><p class="muted">Rewrite complex text in simpler, more accessible language. Useful for patient communications and public-facing documents.</p></div>
+      </div>
+      <div class="mode-section">
+        <h2>Medical plan restrictions</h2>
+        <p class="muted">The Medical plan includes restricted AI modes designed for privacy. AI processing is limited to approved transformations only, and patient data handling follows stricter controls. This is intended for clinical environments where data governance is a requirement.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Ready to try AI modes?</h2>
+      <p class="muted" style="margin-bottom:24px">AI modes are available on Professional and Medical plans.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/pricing" class="btn-secondary">View plans</a>
+        <a href={site.download.url} class="btn-primary">Download free</a>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .mode-section{margin-bottom:48px}
+    .mode-section h2{font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .mode-card{background:var(--neutral);border-radius:12px;padding:20px 24px;margin-bottom:12px}
+    .mode-card h3{font-size:16px;font-weight:600;margin-bottom:6px}
+    .mode-card .muted{font-size:14px;line-height:1.7}
+  </style>
+</BaseLayout>

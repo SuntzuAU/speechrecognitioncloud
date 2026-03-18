@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="Getting started" description="Get started with Speech Recognition Cloud. Download, install, and start dictating in minutes.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Getting started</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">From download to your first dictation in under 5 minutes.</p>
+      <div class="steps">
+        <div class="step"><span class="step-num">1</span><div><h3>Download and install</h3><p class="muted">Download the installer from our website. Run it and follow the prompts. The installation takes less than 2 minutes on Windows 10 or 11.</p><a href={site.download.url} class="btn-primary" style="margin-top:16px">Download free</a></div></div>
+        <div class="step"><span class="step-num">2</span><div><h3>Choose your microphone</h3><p class="muted">Your built-in laptop mic or webcam mic will work. For the best results, use a USB desktop microphone or headset. SRC will auto-detect your default microphone.</p></div></div>
+        <div class="step"><span class="step-num">3</span><div><h3>Place your cursor and dictate</h3><p class="muted">Click where you want text to appear in any Windows application. Turn the microphone on, speak naturally, and turn it off. Your text appears fully punctuated.</p></div></div>
+        <div class="step"><span class="step-num">4</span><div><h3>Explore features</h3><p class="muted">Try voice commands, custom vocabulary, and templates as you get comfortable. Check out our <a href="/support/tips" style="color:var(--brand);font-weight:600">tips page</a> for ways to get more out of SRC.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Need help?</h2>
+      <p class="muted" style="margin-bottom:24px">Check our troubleshooting guide or get in touch.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/support/troubleshooting" class="btn-secondary">Troubleshooting</a>
+        <a href="/contact" class="btn-primary">Contact us</a>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .steps{display:flex;flex-direction:column;gap:32px}
+    .step{display:flex;gap:20px;align-items:flex-start}
+    .step-num{width:40px;height:40px;background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+    .step h3{font-size:18px;margin-bottom:8px;font-weight:600}
+    .step .muted{font-size:15px;line-height:1.7}
+  </style>
+</BaseLayout>

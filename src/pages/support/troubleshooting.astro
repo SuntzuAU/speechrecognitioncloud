@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="Troubleshooting" description="Solutions for common issues with Speech Recognition Cloud. Installation, microphone, and accuracy problems.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Troubleshooting</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Solutions for common issues. If you can't find your answer here, <a href="/contact" style="color:var(--brand);font-weight:600">contact us</a>.</p>
+      <div class="issue-section">
+        <h2>Installation issues</h2>
+        <details class="faq-item"><summary class="faq-question">The installer won't run</summary><div class="faq-answer"><p>Make sure you are running Windows 10 or Windows 11. Right-click the installer and select "Run as administrator". If your antivirus blocks it, add an exception for the installer.</p></div></details>
+        <details class="faq-item"><summary class="faq-question">Installation completes but the app doesn't appear</summary><div class="faq-answer"><p>Check your system tray (bottom-right corner of the taskbar). SRC runs as a system tray application. Click the small up arrow to see hidden tray icons.</p></div></details>
+      </div>
+      <div class="issue-section">
+        <h2>Microphone issues</h2>
+        <details class="faq-item"><summary class="faq-question">SRC doesn't detect my microphone</summary><div class="faq-answer"><p>Check that your microphone is set as the default recording device in Windows Sound Settings. Go to Settings &gt; System &gt; Sound &gt; Input and select your microphone. Restart SRC after changing.</p></div></details>
+        <details class="faq-item"><summary class="faq-question">Audio quality is poor or accuracy is low</summary><div class="faq-answer"><p>Try using a USB headset or desktop microphone instead of a built-in laptop mic. Reduce background noise and ensure you are speaking at a normal volume 15-30cm from the mic.</p></div></details>
+      </div>
+      <div class="issue-section">
+        <h2>Accuracy issues</h2>
+        <details class="faq-item"><summary class="faq-question">Specific words are consistently wrong</summary><div class="faq-answer"><p>Add the word to your custom vocabulary in the SRC settings. This is especially important for names, technical terms, and industry-specific jargon.</p></div></details>
+        <details class="faq-item"><summary class="faq-question">Punctuation is not appearing correctly</summary><div class="faq-answer"><p>Ensure you are speaking in complete sentences. SRC uses full-sentence context for punctuation. Very short phrases may not receive correct punctuation. You can also use voice commands to insert punctuation manually.</p></div></details>
+      </div>
+      <div class="issue-section">
+        <h2>General issues</h2>
+        <details class="faq-item"><summary class="faq-question">Text appears in the wrong application</summary><div class="faq-answer"><p>SRC inserts text at your cursor position. Make sure the correct application window is focused and your cursor is in the right text field before you start dictating.</p></div></details>
+        <details class="faq-item"><summary class="faq-question">My subscription isn't being recognised</summary><div class="faq-answer"><p>Sign out of SRC and sign back in. If the issue persists, check that your subscription is active in your account and contact us for help.</p></div></details>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Still stuck?</h2>
+      <p class="muted" style="margin-bottom:24px">Get in touch and we'll sort it out.</p>
+      <a href="/contact" class="btn-primary">Contact us</a>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .issue-section{margin-bottom:40px}
+    .issue-section h2{font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
+  </style>
+</BaseLayout>

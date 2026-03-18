@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Pricing" description="Simple, affordable speech recognition plans. Start free, upgrade when you need more. No credit card required.">
+  <section class="section-pad">
+    <div class="container text-center">
+      <p class="eyebrow">PRICING</p>
+      <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:12px">Simple, affordable plans</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:48px;max-width:540px;margin-left:auto;margin-right:auto">Start free, upgrade when you need more. No credit card required for the free plan. Cancel anytime.</p>
+      <div class="pricing-grid">
+        {site.pricing.tiers.map(tier => (<div class={`pricing-card ${tier.highlighted ? 'pricing-highlighted' : ''}`}>{tier.badge && <span class="pricing-badge">{tier.badge}</span>}<h3>{tier.name}</h3><div class="pricing-price"><span class="pricing-amount">{tier.price}</span>{tier.period && <span class="pricing-period">{tier.period}</span>}</div><p class="muted" style="font-size:14px;margin-bottom:20px">{tier.description}</p><ul class="pricing-features">{tier.features.map(f => (<li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{f}</li>))}</ul><a href={tier.ctaUrl} class={tier.highlighted ? 'btn-primary pricing-cta' : 'btn-secondary pricing-cta'}>{tier.ctaText}</a></div>))}
+      </div>
+      <p class="muted" style="font-size:13px;margin-top:24px">{site.pricing.disclaimer}</p>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Feature comparison</h2>
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr><th></th><th>Starter</th><th>Personal</th><th class="highlighted-col">Professional</th><th>Medical</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monthly usage</td><td>20 min</td><td>Unlimited</td><td class="highlighted-col">Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Accuracy</td><td>High</td><td>High</td><td class="highlighted-col">Ultra</td><td>Ultra Medical</td></tr>
+            <tr><td>Works in any Windows app</td><td>Yes</td><td>Yes</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
+            <tr><td>Auto punctuation</td><td>Yes</td><td>Yes</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
+            <tr><td>Custom vocabulary</td><td>-</td><td>Yes</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
+            <tr><td>Text replacements</td><td>-</td><td>Yes</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
+            <tr><td>Templates</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
+            <tr><td>AI Modes</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Restricted</td></tr>
+            <tr><td>Screen OCR</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
+            <tr><td>Medical vocabularies</td><td>-</td><td>-</td><td class="highlighted-col">-</td><td>Yes</td></tr>
+            <tr><td>Dedicated support</td><td>-</td><td>Email</td><td class="highlighted-col">Email</td><td>Remote + training</td></tr>
+            <tr><td>Languages</td><td>57+</td><td>57+</td><td class="highlighted-col">57+</td><td>English only</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Pricing FAQ</h2>
+      <details class="faq-item"><summary class="faq-question">Is there really a free version?</summary><div class="faq-answer"><p>Yes. The Starter plan gives you 20 minutes of dictation per month with core features. No credit card required. No trial period - it stays free.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">Can I cancel anytime?</summary><div class="faq-answer"><p>Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">What currency are prices in?</summary><div class="faq-answer"><p>Prices are listed in USD and will convert to your local currency at checkout.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">Can I upgrade or downgrade later?</summary><div class="faq-answer"><p>Yes. You can upgrade at any time and your new plan starts immediately. Contact us to arrange a downgrade at your next billing cycle.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">Do you offer volume or enterprise pricing?</summary><div class="faq-answer"><p>Yes. Contact us for pricing on 5 or more licences. We offer volume discounts and can arrange invoicing for larger deployments.</p></div></details>
+    </div>
+  </section>
+  <section class="section-pad section-dark" style="padding:60px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Start dictating today</h2>
+      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
+      <a href={site.hero.ctaPrimaryUrl} class="btn-primary btn-lg">Download free</a>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}.pricing-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;transition:box-shadow 0.2s;text-align:left}.pricing-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.06)}.pricing-highlighted{border-color:var(--cta);box-shadow:0 6px 24px rgba(234,88,12,0.1)}.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cta);color:#fff;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;white-space:nowrap}.pricing-card h3{font-size:18px;margin-bottom:12px;font-weight:600}.pricing-amount{font-size:36px;font-weight:700;letter-spacing:-0.02em}.pricing-period{font-size:14px;color:var(--muted);margin-left:4px}.pricing-features{list-style:none;margin-bottom:24px}.pricing-features li{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:8px}.pricing-cta{width:100%;justify-content:center;text-align:center}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .comparison-table-wrap{overflow-x:auto}.comparison-table{width:100%;border-collapse:collapse;font-size:14px}.comparison-table th,.comparison-table td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--border)}.comparison-table th:first-child,.comparison-table td:first-child{text-align:left;font-weight:500}.comparison-table th{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em}.highlighted-col{background:var(--brand-lightest, #EEF2FF)}
+    .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
+    @media(max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}}
+  </style>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="FAQ" description="Frequently asked questions about Speech Recognition Cloud. Accuracy, privacy, pricing, and more.">
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Frequently asked questions</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Everything you need to know about Speech Recognition Cloud.</p>
+      {site.faq.map(item => (<details class="faq-item"><summary class="faq-question">{item.question}</summary><div class="faq-answer"><p>{item.answer}</p></div></details>))}
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Still have questions?</h2>
+      <p class="muted" style="margin-bottom:24px">We typically respond within one business day.</p>
+      <a href="/contact" class="btn-primary">Contact us</a>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
+  </style>
+</BaseLayout>

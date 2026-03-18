@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+---
+<BaseLayout title="Tips and best practices" description="Get the most out of Speech Recognition Cloud with microphone tips, voice commands, and workflow advice.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Tips and best practices</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Get more out of Speech Recognition Cloud with these practical tips.</p>
+      <div class="tip-section">
+        <h2>Microphone tips</h2>
+        <div class="tip"><h3>Use a USB headset or desktop mic</h3><p class="muted">Built-in laptop mics work, but a dedicated USB microphone or headset gives noticeably better accuracy, especially in noisy environments.</p></div>
+        <div class="tip"><h3>Position matters</h3><p class="muted">Keep your microphone 15-30cm from your mouth and slightly to the side. Avoid breathing directly into the mic.</p></div>
+        <div class="tip"><h3>Reduce background noise</h3><p class="muted">Close windows, turn off fans, and mute notifications. A directional microphone helps reject background noise.</p></div>
+      </div>
+      <div class="tip-section">
+        <h2>Dictation technique</h2>
+        <div class="tip"><h3>Speak in full sentences</h3><p class="muted">SRC uses full-sentence context for better accuracy. Speak naturally in complete thoughts rather than word by word.</p></div>
+        <div class="tip"><h3>Don't rush</h3><p class="muted">A steady, natural pace gives the AI more context to work with. You don't need to speak slowly, but avoid racing through text.</p></div>
+        <div class="tip"><h3>Let the AI handle punctuation</h3><p class="muted">SRC adds punctuation automatically. You don't need to say "comma" or "full stop" unless you want to override the AI.</p></div>
+      </div>
+      <div class="tip-section">
+        <h2>Productivity features</h2>
+        <div class="tip"><h3>Custom vocabulary</h3><p class="muted">Add specialised terms, names, and jargon through the settings panel. This is especially useful for medical, legal, and technical terminology.</p></div>
+        <div class="tip"><h3>Templates</h3><p class="muted">Create text templates that you can insert by voice command. Great for email signatures, standard paragraphs, and form responses. Available on Professional and Medical plans.</p></div>
+        <div class="tip"><h3>Voice commands</h3><p class="muted">Use built-in voice commands to control formatting, navigation, and editing. Say "new line", "new paragraph", or "select all" while dictating.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Want more help?</h2>
+      <p class="muted" style="margin-bottom:24px">Check our troubleshooting guide or contact support.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/support/troubleshooting" class="btn-secondary">Troubleshooting</a>
+        <a href="/contact" class="btn-primary">Contact us</a>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .tip-section{margin-bottom:48px}
+    .tip-section h2{font-size:22px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .tip{margin-bottom:24px}
+    .tip h3{font-size:16px;font-weight:600;margin-bottom:6px}
+    .tip .muted{font-size:15px;line-height:1.7}
+  </style>
+</BaseLayout>
