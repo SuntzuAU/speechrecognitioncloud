@@ -6,19 +6,23 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.0.2 - design refresh nav label and footer",
+  "_buildNote": "v1.1.0 - Palette J: indigo brand + orange CTA",
 
   "colours": {
-    "brandGreen": "#7BBA45",
-    "ctaGreen": "#15803D",
-    "ctaGreenHover": "#0D6E2D",
-    "text": "#1A1A2E",
-    "muted": "#6B7280",
+    "brand": "#4338CA",
+    "brandLight": "#818CF8",
+    "brandLightest": "#EEF2FF",
+    "cta": "#EA580C",
+    "ctaHover": "#C2410C",
+    "text": "#0F172A",
+    "muted": "#64748B",
     "background": "#FFFFFF",
-    "neutral": "#F5F7F3",
+    "neutral": "#F8FAFC",
+    "border": "#E2E8F0",
     "darkSection": "#0F172A",
     "darkSectionText": "#E2E8F0",
-    "darkSectionMuted": "#94A3B8"
+    "darkSectionMuted": "#94A3B8",
+    "darkSectionAccent": "#818CF8"
   },
 
   "nav": {
@@ -48,7 +52,7 @@
   "hero": {
     "headline": "Dictate into any app.",
     "headlineAccent": "Get documentation done faster.",
-    "subheadline": "Speech Recognition Cloud turns your voice into accurate, punctuated text in Word, Outlook, web forms, and any Windows application. Install in minutes. No voice training.",
+    "subheadline": "Turn your voice into accurate, punctuated text in Word, Outlook, web forms, and any Windows application. No voice training required.",
     "bullets": [
       "3x faster than typing. Full paragraphs appear instantly.",
       "AI handles punctuation and grammar automatically.",
