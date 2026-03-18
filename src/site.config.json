@@ -1,1 +1,202 @@
-{\n  "siteName": "Speech Recognition Cloud",\n  "siteUrl": "https://speechrecognition.cloud",\n  "siteType": "saas",\n  "siteId": "speechrecognitioncloud",\n  "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",\n  "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",\n  "googleAnalyticsId": "G-59XRLJXSS1",\n  "_buildNote": "v1.1.1 - rebuild for logo update",\n\n  "colours": {\n    "brand": "#4338CA",\n    "brandLight": "#818CF8",\n    "brandLightest": "#EEF2FF",\n    "cta": "#EA580C",\n    "ctaHover": "#C2410C",\n    "text": "#0F172A",\n    "muted": "#64748B",\n    "background": "#FFFFFF",\n    "neutral": "#F8FAFC",\n    "border": "#E2E8F0",\n    "darkSection": "#0F172A",\n    "darkSectionText": "#E2E8F0",\n    "darkSectionMuted": "#94A3B8",\n    "darkSectionAccent": "#818CF8"\n  },\n\n  "nav": {\n    "logo": "/logo.jpg",\n    "links": [\n      { "label": "Features", "href": "/#features" },\n      { "label": "Who it's for", "href": "#", "dropdown": true },\n      { "label": "Pricing", "href": "/pricing" },\n      { "label": "Support", "href": "/support" },\n      { "label": "Contact", "href": "/contact" }\n    ],\n    "useCases": [\n      { "label": "Healthcare professionals", "href": "/healthcare" },\n      { "label": "Legal professionals", "href": "/legal" },\n      { "label": "Business and professionals", "href": "/business" },\n      { "label": "Government", "href": "/government" },\n      { "label": "Teachers and educators", "href": "/teachers" },\n      { "label": "Journalists", "href": "/journalists" },\n      { "label": "Students and education", "href": "/students" },\n      { "label": "Writers and creators", "href": "/writers" },\n      { "label": "Accessibility and RSI", "href": "/accessibility" }\n    ],\n    "ctaText": "Download free",\n    "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe"\n  },\n\n  "hero": {\n    "headline": "Dictate into any app.",\n    "headlineAccent": "Get documentation done faster.",\n    "subheadline": "Turn your voice into accurate, punctuated text in Word, Outlook, web forms, and any Windows application. No voice training required.",\n    "bullets": [\n      "3x faster than typing. Full paragraphs appear instantly.",\n      "AI handles punctuation and grammar automatically.",\n      "Dictate at your cursor in any Windows application."\n    ],\n    "ctaPrimary": "Download free",\n    "ctaPrimaryUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",\n    "ctaSecondary": "Contact us",\n    "ctaSecondaryUrl": "/contact",\n    "microcopy": "No credit card required. Installs in 2 minutes. Windows 10/11.",\n    "trustLine": "Built by Voice Recognition Australia. 26 years in speech recognition."\n  },\n\n  "clarityStrip": {\n    "items": [\n      { "label": "Works in", "value": "Word, Outlook, Teams, Chrome, EMRs, and any Windows app" },\n      { "label": "Available on", "value": "Windows 10/11" },\n      { "label": "Setup", "value": "Install, choose mic, dictate anywhere" }\n    ]\n  },\n\n  "demo": {\n    "youtubeId": "vp0LFuRWdKI",\n    "caption": "Watch a real dictation in 60 seconds",\n    "ctaText": "Download free",\n    "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe"\n  },\n\n  "stats": [\n    { "value": "99%", "label": "Instantly accurate" },\n    { "value": "20+", "label": "Powerful AI commands" },\n    { "value": "3x", "label": "Faster than typing" },\n    { "value": "57+", "label": "Languages supported" }\n  ],\n\n  "testimonials": [\n    { "quote": "It just works! Literally anyone can benefit from this. Just speak.", "name": "Mark F.", "role": "Journalist", "headshot": "/headshots/mark-f.png" },\n    { "quote": "Compared to my old dictation system, this is wild! Instantly accurate with no voice training.", "name": "Tony J.", "role": "Small business owner", "headshot": "/headshots/tony-j.png" },\n    { "quote": "I don't know why I persisted with outdated expensive voice recognition software. This is the future.", "name": "Alex J.", "role": "Student", "headshot": "/headshots/alex-j.png" },\n    { "quote": "I can dictate into anything in Windows. It's that simple. And so much cheaper than the expensive medical dictation software I had.", "name": "Jamal G.", "role": "Doctor", "headshot": "/headshots/jamal-g.png" },\n    { "quote": "I used to struggle with expensive upgrades and complicated activation codes. SRC is simple, lightweight, and saves me hours every week.", "name": "Priya H.", "role": "Teacher", "headshot": "/headshots/priya-h.png" },\n    { "quote": "This is fast. I'm getting three times as much down as when I was typing. And no errors!", "name": "Nia K.", "role": "Administrator", "headshot": "/headshots/nia-k.png" },\n    { "quote": "I don't even write briefs anymore. It just gets it.", "name": "Priya H.", "role": "Product lead", "headshot": "/headshots/priya-h.png" }\n  ],\n\n  "useCaseCards": [\n    { "title": "Healthcare professionals", "description": "Medical dictation with specialised vocabulary. Works with any EMR at the cursor.", "href": "/healthcare", "icon": "medical" },\n    { "title": "Legal professionals", "description": "Draft contracts, briefs, and case notes by voice. Confidentiality controls built in.", "href": "/legal", "icon": "legal" },\n    { "title": "Business and professionals", "description": "Emails, reports, and documentation at the speed of speech.", "href": "/business", "icon": "business" },\n    { "title": "Government", "description": "Secure dictation for policy, correspondence, and procurement documentation.", "href": "/government", "icon": "government" },\n    { "title": "Students and education", "description": "Essays, notes, and assignments faster. Affordable plans for students.", "href": "/students", "icon": "student" },\n    { "title": "Teachers and educators", "description": "Lesson plans, reports, and correspondence without the typing.", "href": "/teachers", "icon": "teacher" },\n    { "title": "Journalists", "description": "Transcribe interviews, draft articles, and file stories faster.", "href": "/journalists", "icon": "journalist" },\n    { "title": "Writers and creators", "description": "Get ideas down at the speed of thought. Draft, revise, and create by voice.", "href": "/writers", "icon": "writer" },\n    { "title": "Accessibility and RSI", "description": "Reduce keyboard use. An alternative input method for anyone with motor limitations.", "href": "/accessibility", "icon": "accessibility" }\n  ],\n\n  "features": [\n    { "title": "Works where you work", "description": "Dictate into any Windows application at your cursor. Word, Outlook, Chrome, EMRs, web forms. Anywhere you can type." },\n    { "title": "No training needed", "description": "Install and start dictating immediately. No voice profiles, no calibration, no setup wizards." },\n    { "title": "AI punctuation and grammar", "description": "Speak naturally. The AI adds punctuation, capitalisation, and formatting automatically." },\n    { "title": "Custom vocabulary", "description": "Add specialised terms, names, and jargon. The system learns your terminology." },\n    { "title": "Templates and commands", "description": "20+ voice commands for productivity. Auto-insert text blocks with templates." },\n    { "title": "57 languages", "description": "Broad language support across Free, Personal, and Professional plans. Medical tier is English only." },\n    { "title": "Ultra Accuracy Mode", "description": "Enhanced accuracy processing for Professional and Medical tiers. When precision matters most." },\n    { "title": "Privacy controls", "description": "Audio is processed and not stored. Your data is never used for training. You stay in control." },\n    { "title": "Works with accents", "description": "Cloud AI handles accent variation well. Designed for real-world environments and diverse speakers." }\n  ],\n\n  "security": {\n    "headline": "How your data is handled",\n    "points": [\n      "Audio is processed in the cloud and immediately discarded after transcription",\n      "Transcribed text is delivered to your cursor and not stored on our servers",\n      "Your data is never used to train AI models",\n      "All connections are encrypted in transit",\n      "No audio recordings are saved at any point",\n      "Medical tier includes restricted AI modes for additional privacy"\n    ]\n  },\n\n  "pricing": {\n    "disclaimer": "Pricing accurate at time of publication. Prices in USD and will convert to your local currency at checkout. Cancel anytime.",\n    "tiers": [\n      { "name": "Starter", "price": "Free", "period": "", "description": "20 min/month. For students and occasional use.", "features": ["Free 20 min usage per month","Highly accurate","Works in any Windows program","Automatic punctuation"], "ctaText": "Free download", "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe", "highlighted": false },\n      { "name": "Personal / Educational", "price": "$79", "period": "per year", "description": "Affordable unlimited dictation for study, work, and personal productivity.", "features": ["Unlimited usage","Custom vocabulary","Text replacements","Highly accurate","Works in any Windows program","Automatic punctuation","Email support"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items[][id]=49054665048310&items[][quantity]=1&items[][selling_plan]=7323943158&return_to=/checkout", "highlighted": false },\n      { "name": "Professional", "price": "$159", "period": "per year", "description": "For professionals who demand accuracy, speed, and advanced features.", "features": ["Includes everything in Personal","ULTRA Accuracy Mode","Templates (auto input text)","AI Modes for productivity","Screen OCR (AI adds vocab)"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items[][id]=49057249329398&items[][quantity]=1&items[][selling_plan]=7323943158&return_to=/checkout", "highlighted": true, "badge": "Most popular" },\n      { "name": "Medical", "price": "$439", "period": "per year", "description": "Specialised for healthcare with medical vocabulary and ultra-high accuracy.", "features": ["Includes everything in Professional","Specialised medical vocabularies","ULTRA Accuracy Medical Mode","Restricted AI modes for privacy","Dedicated remote support","One-on-one training","English only"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items[][id]=49130584834294&items[][quantity]=1&items[][selling_plan]=7323943158&return_to=/checkout", "highlighted": false }\n    ]\n  },\n\n  "faq": [\n    { "question": "Why doesn't text appear while I'm speaking?", "answer": "Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context." },\n    { "question": "Do I need to train it or set anything up?", "answer": "No. Install and start dictating. No voice profiles, no calibration. The cloud AI handles accuracy from day one and improves automatically as models are updated." },\n    { "question": "Is my data secure?", "answer": "Yes. Audio is processed and immediately discarded. Transcribed text is delivered to your cursor and not stored on our servers. Your data is never used to train AI models. All connections are encrypted." },\n    { "question": "Can I use this on Mac or mobile?", "answer": "Not yet. Speech Recognition Cloud is currently Windows only (Windows 10/11). Subscribe to our newsletter for updates on future platform support." },\n    { "question": "What microphone do I need?", "answer": "Your built-in laptop microphone or webcam mic will work. For the best results, we recommend a quality USB desktop microphone or headset." },\n    { "question": "How many computers can I install it on?", "answer": "You can install Speech Recognition Cloud on multiple computers and move between them as needed. Each licence is for one person, so you can use it on different PCs (home, work, laptop), but only one device can be active at a time." },\n    { "question": "Does it work with accents?", "answer": "Yes. The cloud AI handles accent variation well and is designed for diverse speakers and real-world environments. For best results in noisy conditions, use a headset or directional microphone." },\n    { "question": "What does 'up to 20 minutes continuous' mean?", "answer": "Once you turn the microphone on, you can talk for up to 20 minutes in one uninterrupted session before you need to turn the mic off. During that whole period, SRC listens to full sentences and paragraphs for better context and cleaner text. You can turn the mic on and off whenever you want. This limit only affects extremely long continuous speeches. This does not affect your monthly usage. Paid plans give you unlimited dictation every month." },\n    { "question": "How many languages are supported?", "answer": "57 languages are currently supported on Free, Personal, and Professional plans, and the list is growing. The Medical tier is English only for now." },\n    { "question": "Is there a free version?", "answer": "Yes. The Free plan gives you 20 minutes of dictation per month with core features. No credit card required. AI modes, custom vocabulary, and Ultra Accuracy are available on higher tiers." },\n    { "question": "What is this? Is it a meeting transcription tool?", "answer": "No. Speech Recognition Cloud is cursor-based dictation software. You place your cursor where you want text to appear, speak, and the text is typed at the cursor. It is not a meeting recorder, not an AI note-taker, and not a transcription service. It replaces typing with voice." },\n    { "question": "Can I cancel anytime?", "answer": "Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts." }\n  ],\n\n  "form": {\n    "formId": "291",\n    "orUuid": "fd40840f-d10e-4768-b796-42bb0be77c64",\n    "actionUrl": "https://voicerecognition.activehosted.com/proc.php",\n    "submitText": "Contact us",\n    "cfields": { "18": "comments_about_your_needs" }\n  },\n\n  "footer": {\n    "tagline": "AI voice dictation software for Windows. Built by Voice Recognition Australia.",\n    "columns": [\n      { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },\n      { "heading": "Support", "links": [{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Troubleshooting", "href": "/support/troubleshooting" },{ "label": "AI modes", "href": "/support/ai-modes" }] },\n      { "heading": "Who it's for", "links": [{ "label": "Healthcare", "href": "/healthcare" },{ "label": "Legal", "href": "/legal" },{ "label": "Business", "href": "/business" },{ "label": "Government", "href": "/government" },{ "label": "Students", "href": "/students" }] },\n      { "heading": "Company", "links": [{ "label": "Contact", "href": "/contact" },{ "label": "Privacy and data", "href": "/privacy" },{ "label": "Terms of service", "href": "/terms" }] }\n    ],\n    "social": [\n      { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61584787324455" },\n      { "platform": "LinkedIn", "url": "https://www.linkedin.com/company/speech-recognition-cloud/" }\n    ],\n    "copyright": "2025 Voice Recognition Australia. All rights reserved."\n  },\n\n  "download": {\n    "url": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",\n    "platform": "Windows 10/11"\n  },\n\n  "structuredData": {\n    "type": "SoftwareApplication",\n    "name": "Speech Recognition Cloud",\n    "applicationCategory": "BusinessApplication",\n    "operatingSystem": "Windows",\n    "offers": [\n      { "price": "0", "priceCurrency": "USD", "description": "Starter - Free" },\n      { "price": "79", "priceCurrency": "USD", "description": "Personal/Educational - Annual" },\n      { "price": "159", "priceCurrency": "USD", "description": "Professional - Annual" },\n      { "price": "439", "priceCurrency": "USD", "description": "Medical - Annual" }\n    ]\n  }\n}\n
+{
+  "siteName": "Speech Recognition Cloud",
+  "siteUrl": "https://speechrecognition.cloud",
+  "siteType": "saas",
+  "siteId": "speechrecognitioncloud",
+  "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
+  "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
+  "googleAnalyticsId": "G-59XRLJXSS1",
+  "_buildNote": "v1.1.2 - fix corrupted JSON from previous commit",
+
+  "colours": {
+    "brand": "#4338CA",
+    "brandLight": "#818CF8",
+    "brandLightest": "#EEF2FF",
+    "cta": "#EA580C",
+    "ctaHover": "#C2410C",
+    "text": "#0F172A",
+    "muted": "#64748B",
+    "background": "#FFFFFF",
+    "neutral": "#F8FAFC",
+    "border": "#E2E8F0",
+    "darkSection": "#0F172A",
+    "darkSectionText": "#E2E8F0",
+    "darkSectionMuted": "#94A3B8",
+    "darkSectionAccent": "#818CF8"
+  },
+
+  "nav": {
+    "logo": "/logo.jpg",
+    "links": [
+      { "label": "Features", "href": "/#features" },
+      { "label": "Who it's for", "href": "#", "dropdown": true },
+      { "label": "Pricing", "href": "/pricing" },
+      { "label": "Support", "href": "/support" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "useCases": [
+      { "label": "Healthcare professionals", "href": "/healthcare" },
+      { "label": "Legal professionals", "href": "/legal" },
+      { "label": "Business and professionals", "href": "/business" },
+      { "label": "Government", "href": "/government" },
+      { "label": "Teachers and educators", "href": "/teachers" },
+      { "label": "Journalists", "href": "/journalists" },
+      { "label": "Students and education", "href": "/students" },
+      { "label": "Writers and creators", "href": "/writers" },
+      { "label": "Accessibility and RSI", "href": "/accessibility" }
+    ],
+    "ctaText": "Download free",
+    "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe"
+  },
+
+  "hero": {
+    "headline": "Dictate into any app.",
+    "headlineAccent": "Get documentation done faster.",
+    "subheadline": "Turn your voice into accurate, punctuated text in Word, Outlook, web forms, and any Windows application. No voice training required.",
+    "bullets": [
+      "3x faster than typing. Full paragraphs appear instantly.",
+      "AI handles punctuation and grammar automatically.",
+      "Dictate at your cursor in any Windows application."
+    ],
+    "ctaPrimary": "Download free",
+    "ctaPrimaryUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",
+    "ctaSecondary": "Contact us",
+    "ctaSecondaryUrl": "/contact",
+    "microcopy": "No credit card required. Installs in 2 minutes. Windows 10/11.",
+    "trustLine": "Built by Voice Recognition Australia. 26 years in speech recognition."
+  },
+
+  "clarityStrip": {
+    "items": [
+      { "label": "Works in", "value": "Word, Outlook, Teams, Chrome, EMRs, and any Windows app" },
+      { "label": "Available on", "value": "Windows 10/11" },
+      { "label": "Setup", "value": "Install, choose mic, dictate anywhere" }
+    ]
+  },
+
+  "demo": {
+    "youtubeId": "vp0LFuRWdKI",
+    "caption": "Watch a real dictation in 60 seconds",
+    "ctaText": "Download free",
+    "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe"
+  },
+
+  "stats": [
+    { "value": "99%", "label": "Instantly accurate" },
+    { "value": "20+", "label": "Powerful AI commands" },
+    { "value": "3x", "label": "Faster than typing" },
+    { "value": "57+", "label": "Languages supported" }
+  ],
+
+  "testimonials": [
+    { "quote": "It just works! Literally anyone can benefit from this. Just speak.", "name": "Mark F.", "role": "Journalist", "headshot": "/headshots/mark-f.png" },
+    { "quote": "Compared to my old dictation system, this is wild! Instantly accurate with no voice training.", "name": "Tony J.", "role": "Small business owner", "headshot": "/headshots/tony-j.png" },
+    { "quote": "I don't know why I persisted with outdated expensive voice recognition software. This is the future.", "name": "Alex J.", "role": "Student", "headshot": "/headshots/alex-j.png" },
+    { "quote": "I can dictate into anything in Windows. It's that simple. And so much cheaper than the expensive medical dictation software I had.", "name": "Jamal G.", "role": "Doctor", "headshot": "/headshots/jamal-g.png" },
+    { "quote": "I used to struggle with expensive upgrades and complicated activation codes. SRC is simple, lightweight, and saves me hours every week.", "name": "Priya H.", "role": "Teacher", "headshot": "/headshots/priya-h.png" },
+    { "quote": "This is fast. I'm getting three times as much down as when I was typing. And no errors!", "name": "Nia K.", "role": "Administrator", "headshot": "/headshots/nia-k.png" },
+    { "quote": "I don't even write briefs anymore. It just gets it.", "name": "Priya H.", "role": "Product lead", "headshot": "/headshots/priya-h.png" }
+  ],
+
+  "useCaseCards": [
+    { "title": "Healthcare professionals", "description": "Medical dictation with specialised vocabulary. Works with any EMR at the cursor.", "href": "/healthcare", "icon": "medical" },
+    { "title": "Legal professionals", "description": "Draft contracts, briefs, and case notes by voice. Confidentiality controls built in.", "href": "/legal", "icon": "legal" },
+    { "title": "Business and professionals", "description": "Emails, reports, and documentation at the speed of speech.", "href": "/business", "icon": "business" },
+    { "title": "Government", "description": "Secure dictation for policy, correspondence, and procurement documentation.", "href": "/government", "icon": "government" },
+    { "title": "Students and education", "description": "Essays, notes, and assignments faster. Affordable plans for students.", "href": "/students", "icon": "student" },
+    { "title": "Teachers and educators", "description": "Lesson plans, reports, and correspondence without the typing.", "href": "/teachers", "icon": "teacher" },
+    { "title": "Journalists", "description": "Transcribe interviews, draft articles, and file stories faster.", "href": "/journalists", "icon": "journalist" },
+    { "title": "Writers and creators", "description": "Get ideas down at the speed of thought. Draft, revise, and create by voice.", "href": "/writers", "icon": "writer" },
+    { "title": "Accessibility and RSI", "description": "Reduce keyboard use. An alternative input method for anyone with motor limitations.", "href": "/accessibility", "icon": "accessibility" }
+  ],
+
+  "features": [
+    { "title": "Works where you work", "description": "Dictate into any Windows application at your cursor. Word, Outlook, Chrome, EMRs, web forms. Anywhere you can type." },
+    { "title": "No training needed", "description": "Install and start dictating immediately. No voice profiles, no calibration, no setup wizards." },
+    { "title": "AI punctuation and grammar", "description": "Speak naturally. The AI adds punctuation, capitalisation, and formatting automatically." },
+    { "title": "Custom vocabulary", "description": "Add specialised terms, names, and jargon. The system learns your terminology." },
+    { "title": "Templates and commands", "description": "20+ voice commands for productivity. Auto-insert text blocks with templates." },
+    { "title": "57 languages", "description": "Broad language support across Free, Personal, and Professional plans. Medical tier is English only." },
+    { "title": "Ultra Accuracy Mode", "description": "Enhanced accuracy processing for Professional and Medical tiers. When precision matters most." },
+    { "title": "Privacy controls", "description": "Audio is processed and not stored. Your data is never used for training. You stay in control." },
+    { "title": "Works with accents", "description": "Cloud AI handles accent variation well. Designed for real-world environments and diverse speakers." }
+  ],
+
+  "security": {
+    "headline": "How your data is handled",
+    "points": [
+      "Audio is processed in the cloud and immediately discarded after transcription",
+      "Transcribed text is delivered to your cursor and not stored on our servers",
+      "Your data is never used to train AI models",
+      "All connections are encrypted in transit",
+      "No audio recordings are saved at any point",
+      "Medical tier includes restricted AI modes for additional privacy"
+    ]
+  },
+
+  "pricing": {
+    "disclaimer": "Pricing accurate at time of publication. Prices in USD and will convert to your local currency at checkout. Cancel anytime.",
+    "tiers": [
+      { "name": "Starter", "price": "Free", "period": "", "description": "20 min/month. For students and occasional use.", "features": ["Free 20 min usage per month","Highly accurate","Works in any Windows program","Automatic punctuation"], "ctaText": "Free download", "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe", "highlighted": false },
+      { "name": "Personal / Educational", "price": "$79", "period": "per year", "description": "Affordable unlimited dictation for study, work, and personal productivity.", "features": ["Unlimited usage","Custom vocabulary","Text replacements","Highly accurate","Works in any Windows program","Automatic punctuation","Email support"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items[][id]=49054665048310&items[][quantity]=1&items[][selling_plan]=7323943158&return_to=/checkout", "highlighted": false },
+      { "name": "Professional", "price": "$159", "period": "per year", "description": "For professionals who demand accuracy, speed, and advanced features.", "features": ["Includes everything in Personal","ULTRA Accuracy Mode","Templates (auto input text)","AI Modes for productivity","Screen OCR (AI adds vocab)"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items[][id]=49057249329398&items[][quantity]=1&items[][selling_plan]=7323943158&return_to=/checkout", "highlighted": true, "badge": "Most popular" },
+      { "name": "Medical", "price": "$439", "period": "per year", "description": "Specialised for healthcare with medical vocabulary and ultra-high accuracy.", "features": ["Includes everything in Professional","Specialised medical vocabularies","ULTRA Accuracy Medical Mode","Restricted AI modes for privacy","Dedicated remote support","One-on-one training","English only"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items[][id]=49130584834294&items[][quantity]=1&items[][selling_plan]=7323943158&return_to=/checkout", "highlighted": false }
+    ]
+  },
+
+  "faq": [
+    { "question": "Why doesn't text appear while I'm speaking?", "answer": "Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context." },
+    { "question": "Do I need to train it or set anything up?", "answer": "No. Install and start dictating. No voice profiles, no calibration. The cloud AI handles accuracy from day one and improves automatically as models are updated." },
+    { "question": "Is my data secure?", "answer": "Yes. Audio is processed and immediately discarded. Transcribed text is delivered to your cursor and not stored on our servers. Your data is never used to train AI models. All connections are encrypted." },
+    { "question": "Can I use this on Mac or mobile?", "answer": "Not yet. Speech Recognition Cloud is currently Windows only (Windows 10/11). Subscribe to our newsletter for updates on future platform support." },
+    { "question": "What microphone do I need?", "answer": "Your built-in laptop microphone or webcam mic will work. For the best results, we recommend a quality USB desktop microphone or headset." },
+    { "question": "How many computers can I install it on?", "answer": "You can install Speech Recognition Cloud on multiple computers and move between them as needed. Each licence is for one person, so you can use it on different PCs (home, work, laptop), but only one device can be active at a time." },
+    { "question": "Does it work with accents?", "answer": "Yes. The cloud AI handles accent variation well and is designed for diverse speakers and real-world environments. For best results in noisy conditions, use a headset or directional microphone." },
+    { "question": "What does 'up to 20 minutes continuous' mean?", "answer": "Once you turn the microphone on, you can talk for up to 20 minutes in one uninterrupted session before you need to turn the mic off. During that whole period, SRC listens to full sentences and paragraphs for better context and cleaner text. You can turn the mic on and off whenever you want. This limit only affects extremely long continuous speeches. This does not affect your monthly usage. Paid plans give you unlimited dictation every month." },
+    { "question": "How many languages are supported?", "answer": "57 languages are currently supported on Free, Personal, and Professional plans, and the list is growing. The Medical tier is English only for now." },
+    { "question": "Is there a free version?", "answer": "Yes. The Free plan gives you 20 minutes of dictation per month with core features. No credit card required. AI modes, custom vocabulary, and Ultra Accuracy are available on higher tiers." },
+    { "question": "What is this? Is it a meeting transcription tool?", "answer": "No. Speech Recognition Cloud is cursor-based dictation software. You place your cursor where you want text to appear, speak, and the text is typed at the cursor. It is not a meeting recorder, not an AI note-taker, and not a transcription service. It replaces typing with voice." },
+    { "question": "Can I cancel anytime?", "answer": "Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts." }
+  ],
+
+  "form": {
+    "formId": "291",
+    "orUuid": "fd40840f-d10e-4768-b796-42bb0be77c64",
+    "actionUrl": "https://voicerecognition.activehosted.com/proc.php",
+    "submitText": "Contact us",
+    "cfields": { "18": "comments_about_your_needs" }
+  },
+
+  "footer": {
+    "tagline": "AI voice dictation software for Windows. Built by Voice Recognition Australia.",
+    "columns": [
+      { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },
+      { "heading": "Support", "links": [{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Troubleshooting", "href": "/support/troubleshooting" },{ "label": "AI modes", "href": "/support/ai-modes" }] },
+      { "heading": "Who it's for", "links": [{ "label": "Healthcare", "href": "/healthcare" },{ "label": "Legal", "href": "/legal" },{ "label": "Business", "href": "/business" },{ "label": "Government", "href": "/government" },{ "label": "Students", "href": "/students" }] },
+      { "heading": "Company", "links": [{ "label": "Contact", "href": "/contact" },{ "label": "Privacy and data", "href": "/privacy" },{ "label": "Terms of service", "href": "/terms" }] }
+    ],
+    "social": [
+      { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61584787324455" },
+      { "platform": "LinkedIn", "url": "https://www.linkedin.com/company/speech-recognition-cloud/" }
+    ],
+    "copyright": "2025 Voice Recognition Australia. All rights reserved."
+  },
+
+  "download": {
+    "url": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",
+    "platform": "Windows 10/11"
+  },
+
+  "structuredData": {
+    "type": "SoftwareApplication",
+    "name": "Speech Recognition Cloud",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows",
+    "offers": [
+      { "price": "0", "priceCurrency": "USD", "description": "Starter - Free" },
+      { "price": "79", "priceCurrency": "USD", "description": "Personal/Educational - Annual" },
+      { "price": "159", "priceCurrency": "USD", "description": "Professional - Annual" },
+      { "price": "439", "priceCurrency": "USD", "description": "Medical - Annual" }
+    ]
+  }
+}
