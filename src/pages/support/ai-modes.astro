@@ -2,34 +2,103 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 ---
-<BaseLayout title="AI modes" description="Learn how to use AI modes in Speech Recognition Cloud for rewriting, summarising, and productivity.">
+<BaseLayout title="AI modes" description="Write, Rewrite, Answer, Reply, and Run Command. AI-powered voice modes in Speech Recognition Cloud.">
   <section class="section-pad">
     <div class="container" style="max-width:760px">
       <p class="eyebrow">SUPPORT</p>
       <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">AI modes</h1>
-      <p class="muted" style="font-size:16px;margin-bottom:40px">AI modes let you rewrite, improve, and transform your dictated text using voice commands. Available on Professional and Medical plans.</p>
-      <div class="mode-section">
-        <h2>What are AI modes?</h2>
-        <p class="muted" style="margin-bottom:24px">After dictating text, you can use AI modes to transform it. Speak a command and SRC will rewrite, summarise, expand, or reformat your text using AI. This saves editing time and helps produce polished output directly from your voice.</p>
+      <p class="muted" style="font-size:16px;margin-bottom:16px">AI modes let you do more than just transcribe. Speak a trigger phrase at the start of your dictation and Speech Recognition Cloud will use AI to write, rewrite, answer questions, draft replies, or launch applications.</p>
+      <p class="muted" style="font-size:14px;margin-bottom:40px">AI modes are available on Professional and Medical plans. All modes can be individually enabled or disabled in Settings. Medical plan uses restricted AI modes for privacy.</p>
+
+      <div class="mode-overview">
+        <h2>Overview</h2>
+        <table class="ref-table"><thead><tr><th>Mode</th><th>Trigger phrase</th><th>What it does</th></tr></thead><tbody>
+          <tr><td>Write</td><td>"Write..."</td><td>Generate polished text from your instructions</td></tr>
+          <tr><td>Rewrite</td><td>"Rewrite..."</td><td>Rewrite selected text based on your instructions</td></tr>
+          <tr><td>Answer</td><td>"Answer..."</td><td>Answer any question using AI</td></tr>
+          <tr><td>Reply</td><td>"Reply..."</td><td>Generate a reply to a copied message</td></tr>
+          <tr><td>Run Command</td><td>"Open..."</td><td>Launch applications, websites, or searches</td></tr>
+        </tbody></table>
       </div>
-      <div class="mode-section">
-        <h2>Available modes</h2>
-        <div class="mode-card"><h3>Rewrite</h3><p class="muted">Rephrase your dictated text for clarity, tone, or style. Useful for emails, reports, and professional correspondence.</p></div>
-        <div class="mode-card"><h3>Summarise</h3><p class="muted">Condense longer dictated text into a concise summary. Useful for meeting notes, research summaries, and briefings.</p></div>
-        <div class="mode-card"><h3>Expand</h3><p class="muted">Take brief notes and expand them into fuller text. Useful for turning bullet points into paragraphs.</p></div>
-        <div class="mode-card"><h3>Formalise</h3><p class="muted">Convert casual dictation into formal, professional language. Useful for legal correspondence and official documents.</p></div>
-        <div class="mode-card"><h3>Simplify</h3><p class="muted">Rewrite complex text in simpler, more accessible language. Useful for patient communications and public-facing documents.</p></div>
+
+      <div class="mode-detail">
+        <h2>Write mode</h2>
+        <p class="muted" style="margin-bottom:16px">Say "Write..." followed by your instructions. Speech Recognition Cloud generates polished text and types it directly at your cursor.</p>
+        <div class="example-box">
+          <p class="example-label">Example</p>
+          <p class="muted">You say: "Write an email to Sarah about rescheduling our meeting to next Tuesday"</p>
+          <p style="font-size:14px;margin-top:8px">Output: A professionally written email ready to send.</p>
+        </div>
+        <div class="example-box">
+          <p class="example-label">Example with clipboard</p>
+          <p class="muted">You copy some meeting notes, then say: "Write a summary email based on my clipboard"</p>
+          <p style="font-size:14px;margin-top:8px">Output: A formatted email summarising the meeting notes.</p>
+        </div>
+        <p class="muted" style="margin-top:16px;font-size:14px">To include clipboard or selected text as context, mention "clipboard" or "selection" in your prompt.</p>
       </div>
-      <div class="mode-section">
+
+      <div class="mode-detail">
+        <h2>Rewrite mode</h2>
+        <p class="muted" style="margin-bottom:16px">Select text in any application, then say "Rewrite..." followed by your instructions. SRC rewrites the selected text according to your guidance.</p>
+        <div class="example-box">
+          <p class="example-label">Example</p>
+          <p class="muted">You select: "the meeting is at 3pm tomorrow"</p>
+          <p class="muted">You say: "Rewrite this more formally"</p>
+          <p style="font-size:14px;margin-top:8px">Output: "The meeting has been scheduled for 3:00 PM tomorrow."</p>
+        </div>
+        <div class="example-box">
+          <p class="example-label">More examples</p>
+          <p class="muted">"Rewrite to be shorter" - condenses text</p>
+          <p class="muted">"Rewrite for a non-technical audience" - simplifies language</p>
+          <p class="muted">"Rewrite in a more friendly tone" - adjusts tone</p>
+        </div>
+      </div>
+
+      <div class="mode-detail">
+        <h2>Answer mode</h2>
+        <p class="muted" style="margin-bottom:16px">Say "Answer..." followed by any question. SRC provides an AI-generated answer.</p>
+        <div class="example-box">
+          <p class="example-label">Examples</p>
+          <p class="muted">"Answer what is 15% of 250" - quick calculations</p>
+          <p class="muted">"Answer what does this clipboard error mean" - explain copied content (mention "clipboard" to include it)</p>
+          <p class="muted">"Answer what does this selection do" - explain selected code or text (mention "selection" to include it)</p>
+        </div>
+      </div>
+
+      <div class="mode-detail">
+        <h2>Reply mode</h2>
+        <p class="muted" style="margin-bottom:16px">Copy a message you want to reply to, then say "Reply..." followed by your response instructions. SRC generates a professional reply typed at your cursor. Your clipboard is automatically included.</p>
+        <div class="example-box">
+          <p class="example-label">Examples</p>
+          <p class="muted">Copy an email, then say: "Reply that the project is on track and will be done next week"</p>
+          <p class="muted">Copy a Slack message, then say: "Reply yes sounds good let's do it"</p>
+          <p class="muted">Copy a customer complaint, then say: "Reply apologise and offer a resolution"</p>
+        </div>
+      </div>
+
+      <div class="mode-detail">
+        <h2>Run Command mode</h2>
+        <p class="muted" style="margin-bottom:16px">Say "Open..." followed by what you want to launch. SRC opens applications, websites, or performs searches.</p>
+        <div class="example-box">
+          <p class="example-label">Examples</p>
+          <p class="muted">"Open YouTube" - opens YouTube in your browser</p>
+          <p class="muted">"Open calculator" - launches Windows Calculator</p>
+          <p class="muted">"Open Google Maps and show me Italian restaurants near me" - opens a pre-filled search</p>
+          <p class="muted">"Open Amazon and search for wireless headphones" - opens Amazon with the search ready</p>
+        </div>
+      </div>
+
+      <div class="mode-detail">
         <h2>Medical plan restrictions</h2>
-        <p class="muted">The Medical plan includes restricted AI modes designed for privacy. AI processing is limited to approved transformations only, and patient data handling follows stricter controls. This is intended for clinical environments where data governance is a requirement.</p>
+        <p class="muted">The Medical plan includes restricted AI modes designed for clinical privacy. AI processing is limited to approved transformations only, and data handling follows stricter controls. This is intended for environments where data governance is a requirement. If you have specific compliance questions, <a href="/contact" style="color:var(--brand);font-weight:600">contact us</a>.</p>
       </div>
+
     </div>
   </section>
   <section class="section-pad section-neutral">
     <div class="container text-center" style="max-width:600px">
       <h2 style="margin-bottom:12px">Ready to try AI modes?</h2>
-      <p class="muted" style="margin-bottom:24px">AI modes are available on Professional and Medical plans.</p>
+      <p class="muted" style="margin-bottom:24px">AI modes are available on Professional ($159/year) and Medical ($439/year) plans.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <a href="/pricing" class="btn-secondary">View plans</a>
         <a href={site.download.url} class="btn-primary">Download free</a>
@@ -38,10 +107,16 @@ import site from '../../site.config.json';
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .mode-section{margin-bottom:48px}
-    .mode-section h2{font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
-    .mode-card{background:var(--neutral);border-radius:12px;padding:20px 24px;margin-bottom:12px}
-    .mode-card h3{font-size:16px;font-weight:600;margin-bottom:6px}
-    .mode-card .muted{font-size:14px;line-height:1.7}
+    .mode-overview{margin-bottom:48px}
+    .mode-overview h2{font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .ref-table{width:100%;border-collapse:collapse;font-size:14px}
+    .ref-table th{text-align:left;font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;padding:10px 12px;border-bottom:2px solid var(--border)}
+    .ref-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+    .ref-table td:first-child{font-weight:600;white-space:nowrap}
+    .mode-detail{margin-bottom:48px}
+    .mode-detail h2{font-size:22px;font-weight:700;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .example-box{background:var(--neutral);border-radius:10px;padding:16px 20px;margin-bottom:12px}
+    .example-label{font-size:13px;font-weight:600;margin-bottom:8px;color:var(--brand)}
+    .example-box .muted{font-size:14px;line-height:1.6;margin-bottom:4px}
   </style>
 </BaseLayout>
