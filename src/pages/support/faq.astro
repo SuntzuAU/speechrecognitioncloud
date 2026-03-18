@@ -2,24 +2,92 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 ---
-<BaseLayout title="FAQ" description="Frequently asked questions about Speech Recognition Cloud. Accuracy, privacy, pricing, and more.">
+<BaseLayout title="FAQ" description="Frequently asked questions about Speech Recognition Cloud. Accuracy, privacy, pricing, languages, and more.">
   <section class="section-pad">
     <div class="container" style="max-width:800px">
       <p class="eyebrow">SUPPORT</p>
       <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Frequently asked questions</h1>
-      <p class="muted" style="font-size:16px;margin-bottom:40px">Everything you need to know about Speech Recognition Cloud.</p>
-      {site.faq.map(item => (<details class="faq-item"><summary class="faq-question">{item.question}</summary><div class="faq-answer"><p>{item.answer}</p></div></details>))}
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Got questions? We have answered the most common ones to help you get started and feel confident about using Speech Recognition Cloud.</p>
+
+      <div class="faq-category">
+        <h2>General</h2>
+
+        <details class="faq-item"><summary class="faq-question">What is Speech Recognition Cloud?</summary><div class="faq-answer"><p>Speech Recognition Cloud is cursor-based dictation software for Windows. You place your cursor where you want text to appear, speak, and the text is typed at the cursor with automatic punctuation and grammar. It is not a meeting recorder, not an AI note-taker, and not a transcription service. It replaces typing with voice.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">How do I start dictating?</summary><div class="faq-answer"><p>Download and install SRC, then press CapsLock (or your configured hotkey) to start recording. Speak naturally, then press the hotkey again to stop. Your text appears at your cursor, fully punctuated. See our <a href="/support/getting-started" style="color:var(--brand);font-weight:600">getting started guide</a> for a full walkthrough.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Why doesn't text appear while I'm speaking?</summary><div class="faq-answer"><p>Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Can I use this in any application?</summary><div class="faq-answer"><p>Yes. Speech Recognition Cloud types the transcribed text at your cursor using a virtual keyboard, so it works in any application where you can type. Word, Outlook, Chrome, web forms, EMRs, messaging apps, and any other Windows application.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Do I need to train it or set anything up?</summary><div class="faq-answer"><p>No. Install and start dictating. No voice profiles, no calibration. The cloud AI handles accuracy from day one and improves automatically as models are updated.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">How many languages are supported?</summary><div class="faq-answer"><p>57 languages are currently supported on Free, Personal, and Professional plans, and the list is growing. The Medical tier is English only for now.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Can I use this on Mac or mobile?</summary><div class="faq-answer"><p>Not yet. Speech Recognition Cloud is currently Windows only (Windows 10/11). Subscribe to our newsletter for updates on future platform support.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Does it work offline?</summary><div class="faq-answer"><p>Speech Recognition Cloud requires an internet connection as the speech recognition is processed in the cloud for optimal accuracy. This allows us to use the most advanced AI models without putting strain on your computer.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Does it work with accents?</summary><div class="faq-answer"><p>Yes. The cloud AI handles accent variation well and is designed for diverse speakers and real-world environments. For best results in noisy conditions, use a headset or directional microphone.</p></div></details>
+      </div>
+
+      <div class="faq-category">
+        <h2>Subscription and pricing</h2>
+
+        <details class="faq-item"><summary class="faq-question">Is there a free version?</summary><div class="faq-answer"><p>Yes. The Free plan gives you 20 minutes of dictation per month with core features. No credit card required. No trial period - it stays free. AI modes, custom vocabulary, and Ultra Accuracy are available on higher tiers.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">What subscription tiers are available?</summary><div class="faq-answer"><p>Speech Recognition Cloud offers four tiers: Starter (free, 20 min/month), Personal/Educational ($79/year, unlimited), Professional ($159/year, Ultra Accuracy + AI Modes), and Medical ($439/year, medical vocabularies + dedicated support). See our <a href="/pricing" style="color:var(--brand);font-weight:600">pricing page</a> for full details.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Can I cancel anytime?</summary><div class="faq-answer"><p>Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">How many computers can I install it on?</summary><div class="faq-answer"><p>You can install Speech Recognition Cloud on multiple computers and move between them as needed. Each licence is for one person, so you can use it on different PCs (home, work, laptop), but only one device can be active at a time.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Do you offer monthly billing?</summary><div class="faq-answer"><p>At this time, Speech Recognition Cloud offers annual subscriptions only. We have a generous free tier so you can try the application before committing, and the Personal plan is already excellent value for unlimited dictation.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">How do I download an invoice?</summary><div class="faq-answer"><p>Open Speech Recognition Cloud, go to Settings > General, and click "Manage Subscription". Under Invoice History you can view and download all your invoices as PDF.</p></div></details>
+      </div>
+
+      <div class="faq-category">
+        <h2>Technical</h2>
+
+        <details class="faq-item"><summary class="faq-question">What are the system requirements?</summary><div class="faq-answer"><p>Windows 10 or Windows 11, a working microphone, an internet connection, and minimal disk space (approximately 300MB).</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">What microphone do I need?</summary><div class="faq-answer"><p>Your built-in laptop microphone or webcam mic will work. For the best results, we recommend a quality USB desktop microphone or headset. See our <a href="/support/tips" style="color:var(--brand);font-weight:600">tips page</a> for microphone advice.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Is my data secure?</summary><div class="faq-answer"><p>Yes. Audio is processed and immediately discarded. Transcribed text is delivered to your cursor and not stored on our servers. Your data is never used to train AI models. All connections are encrypted. See our <a href="/privacy" style="color:var(--brand);font-weight:600">privacy page</a> for full details.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Where is my data stored?</summary><div class="faq-answer"><p>Your transcription history is stored only on your local computer. Speech Recognition Cloud does not store your audio or transcripts on our servers. See our <a href="/privacy" style="color:var(--brand);font-weight:600">privacy policy</a> for complete details.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">How does it update?</summary><div class="faq-answer"><p>Speech Recognition Cloud checks for updates automatically. When a new version is available, you will be notified and can install the update with one click.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">What does "up to 20 minutes continuous" mean?</summary><div class="faq-answer"><p>Once you turn the microphone on, you can talk for up to 20 minutes in one uninterrupted session before you need to turn the mic off. During that whole period, SRC listens to full sentences and paragraphs for better context and cleaner text. You can turn the mic on and off whenever you want. This limit only affects extremely long continuous speeches. This does not affect your monthly usage. Paid plans give you unlimited dictation every month.</p></div></details>
+      </div>
+
+      <div class="faq-category">
+        <h2>Features</h2>
+
+        <details class="faq-item"><summary class="faq-question">What are AI modes?</summary><div class="faq-answer"><p>AI modes are optional features that use AI to enhance your dictation. Say "Write an email about..." to compose polished text, "Rewrite this more formally" to edit selected text, or "Open YouTube" to launch applications. Learn more on our <a href="/support/ai-modes" style="color:var(--brand);font-weight:600">AI modes page</a>.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Can I customise the activation hotkey?</summary><div class="faq-answer"><p>Yes. You can customise the toggle key, hold-to-record modifier keys, and even enable mouse button activation in Settings. See our <a href="/support/settings" style="color:var(--brand);font-weight:600">settings guide</a> for details.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">What is the custom vocabulary feature?</summary><div class="faq-answer"><p>Custom vocabulary lets you add specialised words, names, technical terms, and context to improve transcription accuracy for your specific terminology. Configure it in Settings. Available on Personal plans and above.</p></div></details>
+
+        <details class="faq-item"><summary class="faq-question">Can it translate my speech?</summary><div class="faq-answer"><p>Speech Recognition Cloud transcribes speech in the language being spoken. It does not translate between languages directly. However, you can use the AI Rewrite mode to translate text after dictation.</p></div></details>
+      </div>
+
     </div>
   </section>
   <section class="section-pad section-neutral">
     <div class="container text-center" style="max-width:600px">
       <h2 style="margin-bottom:12px">Still have questions?</h2>
-      <p class="muted" style="margin-bottom:24px">We typically respond within one business day.</p>
+      <p class="muted" style="margin-bottom:24px">Can't find what you're looking for? We typically respond within one business day.</p>
       <a href="/contact" class="btn-primary">Contact us</a>
     </div>
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .faq-category{margin-bottom:48px}
+    .faq-category h2{font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
     .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
   </style>
 </BaseLayout>
