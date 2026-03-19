@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 ---
 <BaseLayout title="Government" description="Secure dictation for policy, correspondence, and procurement documentation. Speech Recognition Cloud for government.">
   <section class="section-pad">
@@ -8,30 +9,33 @@ import site from '../site.config.json';
       <div>
         <p class="eyebrow">GOVERNMENT</p>
         <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Secure dictation for government professionals</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate policy documents, ministerial correspondence, procurement documentation, and briefings. Works with any Windows application. Audio is not stored. Data is not used for training.</p>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate policy documents, correspondence, procurement briefs, and reports directly into any Windows application. Privacy controls built in.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
+  <section style="padding:0">
+    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-government-officer-dictation-v2-b10d239e.jpg`} alt="Male government officer dictating correspondence in an Australian government office" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
+  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for government requirements</h2>
+      <h2 class="text-center" style="margin-bottom:40px">Built for government workflows</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Data handling transparency</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for AI model training. Clear data handling you can document for compliance.</p></div>
-        <div class="benefit"><h3>Works with existing systems</h3><p class="muted">Dictate at the cursor in any Windows application. No special integrations required. Works with your existing document management and correspondence systems.</p></div>
-        <div class="benefit"><h3>No cloud storage of content</h3><p class="muted">Unlike some tools, SRC does not store transcripts, recordings, or user content. Text goes directly to your cursor and stays on your device.</p></div>
-        <div class="benefit"><h3>Volume licensing</h3><p class="muted">Contact us for volume pricing, invoicing, and procurement-friendly purchasing for teams and departments.</p></div>
-        <div class="benefit"><h3>Australian company</h3><p class="muted">Built by Voice Recognition Australia, a 26-year Australian company. Local support, local expertise.</p></div>
-        <div class="benefit"><h3>Encryption in transit</h3><p class="muted">All connections between your device and our processing servers are encrypted using industry-standard TLS.</p></div>
+        <div class="benefit"><h3>Works with any system</h3><p class="muted">Dictate at the cursor in any Windows application including document management systems, correspondence tools, and web-based portals.</p></div>
+        <div class="benefit"><h3>Privacy and data handling</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for AI model training.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add department-specific terms, acronyms, legislation references, and policy language.</p></div>
+        <div class="benefit"><h3>Templates for standard documents</h3><p class="muted">Create reusable text blocks for ministerial correspondence, briefs, and standard responses. Insert by voice command.</p></div>
+        <div class="benefit"><h3>No voice training</h3><p class="muted">Install and start dictating immediately. No voice profiles or calibration required.</p></div>
+        <div class="benefit"><h3>Affordable licensing</h3><p class="muted">Simple annual subscription. No per-seat enterprise negotiations. Volume enquiries welcome.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Enquire about government licensing</h2>
-      <p class="muted" style="margin-bottom:24px">We offer volume pricing and can work with your procurement processes.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/contact" class="btn-primary">Contact us</a><a href="/pricing" class="btn-secondary">View pricing</a></div>
+      <h2 style="margin-bottom:12px">Start with the free plan</h2>
+      <p class="muted" style="margin-bottom:24px">Try Speech Recognition Cloud free. Upgrade to Professional for templates, AI modes, and Ultra Accuracy.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
     </div>
   </section>
   <style is:inline>

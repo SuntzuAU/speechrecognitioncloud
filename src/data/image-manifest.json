@@ -1,1 +1,137 @@
-{}
+{
+  "healthcare-hero": {
+    "key": "healthcare-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-healthcare-gp-dictation-emr-v2-a00abb93.jpg",
+    "altText": "Female GP dictating clinical notes at a modern Australian medical practice workstation",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "legal-hero": {
+    "key": "legal-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-legal-lawyer-dictation-case-notes-v2-8b684f1a.jpg",
+    "altText": "Male lawyer dictating case notes in an Australian law office with bookshelves",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "business-hero": {
+    "key": "business-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-business-professional-dictation-v2-24b1239f.jpg",
+    "altText": "Female business executive dictating in a modern meeting room with city skyline",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "government-hero": {
+    "key": "government-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-government-officer-dictation-v2-b10d239e.jpg",
+    "altText": "Male government officer dictating correspondence in an Australian government office",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "student-hero": {
+    "key": "student-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-student-dictation-essay-v2-9b74be72.jpg",
+    "altText": "Female university student dictating an essay in a bright university library",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "teacher-hero": {
+    "key": "teacher-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-teacher-dictation-lesson-plans-v2-c69a5445.jpg",
+    "altText": "Male teacher dictating lesson plans at his desk in an Australian school staff room",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "journalist-hero": {
+    "key": "journalist-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-journalist-dictation-article-v2-f0460c19.jpg",
+    "altText": "Female journalist dictating an article in a busy modern newsroom",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "writer-hero": {
+    "key": "writer-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-writer-dictation-creative-v2-403fe1bd.jpg",
+    "altText": "Male writer dictating creative work in a cosy home office with bookshelves and morning light",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "accessibility-hero": {
+    "key": "accessibility-hero",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-accessibility-voice-dictation-v2-6ba9dc05.jpg",
+    "altText": "Female professional in wheelchair using voice dictation at a modern accessible workstation",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "headshot-mark-f": {
+    "key": "headshot-mark-f",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-headshot-mark-f-journalist-v2-60e7fc01.jpg",
+    "altText": "Mark F, journalist",
+    "aspectRatio": "1:1",
+    "slot": "headshot",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "headshot-tony-j": {
+    "key": "headshot-tony-j",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-headshot-tony-j-business-owner-v2-627f6599.jpg",
+    "altText": "Tony J, small business owner",
+    "aspectRatio": "1:1",
+    "slot": "headshot",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "headshot-alex-j": {
+    "key": "headshot-alex-j",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-headshot-alex-j-student-v2-33326e2d.jpg",
+    "altText": "Alex J, student",
+    "aspectRatio": "1:1",
+    "slot": "headshot",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "headshot-jamal-g": {
+    "key": "headshot-jamal-g",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-headshot-jamal-g-doctor-v2-001ae89f.jpg",
+    "altText": "Jamal G, doctor",
+    "aspectRatio": "1:1",
+    "slot": "headshot",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "headshot-priya-h": {
+    "key": "headshot-priya-h",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-headshot-priya-h-teacher-v2-e8aa7e95.jpg",
+    "altText": "Priya H, teacher",
+    "aspectRatio": "1:1",
+    "slot": "headshot",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "headshot-nia-k": {
+    "key": "headshot-nia-k",
+    "r2Key": "speechrecognitioncloud/2026/03/19/src-headshot-nia-k-administrator-v2-a1d6d6be.jpg",
+    "altText": "Nia K, administrator",
+    "aspectRatio": "1:1",
+    "slot": "headshot",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  }
+}

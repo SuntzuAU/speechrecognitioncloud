@@ -1,36 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 ---
 <BaseLayout title="Business and professionals" description="Emails, reports, and documentation at the speed of speech. Speech Recognition Cloud for business professionals.">
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">BUSINESS</p>
-        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Emails, reports, and documentation at the speed of speech</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Stop typing and start dictating. Speech Recognition Cloud lets you produce emails, reports, proposals, and documentation faster than typing, with automatic punctuation and grammar.</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Type less. Get more done.</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Emails, reports, and documentation at the speed of speech. Dictate directly into Outlook, Word, Teams, or any Windows application.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
+  <section style="padding:0">
+    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-business-professional-dictation-v2-24b1239f.jpg`} alt="Female business executive dictating in a modern meeting room with city skyline" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
+  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
       <h2 class="text-center" style="margin-bottom:40px">Built for business productivity</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Works in Outlook, Word, Teams, and Chrome</h3><p class="muted">Dictate directly into your daily tools. Email, documents, web forms, CRMs, and project management tools. Anywhere you can type.</p></div>
-        <div class="benefit"><h3>3x faster than typing</h3><p class="muted">Full paragraphs appear with punctuation and grammar. Reduce the time you spend on written communication.</p></div>
-        <div class="benefit"><h3>AI modes for professional writing</h3><p class="muted">Rewrite, formalise, or summarise your dictated text. Polish emails and reports without manual editing. Available on Professional plan.</p></div>
-        <div class="benefit"><h3>Templates and text replacements</h3><p class="muted">Insert standard responses, email templates, and frequently used paragraphs by voice command.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add industry terms, client names, product names, and abbreviations for better accuracy.</p></div>
-        <div class="benefit"><h3>Affordable for individuals and teams</h3><p class="muted">Start free. Personal plan at $79/year for unlimited dictation. Professional at $159/year for AI modes and Ultra Accuracy.</p></div>
+        <div class="benefit"><h3>Works where you work</h3><p class="muted">Dictate at the cursor in Outlook, Word, Teams, Chrome, CRMs, ERPs, and any Windows application. No plugins required.</p></div>
+        <div class="benefit"><h3>3x faster than typing</h3><p class="muted">Dictate full paragraphs with automatic punctuation and grammar. Clear your inbox, write reports, and draft proposals faster.</p></div>
+        <div class="benefit"><h3>AI modes for productivity</h3><p class="muted">Use AI to rewrite, formalise, summarise, or expand dictated text. Available on Professional plan.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add company-specific terms, product names, and industry jargon. The system learns your terminology.</p></div>
+        <div class="benefit"><h3>Templates</h3><p class="muted">Create reusable text blocks for standard emails, responses, and documentation. Insert by voice command.</p></div>
+        <div class="benefit"><h3>Privacy controls</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored. Your data is never used for training.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Try it free today</h2>
-      <p class="muted" style="margin-bottom:24px">20 minutes per month on the free plan. No credit card required.</p>
+      <h2 style="margin-bottom:12px">Start free today</h2>
+      <p class="muted" style="margin-bottom:24px">Try Speech Recognition Cloud free. Upgrade to Professional for templates, AI modes, and Ultra Accuracy.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
     </div>
   </section>

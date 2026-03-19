@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 ---
 <BaseLayout title="Legal professionals" description="Draft contracts, briefs, and case notes by voice. Speech Recognition Cloud for lawyers and legal teams.">
   <section class="section-pad">
@@ -13,6 +14,9 @@ import site from '../site.config.json';
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
+  </section>
+  <section style="padding:0">
+    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-legal-lawyer-dictation-case-notes-v2-8b684f1a.jpg`} alt="Male lawyer dictating case notes in an Australian law office with bookshelves" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
   </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
