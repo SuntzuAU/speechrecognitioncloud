@@ -6,7 +6,7 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.1.2 - fix corrupted JSON from previous commit",
+  "_buildNote": "v1.2.0 - add R2 headshot URLs for testimonials",
 
   "colours": {
     "brand": "#4338CA",
@@ -89,13 +89,13 @@
   ],
 
   "testimonials": [
-    { "quote": "It just works! Literally anyone can benefit from this. Just speak.", "name": "Mark F.", "role": "Journalist", "headshot": "/headshots/mark-f.png" },
-    { "quote": "Compared to my old dictation system, this is wild! Instantly accurate with no voice training.", "name": "Tony J.", "role": "Small business owner", "headshot": "/headshots/tony-j.png" },
-    { "quote": "I don't know why I persisted with outdated expensive voice recognition software. This is the future.", "name": "Alex J.", "role": "Student", "headshot": "/headshots/alex-j.png" },
-    { "quote": "I can dictate into anything in Windows. It's that simple. And so much cheaper than the expensive medical dictation software I had.", "name": "Jamal G.", "role": "Doctor", "headshot": "/headshots/jamal-g.png" },
-    { "quote": "I used to struggle with expensive upgrades and complicated activation codes. SRC is simple, lightweight, and saves me hours every week.", "name": "Priya H.", "role": "Teacher", "headshot": "/headshots/priya-h.png" },
-    { "quote": "This is fast. I'm getting three times as much down as when I was typing. And no errors!", "name": "Nia K.", "role": "Administrator", "headshot": "/headshots/nia-k.png" },
-    { "quote": "I don't even write briefs anymore. It just gets it.", "name": "Priya H.", "role": "Product lead", "headshot": "/headshots/priya-h.png" }
+    { "quote": "It just works! Literally anyone can benefit from this. Just speak.", "name": "Mark F.", "role": "Journalist", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-mark-f-journalist-v2-60e7fc01.jpg" },
+    { "quote": "Compared to my old dictation system, this is wild! Instantly accurate with no voice training.", "name": "Tony J.", "role": "Small business owner", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-tony-j-business-owner-v2-627f6599.jpg" },
+    { "quote": "I don't know why I persisted with outdated expensive voice recognition software. This is the future.", "name": "Alex J.", "role": "Student", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-alex-j-student-v2-33326e2d.jpg" },
+    { "quote": "I can dictate into anything in Windows. It's that simple. And so much cheaper than the expensive medical dictation software I had.", "name": "Jamal G.", "role": "Doctor", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-jamal-g-doctor-v2-001ae89f.jpg" },
+    { "quote": "I used to struggle with expensive upgrades and complicated activation codes. SRC is simple, lightweight, and saves me hours every week.", "name": "Priya H.", "role": "Teacher", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-priya-h-teacher-v2-e8aa7e95.jpg" },
+    { "quote": "This is fast. I'm getting three times as much down as when I was typing. And no errors!", "name": "Nia K.", "role": "Administrator", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-nia-k-administrator-v2-a1d6d6be.jpg" },
+    { "quote": "I don't even write briefs anymore. It just gets it.", "name": "Priya H.", "role": "Product lead", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-priya-h-teacher-v2-e8aa7e95.jpg" }
   ],
 
   "useCaseCards": [
