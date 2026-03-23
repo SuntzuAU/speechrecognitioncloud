@@ -2,39 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Journalists",
+  "description": "Transcribe interviews, draft articles, and file stories faster. Speech Recognition Cloud for journalists.",
+  "url": site.siteUrl + "/journalists",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Journalists" description="Transcribe interviews, draft articles, and file stories faster. Speech Recognition Cloud for journalists.">
+<BaseLayout title="Journalists" description="Transcribe interviews, draft articles, and file stories faster. Speech Recognition Cloud for journalists." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">JOURNALISTS</p>
-        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">File stories faster</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Draft articles, file stories, and write briefs by voice. Dictate directly into any Windows application.</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">File stories faster with voice</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Draft articles, take interview notes, and produce copy by voice. Dictate directly into your CMS, Word, or any Windows application.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
-  <section style="padding:0">
-    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-journalist-dictation-article-v2-f0460c19.jpg`} alt="Female journalist dictating an article in a busy modern newsroom" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
-  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for deadline-driven work</h2>
+      <h2 class="text-center" style="margin-bottom:40px">Built for editorial workflows</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>3x faster than typing</h3><p class="muted">Dictate full articles with automatic punctuation and grammar. Meet deadlines faster.</p></div>
-        <div class="benefit"><h3>Works in any app</h3><p class="muted">Dictate into Word, Google Docs (via Chrome), CMS platforms, email, and any Windows application.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add names, places, technical terms, and beat-specific jargon.</p></div>
-        <div class="benefit"><h3>AI modes</h3><p class="muted">Use AI to rewrite, summarise, or expand dictated text. Available on Professional plan.</p></div>
-        <div class="benefit"><h3>Privacy</h3><p class="muted">Audio is processed and immediately discarded. Source protection starts with secure tools.</p></div>
-        <div class="benefit"><h3>Affordable</h3><p class="muted">Free plan available. Professional plan at $159/year for unlimited dictation with AI modes.</p></div>
+        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Word, Google Docs, CMS platforms, email, or any Windows application.</p></div>
+        <div class="benefit"><h3>3x faster than typing</h3><p class="muted">Dictate full paragraphs with automatic punctuation. Get the first draft down fast, then edit.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add proper nouns, source names, technical terms, and publication-specific style.</p></div>
+        <div class="benefit"><h3>AI modes for editing</h3><p class="muted">Use AI to rewrite, summarise, or proofread dictated text. Available on Professional plan.</p></div>
+        <div class="benefit"><h3>Privacy controls</h3><p class="muted">Audio is processed and immediately discarded. Source material stays confidential.</p></div>
+        <div class="benefit"><h3>Affordable</h3><p class="muted">Free plan for occasional use. Professional plan at $159/year for unlimited dictation with AI modes.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Start free today</h2>
-      <p class="muted" style="margin-bottom:24px">Download Speech Recognition Cloud and start dictating in 2 minutes.</p>
+      <h2 style="margin-bottom:12px">Start with the free plan</h2>
+      <p class="muted" style="margin-bottom:24px">Try Speech Recognition Cloud free. Upgrade when you need unlimited dictation.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
     </div>
   </section>

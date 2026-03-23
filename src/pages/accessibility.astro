@@ -2,40 +2,46 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Accessibility and RSI",
+  "description": "Reduce keyboard use. An alternative input method for anyone with motor limitations or repetitive strain injury.",
+  "url": site.siteUrl + "/accessibility",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Accessibility and RSI" description="Reduce keyboard use. An alternative input method for anyone with motor limitations. Speech Recognition Cloud.">
+<BaseLayout title="Accessibility and RSI" description="Reduce keyboard use. An alternative input method for anyone with motor limitations or repetitive strain injury." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">ACCESSIBILITY</p>
-        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Voice input for everyone</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Reduce keyboard use. An alternative input method for anyone with RSI, motor limitations, or who simply works better by voice.</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Type less. Speak instead.</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">An alternative to the keyboard for anyone with RSI, motor limitations, or who simply needs to reduce typing. Dictate into any Windows application.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
-        <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+        <p class="muted" style="font-size:13px">Free plan available. No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
-  <section style="padding:0">
-    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-accessibility-voice-dictation-v2-6ba9dc05.jpg`} alt="Female professional in wheelchair using voice dictation at a modern accessible workstation" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
-  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for accessible workflows</h2>
+      <h2 class="text-center" style="margin-bottom:40px">Built for accessibility</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Reduce keyboard strain</h3><p class="muted">Dictate instead of typing. Reduce repetitive strain on hands, wrists, and arms.</p></div>
-        <div class="benefit"><h3>Works in any app</h3><p class="muted">Dictate at the cursor in any Windows application. No special accessibility plugins required.</p></div>
-        <div class="benefit"><h3>Natural speech</h3><p class="muted">Speak naturally. The AI handles punctuation, capitalisation, and formatting automatically.</p></div>
-        <div class="benefit"><h3>Voice commands</h3><p class="muted">20+ voice commands for common actions. Reduce mouse and keyboard interaction.</p></div>
-        <div class="benefit"><h3>Free plan available</h3><p class="muted">Start with 20 minutes per month free. No credit card required.</p></div>
-        <div class="benefit"><h3>Works with accents</h3><p class="muted">Cloud AI handles accent variation and diverse speakers well.</p></div>
+        <div class="benefit"><h3>Reduce keyboard use</h3><p class="muted">Dictate emails, documents, and messages by voice. Significantly reduce the amount of typing you need to do each day.</p></div>
+        <div class="benefit"><h3>Works in any application</h3><p class="muted">Dictate at the cursor in Word, Outlook, web browsers, or any Windows application. No special accessibility plugins needed.</p></div>
+        <div class="benefit"><h3>AI punctuation</h3><p class="muted">Speak naturally. The AI adds punctuation and formatting automatically so you do not need to type corrections.</p></div>
+        <div class="benefit"><h3>Free plan available</h3><p class="muted">20 minutes per month free. No credit card required. Upgrade to unlimited for $79/year.</p></div>
+        <div class="benefit"><h3>No training needed</h3><p class="muted">Install and start dictating immediately. No voice profiles, no calibration, no setup wizards.</p></div>
+        <div class="benefit"><h3>Works with accents</h3><p class="muted">Cloud AI handles accent variation well. Designed for diverse speakers and real-world environments.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
       <h2 style="margin-bottom:12px">Start free today</h2>
-      <p class="muted" style="margin-bottom:24px">Download Speech Recognition Cloud and start dictating in 2 minutes.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
+      <p class="muted" style="margin-bottom:24px">Free plan with 20 minutes per month. No credit card required.</p>
+      <a href={site.download.url} class="btn-primary">Download free</a>
     </div>
   </section>
   <style is:inline>

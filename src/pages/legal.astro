@@ -2,8 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Legal Professionals",
+  "description": "Draft contracts, briefs, and case notes by voice. Speech Recognition Cloud for lawyers and legal teams.",
+  "url": site.siteUrl + "/legal",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Legal professionals" description="Draft contracts, briefs, and case notes by voice. Speech Recognition Cloud for lawyers and legal teams.">
+<BaseLayout title="Legal professionals" description="Draft contracts, briefs, and case notes by voice. Speech Recognition Cloud for lawyers and legal teams." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>

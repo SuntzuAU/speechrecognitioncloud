@@ -2,40 +2,46 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Writers and Creators",
+  "description": "Get ideas down at the speed of thought. Draft, revise, and create by voice.",
+  "url": site.siteUrl + "/writers",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Writers and creators" description="Get ideas down at the speed of thought. Draft, revise, and create by voice with Speech Recognition Cloud.">
+<BaseLayout title="Writers and creators" description="Get ideas down at the speed of thought. Draft, revise, and create by voice." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">WRITERS</p>
         <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Write at the speed of thought</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Get ideas down before they disappear. Draft, revise, and create by voice in any Windows application.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
-        <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Break through writer's block. Dictate drafts, notes, and ideas by voice into any application. Get the words out first, edit later.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/pricing" class="btn-secondary">View pricing</a></div>
+        <p class="muted" style="font-size:13px">Free plan available. No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
-  <section style="padding:0">
-    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-writer-dictation-creative-v2-403fe1bd.jpg`} alt="Male writer dictating creative work in a cosy home office with bookshelves and morning light" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
-  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for creative flow</h2>
+      <h2 class="text-center" style="margin-bottom:40px">Built for creative workflows</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Capture ideas instantly</h3><p class="muted">Dictate at the speed of thought. Full paragraphs appear with punctuation and formatting. No typing bottleneck.</p></div>
-        <div class="benefit"><h3>Works in any app</h3><p class="muted">Dictate into Word, Scrivener, Google Docs (via Chrome), or any Windows application at the cursor.</p></div>
-        <div class="benefit"><h3>AI modes for revision</h3><p class="muted">Use AI to rewrite, expand, summarise, or formalise your dictated drafts. Available on Professional plan.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add character names, fictional places, and genre-specific terminology.</p></div>
-        <div class="benefit"><h3>57 languages</h3><p class="muted">Write in multiple languages without switching tools.</p></div>
-        <div class="benefit"><h3>Affordable</h3><p class="muted">Free plan available. Personal plan at $79/year for unlimited dictation.</p></div>
+        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Word, Scrivener, Google Docs, Notion, or any Windows application.</p></div>
+        <div class="benefit"><h3>Break through writer's block</h3><p class="muted">Speaking is easier than typing. Get ideas flowing by voice, then refine in text.</p></div>
+        <div class="benefit"><h3>AI punctuation</h3><p class="muted">Speak naturally. The AI adds punctuation and capitalisation automatically so you stay in flow.</p></div>
+        <div class="benefit"><h3>AI modes for editing</h3><p class="muted">Use AI to rewrite, expand, summarise, or proofread dictated text. Available on Professional plan.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add character names, place names, and genre-specific terminology.</p></div>
+        <div class="benefit"><h3>Affordable</h3><p class="muted">Free plan for trying it out. Personal plan at $79/year for unlimited dictation.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Start free today</h2>
-      <p class="muted" style="margin-bottom:24px">Download Speech Recognition Cloud and start dictating in 2 minutes.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
+      <h2 style="margin-bottom:12px">Start writing by voice today</h2>
+      <p class="muted" style="margin-bottom:24px">Free plan available. Install in 2 minutes. No credit card.</p>
+      <a href={site.download.url} class="btn-primary">Download free</a>
     </div>
   </section>
   <style is:inline>

@@ -2,38 +2,44 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Business Professionals",
+  "description": "Emails, reports, and documentation at the speed of speech. Speech Recognition Cloud for business.",
+  "url": site.siteUrl + "/business",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Business and professionals" description="Emails, reports, and documentation at the speed of speech. Speech Recognition Cloud for business professionals.">
+<BaseLayout title="Business and professionals" description="Emails, reports, and documentation at the speed of speech. Speech Recognition Cloud for business." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">BUSINESS</p>
-        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Type less. Get more done.</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Emails, reports, and documentation at the speed of speech. Dictate directly into Outlook, Word, Teams, or any Windows application.</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Write emails, reports, and documents 3x faster</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Stop typing everything. Dictate emails, proposals, meeting notes, and reports directly into Outlook, Word, Teams, or any Windows application.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
-  <section style="padding:0">
-    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-business-professional-dictation-v2-24b1239f.jpg`} alt="Female business executive dictating in a modern meeting room with city skyline" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
-  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for business productivity</h2>
+      <h2 class="text-center" style="margin-bottom:40px">Built for professional workflows</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Works where you work</h3><p class="muted">Dictate at the cursor in Outlook, Word, Teams, Chrome, CRMs, ERPs, and any Windows application. No plugins required.</p></div>
-        <div class="benefit"><h3>3x faster than typing</h3><p class="muted">Dictate full paragraphs with automatic punctuation and grammar. Clear your inbox, write reports, and draft proposals faster.</p></div>
-        <div class="benefit"><h3>AI modes for productivity</h3><p class="muted">Use AI to rewrite, formalise, summarise, or expand dictated text. Available on Professional plan.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add company-specific terms, product names, and industry jargon. The system learns your terminology.</p></div>
-        <div class="benefit"><h3>Templates</h3><p class="muted">Create reusable text blocks for standard emails, responses, and documentation. Insert by voice command.</p></div>
+        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Outlook, Word, Teams, Chrome, CRM systems, and any Windows application. No plugins needed.</p></div>
+        <div class="benefit"><h3>AI punctuation and formatting</h3><p class="muted">Speak naturally. The AI adds punctuation, capitalisation, and paragraph breaks automatically.</p></div>
+        <div class="benefit"><h3>Templates for repeated text</h3><p class="muted">Create templates for email signatures, standard paragraphs, and boilerplate. Insert by voice command.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add company names, product terms, industry jargon, and client names. The system learns your language.</p></div>
+        <div class="benefit"><h3>AI modes for productivity</h3><p class="muted">Use AI to rewrite, summarise, formalise, or proofread dictated text. Available on Professional plan.</p></div>
         <div class="benefit"><h3>Privacy controls</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored. Your data is never used for training.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Start free today</h2>
+      <h2 style="margin-bottom:12px">Start with the free plan</h2>
       <p class="muted" style="margin-bottom:24px">Try Speech Recognition Cloud free. Upgrade to Professional for templates, AI modes, and Ultra Accuracy.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
     </div>

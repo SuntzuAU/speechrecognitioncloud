@@ -2,40 +2,46 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Students",
+  "description": "Essays, notes, and assignments faster. Affordable voice dictation plans for students.",
+  "url": site.siteUrl + "/students",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Students and education" description="Essays, notes, and assignments faster. Affordable voice dictation for students.">
+<BaseLayout title="Students and education" description="Essays, notes, and assignments faster. Affordable voice dictation plans for students." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">STUDENTS</p>
-        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Write essays and assignments faster</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate essays, notes, and assignments at the speed of speech. Free plan available. No credit card required.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
-        <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Write essays, notes, and assignments 3x faster</h1>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Stop staring at a blank page. Speak your ideas and get polished, punctuated text in Word, Google Docs, or any application. Free plan available.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/pricing" class="btn-secondary">View pricing</a></div>
+        <p class="muted" style="font-size:13px">Free plan available. No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
-  <section style="padding:0">
-    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-student-dictation-essay-v2-9b74be72.jpg`} alt="Female university student dictating an essay in a bright university library" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
-  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for study</h2>
+      <h2 class="text-center" style="margin-bottom:40px">Built for student life</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Free plan available</h3><p class="muted">20 minutes per month free. No credit card. Perfect for trying voice dictation for study.</p></div>
-        <div class="benefit"><h3>Affordable upgrade</h3><p class="muted">Personal/Educational plan at $79/year for unlimited dictation. Fraction of the cost of traditional dictation software.</p></div>
-        <div class="benefit"><h3>Works in any app</h3><p class="muted">Dictate into Word, Google Docs (via Chrome), note-taking apps, and any Windows application at the cursor.</p></div>
-        <div class="benefit"><h3>AI punctuation</h3><p class="muted">Speak naturally. The AI adds punctuation, capitalisation, and formatting automatically.</p></div>
-        <div class="benefit"><h3>57 languages</h3><p class="muted">Broad language support for international students and multilingual assignments.</p></div>
-        <div class="benefit"><h3>No training needed</h3><p class="muted">Install and start dictating immediately. No voice profiles or setup wizards.</p></div>
+        <div class="benefit"><h3>Free plan for occasional use</h3><p class="muted">Get 20 minutes of dictation per month at no cost. No credit card required. Upgrade when you need more.</p></div>
+        <div class="benefit"><h3>Works in any application</h3><p class="muted">Dictate into Word, Google Docs, email, or any Windows application. Text appears at your cursor.</p></div>
+        <div class="benefit"><h3>AI punctuation</h3><p class="muted">Speak naturally. The AI handles punctuation, capitalisation, and formatting automatically.</p></div>
+        <div class="benefit"><h3>57 languages</h3><p class="muted">Broad language support for international students studying in any language.</p></div>
+        <div class="benefit"><h3>Break through writer's block</h3><p class="muted">Speaking is easier than typing. Get your ideas down first, then edit. Works for essays, research papers, and creative writing.</p></div>
+        <div class="benefit"><h3>Affordable upgrade</h3><p class="muted">Personal plan is $79/year for unlimited dictation, custom vocabulary, and text replacements.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
       <h2 style="margin-bottom:12px">Start free today</h2>
-      <p class="muted" style="margin-bottom:24px">Download Speech Recognition Cloud and start dictating in 2 minutes.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
+      <p class="muted" style="margin-bottom:24px">20 minutes per month on the free plan. No credit card. Install in 2 minutes.</p>
+      <a href={site.download.url} class="btn-primary">Download free</a>
     </div>
   </section>
   <style is:inline>

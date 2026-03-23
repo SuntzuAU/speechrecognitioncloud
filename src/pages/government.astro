@@ -2,32 +2,38 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Government",
+  "description": "Secure dictation for policy, correspondence, and procurement documentation. Speech Recognition Cloud for government.",
+  "url": site.siteUrl + "/government",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Government" description="Secure dictation for policy, correspondence, and procurement documentation. Speech Recognition Cloud for government.">
+<BaseLayout title="Government" description="Secure dictation for policy, correspondence, and procurement documentation. Speech Recognition Cloud for government." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">GOVERNMENT</p>
         <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Secure dictation for government professionals</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate policy documents, correspondence, procurement briefs, and reports directly into any Windows application. Privacy controls built in.</p>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate policy documents, ministerial correspondence, procurement submissions, and case notes directly into any Windows application. Audio is never stored.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
-  <section style="padding:0">
-    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-government-officer-dictation-v2-b10d239e.jpg`} alt="Male government officer dictating correspondence in an Australian government office" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
-  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
       <h2 class="text-center" style="margin-bottom:40px">Built for government workflows</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Works with any system</h3><p class="muted">Dictate at the cursor in any Windows application including document management systems, correspondence tools, and web-based portals.</p></div>
-        <div class="benefit"><h3>Privacy and data handling</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for AI model training.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add department-specific terms, acronyms, legislation references, and policy language.</p></div>
-        <div class="benefit"><h3>Templates for standard documents</h3><p class="muted">Create reusable text blocks for ministerial correspondence, briefs, and standard responses. Insert by voice command.</p></div>
+        <div class="benefit"><h3>Works with any application</h3><p class="muted">Dictate at the cursor in Outlook, Word, case management systems, or any Windows-based application used in government.</p></div>
+        <div class="benefit"><h3>Privacy and security</h3><p class="muted">Audio is processed and immediately discarded. No recordings are stored. Your data is never used to train AI models. All connections encrypted.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add department-specific terminology, legislation references, acronyms, and names.</p></div>
+        <div class="benefit"><h3>Templates for standard documents</h3><p class="muted">Create templates for ministerial correspondence, briefs, and standard paragraphs. Insert by voice command.</p></div>
         <div class="benefit"><h3>No voice training</h3><p class="muted">Install and start dictating immediately. No voice profiles or calibration required.</p></div>
-        <div class="benefit"><h3>Affordable licensing</h3><p class="muted">Simple annual subscription. No per-seat enterprise negotiations. Volume enquiries welcome.</p></div>
+        <div class="benefit"><h3>Volume licensing</h3><p class="muted">Contact us for volume pricing and invoicing for departmental deployments.</p></div>
       </div>
     </div>
   </section>

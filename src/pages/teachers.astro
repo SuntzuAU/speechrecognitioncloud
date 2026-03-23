@@ -2,39 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Dictation for Teachers and Educators",
+  "description": "Lesson plans, reports, and correspondence without the typing. Speech Recognition Cloud for teachers.",
+  "url": site.siteUrl + "/teachers",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
 ---
-<BaseLayout title="Teachers and educators" description="Lesson plans, reports, and correspondence without the typing. Speech Recognition Cloud for teachers.">
+<BaseLayout title="Teachers and educators" description="Lesson plans, reports, and correspondence without the typing. Speech Recognition Cloud for teachers." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container usecase-hero">
       <div>
         <p class="eyebrow">TEACHERS</p>
         <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Less typing, more teaching</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate lesson plans, reports, correspondence, and student feedback. Works in any Windows application.</p>
+        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate lesson plans, student reports, email correspondence, and documentation by voice. Works in any Windows application.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
   </section>
-  <section style="padding:0">
-    <div class="container"><img src={`${R2}/speechrecognitioncloud/2026/03/19/src-teacher-dictation-lesson-plans-v2-c69a5445.jpg`} alt="Male teacher dictating lesson plans at his desk in an Australian school staff room" width="1200" height="675" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin:0 auto;display:block" /></div>
-  </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
       <h2 class="text-center" style="margin-bottom:40px">Built for educators</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Lesson plans by voice</h3><p class="muted">Dictate lesson plans, unit outlines, and curriculum documentation directly into Word or your school's planning system.</p></div>
-        <div class="benefit"><h3>Student reports faster</h3><p class="muted">Write student reports and feedback at the speed of speech. Reduce reporting season stress.</p></div>
-        <div class="benefit"><h3>Works in any app</h3><p class="muted">Dictate into Word, Outlook, school management systems, and any Windows application at the cursor.</p></div>
-        <div class="benefit"><h3>Affordable plans</h3><p class="muted">Personal/Educational plan at $79/year. Free plan available for trying it out.</p></div>
-        <div class="benefit"><h3>Templates</h3><p class="muted">Create reusable text blocks for common report comments and correspondence. Insert by voice command.</p></div>
+        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Word, Outlook, student management systems, or any Windows application.</p></div>
+        <div class="benefit"><h3>Student reports faster</h3><p class="muted">Dictate individual student comments and reports by voice. Full paragraphs with automatic punctuation.</p></div>
+        <div class="benefit"><h3>Templates for repeated text</h3><p class="muted">Create templates for report card comments, email responses, and standard paragraphs. Insert by voice.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add student names, subject-specific terms, and school terminology.</p></div>
+        <div class="benefit"><h3>Affordable</h3><p class="muted">Free plan for occasional use. Personal plan at $79/year for unlimited dictation.</p></div>
         <div class="benefit"><h3>No training needed</h3><p class="muted">Install and start dictating immediately. No voice profiles or calibration.</p></div>
       </div>
     </div>
   </section>
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Start free today</h2>
-      <p class="muted" style="margin-bottom:24px">Download Speech Recognition Cloud and start dictating in 2 minutes.</p>
+      <h2 style="margin-bottom:12px">Start with the free plan</h2>
+      <p class="muted" style="margin-bottom:24px">20 minutes per month free. Upgrade to Personal for unlimited dictation at $79/year.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.download.url} class="btn-primary">Download free</a></div>
     </div>
   </section>
