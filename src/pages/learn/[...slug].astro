@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import site from '../../site.config.json';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('learn');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
+---
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="section-pad">
+    <div class="container" style="max-width:760px">
+      <div class="article-meta">
+        <a href="/learn" class="back-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Learn</a>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class={`learn-tag learn-tag--${post.data.type}`}>{typeLabels[post.data.type] || post.data.type}</span>
+          <time datetime={post.data.date} class="muted">{new Date(post.data.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+        </div>
+      </div>
+      <h1 class="article-title">{post.data.title}</h1>
+
+      {post.data.youtubeId && (
+        <div class="yt-facade" data-ytid={post.data.youtubeId} style="margin-bottom:32px">
+          <img src={`https://i.ytimg.com/vi/${post.data.youtubeId}/maxresdefault.jpg`} alt={post.data.title} loading="eager" />
+          <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
+        </div>
+      )}
+
+      <div class="article-body">
+        <Content />
+      </div>
+    </div>
+  </article>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Try Speech Recognition Cloud</h2>
+      <p class="muted" style="margin-bottom:24px">Free to download. No credit card required.</p>
+      <a href={site.download.url} class="btn-primary">Download free</a>
+    </div>
+  </section>
+  <style is:inline>
+    .article-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+    .back-link{display:inline-flex;align-items:center;gap:4px;font-size:14px;color:var(--brand);font-weight:600;text-decoration:none}
+    .back-link:hover{text-decoration:underline}
+    .learn-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em}
+    .learn-tag--article{color:var(--brand);background:var(--brand-lightest, #EEF2FF)}
+    .learn-tag--guide{color:#059669;background:#ECFDF5}
+    .learn-tag--video{color:#DC2626;background:#FEF2F2}
+    .learn-tag--tip{color:#D97706;background:#FFFBEB}
+    .article-title{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em}
+    .article-body{font-size:16px;line-height:1.8;color:var(--text)}
+    .article-body h2{font-size:24px;font-weight:700;margin-top:40px;margin-bottom:16px}
+    .article-body h3{font-size:20px;font-weight:600;margin-top:32px;margin-bottom:12px}
+    .article-body p{margin-bottom:20px;color:var(--muted)}
+    .article-body a{color:var(--brand);font-weight:600}
+    .article-body ul,.article-body ol{margin-bottom:20px;padding-left:24px;color:var(--muted)}
+    .article-body li{margin-bottom:8px;line-height:1.7}
+    .article-body blockquote{border-left:3px solid var(--brand);padding-left:20px;margin:24px 0;font-style:italic;color:var(--muted)}
+    .yt-facade{position:relative;max-width:100%;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12)}.yt-facade img{width:100%;aspect-ratio:16/9;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  </style>
+  <script is:inline>
+    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.style.paddingBottom='56.25%';el.style.height='0';el.appendChild(iframe);});});
+  </script>
+</BaseLayout>

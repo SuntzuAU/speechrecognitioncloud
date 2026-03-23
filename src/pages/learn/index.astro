@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import site from '../../site.config.json';
+const posts = (await getCollection('learn')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
+---
+<BaseLayout title="Learn" description="Guides, tutorials, videos, and articles about voice dictation. Learn how to get the most from Speech Recognition Cloud.">
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <p class="eyebrow">LEARN</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Guides, tutorials, and articles</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:48px">Learn how to get the most from Speech Recognition Cloud. How-to guides, video tutorials, tips, and articles about voice dictation.</p>
+      {posts.length > 0 ? (
+        <div class="learn-list">
+          {posts.map(post => (
+            <a href={`/learn/${post.slug}`} class="learn-item">
+              <div class="learn-meta">
+                <time datetime={post.data.date} class="muted">{new Date(post.data.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                <span class={`learn-tag learn-tag--${post.data.type}`}>{typeLabels[post.data.type] || post.data.type}</span>
+              </div>
+              <h2 class="learn-title">{post.data.title}</h2>
+              <p class="muted learn-desc">{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center" style="padding:60px 0">
+          <p class="muted">Content coming soon. Check back for guides, tutorials, and articles.</p>
+        </div>
+      )}
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .learn-list{display:flex;flex-direction:column;gap:0}
+    .learn-item{display:block;padding:28px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background 0.15s}
+    .learn-item:first-child{padding-top:0}
+    .learn-item:hover .learn-title{color:var(--brand)}
+    .learn-meta{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+    .learn-meta time{font-size:13px}
+    .learn-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em}
+    .learn-tag--article{color:var(--brand);background:var(--brand-lightest, #EEF2FF)}
+    .learn-tag--guide{color:#059669;background:#ECFDF5}
+    .learn-tag--video{color:#DC2626;background:#FEF2F2}
+    .learn-tag--tip{color:#D97706;background:#FFFBEB}
+    .learn-title{font-size:20px;font-weight:700;margin-bottom:6px;transition:color 0.2s;line-height:1.3}
+    .learn-desc{font-size:14px;line-height:1.6}
+  </style>
+</BaseLayout>
