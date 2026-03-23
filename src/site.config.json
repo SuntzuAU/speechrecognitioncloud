@@ -6,7 +6,7 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.3.2 - fix Shopify cart URLs to use exact encoded format from live site",
+  "_buildNote": "v1.4.0 - split medical and healthcare pages, add /medical with AC form 293",
 
   "colours": {
     "brand": "#4338CA",
@@ -35,7 +35,8 @@
       { "label": "Contact", "href": "/contact" }
     ],
     "useCases": [
-      { "label": "Healthcare professionals", "href": "/healthcare" },
+      { "label": "Medical professionals", "href": "/medical" },
+      { "label": "Healthcare workers", "href": "/healthcare" },
       { "label": "Legal professionals", "href": "/legal" },
       { "label": "Business and professionals", "href": "/business" },
       { "label": "Government", "href": "/government" },
@@ -110,7 +111,8 @@
   ],
 
   "useCaseCards": [
-    { "title": "Healthcare professionals", "description": "Medical dictation with specialised vocabulary. Works with any EMR at the cursor.", "href": "/healthcare", "icon": "medical" },
+    { "title": "Medical professionals", "description": "Free 30-day Medical Ultra trial. Specialised vocabulary, ultra accuracy, works with any EMR.", "href": "/medical", "icon": "medical" },
+    { "title": "Healthcare workers", "description": "Voice dictation for nurses, radiologists, allied health, and healthcare administration.", "href": "/healthcare", "icon": "healthcare" },
     { "title": "Legal professionals", "description": "Draft contracts, briefs, and case notes by voice. Confidentiality controls built in.", "href": "/legal", "icon": "legal" },
     { "title": "Business and professionals", "description": "Emails, reports, and documentation at the speed of speech.", "href": "/business", "icon": "business" },
     { "title": "Government", "description": "Secure dictation for policy, correspondence, and procurement documentation.", "href": "/government", "icon": "government" },
@@ -183,7 +185,7 @@
     "columns": [
       { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },
       { "heading": "Support", "links": [{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Troubleshooting", "href": "/support/troubleshooting" },{ "label": "AI modes", "href": "/support/ai-modes" }] },
-      { "heading": "Who it's for", "links": [{ "label": "Healthcare", "href": "/healthcare" },{ "label": "Legal", "href": "/legal" },{ "label": "Business", "href": "/business" },{ "label": "Government", "href": "/government" },{ "label": "Students", "href": "/students" }] },
+      { "heading": "Who it's for", "links": [{ "label": "Medical", "href": "/medical" },{ "label": "Healthcare", "href": "/healthcare" },{ "label": "Legal", "href": "/legal" },{ "label": "Business", "href": "/business" },{ "label": "Government", "href": "/government" }] },
       { "heading": "Company", "links": [{ "label": "Contact", "href": "/contact" },{ "label": "Privacy and data", "href": "/privacy" },{ "label": "Terms of service", "href": "/terms" }] }
     ],
     "social": [

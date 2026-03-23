@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+---
+<BaseLayout title="Medical Professionals - Free 30 Day Trial" description="Try Medical Ultra free for 30 days. Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation.">
+  <!-- HERO: Trial offer -->
+  <section class="section-pad">
+    <div class="container hero-split">
+      <div class="hero-text">
+        <p class="eyebrow">FREE 30-DAY MEDICAL TRIAL</p>
+        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px;line-height:1.15">Medical dictation without the AI guesswork</h1>
+        <p style="font-size:17px;line-height:1.7;margin-bottom:20px;max-width:520px">Try ultra-accurate, verbatim speech-to-text free for 30 days. No training. No hallucinations. <strong>One third the cost.</strong></p>
+        <ul class="hero-checks">
+          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#4338CA" opacity="0.12"/><path d="M5 9l3 3 5-5" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>100% verbatim dictation - what you say is what appears</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#4338CA" opacity="0.12"/><path d="M5 9l3 3 5-5" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Works in any EMR at the cursor - no dictation box</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#4338CA" opacity="0.12"/><path d="M5 9l3 3 5-5" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Automatic punctuation and medical vocabulary</li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#4338CA" opacity="0.12"/><path d="M5 9l3 3 5-5" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No AI risks - no summarising, no rewriting</li>
+        </ul>
+      </div>
+      <div class="hero-form-wrap">
+        <div class="trial-form-card">
+          <h2 style="font-size:20px;font-weight:700;margin-bottom:4px;color:#fff">Download the Free Medical Ultra Trial</h2>
+          <p style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:20px">Get immediate access. No credit card required.</p>
+          <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate>
+            <input type="hidden" name="u" value="293" />
+            <input type="hidden" name="f" value="293" />
+            <input type="hidden" name="s" value="" />
+            <input type="hidden" name="c" value="0" />
+            <input type="hidden" name="m" value="0" />
+            <input type="hidden" name="act" value="sub" />
+            <input type="hidden" name="v" value="2" />
+            <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+            <div class="form-field">
+              <input type="text" name="fullname" id="med-fullname" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <input type="email" name="email" id="med-email" placeholder="Your email" required />
+            </div>
+            <button type="submit" id="_form_293_submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px 24px;font-size:16px;margin-top:4px">Get started free</button>
+          </form>
+          <div id="_form_293_thank_you" style="display:none;text-align:center;padding:20px 0;color:#fff">
+            <p style="font-size:18px;font-weight:600;margin-bottom:8px">You're in!</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS from real medical users -->
+  <section class="section-pad section-neutral">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom:36px">What clinicians are saying</h2>
+      <div class="med-testimonials">
+        <div class="med-quote-card">
+          <p class="med-quote">"Thank you very much for providing me with the free access. I am using it right now to create this email."</p>
+          <p class="med-attr"><strong>Mark S.</strong> <span class="muted">Adelaide</span></p>
+        </div>
+        <div class="med-quote-card">
+          <p class="med-quote">"I've only been using it for a few minutes, but it is extremely accurate and quite easy to use."</p>
+          <p class="med-attr"><strong>Carrie H.</strong> <span class="muted">Wollongong</span></p>
+        </div>
+        <div class="med-quote-card">
+          <p class="med-quote">"Automatic punctuation without having to say comma or full stop is brilliant!"</p>
+          <p class="med-attr"><strong>J.H.L</strong> <span class="muted">Perth</span></p>
+        </div>
+        <div class="med-quote-card">
+          <p class="med-quote">"I've been using it for 5 minutes and it's already better than any old dictation product. And free? Thanks!"</p>
+          <p class="med-attr"><strong>T.M</strong> <span class="muted">Brisbane</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO VIDEO -->
+  <section class="section-pad" id="demo">
+    <div class="container text-center">
+      <h2 style="margin-bottom:8px">Watch a 60-second progress note</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">See Medical Ultra in action with a real clinical dictation.</p>
+      <div class="yt-facade" data-ytid="4rlay0Zx660">
+        <img src="https://i.ytimg.com/vi/4rlay0Zx660/maxresdefault.jpg" alt="Medical speech to text progress note demonstration" loading="lazy" decoding="async" />
+        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Built for clinical workflows</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Works with any EMR</h3><p class="muted">Dictate at the cursor in Best Practice, Medical Director, Genie, Zedmed, or any Windows-based clinical software. No special integration required.</p></div>
+        <div class="benefit"><h3>Medical vocabulary</h3><p class="muted">Specialised medical vocabularies included. Add your own terms, drug names, and abbreviations through custom vocabulary.</p></div>
+        <div class="benefit"><h3>Ultra Accuracy Medical Mode</h3><p class="muted">Enhanced accuracy processing designed for clinical terminology. The latest Microsoft and AI medical speech engines, updated continuously.</p></div>
+        <div class="benefit"><h3>Privacy controls</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for AI model training. Restricted AI modes for additional privacy.</p></div>
+        <div class="benefit"><h3>No voice training</h3><p class="muted">Install and start dictating immediately. No voice profiles, no calibration, no setup wizards. The cloud AI handles accuracy from day one.</p></div>
+        <div class="benefit"><h3>Dedicated support</h3><p class="muted">Medical plan includes dedicated remote support and one-on-one training to help you get set up and productive.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="section-pad section-dark">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Your voice, vocabulary, and data are never stored or shared</h2>
+      <p class="muted" style="margin-bottom:32px">Audio is processed in the cloud and immediately discarded. No recordings saved. No data used for training. All connections encrypted.</p>
+      <a href="/privacy" style="color:var(--dark-accent);font-weight:600">Read our privacy policy &rarr;</a>
+    </div>
+  </section>
+
+  <!-- PRICING COMPARISON -->
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">One third the cost of legacy dictation</h2>
+      <p class="muted" style="margin-bottom:24px">Speech Recognition Cloud Medical is $439/year. No upgrade fees, no serial numbers, no compatibility headaches. Compare that with what you are paying now.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/pricing" class="btn-secondary">View pricing</a>
+        <a href="#" onclick="document.getElementById('med-fullname').focus();window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn-primary">Start free trial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:700px">
+      <h2 class="text-center" style="margin-bottom:40px">Frequently asked questions</h2>
+      <details class="faq-item"><summary class="faq-question">How long is the free trial?</summary><div class="faq-answer"><p>Speech Recognition Cloud Medical Ultra is free for 30 days. After that it reverts to the non-medical free edition (20 min/month). You can upgrade to a paid Medical plan at any time.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">Do you store any patient data?</summary><div class="faq-answer"><p>No. We only store your email address for updates and product authorisation. Audio is processed and immediately discarded. We do not store your vocabulary, voice data, or any patient information.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">What operating systems are supported?</summary><div class="faq-answer"><p>Windows 10 and 11 only for now. Mac support is on our roadmap but has no current ETA.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">Will it work with my EMR?</summary><div class="faq-answer"><p>Yes. Speech Recognition Cloud dictates at the cursor in any Windows application. It works with Best Practice, Medical Director, Genie, Zedmed, and any other Windows-based EMR.</p></div></details>
+      <details class="faq-item"><summary class="faq-question">Is this an AI scribe or meeting recorder?</summary><div class="faq-answer"><p>No. This is verbatim cursor-based dictation. What you say is what appears on screen. It does not summarise, rewrite, or interpret your words. No AI hallucination risk.</p></div></details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section-pad section-dark" style="padding:60px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Try Medical Ultra free for 30 days</h2>
+      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
+      <a href="#" onclick="document.getElementById('med-fullname').focus();window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn-primary btn-lg">Get started free</a>
+    </div>
+  </section>
+
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .hero-text{padding-top:12px}
+    .hero-checks{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .hero-checks li{display:flex;align-items:flex-start;gap:10px;font-size:15px;font-weight:500;line-height:1.5}
+    .hero-checks li svg{flex-shrink:0;margin-top:2px}
+    .trial-form-card{background:#4338CA;border-radius:16px;padding:32px;box-shadow:0 12px 40px rgba(67,56,202,0.25)}
+    .trial-form-card .form-field{margin-bottom:12px}
+    .trial-form-card input[type="text"],.trial-form-card input[type="email"]{width:100%;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .trial-form-card input::placeholder{color:rgba(255,255,255,0.6)}
+    .trial-form-card input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
+    .med-testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .med-quote-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px}
+    .med-quote{font-size:15px;line-height:1.6;margin-bottom:12px;font-style:italic}
+    .med-attr{font-size:14px}
+    .med-attr .muted{margin-left:6px}
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12)}.yt-facade img{width:100%;aspect-ratio:16/9;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
+    @media(max-width:768px){.hero-split{grid-template-columns:1fr;gap:32px}.med-testimonials{grid-template-columns:1fr}.benefit-grid{grid-template-columns:1fr}}
+  </style>
+
+  <!-- AC Form 293 submission script -->
+  <script is:inline>
+    (function(){
+      var form = document.getElementById('_form_293_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_293_thank_you');
+
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.querySelector('[name="fullname"]');
+        var email = form.querySelector('[name="email"]');
+        if (!name.value.trim() || !email.value.trim()) return;
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
+          email.style.borderColor = '#F37C7B';
+          return;
+        }
+        var btn = document.getElementById('_form_293_submit');
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() {
+          btn.disabled = false;
+          btn.textContent = 'Get started free';
+          alert('Something went wrong. Please try again.');
+        };
+        document.head.appendChild(script);
+
+        window._show_thank_you = function(id, message) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+          thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>';
+        };
+      });
+    })();
+  </script>
+
+  <!-- YouTube facade -->
+  <script is:inline>
+    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.style.paddingBottom='56.25%';el.style.height='0';el.appendChild(iframe);});});
+  </script>
+</BaseLayout>
