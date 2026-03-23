@@ -2,8 +2,52 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+// Medical FAQ items (used for both rendering and schema)
+const medicalFaqItems = [
+  { question: "How long is the free trial?", answer: "Speech Recognition Cloud Medical Ultra is free for 30 days. After that it reverts to the non-medical free edition (20 min/month). You can upgrade to a paid Medical plan at any time." },
+  { question: "Do you store any patient data?", answer: "No. We only store your email address for updates and product authorisation. Audio is processed and immediately discarded. We do not store your vocabulary, voice data, or any patient information." },
+  { question: "What operating systems are supported?", answer: "Windows 10 and 11 only for now. Mac support is on our roadmap but has no current ETA." },
+  { question: "Will it work with my EMR?", answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application. It works with Best Practice, Medical Director, Genie, Zedmed, and any other Windows-based EMR." },
+  { question: "Is this an AI scribe or meeting recorder?", answer: "No. This is verbatim cursor-based dictation. What you say is what appears on screen. It does not summarise, rewrite, or interpret your words. No AI hallucination risk." }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": medicalFaqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+
+const medicalPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Medical Dictation Software - Free 30 Day Trial",
+  "description": "Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation.",
+  "url": site.siteUrl + "/medical",
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "Speech Recognition Cloud Medical",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "offers": {
+      "@type": "Offer",
+      "price": "439",
+      "priceCurrency": "USD",
+      "description": "Medical - Annual"
+    }
+  }
+};
+
+const extraSchema = [faqSchema, medicalPageSchema];
 ---
-<BaseLayout title="Medical Professionals - Free 30 Day Trial" description="Try Medical Ultra free for 30 days. Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation.">
+<BaseLayout title="Medical Professionals - Free 30 Day Trial" description="Try Medical Ultra free for 30 days. Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation." extraSchema={extraSchema}>
   <!-- HERO: Trial offer -->
   <section class="section-pad">
     <div class="container hero-split">
@@ -125,11 +169,7 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:700px">
       <h2 class="text-center" style="margin-bottom:40px">Frequently asked questions</h2>
-      <details class="faq-item"><summary class="faq-question">How long is the free trial?</summary><div class="faq-answer"><p>Speech Recognition Cloud Medical Ultra is free for 30 days. After that it reverts to the non-medical free edition (20 min/month). You can upgrade to a paid Medical plan at any time.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">Do you store any patient data?</summary><div class="faq-answer"><p>No. We only store your email address for updates and product authorisation. Audio is processed and immediately discarded. We do not store your vocabulary, voice data, or any patient information.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">What operating systems are supported?</summary><div class="faq-answer"><p>Windows 10 and 11 only for now. Mac support is on our roadmap but has no current ETA.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">Will it work with my EMR?</summary><div class="faq-answer"><p>Yes. Speech Recognition Cloud dictates at the cursor in any Windows application. It works with Best Practice, Medical Director, Genie, Zedmed, and any other Windows-based EMR.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">Is this an AI scribe or meeting recorder?</summary><div class="faq-answer"><p>No. This is verbatim cursor-based dictation. What you say is what appears on screen. It does not summarise, rewrite, or interpret your words. No AI hallucination risk.</p></div></details>
+      {medicalFaqItems.map(item => (<details class="faq-item"><summary class="faq-question">{item.question}</summary><div class="faq-answer"><p>{item.answer}</p></div></details>))}
     </div>
   </section>
 
