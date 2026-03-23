@@ -4,6 +4,13 @@ import { getCollection } from 'astro:content';
 import site from '../../site.config.json';
 const posts = (await getCollection('learn')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
+const typeColours = { article: { bg: '#EEF2FF', fg: '#4338CA' }, guide: { bg: '#ECFDF5', fg: '#059669' }, video: { bg: '#FEF2F2', fg: '#DC2626' }, tip: { bg: '#FFFBEB', fg: '#D97706' } };
+const typeIcons = {
+  article: 'M4 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4z',
+  guide: 'M12 2L4 7v11a2 2 0 002 2h12a2 2 0 002-2V7L12 2zm0 3.5L17 9v8H7V9l5-3.5zM9 11v2h6v-2H9zm0 3v2h4v-2H9z',
+  video: 'M4 4h16v12H4V4zm2 2v8h12V6H6zm-2 12h16v2H4v-2z',
+  tip: 'M12 2a7 7 0 00-4 12.7V17a2 2 0 002 2h4a2 2 0 002-2v-2.3A7 7 0 0012 2zm0 2a5 5 0 013 9v3h-6v-3a5 5 0 013-9zM9 20h6v1a1 1 0 01-1 1h-4a1 1 0 01-1-1v-1z'
+};
 ---
 <BaseLayout title="Learn" description="Guides, tutorials, videos, and articles about voice dictation. Learn how to get the most from Speech Recognition Cloud.">
   <section class="section-pad">
@@ -13,7 +20,10 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
       <p class="muted" style="font-size:16px;margin-bottom:48px">Learn how to get the most from Speech Recognition Cloud. How-to guides, video tutorials, tips, and articles about voice dictation.</p>
       {posts.length > 0 ? (
         <div class="learn-grid">
-          {posts.map(post => (
+          {posts.map(post => {
+            const tc = typeColours[post.data.type] || typeColours.article;
+            const icon = typeIcons[post.data.type] || typeIcons.article;
+            return (
             <a href={`/learn/${post.slug}`} class="learn-card">
               {post.data.youtubeId ? (
                 <div class="learn-thumb">
@@ -24,7 +34,12 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
                 <div class="learn-thumb">
                   <img src={post.data.heroImage} alt={post.data.heroImageAlt || post.data.title} loading="lazy" decoding="async" />
                 </div>
-              ) : null}
+              ) : (
+                <div class="learn-thumb learn-thumb-placeholder" style={`background:${tc.bg}`}>
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke={tc.fg} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5"><path d={icon}/></svg>
+                  <span class="placeholder-label" style={`color:${tc.fg}`}>{typeLabels[post.data.type] || 'Article'}</span>
+                </div>
+              )}
               <div class="learn-card-body">
                 <div class="learn-meta">
                   <span class={`learn-tag learn-tag--${post.data.type}`}>{typeLabels[post.data.type] || post.data.type}</span>
@@ -34,7 +49,8 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
                 <p class="muted learn-desc">{post.data.description}</p>
               </div>
             </a>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <div class="text-center" style="padding:60px 0">
@@ -51,6 +67,8 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
     .learn-card:hover .learn-title{color:var(--brand)}
     .learn-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--neutral)}
     .learn-thumb img{width:100%;height:100%;object-fit:cover}
+    .learn-thumb-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+    .placeholder-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;opacity:0.6}
     .learn-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.85;transition:opacity 0.2s}
     .learn-card:hover .learn-play{opacity:1}
     .learn-card-body{padding:20px}
