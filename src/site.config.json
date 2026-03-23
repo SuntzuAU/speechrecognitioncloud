@@ -6,7 +6,7 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.5.1 - move Learn nav link between Pricing and Support",
+  "_buildNote": "v1.6.0 - founder-led credibility section, Russell Bewsell personal story",
 
   "colours": {
     "brand": "#4338CA",
@@ -65,7 +65,7 @@
     "ctaSecondary": "Contact us",
     "ctaSecondaryUrl": "/contact",
     "microcopy": "No credit card required. Installs in 2 minutes. Windows 10/11.",
-    "trustLine": "Built by Voice Recognition Australia. 28 years in speech recognition."
+    "trustLine": "Built by Russell Bewsell. 28 years deploying speech technology across Australian healthcare, legal, and government."
   },
 
   "clarityStrip": {
@@ -91,13 +91,15 @@
   ],
 
   "credibility": {
-    "headline": "Built on 28 years of speech recognition expertise",
-    "subheadline": "Speech Recognition Cloud is developed by Voice Recognition Australia, one of the longest-serving speech recognition specialists in the country.",
-    "points": [
-      "Deploying voice technology in Australian healthcare, legal, and government environments since 1998",
-      "Authorised Nuance Dragon reseller since the product launched in Australia",
-      "Presented the national Dragonology training series on behalf of Nuance in 2017",
-      "Trusted by professionals who need voice tools that work in real environments, not just demos"
+    "founderName": "Russell Bewsell",
+    "founderTitle": "Founder and CEO",
+    "founderLinkedIn": "https://www.linkedin.com/in/rbewsell/",
+    "quote": "I built Speech Recognition Cloud after 28 years of deploying speech technology for tens of thousands of professionals. I have watched what works, what frustrates people, and what they actually need. Legacy dictation systems are overpriced, overcomplicated, and overdue for replacement. This product is the answer for most users.",
+    "credentials": [
+      "28 years deploying speech recognition in Australian hospitals, courts, and government departments",
+      "Supported tens of thousands of professionals across healthcare, legal, government, and enterprise",
+      "Presented the national Dragonology training series across Australia in 2017",
+      "Built this product based on what real users need, not what a marketing department imagines"
     ]
   },
 
@@ -182,7 +184,7 @@
   },
 
   "footer": {
-    "tagline": "AI voice dictation software for Windows. Built by Voice Recognition Australia.",
+    "tagline": "AI voice dictation software for Windows. Built by Russell Bewsell.",
     "columns": [
       { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },
       { "heading": "Learn", "links": [{ "label": "All guides and articles", "href": "/learn" },{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Support", "href": "/support" }] },
