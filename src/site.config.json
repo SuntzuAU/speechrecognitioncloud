@@ -6,7 +6,7 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.2.0 - add R2 headshot URLs for testimonials",
+  "_buildNote": "v1.3.0 - reorder homepage, 28 years, credibility block, copyright 2026",
 
   "colours": {
     "brand": "#4338CA",
@@ -63,7 +63,7 @@
     "ctaSecondary": "Contact us",
     "ctaSecondaryUrl": "/contact",
     "microcopy": "No credit card required. Installs in 2 minutes. Windows 10/11.",
-    "trustLine": "Built by Voice Recognition Australia. 26 years in speech recognition."
+    "trustLine": "Built by Voice Recognition Australia. 28 years in speech recognition."
   },
 
   "clarityStrip": {
@@ -87,6 +87,17 @@
     { "value": "3x", "label": "Faster than typing" },
     { "value": "57+", "label": "Languages supported" }
   ],
+
+  "credibility": {
+    "headline": "Built on 28 years of speech recognition expertise",
+    "subheadline": "Speech Recognition Cloud is developed by Voice Recognition Australia, one of the longest-serving speech recognition specialists in the country.",
+    "points": [
+      "Deploying voice technology in Australian healthcare, legal, and government environments since 1998",
+      "Authorised Nuance Dragon reseller since the product launched in Australia",
+      "Presented the national Dragonology training series on behalf of Nuance in 2017",
+      "Trusted by professionals who need voice tools that work in real environments, not just demos"
+    ]
+  },
 
   "testimonials": [
     { "quote": "It just works! Literally anyone can benefit from this. Just speak.", "name": "Mark F.", "role": "Journalist", "headshot": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/03/19/src-headshot-mark-f-journalist-v2-60e7fc01.jpg" },
@@ -179,7 +190,7 @@
       { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61584787324455" },
       { "platform": "LinkedIn", "url": "https://www.linkedin.com/company/speech-recognition-cloud/" }
     ],
-    "copyright": "2025 Voice Recognition Australia. All rights reserved."
+    "copyright": "2026 Voice Recognition Australia. All rights reserved."
   },
 
   "download": {
