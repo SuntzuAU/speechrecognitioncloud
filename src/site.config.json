@@ -6,7 +6,7 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.5.0 - add /learn section, update nav with Learn link",
+  "_buildNote": "v1.5.1 - move Learn nav link between Pricing and Support",
 
   "colours": {
     "brand": "#4338CA",
@@ -29,9 +29,9 @@
     "logo": "/logo.jpg",
     "links": [
       { "label": "Features", "href": "/#features" },
-      { "label": "Learn", "href": "/learn" },
       { "label": "Who it's for", "href": "#", "dropdown": true },
       { "label": "Pricing", "href": "/pricing" },
+      { "label": "Learn", "href": "/learn" },
       { "label": "Support", "href": "/support" },
       { "label": "Contact", "href": "/contact" }
     ],
