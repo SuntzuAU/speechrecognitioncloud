@@ -1,10 +1,70 @@
 ---
 import site from '../site.config.json';
-const { title, description, canonicalUrl } = Astro.props;
+const { title, description, canonicalUrl, extraSchema } = Astro.props;
 const pageTitle = title ? `${title} | ${site.siteName}` : site.seoTitle;
 const pageDescription = description || site.seoDescription;
 const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+// Build breadcrumb from current URL path
+const pathname = Astro.url.pathname;
+const pathSegments = pathname.split('/').filter(Boolean);
+const breadcrumbItems = [
+  { name: 'Home', url: site.siteUrl + '/' }
+];
+let currentPath = '';
+for (const segment of pathSegments) {
+  currentPath += '/' + segment;
+  const name = segment.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  breadcrumbItems.push({ name, url: site.siteUrl + currentPath });
+}
+
+// Organization schema (every page)
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": site.organization.name,
+  "legalName": site.organization.legalName,
+  "url": site.organization.url,
+  "logo": site.organization.logo,
+  "foundingDate": site.organization.foundingDate,
+  "founder": {
+    "@type": "Person",
+    "name": site.organization.founder.name,
+    "jobTitle": site.organization.founder.jobTitle,
+    "url": site.organization.founder.url
+  },
+  "sameAs": site.organization.sameAs,
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": site.organization.contactPoint.contactType,
+    "url": site.organization.contactPoint.url
+  }
+};
+
+// WebSite schema (every page)
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": site.siteName,
+  "url": site.siteUrl,
+  "publisher": {
+    "@type": "Organization",
+    "name": site.organization.name
+  }
+};
+
+// BreadcrumbList schema (every page)
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+};
 ---
 <!DOCTYPE html>
 <html lang="en-AU">
@@ -58,6 +118,14 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
     .muted { color: var(--muted); }
     @media (max-width: 768px) { .section-pad { padding: 36px 0; } .container { padding: 0 16px; } }
   </style>
+  <!-- Global schemas: Organization, WebSite, BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <!-- Per-page extra schema (passed as prop) -->
+  {extraSchema && extraSchema.map(s => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
   {site.googleAnalyticsId && (
     <script is:inline define:vars={{ gaId: site.googleAnalyticsId }}>
       window.dataLayer = window.dataLayer || [];

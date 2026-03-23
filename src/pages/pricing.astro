@@ -1,8 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+
+// FAQPage schema for pricing FAQ
+const pricingFaqItems = [
+  { question: "Is there really a free version?", answer: "Yes. The Starter plan gives you 20 minutes of dictation per month with core features. No credit card required. No trial period - it stays free." },
+  { question: "Can I cancel anytime?", answer: "Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts." },
+  { question: "What currency are prices in?", answer: "Prices are listed in USD and will convert to your local currency at checkout." },
+  { question: "Can I upgrade or downgrade later?", answer: "Yes. You can upgrade at any time and your new plan starts immediately. Contact us to arrange a downgrade at your next billing cycle." },
+  { question: "Do you offer volume or enterprise pricing?", answer: "Yes. Contact us for pricing on 5 or more licences. We offer volume discounts and can arrange invoicing for larger deployments." }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": pricingFaqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+
+const extraSchema = [faqSchema];
 ---
-<BaseLayout title="Pricing" description="Simple, affordable speech recognition plans. Start free, upgrade when you need more. No credit card required.">
+<BaseLayout title="Pricing" description="Simple, affordable speech recognition plans. Start free, upgrade when you need more. No credit card required." extraSchema={extraSchema}>
   <section class="section-pad">
     <div class="container text-center">
       <p class="eyebrow">PRICING</p>
@@ -43,11 +67,7 @@ import site from '../site.config.json';
   <section class="section-pad">
     <div class="container" style="max-width:800px">
       <h2 class="text-center" style="margin-bottom:40px">Pricing FAQ</h2>
-      <details class="faq-item"><summary class="faq-question">Is there really a free version?</summary><div class="faq-answer"><p>Yes. The Starter plan gives you 20 minutes of dictation per month with core features. No credit card required. No trial period - it stays free.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">Can I cancel anytime?</summary><div class="faq-answer"><p>Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">What currency are prices in?</summary><div class="faq-answer"><p>Prices are listed in USD and will convert to your local currency at checkout.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">Can I upgrade or downgrade later?</summary><div class="faq-answer"><p>Yes. You can upgrade at any time and your new plan starts immediately. Contact us to arrange a downgrade at your next billing cycle.</p></div></details>
-      <details class="faq-item"><summary class="faq-question">Do you offer volume or enterprise pricing?</summary><div class="faq-answer"><p>Yes. Contact us for pricing on 5 or more licences. We offer volume discounts and can arrange invoicing for larger deployments.</p></div></details>
+      {pricingFaqItems.map(item => (<details class="faq-item"><summary class="faq-question">{item.question}</summary><div class="faq-answer"><p>{item.answer}</p></div></details>))}
     </div>
   </section>
   <section class="section-pad section-dark" style="padding:60px 0">

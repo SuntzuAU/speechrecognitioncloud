@@ -6,7 +6,7 @@
   "seoTitle": "Speech Recognition Cloud - AI Voice Dictation for Windows",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.6.0 - founder-led credibility section, Russell Bewsell personal story",
+  "_buildNote": "v1.7.0 - comprehensive schema markup on every page",
 
   "colours": {
     "brand": "#4338CA",
@@ -23,6 +23,28 @@
     "darkSectionText": "#E2E8F0",
     "darkSectionMuted": "#94A3B8",
     "darkSectionAccent": "#818CF8"
+  },
+
+  "organization": {
+    "name": "Voice Recognition Australia",
+    "legalName": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au",
+    "logo": "https://speechrecognition.cloud/logo.jpg",
+    "foundingDate": "1999",
+    "founder": {
+      "name": "Russell Bewsell",
+      "jobTitle": "Founder and CEO",
+      "url": "https://www.linkedin.com/in/rbewsell/"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61584787324455",
+      "https://www.linkedin.com/company/speech-recognition-cloud/",
+      "https://www.voicerecognition.com.au"
+    ],
+    "contactPoint": {
+      "contactType": "customer support",
+      "url": "https://speechrecognition.cloud/contact"
+    }
   },
 
   "nav": {
@@ -207,9 +229,11 @@
     "type": "SoftwareApplication",
     "name": "Speech Recognition Cloud",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Windows",
+    "operatingSystem": "Windows 10, Windows 11",
+    "description": "AI voice dictation software that turns speech into accurate, punctuated text in any Windows application. No voice training required. 57 languages supported.",
+    "downloadUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",
     "offers": [
-      { "price": "0", "priceCurrency": "USD", "description": "Starter - Free" },
+      { "price": "0", "priceCurrency": "USD", "description": "Starter - Free (20 min/month)" },
       { "price": "79", "priceCurrency": "USD", "description": "Personal/Educational - Annual" },
       { "price": "159", "priceCurrency": "USD", "description": "Professional - Annual" },
       { "price": "439", "priceCurrency": "USD", "description": "Medical - Annual" }

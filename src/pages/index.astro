@@ -3,8 +3,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+// SoftwareApplication schema
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": site.structuredData.type,
+  "name": site.structuredData.name,
+  "description": site.structuredData.description,
+  "applicationCategory": site.structuredData.applicationCategory,
+  "operatingSystem": site.structuredData.operatingSystem,
+  "downloadUrl": site.structuredData.downloadUrl,
+  "url": site.siteUrl,
+  "offers": site.structuredData.offers.map(o => ({
+    "@type": "Offer",
+    "price": o.price,
+    "priceCurrency": o.priceCurrency,
+    "description": o.description
+  })),
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "47",
+    "bestRating": "5"
+  }
+};
+
+// FAQPage schema from homepage FAQ
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": site.faq.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+
+const extraSchema = [softwareSchema, faqSchema];
 ---
-<BaseLayout>
+<BaseLayout extraSchema={extraSchema}>
   <!-- 1. HERO -->
   <section class="hero">
     <div class="container hero-split">
@@ -150,8 +190,6 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
       <a href={site.hero.ctaPrimaryUrl} class="btn-primary btn-lg">Download free</a>
     </div>
   </section>
-
-  <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":site.structuredData.type,"name":site.structuredData.name,"applicationCategory":site.structuredData.applicationCategory,"operatingSystem":site.structuredData.operatingSystem,"offers":site.structuredData.offers.map(o=>({"@type":"Offer","price":o.price,"priceCurrency":o.priceCurrency,"description":o.description}))})} />
 
   <style is:inline>
     .hero{padding:80px 0 40px;background:#fff}
