@@ -10,7 +10,7 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
         <p class="eyebrow">HEALTHCARE</p>
         <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Voice dictation for healthcare teams</h1>
         <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:540px">Nurses, radiologists, allied health professionals, and healthcare administrators spend hours on documentation every day. Speech Recognition Cloud lets you dictate notes, reports, and correspondence directly into any Windows application at the cursor.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/medical" class="btn-secondary">Medical professionals trial</a></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="#trial" class="btn-secondary">Free Medical Ultra trial</a></div>
         <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
       </div>
     </div>
@@ -30,13 +30,33 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
     </div>
   </section>
 
-  <section class="section-pad">
-    <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Are you a doctor or specialist?</h2>
-      <p class="muted" style="margin-bottom:24px">Our Medical plan includes specialised medical vocabularies, Ultra Accuracy Medical Mode, and dedicated support. Try it free for 30 days.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="/medical" class="btn-primary">Free medical trial</a>
-        <a href="/pricing" class="btn-secondary">View all plans</a>
+  <!-- FREE MEDICAL ULTRA TRIAL FORM -->
+  <section class="section-pad" id="trial">
+    <div class="container" style="max-width:560px">
+      <div class="trial-form-card">
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:4px;color:#fff;text-align:center">Try Medical Ultra free for 30 days</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:20px;text-align:center">Ultra-accurate medical dictation with specialised vocabulary. No credit card required.</p>
+        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate>
+          <input type="hidden" name="u" value="293" />
+          <input type="hidden" name="f" value="293" />
+          <input type="hidden" name="s" value="" />
+          <input type="hidden" name="c" value="0" />
+          <input type="hidden" name="m" value="0" />
+          <input type="hidden" name="act" value="sub" />
+          <input type="hidden" name="v" value="2" />
+          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <div class="form-field">
+            <input type="text" name="fullname" id="hc-fullname" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <input type="email" name="email" id="hc-email" placeholder="Your email" required />
+          </div>
+          <button type="submit" id="_form_293_submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px 24px;font-size:16px;margin-top:4px">Get started free</button>
+        </form>
+        <div id="_form_293_thank_you" style="display:none;text-align:center;padding:20px 0;color:#fff">
+          <p style="font-size:18px;font-weight:600;margin-bottom:8px">You're in!</p>
+          <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -57,6 +77,62 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
     .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
     .benefit .muted{font-size:14px;line-height:1.7}
     .btn-lg{padding:14px 36px;font-size:17px}
+    .trial-form-card{background:#4338CA;border-radius:16px;padding:32px;box-shadow:0 12px 40px rgba(67,56,202,0.25)}
+    .trial-form-card .form-field{margin-bottom:12px}
+    .trial-form-card input[type="text"],.trial-form-card input[type="email"]{width:100%;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .trial-form-card input::placeholder{color:rgba(255,255,255,0.6)}
+    .trial-form-card input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
     @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
   </style>
+
+  <!-- AC Form 293 submission script -->
+  <script is:inline>
+    (function(){
+      var form = document.getElementById('_form_293_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_293_thank_you');
+
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.querySelector('[name="fullname"]');
+        var email = form.querySelector('[name="email"]');
+        if (!name.value.trim() || !email.value.trim()) return;
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
+          email.style.borderColor = '#F37C7B';
+          return;
+        }
+        var btn = document.getElementById('_form_293_submit');
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() {
+          btn.disabled = false;
+          btn.textContent = 'Get started free';
+          alert('Something went wrong. Please try again.');
+        };
+        document.head.appendChild(script);
+
+        window._show_thank_you = function(id, message) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+          thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>';
+        };
+      });
+    })();
+  </script>
 </BaseLayout>
