@@ -2,43 +2,147 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
 ---
-<BaseLayout title="Privacy and data" description="How Speech Recognition Cloud handles your data. No storage, no training, full encryption.">
+<BaseLayout title="Privacy and security" description="How Speech Recognition Cloud handles your data. No audio stored, no training, full encryption. GDPR, Australian Privacy Act, and CCPA compliant.">
   <section class="section-pad">
     <div class="container" style="max-width:760px">
       <p class="eyebrow">PRIVACY</p>
-      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Privacy and data handling</h1>
-      <p class="muted" style="font-size:16px;margin-bottom:40px">How Speech Recognition Cloud handles your voice and text data.</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:4px">Privacy and security</h1>
+      <p class="muted" style="font-size:14px;margin-bottom:32px">Version 1.0 — March 2026</p>
+
       <div class="privacy-section">
-        <h2>Audio data</h2>
-        <p>When you dictate, your audio is sent to our cloud processing servers for transcription. The audio is processed in real time and immediately discarded after transcription is complete. No audio recordings are saved at any point. We do not store, archive, or retain any audio data.</p>
+        <h2>Our commitment</h2>
+        <p>Speech Recognition Cloud respects your privacy and your rights under international frameworks such as the EU General Data Protection Regulation (GDPR), the Australian Consumer Law and Privacy Act 1988, and the California Consumer Privacy Act (CCPA/CPRA). We are committed to transparency: you can ask us at any time what data we hold, request correction or deletion, and we will act promptly. Our guiding principle is simple — your data belongs to you.</p>
       </div>
+
       <div class="privacy-section">
-        <h2>Transcribed text</h2>
-        <p>Transcribed text is delivered directly to your cursor in the active application. The text is not stored on our servers and is not retained after delivery. Once the text appears on your screen, it exists only on your device.</p>
+        <h2>TL;DR</h2>
+        <ul class="privacy-list">
+          <li>We never store your audio or transcripts</li>
+          <li>Audio is processed in memory only, then immediately erased</li>
+          <li>Your dictation history stays on your computer — we cannot access it</li>
+          <li>We do not sell or share your data with third parties</li>
+          <li>You can request deletion of your data at any time</li>
+        </ul>
       </div>
+
       <div class="privacy-section">
-        <h2>AI model training</h2>
-        <p>Your data is never used to train AI models. We do not use your audio, text, vocabulary, or any other data to train, fine-tune, or improve any machine learning models. This applies to all plans including the free tier.</p>
+        <h2>What data we process and why</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Data</th><th>Purpose</th><th>Legal basis (GDPR)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Voice buffers, audio data, transcribed text</strong><br/><span class="muted" style="font-size:13px">RAM only, no retention</span></td><td>Convert speech to text</td><td>Art 6(1)(b) — contract</td></tr>
+              <tr><td><strong>Usage logs, transcription metadata, computer footprint, coarse locale, crash traces</strong><br/><span class="muted" style="font-size:13px">5 years</span></td><td>Billing, keep the service reliable, scale capacity, detect abuse</td><td>Art 6(1)(b) — contract<br/>Art 6(1)(f) — legitimate interests</td></tr>
+              <tr><td><strong>Account and billing details, contact details, payment info</strong><br/><span class="muted" style="font-size:13px">10 years</span></td><td>Billing, account management, support, inform users of changes to functionality and policy</td><td>Art 6(1)(b) — contract<br/>Art 6(1)(c) — legal obligation</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+
       <div class="privacy-section">
-        <h2>Encryption</h2>
-        <p>All connections between your device and our servers are encrypted in transit using industry-standard TLS encryption. Your data is protected during transmission.</p>
+        <h2>Transcription</h2>
+        <p>On our servers, audio is processed transiently and never stored in permanent memory. We route your audio to cloud-based speech-to-text providers that operate under zero data retention policies. Audio is processed and immediately discarded. Dictation history and transcripts remain only on your own computer. Speech Recognition Cloud staff cannot access them.</p>
       </div>
+
       <div class="privacy-section">
-        <h2>Account data</h2>
-        <p>We store only the minimum information required to manage your account: your email address, subscription status, and licence information. This data is stored securely and is not shared with third parties except as required for payment processing.</p>
+        <h2>AI Modes</h2>
+        <p>When you use our AI features to process your text:</p>
+        <ul class="privacy-list">
+          <li>Your text is sent to a third-party AI provider (OpenAI) for processing</li>
+          <li>OpenAI retains data for up to 30 days for service reliability — this is the only feature where temporary retention applies</li>
+          <li>Processed results are returned to your device; we do not store the content on our servers</li>
+        </ul>
       </div>
+
       <div class="privacy-section">
-        <h2>Custom vocabulary</h2>
-        <p>Custom vocabulary entries you add are stored in your account to sync across devices. This data is encrypted and is only accessible to your account.</p>
+        <h2>Screen OCR</h2>
+        <p>Our Screen OCR feature helps recognise text on your screen to increase transcription accuracy:</p>
+        <ul class="privacy-list">
+          <li>OCR processing happens locally on your device</li>
+          <li>The raw text content of your active window is sent to our servers for extraction of keywords. Your screen content is not stored and only processed transiently and may only be used to build a shared anonymous dictionary</li>
+          <li>Unrecognised words may be processed for categorisation to cloud provider servers to extract technical terms, names, and similar. Only words not in our dictionary are sent, not full sentences or personal context, as the majority of words are already in our dictionaries</li>
+          <li>We apply a strict no-retention policy for these requests — they are kept in RAM only and are never stored, both on our servers and our cloud provider servers</li>
+        </ul>
       </div>
+
       <div class="privacy-section">
-        <h2>Medical plan</h2>
-        <p>The Medical plan includes additional privacy controls. AI modes are restricted to approved transformations only, and data handling follows stricter controls designed for clinical environments. If you have specific compliance requirements, contact us to discuss your needs.</p>
+        <h2>Account and payment information</h2>
+        <p>We collect account details (such as name and email) to manage your subscription. For billing, we process payment information (including billing address and payment method) through trusted third-party payment processors. We do not store your complete payment card details on our servers.</p>
+        <p>Payment processors we use are compliant with international standards for secure transactions (e.g. PCI-DSS). In the case of recurring subscriptions, your payment method may be securely tokenised by the payment processor to enable automatic renewals.</p>
+        <p>To maintain service reliability and prevent abuse, we collect technical information such as device type, operating system version, IP address, user account, and hardware footprint. We do not use technical metadata to build personal profiles, track browsing behaviour, or identify individuals beyond what is strictly necessary for providing the service.</p>
       </div>
+
       <div class="privacy-section">
-        <h2>Contact</h2>
-        <p>If you have questions about how your data is handled, <a href="/contact" style="color:var(--brand);font-weight:600">contact us</a>.</p>
+        <h2>Security measures</h2>
+        <ul class="privacy-list">
+          <li><strong>Encryption:</strong> TLS 1.2+ in transit; AES-256 at rest for account and usage data</li>
+          <li><strong>Access controls:</strong> Unique accounts with mandatory two-factor authentication for all staff</li>
+          <li><strong>Endpoint protection:</strong> Industry-standard antivirus on workstations</li>
+          <li><strong>Application hardening:</strong> Secure development practices, including code review and controlled deployment procedures; only approved software on production and staff systems</li>
+          <li><strong>Operational hygiene:</strong> Timely patching, secure cloud configurations, backups of essential service data</li>
+          <li><strong>Baseline compliance:</strong> Aligned with ACSC Essential Eight, APPs, and GDPR principles. We operate in alignment with ISO 27001 controls. Security practices informed by SOC 2 Trust Services Criteria</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Data sharing</h2>
+        <p><strong>Service providers:</strong> We use trusted third parties to support core operations. These providers process data only under our instructions and with strict confidentiality:</p>
+        <ul class="privacy-list">
+          <li>Speech-to-text providers (zero data retention)</li>
+          <li>AI text processing provider (up to 30-day retention for service reliability)</li>
+          <li>Payment processor (PCI-DSS compliant)</li>
+        </ul>
+        <p>A detailed list of sub-processors is available upon request via our <a href="/contact" style="color:var(--brand);font-weight:600">contact page</a>.</p>
+        <p><strong>Legal compliance:</strong> We may disclose limited information if required by law, court order, or regulatory authority.</p>
+        <p><strong>With your consent:</strong> Beyond these cases, we will only share your information if you explicitly authorise us to do so.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Legal and regulatory compliance</h2>
+        <p>We comply with applicable privacy and consumer protection laws in the EU, California, Australia, and other jurisdictions where we operate. We cooperate with lawful requests from regulatory or judicial authorities, provided they are valid and proportionate. We enforce our Terms of Service and security policies to protect the rights and safety of Speech Recognition Cloud, our users, and others.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Data breach notification</h2>
+        <p>In the event of a personal data breach, we will notify affected users without undue delay and within 72 hours of becoming aware of the breach, in accordance with GDPR Art. 33. Notifications will include the nature of the breach, the categories of data affected, likely consequences, and the measures taken to address it.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Business customers</h2>
+        <p>Our Data Processing Agreement is available for all business customers and applies automatically when you use the Service. It covers GDPR Art. 28 requirements and includes EU Standard Contractual Clauses (SCCs) for international data transfers. If your organisation requires a countersigned copy, <a href="/contact" style="color:var(--brand);font-weight:600">contact us</a>.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Cross-border data processing</h2>
+        <p>Audio may be processed outside your jurisdiction depending on your location and the transcription mode used. Audio is not retained after processing is complete. Where data is transferred outside the European Economic Area, we rely on EU Standard Contractual Clauses (SCCs) and equivalent safeguards to ensure your data is protected to GDPR standards.</p>
+        <p><strong>Standard transcription processing locations:</strong> United States, Canada, Finland, Saudi Arabia, Australia. Your requests are automatically routed to the nearest available data centre for lowest latency.</p>
+        <p><strong>Medical transcription processing locations:</strong> United States, European Union. Medical transcription is processed exclusively on HIPAA-compliant infrastructure with zero data retention.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Your rights</h2>
+        <p>You can access, erase, object to, or restrict our use of usage logs at any time. Please note: if you request erasure or restriction of logs, we may no longer be able to provide the service, as these logs are required for billing, performance, and abuse prevention.</p>
+        <p>To make a request, <a href="/contact" style="color:var(--brand);font-weight:600">contact us</a> and include your device ID from:<br/><code style="background:var(--neutral);padding:4px 8px;border-radius:4px;font-size:13px">%localappdata%/speechrecognitioncloud/settings.json</code></p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Healthcare use</h2>
+        <p>Speech Recognition Cloud is not a medical device and does not diagnose or treat conditions. We do not persist or store Protected Health Information (PHI). Audio is processed transiently in memory and erased immediately. For healthcare clients, we apply enhanced safeguards aligned with Australian health privacy laws and international best practices. U.S. healthcare customers requiring HIPAA compliance should <a href="/contact" style="color:var(--brand);font-weight:600">contact us</a> to arrange a Business Associate Agreement (BAA).</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Children's privacy</h2>
+        <p>Our services are not designed for or directed at children under 13 years of age (or the minimum age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If we learn we have inadvertently collected such information, we will delete it promptly.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Changes to this privacy policy</h2>
+        <p>We reserve the right to periodically update this privacy policy. Any revisions will be posted prominently, with the updated effective date clearly indicated. We encourage you to regularly review this policy to stay informed about our privacy practices.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>Questions about privacy?</h2>
+        <p><a href="/contact" style="color:var(--brand);font-weight:600">Contact us</a> with any questions about how your data is handled.</p>
       </div>
     </div>
   </section>
@@ -46,6 +150,17 @@ import site from '../site.config.json';
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
     .privacy-section{margin-bottom:36px}
     .privacy-section h2{font-size:20px;font-weight:700;margin-bottom:12px}
-    .privacy-section p{font-size:15px;line-height:1.7;color:var(--muted)}
+    .privacy-section p{font-size:15px;line-height:1.7;color:var(--muted);margin-bottom:12px}
+    .privacy-section p:last-child{margin-bottom:0}
+    .privacy-list{list-style:none;margin-bottom:12px}
+    .privacy-list li{font-size:15px;line-height:1.7;color:var(--muted);padding-left:20px;position:relative;margin-bottom:6px}
+    .privacy-list li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--brand);opacity:0.4}
+    .data-table-wrap{overflow-x:auto;margin-bottom:12px}
+    .data-table{width:100%;border-collapse:collapse;font-size:14px}
+    .data-table th,.data-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+    .data-table th{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;background:var(--neutral)}
+    .data-table td{color:var(--muted);font-size:14px;line-height:1.6}
+    code{font-family:'SF Mono',Monaco,Consolas,monospace}
+    @media(max-width:768px){.data-table{font-size:13px}.data-table th,.data-table td{padding:8px 10px}}
   </style>
 </BaseLayout>
