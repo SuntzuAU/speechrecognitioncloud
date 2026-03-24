@@ -77,7 +77,9 @@ const breadcrumbSchema = {
   <link rel="icon" type="image/jpeg" href="/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" /></noscript>
   <style is:inline>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -141,7 +143,7 @@ const breadcrumbSchema = {
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo-link"><img src="/logo.jpg" alt={site.siteName} class="logo-img" loading="eager" /></a>
+      <a href="/" class="logo-link"><img src="/logo.jpg" alt={site.siteName} class="logo-img" width="180" height="46" loading="eager" /></a>
       <nav class="nav-desktop">
         {site.nav.links.map(link => (
           link.dropdown ? (
