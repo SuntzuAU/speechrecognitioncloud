@@ -9,9 +9,11 @@ const imgBase = `${R2}/speechrecognitioncloud/2026/03/19`;
 const medicalFaqItems = [
   { question: "How long is the free trial?", answer: "Speech Recognition Cloud Medical Ultra is free for 30 days. After that it reverts to the non-medical free edition (20 min/month). You can upgrade to a paid Medical plan at any time." },
   { question: "Do you store any patient data?", answer: "No. We only store your email address for updates and product authorisation. Audio is processed and immediately discarded. We do not store your vocabulary, voice data, or any patient information." },
-  { question: "What operating systems are supported?", answer: "Windows 10 and 11 only for now. Mac support is on our roadmap but has no current ETA." },
-  { question: "Will it work with my EMR?", answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application. It works with Best Practice, Medical Director, Genie, Zedmed, and any other Windows-based EMR." },
-  { question: "Is this an AI scribe or meeting recorder?", answer: "No. This is verbatim cursor-based dictation. What you say is what appears on screen. It does not summarise, rewrite, or interpret your words. No AI hallucination risk." }
+  { question: "What operating systems are supported?", answer: "Windows 10 and 11 only for now. The Medical plan includes a companion mobile app for iPhone and Android that works as a wireless microphone and offline recorder. Mac desktop support is on our roadmap but has no current ETA." },
+  { question: "Will it work with my EMR?", answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application. It works with Best Practice, Medical Director, Genie, Zedmed, and any other Windows-based EMR. Unlike some products, it never falls back to a dictation box." },
+  { question: "Is this an AI scribe or meeting recorder?", answer: "No. This is verbatim cursor-based dictation. What you say is what appears on screen. It does not summarise, rewrite, or interpret your words. No AI hallucination risk." },
+  { question: "How does the mobile app work?", answer: "The companion app for iPhone and Android turns your phone into a wireless microphone for SRC on your PC. In hospital settings this eliminates shared microphones entirely. It also has an offline recording mode for ward rounds or areas without reliable internet. Dictations are queued on the phone and delivered as completed documents to your logged-in PC when connectivity resumes." },
+  { question: "How does the pricing compare to Dragon Medical?", answer: "Speech Recognition Cloud Medical is roughly one third the cost of equivalent solutions. At $439 USD per year with no upgrade fees, serial numbers, or version compatibility issues, it is significantly more affordable than legacy medical dictation products." }
 ];
 
 const faqSchema = {
@@ -48,6 +50,18 @@ const medicalPageSchema = {
 };
 
 const extraSchema = [faqSchema, medicalPageSchema];
+
+// SVG icons for benefit cards
+const icons = {
+  phone: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>',
+  cursor: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 8-6 2-2 6z"/><path d="M14 14l3 3"/></svg>',
+  cloud: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
+  text: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  mic: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+  wifi: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12" y2="20.01"/></svg>',
+  dollar: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  zap: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>'
+};
 ---
 <BaseLayout title="Medical Professionals - Free 30 Day Trial" description="Try Medical Ultra free for 30 days. Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation." extraSchema={extraSchema}>
   <!-- HERO: Text left, image right -->
@@ -95,6 +109,18 @@ const extraSchema = [faqSchema, medicalPageSchema];
       <div id="_form_293_thank_you" style="display:none;text-align:center;padding:16px 0;color:#fff">
         <p style="font-size:18px;font-weight:600;margin-bottom:4px">You're in!</p>
         <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO VIDEO (moved above testimonials) -->
+  <section class="section-pad" id="demo">
+    <div class="container text-center">
+      <h2 style="margin-bottom:8px">Watch a 60-second progress note</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">See Medical Ultra in action with a real clinical dictation.</p>
+      <div class="yt-facade" data-ytid="4rlay0Zx660">
+        <img src="https://i.ytimg.com/vi/4rlay0Zx660/maxresdefault.jpg" alt="Medical speech to text progress note demonstration" loading="lazy" decoding="async" />
+        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
       </div>
     </div>
   </section>
@@ -148,29 +174,76 @@ const extraSchema = [faqSchema, medicalPageSchema];
     </div>
   </section>
 
-  <!-- DEMO VIDEO -->
-  <section class="section-pad" id="demo">
-    <div class="container text-center">
-      <h2 style="margin-bottom:8px">Watch a 60-second progress note</h2>
-      <p class="muted" style="font-size:16px;margin-bottom:24px">See Medical Ultra in action with a real clinical dictation.</p>
-      <div class="yt-facade" data-ytid="4rlay0Zx660">
-        <img src="https://i.ytimg.com/vi/4rlay0Zx660/maxresdefault.jpg" alt="Medical speech to text progress note demonstration" loading="lazy" decoding="async" />
-        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
-      </div>
-    </div>
-  </section>
+  <!-- BENEFITS: rebuilt with richer content and icons -->
+  <section class="section-pad">
+    <div class="container" style="max-width:880px">
+      <h2 class="text-center" style="margin-bottom:12px">Built for clinical workflows</h2>
+      <p class="muted text-center" style="max-width:600px;margin:0 auto 48px;font-size:16px">Every feature designed around how clinicians actually work — in hospitals, clinics, and on the move.</p>
 
-  <!-- BENEFITS -->
-  <section class="section-pad section-neutral">
-    <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for clinical workflows</h2>
-      <div class="benefit-grid">
-        <div class="benefit"><h3>Works with any EMR</h3><p class="muted">Dictate at the cursor in Best Practice, Medical Director, Genie, Zedmed, or any Windows-based clinical software. No special integration required.</p></div>
-        <div class="benefit"><h3>Medical vocabulary</h3><p class="muted">Specialised medical vocabularies included. Add your own terms, drug names, and abbreviations through custom vocabulary.</p></div>
-        <div class="benefit"><h3>Ultra Accuracy Medical Mode</h3><p class="muted">Enhanced accuracy processing designed for clinical terminology. The latest Microsoft and AI medical speech engines, updated continuously.</p></div>
-        <div class="benefit"><h3>Privacy controls</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for AI model training. Restricted AI modes for additional privacy.</p></div>
-        <div class="benefit"><h3>No voice training</h3><p class="muted">Install and start dictating immediately. No voice profiles, no calibration, no setup wizards. The cloud AI handles accuracy from day one.</p></div>
-        <div class="benefit"><h3>Dedicated support</h3><p class="muted">Medical plan includes dedicated remote support and one-on-one training to help you get set up and productive.</p></div>
+      <div class="benefit-list">
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.phone} />
+          <div>
+            <h3>Your phone becomes a wireless microphone</h3>
+            <p class="muted">The Medical plan includes a companion app for iPhone and Android that turns your smartphone into a wireless microphone for SRC on your PC. In hospital environments this eliminates shared desktop microphones entirely — no hygiene concerns, no theft, no cleaning protocols. The app also tunnels audio through remote desktop connections, so if you are on a Mac remoting into a Windows PC, dictation works seamlessly without additional hardware.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.wifi} />
+          <div>
+            <h3>Offline recording for ward rounds</h3>
+            <p class="muted">When you are doing rounds or working in areas without reliable internet, the mobile app records your dictation offline on your iPhone or Android. When connectivity resumes, completed documents are delivered to whichever PC is logged into SRC — ready to copy and paste directly into your EHR. No audio is lost and no internet connection is required at the point of dictation.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cursor} />
+          <div>
+            <h3>Dictates at the cursor — no dictation box, ever</h3>
+            <p class="muted">Speech Recognition Cloud works directly at the cursor in every Windows application. Best Practice, Medical Director, Genie, Zedmed, Outlook, Word — it does not matter. Unlike Dragon Medical One, which frequently falls back to a separate dictation box when it cannot negotiate with a text editor, SRC never does this. Text appears exactly where your cursor is, and you can switch between applications instantly without reconfiguring anything.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.zap} />
+          <div>
+            <h3>Automatic punctuation</h3>
+            <p class="muted">You do not need to say "full stop", "comma", or "new line". SRC handles punctuation automatically based on the natural rhythm and structure of your speech. This is a significant workflow improvement over most dictation products, including Dragon, where spoken punctuation commands break the flow of clinical documentation and slow you down.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cloud} />
+          <div>
+            <h3>Cloud-updated medical vocabulary</h3>
+            <p class="muted">The medical vocabulary is maintained and updated continuously in the cloud. New drug names, clinical terminology, and procedural terms are added without you needing to install updates or purchase new versions. This is a major advantage over legacy products where vocabulary improvements are tied to expensive version upgrades. You can also add your own custom terms, abbreviations, and organisation-specific language through the built-in vocabulary editor.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.text} />
+          <div>
+            <h3>Text replacements and boilerplate templates</h3>
+            <p class="muted">Set up acronyms, organisational names, or complete boilerplate text sections that expand on voice command. If you regularly dictate the same referral paragraphs, discharge summaries, or standard clinical phrases, you can trigger them with a short spoken keyword instead of dictating them from scratch every time. Available on the Professional and Medical plans.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.mic} />
+          <div>
+            <h3>Ultra Accuracy Medical Mode</h3>
+            <p class="muted">Enhanced accuracy processing built specifically for clinical terminology. The system uses the latest Microsoft and AI medical speech engines, which are updated continuously in the cloud. No voice training, no calibration, no setup wizards — install and start dictating immediately with medical-grade accuracy from day one.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.dollar} />
+          <div>
+            <h3>One third the cost of legacy medical dictation</h3>
+            <p class="muted">Speech Recognition Cloud Medical is $439 USD per year. That is roughly a third of the cost of equivalent solutions like Dragon Medical One. There are no upgrade fees, no serial numbers, no version compatibility headaches, and no per-seat infrastructure costs. The cloud-based model means you always have the latest version without paying for major upgrades.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -188,7 +261,7 @@ const extraSchema = [faqSchema, medicalPageSchema];
   <section class="section-pad">
     <div class="container text-center" style="max-width:600px">
       <h2 style="margin-bottom:12px">One third the cost of legacy dictation</h2>
-      <p class="muted" style="margin-bottom:24px">Speech Recognition Cloud Medical is $439/year. No upgrade fees, no serial numbers, no compatibility headaches. Compare that with what you are paying now.</p>
+      <p class="muted" style="margin-bottom:24px">Speech Recognition Cloud Medical is $439 USD/year. No upgrade fees, no serial numbers, no compatibility headaches. Compare that with what you are paying now.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <a href="/pricing" class="btn-secondary">View pricing</a>
         <a href="#" onclick="document.getElementById('med-fullname').focus();window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn-primary">Start free trial</a>
@@ -243,14 +316,17 @@ const extraSchema = [faqSchema, medicalPageSchema];
     .med-attr{font-size:14px;font-weight:600;margin:0;line-height:1.3}
     .med-attr-loc{font-size:13px;font-weight:400;margin:0}
 
+    /* Rich benefit cards with icons */
+    .benefit-list{display:flex;flex-direction:column;gap:28px}
+    .benefit-rich{display:flex;gap:20px;padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit-icon{flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#EEF2FF;border-radius:12px;margin-top:2px}
+    .benefit-rich h3{font-size:17px;font-weight:700;margin:0 0 8px}
+    .benefit-rich .muted{font-size:14px;line-height:1.75;margin:0}
+
     .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12)}.yt-facade img{width:100%;aspect-ratio:16/9;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
-    .benefit .muted{font-size:14px;line-height:1.7}
     .btn-lg{padding:14px 36px;font-size:17px}
     .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
-    @media(max-width:768px){.hero-split{grid-template-columns:1fr;gap:24px}.hero-img-wrap img{max-width:100%}.form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}.form-strip-form{flex-direction:column}.form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}.med-testimonials{grid-template-columns:1fr}.benefit-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.hero-split{grid-template-columns:1fr;gap:24px}.hero-img-wrap img{max-width:100%}.form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}.form-strip-form{flex-direction:column}.form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}.med-testimonials{grid-template-columns:1fr}.benefit-rich{flex-direction:column;gap:12px}}
   </style>
 
   <!-- AC Form 293 submission script -->
