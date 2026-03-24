@@ -74,7 +74,7 @@ const breadcrumbSchema = {
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription} />
   {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-  <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+  <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" />
@@ -143,7 +143,7 @@ const breadcrumbSchema = {
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo-link"><img src="/logo.jpg" alt={site.siteName} class="logo-img" width="180" height="46" loading="eager" /></a>
+      <a href="/" class="logo-link"><img src="/logo.png" alt={site.siteName} class="logo-img" width="180" height="46" loading="eager" /></a>
       <nav class="nav-desktop">
         {site.nav.links.map(link => (
           link.dropdown ? (
@@ -171,7 +171,7 @@ const breadcrumbSchema = {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/logo.jpg" alt={site.siteName} width="180" loading="lazy" decoding="async" style="filter:brightness(0) invert(1);opacity:0.9" />
+          <img src="/logo.png" alt={site.siteName} width="180" loading="lazy" decoding="async" class="footer-logo" />
           <p class="muted" style="margin-top:12px;font-size:14px;max-width:280px">{site.footer.tagline}</p>
         </div>
         {site.footer.columns.map(col => (<div class="footer-col"><h4 style="font-size:14px;font-weight:600;margin-bottom:12px;letter-spacing:0">{col.heading}</h4>{col.links.map(link => (<a href={link.href} style="display:block;font-size:14px;color:var(--dark-muted);margin-bottom:8px;transition:color 0.2s">{link.label}</a>))}</div>))}
@@ -204,6 +204,7 @@ const breadcrumbSchema = {
     .nav-dropdown-item { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; border-radius: 8px; transition: background 0.15s; }
     .nav-dropdown-item:hover { background: var(--neutral); }
     .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-logo { filter: brightness(0) invert(1); opacity: 0.9; }
     @media (max-width: 768px) { .nav-desktop, .header-cta { display: none; } .mobile-toggle { display: flex; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .footer-brand { grid-column: 1 / -1; } }
     @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
   </style>
