@@ -32,7 +32,7 @@ const faqSchema = {
 const medicalPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
-  "name": "Medical Dictation Software - Free 30 Day Trial",
+  "name": "Speech to Text for Doctors - Free 30 Day Trial",
   "description": "Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation.",
   "url": site.siteUrl + "/medical",
   "about": {
@@ -63,7 +63,7 @@ const icons = {
   zap: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>'
 };
 ---
-<BaseLayout title="Medical Professionals - Free 30 Day Trial" description="Try Medical Ultra free for 30 days. Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation." extraSchema={extraSchema}>
+<BaseLayout title="Speech to Text for Doctors - Free 30 Day Trial" description="Try Medical Ultra free for 30 days. Ultra-accurate medical dictation with specialised vocabulary. Works with any EMR. No voice training. One third the cost of legacy dictation." extraSchema={extraSchema}>
   <!-- HERO: Text left, image right -->
   <section class="section-pad">
     <div class="container hero-split">
@@ -323,7 +323,7 @@ const icons = {
     .benefit-rich h3{font-size:17px;font-weight:700;margin:0 0 8px}
     .benefit-rich .muted{font-size:14px;line-height:1.75;margin:0}
 
-    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12)}.yt-facade img{width:100%;aspect-ratio:16/9;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
     .btn-lg{padding:14px 36px;font-size:17px}
     .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
     @media(max-width:768px){.hero-split{grid-template-columns:1fr;gap:24px}.hero-img-wrap img{max-width:100%}.form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}.form-strip-form{flex-direction:column}.form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}.med-testimonials{grid-template-columns:1fr}.benefit-rich{flex-direction:column;gap:12px}}
@@ -382,6 +382,6 @@ const icons = {
 
   <!-- YouTube facade -->
   <script is:inline>
-    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.style.paddingBottom='56.25%';el.style.height='0';el.appendChild(iframe);});});
+    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
   </script>
 </BaseLayout>
