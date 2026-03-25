@@ -77,7 +77,7 @@ const extraSchema = [softwareSchema, faqSchema];
   </section>
 
   <!-- 3. STATS -->
-  <section class="section-pad" id="proof">
+  <section class="stats-section" id="proof">
     <div class="container">
       <div class="stats-grid">{site.stats.map(s => (<div class="stat-card"><span class="stat-value accent">{s.value}</span><span class="stat-label">{s.label}</span></div>))}</div>
     </div>
@@ -209,7 +209,8 @@ const extraSchema = [softwareSchema, faqSchema];
     .hero-product img{width:100%;display:block}
     .hero-product video{width:100%;display:block;aspect-ratio:800/752}
     .clarity-strip{background:var(--dark);padding:20px 0}.clarity-grid{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}.clarity-item{display:flex;gap:8px;align-items:baseline;color:var(--dark-text);font-size:14px}.clarity-label{font-weight:600;color:var(--dark-accent);white-space:nowrap}.clarity-value{color:var(--dark-muted)}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.stat-card{text-align:center;padding:24px}.stat-value{font-size:44px;font-weight:800;display:block;letter-spacing:-0.02em}.stat-label{font-size:14px;color:var(--muted);font-weight:500}
+    .stats-section{padding:36px 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:860px;margin:0 auto}.stat-card{text-align:center;padding:16px 12px}.stat-value{font-size:44px;font-weight:800;display:block;letter-spacing:-0.02em}.stat-label{font-size:14px;color:var(--muted);font-weight:500}
     .founder-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
     .founder-quote{margin:0;padding:0;border:0}
     .founder-quote p{font-size:18px;line-height:1.7;color:var(--dark-text);font-style:italic;margin-bottom:24px}
