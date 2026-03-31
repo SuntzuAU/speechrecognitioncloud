@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+import manifest from '../data/image-manifest.json';
 const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+function imgSrc(key) {
+  const entry = manifest[key];
+  if (!entry?.r2Key || !R2) return '';
+  return `${R2.replace(/\/$/, '')}/${entry.r2Key}`;
+}
+function imgAlt(key) {
+  return manifest[key]?.altText || key;
+}
 
 // SoftwareApplication schema
 const softwareSchema = {
@@ -116,7 +126,26 @@ const extraSchema = [softwareSchema, faqSchema];
     <div class="container">
       <h2 class="text-center" style="margin-bottom:12px">Built for how you work</h2>
       <p class="text-center muted" style="margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto">Speech Recognition Cloud adapts to your profession. Choose your field to see how it fits your workflow.</p>
-      <div class="usecase-grid">{site.useCaseCards.map(uc => (<a href={uc.href} class="usecase-card"><h3>{uc.title}</h3><p class="muted">{uc.description}</p><span class="usecase-arrow accent">Learn more &rarr;</span></a>))}</div>
+      <div class="usecase-grid">
+        {site.useCaseCards.map(uc => {
+          const slug = uc.href.replace(/^\//,'');
+          const cardImgKey = `usecase-${slug}`;
+          return (
+            <a href={uc.href} class="usecase-card">
+              {imgSrc(cardImgKey) && (
+                <div class="usecase-card-img">
+                  <img src={imgSrc(cardImgKey)} alt={imgAlt(cardImgKey)} loading="lazy" decoding="async" />
+                </div>
+              )}
+              <div class="usecase-card-body">
+                <h3>{uc.title}</h3>
+                <p class="muted">{uc.description}</p>
+                <span class="usecase-arrow accent">Learn more &rarr;</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
     </div>
   </section>
 
@@ -222,7 +251,16 @@ const extraSchema = [softwareSchema, faqSchema];
     .credibility-points li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;color:var(--dark-muted)}
     .credibility-points li svg{flex-shrink:0;margin-top:2px}
     .yt-facade{position:relative;max-width:900px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    .usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.usecase-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s}.usecase-card:hover{border-color:var(--brand);box-shadow:0 6px 20px rgba(0,0,0,0.06);transform:translateY(-2px)}.usecase-card h3{font-size:17px;margin-bottom:8px;font-weight:600}.usecase-card .muted{font-size:14px;margin-bottom:12px}.usecase-arrow{font-size:14px;font-weight:600}
+    .usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .usecase-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+    .usecase-card:hover{border-color:var(--brand);box-shadow:0 6px 20px rgba(0,0,0,0.06);transform:translateY(-2px)}
+    .usecase-card-img{height:120px;overflow:hidden;background:var(--neutral)}
+    .usecase-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
+    .usecase-card:hover .usecase-card-img img{transform:scale(1.04)}
+    .usecase-card-body{padding:20px;flex:1;display:flex;flex-direction:column}
+    .usecase-card-body h3{font-size:17px;margin-bottom:8px;font-weight:600}
+    .usecase-card-body .muted{font-size:14px;margin-bottom:12px;line-height:1.6}
+    .usecase-arrow{font-size:14px;font-weight:600;margin-top:auto}
     .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.feature-tile{padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff;transition:box-shadow 0.2s}.feature-tile:hover{box-shadow:0 4px 16px rgba(0,0,0,0.04)}.feature-tile h3{font-size:17px;margin-bottom:8px;font-weight:600}.feature-tile .muted{font-size:14px}
     .testimonials-section{overflow:hidden}
     .testimonials-scroll{overflow:hidden;position:relative;width:100%}
