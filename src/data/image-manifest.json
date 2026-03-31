@@ -1,4 +1,13 @@
 {
+  "usecase-medical": {
+    "key": "usecase-medical",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-medical-25f7001b.jpg",
+    "altText": "Doctor using voice dictation software for clinical notes in an Australian medical practice",
+    "aspectRatio": "1:1",
+    "slot": "usecase-medical",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
   "usecase-healthcare": {
     "key": "usecase-healthcare",
     "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-healthcare-ed3008c2.jpg",
