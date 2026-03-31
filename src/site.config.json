@@ -6,7 +6,7 @@
   "seoTitle": "Free Speech to Text Software \u2014 Download for Windows | Speech Recognition Cloud",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.8.0 - SEO title tags updated across all pages",
+  "_buildNote": "v1.9.0 - Use-case images and download banners",
 
   "colours": {
     "brand": "#4338CA",
@@ -144,7 +144,6 @@
     { "title": "Students and education", "description": "Essays, notes, and assignments faster. Affordable plans for students.", "href": "/students", "icon": "student" },
     { "title": "Teachers and educators", "description": "Lesson plans, reports, and correspondence without the typing.", "href": "/teachers", "icon": "teacher" },
     { "title": "Journalists", "description": "Transcribe interviews, draft articles, and file stories faster.", "href": "/journalists", "icon": "journalist" },
-    { "title": "Writers and creators", "description": "Get ideas down at the speed of thought. Draft, revise, and create by voice.", "href": "/writers", "icon": "writer" },
     { "title": "Accessibility and RSI", "description": "Reduce keyboard use. An alternative input method for anyone with motor limitations.", "href": "/accessibility", "icon": "accessibility" }
   ],
 
