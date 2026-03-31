@@ -1,4 +1,76 @@
 {
+  "usecase-healthcare": {
+    "key": "usecase-healthcare",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-healthcare-ed3008c2.jpg",
+    "altText": "Healthcare worker using voice dictation at a hospital nursing station",
+    "aspectRatio": "1:1",
+    "slot": "usecase-healthcare",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "usecase-legal": {
+    "key": "usecase-legal",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-legal-0a3dac18.jpg",
+    "altText": "Lawyer using voice dictation software in an Australian law firm",
+    "aspectRatio": "1:1",
+    "slot": "usecase-legal",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "usecase-business": {
+    "key": "usecase-business",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-business-72fe0790.jpg",
+    "altText": "Business professional using voice dictation at a modern office standing desk",
+    "aspectRatio": "1:1",
+    "slot": "usecase-business",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "usecase-government": {
+    "key": "usecase-government",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-government-77571c2c.jpg",
+    "altText": "Government officer using voice dictation in an Australian government office",
+    "aspectRatio": "1:1",
+    "slot": "usecase-government",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "usecase-students": {
+    "key": "usecase-students",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-students-b3d1121d.jpg",
+    "altText": "University student using voice dictation in a modern campus library",
+    "aspectRatio": "1:1",
+    "slot": "usecase-students",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "usecase-teachers": {
+    "key": "usecase-teachers",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-teachers-c21173b1.jpg",
+    "altText": "Teacher using voice dictation in an Australian school classroom",
+    "aspectRatio": "1:1",
+    "slot": "usecase-teachers",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "usecase-journalists": {
+    "key": "usecase-journalists",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-journalists-840be265.jpg",
+    "altText": "Journalist using voice dictation to draft articles in a modern newsroom",
+    "aspectRatio": "1:1",
+    "slot": "usecase-journalists",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "usecase-accessibility": {
+    "key": "usecase-accessibility",
+    "r2Key": "speechrecognitioncloud/2026/03/31/src-usecase-accessibility-f8a24a1f.jpg",
+    "altText": "Professional using voice dictation with a headset at an ergonomic home office workstation",
+    "aspectRatio": "1:1",
+    "slot": "usecase-accessibility",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
   "healthcare-hero": {
     "key": "healthcare-hero",
     "r2Key": "speechrecognitioncloud/2026/03/19/src-healthcare-gp-dictation-emr-v2-a00abb93.jpg",
