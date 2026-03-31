@@ -24,6 +24,35 @@ function imgAlt(key) { return manifest[key]?.altText || key; }
     </div>
   </section>
 
+  <!-- MEDICAL ULTRA TRIAL BANNER -->
+  <section class="form-strip" id="trial">
+    <div class="container">
+      <div class="form-strip-inner">
+        <div class="form-strip-text">
+          <h2 style="font-size:18px;font-weight:700;margin-bottom:2px;color:#fff">Download the Free Medical Ultra Trial</h2>
+          <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0">30 days of ultra-accurate medical dictation. No credit card required.</p>
+        </div>
+        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form" novalidate>
+          <input type="hidden" name="u" value="293" />
+          <input type="hidden" name="f" value="293" />
+          <input type="hidden" name="s" value="" />
+          <input type="hidden" name="c" value="0" />
+          <input type="hidden" name="m" value="0" />
+          <input type="hidden" name="act" value="sub" />
+          <input type="hidden" name="v" value="2" />
+          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <input type="text" name="fullname" id="hc-fullname" placeholder="Your name" required />
+          <input type="email" name="email" id="hc-email" placeholder="Your email" required />
+          <button type="submit" id="_form_293_submit" class="btn-primary" style="white-space:nowrap;padding:12px 28px;font-size:15px">Get started free</button>
+        </form>
+      </div>
+      <div id="_form_293_thank_you" style="display:none;text-align:center;padding:16px 0;color:#fff">
+        <p style="font-size:18px;font-weight:600;margin-bottom:4px">You're in!</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
       <h2 class="text-center" style="margin-bottom:40px">How healthcare teams use Speech Recognition Cloud</h2>
@@ -49,37 +78,6 @@ function imgAlt(key) { return manifest[key]?.altText || key; }
     </div>
   </section>
 
-  <!-- FREE MEDICAL ULTRA TRIAL FORM -->
-  <section class="section-pad" id="trial">
-    <div class="container" style="max-width:560px">
-      <div class="trial-form-card">
-        <h2 style="font-size:22px;font-weight:700;margin-bottom:4px;color:#fff;text-align:center">Try Medical Ultra free for 30 days</h2>
-        <p style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:20px;text-align:center">Ultra-accurate medical dictation with specialised vocabulary. No credit card required.</p>
-        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate>
-          <input type="hidden" name="u" value="293" />
-          <input type="hidden" name="f" value="293" />
-          <input type="hidden" name="s" value="" />
-          <input type="hidden" name="c" value="0" />
-          <input type="hidden" name="m" value="0" />
-          <input type="hidden" name="act" value="sub" />
-          <input type="hidden" name="v" value="2" />
-          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
-          <div class="form-field">
-            <input type="text" name="fullname" id="hc-fullname" placeholder="Your name" required />
-          </div>
-          <div class="form-field">
-            <input type="email" name="email" id="hc-email" placeholder="Your email" required />
-          </div>
-          <button type="submit" id="_form_293_submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px 24px;font-size:16px;margin-top:4px">Get started free</button>
-        </form>
-        <div id="_form_293_thank_you" style="display:none;text-align:center;padding:20px 0;color:#fff">
-          <p style="font-size:18px;font-weight:600;margin-bottom:8px">You're in!</p>
-          <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section-pad section-dark" style="padding:60px 0">
     <div class="container text-center">
       <h2 style="margin-bottom:12px">Start dictating today</h2>
@@ -97,15 +95,21 @@ function imgAlt(key) { return manifest[key]?.altText || key; }
     .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
     .benefit .muted{font-size:14px;line-height:1.7}
     .btn-lg{padding:14px 36px;font-size:17px}
-    .trial-form-card{background:#4338CA;border-radius:16px;padding:32px;box-shadow:0 12px 40px rgba(67,56,202,0.25)}
-    .trial-form-card .form-field{margin-bottom:12px}
-    .trial-form-card input[type="text"],.trial-form-card input[type="email"]{width:100%;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
-    .trial-form-card input::placeholder{color:rgba(255,255,255,0.6)}
-    .trial-form-card input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
+
+    /* Horizontal form strip (matching /medical) */
+    .form-strip{background:#4338CA;padding:24px 0}
+    .form-strip-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+    .form-strip-text{flex:0 0 auto}
+    .form-strip-form{display:flex;gap:10px;flex:1;align-items:center;flex-wrap:wrap}
+    .form-strip-form input[type="text"],.form-strip-form input[type="email"]{flex:1;min-width:160px;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .form-strip-form input::placeholder{color:rgba(255,255,255,0.6)}
+    .form-strip-form input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
+
     .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}.form-strip-form{flex-direction:column}.form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}}
   </style>
 
+  <!-- AC Form 293 submission script -->
   <script is:inline>
     (function(){
       var form = document.getElementById('_form_293_');
