@@ -1,17 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
+function imgAlt(key) { return manifest[key]?.altText || key; }
 ---
-<BaseLayout title="Speech to Text for Healthcare — Free Download" description="Voice dictation for nurses, radiologists, allied health professionals, and healthcare administrators. Reduce documentation time in any Windows clinical application.">
+<BaseLayout title="Speech to Text for Healthcare -- Free Download" description="Voice dictation for nurses, radiologists, allied health professionals, and healthcare administrators. Reduce documentation time in any Windows clinical application.">
   <section class="section-pad">
-    <div class="container usecase-hero">
-      <div>
-        <p class="eyebrow">HEALTHCARE</p>
-        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Voice dictation for healthcare teams</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:540px">Nurses, radiologists, allied health professionals, and healthcare administrators spend hours on documentation every day. Speech Recognition Cloud lets you dictate notes, reports, and correspondence directly into any Windows application at the cursor.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="#trial" class="btn-secondary">Free Medical Ultra trial</a></div>
-        <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+    <div class="container">
+      <div class="usecase-hero-split">
+        <div>
+          <p class="eyebrow">HEALTHCARE</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Voice dictation for healthcare teams</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:540px">Nurses, radiologists, allied health professionals, and healthcare administrators spend hours on documentation every day. Speech Recognition Cloud lets you dictate notes, reports, and correspondence directly into any Windows application at the cursor.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="#trial" class="btn-secondary">Free Medical Ultra trial</a></div>
+          <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+        </div>
+        {imgSrc('healthcare-hero') && (
+          <div class="usecase-hero-img"><img src={imgSrc('healthcare-hero')} alt={imgAlt('healthcare-hero')} loading="eager" decoding="async" /></div>
+        )}
       </div>
     </div>
   </section>
@@ -26,6 +34,17 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
         <div class="benefit"><h3>Healthcare administration</h3><p class="muted">Practice managers, ward clerks, and health administrators can dictate correspondence, meeting minutes, and policy documents faster than typing.</p></div>
         <div class="benefit"><h3>Works with clinical systems</h3><p class="muted">Dictate into any Windows application at the cursor. No special integration needed. If you can type in it, you can dictate in it.</p></div>
         <div class="benefit"><h3>Privacy and compliance</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for AI model training.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="demo">
+    <div class="container text-center">
+      <h2 style="margin-bottom:8px">See it in action</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
+      <div class="yt-facade" data-ytid="vp0LFuRWdKI">
+        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
+        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
       </div>
     </div>
   </section>
@@ -71,7 +90,8 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero{max-width:700px}
+    .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
     .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
     .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
     .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
@@ -82,16 +102,15 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
     .trial-form-card input[type="text"],.trial-form-card input[type="email"]{width:100%;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
     .trial-form-card input::placeholder{color:rgba(255,255,255,0.6)}
     .trial-form-card input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}}
   </style>
 
-  <!-- AC Form 293 submission script -->
   <script is:inline>
     (function(){
       var form = document.getElementById('_form_293_');
       if (!form) return;
       var thankYou = document.getElementById('_form_293_thank_you');
-
       function serialize(f) {
         var q = [];
         for (var i = 0; i < f.elements.length; i++) {
@@ -102,37 +121,26 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
         }
         return q.join('&');
       }
-
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         var name = form.querySelector('[name="fullname"]');
         var email = form.querySelector('[name="email"]');
         if (!name.value.trim() || !email.value.trim()) return;
-        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
-          email.style.borderColor = '#F37C7B';
-          return;
-        }
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) { email.style.borderColor = '#F37C7B'; return; }
         var btn = document.getElementById('_form_293_submit');
-        btn.disabled = true;
-        btn.textContent = 'Submitting...';
-
+        btn.disabled = true; btn.textContent = 'Submitting...';
         var data = serialize(form);
         var script = document.createElement('script');
         script.charset = 'utf-8';
         script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
-        script.onerror = function() {
-          btn.disabled = false;
-          btn.textContent = 'Get started free';
-          alert('Something went wrong. Please try again.');
-        };
+        script.onerror = function() { btn.disabled = false; btn.textContent = 'Get started free'; alert('Something went wrong. Please try again.'); };
         document.head.appendChild(script);
-
         window._show_thank_you = function(id, message) {
-          form.style.display = 'none';
-          thankYou.style.display = 'block';
+          form.style.display = 'none'; thankYou.style.display = 'block';
           thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>';
         };
       });
     })();
+    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
   </script>
 </BaseLayout>
