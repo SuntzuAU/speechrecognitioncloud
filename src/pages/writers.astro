@@ -1,56 +1,89 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
-
+function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
+function imgAlt(key) { return manifest[key]?.altText || key; }
 const extraSchema = [{
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Free Voice to Text for Writers — Dictation Software",
+  "name": "Voice to Text for Writers and Creators",
   "description": "Get ideas down at the speed of thought. Draft, revise, and create by voice.",
   "url": site.siteUrl + "/writers",
   "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
 }];
 ---
-<BaseLayout title="Free Voice to Text for Writers — Dictation Software" description="Get ideas down at the speed of thought. Draft, revise, and create by voice." extraSchema={extraSchema}>
+<BaseLayout title="Voice to Text for Writers and Creators" description="Get ideas down at the speed of thought. Draft, revise, and create by voice with Speech Recognition Cloud." extraSchema={extraSchema}>
   <section class="section-pad">
-    <div class="container usecase-hero">
-      <div>
-        <p class="eyebrow">WRITERS</p>
-        <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Write at the speed of thought</h1>
-        <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Break through writer's block. Dictate drafts, notes, and ideas by voice into any application. Get the words out first, edit later.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/pricing" class="btn-secondary">View pricing</a></div>
-        <p class="muted" style="font-size:13px">Free plan available. No credit card required. Windows 10/11.</p>
+    <div class="container">
+      <div class="usecase-hero-split">
+        <div>
+          <p class="eyebrow">WRITERS</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Get ideas down at the speed of thought</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate drafts, outlines, blog posts, and creative writing directly into any Windows application. When the words are flowing, typing slows you down.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
+          <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+        </div>
+        {imgSrc('writer-hero') && (
+          <div class="usecase-hero-img"><img src={imgSrc('writer-hero')} alt={imgAlt('writer-hero')} loading="eager" decoding="async" /></div>
+        )}
       </div>
+    </div>
+  </section>
+  <section class="download-strip">
+    <div class="container download-strip-inner">
+      <div><p class="download-strip-headline">Try free dictation for your writing</p><p class="download-strip-sub">No credit card. No voice training. Install in 2 minutes.</p></div>
+      <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
     </div>
   </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
       <h2 class="text-center" style="margin-bottom:40px">Built for creative workflows</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Word, Scrivener, Google Docs, Notion, or any Windows application.</p></div>
-        <div class="benefit"><h3>Break through writer's block</h3><p class="muted">Speaking is easier than typing. Get ideas flowing by voice, then refine in text.</p></div>
-        <div class="benefit"><h3>AI punctuation</h3><p class="muted">Speak naturally. The AI adds punctuation and capitalisation automatically so you stay in flow.</p></div>
-        <div class="benefit"><h3>AI modes for editing</h3><p class="muted">Use AI to rewrite, expand, summarise, or proofread dictated text. Available on Professional plan.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add character names, place names, and genre-specific terminology.</p></div>
-        <div class="benefit"><h3>Affordable</h3><p class="muted">Free plan for trying it out. Personal plan at $79/year for unlimited dictation.</p></div>
+        <div class="benefit"><h3>First drafts fast</h3><p class="muted">Dictate your first draft at 3x typing speed. Get the ideas down, then edit. Voice removes the blank page problem.</p></div>
+        <div class="benefit"><h3>Works in any application</h3><p class="muted">Dictate at the cursor in Word, Google Docs, Scrivener, or any Windows text editor.</p></div>
+        <div class="benefit"><h3>Automatic punctuation</h3><p class="muted">Speak naturally. The AI handles punctuation, capitalisation, and paragraph breaks.</p></div>
+        <div class="benefit"><h3>AI modes for editing</h3><p class="muted">Use AI to rewrite, formalise, expand, or summarise dictated text. Available on Professional plan.</p></div>
+        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add character names, fictional terms, technical jargon, and specialised language.</p></div>
+        <div class="benefit"><h3>Free plan available</h3><p class="muted">20 minutes per month free. Personal plan is $79/year for unlimited dictation.</p></div>
       </div>
     </div>
   </section>
-  <section class="section-pad">
-    <div class="container text-center" style="max-width:600px">
-      <h2 style="margin-bottom:12px">Start writing by voice today</h2>
-      <p class="muted" style="margin-bottom:24px">Free plan available. Install in 2 minutes. No credit card.</p>
-      <a href={site.download.url} class="btn-primary">Download free</a>
+  <section class="section-pad" id="demo">
+    <div class="container text-center">
+      <h2 style="margin-bottom:8px">See it in action</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
+      <div class="yt-facade" data-ytid="vp0LFuRWdKI">
+        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
+        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-dark" style="padding:60px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Start dictating today</h2>
+      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
+      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
     </div>
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero{max-width:700px}
+    .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+    .download-strip{background:#4338CA;padding:28px 0}
+    .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
+    .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
     .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
     .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
     .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
     .benefit .muted{font-size:14px;line-height:1.7}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
   </style>
+  <script is:inline>
+    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
+  </script>
 </BaseLayout>
