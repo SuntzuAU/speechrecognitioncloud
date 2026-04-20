@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Page not found" description="The page you are looking for does not exist.">
+  <section class="section-pad">
+    <div class="container" style="max-width:600px;text-align:center">
+      <p style="font-size:14px;font-weight:700;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px">404</p>
+      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Page not found</h1>
+      <p class="muted" style="margin-bottom:32px">The page you were looking for doesn't exist. It may have been moved, or the link may be broken.</p>
+      <a href="/" class="btn-primary">Back to home</a>
+    </div>
+  </section>
+</BaseLayout>
