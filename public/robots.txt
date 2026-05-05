@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://speechrecognition.cloud/sitemap.xml
+
+Sitemap: https://speechrecognition.cloud/sitemap-index.xml
