@@ -9,7 +9,8 @@ const pricingFaqItems = [
   { question: "What currency are prices in?", answer: "Prices are listed in USD and will convert to your local currency at checkout." },
   { question: "Can I upgrade or downgrade later?", answer: "Yes. You can upgrade at any time and your new plan starts immediately. Contact us to arrange a downgrade at your next billing cycle." },
   { question: "Do you offer volume or enterprise pricing?", answer: "Yes. Contact us for pricing on 5 or more licences. We offer volume discounts and can arrange invoicing for larger deployments." },
-  { question: "What is the mobile companion app?", answer: "Professional and Medical plans include a mobile companion app for iPhone and Android. It has two modes: a wireless microphone mode that uses your phone as a mic for your PC, and Voice Notes mode that lets you dictate full documents on your phone and send them to your active PC. See the mobile setup guide for instructions." }
+  { question: "What is the mobile companion app?", answer: "Professional and Medical plans include a mobile companion app for iPhone and Android. It has two modes: a wireless microphone mode that uses your phone as a mic for your PC, and Voice Notes mode that lets you dictate full documents on your phone and send them to your active PC. See the mobile setup guide for instructions." },
+  { question: "Why doesn't the Medical plan include AI Modes?", answer: "AI Modes are deliberately excluded from the Medical plan to protect patient privacy. AI Modes send text to AI models for processing, which creates an unnecessary data flow when handling clinical information. The Medical plan focuses on fast, accurate dictation with specialised medical vocabularies. Professional users who do not handle clinical information get full access to AI Modes." }
 ];
 
 const faqSchema = {
@@ -55,7 +56,7 @@ const extraSchema = [faqSchema];
             <tr><td>Custom vocabulary</td><td>-</td><td>Yes</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
             <tr><td>Text replacements</td><td>-</td><td>Yes</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
             <tr><td>Templates</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
-            <tr><td>AI Modes</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Restricted</td></tr>
+            <tr><td>AI Modes</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Excluded for privacy</td></tr>
             <tr><td>Screen OCR</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
             <tr><td>Mobile app (wireless mic)</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>
             <tr><td>Mobile app (Voice Notes mode)</td><td>-</td><td>-</td><td class="highlighted-col">Yes</td><td>Yes</td></tr>

@@ -6,7 +6,7 @@
   "seoTitle": "Free Speech to Text Software \u2014 Download for Windows | Speech Recognition Cloud",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.13.0 - Features grid right-column premium stack",
+  "_buildNote": "v1.14.0 - AI Modes is Pro only (Medical excluded for privacy)",
 
   "colours": {
     "brand": "#4338CA",
@@ -150,13 +150,13 @@
   "features": [
     { "icon": "cursor", "title": "Works where you work", "description": "Dictate into any Windows application at your cursor. Word, Outlook, Chrome, EMRs, web forms." },
     { "icon": "zap", "title": "No training needed", "description": "Install and start dictating. No voice profiles, no calibration, no setup wizards." },
-    { "icon": "mobile", "title": "Mobile companion app", "description": "Use your phone as a wireless mic, or dictate full documents on the go in Voice Notes mode. iPhone and Android.", "premium": true },
+    { "icon": "mobile", "title": "Mobile companion app", "description": "Use your phone as a wireless mic, or dictate full documents on the go in Voice Notes mode. iPhone and Android.", "premium": true, "premiumTier": "pro-medical" },
     { "icon": "sparkles", "title": "AI punctuation and grammar", "description": "Speak naturally. The AI adds punctuation, capitalisation, and formatting automatically." },
     { "icon": "book", "title": "Custom vocabulary", "description": "Add specialised terms, names, and jargon. The system learns your terminology." },
-    { "icon": "ai-modes", "title": "AI Modes", "description": "Voice commands for AI assistance. Write, Rewrite, Answer, Reply, and Run Command modes built into your dictation.", "premium": true },
+    { "icon": "ai-modes", "title": "AI Modes", "description": "Voice commands for AI assistance. Write, Rewrite, Answer, Reply, and Run Command modes built into your dictation.", "premium": true, "premiumTier": "pro" },
     { "icon": "globe", "title": "57 languages", "description": "Broad language support on Free, Personal, and Professional. Medical is English only." },
     { "icon": "shield", "title": "Privacy controls", "description": "Audio is processed and not stored. Your data is never used for training." },
-    { "icon": "target", "title": "Ultra Accuracy Mode", "description": "Enhanced accuracy processing for the moments precision matters most.", "premium": true }
+    { "icon": "target", "title": "Ultra Accuracy Mode", "description": "Enhanced accuracy processing for the moments precision matters most.", "premium": true, "premiumTier": "pro-medical" }
   ],
 
   "security": {
@@ -167,7 +167,7 @@
       "Your data is never used to train AI models",
       "All connections are encrypted in transit",
       "No audio recordings are saved at any point",
-      "Medical tier includes restricted AI modes for additional privacy"
+      "Medical tier excludes AI Modes by design to protect patient privacy"
     ]
   },
 
@@ -177,20 +177,21 @@
       { "name": "Starter", "price": "Free", "period": "", "description": "20 min/month. For students and occasional use.", "features": ["Free 20 min usage per month","Highly accurate","Works in any Windows program","Automatic punctuation"], "ctaText": "Free download", "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe", "highlighted": false },
       { "name": "Personal / Educational", "price": "$99", "period": "per year", "description": "Affordable unlimited dictation for study, work, and personal productivity.", "features": ["Unlimited usage","Custom vocabulary","Text replacements","Highly accurate","Works in any Windows program","Automatic punctuation","Email support"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items%5B%5D%5Bid%5D=49054665048310%26items%5B%5D%5Bquantity%5D=1%26items%5B%5D%5Bselling_plan%5D=7323943158%26return_to=/checkout", "highlighted": false },
       { "name": "Professional", "price": "$159", "period": "per year", "description": "For professionals who demand accuracy, speed, and advanced features.", "features": ["Includes everything in Personal","ULTRA Accuracy Mode","Templates (auto input text)","AI Modes for productivity","Screen OCR (AI adds vocab)","Mobile app (wireless mic + Voice Notes)"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items%5B%5D%5Bid%5D=49057249329398%26items%5B%5D%5Bquantity%5D=1%26items%5B%5D%5Bselling_plan%5D=7323943158%26return_to=/checkout", "highlighted": true, "badge": "Most popular" },
-      { "name": "Medical", "price": "$439", "period": "per year", "description": "Specialised for healthcare with medical vocabulary and ultra-high accuracy.", "features": ["Includes everything in Professional","Specialised medical vocabularies","ULTRA Accuracy Medical Mode","Restricted AI modes for privacy","Dedicated remote support","One-on-one training","Mobile app (wireless mic + Voice Notes)","English only"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items%5B%5D%5Bid%5D=49130584834294%26items%5B%5D%5Bquantity%5D=1%26items%5B%5D%5Bselling_plan%5D=7323943158%26return_to=/checkout", "highlighted": false }
+      { "name": "Medical", "price": "$439", "period": "per year", "description": "Specialised for healthcare with medical vocabulary and ultra-high accuracy.", "features": ["Includes everything in Professional except AI Modes","Specialised medical vocabularies","ULTRA Accuracy Medical Mode","AI Modes excluded by design for patient privacy","Dedicated remote support","One-on-one training","Mobile app (wireless mic + Voice Notes)","English only"], "ctaText": "Get started", "ctaUrl": "https://www.voicerecognition.com.au/cart/clear?return_to=/cart/add?items%5B%5D%5Bid%5D=49130584834294%26items%5B%5D%5Bquantity%5D=1%26items%5B%5D%5Bselling_plan%5D=7323943158%26return_to=/checkout", "highlighted": false }
     ]
   },
 
   "faq": [
     { "question": "Why doesn't text appear while I'm speaking?", "answer": "Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context." },
     { "question": "Do I need to train it or set anything up?", "answer": "No. Install and start dictating. No voice profiles, no calibration. The cloud AI handles accuracy from day one and improves automatically as models are updated." },
-    { "question": "Is my data secure?", "answer": "Yes. Audio is processed and immediately discarded. Transcribed text is delivered to your cursor and not stored on our servers. Your data is never used to train AI models. All connections are encrypted." },
+    { "question": "Is my data secure?", "answer": "Yes. Audio is processed and immediately discarded. Transcribed text is delivered to your cursor and not stored on our servers. Your data is never used to train AI models. All connections are encrypted. The Medical tier deliberately excludes AI Modes to further protect patient privacy." },
     { "question": "Can I use this on Mac or mobile?", "answer": "The PC application is Windows only (Windows 10/11). However, Professional and Medical plans include a mobile companion app for iPhone and Android. The mobile app acts as a wireless microphone for your PC, or in Voice Notes mode it lets you dictate complete documents on your phone and send them to your active PC. Mac support for the main application is not yet available - subscribe to our newsletter for updates." },
     { "question": "What microphone do I need?", "answer": "Your built-in laptop microphone or webcam mic will work. For the best results, we recommend a quality USB desktop microphone or headset. Professional and Medical users can also use their iPhone or Android as a wireless microphone via the mobile companion app." },
     { "question": "How many computers can I install it on?", "answer": "You can install Speech Recognition Cloud on multiple computers and move between them as needed. Each licence is for one person, so you can use it on different PCs (home, work, laptop), but only one device can be active at a time." },
     { "question": "Does it work with accents?", "answer": "Yes. The cloud AI handles accent variation well and is designed for diverse speakers and real-world environments. For best results in noisy conditions, use a headset or directional microphone." },
     { "question": "What does 'up to 20 minutes continuous' mean?", "answer": "Once you turn the microphone on, you can talk for up to 20 minutes in one uninterrupted session before you need to turn the mic off. During that whole period, SRC listens to full sentences and paragraphs for better context and cleaner text. You can turn the mic on and off whenever you want. This limit only affects extremely long continuous speeches. This does not affect your monthly usage. Paid plans give you unlimited dictation every month." },
     { "question": "How does the mobile app work?", "answer": "Professional and Medical plans include a mobile companion app for iPhone and Android. It has two modes. Wireless microphone mode turns your phone into a high-quality mic for your PC - useful when you do not have a headset or your laptop mic is poor. Voice Notes mode lets you dictate complete documents on your phone while you are away from your desk - the text is sent to your active PC ready to paste into any Windows application. Useful for ward rounds, field work, or anywhere you need to capture longer dictations without your PC in front of you. See the mobile setup guide for instructions." },
+    { "question": "Why doesn't the Medical plan include AI Modes?", "answer": "AI Modes are deliberately excluded from the Medical plan to protect patient privacy. AI Modes involve sending text to AI models for processing (write, rewrite, answer, reply). In clinical contexts, this creates an unnecessary data flow with patient information. The Medical plan focuses on what clinicians actually need - fast, accurate dictation with specialised medical vocabularies - while keeping the data path as tight as possible. Professional plan users who do not handle clinical information get full access to AI Modes." },
     { "question": "How many languages are supported?", "answer": "57 languages are currently supported on Free, Personal, and Professional plans, and the list is growing. The Medical tier is English only for now." },
     { "question": "Is there a free version?", "answer": "Yes. The Free plan gives you 20 minutes of dictation per month with core features. No credit card required. AI modes, custom vocabulary, and Ultra Accuracy are available on higher tiers." },
     { "question": "What is this? Is it a meeting transcription tool?", "answer": "No. Speech Recognition Cloud is cursor-based dictation software. You place your cursor where you want text to appear, speak, and the text is typed at the cursor. It is not a meeting recorder, not an AI note-taker, and not a transcription service. It replaces typing with voice." },

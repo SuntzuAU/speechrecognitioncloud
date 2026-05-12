@@ -13,6 +13,10 @@ function imgSrc(key) {
 function imgAlt(key) {
   return manifest[key]?.altText || key;
 }
+function premiumBadgeText(tier) {
+  if (tier === 'pro') return 'PRO';
+  return 'PRO & MEDICAL';
+}
 
 // SoftwareApplication schema
 const softwareSchema = {
@@ -170,7 +174,7 @@ const extraSchema = [softwareSchema, faqSchema];
       <div class="features-grid">
         {site.features.map(f => (
           <div class={`feature-tile ${f.premium ? 'feature-premium' : ''}`}>
-            {f.premium && <span class="feature-pro-badge">PRO &amp; MEDICAL</span>}
+            {f.premium && <span class="feature-pro-badge">{premiumBadgeText(f.premiumTier)}</span>}
             <div class="feature-icon">
               {f.icon === 'cursor' && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>}
               {f.icon === 'zap' && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
