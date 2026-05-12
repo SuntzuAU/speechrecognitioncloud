@@ -7,6 +7,9 @@ export default defineConfig({
     format: 'directory'
   },
   integrations: [sitemap({
-    filter: (page) => !page.includes('/404') && !page.includes('/placeholder')
+    filter: (page) => !page.includes('/404') && !page.includes('/placeholder'),
+    changefreq: 'weekly',
+    priority: 0.7,
+    lastmod: new Date()
   })]
 });
