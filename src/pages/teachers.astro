@@ -5,85 +5,437 @@ import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
 function imgAlt(key) { return manifest[key]?.altText || key; }
-const extraSchema = [{
+
+const pageUrl = site.siteUrl + '/teachers';
+const lastReviewed = '2026-05-12';
+
+// FAQ items (single source of truth for both rendering and schema)
+const faqItems = [
+  {
+    question: "Does Speech Recognition Cloud work inside Sentral, Compass, and Edval?",
+    answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application, including the text fields inside Sentral, Compass, and Edval. If you can click into a field and type, you can dictate. It does not integrate with the platforms specifically \u2014 it operates at the operating-system level \u2014 which is why it works across all of them without per-platform setup."
+  },
+  {
+    question: "Can I dictate report-card comments with personalised student names and consistent phrasing?",
+    answer: "Yes. The standard workflow is to save your school's required opening and closing phrasing as templates, then dictate the personalised middle of each comment. Student names that don't transcribe correctly on first pass can be added to a personal dictionary so they are transcribed correctly thereafter. Templates and custom vocabulary are available on the Personal/Educational and Professional plans."
+  },
+  {
+    question: "Will the same software work for my students with dyslexia or dysgraphia?",
+    answer: "The same software does the same job. Whether it is the right tool for an individual student depends on the student, the writing task, and the classroom context. Our accessibility page covers microphone setup in shared classrooms, the transition from a student's familiar tools, and the writing tasks where dictation typically helps a student most."
+  },
+  {
+    question: "Is dictation suitable for sensitive student information under the Australian Privacy Principles?",
+    answer: "Audio is processed in memory only and immediately erased. Speech Recognition Cloud never stores your audio or transcripts, and our staff cannot access them. Dictation history remains only on your own computer. That said, the relevant frameworks here are the Australian Privacy Principles, the Notifiable Data Breaches scheme, and your school system's information-handling policies. Before installing on a school-issued device we recommend reading our privacy statement alongside your school's IT acceptable-use policy."
+  },
+  {
+    question: "I'm a neurodivergent teacher \u2014 does dictation actually help, or just shift the cognitive load?",
+    answer: "Honestly, it depends. Teachers with dysgraphia, RSI, or processing styles that suit external verbalisation often find dictation transformative. Teachers whose disfluency means speaking is more cognitively expensive than typing often don't. The most reliable answer is to try it for a week on a low-stakes workflow \u2014 class newsletters, parent reminder emails \u2014 and see whether the experience feels easier or harder than typing. Either answer is useful."
+  },
+  {
+    question: "What microphone should I use in a shared staff room?",
+    answer: "A USB headset is the practical default. It picks up your voice cleanly, reduces background noise, and keeps your dictation private from colleagues sitting nearby. The laptop's built-in microphone works for solo office use but degrades quickly in a noisy environment. Anything in the $40\u2013$100 range from a reputable brand is usually fine \u2014 you don't need an expensive headset to get good results."
+  },
+  {
+    question: "Does Speech Recognition Cloud work on Mac, or only Windows?",
+    answer: "Windows 10 and Windows 11 only. If you are a primary teacher on a school-issued MacBook, Speech Recognition Cloud is not currently an option for you on that device. As a starting point on macOS, Apple's built-in Dictation is worth a look \u2014 it is a more limited tool but it is free and on the device."
+  },
+  {
+    question: "How does this compare to Word's built-in dictation, or Google Docs voice typing?",
+    answer: "Word's built-in dictation works inside Word, Outlook, and some other Microsoft 365 apps. Google Docs voice typing works inside Google Docs in Chrome. Speech Recognition Cloud works at the cursor in any Windows application \u2014 including Sentral, Compass, and the school platforms that neither Microsoft's nor Google's dictation can reach. It also includes a templates system designed for repeated phrasing, which is the workflow that matters most for report-card writing."
+  }
+];
+
+const howToSteps = [
+  {
+    name: "Install and set up your microphone",
+    text: "Install Speech Recognition Cloud (the free tier is fine to start with). Plug in a USB headset if you have one \u2014 the laptop's built-in microphone works but is noisier in a staff room. Allow microphone access when Windows prompts."
+  },
+  {
+    name: "Open your comment-writing environment",
+    text: "Open Sentral, Compass, your school's report module, or a fresh Word document if you would rather draft and paste later. Click into a comment box for a specific student. Have your assessment notes visible alongside it \u2014 on paper, in a second window, or in your markbook."
+  },
+  {
+    name: "Describe the student aloud",
+    text: "Start dictation. Describe the student to yourself in 2 to 3 sentences \u2014 for example: 'Sarah has shown strong progress in narrative writing this semester, particularly in her use of descriptive language. Her next focus is sentence variety, which we will work on in Term 3 through targeted writing tasks.' Speak naturally. You can insert punctuation by saying 'comma' and 'full stop', or let the automatic punctuation handle most of it."
+  },
+  {
+    name: "Read it back and move on",
+    text: "Read the comment back. Edit by voice or by keyboard. Move to the next student. The first three comments will feel awkward; by the tenth, most teachers say it feels normal; by the twenty-fifth, you are meaningfully faster than typing."
+  }
+];
+
+// Author Person schema for Russell Bewsell (resolves the cross-domain EEAT graph)
+const russellPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "name": "Russell Bewsell",
+  "jobTitle": "Founder and CEO, Voice Recognition Australia",
+  "url": "https://www.voicerecognition.com.au",
+  "sameAs": [
+    "https://www.linkedin.com/in/rbewsell/"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au"
+  }
+};
+
+const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Voice to Text for Teachers and Educators",
-  "description": "Lesson plans, reports, and correspondence without the typing.",
-  "url": site.siteUrl + "/teachers",
-  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
-}];
+  "@id": pageUrl + "#webpage",
+  "url": pageUrl,
+  "name": "Speech to Text for Australian Teachers: A Practical Guide",
+  "description": "Practical guide to voice dictation for Australian teachers \u2014 report-card comments, NCCD evidence, parent communications, and unit planning. Written by Russell Bewsell, Voice Recognition Australia.",
+  "inLanguage": "en-AU",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
+  "datePublished": "2026-05-12",
+  "dateModified": lastReviewed,
+  "lastReviewed": lastReviewed,
+  "about": [
+    { "@type": "Thing", "name": "Speech recognition" },
+    { "@type": "Thing", "name": "Voice dictation" },
+    { "@type": "Thing", "name": "Australian Curriculum" },
+    { "@type": "Thing", "name": "Nationally Consistent Collection of Data on School Students with Disability" },
+    { "@type": "Thing", "name": "Australian Privacy Principles" },
+    { "@type": "Thing", "name": "Disability Standards for Education 2005" }
+  ],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "teacher"
+  },
+  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "publisher": {
+    "@type": "Organization",
+    "name": site.organization.name,
+    "url": site.organization.url
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": pageUrl + "#faq",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": pageUrl + "#howto",
+  "name": "How to dictate your first report-card comment",
+  "description": "A four-step walkthrough for teachers new to voice dictation, written for Australian school report-writing environments.",
+  "totalTime": "PT10M",
+  "tool": [
+    { "@type": "HowToTool", "name": "Windows 10 or Windows 11 computer" },
+    { "@type": "HowToTool", "name": "USB headset (recommended)" },
+    { "@type": "HowToTool", "name": "Speech Recognition Cloud (free or paid)" }
+  ],
+  "step": howToSteps.map((s, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": s.name,
+    "text": s.text
+  }))
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Speech Recognition Cloud",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Starter \u2014 free (20 min/month)" },
+    { "@type": "Offer", "price": "99", "priceCurrency": "USD", "description": "Personal/Educational \u2014 annual" }
+  ]
+};
+
+const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softwareSchema];
 ---
-<BaseLayout title="Voice to Text for Teachers and Educators" description="Lesson plans, reports, and correspondence without the typing. Speech Recognition Cloud for teachers." extraSchema={extraSchema}>
+<BaseLayout
+  title="Speech to Text for Australian Teachers: A Practical Guide"
+  description="Practical guide to voice dictation for Australian teachers \u2014 report-card comments, NCCD evidence, parent communications, and unit planning. Free Windows download. Written by Russell Bewsell."
+  extraSchema={extraSchema}
+>
+  <!-- HERO -->
   <section class="section-pad">
     <div class="container">
-      <div class="usecase-hero-split">
+      <div class="t-hero-split">
         <div>
-          <p class="eyebrow">TEACHERS</p>
-          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Less time typing, more time teaching</h1>
-          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate lesson plans, student reports, correspondence, and administrative documentation directly into any Windows application.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
-          <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+          <p class="eyebrow">FOR AUSTRALIAN TEACHERS</p>
+          <h1 class="t-h1">Speech to text for Australian teachers: a practical guide to dictation for reports, lesson plans and parent comms</h1>
+          <p class="t-lead">Australian teachers spend a substantial share of every working week on documentation that isn't teaching. This page is a practical guide \u2014 workflows, honest limits, deployment notes, and a quick start \u2014 to whether voice dictation is worth your time. Written by someone who has spent 28 years putting speech recognition into Australian workplaces.</p>
+          <div class="t-cta-row">
+            <a href="#workflows" class="btn-secondary">Read the workflows</a>
+            <a href={site.download.url} class="btn-primary">Download free for Windows</a>
+          </div>
+          <p class="muted t-micro">Free to install. No credit card. 20 minutes of free dictation per month, or unlimited on the Personal/Educational plan.</p>
         </div>
         {imgSrc('teacher-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('teacher-hero')} alt={imgAlt('teacher-hero')} loading="eager" decoding="async" /></div>
+          <div class="t-hero-img"><img src={imgSrc('teacher-hero')} alt={imgAlt('teacher-hero')} loading="eager" decoding="async" width="560" height="315" /></div>
         )}
       </div>
     </div>
   </section>
-  <section class="download-strip">
-    <div class="container download-strip-inner">
-      <div><p class="download-strip-headline">Try free dictation for your classroom</p><p class="download-strip-sub">No credit card. No voice training. Install in 2 minutes.</p></div>
-      <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
-    </div>
-  </section>
+
+  <!-- WHY TEACHERS REACH FOR DICTATION -->
   <section class="section-pad section-neutral">
-    <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for education workflows</h2>
-      <div class="benefit-grid">
-        <div class="benefit"><h3>Student reports</h3><p class="muted">Dictate report card comments, progress notes, and assessments. Full paragraphs with automatic punctuation.</p></div>
-        <div class="benefit"><h3>Lesson planning</h3><p class="muted">Speak your lesson plans, unit outlines, and curriculum documents. 3x faster than typing.</p></div>
-        <div class="benefit"><h3>Correspondence</h3><p class="muted">Dictate emails to parents, colleagues, and administration directly into Outlook or your school email system.</p></div>
-        <div class="benefit"><h3>Works with any application</h3><p class="muted">Dictate at the cursor in Word, Google Docs, school management systems, or any Windows application.</p></div>
-        <div class="benefit"><h3>Templates for repeated text</h3><p class="muted">Create templates for standard report phrases, correspondence openings, and boilerplate paragraphs.</p></div>
-        <div class="benefit"><h3>Affordable</h3><p class="muted">Free plan available. Personal plan is $79/year for unlimited dictation.</p></div>
+    <div class="container t-prose">
+      <h2>Why Australian teachers are reaching for voice dictation</h2>
+      <p>Documentation has quietly become one of the largest categories of teacher work that doesn't involve students. AITSL's <em>Teacher Duties</em> brief, drawn from the 2023 Australian Teacher Workforce Survey, found that more than half of full-time classroom teachers reported spending five or more hours per week on general administrative work, and around 40 percent reported spending ten or more hours per week on lesson planning. Full-time teachers reported a median working week of 50 to 55 hours during school terms, with face-to-face teaching accounting for 21 to 25 of those hours.</p>
+      <p>Voice dictation doesn't change the volume of that work. What it can change is the production speed of the parts that involve writing extended prose. Report-card comments are the clearest case. Parent emails are the second. Reflective notes \u2014 the kind teachers most often skip under time pressure \u2014 are the third.</p>
+      <p>What dictation will <strong>not</strong> do is fill in matrix-style planning grids, build assessment rubrics, write your IEP review schedule, or remove the cognitive work of thinking about a student before you write about them. The sections below are an honest sketch of where it earns its keep and where it doesn't.</p>
+    </div>
+  </section>
+
+  <!-- FOUR REAL WORKFLOWS -->
+  <section class="section-pad" id="workflows">
+    <div class="container t-prose">
+      <h2>Four real teacher workflows where dictation earns its keep</h2>
+
+      <h3>Report-card comments at scale</h3>
+      <p>If you teach a class of 25 and need to write a personalised paragraph for each student, you are looking at producing roughly 1,500 to 2,500 words of considered prose against a deadline. Dictation suits this work for one specific reason: it separates the <em>thinking</em> about a student from the <em>typing</em> of the comment. Most teachers who shift this workflow to voice describe it as switching from \"typing a comment\" to \"talking about the student\" \u2014 and the resulting writing tends to be warmer and more specific.</p>
+      <p>A practical workflow that scales:</p>
+      <ul>
+        <li>Open your school's comment-writing environment \u2014 Sentral, Compass, your school's report module, or a Word document you will paste from later.</li>
+        <li>Have your assessment notes for the student visible alongside it.</li>
+        <li>Click into the comment box and dictate the comment as 2 to 3 sentences, as if you were describing the student to a colleague who had never met them.</li>
+        <li>Use saved templates for any opening or closing phrasing your school requires. Speech Recognition Cloud lets you insert named templates with a single voice command, so the standard boilerplate doesn't eat your dictation time.</li>
+        <li>Read it back, edit by voice or keyboard for tone, move on.</li>
+      </ul>
+      <p>A teacher comfortable with dictation typically completes a full year-level's worth of comments in around half the time of typing the same comments \u2014 though we'd encourage you to time your own first session before trusting any general claim about speed.</p>
+
+      {imgSrc('teacher-report-cards') && (
+        <figure class="t-figure">
+          <img src={imgSrc('teacher-report-cards')} alt={imgAlt('teacher-report-cards')} loading="lazy" decoding="async" width="1200" height="400" />
+        </figure>
+      )}
+
+      <h3>NCCD evidence and IEP/IBMP documentation</h3>
+      <p>The Nationally Consistent Collection of Data on School Students with Disability is one of the largest sources of documentation work for teachers supporting students with adjustments. Evidence needs to be contemporaneous, specific, and recorded across the year \u2014 exactly the kind of writing that gets compressed, deferred, or skipped under time pressure.</p>
+      <p>Voice dictation fits NCCD work for two reasons. First, evidence is usually easier to describe than to write. \"Today during the Year 7 maths lesson I provided a scaffolded worksheet and read each problem aloud for student X. Student X attempted all problems independently after the read-aloud support.\" That sentence is faster to speak than to type for most people, and it carries the contemporaneous detail NCCD evidence actually needs.</p>
+      <p>Second, NCCD documentation rewards consistency of phrasing across the four levels of adjustment \u2014 support provided within quality differentiated teaching practice, supplementary, substantial, and extensive. Saved templates for each level let you keep the framing consistent across the year and across students, while the personalised detail is dictated in.</p>
+      <p>The same approach extends to Individual Education Plans, Individual Behaviour Management Plans, learning goal reviews, welfare and wellbeing notes, and the small chronicle entries that feed into student-support team meetings.</p>
+
+      <h3>Parent communication</h3>
+      <p>Parent emails \u2014 particularly the difficult ones \u2014 are something most teachers write slowly because they are being careful about tone. Dictation can actually help this rather than hinder it. Teachers regularly report that speaking an email forces a more natural conversational register than typing does, and the resulting message reads warmer to the parent.</p>
+      <p>Patterns we see working:</p>
+      <ul>
+        <li><strong>Routine emails</strong> (excursion reminders, missed-homework follow-ups, parent-teacher confirmations): saved templates with the personal sentences dictated in. 30 to 60 seconds per email.</li>
+        <li><strong>Sensitive emails</strong> (behaviour incidents, learning concerns, wellbeing flags): dictate a full draft into a Word document, leave it for ten minutes, read it back, then paste it into your school email. The draft-and-cool-off pattern is much faster when the draft is dictated than when it is typed.</li>
+        <li><strong>Class newsletters and blog posts</strong>: dictate from rough notes. This is the single fastest task most teachers shift to voice, and it is usually the most thankless writing in the week.</li>
+      </ul>
+      <p>Dictation works inside Outlook, Gmail, the web versions of both used by school accounts, and the messaging panes inside Google Classroom and Microsoft Teams for Education \u2014 anywhere your cursor can sit in a text field.</p>
+
+      <h3>Lesson and unit planning under Australian Curriculum v9</h3>
+      <p>Unit and lesson planning is the most variable of the four workflows because it depends heavily on whether you are building from scratch, adapting last year's plans, or drawing on faculty scope-and-sequence documents. Australian Curriculum v9.0 is the current published F-10 curriculum (with NSW, WA, and Victoria following their own implementation paths), and most schools are continuing their phased rollout through 2026.</p>
+      <p>Dictation works well for:</p>
+      <ul>
+        <li><strong>Annotating existing plans</strong> \u2014 opening last year's unit plan in Word or OneNote and dictating updates inline.</li>
+        <li><strong>Drafting learning intentions and success criteria</strong> in plain language, before you tighten them.</li>
+        <li><strong>Writing context paragraphs</strong> that connect a lesson to the content descriptors in Australian Curriculum v9, or to your school's scope and sequence.</li>
+        <li><strong>Reflective notes after the lesson</strong> \u2014 what worked, what didn't, what to change next time. This is the planning work most teachers skip under time pressure, and the work voice handles best because it suits a casual reflective register.</li>
+      </ul>
+      <p>Dictation suits planning <em>less</em> well when the work is mostly clicks and dropdowns rather than prose: filling matrix-style planning grids, building rubric tables, or stepping through a structured planning template field by field.</p>
+    </div>
+  </section>
+
+  <!-- TECH STACK FIT -->
+  <section class="section-pad section-neutral">
+    <div class="container t-prose">
+      <h2>Where Speech Recognition Cloud fits in your school's tech stack</h2>
+      <p>Speech Recognition Cloud is cursor-based dictation software for Windows 10 and Windows 11. It is not a meeting transcriber, an ambient AI scribe, or a recording tool \u2014 it converts live speech to text at the cursor position in whatever Windows application you are working in.</p>
+      <p>What that means in practice for a teacher:</p>
+      <ul>
+        <li><strong>Inside Sentral</strong> \u2014 report-card comment boxes, behaviour note fields, the welfare module's free-text boxes.</li>
+        <li><strong>Inside Compass</strong> \u2014 chronicle entries, learning task feedback, parent-portal communications.</li>
+        <li><strong>Inside Edval, EdSmart, and other Australian school platforms</strong> \u2014 anywhere the platform presents a text field.</li>
+        <li><strong>Inside Word, Outlook, OneNote, Excel</strong> \u2014 desktop or web.</li>
+        <li><strong>Inside Google Docs, Gmail, Google Classroom</strong> \u2014 in your browser.</li>
+        <li><strong>Inside Microsoft Teams for Education</strong> \u2014 comments, announcements, assignment feedback.</li>
+        <li><strong>Inside Moodle and Canvas</strong> \u2014 if your school uses an LMS for assessment feedback or discussion posts.</li>
+      </ul>
+      <p>Because it operates at the operating-system level rather than as a browser extension or app integration, Speech Recognition Cloud works across all of these without per-platform setup. The trade-off is that it is a Windows-only tool: it does not currently run on macOS or ChromeOS, which is a real limitation if you are a primary teacher on a school-issued MacBook.</p>
+      <p>For pricing details and the school-volume options, see the <a href="/pricing" class="t-link">pricing page</a>.</p>
+    </div>
+  </section>
+
+  <!-- CLASSROOM ACCESSIBILITY -->
+  <section class="section-pad">
+    <div class="container t-prose">
+      <h2>Dictation in the inclusive classroom</h2>
+      {imgSrc('teacher-classroom-accessibility') && (
+        <figure class="t-figure">
+          <img src={imgSrc('teacher-classroom-accessibility')} alt={imgAlt('teacher-classroom-accessibility')} loading="lazy" decoding="async" width="1200" height="675" />
+        </figure>
+      )}
+      <p>The same software that helps a teacher with report-card comments helps students with dyslexia, dysgraphia, or motor difficulties get their thinking onto the page. The mechanics are the same \u2014 speech becomes text at the cursor \u2014 but the purpose and setup change.</p>
+      <p>The Disability Standards for Education 2005 require reasonable adjustments for students with disability, and the NCCD framework collects evidence that those adjustments are being made consistently. Speech-to-text is one of the most-cited assistive tools across the <em>quality differentiated teaching practice</em> level and remains relevant up through the <em>extensive</em> level for students with severe written-language difficulties.</p>
+      <p>If you are considering speech-to-text as a classroom adjustment for individual students rather than as a teacher productivity tool, our <a href="/accessibility" class="t-link">accessibility-focused page</a> covers microphone setup in a shared classroom, the transition from a student's familiar tools, and the writing tasks where dictation typically helps a student most. The <a href="/students" class="t-link">parallel page for students themselves</a> is also worth pointing senior students to \u2014 particularly if you are suggesting dictation as a study tool rather than a classroom accommodation.</p>
+    </div>
+  </section>
+
+  <!-- HONEST WORD ON ADMIN OVERLOAD -->
+  <section class="section-pad section-neutral">
+    <div class="container t-prose" style="max-width:780px">
+      <h2>An honest word on teacher admin overload</h2>
+      <p>Voice dictation is a productivity tool. It is not a fix for teacher admin overload, and it would be dishonest to suggest otherwise.</p>
+      <p>The admin burden on Australian teachers is structural. It comes from accountability frameworks, data-collection requirements, evolving curriculum documentation, and parent-communication expectations that no individual tool can shift on its own. The relief dictation offers is real but bounded \u2014 it changes how <em>fast</em> you can produce a given paragraph, not how many paragraphs you are required to produce.</p>
+      <p>For some teachers that is enough to claw back an hour or two a week, which compounds across a term. For others \u2014 particularly teachers whose admin time is dominated by data entry into structured fields rather than prose \u2014 the gains are smaller. We would encourage you to try it for a fortnight on the workflows that actually involve writing, and form a view based on your own experience rather than a vendor's claim.</p>
+      <p>If the dictation experiment goes well, the time you free up is yours \u2014 for marking, for planning, for the students who need an extra fifteen minutes, or for going home before dark. That is the honest framing.</p>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT AND PRIVACY -->
+  <section class="section-pad">
+    <div class="container t-prose" style="max-width:780px">
+      <h2>Before you install it on a school device</h2>
+      <p>Three questions worth asking your school's IT lead before installing any speech recognition tool on a school-issued device:</p>
+      <ol class="t-numbered">
+        <li><strong>What does the software process, and where does the audio go?</strong><br/>Speech Recognition Cloud sends audio to the cloud for transcription. Audio is processed in memory only and immediately erased \u2014 it is never stored, and our staff cannot access it. Dictation history and transcripts remain only on your own computer. Our <a href="/privacy" class="t-link">privacy and data-handling statement</a> explains this in more detail.</li>
+        <li><strong>Does your school's IT policy permit installation of personal software on school-issued devices?</strong><br/>This varies enormously between schools and systems. Some require IT approval for any installed software; others permit teachers to install productivity tools at their discretion. Check before you install rather than after.</li>
+        <li><strong>Are there content categories that shouldn't be dictated?</strong><br/>Some schools have explicit policies on where sensitive student information may be discussed. Voice dictation in a shared staff room raises the same considerations as a phone call \u2014 be aware of who can overhear you.</li>
+      </ol>
+      <p>The relevant frameworks here are the Australian Privacy Principles, the Notifiable Data Breaches scheme, and your school system's information-handling policies. None of these <em>prohibit</em> voice dictation; they shape how it should be used. A USB headset is usually a better choice than a built-in laptop microphone in a shared staff room \u2014 directional audio reduces both background-noise pickup and how much your colleagues can overhear.</p>
+    </div>
+  </section>
+
+  <!-- HOW TO QUICK START -->
+  <section class="section-pad section-neutral">
+    <div class="container t-prose" style="max-width:780px">
+      <h2>Quick start \u2014 dictating your first report-card comment</h2>
+      <p>A genuine four-step walkthrough for a teacher new to dictation.</p>
+      <ol class="t-howto">
+        {howToSteps.map((s, i) => (
+          <li>
+            <h3>Step {i + 1} \u2014 {s.name}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+      <p>If after a full session of 25 comments it still feels slower than typing, dictation may not suit your style \u2014 and that is a useful thing to find out after one trial. For more setup help, see the <a href="/support/getting-started" class="t-link">getting-started walkthrough</a>.</p>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="section-pad">
+    <div class="container t-prose" style="max-width:780px">
+      <h2>Practical tips from teachers who have made the switch</h2>
+
+      <h4>Build a personal dictionary on day one</h4>
+      <p>Student names, school-specific terminology, and any subject-area vocabulary that doesn't transcribe correctly on first pass \u2014 add them to your personal dictionary as you go. Five minutes of dictionary-building in your first session saves hours of corrections across the term.</p>
+
+      <h4>Save your school's standard phrases as templates</h4>
+      <p>Whatever boilerplate your school requires \u2014 opening lines on report-card comments, sign-offs on parent emails, NCCD adjustment-level framing \u2014 save it as a named template you can insert with a voice command. The personalised middle of each comment is what you dictate; the standard scaffolding is one command.</p>
+
+      <h4>Draft first, polish later</h4>
+      <p>Don't try to dictate a perfect first sentence. Dictate the rough version of the whole comment or email, then read it back and tighten the bits that need tightening. Trying to speak polished prose in real time slows almost everyone down.</p>
+
+      <h4>Use a headset in the staff room</h4>
+      <p>A USB headset is the practical default. It picks up your voice cleanly, reduces background staff-room noise, and keeps your dictation private from colleagues sitting nearby. The laptop's built-in microphone works for solo office use but degrades quickly in a noisy environment.</p>
+
+      <h4>Reflect into a notes app, not a planning grid</h4>
+      <p>Dictation handles reflective writing beautifully and structured forms badly. If your end-of-week reflection is a free-text paragraph, dictate it. If it is a matrix of dropdowns and rating scales, type it. Knowing the difference will save you frustration.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:780px">
+      <h2 class="text-center" style="margin-bottom:32px">Frequently asked questions</h2>
+      {faqItems.map(item => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+      <p class="t-faq-closer muted">For more setup answers, see the <a href="/support/faq" class="t-link">support FAQ</a>.</p>
+    </div>
+  </section>
+
+  <!-- AUTHOR BYLINE -->
+  <section class="section-pad">
+    <div class="container" style="max-width:780px">
+      <div class="t-author-panel">
+        <h2>About this page</h2>
+        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="t-link">28 years deploying speech recognition in Australian workplaces</a>, including a meaningful number of schools and education departments. The workflows above are drawn from that experience rather than from a marketing brief. If your situation doesn't fit any of the four patterns, <a href="/contact" class="t-link">get in touch</a> and I'll tell you honestly whether dictation is likely to suit your work.</p>
+        <p class="t-author-sig">\u2014 Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p class="t-reviewed muted">Last reviewed: 12 May 2026</p>
       </div>
     </div>
   </section>
-  <section class="section-pad" id="demo">
+
+  <!-- FINAL CTA (restrained) -->
+  <section class="section-pad section-dark" style="padding:48px 0">
     <div class="container text-center">
-      <h2 style="margin-bottom:8px">See it in action</h2>
-      <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
-      <div class="yt-facade" data-ytid="vp0LFuRWdKI">
-        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
-        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
-      </div>
+      <h2 style="margin-bottom:12px">Try it for a fortnight on the writing parts of your week</h2>
+      <p class="muted" style="margin-bottom:24px">Free for 20 minutes a month, or unlimited on the Personal/Educational plan at $99 USD per year.</p>
+      <a href={site.download.url} class="btn-primary btn-lg">Download Speech Recognition Cloud for Windows</a>
     </div>
   </section>
-  <section class="section-pad section-dark" style="padding:60px 0">
-    <div class="container text-center">
-      <h2 style="margin-bottom:12px">Start dictating today</h2>
-      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
-      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
-    </div>
-  </section>
+
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
-    .download-strip{background:#4338CA;padding:28px 0}
-    .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
-    .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
-    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
-    .benefit .muted{font-size:14px;line-height:1.7}
+    .t-h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:18px;line-height:1.18;letter-spacing:-0.02em}
+    .t-lead{font-size:17px;line-height:1.65;margin-bottom:24px;max-width:560px;color:var(--text)}
+    .t-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .t-micro{font-size:13px}
+    .t-hero-split{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center}
+    .t-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+
+    .t-prose{max-width:820px}
+    .t-prose h2{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 18px;letter-spacing:-0.015em}
+    .t-prose h3{font-size:20px;font-weight:700;margin:32px 0 12px;letter-spacing:-0.01em}
+    .t-prose h4{font-size:17px;font-weight:700;margin:24px 0 8px}
+    .t-prose p{font-size:16px;line-height:1.75;color:var(--text);margin:0 0 14px}
+    .t-prose ul{margin:8px 0 18px 0;padding-left:22px}
+    .t-prose ul li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--text)}
+    .t-prose em{font-style:italic}
+    .t-prose strong{font-weight:700}
+    .t-link{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+    .t-link:hover{color:#3730A3}
+
+    .t-figure{margin:24px 0 28px;border-radius:14px;overflow:hidden}
+    .t-figure img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+
+    .t-numbered{margin:8px 0 18px 0;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+    .t-numbered li{font-size:16px;line-height:1.75;color:var(--text)}
+
+    .t-howto{list-style:none;padding:0;margin:8px 0 20px;counter-reset:howto;display:flex;flex-direction:column;gap:20px}
+    .t-howto li{position:relative;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:#fff}
+    .t-howto h3{margin:0 0 6px;font-size:16px;font-weight:700}
+    .t-howto p{margin:0;font-size:15px;line-height:1.7}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{padding:18px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';font-size:22px;color:var(--muted);font-weight:400;flex-shrink:0}
+    .faq-item[open] .faq-question::after{content:'\2013'}
+    .faq-answer{padding:0 0 18px}
+    .faq-answer p{color:var(--muted);font-size:15px;line-height:1.75;margin:0}
+    .t-faq-closer{margin-top:20px;font-size:14px;text-align:center}
+
+    .t-author-panel{padding:28px 28px;border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:12px;background:var(--brand-lightest)}
+    .t-author-panel h2{font-size:20px;font-weight:700;margin:0 0 12px}
+    .t-author-panel p{font-size:15px;line-height:1.75;margin:0 0 10px;color:var(--text)}
+    .t-author-sig{font-weight:600}
+    .t-reviewed{font-size:13px;margin-top:8px !important}
+
     .btn-lg{padding:14px 36px;font-size:17px}
-    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
+
+    @media(max-width:768px){
+      .t-hero-split{grid-template-columns:1fr;gap:24px}
+      .t-prose h2{font-size:22px}
+      .t-prose h3{font-size:18px;margin-top:24px}
+      .t-prose p, .t-prose ul li{font-size:15px}
+      .t-author-panel{padding:22px}
+    }
   </style>
-  <script is:inline>
-    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
-  </script>
 </BaseLayout>
