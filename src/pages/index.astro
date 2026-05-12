@@ -170,7 +170,7 @@ const extraSchema = [softwareSchema, faqSchema];
       <div class="features-grid">
         {site.features.map(f => (
           <div class={`feature-tile ${f.premium ? 'feature-premium' : ''}`}>
-            {f.premium && <span class="feature-pro-badge">PRO</span>}
+            {f.premium && <span class="feature-pro-badge">PRO &amp; MEDICAL</span>}
             <div class="feature-icon">
               {f.icon === 'cursor' && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>}
               {f.icon === 'zap' && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
@@ -281,12 +281,12 @@ const extraSchema = [softwareSchema, faqSchema];
     .usecase-card-body h3{font-size:17px;margin-bottom:8px;font-weight:600}
     .usecase-card-body .muted{font-size:14px;margin-bottom:12px;line-height:1.6}
     .usecase-arrow{font-size:14px;font-weight:600;margin-top:auto}
-    /* Features grid - 4x2 with icons and premium accents */
-    .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .feature-tile{position:relative;padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff;transition:box-shadow 0.2s,border-color 0.2s,transform 0.2s}
+    /* Features grid - 3x3 with icons and premium accents */
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .feature-tile{position:relative;padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff;transition:box-shadow 0.2s,border-color 0.2s,transform 0.2s;display:flex;flex-direction:column}
     .feature-tile:hover{box-shadow:0 6px 20px rgba(0,0,0,0.06);border-color:#cbd5e1;transform:translateY(-2px)}
     .feature-tile.feature-premium{border-top:3px solid var(--cta)}
-    .feature-pro-badge{position:absolute;top:-2px;right:16px;background:var(--cta);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.08em;padding:3px 8px;border-radius:0 0 6px 6px}
+    .feature-pro-badge{position:absolute;top:-2px;right:16px;background:var(--cta);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.08em;padding:3px 9px;border-radius:0 0 6px 6px;white-space:nowrap}
     .feature-icon{width:44px;height:44px;background:var(--brand-lightest, #EEF2FF);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
     .feature-tile h3{font-size:16px;margin-bottom:8px;font-weight:600;line-height:1.3}
     .feature-tile .muted{font-size:14px;line-height:1.6}
