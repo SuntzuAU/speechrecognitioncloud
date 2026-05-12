@@ -36,12 +36,18 @@ import site from '../../site.config.json';
           <div class="step"><span class="step-num">2</span><div><p>Press your hotkey (CapsLock by default) to start recording</p></div></div>
           <div class="step"><span class="step-num">3</span><div><p>Speak what you want to type</p></div></div>
           <div class="step"><span class="step-num">4</span><div><p>Press the hotkey again to stop recording and transcribe</p></div></div>
+          <div class="step step-optional"><span class="step-num step-num-optional">5</span><div><p><strong>Optional - Professional and Medical:</strong> set up the mobile companion app to dictate from your phone. <a href="/support/mobile-setup" style="color:var(--brand);font-weight:600">See mobile setup guide &rarr;</a></p></div></div>
         </div>
         <p class="muted" style="margin-top:16px;font-size:14px">The hotkey can be customised in Settings. Popular alternatives include F1-F12, tilde (~), Scroll Lock, or Pause.</p>
       </div>
 
       <h2 style="margin-top:48px;margin-bottom:24px">Features and guides</h2>
       <div class="support-grid">
+        <a href="/support/mobile-setup" class="support-card">
+          <div class="support-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+          <h3>Mobile setup</h3>
+          <p class="muted">Set up the mobile companion app for iPhone or Android. Professional and Medical plans.</p>
+        </a>
         <a href="/support/tips" class="support-card">
           <div class="support-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
           <h3>Tips for better accuracy</h3>
@@ -66,11 +72,6 @@ import site from '../../site.config.json';
           <div class="support-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
           <h3>Settings</h3>
           <p class="muted">Configure all options: microphone, hotkeys, vocabulary, AI, preferences.</p>
-        </a>
-        <a href="/contact" class="support-card">
-          <div class="support-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-          <h3>Contact us</h3>
-          <p class="muted">Can't find what you need? Get in touch and we'll help.</p>
         </a>
       </div>
 
@@ -103,6 +104,8 @@ import site from '../../site.config.json';
     .steps{display:flex;flex-direction:column;gap:16px}
     .step{display:flex;gap:16px;align-items:center}
     .step-num{width:36px;height:36px;background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+    .step-optional{padding-top:16px;border-top:1px dashed var(--border);margin-top:4px}
+    .step-num-optional{background:#fff;color:var(--brand);border:2px solid var(--brand)}
     .step p{font-size:15px;font-weight:500}
     .quick-tips{margin-top:48px}
     .tip-item{margin-bottom:16px;padding:16px 20px;border:1px solid var(--border);border-radius:10px}
