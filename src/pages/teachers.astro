@@ -88,7 +88,7 @@ const webPageSchema = {
   "@id": pageUrl + "#webpage",
   "url": pageUrl,
   "name": "Speech to Text for Teachers: A Practical Guide",
-  "description": "Practical guide to voice dictation for teachers — report comments, IEP and 504 documentation, parent communication, and lesson planning. Written by Russell Bewsell, Voice Recognition Australia.",
+  "description": "Practical guide to voice dictation for teachers — report comments, individual education plans, parent communication, and lesson planning. Written by Russell Bewsell, Voice Recognition Australia.",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
   "datePublished": "2026-05-12",
@@ -161,7 +161,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
 ---
 <BaseLayout
   title="Speech to Text for Teachers: A Practical Guide"
-  description="Practical guide to voice dictation for teachers — report comments, IEP documentation, parent communication, and lesson planning. Free Windows download. Written by Russell Bewsell."
+  description="Practical guide to voice dictation for teachers — report comments, individual education plans, parent communication, and lesson planning. Free Windows download."
   extraSchema={extraSchema}
 >
   <!-- HERO -->
@@ -170,10 +170,10 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
       <div class="t-hero-split">
         <div>
           <p class="eyebrow">FOR TEACHERS</p>
-          <h1 class="t-h1">Speech to text for teachers: a practical guide to dictation for reports, lesson plans and parent communication</h1>
-          <p class="t-lead">Teachers spend a substantial share of every working week on documentation that isn't teaching. This page is a practical guide — workflows, honest limits, deployment notes, and a quick start — to whether voice dictation is worth your time. Written by someone who has spent 28 years putting speech recognition into schools, hospitals, and government across multiple countries.</p>
+          <h1 class="t-h1">Speech to Text for Teachers: A Practical Guide</h1>
+          <p class="t-lead">Teachers spend a substantial share of every working week on documentation that isn't teaching. This page is a practical guide — workflows, honest limits, deployment notes, and a quick start — to whether voice dictation is worth your time.</p>
           <div class="t-cta-row">
-            <a href="#workflows" class="btn-secondary">Read the workflows</a>
+            <a href="#quickstart" class="btn-secondary">Jump to quick start</a>
             <a href={site.download.url} class="btn-primary">Download free for Windows</a>
           </div>
           <p class="muted t-micro">Free to install. No credit card. 20 minutes of free dictation per month, or unlimited on the Personal/Educational plan.</p>
@@ -185,11 +185,11 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
     </div>
   </section>
 
-  <!-- WHY TEACHERS REACH FOR DICTATION -->
+  <!-- WHERE DICTATION FITS -->
   <section class="section-pad section-neutral">
     <div class="container t-prose">
-      <h2>Why teachers are reaching for voice dictation</h2>
-      <p>Documentation has quietly become one of the largest categories of teacher work that doesn't involve students. Multiple national workforce surveys have found teachers working well above their paid hours, with several hours of every week absorbed by administrative writing — report comments, IEP and 504 documentation, parent communication, lesson and unit planning, behavioural notes, and the dozens of small written records that feed into student support meetings.</p>
+      <h2>Where dictation fits, and where it doesn't</h2>
+      <p>Documentation has quietly become one of the largest categories of teacher work that doesn't involve students. Multiple national workforce surveys have found teachers working well above their paid hours, with several hours of every week absorbed by administrative writing — report comments, individual education plan documentation, parent communication, lesson and unit planning, behavioural notes, and the dozens of small written records that feed into student support meetings.</p>
       <p>Voice dictation doesn't change the volume of that work. What it can change is the production speed of the parts that involve writing extended prose. Report and progress-report comments are the clearest case. Parent emails are the second. Reflective notes — the kind teachers most often skip under time pressure — are the third.</p>
       <p>What dictation will <strong>not</strong> do is fill in matrix-style planning grids, build assessment rubrics, write your IEP review schedule, or remove the cognitive work of thinking about a student before you write about them. The sections below are an honest sketch of where it earns its keep and where it doesn't.</p>
     </div>
@@ -198,7 +198,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
   <!-- FOUR REAL WORKFLOWS -->
   <section class="section-pad" id="workflows">
     <div class="container t-prose">
-      <h2>Four real teacher workflows where dictation earns its keep</h2>
+      <h2>Four speech-to-text workflows where it earns its keep</h2>
 
       <h3>Report-card or progress-report comments at scale</h3>
       <p>If you teach a class of 25 and need to write a personalised paragraph for each student, you're looking at producing roughly 1,500 to 2,500 words of considered prose against a deadline. Dictation suits this work for one specific reason: it separates the <em>thinking</em> about a student from the <em>typing</em> of the comment. Most teachers who shift this workflow to voice describe it as switching from "typing a comment" to "talking about the student" — and the resulting writing tends to be warmer and more specific.</p>
@@ -218,8 +218,8 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
         </figure>
       )}
 
-      <h3>IEP, 504, and support documentation</h3>
-      <p>Documentation for students with disabilities or additional needs is one of the largest sources of admin work for teachers — and one of the most consequential. Whether your jurisdiction frames this as an IEP (US, UK), a 504 plan, an Individual Learning Plan, or another national equivalent, the underlying work is the same: contemporaneous, specific evidence of the adjustments you're providing and how the student is responding to them.</p>
+      <h3>Individual education plans and support documentation</h3>
+      <p>Documentation for students with disabilities or additional needs is one of the largest sources of admin work for teachers — and one of the most consequential. Names vary by country (IEPs, 504 plans, EHCPs, ILPs, and other national equivalents), but the underlying work is the same: contemporaneous, specific evidence of the adjustments you're providing and how the student is responding to them.</p>
       <p>Voice dictation fits this work for two reasons. First, evidence is usually easier to describe than to write. "Today during the Year 7 maths lesson I provided a scaffolded worksheet and read each problem aloud for student X. Student X attempted all problems independently after the read-aloud support." That sentence is faster to speak than to type for most people, and it carries the contemporaneous detail support documentation actually needs.</p>
       <p>Second, support documentation rewards consistency of phrasing across categories of adjustment. Saved templates for each adjustment type let you keep the framing consistent across the year and across students, while the personalised detail is dictated in.</p>
       <p>The same approach extends to behaviour plans, learning goal reviews, welfare and wellbeing notes, and the small chronicle entries that feed into student support team meetings.</p>
@@ -232,7 +232,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
         <li><strong>Sensitive emails</strong> (behaviour incidents, learning concerns, wellbeing flags): dictate a full draft into a Word document, leave it for ten minutes, read it back, then paste it into your school email. The draft-and-cool-off pattern is much faster when the draft is dictated than when it's typed.</li>
         <li><strong>Class newsletters and blog posts</strong>: dictate from rough notes. This is the single fastest task most teachers shift to voice, and it's usually the most thankless writing in the week.</li>
       </ul>
-      <p>Dictation works inside Outlook, Gmail, the web versions of both used by school accounts, and the messaging panes inside Google Classroom, Microsoft Teams for Education, Canvas, Schoology, and any other LMS where your cursor can sit in a text field.</p>
+      <p>Dictation works inside Outlook, Gmail, the web versions of both used by school accounts, and the messaging panes inside Microsoft Teams for Education, Google Classroom, Canvas, Schoology, and any other LMS where your cursor can sit in a text field.</p>
 
       <h3>Lesson and unit planning</h3>
       <p>Unit and lesson planning is the most variable of the four workflows because it depends heavily on whether you're building from scratch, adapting last year's plans, or drawing on faculty scope-and-sequence documents.</p>
@@ -251,18 +251,23 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
   <section class="section-pad section-neutral">
     <div class="container t-prose">
       <h2>Where Speech Recognition Cloud fits in your school's tech stack</h2>
+      {imgSrc('teacher-dictating-at-desk') && (
+        <figure class="t-figure">
+          <img src={imgSrc('teacher-dictating-at-desk')} alt={imgAlt('teacher-dictating-at-desk')} loading="lazy" decoding="async" width="1200" height="675" />
+        </figure>
+      )}
       <p>Speech Recognition Cloud is cursor-based dictation software for Windows 10 and Windows 11. It is not a meeting transcriber, an ambient AI scribe, or a recording tool — it converts live speech to text at the cursor position in whatever Windows application you're working in.</p>
       <p>What that means in practice for a teacher:</p>
       <ul>
-        <li><strong>Inside your school's grade-book or report platform</strong> — comment boxes, behaviour note fields, free-text feedback boxes. This includes systems like PowerSchool, Infinite Campus, Schoology, Skyward, SIMS, Arbor, Bromcom, Sentral, Compass, and similar platforms used worldwide.</li>
+        <li><strong>Inside Microsoft Teams for Education</strong> — comments, announcements, assignment feedback, class discussion posts. This is one of the most-used surfaces for teachers running their classes through Microsoft 365.</li>
         <li><strong>Inside Word, Outlook, OneNote, Excel</strong> — desktop or web.</li>
+        <li><strong>Inside your school's grade-book or report platform</strong> — comment boxes, behaviour note fields, free-text feedback boxes. This includes systems like PowerSchool, Infinite Campus, Schoology, Skyward, SIMS, Arbor, Bromcom, Sentral, Compass, and similar platforms used worldwide.</li>
         <li><strong>Inside Google Docs, Gmail, Google Classroom</strong> — in your browser.</li>
-        <li><strong>Inside Microsoft Teams for Education</strong> — comments, announcements, assignment feedback.</li>
-        <li><strong>Inside Canvas, Moodle, Schoology, and other LMS platforms</strong> — assessment feedback, discussion posts, course announcements.</li>
+        <li><strong>Inside Canvas, Moodle, and other LMS platforms</strong> — assessment feedback, discussion posts, course announcements.</li>
         <li><strong>Inside any other Windows application</strong> — if you can click into a text field and type, you can dictate.</li>
       </ul>
       <p>Because it operates at the operating-system level rather than as a browser extension or app integration, Speech Recognition Cloud works across all of these without per-platform setup. The trade-off is that it's a Windows-only tool: it doesn't currently run on macOS or ChromeOS, which is a real limitation if you're on a school-issued MacBook or Chromebook.</p>
-      <p>For pricing details and the school-volume options, see the <a href="/pricing" class="t-link">pricing page</a>.</p>
+      <p>For pricing details, see the <a href="/pricing" class="t-link">pricing page</a>, or read the dedicated school and education licensing section further down.</p>
     </div>
   </section>
 
@@ -307,7 +312,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
   </section>
 
   <!-- HOW TO QUICK START -->
-  <section class="section-pad section-neutral">
+  <section class="section-pad section-neutral" id="quickstart">
     <div class="container t-prose" style="max-width:780px">
       <h2>Quick start — dictating your first report comment</h2>
       <p>A genuine four-step walkthrough for a teacher new to dictation.</p>
@@ -348,7 +353,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
   <!-- FAQ -->
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:780px">
-      <h2 class="text-center" style="margin-bottom:32px">Frequently asked questions</h2>
+      <h2 class="text-center" style="margin-bottom:28px">Frequently asked questions</h2>
       {faqItems.map(item => (
         <details class="faq-item">
           <summary class="faq-question">{item.question}</summary>
@@ -359,8 +364,18 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
     </div>
   </section>
 
-  <!-- AUSTRALIAN CONTEXT (regional appendix) -->
+  <!-- SCHOOL AND EDUCATION LICENSING -->
   <section class="section-pad">
+    <div class="container t-prose" style="max-width:820px">
+      <h2>School and education licensing</h2>
+      <p>Speech Recognition Cloud is available on individual plans suitable for a single teacher, and on volume licensing suitable for a whole department, faculty, or school. The Personal/Educational annual plan covers most individual teachers who want unlimited dictation; school-level deployment is also available for IT departments rolling it out across classrooms.</p>
+      <p>For broader voice-technology procurement for schools — including microphones, classroom Dragon licensing for students with disabilities, NDIS-funded student deployments, and Learning Support teacher training — our parent business operates a dedicated <a href="https://www.voicerecognition.com.au/collections/education-academic-student" rel="noopener" class="t-link">education licensing collection at Voice Recognition Australia</a>, which has been supplying Australian schools, universities, and Learning Support teachers for over 25 years.</p>
+      <p>See the <a href="/pricing" class="t-link">pricing page</a> for current individual plans, or <a href="/contact" class="t-link">contact us</a> for school volume quotes.</p>
+    </div>
+  </section>
+
+  <!-- AUSTRALIAN CONTEXT (regional appendix) -->
+  <section class="section-pad section-neutral">
     <div class="container t-prose" style="max-width:820px">
       <div class="t-regional-panel">
         <p class="t-regional-eyebrow">REGIONAL CONTEXT</p>
@@ -370,7 +385,6 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
         <p><strong>NCCD evidence.</strong> The Nationally Consistent Collection of Data on School Students with Disability rewards contemporaneous, specific evidence and consistent phrasing across the four levels of adjustment — support provided within quality differentiated teaching practice, supplementary, substantial, and extensive. Saved templates for each level let you keep the framing consistent while the personalised detail is dictated in. The same approach extends to IEPs, IBMPs, and the chronicle entries that feed into student-support team meetings.</p>
         <p><strong>Australian Curriculum v9.</strong> Australian Curriculum v9.0 is the current published F-10 curriculum (with NSW, WA, and Victoria following their own implementation paths), and most schools are continuing their phased rollout through 2026. Dictation works well for annotating existing unit plans, drafting learning intentions and success criteria, and writing context paragraphs that connect a lesson to v9 content descriptors.</p>
         <p><strong>Privacy.</strong> The Australian Privacy Principles and the Notifiable Data Breaches scheme are the relevant frameworks for handling student information on a school-issued device. Our <a href="/privacy" class="t-link">privacy statement</a> documents exactly how audio and transcripts are handled — short version: audio is processed in memory and immediately erased, transcripts stay on your own computer.</p>
-        <p><strong>Workload context.</strong> AITSL's <em>Teacher Duties</em> brief (August 2025), drawn from the 2023 Australian Teacher Workforce Survey, found that more than half of full-time classroom teachers reported spending five or more hours per week on general administrative work, and around 40 percent reported spending ten or more hours per week on lesson planning. Full-time teachers reported a median working week of 50 to 55 hours during school terms.</p>
       </div>
     </div>
   </section>
@@ -388,7 +402,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
   </section>
 
   <!-- FINAL CTA (restrained) -->
-  <section class="section-pad section-dark" style="padding:48px 0">
+  <section class="section-pad section-dark" style="padding:40px 0">
     <div class="container text-center">
       <h2 style="margin-bottom:12px">Try it for a fortnight on the writing parts of your week</h2>
       <p class="muted" style="margin-bottom:24px">Free for 20 minutes a month, or unlimited on the Personal/Educational plan at $99 USD per year.</p>
@@ -397,6 +411,8 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
   </section>
 
   <style is:inline>
+    .section-pad{padding:40px 0}
+
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
     .t-h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:18px;line-height:1.18;letter-spacing:-0.02em}
     .t-lead{font-size:17px;line-height:1.65;margin-bottom:24px;max-width:560px;color:var(--text)}
@@ -406,9 +422,9 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
     .t-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
 
     .t-prose{max-width:820px}
-    .t-prose h2{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 18px;letter-spacing:-0.015em}
-    .t-prose h3{font-size:20px;font-weight:700;margin:32px 0 12px;letter-spacing:-0.01em}
-    .t-prose h4{font-size:17px;font-weight:700;margin:24px 0 8px}
+    .t-prose h2{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 16px;letter-spacing:-0.015em}
+    .t-prose h3{font-size:20px;font-weight:700;margin:28px 0 12px;letter-spacing:-0.01em}
+    .t-prose h4{font-size:17px;font-weight:700;margin:22px 0 8px}
     .t-prose p{font-size:16px;line-height:1.75;color:var(--text);margin:0 0 14px}
     .t-prose ul{margin:8px 0 18px 0;padding-left:22px}
     .t-prose ul li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--text)}
@@ -417,32 +433,32 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
     .t-link{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
     .t-link:hover{color:#3730A3}
 
-    .t-figure{margin:24px 0 28px;border-radius:14px;overflow:hidden}
+    .t-figure{margin:20px 0 24px;border-radius:14px;overflow:hidden}
     .t-figure img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 
     .t-numbered{margin:8px 0 18px 0;padding-left:22px;display:flex;flex-direction:column;gap:14px}
     .t-numbered li{font-size:16px;line-height:1.75;color:var(--text)}
 
-    .t-howto{list-style:none;padding:0;margin:8px 0 20px;counter-reset:howto;display:flex;flex-direction:column;gap:20px}
+    .t-howto{list-style:none;padding:0;margin:8px 0 20px;counter-reset:howto;display:flex;flex-direction:column;gap:18px}
     .t-howto li{position:relative;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:#fff}
     .t-howto h3{margin:0 0 6px;font-size:16px;font-weight:700}
     .t-howto p{margin:0;font-size:15px;line-height:1.7}
 
     .faq-item{border-bottom:1px solid var(--border)}
-    .faq-question{padding:18px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-question{padding:16px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
     .faq-question::-webkit-details-marker{display:none}
     .faq-question::after{content:'+';font-size:22px;color:var(--muted);font-weight:400;flex-shrink:0}
     .faq-item[open] .faq-question::after{content:'–'}
-    .faq-answer{padding:0 0 18px}
+    .faq-answer{padding:0 0 16px}
     .faq-answer p{color:var(--muted);font-size:15px;line-height:1.75;margin:0}
     .t-faq-closer{margin-top:20px;font-size:14px;text-align:center}
 
-    .t-regional-panel{padding:32px;border:1px solid var(--border);border-radius:14px;background:var(--neutral)}
+    .t-regional-panel{padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
     .t-regional-eyebrow{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
     .t-regional-panel h2{font-size:22px;font-weight:700;margin:0 0 14px;letter-spacing:-0.015em}
     .t-regional-panel p{font-size:15px;line-height:1.75;margin:0 0 12px;color:var(--text)}
 
-    .t-author-panel{padding:28px 28px;border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:12px;background:var(--brand-lightest)}
+    .t-author-panel{padding:24px 28px;border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:12px;background:var(--brand-lightest)}
     .t-author-panel h2{font-size:20px;font-weight:700;margin:0 0 12px}
     .t-author-panel p{font-size:15px;line-height:1.75;margin:0 0 10px;color:var(--text)}
     .t-author-sig{font-weight:600}
@@ -451,9 +467,10 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
     .btn-lg{padding:14px 36px;font-size:17px}
 
     @media(max-width:768px){
+      .section-pad{padding:28px 0}
       .t-hero-split{grid-template-columns:1fr;gap:24px}
       .t-prose h2{font-size:22px}
-      .t-prose h3{font-size:18px;margin-top:24px}
+      .t-prose h3{font-size:18px;margin-top:22px}
       .t-prose p, .t-prose ul li{font-size:15px}
       .t-author-panel{padding:22px}
       .t-regional-panel{padding:22px}

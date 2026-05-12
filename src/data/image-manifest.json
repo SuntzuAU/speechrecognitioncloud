@@ -137,7 +137,7 @@
   "teacher-report-cards": {
     "key": "teacher-report-cards",
     "r2Key": "speechrecognitioncloud/2026/05/12/teacher-report-card-writing-evening-e333fa5c.jpg",
-    "altText": "Australian primary teacher at a kitchen table in the late afternoon, laptop open to a report-card template, holding a USB headset, about to begin a session of voice dictation",
+    "altText": "Primary teacher at a kitchen table in the late afternoon, laptop open to a report-card template, holding a USB headset, about to begin a session of voice dictation",
     "aspectRatio": "16:9",
     "slot": "break",
     "contentType": "image/jpeg",
@@ -146,7 +146,16 @@
   "teacher-classroom-accessibility": {
     "key": "teacher-classroom-accessibility",
     "r2Key": "speechrecognitioncloud/2026/05/12/teacher-helping-student-voice-dictation-d534cfb8.jpg",
-    "altText": "Australian secondary teacher leaning over to help a Year 9 student who is wearing a USB headset and using voice dictation as a learning accommodation",
+    "altText": "Secondary teacher leaning over to help a student who is wearing a USB headset and using voice dictation as a learning accommodation",
+    "aspectRatio": "16:9",
+    "slot": "break",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "teacher-dictating-at-desk": {
+    "key": "teacher-dictating-at-desk",
+    "r2Key": "speechrecognitioncloud/2026/05/12/teacher-dictating-at-desk-154c7d22.jpg",
+    "altText": "Female teacher in her early forties at her home-office desk, wearing a USB headset, mid-sentence as she dictates notes into her laptop, with bookshelves softly out of focus behind her",
     "aspectRatio": "16:9",
     "slot": "break",
     "contentType": "image/jpeg",
