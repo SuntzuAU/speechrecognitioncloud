@@ -134,6 +134,24 @@
     "contentType": "image/jpeg",
     "site": "speechrecognitioncloud"
   },
+  "teacher-report-cards": {
+    "key": "teacher-report-cards",
+    "r2Key": "speechrecognitioncloud/2026/05/12/teacher-report-card-writing-evening-e333fa5c.jpg",
+    "altText": "Australian primary teacher at a kitchen table in the late afternoon, laptop open to a report-card template, holding a USB headset, about to begin a session of voice dictation",
+    "aspectRatio": "16:9",
+    "slot": "break",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "teacher-classroom-accessibility": {
+    "key": "teacher-classroom-accessibility",
+    "r2Key": "speechrecognitioncloud/2026/05/12/teacher-helping-student-voice-dictation-d534cfb8.jpg",
+    "altText": "Australian secondary teacher leaning over to help a Year 9 student who is wearing a USB headset and using voice dictation as a learning accommodation",
+    "aspectRatio": "16:9",
+    "slot": "break",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
   "journalist-hero": {
     "key": "journalist-hero",
     "r2Key": "speechrecognitioncloud/2026/03/19/src-journalist-dictation-article-v2-f0460c19.jpg",
