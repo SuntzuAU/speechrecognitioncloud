@@ -7,71 +7,56 @@ import site from '../../site.config.json';
     <div class="container" style="max-width:820px">
       <p class="eyebrow">SUPPORT</p>
       <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Mobile setup</h1>
-      <p class="muted" style="font-size:16px;margin-bottom:16px">Speech Recognition Cloud includes a mobile companion app so you can dictate from your phone and have the transcribed text appear on your Windows PC. The mobile app is available for iPhone and Android.</p>
-      <p class="muted" style="font-size:14px;margin-bottom:40px">The mobile companion is available on the <a href="/pricing" style="color:var(--brand);font-weight:600">Professional and Medical plans</a>. Choose your platform below and follow along with the setup video.</p>
+      <p class="muted" style="font-size:16px;margin-bottom:16px">Speech Recognition Cloud includes a mobile companion that turns your phone into a wireless microphone or voice-notes capture device for your Windows PC. The setup is the same on both platforms - choose your phone below to watch the right walkthrough video.</p>
+      <p class="muted" style="font-size:14px;margin-bottom:32px">The mobile companion is available on the <a href="/pricing" style="color:var(--brand);font-weight:600">Professional and Medical plans</a>.</p>
 
-      <div class="platform-section">
-        <div class="platform-header">
-          <div class="platform-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18.5a.5.5 0 100 1 .5.5 0 000-1z"/><rect x="5" y="2" width="14" height="20" rx="2.5" ry="2.5"/></svg>
-          </div>
-          <div>
-            <h2 style="margin:0;font-size:24px;font-weight:700">iPhone setup</h2>
-            <p class="muted" style="margin:4px 0 0;font-size:14px">For iOS devices. Approximately 5 minutes.</p>
-          </div>
-        </div>
+      <!-- Platform tabs (CSS-only via :target) -->
+      <div class="tabs" id="tabs">
+        <a href="#iphone" class="tab" id="tab-iphone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18.5a.5.5 0 100 1 .5.5 0 000-1z"/><rect x="5" y="2" width="14" height="20" rx="2.5" ry="2.5"/></svg>
+          iPhone
+        </a>
+        <a href="#android" class="tab" id="tab-android">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          Android
+        </a>
+      </div>
 
+      <!-- iPhone video panel -->
+      <div class="panel" id="iphone">
         <div class="yt-facade" data-ytid="AIg0Eb4J-gg">
           <img src="https://i.ytimg.com/vi/AIg0Eb4J-gg/maxresdefault.jpg" alt="Speech Recognition Cloud iPhone setup video" loading="lazy" decoding="async" />
           <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
         </div>
-
-        <div class="steps-block">
-          <h3 style="margin-bottom:16px;font-size:17px">Quick reference</h3>
-          <div class="steps">
-            <div class="step"><span class="step-num">1</span><div><p>Install Speech Recognition Cloud on your Windows PC and sign in to your Professional or Medical account</p></div></div>
-            <div class="step"><span class="step-num">2</span><div><p>Download the Speech Recognition Cloud companion app from the App Store on your iPhone</p></div></div>
-            <div class="step"><span class="step-num">3</span><div><p>Open the app and sign in with the same account you use on your PC</p></div></div>
-            <div class="step"><span class="step-num">4</span><div><p>Pair your phone with your PC by following the in-app prompts</p></div></div>
-            <div class="step"><span class="step-num">5</span><div><p>Start dictating from your phone. Transcribed text will appear at your cursor on your PC</p></div></div>
-          </div>
-          <p class="muted" style="margin-top:16px;font-size:14px">Watch the video above for the full walkthrough including troubleshooting and pairing tips.</p>
-        </div>
+        <p class="panel-caption muted">iPhone setup walkthrough</p>
       </div>
 
-      <div class="platform-section">
-        <div class="platform-header">
-          <div class="platform-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-          </div>
-          <div>
-            <h2 style="margin:0;font-size:24px;font-weight:700">Android setup</h2>
-            <p class="muted" style="margin:4px 0 0;font-size:14px">For Android devices. Approximately 5 minutes.</p>
-          </div>
-        </div>
-
+      <!-- Android video panel -->
+      <div class="panel" id="android">
         <div class="yt-facade" data-ytid="VPDzk5Glanw">
           <img src="https://i.ytimg.com/vi/VPDzk5Glanw/maxresdefault.jpg" alt="Speech Recognition Cloud Android setup video" loading="lazy" decoding="async" />
           <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
         </div>
+        <p class="panel-caption muted">Android setup walkthrough</p>
+      </div>
 
-        <div class="steps-block">
-          <h3 style="margin-bottom:16px;font-size:17px">Quick reference</h3>
-          <div class="steps">
-            <div class="step"><span class="step-num">1</span><div><p>Install Speech Recognition Cloud on your Windows PC and sign in to your Professional or Medical account</p></div></div>
-            <div class="step"><span class="step-num">2</span><div><p>Download the Speech Recognition Cloud companion app from Google Play on your Android device</p></div></div>
-            <div class="step"><span class="step-num">3</span><div><p>Open the app and sign in with the same account you use on your PC</p></div></div>
-            <div class="step"><span class="step-num">4</span><div><p>Pair your phone with your PC by following the in-app prompts</p></div></div>
-            <div class="step"><span class="step-num">5</span><div><p>Start dictating from your phone. Transcribed text will appear at your cursor on your PC</p></div></div>
-          </div>
-          <p class="muted" style="margin-top:16px;font-size:14px">Watch the video above for the full walkthrough including troubleshooting and pairing tips.</p>
+      <!-- Shared steps (apply to both platforms) -->
+      <div class="steps-block">
+        <h2 style="margin-bottom:8px;font-size:22px;font-weight:700">Quick reference</h2>
+        <p class="muted" style="margin-bottom:20px;font-size:14px">These steps are the same whether you are setting up iPhone or Android.</p>
+        <div class="steps">
+          <div class="step"><span class="step-num">1</span><div><p>Install Speech Recognition Cloud on your Windows PC and sign in to your Professional or Medical account</p></div></div>
+          <div class="step"><span class="step-num">2</span><div><p>In the SRC bar, click <strong>Settings</strong> (the cog in the top-left), then click <strong>Mobile</strong> (bottom-left), then enable <strong>Mobile Dictation</strong></p></div></div>
+          <div class="step"><span class="step-num">3</span><div><p>Pair your phone by scanning the QR code with your mobile camera, then <strong>Add to Home Screen</strong> when prompted</p></div></div>
+          <div class="step"><span class="step-num">4</span><div><p>Start dictating. Use the phone as a <strong>wireless microphone</strong> for live dictation at your PC cursor, or switch the app into <strong>Voice Notes</strong> mode to send a complete document to the active SRC instance</p></div></div>
         </div>
+        <p class="muted" style="margin-top:20px;font-size:14px">Watch the video above for the full walkthrough including pairing and troubleshooting.</p>
       </div>
 
       <div class="info-callout">
         <h3 style="margin-bottom:8px;font-size:16px;font-weight:600">Having trouble?</h3>
-        <p class="muted" style="font-size:14px;margin-bottom:8px">Both apps need to be signed in to the same Speech Recognition Cloud account, and both devices should be online when pairing. If pairing fails, close both apps, reopen them, and try again.</p>
-        <p class="muted" style="font-size:14px">Still stuck? <a href="/contact" style="color:var(--brand);font-weight:600">Contact us</a> and we'll help you get it working.</p>
+        <p class="muted" style="font-size:14px;margin-bottom:8px">Make sure your PC is signed in and Mobile Dictation is enabled in Settings before scanning the QR code. Both devices should be online during pairing.</p>
+        <p class="muted" style="font-size:14px">Still stuck? <a href="/contact" style="color:var(--brand);font-weight:600">Contact us</a> and we will help you get it working.</p>
       </div>
 
     </div>
@@ -88,22 +73,51 @@ import site from '../../site.config.json';
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .platform-section{margin-bottom:64px;padding-bottom:48px;border-bottom:1px solid var(--border)}
-    .platform-section:last-of-type{border-bottom:0}
-    .platform-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
-    .platform-icon{width:56px;height:56px;background:var(--brand-lightest, #EEF2FF);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .yt-facade{position:relative;width:100%;margin-bottom:32px;cursor:pointer;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 6px 24px rgba(0,0,0,0.1);aspect-ratio:16/9}
+
+    /* Tab bar */
+    .tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:32px}
+    .tab{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:15px;font-weight:600;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color 0.15s,border-color 0.15s}
+    .tab:hover{color:var(--brand)}
+    .tab svg{flex-shrink:0}
+
+    /* Tab panels */
+    .panel{display:none;margin-bottom:40px}
+    .panel-caption{font-size:13px;text-align:center;margin-top:12px}
+
+    /* Default state: show iPhone */
+    #iphone{display:block}
+    #tab-iphone{color:var(--brand);border-bottom-color:var(--brand)}
+
+    /* When Android is targeted, hide iPhone, show Android */
+    #tabs:has(~ #android:target) #tab-iphone,
+    body:has(#android:target) #tab-iphone{color:var(--muted);border-bottom-color:transparent}
+    body:has(#android:target) #tab-android{color:var(--brand);border-bottom-color:var(--brand)}
+    body:has(#android:target) #iphone{display:none}
+    body:has(#android:target) #android{display:block}
+
+    /* When iPhone is explicitly targeted, ensure correct state (defaults already match) */
+    body:has(#iphone:target) #tab-iphone{color:var(--brand);border-bottom-color:var(--brand)}
+    body:has(#iphone:target) #tab-android{color:var(--muted);border-bottom-color:transparent}
+    body:has(#iphone:target) #iphone{display:block}
+    body:has(#iphone:target) #android{display:none}
+
+    .yt-facade{position:relative;width:100%;cursor:pointer;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 6px 24px rgba(0,0,0,0.1);aspect-ratio:16/9}
     .yt-facade img{width:100%;height:100%;object-fit:cover;display:block}
     .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}
     .yt-facade:hover .yt-play{opacity:1}
     .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    .steps-block{padding:24px;background:var(--neutral);border-radius:14px}
-    .steps{display:flex;flex-direction:column;gap:14px}
+
+    .steps-block{padding:28px;background:var(--neutral);border-radius:14px;margin-bottom:32px}
+    .steps{display:flex;flex-direction:column;gap:16px}
     .step{display:flex;gap:14px;align-items:flex-start}
     .step-num{width:32px;height:32px;background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
     .step p{font-size:15px;line-height:1.6;margin:4px 0 0}
+
     .info-callout{padding:20px 24px;background:var(--brand-lightest, #EEF2FF);border-radius:12px;border-left:4px solid var(--brand)}
-    @media(max-width:600px){.platform-header{gap:12px}.platform-icon{width:48px;height:48px}.platform-header h2{font-size:20px !important}}
+
+    @media(max-width:600px){
+      .tab{padding:10px 16px;font-size:14px}
+    }
   </style>
   <script is:inline>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
