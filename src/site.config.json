@@ -6,7 +6,7 @@
   "seoTitle": "Free Speech to Text Software \u2014 Download for Windows | Speech Recognition Cloud",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.10.0 - Mobile companion features added",
+  "_buildNote": "v1.11.0 - Features grid: icons, 8 tiles 4x2, premium accents",
 
   "colours": {
     "brand": "#4338CA",
@@ -148,17 +148,15 @@
   ],
 
   "features": [
-    { "title": "Works where you work", "description": "Dictate into any Windows application at your cursor. Word, Outlook, Chrome, EMRs, web forms. Anywhere you can type." },
-    { "title": "No training needed", "description": "Install and start dictating immediately. No voice profiles, no calibration, no setup wizards." },
-    { "title": "AI punctuation and grammar", "description": "Speak naturally. The AI adds punctuation, capitalisation, and formatting automatically." },
-    { "title": "Mobile app: wireless microphone", "description": "Use your iPhone or Android as a high-quality microphone for your PC. No headset, low webcam mic, or forgotten gear? Your phone fills in. Pro and Medical plans." },
-    { "title": "Mobile app: Voice Notes mode", "description": "Dictate full documents, letters, or reports on your phone while you are away from your desk. The text is sent to your active PC and ready to paste anywhere in Windows. Built for ward rounds and field work. Pro and Medical plans." },
-    { "title": "Custom vocabulary", "description": "Add specialised terms, names, and jargon. The system learns your terminology." },
-    { "title": "Templates and commands", "description": "20+ voice commands for productivity. Auto-insert text blocks with templates." },
-    { "title": "57 languages", "description": "Broad language support across Free, Personal, and Professional plans. Medical tier is English only." },
-    { "title": "Ultra Accuracy Mode", "description": "Enhanced accuracy processing for Professional and Medical tiers. When precision matters most." },
-    { "title": "Privacy controls", "description": "Audio is processed and not stored. Your data is never used for training. You stay in control." },
-    { "title": "Works with accents", "description": "Cloud AI handles accent variation well. Designed for real-world environments and diverse speakers." }
+    { "icon": "cursor", "title": "Works where you work", "description": "Dictate into any Windows application at your cursor. Word, Outlook, Chrome, EMRs, web forms. Anywhere you can type." },
+    { "icon": "zap", "title": "No training needed", "description": "Install and start dictating immediately. No voice profiles, no calibration, no setup wizards." },
+    { "icon": "sparkles", "title": "AI punctuation and grammar", "description": "Speak naturally. The AI adds punctuation, capitalisation, and formatting automatically." },
+    { "icon": "mobile", "title": "Mobile companion app", "description": "Two modes on iPhone and Android. Wireless microphone turns your phone into a high-quality mic for your PC. Voice Notes mode lets you dictate full documents on the go and send them straight to your active PC. Pro and Medical plans.", "premium": true },
+    { "icon": "book", "title": "Custom vocabulary", "description": "Add specialised terms, names, and jargon. The system learns your terminology." },
+    { "icon": "command", "title": "Templates and commands", "description": "20+ voice commands for productivity. Auto-insert text blocks with templates." },
+    { "icon": "globe", "title": "57 languages", "description": "Broad language support across Free, Personal, and Professional plans. Medical tier is English only." },
+    { "icon": "target", "title": "Ultra Accuracy Mode", "description": "Enhanced accuracy processing for Professional and Medical tiers. When precision matters most.", "premium": true },
+    { "icon": "shield", "title": "Privacy controls", "description": "Audio is processed and not stored. Your data is never used for training. You stay in control." }
   ],
 
   "security": {
