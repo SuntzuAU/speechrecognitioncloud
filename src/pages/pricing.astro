@@ -8,7 +8,7 @@ const pricingFaqItems = [
   { question: "Can I cancel anytime?", answer: "Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts." },
   { question: "What currency are prices in?", answer: "Prices are listed in USD and will convert to your local currency at checkout." },
   { question: "Can I upgrade or downgrade later?", answer: "Yes. You can upgrade at any time and your new plan starts immediately. Contact us to arrange a downgrade at your next billing cycle." },
-  { question: "Do you offer volume or enterprise pricing?", answer: "Yes. Contact us for pricing on 5 or more licences. We offer volume discounts and can arrange invoicing for larger deployments." },
+  { question: "Do you offer volume or enterprise pricing?", answer: "Yes. Volume licensing is available for schools, universities, and institutions from 5 users upward. See our volume licensing page or contact us for a tailored quote." },
   { question: "What is the mobile companion app?", answer: "Professional and Medical plans include a mobile companion app for iPhone and Android. It has two modes: a wireless microphone mode that uses your phone as a mic for your PC, and Voice Notes mode that lets you dictate full documents on your phone and send them to your active PC. See the mobile setup guide for instructions." },
   { question: "Why doesn't the Medical plan include AI Modes?", answer: "AI Modes are deliberately excluded from the Medical plan to protect patient privacy. AI Modes send text to AI models for processing, which creates an unnecessary data flow when handling clinical information. The Medical plan focuses on fast, accurate dictation with specialised medical vocabularies. Professional users who do not handle clinical information get full access to AI Modes." }
 ];
@@ -40,6 +40,22 @@ const extraSchema = [faqSchema];
       <p class="muted" style="font-size:13px;margin-top:24px">{site.pricing.disclaimer}</p>
     </div>
   </section>
+
+  <section style="padding:0 0 32px">
+    <div class="container">
+      <div class="academic-strip">
+        <div class="academic-strip-text">
+          <p class="academic-strip-eyebrow">VOLUME LICENSING</p>
+          <h2 class="academic-strip-heading">Buying for a school, university, or institution?</h2>
+          <p class="academic-strip-body">Site licensing for 5 to 1,000+ users. Built for academic environments — privacy-first, no generative AI by design for assessment integrity, bulk enrolment for IT teams.</p>
+        </div>
+        <div class="academic-strip-cta">
+          <a href="/academic" class="btn-primary">Learn about volume licensing →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
       <h2 class="text-center" style="margin-bottom:40px">Feature comparison</h2>
@@ -84,10 +100,16 @@ const extraSchema = [faqSchema];
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
     .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}.pricing-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;transition:box-shadow 0.2s;text-align:left;display:flex;flex-direction:column}.pricing-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.06)}.pricing-highlighted{border-color:var(--cta);box-shadow:0 6px 24px rgba(234,88,12,0.1)}.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cta);color:#fff;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;white-space:nowrap}.pricing-card h3{font-size:18px;margin-bottom:12px;font-weight:600}.pricing-amount{font-size:36px;font-weight:700;letter-spacing:-0.02em}.pricing-period{font-size:14px;color:var(--muted);margin-left:4px}.pricing-features{list-style:none;margin-bottom:24px;flex:1}.pricing-features li{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:8px}.pricing-cta{width:100%;justify-content:center;text-align:center;margin-top:auto}
+    .academic-strip{background:#EEF2FF;border:1px solid #C7D2FE;border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;text-align:left}
+    .academic-strip-eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin:0 0 8px}
+    .academic-strip-heading{font-size:22px;font-weight:700;margin:0 0 8px;line-height:1.3}
+    .academic-strip-body{font-size:15px;color:var(--muted);margin:0;line-height:1.6;max-width:580px}
+    .academic-strip-cta{flex-shrink:0}
+    .academic-strip-cta .btn-primary{white-space:nowrap}
     .btn-lg{padding:14px 36px;font-size:17px}
     .comparison-table-wrap{overflow-x:auto}.comparison-table{width:100%;border-collapse:collapse;font-size:14px}.comparison-table th,.comparison-table td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--border)}.comparison-table th:first-child,.comparison-table td:first-child{text-align:left;font-weight:500}.comparison-table th{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em}.highlighted-col{background:var(--brand-lightest, #EEF2FF)}
     .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
     @media(max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}}
+    @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}.academic-strip{grid-template-columns:1fr;text-align:center;padding:24px}.academic-strip-body{margin-left:auto;margin-right:auto}}
   </style>
 </BaseLayout>

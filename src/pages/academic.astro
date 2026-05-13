@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+
+const pillars = [
+  {
+    title: "Backed by 25+ years in speech recognition",
+    body: "Speech Recognition Cloud is developed by a company with over two decades of speech recognition deployment across healthcare, legal, government, and enterprise environments. Institutional expertise, modern cloud platform."
+  },
+  {
+    title: "Privacy by default",
+    body: "No voice recordings stored. No user data retained. Anonymised accounts available for student deployments — no personal email addresses required for minors."
+  },
+  {
+    title: "No AI. By design.",
+    body: "No generative text. No rewriting. No summarisation. Dictation only. Built deliberately for academic integrity and assessment requirements."
+  },
+  {
+    title: "Built for institutional rollout",
+    body: "Bulk enrolment of hundreds of users at a time. Profanity filter for classroom use. IT-team-ready provisioning. Customised packages for institutional requirements."
+  }
+];
+
+const included = [
+  "Works in any Windows application — Word, Outlook, Chrome, Teams, and more",
+  "No voice training required — install and start dictating immediately",
+  "Automatic punctuation, capitalisation, and formatting",
+  "57 languages supported",
+  "Lightweight install, minimal setup",
+  "Audio processed and discarded — no recordings stored",
+  "No serial numbers or activation codes — simple email-based provisioning",
+  "One licence per user, usable across multiple PCs"
+];
+
+const audiences = [
+  {
+    title: "Schools and colleges",
+    body: "K–12 and secondary education. Inclusive learning support, assistive technology programs, and general student productivity."
+  },
+  {
+    title: "Universities and TAFEs",
+    body: "Disability support services, accessibility programs, and academic productivity for staff and students."
+  },
+  {
+    title: "Education departments and procurement",
+    body: "Multi-site rollouts, panel arrangements, and institutional procurement processes."
+  }
+];
+
+const howItWorks = [
+  {
+    title: "Banded pricing",
+    body: "Pack sizes available from 5 users upward, with banded discounts scaling to 1,000+ users. Customised packages for institutional requirements outside standard pack sizes."
+  },
+  {
+    title: "Annual subscription",
+    body: "All licences are annual subscriptions. Cancel anytime — no lock-in contracts. Licences are reassignable within your institution."
+  },
+  {
+    title: "IT-team provisioning",
+    body: "Bulk enrolment supported. Anonymised accounts available for minor deployments. No per-student credit cards, no individual sign-ups required."
+  },
+  {
+    title: "Tailored quote",
+    body: "Tell us how many users, what type of institution, and any specific requirements. We'll come back with a tailored quote within one business day."
+  }
+];
+
+const faqs = [
+  {
+    question: "How is student data handled?",
+    answer: "Audio is processed in the cloud and immediately discarded. Transcribed text is delivered to the user's cursor and never stored on our servers. No user data is retained. No voice recordings are kept at any point. Your data is never used to train AI models."
+  },
+  {
+    question: "Can students use this without a personal email address?",
+    answer: "Yes. For deployments involving minors, we can provision anonymised accounts that do not require personal email addresses. Useful for inclusive education programs, primary schools, and anywhere student privacy is a procurement requirement."
+  },
+  {
+    question: "Why is there no AI in the student edition?",
+    answer: "It is removed deliberately. Generative AI features — rewriting, summarising, drafting essays — compromise academic integrity and create assessment problems. The student edition handles dictation only. The words students speak become the words on the page, nothing more. This is the version that gets selected by education departments concerned about assignment fraud."
+  },
+  {
+    question: "What happens when a student leaves or a licence becomes available?",
+    answer: "Licences can be reassigned within your institution at any time. There is no per-student lock-in. Bulk reassignment is supported for end-of-year rollovers and student turnover."
+  },
+  {
+    question: "Is there a trial available for IT evaluation?",
+    answer: "Yes. We can provision evaluation licences for IT teams running technical compatibility, security, and accessibility testing before a procurement decision. Contact us with your evaluation requirements."
+  },
+  {
+    question: "What pack sizes are available?",
+    answer: "Volume licensing is available from as few as 5 users, scaling up to 1,000+ users. We have multiple price bands — the more seats, the better the per-user rate. Customised packages are available for institutional requirements that fall outside standard pack sizes."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Volume Licensing for Schools, Universities and Institutions",
+  "description": "Site licensing for institutional deployments. Privacy-first dictation with no generative AI — built for academic integrity. Bulk enrolment, anonymised accounts, customised packages.",
+  "url": site.siteUrl + "/academic",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+};
+
+const extraSchema = [pageSchema, faqSchema];
+---
+<BaseLayout title="Volume Licensing for Schools and Universities | Speech Recognition Cloud" description="Site licensing for institutional deployments. Privacy-first dictation with no generative AI — built for academic integrity. Bulk enrolment, anonymised accounts, customised packages." extraSchema={extraSchema}>
+
+  <!-- HERO -->
+  <section class="section-pad">
+    <div class="container text-center">
+      <p class="eyebrow">VOLUME LICENSING</p>
+      <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:16px;max-width:780px;margin-left:auto;margin-right:auto">Speech Recognition Cloud for schools, universities, and institutions</h1>
+      <p class="muted" style="font-size:17px;line-height:1.6;max-width:620px;margin:0 auto 28px">Multi-user dictation built for institutional deployments. Privacy-first. No generative AI. Built for academic integrity.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="#enquire" class="btn-primary">Request a quote</a>
+        <a href="#how-it-works" class="btn-secondary">How licensing works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUR PILLARS -->
+  <section class="section-pad section-neutral">
+    <div class="container">
+      <div class="pillar-grid">
+        {pillars.map(p => (
+          <div class="pillar-card">
+            <h3>{p.title}</h3>
+            <p class="muted">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section-pad">
+    <div class="container" style="max-width:880px">
+      <h2 class="text-center" style="margin-bottom:12px">What's included</h2>
+      <p class="muted text-center" style="font-size:16px;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto">The same dictation engine used by tens of thousands of professionals, configured for institutional deployment.</p>
+      <ul class="included-list">
+        {included.map(item => (
+          <li>
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="#4338CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:980px">
+      <h2 class="text-center" style="margin-bottom:40px">Who this is for</h2>
+      <div class="audience-grid">
+        {audiences.map(a => (
+          <div class="audience-card">
+            <h3>{a.title}</h3>
+            <p class="muted">{a.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW LICENSING WORKS -->
+  <section class="section-pad" id="how-it-works">
+    <div class="container" style="max-width:980px">
+      <h2 class="text-center" style="margin-bottom:40px">How licensing works</h2>
+      <div class="how-grid">
+        {howItWorks.map(h => (
+          <div class="how-item">
+            <h3>{h.title}</h3>
+            <p class="muted">{h.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITY -->
+  <section class="section-pad section-dark">
+    <div class="container" style="max-width:760px">
+      <h2 style="margin-bottom:16px;color:#fff">Trusted where privacy and academic integrity matter</h2>
+      <p style="color:rgba(255,255,255,0.82);font-size:17px;line-height:1.7;margin:0">Speech Recognition Cloud is trusted in government education deployments where privacy and academic integrity are procurement requirements — selected specifically for the privacy posture and the deliberate absence of generative AI features that compromise assessment outcomes. Built on more than 25 years of speech recognition deployment experience across healthcare, legal, government, and enterprise sectors.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM (ActiveCampaign Form 301) -->
+  <section class="section-pad" id="enquire">
+    <div class="container" style="max-width:760px">
+      <h2 class="text-center" style="margin-bottom:12px">Request a quote</h2>
+      <p class="muted text-center" style="font-size:16px;margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto">Tell us about your institution and we'll come back with a tailored quote within one business day.</p>
+      <div class="form-wrap">
+        <div class="_form_301"></div>
+        <script is:inline src="https://voicerecognition.activehosted.com/f/embed.php?id=301" charset="utf-8"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Frequently asked questions</h2>
+      {faqs.map(item => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .pillar-card{background:#fff;border:1px solid var(--border);border-top:4px solid var(--brand);border-radius:14px;padding:24px}
+    .pillar-card h3{font-size:16px;font-weight:600;margin-bottom:10px;line-height:1.3}
+    .pillar-card p{font-size:14px;line-height:1.6;margin:0}
+    .included-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .included-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.5}
+    .included-list svg{flex-shrink:0;margin-top:3px}
+    .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .audience-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px}
+    .audience-card h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .audience-card p{font-size:14px;line-height:1.6;margin:0}
+    .how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+    .how-item h3{font-size:16px;font-weight:600;color:var(--brand);margin-bottom:8px}
+    .how-item p{font-size:15px;line-height:1.65;margin:0}
+    .form-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';font-size:20px;color:var(--muted)}
+    .faq-item[open] .faq-question::after{content:'-'}
+    .faq-answer{padding:0 0 20px}
+    .faq-answer p{color:var(--muted);font-size:15px;line-height:1.7;margin:0}
+    @media(max-width:1024px){.pillar-grid{grid-template-columns:repeat(2,1fr)}.audience-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.pillar-grid{grid-template-columns:1fr}.included-list{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr;gap:24px}.form-wrap{padding:20px}}
+  </style>
+
+</BaseLayout>
