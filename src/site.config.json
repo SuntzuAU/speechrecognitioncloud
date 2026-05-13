@@ -6,7 +6,7 @@
   "seoTitle": "Free Speech to Text Software \u2014 Download for Windows | Speech Recognition Cloud",
   "seoDescription": "Turn your voice into accurate, punctuated text in any Windows application. Free download. No voice training required. 57 languages supported.",
   "googleAnalyticsId": "G-59XRLJXSS1",
-  "_buildNote": "v1.14.0 - AI Modes is Pro only (Medical excluded for privacy)",
+  "_buildNote": "v1.15.0 - /academic volume licensing page + pricing strip + footer link",
 
   "colours": {
     "brand": "#4338CA",
@@ -209,9 +209,9 @@
   "footer": {
     "tagline": "AI voice dictation software for Windows. Built by Russell Bewsell.",
     "columns": [
-      { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },
+      { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Volume licensing", "href": "/academic" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },
       { "heading": "Learn", "links": [{ "label": "All guides and articles", "href": "/learn" },{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Support", "href": "/support" }] },
-      { "heading": "Who it's for", "links": [{ "label": "Medical", "href": "/medical" },{ "label": "Healthcare", "href": "/healthcare" },{ "label": "Legal", "href": "/legal" },{ "label": "Business", "href": "/business" },{ "label": "Government", "href": "/government" }] },
+      { "heading": "Who it's for", "links": [{ "label": "Medical", "href": "/medical" },{ "label": "Healthcare", "href": "/healthcare" },{ "label": "Legal", "href": "/legal" },{ "label": "Business", "href": "/business" },{ "label": "Government", "href": "/government" },{ "label": "Schools and universities", "href": "/academic" }] },
       { "heading": "Company", "links": [{ "label": "Contact", "href": "/contact" },{ "label": "Privacy and security", "href": "/privacy" },{ "label": "Terms of service", "href": "/terms" }] }
     ],
     "social": [
