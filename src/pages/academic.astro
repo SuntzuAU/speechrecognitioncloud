@@ -55,10 +55,13 @@ const audiences = [
   }
 ];
 
+const VRA_ACADEMIC_URL = "https://www.voicerecognition.com.au/collections/speech-recognition-cloud-academic-volume-licensing";
+
 const howItWorks = [
   {
     title: "Banded pricing",
-    body: "Pack sizes available from 5 users upward, with banded discounts scaling to 1,000+ users. Customised packages for institutional requirements outside standard pack sizes."
+    bodyHtml: `Pack sizes available from 5 users upward, with banded discounts scaling to 1,000+ users. Customised packages for requirements outside standard pack sizes. Australian customers can view <a href="${VRA_ACADEMIC_URL}" rel="noopener">speech to text academic Australia</a> pricing in AUD.`,
+    bodyText: "Pack sizes available from 5 users upward, with banded discounts scaling to 1,000+ users. Customised packages for requirements outside standard pack sizes. Australian customers can view speech to text academic Australia pricing in AUD."
   },
   {
     title: "Annual subscription",
@@ -73,8 +76,6 @@ const howItWorks = [
     body: "Tell us how many users, what type of institution, and any specific requirements. We'll get back to you within one business day with the information you need."
   }
 ];
-
-const VRA_ACADEMIC_URL = "https://www.voicerecognition.com.au/collections/speech-recognition-cloud-academic-volume-licensing";
 
 const faqs = [
   {
@@ -99,8 +100,7 @@ const faqs = [
   },
   {
     question: "What pack sizes are available?",
-    answerHtml: `Volume licensing is available from as few as 5 users, scaling up to 1,000+ users. We have multiple price bands — the more seats, the better the per-user rate. Customised packages are available for institutional requirements that fall outside standard pack sizes. Australian customers can <a href="${VRA_ACADEMIC_URL}" rel="noopener">view AUD pricing and pack details on the Voice Recognition Australia store</a>. For all other regions and tailored quotes, use the form above.`,
-    answerText: "Volume licensing is available from as few as 5 users, scaling up to 1,000+ users. We have multiple price bands — the more seats, the better the per-user rate. Customised packages are available for institutional requirements that fall outside standard pack sizes. Australian customers can view AUD pricing and pack details on the Voice Recognition Australia store at " + VRA_ACADEMIC_URL + ". For all other regions and tailored quotes, use the form above."
+    answer: "Volume licensing is available from as few as 5 users, scaling up to 1,000+ users. We have multiple price bands — the more seats, the better the per-user rate. Customised packages are available for institutional requirements that fall outside standard pack sizes."
   }
 ];
 
@@ -110,7 +110,7 @@ const faqSchema = {
   "mainEntity": faqs.map(item => ({
     "@type": "Question",
     "name": item.question,
-    "acceptedAnswer": { "@type": "Answer", "text": item.answerText || item.answer }
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
   }))
 };
 
@@ -224,7 +224,10 @@ const extraSchema = [pageSchema, faqSchema];
         {howItWorks.map(h => (
           <div class="how-item">
             <h3>{h.title}</h3>
-            <p class="muted">{h.body}</p>
+            {h.bodyHtml
+              ? <p class="muted" set:html={h.bodyHtml} />
+              : <p class="muted">{h.body}</p>
+            }
           </div>
         ))}
       </div>
@@ -249,12 +252,7 @@ const extraSchema = [pageSchema, faqSchema];
       {faqs.map(item => (
         <details class="faq-item">
           <summary class="faq-question">{item.question}</summary>
-          <div class="faq-answer">
-            {item.answerHtml
-              ? <p set:html={item.answerHtml} />
-              : <p>{item.answer}</p>
-            }
-          </div>
+          <div class="faq-answer"><p>{item.answer}</p></div>
         </details>
       ))}
     </div>
@@ -305,6 +303,8 @@ const extraSchema = [pageSchema, faqSchema];
     .how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
     .how-item h3{font-size:17px;font-weight:700;color:var(--brand);margin-bottom:10px}
     .how-item p{font-size:15px;line-height:1.65;margin:0;color:var(--text)}
+    .how-item p a{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+    .how-item p a:hover{color:var(--cta)}
     .how-cta{text-align:center;margin-top:40px}
 
     .btn-lg{padding:14px 32px;font-size:16px;font-weight:600}
@@ -317,8 +317,6 @@ const extraSchema = [pageSchema, faqSchema];
     .faq-item[open] .faq-question::after{content:'-'}
     .faq-answer{padding:0 0 20px}
     .faq-answer p{color:var(--muted);font-size:15px;line-height:1.7;margin:0}
-    .faq-answer a{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px}
-    .faq-answer a:hover{color:var(--cta)}
 
     @media(max-width:1024px){
       .pillar-grid{grid-template-columns:repeat(2,1fr)}
