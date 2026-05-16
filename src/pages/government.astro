@@ -1,88 +1,748 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
-import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
-function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
-function imgAlt(key) { return manifest[key]?.altText || key; }
-const extraSchema = [{
+
+const newImgBase = `${R2}/speechrecognitioncloud/2026/05/16`;
+
+const pageUrl = site.siteUrl + '/government';
+const lastReviewed = '2026-05-16';
+
+// FAQ items (single source of truth for both rendering and schema)
+const faqItems = [
+  {
+    question: "Who in government is Speech Recognition Cloud Professional built for?",
+    answer: "It is built for public servants whose role generates a lot of writing — policy officers and analysts drafting briefings and submissions, ministerial correspondence officers responding to constituent and stakeholder letters, FOI and records officers writing decision statements, government lawyers drafting advice and parliamentary submissions, departmental EAs and chiefs of staff producing minutes and meeting records, and the SES officers and senior managers who carry the volume of cabinet, committee, and inter-agency writing. If you spend more than an hour a day at a keyboard producing official prose, dictation usually pays for itself within the first month."
+  },
+  {
+    question: "Will it work inside the applications we actually use — Word, Outlook, our records system, and the policy portals?",
+    answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application — Microsoft Word, Outlook, Teams, OneNote, and the rest of the Microsoft 365 stack; records and document management systems (TRIM/HPE Content Manager/Micro Focus Content Manager, Objective, Records Online, SharePoint document libraries, Documentum); case management and grants systems used across Commonwealth and state agencies; the policy and cabinet submission portals in their browser interfaces; departmental intranets and workflow tools; and any other Windows application you can click into and type into. No per-system certification, no plugin to install, no per-application configuration."
+  },
+  {
+    question: "Is what I dictate stored anywhere?",
+    answer: "No. The only thing we store is the user's email address, which is encrypted. No audio. No transcripts. No custom vocabulary. No voice profiles. No dictation history. Audio is processed in memory and immediately erased — never written to disk on our servers, never retained, never accessible to our staff. Transcribed text is delivered to the cursor on your own computer; we do not retain a copy. Custom vocabulary stays on the device. There is no departmental content of any kind on our infrastructure because there is nothing for us to store."
+  },
+  {
+    question: "Does it use AI to rewrite the policy content I dictate?",
+    answer: "Not by default. The default behaviour is verbatim — you speak, the exact words you spoke appear at the cursor. The Professional plan also includes optional AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can rewrite, tighten, or summarise a passage of text you have already dictated — but only when you trigger them on a specific passage. AI Modes do not run automatically and they cannot generate substantive content out of nothing. Most government writers use them sparingly: occasionally to tighten an over-long briefing paragraph or formalise a stakeholder email, rarely on substantive policy content. You decide, sentence by sentence, whether AI is in the loop."
+  },
+  {
+    question: "Can a department or branch share one licence?",
+    answer: "No. Speech Recognition Cloud is licensed per person — each officer needs their own licence because the personal vocabulary, templates, and preferences are tied to the individual account. The licence can be used on as many computers as that person works on — desk PC at the department, laptop for working from home, a workstation at a regional office, all on the same licence at no extra cost. The constraint is one person per licence, not one device per licence. For team rollouts, the usual pattern is to issue Professional trials to a small pilot group across different work units before broader deployment."
+  },
+  {
+    question: "How long is the trial and what happens after?",
+    answer: "30 days of full Professional functionality, free, accessed through the form on this page. No credit card required. After 30 days, the software reverts to the non-business Free tier (20 minutes of dictation per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. You either choose to upgrade to Professional or the software stays on the Free tier."
+  },
+  {
+    question: "What about Mac users in our department?",
+    answer: "The Speech Recognition Cloud desktop application is Windows 10 and Windows 11 only — Mac support is on our roadmap with no current ETA. The Australian Public Service and most state government departments standardise on Windows, so this rarely surfaces as a deployment issue. For the small number of staff on Macs — typically design, communications, and some technical staff — the mobile app tunnels audio through remote-desktop connections, so a Mac user remoting into a Windows session can dictate normally; and Voice Notes mode delivers transcribed documents to a shared Windows PC, which works for ad-hoc dictation."
+  },
+  {
+    question: "What is the mobile app actually useful for in government work?",
+    answer: "Two things. First, it turns your iPhone or Android into a wireless microphone for Speech Recognition Cloud on your PC — useful in open-plan department offices and hot-desking environments where a desk-mounted microphone is impractical. Hold the phone, dictate, and the text appears in whichever Windows application has the cursor on your computer. Second, Voice Notes mode lets you dictate completely away from your computer — between meetings in another building, after a stakeholder visit, walking back from a parliamentary briefing — and the transcription is automatically delivered to your open Speech Recognition Cloud session back at the desk. The meeting note is waiting on your screen when you sit down."
+  },
+  {
+    question: "How does it handle legislation references, departmental acronyms, and stakeholder names?",
+    answer: "The base vocabulary handles general policy language comfortably. For the things every department does differently — your portfolio's legislation references, internal program acronyms, your stakeholders' organisation names, the policy initiatives in your area, departmental codenames, the names of standing committees and reference groups — you build a personal vocabulary as you go. Add a term once and it transcribes correctly from then on. Most policy officers have a reasonable personal vocabulary set up by the end of their first fortnight."
+  },
+  {
+    question: "What kind of microphone should a public servant use?",
+    answer: "A USB headset gives the cleanest results for desk-based work and is the usual choice for officers in their own offices or quieter team areas — anything in the $40 to $120 range works well. For open-plan environments, hot-desking, and the increasingly common shared-workspace setups, the mobile app on your own smartphone is often the better answer — directional, always with you, no shared desktop hardware. For staff on the move between buildings, stakeholder meetings, and regional visits, the mobile app is the only practical option."
+  },
+  {
+    question: "Does the department need to procure this centrally?",
+    answer: "Not necessarily for trial use — the 30-day Professional trial is free and accessed by the individual officer through the form on this page. For broader deployment across a team, branch, or department, our parent business Voice Recognition Australia handles government procurement, volume licensing, and ICT panel arrangements for Commonwealth and state agencies. Contact us through the form on this page if your department is considering coordinated rollout and we can route the conversation appropriately."
+  },
+  {
+    question: "How does Speech Recognition Cloud compare to dictation built into Windows or Microsoft 365?",
+    answer: "Built-in Windows and Microsoft 365 dictation is adequate for casual use. The differences professional users notice with Speech Recognition Cloud: it dictates at the cursor in every Windows application rather than only Microsoft surfaces; automatic punctuation works without spoken commands; templates and text replacements trigger paragraphs of boilerplate with a short voice phrase; custom vocabulary persists across applications; and the optional AI Modes handle rewriting and summarising on demand. For light dictation, built-in tools are adequate. For high-volume policy and correspondence writing, the workflow gains compound across the year."
+  }
+];
+
+const howToSteps = [
+  {
+    name: "Install Speech Recognition Cloud and set up a microphone",
+    text: "Fill out the form on this page to get the 30-day Professional trial. Install on a Windows 10 or Windows 11 computer. Plug in a USB headset, or install the mobile app on your iPhone or Android to use the phone as a wireless microphone. Allow microphone access when Windows prompts. No voice training, no enrolment, no calibration."
+  },
+  {
+    name: "Open the application you write in most",
+    text: "Open Word, Outlook, your records management system (TRIM, Objective, SharePoint), your case management or grants system, your departmental intranet, or whichever Windows application generates the bulk of your writing. Click into the document, correspondence draft, or notes area. Speech Recognition Cloud dictates directly at the cursor — no separate dictation window, no copy-paste step."
+  },
+  {
+    name: "Dictate in plain language",
+    text: "Start dictation. Speak as you would explain the matter to a colleague — for example, for a ministerial correspondence response: 'Thank you for your letter of 14 March regarding the proposed amendments to the licensing framework. I have referred your correspondence to the relevant policy area within the department, and the substantive issues you have raised have been considered as part of the current review.' Punctuation is automatic. Capitalisation is automatic. Standard openings, closings, and disclaimers inserted from saved templates with short voice commands."
+  },
+  {
+    name: "Read it back, edit, and file to the record",
+    text: "Read what you dictated. Edit by voice or keyboard for any portfolio terminology, legislation references, or stakeholder names the system did not catch — add them to your personal vocabulary as you go so they transcribe correctly thereafter. File the document into your records system, send the email, or save the briefing. Most government writers describe the first few items as awkward and the workflow becoming natural within a single half-day."
+  }
+];
+
+// Author Person schema for Russell Bewsell (cross-domain EEAT graph)
+const russellPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "name": "Russell Bewsell",
+  "jobTitle": "Founder and CEO, Voice Recognition Australia",
+  "url": "https://www.voicerecognition.com.au",
+  "sameAs": [
+    "https://www.linkedin.com/in/rbewsell/"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au"
+  }
+};
+
+const governmentPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Speech Recognition Software for Government",
-  "description": "Secure dictation for policy, correspondence, and procurement documentation.",
-  "url": site.siteUrl + "/government",
-  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
-}];
+  "@id": pageUrl + "#webpage",
+  "url": pageUrl,
+  "name": "Voice Dictation for Government: A Practical Guide",
+  "description": "Practical guide to voice dictation for public servants, policy officers, ministerial correspondence writers, FOI officers, and government lawyers. Verbatim dictation, no data stored. Written by Russell Bewsell, Voice Recognition Australia.",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
+  "datePublished": "2026-05-16",
+  "dateModified": lastReviewed,
+  "lastReviewed": lastReviewed,
+  "about": [
+    { "@type": "Thing", "name": "Government dictation" },
+    { "@type": "Thing", "name": "Policy writing" },
+    { "@type": "Thing", "name": "Ministerial correspondence" },
+    { "@type": "Thing", "name": "FOI decision statements" },
+    { "@type": "Thing", "name": "Government legal advice" },
+    { "@type": "Thing", "name": "Public service productivity" }
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Government professionals"
+  },
+  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "publisher": {
+    "@type": "Organization",
+    "name": site.organization.name,
+    "url": site.organization.url
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": pageUrl + "#faq",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": pageUrl + "#howto",
+  "name": "How to dictate your first government briefing, correspondence, or decision statement",
+  "description": "A four-step walkthrough for public servants new to voice dictation in Word, Outlook, records systems, and case management platforms.",
+  "totalTime": "PT10M",
+  "tool": [
+    { "@type": "HowToTool", "name": "Windows 10 or Windows 11 computer" },
+    { "@type": "HowToTool", "name": "USB headset or smartphone as wireless microphone" },
+    { "@type": "HowToTool", "name": "Speech Recognition Cloud Professional (30-day trial)" }
+  ],
+  "step": howToSteps.map((s, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": s.name,
+    "text": s.text
+  }))
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Speech Recognition Cloud Professional",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Professional — 30-day free trial" },
+    { "@type": "Offer", "price": "159", "priceCurrency": "USD", "description": "Professional — annual" }
+  ]
+};
+
+const extraSchema = [russellPerson, governmentPageSchema, faqSchema, howToSchema, softwareSchema];
+
+// SVG icons
+const icons = {
+  phone: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>',
+  cursor: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 8-6 2-2 6z"/><path d="M14 14l3 3"/></svg>',
+  cloud: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
+  text: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  mic: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+  wifi: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12" y2="20.01"/></svg>',
+  lock: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  zap: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>'
+};
 ---
-<BaseLayout title="Speech Recognition Software for Government" description="Secure dictation for policy, correspondence, and procurement documentation. Speech Recognition Cloud for government." extraSchema={extraSchema}>
+<BaseLayout
+  title="Voice Dictation for Government: A Practical Guide"
+  description="Practical guide to voice dictation for public servants — policy briefings, ministerial correspondence, FOI decision statements, government legal advice. Verbatim dictation, no data stored. Free 30-day Professional trial."
+  extraSchema={extraSchema}
+>
+  <!-- HERO -->
   <section class="section-pad">
-    <div class="container">
-      <div class="usecase-hero-split">
-        <div>
-          <p class="eyebrow">GOVERNMENT</p>
-          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Secure dictation for government professionals</h1>
-          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate policy documents, ministerial correspondence, procurement submissions, and case notes directly into any Windows application. Audio is never stored.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
-          <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+    <div class="container m-hero-split">
+      <div class="m-hero-text">
+        <p class="eyebrow">FOR PUBLIC SERVANTS</p>
+        <h1 class="m-h1">Voice Dictation for Government: A Practical Guide</h1>
+        <p class="m-lead">Verbatim voice dictation for policy briefings, ministerial correspondence, cabinet submissions, FOI decision statements, parliamentary submissions, and meeting notes. Works in any Windows-based records system, Microsoft Word, Outlook, and departmental tools. No data stored beyond your encrypted email address. $159 USD per year. Free 30-day trial.</p>
+        <div class="m-cta-row">
+          <a href="#trial" class="btn-primary">Start free 30-day trial</a>
+          <a href="#quickstart" class="btn-secondary">Jump to quick start</a>
         </div>
-        {imgSrc('government-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('government-hero')} alt={imgAlt('government-hero')} loading="eager" decoding="async" /></div>
-        )}
+        <p class="muted m-micro">No credit card. Per-person licence — use it on as many computers as you work on. Reverts to the free tier after 30 days unless you upgrade.</p>
+      </div>
+      <div class="m-hero-img-wrap">
+        <img src={`${newImgBase}/government-senior-policy-officer-drafting-briefing-canberra-a0cbc4ad.jpg`} alt="Australian senior policy officer drafting a cabinet briefing at her desk in a Commonwealth department in Canberra" loading="eager" decoding="async" width="560" height="420" />
       </div>
     </div>
   </section>
-  <section class="download-strip">
-    <div class="container download-strip-inner">
-      <div><p class="download-strip-headline">Try free dictation for your department</p><p class="download-strip-sub">No credit card. No voice training. Install in 2 minutes.</p></div>
-      <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
+
+  <!-- HORIZONTAL FORM STRIP (preserved verbatim — AC form 293) -->
+  <section class="form-strip" id="trial">
+    <div class="container">
+      <div class="form-strip-inner">
+        <div class="form-strip-text">
+          <h2 style="font-size:18px;font-weight:700;margin-bottom:2px;color:#fff">Download the Free 30-Day Professional Trial</h2>
+          <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0">Full Professional functionality. No credit card required.</p>
+        </div>
+        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form" novalidate>
+          <input type="hidden" name="u" value="293" />
+          <input type="hidden" name="f" value="293" />
+          <input type="hidden" name="s" value="" />
+          <input type="hidden" name="c" value="0" />
+          <input type="hidden" name="m" value="0" />
+          <input type="hidden" name="act" value="sub" />
+          <input type="hidden" name="v" value="2" />
+          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <input type="text" name="fullname" id="gov-fullname" placeholder="Your name" required />
+          <input type="email" name="email" id="gov-email" placeholder="Your email" required />
+          <button type="submit" id="_form_293_submit" class="btn-primary" style="white-space:nowrap;padding:12px 28px;font-size:15px">Get started free</button>
+        </form>
+      </div>
+      <div id="_form_293_thank_you" style="display:none;text-align:center;padding:16px 0;color:#fff">
+        <p style="font-size:18px;font-weight:600;margin-bottom:4px">You're in!</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Professional access.</p>
+      </div>
     </div>
   </section>
+
+  <!-- WHAT IS IT? -->
   <section class="section-pad section-neutral">
-    <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for government workflows</h2>
-      <div class="benefit-grid">
-        <div class="benefit"><h3>Works with any application</h3><p class="muted">Dictate at the cursor in Outlook, Word, case management systems, or any Windows-based application used in government.</p></div>
-        <div class="benefit"><h3>Privacy and security</h3><p class="muted">Audio is processed and immediately discarded. No recordings are stored. Your data is never used to train AI models. All connections encrypted.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add department-specific terminology, legislation references, acronyms, and names.</p></div>
-        <div class="benefit"><h3>Templates for standard documents</h3><p class="muted">Create templates for ministerial correspondence, briefs, and standard paragraphs. Insert by voice command.</p></div>
-        <div class="benefit"><h3>No voice training</h3><p class="muted">Install and start dictating immediately. No voice profiles or calibration required.</p></div>
-        <div class="benefit"><h3>Volume licensing</h3><p class="muted">Contact us for volume pricing and invoicing for departmental deployments.</p></div>
+    <div class="container m-prose">
+      <h2>What is Speech Recognition Cloud for government?</h2>
+      <p>Speech Recognition Cloud Professional is verbatim voice dictation software for Windows 10 and Windows 11 built for the writing public servants actually produce. You speak into a microphone, the words appear at the cursor in whatever Windows application is open — Microsoft Word, Outlook, your records system, your case or grants management platform, a policy submission portal, a departmental workflow tool, anywhere you can click and type. The default behaviour is verbatim: what you say is what appears, with no AI rewriting in between. The Professional plan also includes optional AI Modes you can trigger on demand if you want to tighten, formalise, or summarise a passage you have already dictated.</p>
+      <p>It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian Commonwealth and state agencies, healthcare, legal, and enterprise sectors. The product is in daily use across departments and agencies in Australia, with customers across the US, UK, Canada, New Zealand, and Europe.</p>
+    </div>
+  </section>
+
+  <!-- WHAT DOES IT WORK WITH? -->
+  <section class="section-pad">
+    <div class="container m-prose">
+      <h2>What government applications does Speech Recognition Cloud work with?</h2>
+      <p>It works with every Windows-based government application because it dictates at the cursor at the operating-system level — not as a plugin or per-system integration. That includes the Microsoft 365 stack used across Commonwealth and state agencies (Word, Outlook, Teams, OneNote, SharePoint); the major records and document management systems (TRIM/HPE Content Manager/Micro Focus Content Manager, Objective, Records Online, SharePoint document libraries, Documentum, eDOCS); case management platforms used in operational agencies; grants administration systems; FOI workflow tools; cabinet and policy submission portals in their browser interfaces; parliamentary submission and committee secretariat tools; the standard EDRMS interfaces deployed in state and Commonwealth practice; and any other Windows application you can click into and type into. No per-system certification, no plugin to install, no per-application configuration.</p>
+      <p>The trade-off: the desktop application is Windows 10 and Windows 11 only — there is no native macOS or ChromeOS version. The Commonwealth and state government environments are overwhelmingly Windows-based, so this rarely matters in practice; for the small number of Mac-based staff, the mobile app's remote-desktop tunnelling and Voice Notes mode cover the common workflows.</p>
+    </div>
+  </section>
+
+  <!-- HOW MUCH DOES IT COST? -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose">
+      <h2>How much does Speech Recognition Cloud Professional cost?</h2>
+      <p>$159 USD per year per person, with a free 30-day trial of full Professional functionality available through the form on this page. The licence is per person and can be used on as many computers as that officer works on — desk PC at the department, laptop for working from home, a workstation at a regional or interstate office, all on the same licence at no extra cost. Licences cannot be shared between officers because each personal vocabulary, template library, and preference set is tied to the individual account.</p>
+      <p>After the 30-day trial, the software reverts to the non-business Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. For broader deployment across a team, branch, or department, our parent business Voice Recognition Australia handles government procurement, volume licensing, and ICT panel arrangements for Commonwealth and state agencies. The 30-day trial is the standard way to evaluate fit on real workflows before broader rollout.</p>
+    </div>
+  </section>
+
+  <!-- FOUR GOVERNMENT WORKFLOWS -->
+  <section class="section-pad" id="workflows">
+    <div class="container m-prose">
+      <h2>What government workflows does verbatim dictation actually suit?</h2>
+      <p>Voice dictation suits four government writing workflows particularly well: ministerial correspondence and constituent letters; policy briefings and cabinet submissions; FOI decision statements and the records work that feeds them; and the legal advice, parliamentary submissions, and inter-agency drafting government lawyers and senior advisors produce. Each one is covered below.</p>
+
+      <h3>Ministerial correspondence and constituent letters</h3>
+      <p>Ministerial correspondence is one of the highest-volume writing loads in government. A medium-sized policy area within a Commonwealth department will receive and respond to hundreds of ministerial and constituent letters a month — each requiring an officer to read the original, understand the issue, draft a response that is factually correct, on policy, on tone, and consistent with previous responses on the same topic, then route it through the clearance chain. The writing time per item is high; the variation between items is low.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/government-ministerial-correspondence-officer-state-departme-8bf8c165.jpg`} alt="Australian state government ministerial correspondence officer dictating a response to a constituent letter using a USB headset" loading="lazy" decoding="async" />
+        <figcaption>Ministerial correspondence officer dictating a response — the standard opening and closing inserted as templates, the substantive paragraph dictated from the constituent letter.</figcaption>
+      </figure>
+
+      <p>Patterns that work for high-volume correspondence:</p>
+      <ul>
+        <li><strong>Standard openings, closings, and disclaimers as templates.</strong> Your department's preferred ministerial opening, the standard closing, the formula for referring matters to other agencies, the standard wording for declining to comment on individual cases — save each as a named template and trigger with a short voice command. The Professional plan includes Templates and Text Replacements.</li>
+        <li><strong>The substantive paragraph dictated.</strong> The middle of every ministerial response is genuinely bespoke — it addresses what the writer actually said. Dictating that paragraph while reading the original letter is dramatically faster than typing it, and the dictated version usually reads more directly responsive than the typed equivalent.</li>
+        <li><strong>Volume compounds.</strong> A correspondence officer who handles 200 ministerial letters a month and gains even one minute per letter from dictation gains over three hours a month back. The compounding gain across a team of correspondence officers is substantial.</li>
+        <li><strong>Consistency with previous responses.</strong> Government correspondence has to be consistent with what the department has said before. Templates plus a personal vocabulary of standard phrasing keep the dictated language aligned with departmental position.</li>
+      </ul>
+
+      <h3>Policy briefings, cabinet submissions, and submissions to parliament</h3>
+      <p>Substantive policy writing — briefings to the minister, cabinet submissions, committee briefs, submissions to parliamentary inquiries, options papers — is the writing where the absolute time saving from dictation is the largest, because the documents are long, the prose is dense, and the production timeline is usually tight.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/government-senior-policy-officer-drafting-briefing-canberra-a0cbc4ad.jpg`} alt="Senior policy officer in a Canberra department dictating a cabinet briefing from a printed draft using a USB headset" loading="lazy" decoding="async" />
+        <figcaption>Senior policy officer dictating a cabinet briefing — verbatim, the policy officer's own analysis straight onto the page.</figcaption>
+      </figure>
+
+      <p>Patterns that work for policy writing:</p>
+      <ul>
+        <li><strong>Standard scaffolding as templates.</strong> The standard structure of a cabinet submission, the headings of a brief, the section formats your department uses for options papers and decision papers — save the structure as a template, dictate the substantive content into each section.</li>
+        <li><strong>Read from your evidence and instructions.</strong> Dictate while reading from your marked-up evidence, stakeholder submissions, departmental analysis, and the existing precedent briefs on the topic. The dictating-while-reading workflow is dramatically faster than typing-while-reading because your eyes and hands are not competing.</li>
+        <li><strong>Draft first, polish later.</strong> Dictate a rough version of the whole brief in one pass without stopping to edit. Then read it back and tighten — that is where the policy reasoning gets verified, the citations get checked, and the tone gets calibrated to the audience (Minister, Cabinet, parliamentary committee). Trying to dictate polished policy prose in real time slows almost everyone down.</li>
+        <li><strong>AI Modes on demand if you want them.</strong> Use the Rewrite mode to tighten a long paragraph or formalise a passage that came out too conversational; use Run Command for a quick summary of a section. These are optional on-demand actions, not automatic processes — your dictated text remains your dictated text unless you specifically ask for an AI rewrite. For policy content, most senior officers keep AI out of the substantive analysis and use the tools only on stylistic editing.</li>
+      </ul>
+
+      <h3>FOI decision statements and records work</h3>
+      <p>FOI decision statements are a writing profile where dictation pays off particularly well: the documents are long, structured, citation-heavy, and high in proportion of standard reasoning. A decision statement under the FOI Act or the equivalent state Right to Information legislation typically runs to 1,500 to 6,000 words and follows a recognisable structure — the application, the scope, the exemptions considered, the public interest test where relevant, the conclusion.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/government-foi-officer-decision-statement-d70996bf.jpg`} alt="Australian Freedom of Information officer dictating a decision statement on dual monitors with a printed FOI application open on the desk" loading="lazy" decoding="async" />
+        <figcaption>FOI officer dictating a decision statement — standard reasoning paragraphs inserted as templates, the bespoke application-specific analysis dictated from the file.</figcaption>
+      </figure>
+
+      <p>Workflows that work for records and FOI work:</p>
+      <ul>
+        <li><strong>Standard exemption reasoning as templates.</strong> The standard wording your department uses for personal information exemptions, deliberative process, legal professional privilege, Cabinet documents, business affairs, and the public interest test framework — save each as a template. The application-specific reasoning is dictated in between.</li>
+        <li><strong>Bespoke analysis dictated from the file.</strong> The document-specific application of exemptions — why this particular document is exempt, why this particular release is contrary to the public interest, why this redaction is necessary — is dictated from the marked-up file. Faster than typing, easier to keep aligned with the actual documents in front of you.</li>
+        <li><strong>Notifications and procedural correspondence.</strong> The standard letters to applicants, third parties, and affected persons under the FOI/RTI framework are heavily prose and well-suited to a templates-plus-dictation workflow.</li>
+        <li><strong>Records work generally.</strong> File titles, file notes, records management metadata, and the contextual descriptions that go with departmental record-keeping all benefit from dictation. The records work that often gets skimped under time pressure becomes feasible to do thoroughly.</li>
+      </ul>
+
+      <h3>Government legal advice, parliamentary submissions, and inter-agency drafting</h3>
+      <p>Government lawyers, senior policy advisors, and the staff supporting parliamentary committees and statutory office holders produce a category of writing that is somewhere between legal advice and policy submission: dense, citation-heavy, structurally constrained, and tightly scrutinised after the fact. This is the writing where the verbatim guarantee — what you say is what appears, no AI in the data path unless you ask for it — matters most.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/government-lawyer-drafting-advice-department-94ae324a.jpg`} alt="Government lawyer in a Commonwealth department dictating legal advice from a marked-up Act of Parliament" loading="lazy" decoding="async" />
+        <figcaption>Government lawyer dictating legal advice from a marked-up statute — verbatim, with provenance the writer can defend.</figcaption>
+      </figure>
+
+      <p>Workflows that work:</p>
+      <ul>
+        <li><strong>Legal advice and statutory interpretation.</strong> Dictation while reading from the marked-up Act, regulations, second reading speeches, and the relevant authorities. The dictating-while-reading workflow suits this kind of analysis particularly well.</li>
+        <li><strong>Parliamentary submissions and committee responses.</strong> Submissions to inquiries, departmental responses to committee questions on notice, the standard departmental responses to parliamentary questions — heavily prose, structurally consistent across responses, suited to templates plus dictation.</li>
+        <li><strong>Inter-agency correspondence and MOUs.</strong> The careful, multi-revision drafting that goes into inter-agency arrangements, memoranda of understanding, and the long letters that constitute formal government-to-government correspondence. Dictate the rough version, leave it overnight, read back and refine.</li>
+        <li><strong>Verbatim provenance.</strong> For writing that may be scrutinised by a committee, an Ombudsman, the Auditor-General, or in court, the fact that the dictated text is the writer's own words — not an AI generation — matters. The author can stand behind the language because the language is theirs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS NOT -->
+  <section class="section-pad section-neutral" id="what-this-is-not">
+    <div class="container m-prose">
+      <h2>What Speech Recognition Cloud is <em>not</em></h2>
+      <p>Speech recognition, AI policy assistants, transcription services, and meeting notetakers are different categories of product. The market discusses them as if they were interchangeable, and the resulting confusion costs departments money on the wrong tool. Worth being explicit about what Speech Recognition Cloud Professional does not do.</p>
+
+      <h3>Is it a meeting notetaker like Otter, Fireflies, or Microsoft Copilot for meetings?</h3>
+      <p>No. Meeting notetakers join your meetings, record both sides, and produce a transcript and summary afterwards. They are useful, and some agencies use them where appropriate. Speech Recognition Cloud is different: it transcribes <em>your live speech</em> into the application <em>you are currently working in</em>. It does not join meetings, record conversations, or transcribe other people. The meeting tool captures the meeting; Speech Recognition Cloud writes the briefing or response afterwards.</p>
+
+      <h3>Is it an AI policy drafting assistant?</h3>
+      <p>Not primarily. The default behaviour is verbatim — you speak the policy analysis, the words appear at the cursor, no AI rewriting in between. The Professional plan includes optional AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can tighten, formalise, or summarise text you have dictated — but only when you trigger them on a specific passage. They do not run automatically and they cannot generate substantive policy content out of nothing. The policy officer authors the content; the software types what the officer says, and optionally tightens passages on request.</p>
+
+      <h3>Will it transcribe a recording of a stakeholder consultation or hearing?</h3>
+      <p>No. Speech Recognition Cloud transcribes live speech as you dictate. It does not accept audio file uploads, does not transcribe pre-recorded meetings, and does not process video files. For after-the-fact transcription of recorded consultations, parliamentary hearings, or inquiries, you want a separate transcription service. Live dictation and recorded-audio transcription are different categories of product.</p>
+
+      <h3>Is my dictation used to train AI models?</h3>
+      <p>No. Audio is processed in memory and immediately erased — never written to disk on our servers, never retained, never used to train any model. Transcripts are delivered to the cursor on your own computer and never copied to our servers. Custom vocabulary stays on your own device. The only thing stored anywhere on our infrastructure is your encrypted email address.</p>
+
+      <h3>Will it fix the department's writing style?</h3>
+      <p>No — and it would be misleading to suggest otherwise. Speech Recognition Cloud is a productivity tool. It will make public servants faster at producing the quality of writing they currently produce. The AI Modes on the Professional plan can tighten a passage on demand, but they are not a substitute for departmental drafting standards, peer review, or supervisor clearance. Quality still comes from the writer; speed comes from the tool.</p>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT AND PRIVACY -->
+  <section class="section-pad">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What should our department check before deploying voice dictation across a team?</h2>
+      <p>Three questions worth working through with your IT, information governance, and procurement leads before deploying Speech Recognition Cloud across a government team: what data leaves the workstation, what is stored anywhere, and how dictation fits the department's existing arrangements for handling official information.</p>
+      <ol class="m-numbered">
+        <li><strong>What does the software process, and where does the audio go?</strong><br/>Speech Recognition Cloud sends audio to the cloud for transcription. Audio is processed in memory only and immediately erased — never written to disk on our servers, never retained, and never accessible to our staff. Transcribed text is delivered to the cursor on the officer's own computer; we do not retain a copy. Custom vocabulary stays on the device. Our <a href="/privacy" class="m-link">privacy and data-handling statement</a> documents this in full and is the document to provide to your IT or information governance lead.</li>
+        <li><strong>What data is stored anywhere on our infrastructure?</strong><br/>Only the officer's email address, and it is encrypted. We do not store audio, transcripts, custom vocabulary, voice profiles, or dictation history. There is no departmental content of any kind on our servers because there is nothing for us to store. The data path is: microphone to our service, transcription in memory, words to the cursor, audio erased.</li>
+        <li><strong>How does dictation fit existing information-handling arrangements?</strong><br/>Government information has classification and handling rules set by the agency under the relevant Commonwealth and state frameworks. Each agency makes its own determination about whether and how a particular tool fits those frameworks, through its IT security, information governance, and procurement processes. The fact that no departmental content is stored on our infrastructure simplifies that determination, but it does not substitute for the department's own assessment. Practical workflow point: dictation in open-plan offices about content that is sensitive to overhear (HR matters, individual case files, security-relevant policy) raises the same considerations as a phone call about the same content in the same space — directional microphones, USB headsets, or the mobile app held close to the mouth all help with workflow hygiene.</li>
+      </ol>
+      <p>The information-handling frameworks that govern government dictation vary by jurisdiction. The three most relevant for our visitors are covered below. Each agency should make its own determination through its IT security, information governance, and procurement processes.</p>
+    </div>
+  </section>
+
+  <!-- REGIONAL APPENDIX -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:820px">
+
+      <!-- AUSTRALIA -->
+      <div class="m-regional-panel">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
+        <h2>Is Speech Recognition Cloud suitable for Australian Commonwealth and state government use?</h2>
+        <p>That is a determination each agency should make under its own IT security, information governance, and procurement frameworks — including the Protective Security Policy Framework for Commonwealth entities, the relevant state government information security frameworks, and the agency's own assessment of fit for purpose. The product is designed in a way that simplifies the analysis: no departmental content is stored on our infrastructure, only an encrypted email address. Audio is processed in memory and immediately erased; transcripts are not retained on our servers; custom vocabulary stays on the officer's own device.</p>
+
+        <p><strong>Australian government applications.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365 (standard across Commonwealth and state agencies); the major records and document management systems used in Australian government (TRIM/HPE Content Manager/Micro Focus Content Manager, Objective, Records Online, SharePoint document libraries, eDOCS); case and grants management systems; FOI workflow tools; the cabinet and policy submission portals in their browser interfaces; parliamentary committee secretariat tools; departmental intranets; and the workflow overlays deployed across state and Commonwealth practice. No per-system certification, no plugin, no per-application configuration.</p>
+
+        <p><strong>Privacy Act and APP entities.</strong> Most Commonwealth entities and many state agencies are subject to the Privacy Act 1988 and the Australian Privacy Principles. The fact that we store no departmental content beyond the officer's encrypted email address simplifies the privacy impact assessment for this tool considerably. Our <a href="/privacy" class="m-link">privacy and data-handling statement</a> is the document to provide to your agency Privacy Officer for that assessment.</p>
+
+        <p><strong>FOI and RTI frameworks.</strong> Voice dictation does not change what is and is not subject to the Freedom of Information Act 1982 or the equivalent state Right to Information / Government Information frameworks. The dictated document is the same document under FOI/RTI law as the typed equivalent. What changes is the time it takes the FOI or records officer to produce decision statements, schedules, and notifications.</p>
+
+        <p><strong>Volume licensing and government procurement.</strong> For broader deployment across a team, branch, or department, our parent business Voice Recognition Australia handles government procurement and volume licensing for Commonwealth and state agencies. Voice Recognition Australia has been supplying Australian government for over 25 years across the Commonwealth and the states, with experience in standard government procurement processes including panel arrangements.</p>
+      </div>
+
+      <!-- UNITED STATES -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
+        <h2>Is Speech Recognition Cloud suitable for US federal, state, and local government use?</h2>
+        <p>That is a determination each agency should make under its own information security, privacy, and procurement frameworks — including agency-specific FISMA categorisations, NIST 800-53 mappings, the relevant state information security frameworks, and the agency's own assessment of fit for purpose. The product is not currently FedRAMP-authorised; agencies subject to FedRAMP requirements for cloud services should treat this as a constraint relevant to their own framework rather than a claim of compliance from us. What we can say is what the software actually does with data: audio is processed in memory and immediately erased, transcripts are delivered to the user's own cursor and never copied to our servers, custom vocabulary stays on the device, only an encrypted email address is stored on our infrastructure.</p>
+
+        <p><strong>US government applications.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365 (widely deployed across US federal, state, and local government); records management systems (the Microsoft 365 records framework, OnBase, Documentum, and the state and local equivalents); case and grants management platforms; FOIA workflow tools; the standard departmental writing surfaces. No per-system certification, no plugin.</p>
+
+        <p><strong>FOIA and state public records frameworks.</strong> Voice dictation does not change what is or is not subject to the federal FOIA or the equivalent state public records laws. The dictated document is the same document under FOIA as the typed equivalent. What changes is the time it takes records officers to produce decision letters, redaction schedules, and notifications.</p>
+
+        <p><strong>State and local government.</strong> State and local agencies tend to have more flexibility on cloud-tool deployment than federal agencies subject to FedRAMP. The 30-day trial is the standard way for individual state and local government writers to evaluate fit before raising it for broader deployment.</p>
+      </div>
+
+      <!-- UNITED KINGDOM AND EU -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED KINGDOM AND EUROPE</p>
+        <h2>Is Speech Recognition Cloud suitable for UK central government, devolved administrations, and EU public sector use?</h2>
+        <p>That is a determination each department or agency should make under its own information security, data protection, and procurement frameworks — including the UK government Cloud Security Principles, the relevant devolved-administration frameworks, UK GDPR, EU GDPR, and the equivalent national frameworks in each EU member state. The product is designed in a way that simplifies the data protection impact assessment: audio is processed in memory and immediately erased, transcripts are delivered to the user's own cursor and never copied to our servers, custom vocabulary stays on the device, only an encrypted email address is stored. We do not have access to government content because none is stored.</p>
+
+        <p><strong>UK and EU government applications.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365 (widely deployed across UK central government and devolved administrations under the standard Microsoft 365 framework); records and document management systems (the Microsoft 365 records framework, iManage, OpenText/Hummingbird, and the standard EDRMS deployments); case management platforms; FOI workflow tools; departmental intranets. No per-system certification.</p>
+
+        <p><strong>Freedom of Information Act 2000 and GDPR.</strong> Voice dictation does not change what is or is not subject to the UK FOIA or the equivalent EU member state freedom of information laws. The dictated document is the same document under FOIA as the typed equivalent. UK GDPR and EU GDPR apply to the personal data flows; the relevant question is what personal data flows where, and the simplification that helps with this tool is that no government content is stored beyond the officer's encrypted email address.</p>
+
+        <p><strong>Cross-border data flows.</strong> UK departments transferring data outside the UK, and EU agencies transferring outside the EEA, need to consider the relevant adequacy frameworks (the UK-US Data Bridge, the EU-US Data Privacy Framework, and the standard contractual clauses where applicable). The simplification that helps here: there is no government content to transfer. The cross-border data inventory for Speech Recognition Cloud is essentially the officer's encrypted email address.</p>
+
+        <p><strong>Languages.</strong> The Professional tier supports 57 languages, which is useful for EU agencies working in multiple member-state languages and for UK and EU multilateral and consular contexts.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW TO QUICK START -->
+  <section class="section-pad" id="quickstart">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>How do I get started dictating my first government briefing, correspondence, or decision statement?</h2>
+      <p>Four steps, about ten minutes from install to first document: install Speech Recognition Cloud (use the form on this page for the free 30-day Professional trial), set up a microphone, open the application you do the bulk of your writing in, and dictate in plain language. Punctuation and capitalisation are automatic. The detailed walkthrough is below.</p>
+      <ol class="m-howto">
+        {howToSteps.map((s, i) => (
+          <li>
+            <h3>Step {i + 1} — {s.name}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+      <p>If after a half-day of use it still feels slower than typing, dictation may not suit your style — and that is a useful thing to discover during a 30-day trial rather than three months in. For more setup help, see the <a href="/support/getting-started" class="m-link">getting-started walkthrough</a>.</p>
+    </div>
+  </section>
+
+  <!-- PRACTICAL TIPS -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What do experienced government writers wish they had known before starting voice dictation?</h2>
+      <p>Five tips that compound across a working year: build a personal vocabulary in the first week, save your department's standard openings, closings, and clauses as templates, draft first and polish later, use the mobile app for meeting notes on the move, and read every document back before filing it. The last one is the discipline that separates officers who use dictation well from officers who get into trouble with it.</p>
+
+      <h4>Build personal vocabulary in the first week</h4>
+      <p>Your department's name and the portfolio acronyms, your minister's and senior executive's names, the program names and codenames you write about most often, your portfolio's legislation references, the names of standing committees and reference groups, your stakeholders' organisation names, and the small handful of policy terms the base vocabulary does not catch first time — add each to your personal vocabulary as you go. Personal vocabulary stays on your own device — never sent to or stored on our servers. Officers with a strong vocabulary culture get noticeably cleaner output across the year.</p>
+
+      <h4>Save your department's standard openings, closings, and clauses as templates</h4>
+      <p>The standard opening of a ministerial response, the standard closing, your department's preferred wording for declining to comment on individual matters, the boilerplate for referring matters to other agencies, the formula for the public interest test in FOI decision statements, the standard scaffolding of a cabinet brief — save each as a named template you trigger with a short voice command. Templates and text replacements come with the Professional plan and are usually the feature that delivers the largest single productivity gain after the first week of use.</p>
+
+      <h4>Draft first, polish later</h4>
+      <p>Do not try to dictate a perfect first sentence of a ministerial response or briefing. Dictate the rough version of the whole document in one pass. Then read it back and tighten. Trying to dictate polished government prose in real time slows almost everyone down, and the cool-off-and-revise pattern is exactly when policy reasoning gets verified, factual accuracy gets checked, and tone gets calibrated to the audience.</p>
+
+      <h4>Use the mobile app for stakeholder meeting notes and briefing-readouts on the move</h4>
+      <p>The single biggest contemporaneous-record discipline dictation offers in government is producing the meeting note while the conversation is fresh, rather than three days later when the detail has faded. Voice Notes mode on the mobile app lets you dictate the meeting note in the corridor after the stakeholder leaves, on the walk back from a parliamentary briefing, or in the car back from a regional visit. The note is waiting on your screen at the desk when you return. The compounding effect across a working year on both accuracy and accountability is significant.</p>
+
+      <h4>Read every document back before filing or sending</h4>
+      <p>This is the discipline that separates officers who use dictation well from officers who get into trouble with it. Read the document back on screen before filing it to the records system, sending it to a stakeholder, or routing it through the clearance chain — the same way you would read a typed document. The reading-back step is fast (seconds for a short note, a few minutes for a brief) and it catches the small transcription errors that occasionally carry weight in government writing: a number that came through wrong, a name that swapped, a "no" transcribed as "now," a legislation reference that picked up a stray word. The system is accurate; the writer is responsible for what gets filed.</p>
+    </div>
+  </section>
+
+  <!-- SUPPORTING FEATURES GRID -->
+  <section class="section-pad">
+    <div class="container" style="max-width:880px">
+      <h2 class="text-center" style="margin-bottom:12px">Built for how government writers actually work</h2>
+      <p class="muted text-center" style="max-width:600px;margin:0 auto 48px;font-size:16px">Every feature designed around real government workflows — at the desk, in stakeholder meetings, and on the move between buildings.</p>
+
+      <div class="benefit-list">
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.zap} />
+          <div>
+            <h3>Verbatim — what you say is what appears</h3>
+            <p class="muted">The default behaviour is verbatim dictation: you speak, the words appear at the cursor, exactly as you said them. No AI rewriting in the data path unless you specifically ask for it. That matters for government writing where provenance, voice, and exactness of language matter — and where the writer needs to be able to stand behind the words because the words are theirs.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.lock} />
+          <div>
+            <h3>Nothing stored except an encrypted email address</h3>
+            <p class="muted">No audio. No transcripts. No custom vocabulary. No voice profiles. No dictation history. No departmental content of any kind. The only thing we store anywhere is the officer's email address, and it is encrypted. Audio is processed in memory and immediately erased. Transcripts go to your cursor and are never copied to our servers. Personal vocabulary stays on the officer's own device.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cursor} />
+          <div>
+            <h3>Dictates at the cursor in every Windows government application</h3>
+            <p class="muted">Microsoft Word, Outlook, Teams, OneNote, SharePoint, TRIM/HPE Content Manager/Micro Focus Content Manager, Objective, Records Online, eDOCS, case and grants management systems, FOI workflow tools, cabinet and policy submission portals, departmental intranets — text appears exactly where the cursor is. No separate dictation window, no copy-paste step, no plugin to install per application.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.phone} />
+          <div>
+            <h3>Mobile app — your phone as a wireless microphone</h3>
+            <p class="muted">A mobile app for iPhone and Android turns the officer's smartphone into a wireless microphone for Speech Recognition Cloud on the PC. Hold your phone, dictate, and the text appears in whichever Windows application has the cursor on your computer. Useful in open-plan department offices, hot-desking environments, and anywhere a desk-mounted microphone is impractical.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.wifi} />
+          <div>
+            <h3>Voice Notes mode for stakeholder meeting notes on the move</h3>
+            <p class="muted">Dictate completely away from your computer — in the corridor after a stakeholder leaves, on the walk back from a parliamentary briefing, in the car back from a regional visit. The transcription is created on your phone and automatically delivered to your open Speech Recognition Cloud session back at the department. The note is waiting on your screen when you return. The contemporaneous-record discipline made easy.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.text} />
+          <div>
+            <h3>Templates and text replacements for departmental boilerplate</h3>
+            <p class="muted">Save the standard opening of a ministerial response, the department's standard closing, the boilerplate for declining individual case comment, the formula for the public interest test in FOI decision statements, the scaffolding of a cabinet brief — and trigger any of them with a short voice command. The Professional plan includes Templates and Text Replacements. This is usually the feature that delivers the largest productivity gain after the first week of use.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cloud} />
+          <div>
+            <h3>Optional AI Modes — on demand, never automatic</h3>
+            <p class="muted">The Professional plan includes AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can tighten a long briefing paragraph, formalise a casually-drafted email, or summarise notes into a brief — but only when you trigger them on a passage you have already dictated. If you never use them, the product is straight verbatim dictation. The officer decides, passage by passage, whether AI is in the loop.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.mic} />
+          <div>
+            <h3>One licence, as many computers as you work on</h3>
+            <p class="muted">A Speech Recognition Cloud Professional licence is per person and can be used on as many computers as that officer works on — desk PC at the department, laptop for working from home, a workstation at a regional or interstate office, all on the same licence at no extra cost. The only rule: licences are per person, not shared between officers, because the personal vocabulary, templates, and preferences are tied to the individual account.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <section class="section-pad" id="demo">
+
+  <!-- DEMO VIDEO -->
+  <section class="section-pad section-neutral" id="demo">
     <div class="container text-center">
-      <h2 style="margin-bottom:8px">See it in action</h2>
-      <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
+      <h2 style="margin-bottom:8px">Watch a 60-second government dictation demonstration</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">See Speech Recognition Cloud Professional in action drafting a real government document.</p>
       <div class="yt-facade" data-ytid="vp0LFuRWdKI">
-        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
+        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Government voice to text dictation demonstration" loading="lazy" decoding="async" />
         <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
       </div>
     </div>
   </section>
-  <section class="section-pad section-dark" style="padding:60px 0">
-    <div class="container text-center">
-      <h2 style="margin-bottom:12px">Start dictating today</h2>
-      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
-      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
+
+  <!-- SECURITY -->
+  <section class="section-pad section-dark">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Nothing about your department's work is stored on our servers</h2>
+      <p class="muted" style="margin-bottom:32px">No audio. No transcripts. No vocabulary. No voice profiles. No dictation history. No departmental content of any kind. The only thing we store anywhere is the officer's email address — encrypted. Audio is processed in memory and immediately erased. All connections encrypted. AI Modes are on-demand only, never automatic.</p>
+      <a href="/privacy" style="color:var(--dark-accent);font-weight:600">Read our privacy policy &rarr;</a>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:780px">
+      <h2 class="text-center" style="margin-bottom:28px">Frequently asked questions</h2>
+      {faqItems.map(item => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+      <p class="m-faq-closer muted">For more setup answers, see the <a href="/support/faq" class="m-link">support FAQ</a>.</p>
+    </div>
+  </section>
+
+  <!-- AUTHOR BYLINE -->
+  <section class="section-pad">
+    <div class="container" style="max-width:780px">
+      <div class="m-author-panel">
+        <h2>About this page</h2>
+        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years deploying speech recognition</a> across Australian Commonwealth and state government agencies, healthcare, legal, and enterprise — primarily in Australia, with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your government role does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p class="m-reviewed muted">Last reviewed: 16 May 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section-pad section-dark" style="padding:40px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Try Speech Recognition Cloud Professional free for 30 days</h2>
+      <p class="muted" style="margin-bottom:24px">Verbatim dictation for briefings, ministerial correspondence, FOI decision statements, and parliamentary submissions. No credit card. Per-person licence, unlimited computers. Fill out the form above to get started.</p>
+      <a href="#trial" class="btn-primary btn-lg">Get started free</a>
+    </div>
+  </section>
+
   <style is:inline>
+    .section-pad{padding:40px 0}
+
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
-    .download-strip{background:#4338CA;padding:28px 0}
-    .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
-    .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
-    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
-    .benefit .muted{font-size:14px;line-height:1.7}
+    .m-h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:18px;line-height:1.18;letter-spacing:-0.02em}
+    .m-lead{font-size:17px;line-height:1.65;margin-bottom:24px;max-width:560px;color:var(--text)}
+    .m-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .m-micro{font-size:13px}
+    .m-hero-split{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center}
+    .m-hero-img-wrap{display:flex;justify-content:center}
+    .m-hero-img-wrap img{width:100%;max-width:480px;border-radius:16px;object-fit:cover;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+
+    .form-strip{background:#4338CA;padding:24px 0}
+    .form-strip-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+    .form-strip-text{flex:0 0 auto}
+    .form-strip-form{display:flex;gap:10px;flex:1;align-items:center;flex-wrap:wrap}
+    .form-strip-form input[type="text"],.form-strip-form input[type="email"]{flex:1;min-width:160px;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .form-strip-form input::placeholder{color:rgba(255,255,255,0.6)}
+    .form-strip-form input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
+
+    .m-prose{max-width:820px}
+    .m-prose h2{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 16px;letter-spacing:-0.015em}
+    .m-prose h3{font-size:20px;font-weight:700;margin:28px 0 12px;letter-spacing:-0.01em}
+    .m-prose h4{font-size:17px;font-weight:700;margin:22px 0 8px}
+    .m-prose p{font-size:16px;line-height:1.75;color:var(--text);margin:0 0 14px}
+    .m-prose ul{margin:8px 0 18px 0;padding-left:22px}
+    .m-prose ul li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--text)}
+    .m-prose em{font-style:italic}
+    .m-prose strong{font-weight:700}
+    .m-link{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+    .m-link:hover{color:#3730A3}
+
+    .m-numbered{margin:8px 0 18px 0;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+    .m-numbered li{font-size:16px;line-height:1.75;color:var(--text)}
+
+    .m-howto{list-style:none;padding:0;margin:8px 0 20px;counter-reset:howto;display:flex;flex-direction:column;gap:18px}
+    .m-howto li{position:relative;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:#fff}
+    .m-howto h3{margin:0 0 6px;font-size:16px;font-weight:700}
+    .m-howto p{margin:0;font-size:15px;line-height:1.7}
+
+    .m-regional-panel{padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .m-regional-eyebrow{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+    .m-regional-panel h2{font-size:22px;font-weight:700;margin:0 0 14px;letter-spacing:-0.015em}
+    .m-regional-panel p{font-size:15px;line-height:1.75;margin:0 0 12px;color:var(--text)}
+
+    .m-author-panel{padding:24px 28px;border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:12px;background:var(--brand-lightest)}
+    .m-author-panel h2{font-size:20px;font-weight:700;margin:0 0 12px}
+    .m-author-panel p{font-size:15px;line-height:1.75;margin:0 0 10px;color:var(--text)}
+    .m-author-sig{font-weight:600}
+    .m-reviewed{font-size:13px;margin-top:8px !important}
+
+    .m-figure{margin:24px 0 28px;padding:0}
+    .m-figure img{width:100%;max-width:820px;height:auto;border-radius:14px;object-fit:cover;box-shadow:0 12px 36px rgba(0,0,0,0.10);display:block}
+    .m-figure figcaption{font-size:14px;color:var(--muted);font-style:italic;text-align:center;margin-top:10px;padding:0 8px;line-height:1.55}
+
+    .benefit-list{display:flex;flex-direction:column;gap:28px}
+    .benefit-rich{display:flex;gap:20px;padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit-icon{flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#EEF2FF;border-radius:12px;margin-top:2px}
+    .benefit-rich h3{font-size:17px;font-weight:700;margin:0 0 8px}
+    .benefit-rich .muted{font-size:14px;line-height:1.75;margin:0}
+
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}
+    .yt-facade img{width:100%;height:100%;object-fit:cover}
+    .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}
+    .yt-facade:hover .yt-play{opacity:1}
+    .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{padding:16px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';font-size:22px;color:var(--muted);font-weight:400;flex-shrink:0}
+    .faq-item[open] .faq-question::after{content:'–'}
+    .faq-answer{padding:0 0 16px}
+    .faq-answer p{color:var(--muted);font-size:15px;line-height:1.75;margin:0}
+    .m-faq-closer{margin-top:20px;font-size:14px;text-align:center}
+
     .btn-lg{padding:14px 36px;font-size:17px}
-    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
+
+    @media(max-width:768px){
+      .section-pad{padding:28px 0}
+      .m-hero-split{grid-template-columns:1fr;gap:24px}
+      .m-hero-img-wrap img{max-width:100%}
+      .form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}
+      .form-strip-form{flex-direction:column}
+      .form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}
+      .benefit-rich{flex-direction:column;gap:12px}
+      .m-prose h2{font-size:22px}
+      .m-prose h3{font-size:18px;margin-top:22px}
+      .m-prose p, .m-prose ul li{font-size:15px}
+      .m-author-panel{padding:22px}
+      .m-regional-panel{padding:22px}
+      .m-figure{margin:20px 0 24px}
+      .m-figure figcaption{font-size:13px}
+    }
   </style>
+
+  <!-- AC Form 293 submission script (preserved verbatim) -->
+  <script is:inline>
+    (function(){
+      var form = document.getElementById('_form_293_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_293_thank_you');
+
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.querySelector('[name="fullname"]');
+        var email = form.querySelector('[name="email"]');
+        if (!name.value.trim() || !email.value.trim()) return;
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
+          email.style.borderColor = '#F37C7B';
+          return;
+        }
+        var btn = document.getElementById('_form_293_submit');
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() {
+          btn.disabled = false;
+          btn.textContent = 'Get started free';
+          alert('Something went wrong. Please try again.');
+        };
+        document.head.appendChild(script);
+
+        window._show_thank_you = function(id, message) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+          thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Professional access.</p>';
+        };
+      });
+    })();
+  </script>
+
+  <!-- YouTube facade -->
   <script is:inline>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
   </script>
