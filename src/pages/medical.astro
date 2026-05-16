@@ -4,6 +4,7 @@ import site from '../site.config.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 
 const imgBase = `${R2}/speechrecognitioncloud/2026/03/19`;
+const newImgBase = `${R2}/speechrecognitioncloud/2026/05/16`;
 
 const pageUrl = site.siteUrl + '/medical';
 const lastReviewed = '2026-05-16';
@@ -274,6 +275,12 @@ const icons = {
 
       <h3>Progress notes and consult notes at the cursor</h3>
       <p>The single highest-volume writing task in clinical work is the progress or consult note — the per-patient record that goes into the EMR after every consultation, ward visit, or telehealth appointment. For a busy GP working through a full appointment book, that is 25 to 35 notes per day. For a hospital registrar on a medical ward round, it can be more. The note is short, but the cumulative writing time is significant — and unlike the structured fields in an EMR, the prose section is where clinical reasoning actually gets documented.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/medical-progress-notes-at-cursor-ff9cc4ef.jpg`} alt="Australian GP dictating a clinical progress note directly into her EMR using Speech Recognition Cloud — text appearing at the cursor in real time" loading="lazy" decoding="async" />
+        <figcaption>Dictating directly into the EMR notes field — no separate dictation window, no copy-paste step.</figcaption>
+      </figure>
+
       <p>Dictation suits this work for one specific reason: it separates the <em>thinking</em> about a patient from the <em>typing</em> of the note. Most clinicians who shift this workflow to voice describe it as switching from "writing a note" to "talking through the patient" — and the resulting documentation tends to be more complete because spoken clinical reasoning is naturally more thorough than typed shorthand.</p>
       <p>A practical workflow that scales:</p>
       <ul>
@@ -293,6 +300,12 @@ const icons = {
 
       <h3>Ward rounds and bedside documentation</h3>
       <p>Ward rounds are the workflow where most desktop dictation tools fall over and where Speech Recognition Cloud's mobile companion app earns its place. The clinical reality of a ward round is that the clinician is not at a workstation — they are at the bedside, moving between rooms, often without a free hand for a keyboard. Documentation either happens after the round (delayed, less accurate, often skipped) or it happens through whatever portable input the clinician can carry.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/medical-ward-rounds-mobile-d5d21fe0.jpg`} alt="Hospital registrar in scrubs dictating a ward round note into the Speech Recognition Cloud mobile app between patient rooms" loading="lazy" decoding="async" />
+        <figcaption>The companion mobile app on the clinician's own phone — wireless microphone or offline recorder, no shared hardware.</figcaption>
+      </figure>
+
       <p>The companion mobile app for iPhone and Android handles this directly. The clinician uses their own phone — already in their pocket, already cleaned to their personal standard — as a wireless microphone or as a standalone recorder. Two practical modes:</p>
       <ul>
         <li><strong>Wireless microphone mode.</strong> The phone pairs with the workstation back at the nurses' station. The clinician dictates at the bedside or in the corridor between rooms; the text appears at the cursor on the workstation. This works well on wards where the workstation is close enough to remain logged in and where a quick walk back to the screen is acceptable.</li>
@@ -439,6 +452,11 @@ const icons = {
 
       <h4>Read every note back before saving</h4>
       <p>This is the discipline that separates clinicians who use dictation well from clinicians who get into trouble with it. Read the note back on screen before saving it to the medical record — the same way you would read a typed note before saving. The reading-back step is fast (seconds, not minutes) and it catches the small transcription errors that can carry clinical weight: "no" transcribed as "now," a patient name that swapped with the previous patient's, a drug name that came through as a similar-sounding term. The system is accurate; the clinician is responsible.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/medical-clinician-reviewing-notes-aeaec193.jpg`} alt="Australian specialist reviewing her dictated clinical notes on a laptop before saving them to the medical record" loading="lazy" decoding="async" />
+        <figcaption>Reading the note back before saving — the discipline that separates clinicians who use dictation well from clinicians who get into trouble with it.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -673,6 +691,11 @@ const icons = {
     .m-author-sig{font-weight:600}
     .m-reviewed{font-size:13px;margin-top:8px !important}
 
+    /* Inline figure for the workflow images */
+    .m-figure{margin:24px 0 28px;padding:0}
+    .m-figure img{width:100%;max-width:820px;height:auto;border-radius:14px;object-fit:cover;box-shadow:0 12px 36px rgba(0,0,0,0.10);display:block}
+    .m-figure figcaption{font-size:14px;color:var(--muted);font-style:italic;text-align:center;margin-top:10px;padding:0 8px;line-height:1.55}
+
     /* Testimonials */
     .med-testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     .med-quote-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px}
@@ -722,6 +745,8 @@ const icons = {
       .m-prose p, .m-prose ul li{font-size:15px}
       .m-author-panel{padding:22px}
       .m-regional-panel{padding:22px}
+      .m-figure{margin:20px 0 24px}
+      .m-figure figcaption{font-size:13px}
     }
   </style>
 
