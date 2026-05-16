@@ -1,88 +1,749 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
-import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
-function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
-function imgAlt(key) { return manifest[key]?.altText || key; }
-const extraSchema = [{
+
+const newImgBase = `${R2}/speechrecognitioncloud/2026/05/16`;
+
+const pageUrl = site.siteUrl + '/legal';
+const lastReviewed = '2026-05-16';
+
+// FAQ items (single source of truth for both rendering and schema)
+const faqItems = [
+  {
+    question: "Who in legal practice is Speech Recognition Cloud Professional built for?",
+    answer: "It is built for lawyers and legal professionals who write a lot — solicitors at firms of any size, barristers in chambers, in-house counsel, government lawyers, legal aid practitioners, paralegals and law clerks doing substantive drafting, and the legal secretaries and PAs who produce the firm's documents. The common thread is volume of prose: advice letters, opinions, contracts, file notes, correspondence, court documents. If you spend more than an hour a day at a keyboard producing legal prose, dictation usually pays for itself within the first month."
+  },
+  {
+    question: "Will it work inside our practice management and document management systems?",
+    answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application — Microsoft Word, Outlook, and the rest of the Microsoft 365 stack; document management systems (NetDocuments, iManage, SharePoint, Worldox) in their browser or desktop interfaces; the major Australian and international practice management platforms (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, Clio, MyCase, PracticePanther, Filevine); legal research platforms (Westlaw, LexisNexis, Practical Law) in a browser; matter and time-billing applications; and any other Windows application you can click into and type into. No per-system certification, no plugin to install, no per-application configuration."
+  },
+  {
+    question: "Is what I dictate confidential? What happens to client information?",
+    answer: "The product is designed so that nothing about your matters is retained on our infrastructure. Audio is processed in memory only and immediately erased — never written to disk on our servers, never retained, never accessible to our staff. Transcribed text is delivered to the cursor on your own computer; we do not retain a copy. Custom vocabulary stays on your own device. The only thing we store anywhere is the user's email address, and it is encrypted. There is no client content of any kind on our servers because there is nothing for us to store. Each firm should still make its own assessment of how the data flow fits its client confidentiality obligations under the applicable professional rules in its jurisdiction."
+  },
+  {
+    question: "Does it use AI to generate legal content for me?",
+    answer: "It can if you choose to use it, and only on demand. The default behaviour is verbatim — you speak, the exact words you spoke appear at the cursor. The Professional plan also includes optional AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can rewrite, formalise, or summarise a passage of text you have already dictated — but only when you trigger them. The AI Modes are tools, not automatic processes. Most lawyers in our customer base use them sparingly: occasionally to tighten a long client letter or formalise a casually-drafted email, rarely on substantive legal content. You decide, passage by passage, whether AI is in the loop. If you never use the AI features, the product is straight verbatim dictation."
+  },
+  {
+    question: "How is this different from an AI legal drafting assistant like Harvey, Lexis+ AI, or CoCounsel?",
+    answer: "They are different categories of product. AI legal drafting tools generate legal content from prompts — they write a draft from your instructions. Speech Recognition Cloud is verbatim dictation: you speak the document, the words appear. The AI assistants are useful for research, first-pass drafting, and summarising material; Speech Recognition Cloud is useful for the actual production work of writing what you, as the lawyer, want on the page. Most firms that use both treat them as complementary: AI research and first-pass drafting for the early stages, voice dictation for the substantive lawyer-authored writing that follows."
+  },
+  {
+    question: "What about court attendance notes and file notes from the bar table or the courthouse steps?",
+    answer: "This is one of the strongest use cases. The mobile app's Voice Notes mode lets you dictate a court attendance note or file note completely away from your laptop — outside the courtroom, on the courthouse steps, in the car back to the office, in a coffee shop between matters. The transcription is created on your phone and automatically delivered to your open Speech Recognition Cloud session back at the office or in chambers. When you return to your computer, the file note is already waiting on your screen — written while the conference or hearing was fresh in your mind rather than three days later when the detail has faded."
+  },
+  {
+    question: "How does it handle legal terminology, Latin phrases, and case names?",
+    answer: "The base vocabulary covers general legal terminology comfortably. For the things every practice does differently — your firm's standard clause names, the case names you cite most often, the legislation references in your area of practice, your clients' company names, your opposing parties, the chamber names of frequent counsel — you build a personal vocabulary as you go. Add a term once and it transcribes correctly from then on. Most lawyers have a reasonable personal vocabulary set up by the end of their first fortnight. Latin phrases used in legal practice (prima facie, mens rea, res judicata, and the rest) are in the base vocabulary."
+  },
+  {
+    question: "Can a barrister's chambers share one licence across multiple barristers?",
+    answer: "No. Speech Recognition Cloud is licensed per person — each barrister or solicitor needs their own licence because the personal vocabulary, templates, and preferences are tied to the individual account. The licence can be used on as many computers as that individual works on — chambers desktop, home laptop, and a courthouse laptop, all on the same licence at no extra cost. The constraint is one person per licence, not one device per licence. For chambers floors, the practice is usually for each barrister to take a Professional licence directly; chambers staff (clerks, secretaries) can take their own."
+  },
+  {
+    question: "How long is the trial and what happens after?",
+    answer: "30 days of full Professional functionality, free, accessed through the form on this page. No credit card required. After 30 days, the software reverts to the non-business Free tier (20 minutes of dictation per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. You either choose to upgrade to Professional or the software stays on the Free tier."
+  },
+  {
+    question: "What about Mac users in our firm?",
+    answer: "The Speech Recognition Cloud desktop application is Windows 10 and Windows 11 only — Mac support is on our roadmap with no current ETA. Two workarounds for Mac-based lawyers: the mobile app tunnels audio through remote-desktop connections, so a Mac user remoting into a Windows DMS or PMS session can dictate normally; and Voice Notes mode delivers transcribed documents to a shared Windows PC at the firm, which works for ad-hoc dictation from a Mac. It is not a perfect substitute for native Mac support, but it covers the common workflows."
+  },
+  {
+    question: "What kind of microphone should a lawyer use?",
+    answer: "For a private office or chambers, a USB headset gives the cleanest results — anything in the $40 to $120 range works well. For a hot-desking firm, an open-plan junior solicitor's bay, or a small-firm reception area, the mobile app on your own smartphone is often the better answer — directional, always with you, no shared desktop microphone, and the audio is clean even in modest ambient noise. For court attendance notes and file notes captured on the move, the mobile app is the only sensible option."
+  },
+  {
+    question: "Will it help with billable time recovery?",
+    answer: "Indirectly, yes — but it is more accurate to say it reclaims time spent on writing rather than time that is itself billable. Dictation does not change the rules about what is and is not billable; that is set by your costs agreements, the relevant scale, or your firm's billing policy. What changes is the time it takes to produce a given file note, advice letter, or contract — usually around two to three times faster than typing for prose-heavy work. Whether the time saved goes into more billable work, more matters, or simply leaving the office earlier is up to you. Several solo and small-firm lawyers in our customer base specifically credit dictation with making it viable to keep up with file notes contemporaneously, which is its own quiet win for both billing and risk management."
+  }
+];
+
+const howToSteps = [
+  {
+    name: "Install Speech Recognition Cloud and set up a microphone",
+    text: "Fill out the form on this page to get the 30-day Professional trial. Install on a Windows 10 or Windows 11 computer. Plug in a USB headset, or install the mobile app on your iPhone or Android — the app turns your phone into a wireless microphone, which is useful in open-plan firm environments and essential for court attendance notes on the move. Allow microphone access when Windows prompts. No voice training, no enrolment, no calibration."
+  },
+  {
+    name: "Open your practice management system, DMS, or Word",
+    text: "Open the application you do the bulk of your writing in — Microsoft Word for substantive drafting, your DMS (NetDocuments, iManage, SharePoint) for matter-filed documents, your practice management system (LEAP, Actionstep, Smokeball, Clio) for file notes and matter correspondence, Outlook for email. Click into the document, file note, or message body. Speech Recognition Cloud dictates directly at the cursor — no separate dictation window, no copy-paste step."
+  },
+  {
+    name: "Dictate the document in plain legal language",
+    text: "Start dictation. Speak as you would explain the matter to a colleague — for example, for a file note: 'Conference with the client this afternoon. The client confirmed instructions to settle on the terms discussed last week. The client raised a new concern regarding the timing of the consent orders, which I addressed. Action: prepare draft consent orders and circulate to counsel by close of business Friday.' Punctuation and capitalisation are automatic. Standard openings, closings, and clauses inserted from saved templates with short voice commands."
+  },
+  {
+    name: "Read it back, edit, and save to the matter",
+    text: "Read what you dictated. Edit by voice or keyboard for any case names, client names, or technical legal terms the system did not catch — add them to your personal vocabulary as you go so they transcribe correctly thereafter. Save the document to the matter, file the file note, or send the email. Most lawyers describe the first few items as awkward and the workflow becoming natural within a single half-day."
+  }
+];
+
+// Author Person schema for Russell Bewsell (cross-domain EEAT graph)
+const russellPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "name": "Russell Bewsell",
+  "jobTitle": "Founder and CEO, Voice Recognition Australia",
+  "url": "https://www.voicerecognition.com.au",
+  "sameAs": [
+    "https://www.linkedin.com/in/rbewsell/"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au"
+  }
+};
+
+const legalPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Legal Dictation Software -- Voice to Text for Lawyers",
-  "description": "Draft contracts, briefs, and case notes by voice. Speech Recognition Cloud for lawyers and legal teams.",
-  "url": site.siteUrl + "/legal",
-  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
-}];
+  "@id": pageUrl + "#webpage",
+  "url": pageUrl,
+  "name": "Voice Dictation for Lawyers and Legal Practice: A Practical Guide",
+  "description": "Practical guide to voice dictation for lawyers, barristers, in-house counsel, and legal professionals. Speech Recognition Cloud Professional: verbatim dictation, no data stored beyond an encrypted email. Written by Russell Bewsell, Voice Recognition Australia.",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
+  "datePublished": "2026-05-16",
+  "dateModified": lastReviewed,
+  "lastReviewed": lastReviewed,
+  "about": [
+    { "@type": "Thing", "name": "Legal dictation" },
+    { "@type": "Thing", "name": "Voice to text for lawyers" },
+    { "@type": "Thing", "name": "Court attendance notes" },
+    { "@type": "Thing", "name": "Contract drafting" },
+    { "@type": "Thing", "name": "Legal correspondence" },
+    { "@type": "Thing", "name": "Practice management" }
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Legal professionals"
+  },
+  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "publisher": {
+    "@type": "Organization",
+    "name": site.organization.name,
+    "url": site.organization.url
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": pageUrl + "#faq",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": pageUrl + "#howto",
+  "name": "How to dictate your first legal document or file note",
+  "description": "A four-step walkthrough for lawyers and legal professionals new to voice dictation in a DMS, PMS, or Microsoft Word.",
+  "totalTime": "PT10M",
+  "tool": [
+    { "@type": "HowToTool", "name": "Windows 10 or Windows 11 computer" },
+    { "@type": "HowToTool", "name": "USB headset or smartphone as wireless microphone" },
+    { "@type": "HowToTool", "name": "Speech Recognition Cloud Professional (30-day trial)" }
+  ],
+  "step": howToSteps.map((s, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": s.name,
+    "text": s.text
+  }))
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Speech Recognition Cloud Professional",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Professional — 30-day free trial" },
+    { "@type": "Offer", "price": "159", "priceCurrency": "USD", "description": "Professional — annual" }
+  ]
+};
+
+const extraSchema = [russellPerson, legalPageSchema, faqSchema, howToSchema, softwareSchema];
+
+// SVG icons
+const icons = {
+  phone: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>',
+  cursor: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 8-6 2-2 6z"/><path d="M14 14l3 3"/></svg>',
+  cloud: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
+  text: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  mic: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+  wifi: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12" y2="20.01"/></svg>',
+  lock: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  zap: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>'
+};
 ---
-<BaseLayout title="Legal Dictation Software -- Voice to Text for Lawyers" description="Draft contracts, briefs, and case notes by voice. Speech Recognition Cloud for lawyers and legal teams." extraSchema={extraSchema}>
+<BaseLayout
+  title="Voice Dictation for Lawyers and Legal Practice: A Practical Guide"
+  description="Practical guide to voice dictation for lawyers, barristers, in-house counsel, and legal professionals. Verbatim dictation, no data stored. Free 30-day Professional trial."
+  extraSchema={extraSchema}
+>
+  <!-- HERO -->
   <section class="section-pad">
-    <div class="container">
-      <div class="usecase-hero-split">
-        <div>
-          <p class="eyebrow">LEGAL</p>
-          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Legal dictation that keeps up with your workflow</h1>
-          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Draft contracts, briefs, case notes, and correspondence by voice. Dictate directly into your document management system, Word, Outlook, or any Windows application.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
-          <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+    <div class="container m-hero-split">
+      <div class="m-hero-text">
+        <p class="eyebrow">FOR LAWYERS AND LEGAL TEAMS</p>
+        <h1 class="m-h1">Voice Dictation for Lawyers and Legal Practice: A Practical Guide</h1>
+        <p class="m-lead">Verbatim voice dictation for advice letters, contracts, opinions, file notes, court attendance notes, and matter correspondence. Works in any Windows-based DMS, PMS, or Microsoft Word. No data stored beyond your encrypted email address. $159 USD per year. Free 30-day trial.</p>
+        <div class="m-cta-row">
+          <a href="#trial" class="btn-primary">Start free 30-day trial</a>
+          <a href="#quickstart" class="btn-secondary">Jump to quick start</a>
         </div>
-        {imgSrc('legal-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('legal-hero')} alt={imgAlt('legal-hero')} loading="eager" decoding="async" /></div>
-        )}
+        <p class="muted m-micro">No credit card. Per-person licence — use it on as many computers as you work on. Reverts to the free tier after 30 days unless you upgrade.</p>
+      </div>
+      <div class="m-hero-img-wrap">
+        <img src={`${newImgBase}/legal-solicitor-dictating-advice-law-firm-office-79514286.jpg`} alt="Australian solicitor dictating an advice letter at her desk in a Sydney or Melbourne law firm" loading="eager" decoding="async" width="560" height="420" />
       </div>
     </div>
   </section>
-  <section class="download-strip">
-    <div class="container download-strip-inner">
-      <div><p class="download-strip-headline">Try free dictation for your legal practice</p><p class="download-strip-sub">No credit card. No voice training. Install in 2 minutes.</p></div>
-      <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
+
+  <!-- HORIZONTAL FORM STRIP (preserved verbatim — AC form 293) -->
+  <section class="form-strip" id="trial">
+    <div class="container">
+      <div class="form-strip-inner">
+        <div class="form-strip-text">
+          <h2 style="font-size:18px;font-weight:700;margin-bottom:2px;color:#fff">Download the Free 30-Day Professional Trial</h2>
+          <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0">Full Professional functionality. No credit card required.</p>
+        </div>
+        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form" novalidate>
+          <input type="hidden" name="u" value="293" />
+          <input type="hidden" name="f" value="293" />
+          <input type="hidden" name="s" value="" />
+          <input type="hidden" name="c" value="0" />
+          <input type="hidden" name="m" value="0" />
+          <input type="hidden" name="act" value="sub" />
+          <input type="hidden" name="v" value="2" />
+          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <input type="text" name="fullname" id="legal-fullname" placeholder="Your name" required />
+          <input type="email" name="email" id="legal-email" placeholder="Your email" required />
+          <button type="submit" id="_form_293_submit" class="btn-primary" style="white-space:nowrap;padding:12px 28px;font-size:15px">Get started free</button>
+        </form>
+      </div>
+      <div id="_form_293_thank_you" style="display:none;text-align:center;padding:16px 0;color:#fff">
+        <p style="font-size:18px;font-weight:600;margin-bottom:4px">You're in!</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Professional access.</p>
+      </div>
     </div>
   </section>
+
+  <!-- WHAT IS IT? -->
   <section class="section-pad section-neutral">
-    <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for legal workflows</h2>
-      <div class="benefit-grid">
-        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Word, Outlook, LEAP, Actionstep, Smokeball, and any Windows-based legal software. No special plugins needed.</p></div>
-        <div class="benefit"><h3>Custom legal vocabulary</h3><p class="muted">Add case-specific terms, client names, legislation references, and legal jargon. The system learns your terminology.</p></div>
-        <div class="benefit"><h3>Templates for standard clauses</h3><p class="muted">Create text templates for standard paragraphs, clauses, and correspondence. Insert them by voice command. Available on Professional plan.</p></div>
-        <div class="benefit"><h3>Privacy and confidentiality</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored on our servers. Your data is never used for training. Confidentiality controls built in.</p></div>
-        <div class="benefit"><h3>3x faster than typing</h3><p class="muted">Dictate full paragraphs with automatic punctuation and grammar. Reduce the time spent on document production.</p></div>
-        <div class="benefit"><h3>AI modes for productivity</h3><p class="muted">Use AI to rewrite, formalise, or summarise dictated text. Available on Professional plan.</p></div>
+    <div class="container m-prose">
+      <h2>What is Speech Recognition Cloud for lawyers?</h2>
+      <p>Speech Recognition Cloud Professional is verbatim voice dictation software for Windows 10 and Windows 11 built for the writing legal practice generates. A lawyer speaks into a microphone, the words appear at the cursor in whatever Windows application is open — Microsoft Word, a document management system, a practice management platform, Outlook, a research database, a court filing portal, anywhere you can click and type. The default behaviour is verbatim: what you say is what appears, with no AI rewriting in between. The Professional plan also includes optional AI Modes you can trigger on demand if you want to tighten, formalise, or summarise a passage you have already dictated.</p>
+      <p>It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian law firms, barristers' chambers, in-house counsel teams, government legal practice, and the courts. The product is in daily use across solo practices, mid-size commercial firms, and chambers floors in Australia, with customers across the US, UK, Canada, New Zealand, and Europe.</p>
+    </div>
+  </section>
+
+  <!-- WHAT DOES IT WORK WITH? -->
+  <section class="section-pad">
+    <div class="container m-prose">
+      <h2>What legal applications does Speech Recognition Cloud work with?</h2>
+      <p>It works with every Windows-based legal application because it dictates at the cursor at the operating-system level — not as a plugin or per-system integration. In Australia that includes Microsoft Word and the rest of Microsoft 365; the major Australian practice management systems (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, FilePro); the international practice management platforms used in Australian and offshore practice (Clio, MyCase, PracticePanther, Filevine); document management systems (NetDocuments, iManage, SharePoint document libraries, Worldox); legal research databases (Westlaw AU, LexisNexis, AustLII, Practical Law) in their browser interfaces; time-billing and matter management overlays; and court filing portals where they run in a Windows browser. Internationally it works inside the equivalent UK and US legal applications.</p>
+      <p>The trade-off: the desktop application is Windows 10 and Windows 11 only — there is no native macOS or ChromeOS version. The mobile app for iPhone and Android partially mitigates this for Mac-based lawyers through remote-desktop tunnelling and Voice Notes mode, but the desktop application itself is Windows only.</p>
+    </div>
+  </section>
+
+  <!-- HOW MUCH DOES IT COST? -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose">
+      <h2>How much does Speech Recognition Cloud Professional cost for a legal practice?</h2>
+      <p>$159 USD per year per person, with a free 30-day trial of full Professional functionality available through the form on this page. The licence is per person and can be used on as many computers as that lawyer works on — desktop at chambers or the firm, laptop at home, a workstation at a courthouse, all on the same licence at no extra cost. Licences cannot be shared between lawyers because each personal vocabulary, template library, and preference set is tied to the individual account.</p>
+      <p>After the 30-day trial, the software reverts to the non-business Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. For firm-wide rollouts, the usual pattern is to trial Professional licences with three to five lawyers across different practice areas first — typically the heaviest writers — before broader deployment.</p>
+    </div>
+  </section>
+
+  <!-- FOUR LEGAL WORKFLOWS -->
+  <section class="section-pad" id="workflows">
+    <div class="container m-prose">
+      <h2>What legal workflows does verbatim dictation actually suit?</h2>
+      <p>Voice dictation suits four legal workflows particularly well: long-form drafting of opinions, advices, and submissions; contract drafting and review; court attendance notes and contemporaneous file notes; and the client correspondence and matter email that consumes a lot of a lawyer's day. Each one is covered below.</p>
+
+      <h3>Opinions, advices, and submissions</h3>
+      <p>The long-form opinion or advice is the writing where verbatim dictation pays off the most in absolute terms. An advice on a moderately complex matter — 3,000 to 8,000 words, structured headings, citations, recommendations — can take a full working day to type from notes and authorities. Dictated from the same notes, the first draft typically takes a third of the time, and the dictated version usually reads warmer and more like the lawyer's actual voice than the typed equivalent.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/legal-barrister-dictating-opinion-chambers-6adf2d13.jpg`} alt="Australian barrister in chambers dictating an opinion from a printed case authority using a USB desk microphone" loading="lazy" decoding="async" />
+        <figcaption>Barrister dictating an opinion from a marked-up authority — verbatim, the lawyer's own reasoning straight onto the page.</figcaption>
+      </figure>
+
+      <p>Patterns that work for long-form legal writing:</p>
+      <ul>
+        <li><strong>Standard scaffolding as templates.</strong> The standard opening of a memorandum of advice, the structure of an opinion, the headings of a submission, the formula of a recommendation — save each as a template you trigger with a short voice command. The lawyer-specific reasoning is dictated in between. Templates are available on the Professional plan.</li>
+        <li><strong>Read from your authorities and notes.</strong> Dictate while reading from your marked-up authorities, your conference notes, and your existing precedents. The dictating-while-reading workflow is dramatically faster than typing-while-reading because your eyes and hands are not competing.</li>
+        <li><strong>Draft first, polish later.</strong> Dictate the rough version of the whole advice without stopping to edit. Then read it back and tighten — that is where the citations get checked, the reasoning gets verified, and the voice gets calibrated to the audience. Trying to dictate polished legal prose in real time slows almost everyone down.</li>
+        <li><strong>AI Modes on demand if you want them.</strong> Use the Rewrite mode to tighten a long paragraph or formalise a passage that came out too conversational. Use the Run Command mode to ask for a concise summary of a section you have just dictated. These are optional on-demand actions, not automatic processes — your dictated text remains your dictated text until you specifically ask for an AI rewrite.</li>
+      </ul>
+
+      <h3>Contract drafting and review</h3>
+      <p>Contract drafting is a documentation profile that benefits substantially from dictation, particularly when working from precedent. A junior solicitor producing a first draft of a commercial contract is typing roughly 60% precedent and 40% bespoke clauses. The precedent layer can be inserted as templates with voice commands; the bespoke clauses are what need the lawyer's attention, and dictating them is faster than typing them.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/legal-junior-solicitor-drafting-commercial-contract-631bb6e6.jpg`} alt="Junior solicitor at an open-plan firm hot-desk drafting a commercial contract on dual monitors using a USB headset, with a marked-up printed precedent open on the desk" loading="lazy" decoding="async" />
+        <figcaption>Junior solicitor drafting a commercial contract from precedent — template clauses inserted by voice command, bespoke clauses dictated.</figcaption>
+      </figure>
+
+      <p>Workflows that work:</p>
+      <ul>
+        <li><strong>Precedent clauses as templates.</strong> Boilerplate definitions, standard governing-law clauses, dispute resolution, GST and stamp duty mechanics, indemnity wording, your firm's preferred limitation-of-liability framing — save each as a named template. Insert with a short voice command. Edit the variables.</li>
+        <li><strong>Bespoke clauses dictated.</strong> The deal-specific commercial terms, the unusual indemnities, the carved-out warranties — dictated in plain language from your file notes or the commercial principal's instructions. Faster than typing, and easier to keep aligned with the conversation you had with the client.</li>
+        <li><strong>Mark-ups dictated as comments.</strong> Word's comment feature accepts dictated text the same as a document body. Reviewing a counterparty's draft, dictate your comments into the margin rather than typing them.</li>
+        <li><strong>Heads of agreement and term sheets.</strong> Pre-contract documents are heavily prose and notoriously slow to type. Dictation typically halves the time on this category of work.</li>
+      </ul>
+
+      <h3>Court attendance notes and contemporaneous file notes</h3>
+      <p>Contemporaneous file notes are the writing every lawyer knows they should produce and many do not, because the activation energy of typing it up is just high enough to push the task to "later" — at which point the detail has faded and the note ends up less useful and less defensible. This is the workflow where the mobile app earns its place in legal practice.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/legal-solicitor-court-attendance-note-mobile-5e42a3e4.jpg`} alt="Australian solicitor standing outside a district court building dictating a court attendance note into her smartphone while reading from handwritten counsel notes" loading="lazy" decoding="async" />
+        <figcaption>Solicitor dictating a court attendance note on the courthouse steps via Voice Notes mode — the note is waiting on her chambers laptop when she returns.</figcaption>
+      </figure>
+
+      <p>Two distinct mobile workflows that compound across a practising year:</p>
+      <ul>
+        <li><strong>Wireless microphone mode at the firm.</strong> The phone pairs with the desktop or laptop back at chambers or the firm. Hold the phone, dictate the conference note, the text appears in whichever Windows application has the cursor. Useful at hot-desks, in open-plan firm areas, and anywhere a desk-mounted microphone is impractical.</li>
+        <li><strong>Voice Notes mode on the move.</strong> Dictate completely away from the computer — outside the courtroom, on the courthouse steps, in the car back to the office, in the foyer after a conference. The transcription is created on the phone and automatically delivered to the open Speech Recognition Cloud session back at the firm. The file note is waiting on the screen when the lawyer returns. The gap between event and contemporaneous file note collapses from "I'll write it up later" to "it's already written."</li>
+      </ul>
+      <p>For sole practitioners and junior solicitors who are routinely on the move between court, client conferences, and the office, the contemporaneous-record discipline that Voice Notes mode makes easy is — in our customers' words — its own quiet form of risk management.</p>
+
+      <h3>Client letters, matter correspondence, and email</h3>
+      <p>The volume work of legal practice — the client letters explaining matters in plain English, the matter correspondence with the other side, the email exchanges with counsel and experts, the regular updates clients expect — is a big part of how a lawyer's day is actually spent.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/legal-family-lawyer-dictating-client-letter-regional-f07a2e4c.jpg`} alt="Australian solo practitioner family lawyer dictating a client letter from her tidy desk in a small high-street firm in regional Australia" loading="lazy" decoding="async" />
+        <figcaption>Solo practitioner dictating a client letter in plain English — voice dictation typically produces warmer, clearer correspondence than typing.</figcaption>
+      </figure>
+
+      <p>Workflows that work:</p>
+      <ul>
+        <li><strong>Plain-English client letters.</strong> Dictate the substantive explanation in plain language — as you would explain the matter to the client if they were sitting across the desk. The dictated voice tends to be clearer and warmer than typed legal English. Open and close with templates.</li>
+        <li><strong>Matter correspondence and inter-partes emails.</strong> Dictation works directly in Outlook, the email surfaces of the major PMS systems, and any browser-based webmail. Saved templates for your firm's standard footer, undertakings, and disclaimers; dictated substantive content.</li>
+        <li><strong>Settlement correspondence and without-prejudice exchanges.</strong> Often the most carefully-worded writing a lawyer produces. Dictate the rough version, leave it for an hour, read it back, refine — the cool-off-and-revise pattern is much faster when the first draft is dictated than when it is typed.</li>
+        <li><strong>Client updates and progress reports.</strong> The standing weekly or monthly update to corporate clients, retainer clients, or insurers. Heavily prose, easily dictated, often skipped under time pressure when typed. Dictation makes consistent reporting feasible.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS NOT -->
+  <section class="section-pad section-neutral" id="what-this-is-not">
+    <div class="container m-prose">
+      <h2>What Speech Recognition Cloud is <em>not</em></h2>
+      <p>Speech recognition, AI legal drafting tools, transcription services, and AI research tools are different categories of product. The market discusses them as if they were interchangeable, and the resulting confusion costs legal practices money on the wrong tool. Worth being explicit about what Speech Recognition Cloud Professional does not do.</p>
+
+      <h3>Is it an AI legal drafting tool like Harvey, Lexis+ AI, or CoCounsel?</h3>
+      <p>No. AI legal drafting tools generate legal content from prompts — you describe what you want, the AI produces a draft. Speech Recognition Cloud is verbatim dictation — you speak the document, the words appear. The categories complement each other rather than competing: AI drafting is useful for first-pass research and early drafting, voice dictation is useful for the substantive lawyer-authored writing that follows. Several firms in our customer base use both.</p>
+
+      <h3>Is it a meeting transcriber or audio file transcription service?</h3>
+      <p>No. Meeting transcription tools join video calls or accept audio recordings and produce a transcript. Speech Recognition Cloud is different: it transcribes <em>your live speech</em> into the application <em>you are currently working in</em>. It does not record meetings, transcribe pre-recorded files, or transcribe the speech of other people. For after-the-fact transcription of recorded conferences or examinations, you want a separate transcription service.</p>
+
+      <h3>Does it interpret, draft, or invent legal content?</h3>
+      <p>No. The default is verbatim — what you speak is exactly what appears. The optional AI Modes on the Professional plan (Rewrite, Summarise, Reply, Run Command) can rewrite text you have already dictated, but only when you explicitly trigger them on a specific passage. They do not run automatically and they cannot generate substantive content out of nothing. The lawyer authors the content; the software types what the lawyer says, and optionally tightens passages on request.</p>
+
+      <h3>Is it certified for use with privileged or confidential client information?</h3>
+      <p>Speech Recognition Cloud is not certified or formally assessed against any specific bar regulator's confidentiality framework — and we would be cautious about any cloud product that claims it is, because confidentiality compliance turns on the firm's overall information-handling practices rather than on a software vendor's badge. What we can say is what the software actually does with audio and transcripts: audio is processed in memory and immediately erased, transcripts are delivered to your own cursor and never copied to our servers, custom vocabulary stays on your device, only an encrypted email address is stored on our infrastructure. Each firm should make its own assessment of how those data flows fit its client confidentiality obligations under the applicable professional rules in its jurisdiction.</p>
+
+      <h3>Will it fix our firm's writing quality?</h3>
+      <p>No — and it would be misleading to suggest otherwise. Speech Recognition Cloud is a productivity tool. It will make lawyers faster at producing the quality of writing they already produce. The AI Modes on the Professional plan can tighten a passage on demand, but they are not a substitute for legal judgement, citation-checking, or supervised review. Quality still comes from the lawyer; speed comes from the tool.</p>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT AND PRIVACY -->
+  <section class="section-pad">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What should our firm check before deploying voice dictation across the practice?</h2>
+      <p>Three questions worth working through with the firm's principal, IT lead, or risk and compliance partner before deploying Speech Recognition Cloud across a legal practice: what data leaves the workstation, what is stored anywhere, and how the firm will handle dictation in shared or open spaces.</p>
+      <ol class="m-numbered">
+        <li><strong>What does the software process, and where does the audio go?</strong><br/>Speech Recognition Cloud sends audio to the cloud for transcription. Audio is processed in memory only and immediately erased — never written to disk on our servers, never retained, and never accessible to our staff. Transcribed text is delivered to the cursor on the lawyer's own computer; we do not retain a copy. Custom vocabulary stays on the device. Our <a href="/privacy" class="m-link">privacy and data-handling statement</a> documents this in full and is the document to share with the firm's principal or risk partner.</li>
+        <li><strong>What data is stored anywhere on our infrastructure?</strong><br/>Only the lawyer's email address, and it is encrypted. We do not store audio, transcripts, custom vocabulary, voice profiles, or dictation history. There is no client content of any kind on our servers because there is nothing for us to store. The data path is: microphone to our service, transcription in memory, words to the cursor, audio erased.</li>
+        <li><strong>How will the firm handle dictation in shared spaces?</strong><br/>Dictation about a confidential matter at a shared firm hot-desk, in an open-plan junior solicitor's bay, or in a small-firm reception area raises the same considerations as a phone call about a confidential matter in the same space. The mobile app used as a wireless microphone (held close to the mouth, directional), a USB headset, or a directional desk microphone all help keep dictation private from colleagues and visitors nearby. This is workflow hygiene rather than software configuration, but it is worth thinking through during deployment. Particular attention for family law, criminal defence, employment, and any other practice area where the parties to a matter may be sensitive to overheard detail.</li>
+      </ol>
+      <p>The data-protection and professional-conduct frameworks that govern legal dictation vary by jurisdiction and practice area. The three most relevant for our visitors are covered below. Each firm should make its own determination about how Speech Recognition Cloud fits its local professional rules, information-governance, and risk frameworks.</p>
+    </div>
+  </section>
+
+  <!-- REGIONAL APPENDIX -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:820px">
+
+      <!-- AUSTRALIA -->
+      <div class="m-regional-panel">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
+        <h2>Is Speech Recognition Cloud suitable for Australian legal practice under state law society and bar association rules?</h2>
+        <p>That is a determination each firm or barrister should make under the professional conduct rules of the relevant jurisdiction — the Legal Profession Uniform Law and the Australian Solicitors' Conduct Rules in New South Wales, Victoria, and Western Australia; the equivalent state-based conduct rules in Queensland, South Australia, Tasmania, the ACT, and the Northern Territory; and the relevant bar association rules for barristers. The product is designed in a way that simplifies the analysis: no client content is stored on our infrastructure, only an encrypted email address. Audio is processed in memory and immediately erased; transcripts are not retained on our servers; custom vocabulary stays on the lawyer's own device.</p>
+
+        <p><strong>Australian practice management and document management systems.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365; the major Australian PMS platforms (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, FilePro); the international PMS systems used in Australian practice (Clio, MyCase, PracticePanther); document management systems (NetDocuments, iManage, SharePoint document libraries); and the major Australian legal research databases in a browser (Westlaw AU, LexisNexis AU, AustLII, Practical Law). No per-system certification, no plugin, no configuration.</p>
+
+        <p><strong>Australian Privacy Principles and client information.</strong> Most law firms are APP entities under the Privacy Act 1988 once they reach the small-business turnover threshold or by virtue of their work (for example, where they handle health information). The relevant material to provide your principal or risk partner is our privacy and data-handling statement, which sets out that we store no client content of any kind beyond the lawyer's encrypted email address. For firms subject to the Notifiable Data Breaches scheme, that materially simplifies the breach-response analysis for this tool.</p>
+
+        <p><strong>Court documents and electronic filing.</strong> Dictation does not change what court documents must contain or how they must be filed; that is set by the court rules, practice notes, and the relevant electronic filing portals. What changes is the time it takes to produce the document. Some practitioners use Voice Notes mode to dictate the substantive content of submissions and affidavits while the brief is fresh and edit at the firm afterwards; others draft directly in Word at the desktop. Both work.</p>
+
+        <p><strong>Costs agreements and client correspondence.</strong> Costs agreement updates, scope-of-work letters, and the standard client correspondence required under the relevant uniform-law or state-based costs rules are heavily prose and well-suited to dictation plus templates. The 30-day trial is the standard way to evaluate fit on the real correspondence load.</p>
+
+        <p>For broader voice-technology procurement in Australian legal practice — including firm-wide rollouts, Dragon Legal licensing for practices that specifically require that product, on-site training, and integration with established PMS environments — our parent business, Voice Recognition Australia, has been supplying Australian legal practice for over 25 years.</p>
+      </div>
+
+      <!-- UNITED STATES -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
+        <h2>Can US lawyers use Speech Recognition Cloud consistent with ABA Model Rule 1.6 client confidentiality?</h2>
+        <p>That is a determination each US lawyer or firm should make under ABA Model Rule 1.6, the relevant state's version of the rule, and the applicable state bar ethics opinions on lawyers' use of cloud services. ABA Formal Opinion 477R and the state ethics opinions that have followed it generally hold that lawyers may use cloud-based services consistent with Rule 1.6 provided they make reasonable efforts to prevent unauthorised access to client information — which usually turns on the cloud vendor's data-handling practices and the lawyer's diligence in selecting and supervising the vendor. Speech Recognition Cloud's data-handling makes that diligence assessment straightforward: audio is processed in memory and immediately erased, transcripts are never stored on our servers, custom vocabulary stays on the lawyer's device, only an encrypted email address is stored on our infrastructure, and all connections are encrypted in transit. We do not have access to any client content because there is no client content to access.</p>
+
+        <p><strong>US legal applications.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365; the major US practice management platforms (Clio, MyCase, PracticePanther, Filevine, Smokeball, CosmoLex); document management systems (NetDocuments, iManage, Worldox, SharePoint); legal research platforms (Westlaw, Lexis, Bloomberg Law, Fastcase, Casetext) in a browser; and the standard Microsoft 365 surfaces used for matter correspondence. No per-system certification, no plugin, no configuration.</p>
+
+        <p><strong>State-specific ethics opinions on cloud services.</strong> Most state bars have issued ethics opinions on lawyers' use of cloud-based services — generally permissive, generally turning on the lawyer's diligence in selecting a vendor with appropriate data-handling practices. US lawyers should review our privacy statement against their state bar's specific opinion before deploying. The fact that we do not store client content materially simplifies the analysis.</p>
+
+        <p><strong>Confidentiality, work product, and privilege.</strong> Verbatim dictation does not create the same provenance concerns as AI-generated content, which is one of the reasons lawyers in privilege-sensitive practice areas (criminal defence, family law, securities) have moved towards dictation tools and away from AI scribes and AI drafting tools for sensitive matters. The dictated text is the lawyer's own words; the software just types what the lawyer says.</p>
+      </div>
+
+      <!-- UNITED KINGDOM AND EU -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED KINGDOM AND EUROPE</p>
+        <h2>Can UK solicitors and EU lawyers use Speech Recognition Cloud under SRA, BSB, and UK GDPR?</h2>
+        <p>That is a determination each firm or chambers should make under the SRA Standards and Regulations (for solicitors in England and Wales), the BSB Handbook (for barristers in England and Wales), the equivalent professional rules of the Law Societies of Scotland and Northern Ireland, the relevant Bar Standards Board frameworks in Northern Ireland and Scotland, and the law society rules of each EU member state for EU-based lawyers. UK GDPR and EU GDPR apply on top of those professional rules — and the question for any cloud service used in legal practice is generally the same: what personal data flows where, who can access it, and what is stored. Speech Recognition Cloud's data flows simplify that conversation considerably: audio is processed in memory and immediately erased, transcripts are delivered to the lawyer's own cursor and never copied to our servers, custom vocabulary stays on the device, only an encrypted email address is stored. We do not have access to client content because none is stored.</p>
+
+        <p><strong>UK and EU legal applications.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365 (used across UK and EU legal practice); the major UK and EU practice management systems (LEAP, Actionstep, Clio, Quill, ALB Legal, Osprey Approach, Hoowla, Tikit, Insight Legal); document management systems (NetDocuments, iManage, SharePoint); and legal research databases (Westlaw UK, LexisNexis UK, Practical Law, vLex, Lawtel, Eur-Lex) in browser interfaces. No per-system certification.</p>
+
+        <p><strong>SRA, BSB, and confidentiality.</strong> The SRA Standards and Regulations require solicitors to keep client affairs confidential, and the BSB Handbook imposes equivalent obligations on barristers. Both frameworks recognise that confidentiality must be managed in the context of modern technology, including cloud services. The SRA has issued guidance on cloud-based services that generally turns on the firm's due diligence in selecting and supervising the provider. The fact that Speech Recognition Cloud stores no client content materially supports that due diligence.</p>
+
+        <p><strong>Cross-border data flows.</strong> UK firms transferring data outside the UK, and EU firms transferring outside the EEA, need to consider the relevant adequacy frameworks (the UK-US Data Bridge, the EU-US Data Privacy Framework, and the SCCs where applicable). The simplification that helps here: there is no client content to transfer. The cross-border data inventory for Speech Recognition Cloud is essentially the lawyer's encrypted email address.</p>
+
+        <p><strong>Languages.</strong> The Professional tier supports 57 languages, which is useful for UK and EU lawyers practising across multiple language markets and for the EU member states whose practice happens in languages other than English.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW TO QUICK START -->
+  <section class="section-pad" id="quickstart">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>How do I get started dictating my first legal document or file note?</h2>
+      <p>Four steps, about ten minutes from install to first document: install Speech Recognition Cloud (use the form on this page for the free 30-day Professional trial), set up a microphone, open the application you do the bulk of your writing in, and dictate in plain language. Punctuation and capitalisation are automatic. The detailed walkthrough is below.</p>
+      <ol class="m-howto">
+        {howToSteps.map((s, i) => (
+          <li>
+            <h3>Step {i + 1} — {s.name}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+      <p>If after a half-day of use it still feels slower than typing, dictation may not suit your style — and that is a useful thing to discover during a 30-day trial rather than three months in. For more setup help, see the <a href="/support/getting-started" class="m-link">getting-started walkthrough</a>.</p>
+    </div>
+  </section>
+
+  <!-- PRACTICAL TIPS -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What do experienced lawyers wish they had known before starting voice dictation?</h2>
+      <p>Five tips that compound across a practising year: build a personal vocabulary in the first week, save your firm's standard clauses and openings as templates, draft first and polish later, use the mobile app for court attendance notes on the move, and read every document back before saving it to the matter. The last one is the discipline that separates lawyers who use dictation well from lawyers who get into trouble with it.</p>
+
+      <h4>Build personal vocabulary in the first week</h4>
+      <p>Your firm's name, partners' and colleagues' names, the chambers and barristers you brief most often, your major clients' company names, opposing parties and their solicitors, the legislation references in your practice area, the case names you cite most regularly, and the small handful of legal terms the base vocabulary does not catch first time — add each to your personal vocabulary as you go. Personal vocabulary stays on your own device — never sent to or stored on our servers. Lawyers with a strong vocabulary culture get noticeably cleaner output across the year.</p>
+
+      <h4>Save your firm's standard clauses and openings as templates</h4>
+      <p>The standard opening of a letter of advice, your firm's standard closing, the boilerplate definitions clause in your commercial precedent, the standard governing-law and dispute-resolution wording, the firm's standard undertakings, the formula for your costs agreements — save each as a named template you trigger with a short voice command. Templates and text replacements come with the Professional plan and are usually the feature that delivers the largest single productivity gain after the first week.</p>
+
+      <h4>Draft first, polish later</h4>
+      <p>Do not try to dictate a perfect first sentence of an advice or contract. Dictate the rough version of the whole document in one pass. Then read it back and tighten. Trying to dictate polished legal prose in real time slows almost everyone down, and the cool-off-and-revise pattern is exactly when citation-checking, reasoning-verification, and voice-calibration happen anyway.</p>
+
+      <h4>Use the mobile app for court attendance notes and conference file notes on the move</h4>
+      <p>The single biggest discipline-recovery dictation offers in legal practice is producing contemporaneous file notes while the matter is fresh, rather than three days later when the detail has faded. Voice Notes mode on the mobile app lets you dictate the attendance note on the courthouse steps, in the car back to the office, or in the foyer after a conference. The file note is waiting on your screen at the firm when you return. The compounding effect across a practising year on both billing accuracy and risk management is significant.</p>
+
+      <h4>Read every document back before saving to the matter</h4>
+      <p>This is the discipline that separates lawyers who use dictation well from lawyers who get into trouble with it. Read the document back on screen before saving it to the matter or sending it to a client — the same way you would read a typed document. The reading-back step is fast (seconds for a file note, a few minutes for an advice) and it catches the small transcription errors that occasionally carry weight in legal writing: a number that came through wrong, a client name that swapped, a "no" transcribed as "now," a case citation that picked up a stray word. The system is accurate; the lawyer is responsible for what gets saved.</p>
+    </div>
+  </section>
+
+  <!-- SUPPORTING FEATURES GRID -->
+  <section class="section-pad">
+    <div class="container" style="max-width:880px">
+      <h2 class="text-center" style="margin-bottom:12px">Built for how lawyers actually work</h2>
+      <p class="muted text-center" style="max-width:600px;margin:0 auto 48px;font-size:16px">Every feature designed around real legal workflows — at the desk, in chambers, and on the move between courts and clients.</p>
+
+      <div class="benefit-list">
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.zap} />
+          <div>
+            <h3>Verbatim — what you say is what appears</h3>
+            <p class="muted">The default behaviour is verbatim dictation: you speak, the words appear at the cursor, exactly as you said them. No AI rewriting in the data path unless you specifically ask for it. That matters for legal writing where provenance, voice, and exactness of language matter. The lawyer authors the content; the software just types what the lawyer says.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.lock} />
+          <div>
+            <h3>Nothing stored except an encrypted email address</h3>
+            <p class="muted">No audio. No transcripts. No custom vocabulary. No voice profiles. No dictation history. No client content of any kind. The only thing we store anywhere is the lawyer's email address, and it is encrypted. Audio is processed in memory and immediately erased. Transcripts go to your cursor and are never copied to our servers. Personal vocabulary stays on the lawyer's own device.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cursor} />
+          <div>
+            <h3>Dictates at the cursor in every Windows legal application</h3>
+            <p class="muted">Microsoft Word, Outlook, NetDocuments, iManage, SharePoint, LEAP, Actionstep, Smokeball, Clio, MyCase, PracticePanther, Westlaw, LexisNexis, AustLII, Practical Law, court filing portals — text appears exactly where the cursor is. No separate dictation window, no copy-paste step, no plugin to install per application.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.phone} />
+          <div>
+            <h3>Mobile app — your phone as a wireless microphone</h3>
+            <p class="muted">A mobile app for iPhone and Android turns the lawyer's smartphone into a wireless microphone for Speech Recognition Cloud on the PC. Hold your phone, dictate, and the text appears in whichever Windows application has the cursor on your computer. Useful in open-plan firm environments, hot-desking setups, and anywhere a desk-mounted microphone is impractical.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.wifi} />
+          <div>
+            <h3>Voice Notes mode for court attendance notes on the move</h3>
+            <p class="muted">Dictate completely away from your computer — on the courthouse steps, in the car back to the office, in the foyer after a conference. The transcription is created on your phone and automatically delivered to your open Speech Recognition Cloud session back at the firm. The file note is waiting on your screen when you return. The contemporaneous-record discipline made easy.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.text} />
+          <div>
+            <h3>Templates and text replacements for precedent and boilerplate</h3>
+            <p class="muted">Save the standard opening of a letter of advice, the firm's standard closing, the boilerplate definitions clause from your commercial precedent, the standard undertakings, the costs agreement framing — and trigger any of them with a short voice command. The Professional plan includes Templates and Text Replacements. This is usually the feature that delivers the largest productivity gain after the first week of use.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cloud} />
+          <div>
+            <h3>Optional AI Modes — on demand, never automatic</h3>
+            <p class="muted">The Professional plan includes AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can tighten a long advice paragraph, formalise a casually-drafted email, or summarise notes into a brief — but only when you trigger them on a passage you have already dictated. If you never use them, the product is straight verbatim dictation. The lawyer decides, passage by passage, whether AI is in the loop.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.mic} />
+          <div>
+            <h3>One licence, as many computers as you work on</h3>
+            <p class="muted">A Speech Recognition Cloud Professional licence is per person and can be used on as many computers as that lawyer works on — chambers desktop, home laptop, courthouse workstation, all on the same licence at no extra cost. The only rule: licences are per person, not shared between lawyers, because the personal vocabulary, templates, and preferences are tied to the individual account.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <section class="section-pad" id="demo">
+
+  <!-- DEMO VIDEO -->
+  <section class="section-pad section-neutral" id="demo">
     <div class="container text-center">
-      <h2 style="margin-bottom:8px">See it in action</h2>
-      <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
+      <h2 style="margin-bottom:8px">Watch a 60-second legal dictation demonstration</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">See Speech Recognition Cloud Professional in action drafting a real legal document.</p>
       <div class="yt-facade" data-ytid="vp0LFuRWdKI">
-        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
+        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Legal voice to text dictation demonstration" loading="lazy" decoding="async" />
         <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
       </div>
     </div>
   </section>
-  <section class="section-pad section-dark" style="padding:60px 0">
-    <div class="container text-center">
-      <h2 style="margin-bottom:12px">Start dictating today</h2>
-      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
-      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
+
+  <!-- SECURITY -->
+  <section class="section-pad section-dark">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Nothing about your matters is stored on our servers</h2>
+      <p class="muted" style="margin-bottom:32px">No audio. No transcripts. No vocabulary. No voice profiles. No dictation history. No client content of any kind. The only thing we store anywhere is the lawyer's email address — encrypted. Audio is processed in memory and immediately erased. All connections encrypted. AI Modes are on-demand only, never automatic.</p>
+      <a href="/privacy" style="color:var(--dark-accent);font-weight:600">Read our privacy policy &rarr;</a>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:780px">
+      <h2 class="text-center" style="margin-bottom:28px">Frequently asked questions</h2>
+      {faqItems.map(item => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+      <p class="m-faq-closer muted">For more setup answers, see the <a href="/support/faq" class="m-link">support FAQ</a>.</p>
+    </div>
+  </section>
+
+  <!-- AUTHOR BYLINE -->
+  <section class="section-pad">
+    <div class="container" style="max-width:780px">
+      <div class="m-author-panel">
+        <h2>About this page</h2>
+        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years deploying speech recognition</a> across Australian law firms, barristers' chambers, in-house counsel teams, government legal practice, and the courts — primarily in Australia, with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your legal practice does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p class="m-reviewed muted">Last reviewed: 16 May 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section-pad section-dark" style="padding:40px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Try Speech Recognition Cloud Professional free for 30 days</h2>
+      <p class="muted" style="margin-bottom:24px">Verbatim dictation for advice letters, contracts, file notes, and court attendance notes. No credit card. Per-person licence, unlimited computers. Fill out the form above to get started.</p>
+      <a href="#trial" class="btn-primary btn-lg">Get started free</a>
+    </div>
+  </section>
+
   <style is:inline>
+    .section-pad{padding:40px 0}
+
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
-    .download-strip{background:#4338CA;padding:28px 0}
-    .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
-    .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
-    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
-    .benefit .muted{font-size:14px;line-height:1.7}
+    .m-h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:18px;line-height:1.18;letter-spacing:-0.02em}
+    .m-lead{font-size:17px;line-height:1.65;margin-bottom:24px;max-width:560px;color:var(--text)}
+    .m-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .m-micro{font-size:13px}
+    .m-hero-split{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center}
+    .m-hero-img-wrap{display:flex;justify-content:center}
+    .m-hero-img-wrap img{width:100%;max-width:480px;border-radius:16px;object-fit:cover;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+
+    .form-strip{background:#4338CA;padding:24px 0}
+    .form-strip-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+    .form-strip-text{flex:0 0 auto}
+    .form-strip-form{display:flex;gap:10px;flex:1;align-items:center;flex-wrap:wrap}
+    .form-strip-form input[type="text"],.form-strip-form input[type="email"]{flex:1;min-width:160px;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .form-strip-form input::placeholder{color:rgba(255,255,255,0.6)}
+    .form-strip-form input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
+
+    .m-prose{max-width:820px}
+    .m-prose h2{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 16px;letter-spacing:-0.015em}
+    .m-prose h3{font-size:20px;font-weight:700;margin:28px 0 12px;letter-spacing:-0.01em}
+    .m-prose h4{font-size:17px;font-weight:700;margin:22px 0 8px}
+    .m-prose p{font-size:16px;line-height:1.75;color:var(--text);margin:0 0 14px}
+    .m-prose ul{margin:8px 0 18px 0;padding-left:22px}
+    .m-prose ul li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--text)}
+    .m-prose em{font-style:italic}
+    .m-prose strong{font-weight:700}
+    .m-link{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+    .m-link:hover{color:#3730A3}
+
+    .m-numbered{margin:8px 0 18px 0;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+    .m-numbered li{font-size:16px;line-height:1.75;color:var(--text)}
+
+    .m-howto{list-style:none;padding:0;margin:8px 0 20px;counter-reset:howto;display:flex;flex-direction:column;gap:18px}
+    .m-howto li{position:relative;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:#fff}
+    .m-howto h3{margin:0 0 6px;font-size:16px;font-weight:700}
+    .m-howto p{margin:0;font-size:15px;line-height:1.7}
+
+    .m-regional-panel{padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .m-regional-eyebrow{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+    .m-regional-panel h2{font-size:22px;font-weight:700;margin:0 0 14px;letter-spacing:-0.015em}
+    .m-regional-panel p{font-size:15px;line-height:1.75;margin:0 0 12px;color:var(--text)}
+
+    .m-author-panel{padding:24px 28px;border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:12px;background:var(--brand-lightest)}
+    .m-author-panel h2{font-size:20px;font-weight:700;margin:0 0 12px}
+    .m-author-panel p{font-size:15px;line-height:1.75;margin:0 0 10px;color:var(--text)}
+    .m-author-sig{font-weight:600}
+    .m-reviewed{font-size:13px;margin-top:8px !important}
+
+    .m-figure{margin:24px 0 28px;padding:0}
+    .m-figure img{width:100%;max-width:820px;height:auto;border-radius:14px;object-fit:cover;box-shadow:0 12px 36px rgba(0,0,0,0.10);display:block}
+    .m-figure figcaption{font-size:14px;color:var(--muted);font-style:italic;text-align:center;margin-top:10px;padding:0 8px;line-height:1.55}
+
+    .benefit-list{display:flex;flex-direction:column;gap:28px}
+    .benefit-rich{display:flex;gap:20px;padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit-icon{flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#EEF2FF;border-radius:12px;margin-top:2px}
+    .benefit-rich h3{font-size:17px;font-weight:700;margin:0 0 8px}
+    .benefit-rich .muted{font-size:14px;line-height:1.75;margin:0}
+
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}
+    .yt-facade img{width:100%;height:100%;object-fit:cover}
+    .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}
+    .yt-facade:hover .yt-play{opacity:1}
+    .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{padding:16px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';font-size:22px;color:var(--muted);font-weight:400;flex-shrink:0}
+    .faq-item[open] .faq-question::after{content:'–'}
+    .faq-answer{padding:0 0 16px}
+    .faq-answer p{color:var(--muted);font-size:15px;line-height:1.75;margin:0}
+    .m-faq-closer{margin-top:20px;font-size:14px;text-align:center}
+
     .btn-lg{padding:14px 36px;font-size:17px}
-    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
+
+    @media(max-width:768px){
+      .section-pad{padding:28px 0}
+      .m-hero-split{grid-template-columns:1fr;gap:24px}
+      .m-hero-img-wrap img{max-width:100%}
+      .form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}
+      .form-strip-form{flex-direction:column}
+      .form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}
+      .benefit-rich{flex-direction:column;gap:12px}
+      .m-prose h2{font-size:22px}
+      .m-prose h3{font-size:18px;margin-top:22px}
+      .m-prose p, .m-prose ul li{font-size:15px}
+      .m-author-panel{padding:22px}
+      .m-regional-panel{padding:22px}
+      .m-figure{margin:20px 0 24px}
+      .m-figure figcaption{font-size:13px}
+    }
   </style>
+
+  <!-- AC Form 293 submission script (preserved verbatim) -->
+  <script is:inline>
+    (function(){
+      var form = document.getElementById('_form_293_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_293_thank_you');
+
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.querySelector('[name="fullname"]');
+        var email = form.querySelector('[name="email"]');
+        if (!name.value.trim() || !email.value.trim()) return;
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
+          email.style.borderColor = '#F37C7B';
+          return;
+        }
+        var btn = document.getElementById('_form_293_submit');
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() {
+          btn.disabled = false;
+          btn.textContent = 'Get started free';
+          alert('Something went wrong. Please try again.');
+        };
+        document.head.appendChild(script);
+
+        window._show_thank_you = function(id, message) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+          thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Professional access.</p>';
+        };
+      });
+    })();
+  </script>
+
+  <!-- YouTube facade -->
   <script is:inline>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
   </script>
