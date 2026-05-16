@@ -1,1 +1,819 @@
-${HEALTHCARE_CONTENT}
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+const imgBase = `${R2}/speechrecognitioncloud/2026/03/19`;
+const newImgBase = `${R2}/speechrecognitioncloud/2026/05/16`;
+
+const pageUrl = site.siteUrl + '/healthcare';
+const lastReviewed = '2026-05-16';
+
+// FAQ items (single source of truth for both rendering and schema)
+const faqItems = [
+  {
+    question: "Who in healthcare is Speech Recognition Cloud actually built for?",
+    answer: "It is built for everyone in a healthcare team who has to write down what just happened — nurses, pharmacists, physiotherapists, occupational therapists, speech pathologists, psychologists, dietitians, paramedics, allied health managers, practice managers, and the administrative staff who maintain clinical records. Doctors are well-served by our medical page; this page is for the broader team who do the bulk of the documentation work and who rarely get tools designed for them. Speech Recognition Cloud dictates at the cursor in any Windows application — whatever clinical, allied health, or practice management system your team uses, voice dictation works inside it."
+  },
+  {
+    question: "Will it work inside my practice management or allied health software?",
+    answer: "Almost certainly, yes. Speech Recognition Cloud dictates at the cursor in any Windows application — Best Practice, Medical Director, Genie, Zedmed, and Communicare in Australian general practice; Splose, Cliniko, Halaxy, Power Diary, and Coreplus across Australian allied health; Fred Office, Minfos, and LOTS in pharmacy; the major hospital EMR platforms used in Australia, the UK, and the US; plus Microsoft Word, Outlook, Teams, and any other Windows application you can click into and type into. It does not integrate platform-by-platform — it operates at the operating-system level — which is why it works across all of them without per-platform setup or certification."
+  },
+  {
+    question: "How is healthcare voice dictation different from an AI medical scribe?",
+    answer: "They are different categories of product solving different problems. An AI medical scribe listens to a clinical conversation in the background and generates a structured note from it — useful in some workflows but with real privacy and accuracy trade-offs because the AI is generating content rather than transcribing it. Speech Recognition Cloud is verbatim dictation: you speak, the words appear at the cursor, you read them back, you save. There is no AI generation step, no hallucinations, and no background recording of conversations. Most healthcare teams use one or the other, sometimes both for different tasks."
+  },
+  {
+    question: "Does it suit allied health rather than just doctors?",
+    answer: "Yes, and allied health is often where the time savings are largest. The writing load for a physiotherapist, occupational therapist, speech pathologist, psychologist, or dietitian is heavily weighted towards prose — assessment reports, NDIS progress notes, return-to-work reports, treatment plans, school and aged-care correspondence. Prose writing is exactly what dictation accelerates. Structured tick-box fields in clinical software still need clicks, but the narrative sections — which is where the time goes — convert well to voice."
+  },
+  {
+    question: "Is it safe to use on a shared clinical workstation?",
+    answer: "Yes. Each user logs in with their own Speech Recognition Cloud account, which means personal vocabulary, templates, and preferences follow the person rather than the workstation. On a shared computer, the next team member logs in and gets their own configuration with no spillover. For shared microphones — which are a recognised infection-control concern in clinical environments — the companion mobile app lets each team member use their own smartphone as a wireless microphone, removing the shared-hardware hygiene problem entirely."
+  },
+  {
+    question: "Do you store any of our patient or client data?",
+    answer: "No. We only store your email address for product updates and authorisation. Audio is processed in memory and immediately erased — never written to disk, never retained, never accessible to our staff. Transcribed text is delivered to the cursor on your own computer; we do not retain a copy. Custom vocabulary you add stays on your own device. We do not store voice profiles, dictation history, or any clinical or client content."
+  },
+  {
+    question: "Which plan does a healthcare team usually need?",
+    answer: "It depends on the role. Clinicians who need the specialised medical vocabulary — drug names, anatomical terminology, eponyms, procedural language — are usually best served by the Medical plan ($439 USD per year). Allied health, nursing, pharmacy, and administrative team members whose writing is mainly prose and standard correspondence generally do well on Professional ($159 USD per year), which includes Templates, Text Replacements, and the AI Modes. Some practices mix the two: Medical for the prescribing clinicians, Professional for the rest of the team. The 30-day free trial of any paid tier is the honest way to find out which fits which role."
+  },
+  {
+    question: "Does it support Mac users on the team?",
+    answer: "The Speech Recognition Cloud desktop application is Windows 10 and Windows 11 only — Mac support is on our roadmap with no current ETA. Two practical workarounds for Mac-using team members: the companion mobile app for iPhone and Android tunnels audio through remote-desktop connections, so a team member on a Mac remoting into a Windows practice management system can dictate normally; and the mobile app's Voice Notes mode lets anyone on the team dictate documents on their phone and have the text delivered to a shared Windows PC at the practice. It is not a perfect substitute for native Mac support, but it covers the common workflows."
+  },
+  {
+    question: "What about NDIS providers and reports?",
+    answer: "NDIS progress reports, support plans, behaviour support plans, capacity-building reports, and other narrative-heavy NDIS documentation are well-suited to dictation. The structured fields and proforma sections still need clicks, but the longer prose components — which is where the writing time goes — convert well to voice. Several NDIS providers in our customer base use the Professional plan across their allied health and support coordination teams. The medical vocabulary is not usually required for non-clinical NDIS reporting; Professional is the typical default."
+  },
+  {
+    question: "Can our practice manager and admin staff use it for non-clinical writing?",
+    answer: "Yes — and this is often a quiet win. Practice managers, reception leads, and administrative coordinators do a surprising amount of writing: policies and procedures, staff communications, complaint responses, supplier correspondence, accreditation documentation, infection control logs, recall letters, and the long internal emails that hold a practice together. The Professional plan covers this work comfortably. A practice manager who dictates one long email instead of typing it usually saves five to ten minutes — across a week, the recovered time is substantial."
+  },
+  {
+    question: "How long is the free trial and what happens after?",
+    answer: "Any paid tier is free for 30 days with full functionality. After that the software reverts to the non-medical Free tier (20 minutes of dictation per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. You either choose to upgrade or the software remains on the free tier. Healthcare teams can issue trial licences to several team members simultaneously to evaluate fit across roles."
+  },
+  {
+    question: "What kind of microphone do we need across a healthcare practice?",
+    answer: "For most roles in a private consulting room or office — a built-in laptop microphone is adequate, a USB headset gives noticeably cleaner results. For ward rounds, treatment rooms, dispensary benches, or open-plan administrative areas — the companion mobile app on a personal smartphone is usually better. It is always with the team member, it eliminates shared-microphone hygiene issues, and a directional phone microphone held close to the mouth picks up clean audio in noisy clinical environments. Practices do not need to standardise on one approach — different roles can use different microphones."
+  }
+];
+
+const howToSteps = [
+  {
+    name: "Install Speech Recognition Cloud and set up a microphone",
+    text: "Install Speech Recognition Cloud on a Windows 10 or Windows 11 computer (the 30-day Professional or Medical trial is free). Plug in a USB headset if you have one, or set up the companion mobile app on your iPhone or Android — the app turns the phone into a wireless microphone, which is the cleanest option in shared clinical environments. Allow microphone access when Windows prompts. No voice training, no enrolment, no calibration steps."
+  },
+  {
+    name: "Open the clinical or practice system you write in most",
+    text: "Open the application your team uses for documentation — Best Practice, Cliniko, Splose, Halaxy, Power Diary, Fred Office, your hospital EMR, or whatever your role requires. Click into the notes, report, or correspondence field you want to dictate into. SRC dictates directly at the cursor in any Windows application — there is no separate dictation window, no copy-paste step, and no fallback to a holding box if the application's text editor is non-standard."
+  },
+  {
+    name: "Dictate the entry in plain healthcare language",
+    text: "Start dictation. Describe what you need to record in plain language — for example, for a physiotherapy progress note: 'Patient attended for second session. Reports right shoulder pain has reduced from 7 out of 10 to 4 out of 10. Range of motion improved through abduction and external rotation. Continued with the prescribed home exercise programme. Plan: review in two weeks, progress to resistance band exercises if tolerated.' Speak naturally. Punctuation is handled automatically — you do not need to say 'full stop' or 'comma.'"
+  },
+  {
+    name: "Read it back and save",
+    text: "Read the entry. Edit by voice or keyboard for any client-specific terms the system did not catch — add them to your personal vocabulary as you go so they transcribe correctly thereafter. Save the entry into your practice management system. Most healthcare team members describe the first few entries as awkward and the workflow becoming natural within a single half-day of use."
+  }
+];
+
+// Author Person schema for Russell Bewsell (cross-domain EEAT graph)
+const russellPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "name": "Russell Bewsell",
+  "jobTitle": "Founder and CEO, Voice Recognition Australia",
+  "url": "https://www.voicerecognition.com.au",
+  "sameAs": [
+    "https://www.linkedin.com/in/rbewsell/"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au"
+  }
+};
+
+const healthcarePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": pageUrl + "#webpage",
+  "url": pageUrl,
+  "name": "Voice Dictation for Healthcare Teams: A Practical Guide",
+  "description": "Practical guide to voice dictation for the wider healthcare team — nurses, pharmacists, allied health, paramedics, practice managers, and clinical administrators. Written by Russell Bewsell, Voice Recognition Australia.",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
+  "datePublished": "2026-05-16",
+  "dateModified": lastReviewed,
+  "lastReviewed": lastReviewed,
+  "about": [
+    { "@type": "Thing", "name": "Healthcare dictation" },
+    { "@type": "Thing", "name": "Allied health documentation" },
+    { "@type": "Thing", "name": "Nursing documentation" },
+    { "@type": "Thing", "name": "Pharmacy documentation" },
+    { "@type": "Thing", "name": "Practice management" },
+    { "@type": "Thing", "name": "NDIS reporting" }
+  ],
+  "medicalAudience": {
+    "@type": "MedicalAudience",
+    "audienceType": "Healthcare professional"
+  },
+  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "publisher": {
+    "@type": "Organization",
+    "name": site.organization.name,
+    "url": site.organization.url
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": pageUrl + "#faq",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": pageUrl + "#howto",
+  "name": "How to dictate your first healthcare note or report",
+  "description": "A four-step walkthrough for healthcare team members new to voice dictation in a practice management or clinical system.",
+  "totalTime": "PT10M",
+  "tool": [
+    { "@type": "HowToTool", "name": "Windows 10 or Windows 11 computer" },
+    { "@type": "HowToTool", "name": "USB headset or smartphone as wireless microphone" },
+    { "@type": "HowToTool", "name": "Speech Recognition Cloud (30-day Professional or Medical trial)" }
+  ],
+  "step": howToSteps.map((s, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": s.name,
+    "text": s.text
+  }))
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Speech Recognition Cloud",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free 30-day trial — Professional or Medical" },
+    { "@type": "Offer", "price": "159", "priceCurrency": "USD", "description": "Professional — annual" },
+    { "@type": "Offer", "price": "439", "priceCurrency": "USD", "description": "Medical — annual" }
+  ]
+};
+
+const extraSchema = [russellPerson, healthcarePageSchema, faqSchema, howToSchema, softwareSchema];
+
+// SVG icons preserved from medical.astro for the supporting features grid
+const icons = {
+  phone: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>',
+  cursor: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 8-6 2-2 6z"/><path d="M14 14l3 3"/></svg>',
+  cloud: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
+  text: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  mic: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+  wifi: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12" y2="20.01"/></svg>',
+  dollar: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  zap: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>'
+};
+---
+<BaseLayout
+  title="Voice Dictation for Healthcare Teams: A Practical Guide"
+  description="Practical guide to voice dictation for the wider healthcare team — nurses, pharmacists, allied health, paramedics, practice managers, and clinical administrators. Free 30-day trial."
+  extraSchema={extraSchema}
+>
+  <!-- HERO -->
+  <section class="section-pad">
+    <div class="container m-hero-split">
+      <div class="m-hero-text">
+        <p class="eyebrow">FOR THE WIDER HEALTHCARE TEAM</p>
+        <h1 class="m-h1">Voice Dictation for Healthcare Teams: A Practical Guide</h1>
+        <p class="m-lead">Verbatim voice dictation for nurses, pharmacists, allied health professionals, paramedics, practice managers, and clinical administrators. Works in any Windows-based practice management or clinical system. From $159 USD per year. Free 30-day trial.</p>
+        <div class="m-cta-row">
+          <a href="#trial" class="btn-primary">Start free 30-day trial</a>
+          <a href="#quickstart" class="btn-secondary">Jump to quick start</a>
+        </div>
+        <p class="muted m-micro">No credit card. Reverts to the free tier (20 min/month) after the trial unless you upgrade.</p>
+      </div>
+      <div class="m-hero-img-wrap">
+        <img src={`${newImgBase}/healthcare-practice-nurse-triage-dictation-6a6ee06c.jpg`} alt="Australian practice nurse dictating a triage note at her workstation in a suburban general practice" loading="eager" decoding="async" width="560" height="420" />
+      </div>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL FORM STRIP (preserved verbatim — AC form 293) -->
+  <section class="form-strip" id="trial">
+    <div class="container">
+      <div class="form-strip-inner">
+        <div class="form-strip-text">
+          <h2 style="font-size:18px;font-weight:700;margin-bottom:2px;color:#fff">Download the Free 30-Day Trial</h2>
+          <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0">Get immediate access. No credit card required.</p>
+        </div>
+        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form" novalidate>
+          <input type="hidden" name="u" value="293" />
+          <input type="hidden" name="f" value="293" />
+          <input type="hidden" name="s" value="" />
+          <input type="hidden" name="c" value="0" />
+          <input type="hidden" name="m" value="0" />
+          <input type="hidden" name="act" value="sub" />
+          <input type="hidden" name="v" value="2" />
+          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <input type="text" name="fullname" id="hc-fullname" placeholder="Your name" required />
+          <input type="email" name="email" id="hc-email" placeholder="Your email" required />
+          <button type="submit" id="_form_293_submit" class="btn-primary" style="white-space:nowrap;padding:12px 28px;font-size:15px">Get started free</button>
+        </form>
+      </div>
+      <div id="_form_293_thank_you" style="display:none;text-align:center;padding:16px 0;color:#fff">
+        <p style="font-size:18px;font-weight:600;margin-bottom:4px">You're in!</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day trial access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS IT? -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose">
+      <h2>What is Speech Recognition Cloud for healthcare teams?</h2>
+      <p>Speech Recognition Cloud is verbatim voice dictation software for Windows 10 and Windows 11. A healthcare worker speaks into a microphone, the words appear at the cursor in whatever Windows application is open — a practice management system, an allied health platform, a hospital EMR, Microsoft Word, Outlook, Teams, a pharmacy system, an NDIS portal. It is general dictation software with optional medical vocabulary for clinical roles.</p>
+      <p>Plans start at $159 USD per year (Professional) and go up to $439 USD per year (Medical) for clinical staff who need the specialised medical vocabulary. Any paid tier is free for 30 days. It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian hospitals, GP practices, allied health, pharmacy, and government health departments — with customers across the US, UK, Canada, New Zealand, and Europe.</p>
+    </div>
+  </section>
+
+  <!-- WHAT DOES IT WORK WITH? -->
+  <section class="section-pad">
+    <div class="container m-prose">
+      <h2>What practice management and clinical systems does Speech Recognition Cloud work with?</h2>
+      <p>It works with every Windows-based system used in healthcare because it dictates at the cursor at the operating-system level — not as a plugin or per-system integration. In Australia that includes general practice systems (Best Practice, Medical Director, Genie, Zedmed, Communicare, Helix); allied health platforms (Splose, Cliniko, Halaxy, Power Diary, Coreplus, Nookal); pharmacy software (Fred Office, Minfos, LOTS, Z Dispense); aged care platforms (Person Centred Software, AutumnCare, iCareHealth); and NDIS provider tooling. Internationally it works in Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks, EMIS Web, SystmOne, Vision, and the other major clinical systems. It also works in Microsoft Word, Outlook, Teams, OneNote, browser-based hospital portals, and any other Windows application you can click into and type into.</p>
+      <p>The trade-off: the desktop application is Windows-only — there is no macOS or ChromeOS version. The companion mobile app for iPhone and Android partially mitigates this for Mac-based team members through remote-desktop tunnelling and offline Voice Notes mode, but the desktop application itself is Windows only. Practices with mixed Mac and Windows environments usually deploy SRC on the Windows clinical workstations and the team members on Macs use the mobile app to deliver dictation to the shared Windows machines.</p>
+    </div>
+  </section>
+
+  <!-- HOW MUCH DOES IT COST? -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose">
+      <h2>How much does Speech Recognition Cloud cost for a healthcare team?</h2>
+      <p>$159 USD per year per user for the Professional plan, which suits most allied health, nursing, pharmacy, and administrative roles. $439 USD per year per user for the Medical plan, which adds the specialised medical vocabulary, ultra-accuracy clinical mode, the companion mobile app, dedicated support, and one-on-one training — appropriate for prescribing clinicians and specialists. Both plans are free for 30 days. After the trial, the software reverts to the non-medical Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently.</p>
+      <p>Many healthcare teams mix the two plans: Medical for the prescribing clinicians, Professional for the rest of the team. The Free tier is also useful for occasional users — administrators who only dictate the occasional long email do not need a paid plan. For the full breakdown including the Personal plan ($79 USD per year, suited to individual non-clinical users), see the <a href="/pricing" class="m-link">pricing page</a>.</p>
+    </div>
+  </section>
+
+  <!-- FOUR HEALTHCARE WORKFLOWS -->
+  <section class="section-pad" id="workflows">
+    <div class="container m-prose">
+      <h2>What healthcare team workflows does voice dictation actually suit?</h2>
+      <p>Voice dictation suits four workflows particularly well across the broader healthcare team: nursing assessments and triage notes at the practice or hospital workstation; allied health assessment reports, progress notes, and NDIS documentation; community pharmacy medication reviews, dispensing notes, and clinical interventions; and the practice manager's never-ending pile of policies, correspondence, and accreditation paperwork. Each one is covered below in detail.</p>
+
+      <h3>Nursing assessments, triage, and care planning</h3>
+      <p>Practice nurses, hospital ward nurses, aged care nurses, occupational health nurses, and community nurses spend a substantial fraction of every shift on documentation — triage assessments, vital observations, care plans, discharge teaching records, vaccination records, wound care notes, and the long chain of handover documentation that keeps a patient's care moving safely between shifts and settings.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/healthcare-practice-nurse-triage-dictation-6a6ee06c.jpg`} alt="Australian practice nurse dictating a triage note into her practice management system using a USB headset" loading="lazy" decoding="async" />
+        <figcaption>Practice nurse dictating a triage assessment directly into the patient record — at the cursor, no separate dictation window.</figcaption>
+      </figure>
+
+      <p>Voice dictation suits this work for the same reason it suits clinician dictation: it converts spoken clinical reasoning directly into typed documentation, without the keyboard step in between. A practical pattern that works across most nursing settings:</p>
+      <ul>
+        <li>Open the patient record in your practice management system, hospital EMR, or aged-care platform — Best Practice, Medical Director, Person Centred Software, AutumnCare, or whichever system your service uses.</li>
+        <li>Click into the assessment, observation, or care plan field. SRC dictates directly at the cursor — no separate dictation window, no copy-paste step.</li>
+        <li>Save your standard nursing phrases as templates — the structure of a primary survey, the wording you use for routine observations, the framing for a standard vaccination record, the closing of a discharge education record. Templates are available on the Professional and Medical plans.</li>
+        <li>Dictate the patient-specific content in plain language. The medical vocabulary on the Medical plan handles drug names, anatomical terms, and clinical terminology. The general vocabulary on the Professional plan handles the majority of nursing documentation comfortably, particularly outside acute clinical settings.</li>
+        <li>Read it back, edit by voice or keyboard for any client-specific terms, and save.</li>
+      </ul>
+      <p>The compounding effect is real: a practice nurse doing 25 to 40 triage assessments and vaccination encounters a day will save meaningful time across a week. The first half-day feels awkward; by the end of the second day, most nurses describe the workflow as faster than typing.</p>
+
+      <h3>Allied health assessments, progress notes, and NDIS reporting</h3>
+      <p>Physiotherapists, occupational therapists, speech pathologists, psychologists, dietitians, exercise physiologists, podiatrists, and the other allied health professions share a documentation profile that is unusually well-suited to voice dictation. The writing is mostly prose, the reports are usually long, and the cadence of "assess, document, treat, document" repeats many times a day. Allied health is often where the largest per-clinician time savings show up.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/healthcare-physiotherapist-progress-report-eaa371aa.jpg`} alt="Australian physiotherapist dictating a progress report at her desk in a private clinic, reading from a printed assessment form" loading="lazy" decoding="async" />
+        <figcaption>Physiotherapist dictating a progress report between treatment sessions — prose-heavy documentation, where dictation compounds the most.</figcaption>
+      </figure>
+
+      <p>Patterns that compound:</p>
+      <ul>
+        <li><strong>Initial assessments.</strong> The subjective, objective, assessment, and plan sections of an initial assessment are heavily narrative. Saved templates handle the section headings and the standard wording; the patient-specific reasoning is dictated. This typically takes a third of the time of typing.</li>
+        <li><strong>Progress notes between sessions.</strong> Dictate three to five sentences describing what changed, what was done, and what is planned next. Cliniko, Splose, Halaxy, Power Diary, and the other Australian allied health platforms all have free-text progress-note fields that SRC dictates straight into.</li>
+        <li><strong>NDIS progress reports, capacity-building reports, behaviour support plans, and support plan reviews.</strong> These reports are dense and narrative — exactly the kind of writing dictation accelerates. The structured fields and tables still need clicks, but the prose components compound substantially.</li>
+        <li><strong>Return-to-work reports, school correspondence, GP letters, specialist referrals.</strong> The communication-with-other-clinicians load in allied health is often underestimated; saved templates for the standard opening and closing, dictated patient-specific content in the middle, makes this work an order of magnitude faster.</li>
+        <li><strong>Funding body correspondence.</strong> NDIS reviews, DVA correspondence, Workers Compensation insurer reports, Medicare audit responses — all heavily prose-based, all benefit from dictation plus templates for the framing language each scheme requires.</li>
+      </ul>
+      <p>Allied health practices considering a team rollout typically trial Professional licences for two or three team members first — the practitioners with the heaviest report writing load — before broader deployment. The 30-day trials let practices see the time recovery on real reports before committing.</p>
+
+      <h3>Pharmacy: medication reviews, clinical interventions, and dispensing notes</h3>
+      <p>Community pharmacy has quietly become one of the most documentation-heavy healthcare settings in Australia, the UK, and the US. Home Medicines Reviews, Residential Medication Management Reviews, MedsCheck consultations in Australia; New Medicine Service consultations in the UK; Medication Therapy Management visits in the US — all involve substantial narrative writing on top of the structured assessment forms.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/healthcare-community-pharmacist-medication-review-651a4180.jpg`} alt="Community pharmacist using his smartphone as a wireless microphone to dictate a medication review at the consulting bench in a suburban pharmacy" loading="lazy" decoding="async" />
+        <figcaption>Pharmacist dictating a medication review using a smartphone as a wireless microphone — eyes on the medication chart, hands free.</figcaption>
+      </figure>
+
+      <p>Voice dictation fits pharmacy practice for one workflow-specific reason: pharmacists are usually reading from something while they document — a medication chart, a discharge summary, a prescriber's referral, a patient's own list. Dictation lets them keep their eyes on the source document while the words go into the report. The companion mobile app is particularly relevant in pharmacy because the consulting bench is often shared and a personal smartphone is the cleanest microphone option for the next pharmacist on shift.</p>
+      <p>Workflows that work:</p>
+      <ul>
+        <li><strong>Home Medicines Reviews and Residential Medication Management Reviews.</strong> The longer-form reports for these MBS items are heavily narrative. Dictation suits both the home-visit notes themselves (often done on a tablet or phone) and the back-at-the-pharmacy report writing.</li>
+        <li><strong>Clinical interventions and prescriber communications.</strong> When a pharmacist contacts a prescriber about a dose, an interaction, a duplicate therapy, or a clarification — and then needs to document the intervention — dictation captures the conversation summary far faster than typing.</li>
+        <li><strong>Compounded prescription notes, vaccination records, sleep apnoea consultations, vaccinations, and other professional services.</strong> Any service-line documentation with a free-text component benefits.</li>
+        <li><strong>Policies, procedures, and accreditation evidence.</strong> Pharmacy QCPP and other accreditation frameworks require significant written evidence. A pharmacy proprietor or pharmacist manager dictating their procedure manual is the fastest way to keep this material current.</li>
+      </ul>
+      <p>The Medical plan suits pharmacists doing clinical service work where the medical vocabulary matters; the Professional plan covers retail pharmacy, accreditation documentation, and general professional correspondence comfortably.</p>
+
+      <h3>Practice managers and clinical administrators: the writing nobody talks about</h3>
+      <p>The practice manager and administrative load is the writing nobody talks about and the writing that consumes the most underestimated time in a practice. Policies and procedures, infection-control logs, staff communications, accreditation evidence for AGPAL or QPA, complaint responses, recall letters, supplier and contractor correspondence, the long emails to the principal owners or board, and the hundred small written things that hold the practice together.</p>
+      <p>Speech Recognition Cloud Professional fits this work comfortably. Patterns that work:</p>
+      <ul>
+        <li><strong>Policies and procedures.</strong> Dictate the substantive content in plain language, edit on screen. Most practice managers find a single policy that would have taken half a morning to type is dictated and edited in 20 to 30 minutes.</li>
+        <li><strong>Accreditation evidence.</strong> The descriptive evidence required for AGPAL, QPA, or the equivalent in your jurisdiction is mostly prose explaining how a practice meets a standard. Dictation makes this manageable rather than draining.</li>
+        <li><strong>Complex internal emails.</strong> The long emails — to staff about a change in process, to the principal partners about a complaint, to the board about a financial decision — read better when they are dictated in one pass than when they are typed and re-edited. The voice of the practice manager comes through more naturally.</li>
+        <li><strong>Recall letters and patient communications.</strong> The substantive content of a personalised recall letter, a patient communication about a service change, a notice about an absent doctor — dictation plus a template for the standard opening and closing.</li>
+        <li><strong>Complaint and feedback responses.</strong> Dictate a full draft, leave it for an hour, read it back. The dictated draft is usually warmer and more accurate to the practice manager's actual voice than a typed draft, and the cool-off period catches the few sentences that need softening.</li>
+      </ul>
+      <p>One pattern several practice managers have described to us: they no longer postpone the long writing tasks. The activation energy of dictating is low enough that the writing happens when it should rather than when it has to. That is harder to quantify than minutes saved per page, but it is often the productivity effect that matters most.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS NOT -->
+  <section class="section-pad section-neutral" id="what-this-is-not">
+    <div class="container m-prose">
+      <h2>What Speech Recognition Cloud is <em>not</em></h2>
+      <p>Speech recognition, AI scribes, ambient documentation, and meeting transcription are different categories of product. They are often discussed as if they were interchangeable, and the resulting confusion costs healthcare teams money on the wrong tool for their workflow. Worth being explicit about what Speech Recognition Cloud does not do.</p>
+
+      <h3>Is Speech Recognition Cloud an AI scribe like Heidi, Lyrebird, or Nabla?</h3>
+      <p>No. Speech Recognition Cloud is verbatim cursor-based dictation, not ambient AI documentation. The team member speaks, the words appear at the cursor, the team member edits. There is no background listening during consultations or assessments, no AI-generated summary of what was said, and no automatic structuring of conversation into a structured note. If you want ambient documentation, an AI scribe is the right category of product — they are different tools for different workflows. If you want fast, accurate, predictable dictation with no AI generation step in the data path, that is what SRC does.</p>
+
+      <h3>Is it a meeting transcriber or audio file transcription service?</h3>
+      <p>No. Meeting transcription tools join video calls, record both sides of a conversation, and produce a searchable transcript — useful for clinical handover meetings, MDT discussions, or staff meetings, but not what SRC does. Audio file transcription services accept a recording and return a transcript by email some minutes or hours later. Speech Recognition Cloud is neither. It transcribes <em>your live speech</em> into the application <em>you are currently working in</em>.</p>
+
+      <h3>Does it generate or rewrite content for me?</h3>
+      <p>No, not in the Medical plan, and only optionally and on demand in the Professional plan. The Professional plan includes AI Modes (Write, Rewrite, Answer, Reply, Run Command) which can rewrite a passage of text on request — useful for general business correspondence, less useful and potentially inappropriate for clinical content. The Medical plan deliberately excludes AI Modes entirely, so there is no path by which patient or client content leaves your computer except to be transcribed and returned. If your team's writing is patient-identifiable, the Medical plan is the safer choice even if the medical vocabulary itself is not strictly required.</p>
+
+      <h3>Is it certified as a medical device or regulated under TGA, FDA, or MHRA?</h3>
+      <p>No. Speech Recognition Cloud is general-purpose dictation software with an optional medical vocabulary. It is not regulated as a medical device by the TGA, FDA, MHRA, or equivalent regulators elsewhere. It has not been clinically validated for diagnostic, therapeutic, or patient-management use. Healthcare teams use it as a documentation tool — the same way they use a word processor or a dictaphone — and the team member retains full responsibility for the accuracy and clinical appropriateness of what enters the record.</p>
+
+      <h3>Will it fix the documentation burden that is exhausting our team?</h3>
+      <p>No — and it would be dishonest to suggest otherwise. The administrative burden across healthcare is structural: it comes from accreditation frameworks, funding-body audit requirements, indemnity and medicolegal documentation expectations, regulatory reporting obligations, and clinical systems that prioritise data capture over team workflow. Voice dictation is a productivity tool that changes how <em>fast</em> a team member can produce a given paragraph of prose — it does not change how many fields and forms the system requires. The relief is real but bounded. For most teams it claws back somewhere between two and six hours per person per week on the prose-heavy roles, which compounds across a clinical year. For some roles — administrators whose work is mostly structured-field data entry — the gains are smaller. Trial it on the workflows that actually involve writing.</p>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT AND PRIVACY -->
+  <section class="section-pad">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What should our practice check before deploying voice dictation across the team?</h2>
+      <p>Three questions worth working through with your practice manager, principal owners, or IT lead before deploying any cloud-based speech recognition across the team: what data leaves the workstation and where does it go, does the practice's information governance and IT policy permit cloud dictation on clinical devices, and how will the team handle dictation in shared clinical spaces.</p>
+      <ol class="m-numbered">
+        <li><strong>What does the software process, and where does the audio go?</strong><br/>Speech Recognition Cloud sends audio to the cloud for transcription. Audio is processed in memory only and immediately erased — it is never written to disk on our servers, never retained, and never accessible to our staff. Transcribed text is delivered to the cursor on the local computer; we do not retain a copy. Custom vocabulary stays on the device. Our <a href="/privacy" class="m-link">privacy and data-handling statement</a> documents this in full and is the document to share with your practice's IG lead.</li>
+        <li><strong>Does the practice's IT and information governance policy permit cloud dictation on clinical devices?</strong><br/>This varies enormously between settings. Solo and group practices typically permit it at clinician or team-member discretion. Hospital trusts, large health services, and government health departments often require an IT review before any cloud service touches clinical workstations. NDIS providers should check the data-handling expectations in their service agreements. Check before you install rather than after, and have the answer to question 1 ready when you ask.</li>
+        <li><strong>How will the team handle dictation in shared clinical spaces?</strong><br/>Voice dictation at a shared nurses' station, in an open-plan allied health gym, at a dispensary bench, or in a reception back-office raises the same privacy considerations as a phone call about a patient. The companion mobile app used as a wireless microphone, a USB headset, or a directional desk microphone all help — directional audio keeps dictation private from colleagues and clients nearby. This is workflow hygiene, not software configuration, but it is worth thinking through during deployment.</li>
+      </ol>
+      <p>The data-protection and clinical-record frameworks that govern healthcare dictation vary by jurisdiction. The three most relevant for our visitors are covered below.</p>
+    </div>
+  </section>
+
+  <!-- REGIONAL APPENDIX -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:820px">
+
+      <!-- AUSTRALIA -->
+      <div class="m-regional-panel">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
+        <h2>Is Speech Recognition Cloud suitable for Australian healthcare teams under APP, AHPRA, and NDIS expectations?</h2>
+        <p>Yes, subject to your service's own information governance review. The Australian Privacy Principles treat health information as sensitive information under the Privacy Act 1988 with stricter handling expectations than general personal information. SRC's relevant data handling — audio processed in memory and immediately erased, transcripts not retained on our servers, our staff cannot access either, all connections encrypted — supports APP-compliant deployment subject to the practice's own privacy collection statements and consent processes covering the use of cloud dictation tools.</p>
+
+        <p><strong>Australian practice management and allied health platforms.</strong> The cursor-based approach works inside Best Practice, Medical Director, Genie, Zedmed, Communicare, Helix in general practice; Cliniko, Splose, Halaxy, Power Diary, Coreplus, Nookal across allied health; Fred Office, Minfos, LOTS in pharmacy; Person Centred Software, AutumnCare, iCareHealth in aged care; and the various NDIS provider tools. No per-system certification, no plugin, no configuration.</p>
+
+        <p><strong>AHPRA record-keeping expectations.</strong> AHPRA's professional standards across the regulated professions — nursing and midwifery, pharmacy, physiotherapy, occupational therapy, psychology, dietetics, and the others — expect contemporaneous, accurate, complete, and legible records. Voice dictation supports all four: the note is produced at or near the time of the encounter rather than retrospectively, the dictating team member is the named author with no intermediary, the prose form encourages more complete documentation than typed shorthand, and the typed output is by definition legible. Reading the note back before saving is the team member's responsibility, the same as for typed notes.</p>
+
+        <p><strong>NDIS Quality and Safeguards Commission, Aged Care Quality Standards, and the Notifiable Data Breaches scheme.</strong> NDIS providers, aged care providers, and any APP entity above the small-business turnover threshold need to consider how cloud dictation fits their information-handling obligations and breach response. The relevant material to provide your IG and quality teams is our privacy and data-handling statement, which sets out the audio and transcript flows in detail.</p>
+
+        <p><strong>MBS-billable services and documentation.</strong> Dictation does not change what documentation an MBS item requires — that is set by the item descriptor and the supporting guidelines. It just changes how the note gets written. For practitioners doing MBS-billable allied health items, chronic disease management plans, mental health treatment plans, and the various nursing and pharmacy professional services, dictation typically pays for itself in the first month on report-writing time alone.</p>
+
+        <p>For broader voice-technology procurement in Australian healthcare — including hospital deployments, Dragon Medical One licensing for clinicians who specifically need that product, NDIS-funded clinician deployments, on-site training, and team rollouts — our parent business operates a dedicated <a href="https://www.voicerecognition.com.au/collections/medical" rel="noopener" class="m-link">medical and healthcare collection at Voice Recognition Australia</a>, supplying Australian healthcare for over 25 years.</p>
+      </div>
+
+      <!-- UNITED STATES -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
+        <h2>Is Speech Recognition Cloud HIPAA compliant for US healthcare teams?</h2>
+        <p>HIPAA compliance is a property of a <em>deployment</em>, not a software product — it depends on how the tool is used and what agreements are in place between the covered entity and any service providers. Speech Recognition Cloud's underlying data handling supports HIPAA-compliant deployment for healthcare teams: audio is processed in memory only and immediately erased, transcripts are never stored on our servers, our staff cannot access audio or transcripts, all connections are encrypted in transit, and AI Modes are excluded from the Medical tier by design. US healthcare teams should review our privacy statement against their own Security Risk Analysis before deploying across the team.</p>
+
+        <p><strong>US clinical and allied health systems.</strong> The cursor-based approach works inside Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks, NextGen, Allscripts (Veradigm), Practice Fusion, and the other major US clinical systems. It also works inside the major US allied health platforms (WebPT, Jane, ClinicSource, TherapyNotes), pharmacy systems, and the standard Microsoft 365 surfaces used for clinical correspondence. No per-system certification, no plugin, no configuration.</p>
+
+        <p><strong>Business Associate Agreements.</strong> Covered entities deploying SRC across a healthcare team should obtain a Business Associate Agreement covering the use of the cloud transcription service. Contact us to discuss BAA terms for team deployments.</p>
+
+        <p><strong>Independent and group practice across the wider team.</strong> For US allied health practices, pharmacy chains, nursing services, and group practices, the cost difference between SRC and legacy enterprise dictation products is substantial — particularly when licensing across a team of 10 to 100 staff rather than only the prescribing clinicians. The 30-day trial is the standard way to evaluate fit on real workflows.</p>
+      </div>
+
+      <!-- UNITED KINGDOM AND EU -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED KINGDOM AND EUROPE</p>
+        <h2>Can NHS staff and EU healthcare teams use Speech Recognition Cloud under UK GDPR and DTAC?</h2>
+        <p>Speech Recognition Cloud is general-purpose dictation software, not a clinical safety system under DCB0129. Individual NHS staff can use it for personal documentation workflows on permitted devices, but any deployment beyond individual use should go through the trust's IG and clinical-safety functions. Under UK GDPR and EU GDPR, health data is special category data — SRC's data flows (audio processed in memory and erased, transcripts not retained, all connections encrypted) support compliant deployment subject to the deploying organisation completing a Data Protection Impact Assessment.</p>
+
+        <p><strong>UK clinical systems and allied health platforms.</strong> The cursor-based approach works inside EMIS Web, SystmOne (TPP), Vision, and Adastra in primary care; inside the major NHS hospital EPR systems where Windows-based clinical workstations are used; inside private allied health platforms (TM3, WriteUpp, ClinicOffice); and inside the standard Microsoft 365 surfaces NHS staff use for correspondence and documentation. No per-system certification.</p>
+
+        <p><strong>NHS Digital, DCB0129/DCB0160, and DTAC.</strong> NHS deployment of any clinical software typically involves the Digital Technology Assessment Criteria and, where relevant, the clinical risk management standards DCB0129 (manufacturer responsibility) and DCB0160 (deploying organisation responsibility). Teams considering deployment on NHS-managed devices should consult their trust's IG and clinical-safety functions before installation, particularly for any deployment beyond individual use.</p>
+
+        <p><strong>EU healthcare teams.</strong> The data-flow position is the same across the EU under GDPR — health data is special category data under Article 9, and the data-handling questions for cloud dictation are the same as in the UK. EU-based healthcare teams should confirm with their national data-protection authority and their organisation's data-protection officer whether SRC's data flows align with their processing register.</p>
+
+        <p><strong>Languages and the EU.</strong> The Professional and Personal tiers support 57 languages, which makes SRC useful for European healthcare teams working in their native language — German, French, Spanish, Italian, Dutch, Polish, and the rest. The Medical tier and its specialised medical vocabulary are currently English-only.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW TO QUICK START -->
+  <section class="section-pad" id="quickstart">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>How do I get started dictating my first healthcare note or report?</h2>
+      <p>Four steps, about ten minutes from install to first note: install Speech Recognition Cloud (any 30-day paid trial is free), set up a microphone (a USB headset or your smartphone via the companion app), open the application you write in most, then dictate the entry in plain language. Punctuation is automatic. The detailed walkthrough is below.</p>
+      <ol class="m-howto">
+        {howToSteps.map((s, i) => (
+          <li>
+            <h3>Step {i + 1} — {s.name}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+      <p>If after a half-day of use it still feels slower than typing, dictation may not suit your style — and that is a useful thing to discover after one trial rather than three months in. For more setup help, see the <a href="/support/getting-started" class="m-link">getting-started walkthrough</a>.</p>
+    </div>
+  </section>
+
+  <!-- PRACTICAL TIPS -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What do experienced healthcare teams wish they had known before rolling out voice dictation?</h2>
+      <p>Five tips that compound across a year: build a shared and personal vocabulary in the first week, save the standard phrases each role uses as templates, draft first and polish later, use the mobile app as a wireless microphone in shared clinical spaces, and read every entry back before saving. The last one is the discipline that separates teams who use dictation well from teams who get into trouble with it.</p>
+
+      <h4>Build vocabulary in the first week</h4>
+      <p>Patient and client surnames that do not transcribe correctly first time, your colleagues' names, local hospital and ward names, NDIS plan-management terminology, scheme-specific acronyms (NDIS, MBS, DVA, RACGP, QCPP, AGPAL, ACSQHC), and the small handful of drug names or clinical terms the system does not catch first time — add them to your personal vocabulary as you go. Practices with a strong vocabulary culture across the team get noticeably cleaner output across the year.</p>
+
+      <h4>Save each role's standard phrases as templates</h4>
+      <p>Practice nurses save their triage opening, vaccination record format, and standard observation phrasing. Allied health practitioners save the structure of assessment reports, the standard NDIS report scaffolding, and the closing language for school and GP letters. Pharmacists save the framing for medication reviews and clinical intervention notes. Practice managers save the boilerplate around recall letters and accreditation evidence. Templates and text replacements come with the Professional and Medical plans.</p>
+
+      <h4>Draft first, polish later</h4>
+      <p>Do not try to dictate a perfect first sentence. Dictate the rough version of the whole entry, then read it back and tighten the bits that need tightening. Trying to speak polished prose in real time slows almost everyone down — and healthcare documentation does not need to be polished prose. It needs to be accurate, complete, contemporaneous, and legible.</p>
+
+      <h4>Use the mobile app as a wireless microphone in shared clinical spaces</h4>
+      <p>A USB headset is fine in a private office or consulting room. In a shared clinical space — a ward, a treatment area, a dispensary bench, an open-plan allied health gym, a reception back-office — the companion mobile app on the team member's own phone is usually better. It eliminates the hygiene issues of shared desktop microphones, keeps dictation private from clients and colleagues nearby, and means the microphone is always with the team member rather than tethered to a workstation.</p>
+
+      <h4>Read every entry back before saving</h4>
+      <p>This is the discipline that separates teams who use dictation well from teams who get into trouble with it. Read the entry back on screen before saving it to the patient or client record — the same way you would read a typed entry. The reading-back step is fast (seconds, not minutes) and it catches the small transcription errors that can carry clinical or legal weight: "no" transcribed as "now," a patient name that swapped with the previous client's, a drug name that came through as a similar-sounding term. The system is accurate; the team member is responsible.</p>
+    </div>
+  </section>
+
+  <!-- SUPPORTING FEATURES GRID -->
+  <section class="section-pad">
+    <div class="container" style="max-width:880px">
+      <h2 class="text-center" style="margin-bottom:12px">Built for the way healthcare teams actually work</h2>
+      <p class="muted text-center" style="max-width:600px;margin:0 auto 48px;font-size:16px">Every feature designed around real healthcare workflows — in practices, hospitals, pharmacies, and on the move.</p>
+
+      <div class="benefit-list">
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.phone} />
+          <div>
+            <h3>Your phone becomes a wireless microphone</h3>
+            <p class="muted">The Medical plan includes a companion app for iPhone and Android that turns each team member's smartphone into a wireless microphone for SRC on the PC. In clinical environments this eliminates shared desktop microphones entirely — no hygiene concerns, no theft, no cleaning protocols. The app also tunnels audio through remote desktop connections, so a team member on a Mac remoting into a Windows practice system can dictate normally without additional hardware.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.wifi} />
+          <div>
+            <h3>Offline recording for ward rounds and home visits</h3>
+            <p class="muted">When team members are on ward rounds, home visits, residential aged care visits, or working in areas without reliable internet, the mobile app records dictation offline on their iPhone or Android. When connectivity resumes, completed documents are delivered to whichever PC is logged into SRC — ready to paste directly into the relevant system. No audio is lost and no internet connection is required at the point of dictation.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cursor} />
+          <div>
+            <h3>Dictates at the cursor — no dictation box</h3>
+            <p class="muted">Speech Recognition Cloud works directly at the cursor in every Windows application — Best Practice, Cliniko, Splose, Halaxy, Fred Office, hospital EMRs, Outlook, Word, Teams. There is no separate dictation window, no copy-paste step, and no fallback to a holding box if the application's text editor is non-standard. Text appears exactly where the cursor is, and team members can switch between applications instantly without reconfiguring anything.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.zap} />
+          <div>
+            <h3>Automatic punctuation</h3>
+            <p class="muted">No need to say "full stop," "comma," or "new line." SRC handles punctuation automatically based on the natural rhythm and structure of speech. This is a meaningful workflow improvement over dictation products that require spoken punctuation commands — healthcare dictation flows more naturally when team members can speak the entry rather than narrate the punctuation.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cloud} />
+          <div>
+            <h3>Cloud-updated vocabulary</h3>
+            <p class="muted">The vocabulary is maintained and updated continuously in the cloud. New drug names, clinical terminology, and procedural terms are added without anyone needing to install updates or purchase new versions. This is a meaningful advantage over legacy dictation products where vocabulary improvements are tied to paid version upgrades. Teams can also add their own custom terms, abbreviations, and organisation-specific language through the built-in vocabulary editor.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.text} />
+          <div>
+            <h3>Text replacements and team templates</h3>
+            <p class="muted">Save acronyms, scheme names, or complete boilerplate sections that expand on voice command. Practice nurses, allied health practitioners, pharmacists, and administrators can each maintain a personal template library for the standard phrases their role uses. Available on the Professional and Medical plans.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.mic} />
+          <div>
+            <h3>No voice training or enrolment</h3>
+            <p class="muted">Install and start dictating immediately. There is no voice training, no calibration, no setup wizards, and no enrolment step. New team members can be productive on day one rather than waiting for a training process. The system improves as the cloud vocabulary is updated.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.dollar} />
+          <div>
+            <h3>Affordable across the whole team</h3>
+            <p class="muted">Professional is $159 USD per year per user; Medical is $439 USD per year per user. That is a fraction of the cost of legacy enterprise dictation products, and the difference matters when licensing across a team rather than only the prescribing clinicians. No upgrade fees, no serial numbers, no version compatibility headaches. The cloud model means the team always has the latest version.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO VIDEO -->
+  <section class="section-pad section-neutral" id="demo">
+    <div class="container text-center">
+      <h2 style="margin-bottom:8px">Watch a 60-second healthcare dictation demonstration</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">See Speech Recognition Cloud in action with a real healthcare workflow.</p>
+      <div class="yt-facade" data-ytid="4rlay0Zx660">
+        <img src="https://i.ytimg.com/vi/4rlay0Zx660/maxresdefault.jpg" alt="Healthcare speech to text dictation demonstration" loading="lazy" decoding="async" />
+        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom:36px">What healthcare team members are saying</h2>
+      <div class="med-testimonials">
+        <div class="med-quote-card">
+          <div class="med-quote-top">
+            <img src={`${imgBase}/Headshot-1-mark.jpg`} alt="Mark S" class="med-headshot" loading="lazy" decoding="async" />
+            <div>
+              <p class="med-attr"><strong>Mark S.</strong></p>
+              <p class="med-attr-loc muted">Adelaide</p>
+            </div>
+          </div>
+          <p class="med-quote">"Thank you very much for providing me with the free access. I am using it right now to create this email."</p>
+        </div>
+        <div class="med-quote-card">
+          <div class="med-quote-top">
+            <img src={`${imgBase}/headshot-2-carrie.jpg`} alt="Carrie H" class="med-headshot" loading="lazy" decoding="async" />
+            <div>
+              <p class="med-attr"><strong>Carrie H.</strong></p>
+              <p class="med-attr-loc muted">Wollongong</p>
+            </div>
+          </div>
+          <p class="med-quote">"I've only been using it for a few minutes, but it is extremely accurate and quite easy to use."</p>
+        </div>
+        <div class="med-quote-card">
+          <div class="med-quote-top">
+            <img src={`${imgBase}/headshot-3-jhl.jpg`} alt="J.H.L" class="med-headshot" loading="lazy" decoding="async" />
+            <div>
+              <p class="med-attr"><strong>J.H.L</strong></p>
+              <p class="med-attr-loc muted">Perth</p>
+            </div>
+          </div>
+          <p class="med-quote">"Automatic punctuation without having to say comma or full stop is brilliant!"</p>
+        </div>
+        <div class="med-quote-card">
+          <div class="med-quote-top">
+            <img src={`${imgBase}/headshot-4-tm.jpg`} alt="T.M" class="med-headshot" loading="lazy" decoding="async" />
+            <div>
+              <p class="med-attr"><strong>T.M</strong></p>
+              <p class="med-attr-loc muted">Brisbane</p>
+            </div>
+          </div>
+          <p class="med-quote">"I've been using it for 5 minutes and it's already better than any old dictation product. And free? Thanks!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="section-pad section-dark">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Your team's voice, vocabulary, and patient data are never stored or shared</h2>
+      <p class="muted" style="margin-bottom:32px">Audio is processed in the cloud and immediately erased. No recordings saved. No data used for training. All connections encrypted. AI Modes excluded from the Medical tier by design.</p>
+      <a href="/privacy" style="color:var(--dark-accent);font-weight:600">Read our privacy policy &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:780px">
+      <h2 class="text-center" style="margin-bottom:28px">Frequently asked questions</h2>
+      {faqItems.map(item => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+      <p class="m-faq-closer muted">For more setup answers, see the <a href="/support/faq" class="m-link">support FAQ</a>.</p>
+    </div>
+  </section>
+
+  <!-- AUTHOR BYLINE -->
+  <section class="section-pad">
+    <div class="container" style="max-width:780px">
+      <div class="m-author-panel">
+        <h2>About this page</h2>
+        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years deploying speech recognition</a> across Australian hospitals, GP practices, allied health, pharmacy, aged care, government health departments, and NDIS providers — primarily in Australia, with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. I presented the national Dragonology clinical training series across Australia in 2017 on behalf of Nuance. The workflows above are drawn from that experience rather than from a marketing brief. If your healthcare setting does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your team's work.</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p class="m-reviewed muted">Last reviewed: 16 May 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section-pad section-dark" style="padding:40px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Try Speech Recognition Cloud free for 30 days</h2>
+      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes. Reverts to the free tier after 30 days unless you upgrade.</p>
+      <a href="#trial" class="btn-primary btn-lg">Get started free</a>
+    </div>
+  </section>
+
+  <style is:inline>
+    .section-pad{padding:40px 0}
+
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .m-h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:18px;line-height:1.18;letter-spacing:-0.02em}
+    .m-lead{font-size:17px;line-height:1.65;margin-bottom:24px;max-width:560px;color:var(--text)}
+    .m-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .m-micro{font-size:13px}
+    .m-hero-split{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center}
+    .m-hero-img-wrap{display:flex;justify-content:center}
+    .m-hero-img-wrap img{width:100%;max-width:480px;border-radius:16px;object-fit:cover;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+
+    /* Form strip (preserved verbatim) */
+    .form-strip{background:#4338CA;padding:24px 0}
+    .form-strip-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+    .form-strip-text{flex:0 0 auto}
+    .form-strip-form{display:flex;gap:10px;flex:1;align-items:center;flex-wrap:wrap}
+    .form-strip-form input[type="text"],.form-strip-form input[type="email"]{flex:1;min-width:160px;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .form-strip-form input::placeholder{color:rgba(255,255,255,0.6)}
+    .form-strip-form input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
+
+    .m-prose{max-width:820px}
+    .m-prose h2{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 16px;letter-spacing:-0.015em}
+    .m-prose h3{font-size:20px;font-weight:700;margin:28px 0 12px;letter-spacing:-0.01em}
+    .m-prose h4{font-size:17px;font-weight:700;margin:22px 0 8px}
+    .m-prose p{font-size:16px;line-height:1.75;color:var(--text);margin:0 0 14px}
+    .m-prose ul{margin:8px 0 18px 0;padding-left:22px}
+    .m-prose ul li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--text)}
+    .m-prose em{font-style:italic}
+    .m-prose strong{font-weight:700}
+    .m-link{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+    .m-link:hover{color:#3730A3}
+
+    .m-numbered{margin:8px 0 18px 0;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+    .m-numbered li{font-size:16px;line-height:1.75;color:var(--text)}
+
+    .m-howto{list-style:none;padding:0;margin:8px 0 20px;counter-reset:howto;display:flex;flex-direction:column;gap:18px}
+    .m-howto li{position:relative;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:#fff}
+    .m-howto h3{margin:0 0 6px;font-size:16px;font-weight:700}
+    .m-howto p{margin:0;font-size:15px;line-height:1.7}
+
+    .m-regional-panel{padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .m-regional-eyebrow{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+    .m-regional-panel h2{font-size:22px;font-weight:700;margin:0 0 14px;letter-spacing:-0.015em}
+    .m-regional-panel p{font-size:15px;line-height:1.75;margin:0 0 12px;color:var(--text)}
+
+    .m-author-panel{padding:24px 28px;border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:12px;background:var(--brand-lightest)}
+    .m-author-panel h2{font-size:20px;font-weight:700;margin:0 0 12px}
+    .m-author-panel p{font-size:15px;line-height:1.75;margin:0 0 10px;color:var(--text)}
+    .m-author-sig{font-weight:600}
+    .m-reviewed{font-size:13px;margin-top:8px !important}
+
+    /* Inline figure for the workflow images */
+    .m-figure{margin:24px 0 28px;padding:0}
+    .m-figure img{width:100%;max-width:820px;height:auto;border-radius:14px;object-fit:cover;box-shadow:0 12px 36px rgba(0,0,0,0.10);display:block}
+    .m-figure figcaption{font-size:14px;color:var(--muted);font-style:italic;text-align:center;margin-top:10px;padding:0 8px;line-height:1.55}
+
+    /* Testimonials */
+    .med-testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .med-quote-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px}
+    .med-quote-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+    .med-headshot{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #e2e8f0}
+    .med-quote{font-size:15px;line-height:1.6;font-style:italic;margin:0}
+    .med-attr{font-size:14px;font-weight:600;margin:0;line-height:1.3}
+    .med-attr-loc{font-size:13px;font-weight:400;margin:0}
+
+    /* Benefit cards */
+    .benefit-list{display:flex;flex-direction:column;gap:28px}
+    .benefit-rich{display:flex;gap:20px;padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit-icon{flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#EEF2FF;border-radius:12px;margin-top:2px}
+    .benefit-rich h3{font-size:17px;font-weight:700;margin:0 0 8px}
+    .benefit-rich .muted{font-size:14px;line-height:1.75;margin:0}
+
+    /* YouTube facade */
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}
+    .yt-facade img{width:100%;height:100%;object-fit:cover}
+    .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}
+    .yt-facade:hover .yt-play{opacity:1}
+    .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{padding:16px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';font-size:22px;color:var(--muted);font-weight:400;flex-shrink:0}
+    .faq-item[open] .faq-question::after{content:'–'}
+    .faq-answer{padding:0 0 16px}
+    .faq-answer p{color:var(--muted);font-size:15px;line-height:1.75;margin:0}
+    .m-faq-closer{margin-top:20px;font-size:14px;text-align:center}
+
+    .btn-lg{padding:14px 36px;font-size:17px}
+
+    @media(max-width:768px){
+      .section-pad{padding:28px 0}
+      .m-hero-split{grid-template-columns:1fr;gap:24px}
+      .m-hero-img-wrap img{max-width:100%}
+      .form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}
+      .form-strip-form{flex-direction:column}
+      .form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}
+      .med-testimonials{grid-template-columns:1fr}
+      .benefit-rich{flex-direction:column;gap:12px}
+      .m-prose h2{font-size:22px}
+      .m-prose h3{font-size:18px;margin-top:22px}
+      .m-prose p, .m-prose ul li{font-size:15px}
+      .m-author-panel{padding:22px}
+      .m-regional-panel{padding:22px}
+      .m-figure{margin:20px 0 24px}
+      .m-figure figcaption{font-size:13px}
+    }
+  </style>
+
+  <!-- AC Form 293 submission script (preserved verbatim) -->
+  <script is:inline>
+    (function(){
+      var form = document.getElementById('_form_293_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_293_thank_you');
+
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.querySelector('[name="fullname"]');
+        var email = form.querySelector('[name="email"]');
+        if (!name.value.trim() || !email.value.trim()) return;
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
+          email.style.borderColor = '#F37C7B';
+          return;
+        }
+        var btn = document.getElementById('_form_293_submit');
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() {
+          btn.disabled = false;
+          btn.textContent = 'Get started free';
+          alert('Something went wrong. Please try again.');
+        };
+        document.head.appendChild(script);
+
+        window._show_thank_you = function(id, message) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+          thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day trial access.</p>';
+        };
+      });
+    })();
+  </script>
+
+  <!-- YouTube facade (preserved verbatim) -->
+  <script is:inline>
+    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
+  </script>
+</BaseLayout>
