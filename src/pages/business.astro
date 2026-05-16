@@ -1,88 +1,749 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
-import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
-function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
-function imgAlt(key) { return manifest[key]?.altText || key; }
-const extraSchema = [{
+
+const newImgBase = `${R2}/speechrecognitioncloud/2026/05/16`;
+
+const pageUrl = site.siteUrl + '/business';
+const lastReviewed = '2026-05-16';
+
+// FAQ items (single source of truth for both rendering and schema)
+const faqItems = [
+  {
+    question: "Who in a business is Speech Recognition Cloud Professional actually built for?",
+    answer: "It is built for anyone whose work generates a lot of writing — executives drafting emails and briefings, consultants writing reports and client correspondence, business owners producing proposals and SOPs, sales account managers writing CRM follow-ups, operations managers drafting policies and team communications, project managers documenting status updates and decisions. If you spend more than an hour a day at a keyboard producing prose, dictation usually pays for itself in the first month."
+  },
+  {
+    question: "Will it work inside Outlook, Word, Teams, and our CRM?",
+    answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application — Microsoft Outlook, Word, Excel, PowerPoint, Teams, OneNote; the major CRM and sales platforms (Salesforce, HubSpot, Pipedrive, Zoho, Microsoft Dynamics) in their browser or desktop interfaces; project management tools (Asana, Monday, ClickUp, Jira); messaging applications (Slack desktop, Teams chat); browser-based applications generally; and any other Windows application you can click into and type into. It does not integrate platform-by-platform — it operates at the operating-system level — which is why it works across all of them without per-platform setup or configuration."
+  },
+  {
+    question: "How much faster does dictation actually make business writing?",
+    answer: "Most adult typists work somewhere between 35 and 60 words per minute. Most adults speak comfortably at around 130 to 150 words per minute. For prose-heavy work — emails, reports, proposals, briefings — the realistic productivity gain is around two to three times once you are past the first half-day of getting used to it. Where dictation does not help: structured-field data entry, spreadsheet work, code, and anything that involves more clicking than writing. The honest test is to time yourself on a real piece of writing during the 30-day trial."
+  },
+  {
+    question: "Does it use AI to rewrite or improve what I dictate?",
+    answer: "It can if you want it to, but it does not by default. The Professional plan includes AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can rewrite a passage of text on request — useful for tightening a long email, formalising a casual draft, or summarising notes into a brief. Crucially, these run on demand, not automatically: you dictate verbatim, and you choose whether to send a passage through an AI Mode. If you never use them, the software is straight verbatim dictation."
+  },
+  {
+    question: "Is what I dictate stored anywhere?",
+    answer: "No. The only thing we store is your email address, which is encrypted. No audio. No transcripts. No custom vocabulary. No voice profiles. No dictation history. Audio is processed in memory and immediately erased — never written to disk on our servers, never retained, never accessible to our staff. Transcribed text is delivered to the cursor on your own computer; we do not retain a copy. The custom vocabulary you build stays on your device."
+  },
+  {
+    question: "Can a small team share one licence?",
+    answer: "No. Speech Recognition Cloud is licensed per person. Each user needs their own licence because the personal vocabulary, templates, text replacements, and preferences are tied to the individual account. The licence can be used on as many computers as that person works on — desktop in the office, laptop at home, workstation at a client site, all on the same licence at no extra cost. The constraint is one person per licence, not one device per licence."
+  },
+  {
+    question: "How long is the free trial and what happens after?",
+    answer: "30 days of full Professional functionality, free. No credit card required. After 30 days, the software reverts to the non-business Free tier (20 minutes of dictation per month) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. You either choose to upgrade to a paid plan or the software stays on the Free tier."
+  },
+  {
+    question: "What is the mobile app useful for in a business context?",
+    answer: "Two things. First, it turns your iPhone or Android into a wireless microphone for Speech Recognition Cloud on your PC — useful in open-plan offices, on the move between meeting rooms, or anywhere a desktop microphone is impractical. Hold your phone, dictate, and the text appears in whichever Windows application has the cursor on your computer. Second, Voice Notes mode lets you dictate completely away from your computer — between meetings, in a taxi or rideshare, between client visits — and the completed transcription is automatically delivered to your open Speech Recognition Cloud session back at the PC. You can dictate a meeting follow-up while walking back to the office and have the email draft waiting on your screen when you sit down."
+  },
+  {
+    question: "Will it work for legal, financial, or technical writing in my industry?",
+    answer: "The base vocabulary handles general business language comfortably and is updated continuously in the cloud. For industry-specific terminology — legal phrases, financial product names, engineering terms, your own clients' company names, internal acronyms — you build a personal vocabulary as you go. Add a term once and it transcribes correctly from then on. Most professional users have a small personal vocabulary set up by the end of their first week, after which the system handles their work consistently. The 30-day trial is the right way to test fit for your specific industry vocabulary."
+  },
+  {
+    question: "Does it work for Mac users?",
+    answer: "The Speech Recognition Cloud desktop application is Windows 10 and Windows 11 only — Mac support is on our roadmap with no current ETA. Two practical workarounds for Mac-based team members: the mobile app tunnels audio through remote-desktop connections, so someone on a Mac remoting into a Windows machine can dictate normally; and Voice Notes mode delivers transcribed documents to whichever Windows PC is logged into Speech Recognition Cloud, useful for individuals on Macs who have access to a shared Windows machine in the office."
+  },
+  {
+    question: "What kind of microphone should I use?",
+    answer: "A built-in laptop microphone is usable for casual dictation in a quiet office. A USB headset gives noticeably cleaner results and is the standard recommendation for most desk-based business users — anything in the $40 to $120 range works well. For open-plan offices, hot-desking environments, or anyone moving between locations, the mobile app on your own smartphone is often the most practical microphone — directional, always with you, no shared desktop hardware. Different roles in the same team can use different microphones; there is no single right answer."
+  },
+  {
+    question: "How does Speech Recognition Cloud compare to dictation built into Windows or Microsoft 365?",
+    answer: "Built-in dictation in Windows and Microsoft 365 is fine for casual use. The differences professional users tend to notice with Speech Recognition Cloud: it dictates at the cursor in every Windows application rather than only Microsoft surfaces; automatic punctuation works without spoken commands; templates and text replacements let you trigger paragraphs of boilerplate with a short phrase; custom vocabulary persists across applications; and the AI Modes on the Professional plan handle rewriting and summarising on demand. For light dictation, built-in tools are adequate. For high-volume professional writing, the workflow gains compound."
+  }
+];
+
+const howToSteps = [
+  {
+    name: "Install Speech Recognition Cloud and set up a microphone",
+    text: "Fill out the form on this page to get the 30-day Professional trial. Install on a Windows 10 or Windows 11 computer. Plug in a USB headset, or install the mobile app on your iPhone or Android to use the phone as a wireless microphone. Allow microphone access when Windows prompts. No voice training, no enrolment, no calibration."
+  },
+  {
+    name: "Open the application you write in most",
+    text: "Open Outlook, Word, Teams, your CRM, your project management tool, or whichever Windows application generates the bulk of your writing day. Click into the email body, document, message field, or notes area you want to dictate into. Speech Recognition Cloud dictates directly at the cursor — no separate dictation window, no copy-paste step, no fallback to a holding box."
+  },
+  {
+    name: "Dictate in plain language",
+    text: "Start dictation. Speak as you would to a colleague — for example, for a sales follow-up email: 'Hi Sarah, thanks for the meeting this morning. As discussed, I will send through the revised proposal by Thursday with the updated pricing for the additional licences. Let me know if anything else comes up before then. Kind regards.' Punctuation is handled automatically. Capitalisation is automatic. What you say is what appears."
+  },
+  {
+    name: "Read it back, edit, and send",
+    text: "Read what you dictated. Edit by voice or keyboard for any names, acronyms, or industry terms the system did not catch — add them to your personal vocabulary as you go so they transcribe correctly thereafter. Send the email, save the document, or post the message. Most business users describe the first few items as awkward and the workflow becoming natural within a single half-day of use."
+  }
+];
+
+// Author Person schema for Russell Bewsell (cross-domain EEAT graph)
+const russellPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "name": "Russell Bewsell",
+  "jobTitle": "Founder and CEO, Voice Recognition Australia",
+  "url": "https://www.voicerecognition.com.au",
+  "sameAs": [
+    "https://www.linkedin.com/in/rbewsell/"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au"
+  }
+};
+
+const businessPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Voice to Text for Business -- Free Download",
-  "description": "Emails, reports, and documentation at the speed of speech. Speech Recognition Cloud for business.",
-  "url": site.siteUrl + "/business",
-  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
-}];
+  "@id": pageUrl + "#webpage",
+  "url": pageUrl,
+  "name": "Voice Dictation for Business: A Practical Guide",
+  "description": "Practical guide to voice dictation for executives, consultants, business owners, sales teams, and operations managers. Speech Recognition Cloud Professional: dictate emails, reports, proposals, and CRM notes 2-3x faster. Written by Russell Bewsell, Voice Recognition Australia.",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
+  "datePublished": "2026-05-16",
+  "dateModified": lastReviewed,
+  "lastReviewed": lastReviewed,
+  "about": [
+    { "@type": "Thing", "name": "Business dictation" },
+    { "@type": "Thing", "name": "Voice to text for professionals" },
+    { "@type": "Thing", "name": "Email dictation" },
+    { "@type": "Thing", "name": "Report writing software" },
+    { "@type": "Thing", "name": "CRM productivity" },
+    { "@type": "Thing", "name": "Executive productivity" }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Business professionals"
+  },
+  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "publisher": {
+    "@type": "Organization",
+    "name": site.organization.name,
+    "url": site.organization.url
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": pageUrl + "#faq",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": pageUrl + "#howto",
+  "name": "How to dictate your first business email or document",
+  "description": "A four-step walkthrough for business professionals new to voice dictation in Outlook, Word, Teams, and CRM platforms.",
+  "totalTime": "PT10M",
+  "tool": [
+    { "@type": "HowToTool", "name": "Windows 10 or Windows 11 computer" },
+    { "@type": "HowToTool", "name": "USB headset or smartphone as wireless microphone" },
+    { "@type": "HowToTool", "name": "Speech Recognition Cloud Professional (30-day trial)" }
+  ],
+  "step": howToSteps.map((s, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": s.name,
+    "text": s.text
+  }))
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Speech Recognition Cloud Professional",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Professional — 30-day free trial" },
+    { "@type": "Offer", "price": "159", "priceCurrency": "USD", "description": "Professional — annual" }
+  ]
+};
+
+const extraSchema = [russellPerson, businessPageSchema, faqSchema, howToSchema, softwareSchema];
+
+// SVG icons
+const icons = {
+  phone: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>',
+  cursor: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 8-6 2-2 6z"/><path d="M14 14l3 3"/></svg>',
+  cloud: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
+  text: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  mic: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+  wifi: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12" y2="20.01"/></svg>',
+  lock: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  zap: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4338CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>'
+};
 ---
-<BaseLayout title="Voice to Text for Business -- Free Download" description="Emails, reports, and documentation at the speed of speech. Speech Recognition Cloud for business." extraSchema={extraSchema}>
+<BaseLayout
+  title="Voice Dictation for Business: A Practical Guide"
+  description="Practical guide to voice dictation for executives, consultants, business owners, sales teams, and operations managers. Dictate emails, reports, proposals, and CRM notes 2-3x faster. Free 30-day Professional trial."
+  extraSchema={extraSchema}
+>
+  <!-- HERO -->
   <section class="section-pad">
-    <div class="container">
-      <div class="usecase-hero-split">
-        <div>
-          <p class="eyebrow">BUSINESS</p>
-          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Write emails, reports, and documents 3x faster</h1>
-          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Stop typing everything. Dictate emails, proposals, meeting notes, and reports directly into Outlook, Word, Teams, or any Windows application.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
-          <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+    <div class="container m-hero-split">
+      <div class="m-hero-text">
+        <p class="eyebrow">FOR BUSINESS PROFESSIONALS</p>
+        <h1 class="m-h1">Voice Dictation for Business: A Practical Guide</h1>
+        <p class="m-lead">Dictate emails, reports, proposals, and CRM notes 2 to 3 times faster than typing. Works in Outlook, Word, Teams, Salesforce, HubSpot, and any other Windows application. $159 USD per year. Free 30-day trial.</p>
+        <div class="m-cta-row">
+          <a href="#trial" class="btn-primary">Start free 30-day trial</a>
+          <a href="#quickstart" class="btn-secondary">Jump to quick start</a>
         </div>
-        {imgSrc('business-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('business-hero')} alt={imgAlt('business-hero')} loading="eager" decoding="async" /></div>
-        )}
+        <p class="muted m-micro">No credit card. Per-person licence — use it on as many computers as you work on. Reverts to the free tier after 30 days unless you upgrade.</p>
+      </div>
+      <div class="m-hero-img-wrap">
+        <img src={`${newImgBase}/business-executive-dictating-email-cbd-office-4a2e2a98.jpg`} alt="Australian business executive dictating an email at her desk in a CBD high-rise office" loading="eager" decoding="async" width="560" height="420" />
       </div>
     </div>
   </section>
-  <section class="download-strip">
-    <div class="container download-strip-inner">
-      <div><p class="download-strip-headline">Try free dictation for your business</p><p class="download-strip-sub">No credit card. No voice training. Install in 2 minutes.</p></div>
-      <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
+
+  <!-- HORIZONTAL FORM STRIP (preserved verbatim — AC form 293) -->
+  <section class="form-strip" id="trial">
+    <div class="container">
+      <div class="form-strip-inner">
+        <div class="form-strip-text">
+          <h2 style="font-size:18px;font-weight:700;margin-bottom:2px;color:#fff">Download the Free 30-Day Professional Trial</h2>
+          <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0">Full Professional functionality. No credit card required.</p>
+        </div>
+        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form" novalidate>
+          <input type="hidden" name="u" value="293" />
+          <input type="hidden" name="f" value="293" />
+          <input type="hidden" name="s" value="" />
+          <input type="hidden" name="c" value="0" />
+          <input type="hidden" name="m" value="0" />
+          <input type="hidden" name="act" value="sub" />
+          <input type="hidden" name="v" value="2" />
+          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <input type="text" name="fullname" id="biz-fullname" placeholder="Your name" required />
+          <input type="email" name="email" id="biz-email" placeholder="Your email" required />
+          <button type="submit" id="_form_293_submit" class="btn-primary" style="white-space:nowrap;padding:12px 28px;font-size:15px">Get started free</button>
+        </form>
+      </div>
+      <div id="_form_293_thank_you" style="display:none;text-align:center;padding:16px 0;color:#fff">
+        <p style="font-size:18px;font-weight:600;margin-bottom:4px">You're in!</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Professional access.</p>
+      </div>
     </div>
   </section>
+
+  <!-- WHAT IS IT? -->
   <section class="section-pad section-neutral">
-    <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for professional workflows</h2>
-      <div class="benefit-grid">
-        <div class="benefit"><h3>Dictate into any application</h3><p class="muted">Works at the cursor in Outlook, Word, Teams, Chrome, CRM systems, and any Windows application. No plugins needed.</p></div>
-        <div class="benefit"><h3>AI punctuation and formatting</h3><p class="muted">Speak naturally. The AI adds punctuation, capitalisation, and paragraph breaks automatically.</p></div>
-        <div class="benefit"><h3>Templates for repeated text</h3><p class="muted">Create templates for email signatures, standard paragraphs, and boilerplate. Insert by voice command.</p></div>
-        <div class="benefit"><h3>Custom vocabulary</h3><p class="muted">Add company names, product terms, industry jargon, and client names. The system learns your language.</p></div>
-        <div class="benefit"><h3>AI modes for productivity</h3><p class="muted">Use AI to rewrite, summarise, formalise, or proofread dictated text. Available on Professional plan.</p></div>
-        <div class="benefit"><h3>Privacy controls</h3><p class="muted">Audio is processed and immediately discarded. Text is not stored. Your data is never used for training.</p></div>
+    <div class="container m-prose">
+      <h2>What is Speech Recognition Cloud for business?</h2>
+      <p>Speech Recognition Cloud Professional is voice dictation software for Windows 10 and Windows 11 built for business professionals. You speak into a microphone, the words appear at the cursor in whatever Windows application is open — Outlook, Word, Teams, your CRM, your project management tool, a browser-based application, anywhere you can click and type. The base output is verbatim: what you say is what appears. The Professional plan also includes optional AI Modes that you can trigger on demand to rewrite, summarise, or formalise a passage of text you have already dictated.</p>
+      <p>For most professional roles, dictation runs at two to three times the pace of typing for prose-heavy work — emails, reports, proposals, briefings, status updates, follow-ups. It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian enterprise, government, healthcare, and professional services — with customers across the US, UK, Canada, New Zealand, and Europe.</p>
+    </div>
+  </section>
+
+  <!-- WHAT DOES IT WORK WITH? -->
+  <section class="section-pad">
+    <div class="container m-prose">
+      <h2>What business applications does Speech Recognition Cloud work with?</h2>
+      <p>It works with every Windows-based business application because it dictates at the cursor at the operating-system level — not as a plugin or per-system integration. That includes the Microsoft stack (Outlook, Word, Excel, PowerPoint, Teams, OneNote); the major CRM platforms (Salesforce, HubSpot, Pipedrive, Zoho, Microsoft Dynamics 365) in their browser or desktop interfaces; project management tools (Asana, Monday, ClickUp, Jira, Trello, Notion); messaging applications (Slack desktop, Microsoft Teams chat, Discord, Skype); browser-based applications (Gmail in a browser, Google Workspace, Atlassian Confluence, Zendesk, Intercom); and any other Windows application you can click into and type into. No per-system certification, no plugin to install, no per-application configuration.</p>
+      <p>The trade-off: the desktop application is Windows 10 and Windows 11 only — there is no native macOS or ChromeOS version. The mobile app for iPhone and Android partially mitigates this for Mac-based users through remote-desktop tunnelling and Voice Notes mode, but the desktop application itself is Windows only.</p>
+    </div>
+  </section>
+
+  <!-- HOW MUCH DOES IT COST? -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose">
+      <h2>How much does Speech Recognition Cloud Professional cost?</h2>
+      <p>$159 USD per year per person, with a free 30-day trial of full Professional functionality available through the form on this page. The licence is per person and can be used on as many computers as that person works on — desktop in the office, laptop at home, workstation at a client site, all on the same licence at no extra cost. Licences cannot be shared between team members because each personal vocabulary, template library, and preference set is tied to the individual account.</p>
+      <p>After the 30-day trial, the software reverts to the non-business Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. You either choose to upgrade to Professional or the software stays on the Free tier. For team rollouts, businesses typically issue trials to a small group first — usually three to five team members across different roles — to evaluate fit before broader deployment.</p>
+    </div>
+  </section>
+
+  <!-- FOUR BUSINESS WORKFLOWS -->
+  <section class="section-pad" id="workflows">
+    <div class="container m-prose">
+      <h2>What business workflows does voice dictation actually suit?</h2>
+      <p>Voice dictation suits four business workflows particularly well: the daily email and inbox load that consumes most professionals' mornings; long-form documents like proposals, reports, and briefings; CRM follow-ups and sales correspondence after every meeting; and the operations writing — policies, SOPs, team communications, status updates — that holds an organisation together. Each one is covered below.</p>
+
+      <h3>Email, inbox, and meeting follow-ups</h3>
+      <p>Email is the single highest-volume writing task in most professional roles. A senior executive will write between 40 and 100 substantive emails on an average day; consultants, account managers, and operations leads sit in a similar range. Most of these are short — a paragraph or two — and the bottleneck is not thinking but typing.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/business-consultant-mobile-dictation-between-meetings-d27b0df4.jpg`} alt="Australian management consultant using his smartphone as a wireless microphone to dictate a meeting follow-up in a corporate lobby between client meetings" loading="lazy" decoding="async" />
+        <figcaption>Consultant dictating a meeting follow-up between client meetings — the phone as a wireless microphone, the email appearing back at his desk.</figcaption>
+      </figure>
+
+      <p>Dictation suits this work for one obvious reason: emails are conversational, and conversational writing comes out faster when spoken than when typed. The pattern that compounds:</p>
+      <ul>
+        <li>Open Outlook (or Gmail in a browser, or your team messaging surface). Click into the reply or new-message body.</li>
+        <li>Dictate the email in plain language. Punctuation is automatic. Capitalisation is automatic. Your standard closing — whatever it is — saved as a template and triggered with a short voice command.</li>
+        <li>Read it back, edit anything the system did not catch, send.</li>
+        <li>Time per email: usually about a third of what it took to type. Multiplied across 40 to 100 emails a day, it adds up.</li>
+      </ul>
+      <p>Meeting follow-ups are the special case worth calling out. Most professionals know they should send a clear written summary after every significant meeting; most do not, because the activation energy of typing it up is just high enough to push the task into next week. With the mobile app's Voice Notes mode, you can dictate the follow-up walking back to your desk, in a taxi, or between rooms — and the email draft is waiting on your screen when you sit down. Closing the gap between meeting and follow-up is, for many professionals, the largest single productivity gain dictation delivers.</p>
+
+      <h3>Proposals, reports, and long-form documents</h3>
+      <p>Long-form documents — proposals to prospective clients, internal strategy papers, quarterly business reviews, board reports, consultancy deliverables — are where most professionals spend their largest single blocks of writing time. They are also where the time recovery from dictation is largest in absolute terms.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/business-owner-dictating-proposal-coworking-03d4a3c9.jpg`} alt="Australian female business owner dictating a proposal at a co-working space desk, working from a printed draft" loading="lazy" decoding="async" />
+        <figcaption>Business owner dictating a proposal from a printed draft — the spoken voice usually reads warmer than the typed equivalent.</figcaption>
+      </figure>
+
+      <p>Patterns that work for long-form writing:</p>
+      <ul>
+        <li><strong>Standard scaffolding as templates.</strong> The opening of a proposal, the structure of an executive summary, the standard sections of a quarterly review, the closing of a board paper — save each as a template you can insert with a short voice command. The patient-specific or client-specific content is dictated in between.</li>
+        <li><strong>Draft first, polish later.</strong> Dictate a rough version of the whole document in one pass without stopping to edit. Then read it back and tighten. Trying to dictate polished prose in real time slows almost everyone down; the dictated-then-polished workflow is usually two to three times faster than typing-while-editing.</li>
+        <li><strong>Long emails count too.</strong> The 500- to 1500-word email — the strategic update, the response to a complex client question, the explanation of a difficult decision — is essentially a short document. The same workflow applies.</li>
+        <li><strong>The voice usually reads warmer.</strong> Dictated prose tends to sound more like the actual writer than typed prose, because typed prose gets edited toward a neutral middle while dictated prose preserves the cadence of how you naturally speak. For client-facing writing, that is usually a feature, not a bug.</li>
+      </ul>
+
+      <h3>Sales, CRM, and account management</h3>
+      <p>Sales account managers, business development leads, and customer success teams share a workflow problem: every meaningful customer interaction generates a CRM note, a follow-up email, and at least one internal update — and the writing time eats directly into selling time.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/business-sales-account-manager-crm-followup-53f0bb49.jpg`} alt="Australian male sales account manager dictating a CRM follow-up note from his home office using a USB headset" loading="lazy" decoding="async" />
+        <figcaption>Sales account manager dictating a customer follow-up directly into the CRM — at the cursor, no copy-paste step.</figcaption>
+      </figure>
+
+      <p>Where dictation pays off across the sales workflow:</p>
+      <ul>
+        <li><strong>CRM activity notes.</strong> Salesforce, HubSpot, Pipedrive, Zoho, Dynamics — the notes field on every meeting, call, or email is where deal context lives, and where it tends to be skimped on because typing it up feels like overhead. Dictation makes the note longer, more accurate, and faster to produce.</li>
+        <li><strong>Customer follow-up emails.</strong> The polished, personal follow-up that references specific details from the conversation — the kind of email that wins deals — is dramatically faster to dictate from your own memory than to type while staring at a blank screen.</li>
+        <li><strong>Internal handovers and account updates.</strong> The Monday-morning account-status update to your team, the handover note when you go on leave, the briefing for a colleague joining a deal mid-cycle. All prose-heavy, all faster spoken.</li>
+        <li><strong>Mobile dictation between calls.</strong> The mobile app is genuinely useful in field sales. Voice Notes mode lets the rep dictate the CRM note while walking back to the car after a customer visit; the note is waiting on the laptop screen when they sit down. The compounding effect across a week of customer visits is significant.</li>
+      </ul>
+
+      <h3>Operations, policies, and team communications</h3>
+      <p>The operations and management writing load is the writing nobody talks about and the writing that consumes the most underestimated time in most organisations: policies and procedures, standard operating procedures, team communications about process changes, status updates to leadership, project briefs, post-mortem documents, and the long internal emails that keep an organisation aligned.</p>
+
+      <figure class="m-figure">
+        <img src={`${newImgBase}/business-operations-manager-team-message-7baec689.jpg`} alt="Australian operations manager in her mid-fifties dictating a long message into a team chat application from a hot-desk in a professional services office" loading="lazy" decoding="async" />
+        <figcaption>Operations manager dictating a long team-chat message — the longer the message, the bigger the dictation advantage over typing.</figcaption>
+      </figure>
+
+      <p>Patterns that work for operations writing:</p>
+      <ul>
+        <li><strong>Policies and SOPs.</strong> Dictate the substantive content in plain language, edit on screen. A policy that would have taken half a morning to type usually drops to 20 to 30 minutes dictated plus edited.</li>
+        <li><strong>Status updates and weekly notes.</strong> The standing weekly update to leadership, the team's Monday-morning summary, the project status email — all heavily prose, all easier dictated than typed.</li>
+        <li><strong>Long team-chat messages.</strong> The 200- to 600-word message in Teams or Slack explaining a change, sharing context on a decision, or briefing the team on something complex. Long chat messages are essentially short emails, and the same dictation advantage applies.</li>
+        <li><strong>Post-mortems and retrospectives.</strong> Incident write-ups, project retrospectives, post-quarter reviews. These are documents where being thorough matters and where most people skimp because typing it all up is exhausting. Dictation makes the thoroughness affordable.</li>
+        <li><strong>Templates plus AI Modes for tone.</strong> Operations writing often has to land at a specific tone — formal, neutral, sensitive — that does not come naturally on first pass. Dictate a rough draft, then use AI Modes on the Professional plan to formalise or soften a passage on demand.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS NOT -->
+  <section class="section-pad section-neutral" id="what-this-is-not">
+    <div class="container m-prose">
+      <h2>What Speech Recognition Cloud is <em>not</em></h2>
+      <p>Speech recognition, AI meeting assistants, transcription services, and AI writing tools are different categories of product. They are often discussed as if they were interchangeable, and the resulting confusion costs businesses money on the wrong tool. Worth being explicit about what Speech Recognition Cloud Professional does not do.</p>
+
+      <h3>Is it a meeting notetaker like Otter, Fireflies, or Fathom?</h3>
+      <p>No. AI meeting notetakers join your calls, record both sides of the conversation, and produce a transcript and summary afterwards. They are useful, and many professionals use them alongside Speech Recognition Cloud. Speech Recognition Cloud is different: it transcribes <em>your live speech</em> into whichever application <em>you are currently working in</em>. It does not join meetings, record conversations, or summarise multi-speaker discussions. The meeting notetaker captures the meeting; Speech Recognition Cloud writes the follow-up email afterwards.</p>
+
+      <h3>Is it an AI writing assistant like ChatGPT or Microsoft Copilot?</h3>
+      <p>Not primarily. The Professional plan includes optional AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can rewrite, summarise, or formalise text you have dictated — but the core product is dictation, not AI generation. You speak, the words appear, and the AI Modes are tools you trigger on demand if you want them. If you never use the AI features, the product is straight verbatim dictation. That separation matters because it means you choose, sentence by sentence, whether AI is in the loop.</p>
+
+      <h3>Will it transcribe a recording of a meeting I had yesterday?</h3>
+      <p>No. Speech Recognition Cloud transcribes live speech as you dictate. It does not accept audio file uploads, does not transcribe pre-recorded meetings, and does not process video files. For after-the-fact transcription of recorded audio, you want a separate transcription service. Live dictation and recorded-audio transcription are different categories of product.</p>
+
+      <h3>Is my data used to train AI models?</h3>
+      <p>No. Audio is processed in memory and immediately erased — it is never written to disk on our servers, never retained, and never used to train any model. Transcripts are delivered to the cursor on your own computer and never copied to our servers. The custom vocabulary you build stays on your own device. The only thing stored anywhere on our infrastructure is your encrypted email address.</p>
+
+      <h3>Will it fix my writing or make my emails better?</h3>
+      <p>No — and it would be misleading to suggest otherwise. Speech Recognition Cloud is a productivity tool, not a writing coach. It will make you faster at producing whatever quality of writing you currently produce. The AI Modes on the Professional plan can rewrite a passage to be more formal or more concise if you trigger them, but they are an on-demand option, not a writing-quality guarantee. Quality still comes from the writer; speed comes from the tool.</p>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT AND PRIVACY -->
+  <section class="section-pad">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What should our business check before deploying voice dictation across the team?</h2>
+      <p>Three practical questions to work through with IT, operations, or whoever owns information governance before deploying Speech Recognition Cloud across a team: what data leaves the workstation, what is stored anywhere, and how the team will handle dictation in open-plan or shared workspaces.</p>
+      <ol class="m-numbered">
+        <li><strong>What does the software process, and where does the audio go?</strong><br/>Speech Recognition Cloud sends audio to the cloud for transcription. Audio is processed in memory only and immediately erased — never written to disk on our servers, never retained, and never accessible to our staff. Transcribed text is delivered to the cursor on the local computer; we do not retain a copy. Custom vocabulary stays on the device. Our <a href="/privacy" class="m-link">privacy and data-handling statement</a> documents this in full and is the document to share with your IT or compliance lead.</li>
+        <li><strong>What data is stored anywhere on our infrastructure?</strong><br/>Only the user's email address, and it is encrypted. We do not store audio, transcripts, custom vocabulary, voice profiles, or dictation history. There is no business content of any kind on our servers because there is nothing for us to store. The data path is: microphone to our service, transcription in memory, words to the cursor, audio erased.</li>
+        <li><strong>How will the team handle dictation in open-plan offices?</strong><br/>Voice dictation in an open-plan environment raises the same considerations as a phone call about confidential business matters. The mobile app used as a wireless microphone (held close to the mouth, directional audio), a USB headset, or a directional desk microphone all help keep dictation private from colleagues nearby. This is workflow hygiene rather than software configuration, but it is worth thinking through during deployment — particularly for client-confidential work, HR matters, and commercially sensitive content.</li>
+      </ol>
+      <p>The data-protection frameworks that govern business dictation vary by jurisdiction. The three most relevant for our visitors are covered below.</p>
+    </div>
+  </section>
+
+  <!-- REGIONAL APPENDIX -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:820px">
+
+      <!-- AUSTRALIA -->
+      <div class="m-regional-panel">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
+        <h2>Is Speech Recognition Cloud suitable for Australian businesses under the Privacy Act and APP?</h2>
+        <p>Yes, subject to your organisation's own privacy review. The Australian Privacy Principles under the Privacy Act 1988 apply to APP entities — generally Australian businesses with annual turnover above $3 million, plus health service providers, contracted service providers to the Commonwealth, and certain other categories. The fact that Speech Recognition Cloud stores no business content — only an encrypted email address — simplifies the privacy assessment considerably. Audio is processed in memory and immediately erased, transcripts are not retained, and our staff cannot access either.</p>
+
+        <p><strong>Notifiable Data Breaches scheme.</strong> APP entities subject to the NDB scheme need to understand where personal information flows in any cloud service they deploy. The relevant material to provide your privacy officer is our privacy and data-handling statement, which sets out plainly that we store no business or personal content beyond the user's encrypted email address.</p>
+
+        <p><strong>Australian business applications.</strong> The cursor-based approach works inside the Microsoft 365 stack (Outlook, Word, Teams, OneNote), all the major CRMs used in Australia (Salesforce, HubSpot, Pipedrive, Zoho, Dynamics, ActiveCampaign, Insightly), accounting platforms (Xero, MYOB, QuickBooks Online), professional services management (Practice Ignition, Karbon, FYI Docs), and the project management tools used by Australian SMBs (Asana, Monday, ClickUp, Trello, Notion). No per-system certification.</p>
+
+        <p><strong>Australian Consumer Law and the Spam Act.</strong> Dictation does not change the rules — your obligations under the ACL and the Spam Act 2003 are the same whether the email was typed or dictated. The point is worth making because dictated email tends to be longer and more conversational than typed email, which is usually a good thing for customer rapport but worth a sense-check before sending bulk or marketing communications.</p>
+
+        <p>For broader voice-technology procurement across Australian business — including enterprise rollouts, on-site training, and Dragon Professional licensing for organisations that specifically require that product — our parent business, Voice Recognition Australia, has been supplying Australian enterprise, government, and professional services for over 25 years.</p>
+      </div>
+
+      <!-- UNITED STATES -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
+        <h2>Is Speech Recognition Cloud suitable for US businesses under CCPA and state privacy laws?</h2>
+        <p>Yes, subject to your organisation's privacy assessment. The California Consumer Privacy Act and the growing patchwork of state-level privacy laws (CCPA, CPRA, Virginia CDPA, Colorado CPA, Connecticut DPA, Utah UCPA, and the rest) generally require organisations to map where personal information flows in any vendor relationship. Speech Recognition Cloud's underlying data handling — audio processed in memory and immediately erased, no transcripts stored, no business content retained, only an encrypted email address — supports compliant deployment under those frameworks. US businesses should review our privacy statement against their own data inventory before deploying.</p>
+
+        <p><strong>US business applications.</strong> The cursor-based approach works inside the Microsoft 365 stack, Google Workspace (in a browser), Salesforce, HubSpot, Pipedrive, Zendesk, Intercom, NetSuite, Workday surfaces in a browser, Slack desktop, Microsoft Teams, and the other major US business platforms. No per-system certification.</p>
+
+        <p><strong>Sector-specific compliance.</strong> Businesses subject to sector-specific regimes — HIPAA (if you handle health data), GLBA (financial services), SOX (publicly traded companies), or PCI DSS (payment card data) — should treat Speech Recognition Cloud the same way they treat any other cloud productivity tool: review the data flows, document them, and decide whether they fit your existing compliance posture. The fact that no business content is stored on our servers usually simplifies that conversation.</p>
+
+        <p><strong>Enterprise deployment.</strong> For US businesses deploying across teams of 10 to 100+ professional staff, the per-person economics ($159 USD per year) are usually a small fraction of the productivity uplift per person. The 30-day trial is the standard way to evaluate fit on real workflows before broader rollout.</p>
+      </div>
+
+      <!-- UNITED KINGDOM AND EU -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED KINGDOM AND EUROPE</p>
+        <h2>Is Speech Recognition Cloud suitable for UK and EU businesses under UK GDPR and EU GDPR?</h2>
+        <p>Yes, subject to your organisation's data protection impact assessment. UK GDPR and EU GDPR apply to most business processing of personal data, and the question for any cloud service is the same: what personal data flows where, who can access it, and what is stored. Speech Recognition Cloud's data flows — audio processed in memory and immediately erased, transcripts delivered to the user's own cursor and never copied to our servers, custom vocabulary stays on the device, only an encrypted email address stored on our infrastructure — make the DPIA conversation a short one. UK and EU businesses should review our privacy statement against their existing record of processing activities (ROPA) before deploying.</p>
+
+        <p><strong>UK and EU business applications.</strong> The cursor-based approach works inside Microsoft 365 (used across UK and EU enterprise), Google Workspace, the major European CRMs (Salesforce, HubSpot, Pipedrive, Microsoft Dynamics), and the messaging surfaces used by UK and EU teams (Teams, Slack, Element). No per-system certification.</p>
+
+        <p><strong>Cross-border data flows.</strong> Cross-border transfer rules vary — UK businesses transferring data to the US, EU businesses transferring data anywhere outside the EEA, and the various adequacy frameworks (UK-US Data Bridge, EU-US Data Privacy Framework). The simplification that helps here: we do not store business content. Audio is processed and erased; transcripts are not stored. The cross-border data inventory for Speech Recognition Cloud is essentially the user's encrypted email address.</p>
+
+        <p><strong>Languages.</strong> Speech Recognition Cloud Professional supports 57 languages, which makes it useful for European businesses operating across multiple language markets — German, French, Spanish, Italian, Dutch, Polish, Portuguese, the Scandinavian languages, and the rest. Custom vocabulary and templates can be maintained per-language per-user.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW TO QUICK START -->
+  <section class="section-pad" id="quickstart">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>How do I get started dictating my first business email or document?</h2>
+      <p>Four steps, about ten minutes from install to first email: install Speech Recognition Cloud (use the form on this page for the free 30-day Professional trial), set up a microphone, open the application you write in most, and dictate in plain language. Punctuation is automatic. Capitalisation is automatic. The detailed walkthrough is below.</p>
+      <ol class="m-howto">
+        {howToSteps.map((s, i) => (
+          <li>
+            <h3>Step {i + 1} — {s.name}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+      <p>If after a half-day of use it still feels slower than typing, dictation may not suit your work — and that is a useful thing to discover during a 30-day trial rather than three months in. For more setup help, see the <a href="/support/getting-started" class="m-link">getting-started walkthrough</a>.</p>
+    </div>
+  </section>
+
+  <!-- PRACTICAL TIPS -->
+  <section class="section-pad section-neutral">
+    <div class="container m-prose" style="max-width:780px">
+      <h2>What do experienced business users wish they had known before starting voice dictation?</h2>
+      <p>Five tips that compound across a year: build a personal vocabulary in the first week, save your standard email phrasing as templates, draft first and polish later, use the mobile app for meeting follow-ups on the move, and read every email back before you send it. The last one is the discipline that separates people who use dictation well from people who get into trouble with it.</p>
+
+      <h4>Build personal vocabulary in the first week</h4>
+      <p>Your clients' company names, your colleagues' names, your industry acronyms, product names, internal project codenames, and the small handful of words the system does not catch first time — add each one to your personal vocabulary as you go. Five minutes of vocabulary-building in your first week saves hours of corrections across the year. Personal vocabulary stays on your own device — never sent to or stored on our servers.</p>
+
+      <h4>Save your standard email phrasing as templates</h4>
+      <p>Your usual greeting, your standard sign-off, the boilerplate you reuse on quotes or proposals, the structure of your weekly update email, the framing of your standard cold outreach — save each as a named template you can insert with a short voice command. Templates and text replacements come with the Professional plan and are usually the feature that delivers the largest productivity gain after the first week.</p>
+
+      <h4>Draft first, polish later</h4>
+      <p>Do not try to dictate a perfect first sentence. Dictate the whole email or document in one pass without stopping. Then read it back and edit. Trying to speak polished prose in real time slows almost everyone down, and most business writing reads better with the cadence of natural speech in it rather than the cadence of carefully edited typing.</p>
+
+      <h4>Use the mobile app for meeting follow-ups on the move</h4>
+      <p>The single biggest productivity gain most professionals get from dictation is closing the gap between meeting and follow-up. Voice Notes mode on the mobile app lets you dictate the follow-up email while walking back to your desk, in a taxi, or between offices. The draft is waiting on your screen when you sit down — usually a 30-second edit-and-send rather than a "I'll write it up later" that becomes a "I forgot to follow up."</p>
+
+      <h4>Read every important email back before you send it</h4>
+      <p>This is the discipline that separates people who use dictation well from people who get into trouble with it. Read your dictated emails back before sending — particularly the ones that matter. The reading-back step is fast (seconds) and it catches the small transcription errors that occasionally carry meaning: "no" transcribed as "now," a client name that swapped with the previous client's, a number that came through wrong. The system is accurate; the writer is responsible for what gets sent.</p>
+    </div>
+  </section>
+
+  <!-- SUPPORTING FEATURES GRID -->
+  <section class="section-pad">
+    <div class="container" style="max-width:880px">
+      <h2 class="text-center" style="margin-bottom:12px">Built for how professionals actually work</h2>
+      <p class="muted text-center" style="max-width:600px;margin:0 auto 48px;font-size:16px">Every feature designed around real business workflows — at the desk, in meetings, and on the move.</p>
+
+      <div class="benefit-list">
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cursor} />
+          <div>
+            <h3>Dictates at the cursor in every Windows application</h3>
+            <p class="muted">Outlook, Word, Excel, PowerPoint, Teams, OneNote, Salesforce, HubSpot, Pipedrive, Slack desktop, browser-based applications, your CRM, your project management tool — text appears exactly where the cursor is. No separate dictation window, no copy-paste step, no plugin to install per application. Switch between applications instantly without reconfiguring anything.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.zap} />
+          <div>
+            <h3>Automatic punctuation and capitalisation</h3>
+            <p class="muted">No need to say "full stop," "comma," "new line," or "capital." Speech Recognition Cloud handles punctuation and capitalisation automatically based on the natural rhythm of your speech. Business dictation flows naturally — you speak the email, you do not narrate the punctuation. This is a meaningful workflow improvement over dictation tools that require spoken punctuation commands.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.text} />
+          <div>
+            <h3>Templates and text replacements for boilerplate</h3>
+            <p class="muted">Save acronyms, standard email phrasing, your sign-off, proposal scaffolding, or complete boilerplate paragraphs that expand on voice command. If you regularly write the same opening, closing, or standard sections, trigger them with a short spoken phrase instead of dictating them from scratch every time. The Professional plan includes Templates and Text Replacements.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.phone} />
+          <div>
+            <h3>Mobile app — your phone as a wireless microphone</h3>
+            <p class="muted">A mobile app for iPhone and Android turns your smartphone into a wireless microphone for Speech Recognition Cloud on your PC. Hold your phone, dictate, and the text appears in whichever Windows application has the cursor on your computer. Useful in open-plan offices, hot-desking environments, and anywhere a desktop microphone is impractical.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.wifi} />
+          <div>
+            <h3>Voice Notes mode for meeting follow-ups on the move</h3>
+            <p class="muted">Dictate completely away from your computer — between meetings, in a taxi or rideshare, walking back to your desk. The transcription is created on your phone and automatically delivered to the open Speech Recognition Cloud session back at your PC. The follow-up email or CRM note is waiting on your screen when you sit down. The fastest way to close the gap between meeting and follow-up.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.cloud} />
+          <div>
+            <h3>Optional AI Modes — on demand, never automatic</h3>
+            <p class="muted">The Professional plan includes AI Modes (Write, Rewrite, Answer, Reply, Run Command) that can tighten a long email, formalise a casual draft, summarise meeting notes into a brief, or generate a quick reply — but only when you trigger them on a passage of text. If you never use them, the product is straight verbatim dictation. You decide, sentence by sentence, whether AI is in the loop.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.lock} />
+          <div>
+            <h3>Nothing stored except an encrypted email address</h3>
+            <p class="muted">No audio. No transcripts. No custom vocabulary. No voice profiles. No dictation history. The only thing we store anywhere is your email address, and it is encrypted. Audio is processed in memory and immediately erased. Transcripts go to your cursor and are never copied to our servers. Personal vocabulary stays on your own device. There is nothing for us to lose, leak, or hand over because nothing is there.</p>
+          </div>
+        </div>
+
+        <div class="benefit-rich">
+          <div class="benefit-icon" set:html={icons.mic} />
+          <div>
+            <h3>One licence, as many computers as you work on</h3>
+            <p class="muted">A Speech Recognition Cloud Professional licence is per person and can be used on as many computers as that person works on — desktop in the office, laptop at home, workstation at a client site, all on the same licence at no extra cost. The only rule: licences are per person, not shared between team members, because the personal vocabulary, templates, and preferences are tied to the individual account.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <section class="section-pad" id="demo">
+
+  <!-- DEMO VIDEO -->
+  <section class="section-pad section-neutral" id="demo">
     <div class="container text-center">
-      <h2 style="margin-bottom:8px">See it in action</h2>
-      <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
+      <h2 style="margin-bottom:8px">Watch a 60-second business dictation demonstration</h2>
+      <p class="muted" style="font-size:16px;margin-bottom:24px">See Speech Recognition Cloud Professional in action drafting a real business email.</p>
       <div class="yt-facade" data-ytid="vp0LFuRWdKI">
-        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
+        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Business voice to text dictation demonstration" loading="lazy" decoding="async" />
         <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
       </div>
     </div>
   </section>
-  <section class="section-pad section-dark" style="padding:60px 0">
-    <div class="container text-center">
-      <h2 style="margin-bottom:12px">Start dictating today</h2>
-      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
-      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
+
+  <!-- SECURITY -->
+  <section class="section-pad section-dark">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Nothing about your business is stored on our servers</h2>
+      <p class="muted" style="margin-bottom:32px">No audio. No transcripts. No vocabulary. No voice profiles. No dictation history. The only thing we store anywhere is your email address — encrypted. Audio is processed in memory and immediately erased. All connections encrypted. AI Modes are on-demand only, never automatic.</p>
+      <a href="/privacy" style="color:var(--dark-accent);font-weight:600">Read our privacy policy &rarr;</a>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:780px">
+      <h2 class="text-center" style="margin-bottom:28px">Frequently asked questions</h2>
+      {faqItems.map(item => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+      <p class="m-faq-closer muted">For more setup answers, see the <a href="/support/faq" class="m-link">support FAQ</a>.</p>
+    </div>
+  </section>
+
+  <!-- AUTHOR BYLINE -->
+  <section class="section-pad">
+    <div class="container" style="max-width:780px">
+      <div class="m-author-panel">
+        <h2>About this page</h2>
+        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years deploying speech recognition</a> across Australian enterprise, government, professional services, and healthcare — primarily in Australia, with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your business setting does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p class="m-reviewed muted">Last reviewed: 16 May 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section-pad section-dark" style="padding:40px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Try Speech Recognition Cloud Professional free for 30 days</h2>
+      <p class="muted" style="margin-bottom:24px">Dictate emails, reports, and CRM notes 2-3x faster. No credit card. Per-person licence, unlimited computers. Fill out the form above to get started.</p>
+      <a href="#trial" class="btn-primary btn-lg">Get started free</a>
+    </div>
+  </section>
+
   <style is:inline>
+    .section-pad{padding:40px 0}
+
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
-    .download-strip{background:#4338CA;padding:28px 0}
-    .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
-    .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
-    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
-    .benefit .muted{font-size:14px;line-height:1.7}
+    .m-h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:18px;line-height:1.18;letter-spacing:-0.02em}
+    .m-lead{font-size:17px;line-height:1.65;margin-bottom:24px;max-width:560px;color:var(--text)}
+    .m-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .m-micro{font-size:13px}
+    .m-hero-split{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center}
+    .m-hero-img-wrap{display:flex;justify-content:center}
+    .m-hero-img-wrap img{width:100%;max-width:480px;border-radius:16px;object-fit:cover;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+
+    /* Form strip */
+    .form-strip{background:#4338CA;padding:24px 0}
+    .form-strip-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+    .form-strip-text{flex:0 0 auto}
+    .form-strip-form{display:flex;gap:10px;flex:1;align-items:center;flex-wrap:wrap}
+    .form-strip-form input[type="text"],.form-strip-form input[type="email"]{flex:1;min-width:160px;padding:12px 14px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .form-strip-form input::placeholder{color:rgba(255,255,255,0.6)}
+    .form-strip-form input:focus{outline:none;border-color:#fff;background:rgba(255,255,255,0.15)}
+
+    .m-prose{max-width:820px}
+    .m-prose h2{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 16px;letter-spacing:-0.015em}
+    .m-prose h3{font-size:20px;font-weight:700;margin:28px 0 12px;letter-spacing:-0.01em}
+    .m-prose h4{font-size:17px;font-weight:700;margin:22px 0 8px}
+    .m-prose p{font-size:16px;line-height:1.75;color:var(--text);margin:0 0 14px}
+    .m-prose ul{margin:8px 0 18px 0;padding-left:22px}
+    .m-prose ul li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--text)}
+    .m-prose em{font-style:italic}
+    .m-prose strong{font-weight:700}
+    .m-link{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+    .m-link:hover{color:#3730A3}
+
+    .m-numbered{margin:8px 0 18px 0;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+    .m-numbered li{font-size:16px;line-height:1.75;color:var(--text)}
+
+    .m-howto{list-style:none;padding:0;margin:8px 0 20px;counter-reset:howto;display:flex;flex-direction:column;gap:18px}
+    .m-howto li{position:relative;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:#fff}
+    .m-howto h3{margin:0 0 6px;font-size:16px;font-weight:700}
+    .m-howto p{margin:0;font-size:15px;line-height:1.7}
+
+    .m-regional-panel{padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .m-regional-eyebrow{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+    .m-regional-panel h2{font-size:22px;font-weight:700;margin:0 0 14px;letter-spacing:-0.015em}
+    .m-regional-panel p{font-size:15px;line-height:1.75;margin:0 0 12px;color:var(--text)}
+
+    .m-author-panel{padding:24px 28px;border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:12px;background:var(--brand-lightest)}
+    .m-author-panel h2{font-size:20px;font-weight:700;margin:0 0 12px}
+    .m-author-panel p{font-size:15px;line-height:1.75;margin:0 0 10px;color:var(--text)}
+    .m-author-sig{font-weight:600}
+    .m-reviewed{font-size:13px;margin-top:8px !important}
+
+    .m-figure{margin:24px 0 28px;padding:0}
+    .m-figure img{width:100%;max-width:820px;height:auto;border-radius:14px;object-fit:cover;box-shadow:0 12px 36px rgba(0,0,0,0.10);display:block}
+    .m-figure figcaption{font-size:14px;color:var(--muted);font-style:italic;text-align:center;margin-top:10px;padding:0 8px;line-height:1.55}
+
+    .benefit-list{display:flex;flex-direction:column;gap:28px}
+    .benefit-rich{display:flex;gap:20px;padding:28px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit-icon{flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#EEF2FF;border-radius:12px;margin-top:2px}
+    .benefit-rich h3{font-size:17px;font-weight:700;margin:0 0 8px}
+    .benefit-rich .muted{font-size:14px;line-height:1.75;margin:0}
+
+    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}
+    .yt-facade img{width:100%;height:100%;object-fit:cover}
+    .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}
+    .yt-facade:hover .yt-play{opacity:1}
+    .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{padding:16px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';font-size:22px;color:var(--muted);font-weight:400;flex-shrink:0}
+    .faq-item[open] .faq-question::after{content:'–'}
+    .faq-answer{padding:0 0 16px}
+    .faq-answer p{color:var(--muted);font-size:15px;line-height:1.75;margin:0}
+    .m-faq-closer{margin-top:20px;font-size:14px;text-align:center}
+
     .btn-lg{padding:14px 36px;font-size:17px}
-    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
+
+    @media(max-width:768px){
+      .section-pad{padding:28px 0}
+      .m-hero-split{grid-template-columns:1fr;gap:24px}
+      .m-hero-img-wrap img{max-width:100%}
+      .form-strip-inner{flex-direction:column;align-items:stretch;gap:16px;text-align:center}
+      .form-strip-form{flex-direction:column}
+      .form-strip-form input[type="text"],.form-strip-form input[type="email"]{min-width:auto;width:100%}
+      .benefit-rich{flex-direction:column;gap:12px}
+      .m-prose h2{font-size:22px}
+      .m-prose h3{font-size:18px;margin-top:22px}
+      .m-prose p, .m-prose ul li{font-size:15px}
+      .m-author-panel{padding:22px}
+      .m-regional-panel{padding:22px}
+      .m-figure{margin:20px 0 24px}
+      .m-figure figcaption{font-size:13px}
+    }
   </style>
+
+  <!-- AC Form 293 submission script (preserved verbatim) -->
+  <script is:inline>
+    (function(){
+      var form = document.getElementById('_form_293_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_293_thank_you');
+
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.querySelector('[name="fullname"]');
+        var email = form.querySelector('[name="email"]');
+        if (!name.value.trim() || !email.value.trim()) return;
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
+          email.style.borderColor = '#F37C7B';
+          return;
+        }
+        var btn = document.getElementById('_form_293_submit');
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() {
+          btn.disabled = false;
+          btn.textContent = 'Get started free';
+          alert('Something went wrong. Please try again.');
+        };
+        document.head.appendChild(script);
+
+        window._show_thank_you = function(id, message) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+          thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Professional access.</p>';
+        };
+      });
+    })();
+  </script>
+
+  <!-- YouTube facade -->
   <script is:inline>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
   </script>
