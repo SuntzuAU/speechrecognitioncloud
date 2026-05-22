@@ -232,7 +232,7 @@ const breadcrumbSchema = {
       if (!link) return;
       try {
         if (typeof rdt === 'function') {
-          rdt('track', 'Lead', { customEventName: 'download_click' });
+          rdt('track', 'Lead');
         }
       } catch (err) { /* fail silently to never block the download */ }
     });
