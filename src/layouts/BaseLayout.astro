@@ -225,5 +225,17 @@ const breadcrumbSchema = {
       this.setAttribute('aria-expanded', isOpen);
     });
   </script>
+  <!-- Reddit Pixel: track Download button clicks as Lead conversions -->
+  <script is:inline>
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a[href*="SpeechRecognitionCloudInstaller.exe"]');
+      if (!link) return;
+      try {
+        if (typeof rdt === 'function') {
+          rdt('track', 'Lead', { customEventName: 'download_click' });
+        }
+      } catch (err) { /* fail silently to never block the download */ }
+    });
+  </script>
 </body>
 </html>
