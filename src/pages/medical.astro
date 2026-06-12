@@ -203,6 +203,12 @@ const icons = {
           <a href="#quickstart" class="btn-secondary">Jump to quick start</a>
         </div>
         <p class="muted m-micro">No credit card. Reverts to the free tier (20 min/month) after the trial unless you upgrade.</p>
+        <div class="m-stat-pills">
+          <span class="m-pill">Windows 10 &amp; 11</span>
+          <span class="m-pill">57 languages</span>
+          <span class="m-pill">30-day free trial</span>
+          <span class="m-pill">No credit card</span>
+        </div>
       </div>
       <div class="m-hero-img-wrap">
         <img src={`${imgBase}/Speech-to-Text-Medical-Doctor-hero.jpg`} alt="Medical professional dictating clinical notes using speech recognition software" loading="eager" decoding="async" width="560" height="420" />
@@ -248,7 +254,7 @@ const icons = {
   </section>
 
   <!-- WHAT DOES IT WORK WITH? -->
-  <section class="section-pad">
+  <section class="section-pad section-brand-soft">
     <div class="container m-prose">
       <h2>What EMRs and clinical applications does Speech Recognition Cloud work with?</h2>
       <p>It works with every Windows-based EMR and practice management system because it dictates at the cursor at the operating-system level — not as a plugin or integration. That includes Best Practice, Medical Director, Genie, Zedmed, Communicare, and Helix in Australia; EMIS Web, SystmOne, Vision, and Adastra in the UK; Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks, NextGen, Allscripts (Veradigm), and Practice Fusion in the US; plus Microsoft Word, Outlook, Teams, OneNote, browser-based hospital portals, and any other Windows application you can click into and type into. There is no per-EMR certification, no plugin required, and no per-system setup.</p>
@@ -639,7 +645,11 @@ const icons = {
   </section>
 
   <style is:inline>
-    .section-pad{padding:40px 0}
+    .section-pad{padding:56px 0}
+    .section-brand-soft{background:#EEF2FF}
+    .m-stat-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .m-pill{display:inline-flex;align-items:center;padding:5px 12px;background:#EEF2FF;color:#4338CA;border-radius:20px;font-size:13px;font-weight:600;border:1px solid #C7D2FE}
+    .m-prose h2{border-left:3px solid #4338CA;padding-left:14px;margin-left:-17px}
 
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
     .m-h1{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:18px;line-height:1.18;letter-spacing:-0.02em}
