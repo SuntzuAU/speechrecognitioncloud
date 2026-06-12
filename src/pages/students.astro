@@ -5,85 +5,261 @@ import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
 function imgAlt(key) { return manifest[key]?.altText || key; }
-const extraSchema = [{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Free Speech to Text for Students",
-  "description": "Essays, notes, and assignments faster. Affordable plans for students.",
-  "url": site.siteUrl + "/students",
-  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
-}];
+
+const extraSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Why Do Students Use Speech Recognition at School?",
+    "description": "Speech to text for secondary students. Approved for use in South Australian schools. AI features disabled, student privacy protected.",
+    "url": site.siteUrl + "/students",
+    "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What age does speech recognition work well from?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Recognition accuracy improves with age. Research indicates children's speech reaches adult-like recognition levels around early adolescence, which is why secondary students roughly 12 and up tend to get the most reliable results." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does speech recognition replace learning to write?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It supports written output while schools continue normal literacy and writing instruction. Dictation works best when students review and edit what appears on screen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is student data private?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The student and education editions have AI features disabled. Schools can register every licence under a single administrator email address so individual student names and emails never enter the system. Speech Recognition Cloud has passed the South Australian government's security and privacy assessment and is approved for use in schools." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can students use speech recognition in exams?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Access arrangements for exams and standardised tests are decided by schools and assessment authorities, and rules vary between assessment systems. Check with your school or exam authority." }
+      },
+      {
+        "@type": "Question",
+        "name": "What equipment do students need?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A Windows 10 or 11 laptop or desktop. A simple headset microphone is recommended, and a reasonably quiet space helps accuracy. No voice training is required." }
+      }
+    ]
+  }
+];
 ---
-<BaseLayout title="Free Speech to Text for Students" description="Essays, notes, and assignments faster. Affordable voice dictation for students." extraSchema={extraSchema}>
+<BaseLayout title="Why Do Students Use Speech Recognition at School?" description="Speech to text for secondary students. Approved for use in South Australian schools. AI features disabled, student privacy protected. Free plan available." extraSchema={extraSchema}>
+
   <section class="section-pad">
     <div class="container">
       <div class="usecase-hero-split">
         <div>
           <p class="eyebrow">STUDENTS</p>
-          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Write essays and assignments faster by voice</h1>
-          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Dictate essays, lecture notes, research summaries, and assignments directly into Word, Google Docs, or any Windows application. Free plan available.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/pricing" class="btn-secondary">View student pricing</a></div>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Speech to text for school students</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Some students can explain an answer perfectly out loud, then struggle to get it onto the page. Speech Recognition Cloud turns spoken answers into accurate, punctuated text in Word, Google Docs, and any Windows application.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/pricing" class="btn-secondary">View pricing</a></div>
           <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
         </div>
-        {imgSrc('student-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('student-hero')} alt={imgAlt('student-hero')} loading="eager" decoding="async" /></div>
+        {imgSrc('students-lab-hero') && (
+          <div class="usecase-hero-img"><img src={imgSrc('students-lab-hero')} alt={imgAlt('students-lab-hero')} loading="eager" decoding="async" /></div>
         )}
       </div>
     </div>
   </section>
+
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 style="margin-bottom:16px">Why do students use speech recognition at school?</h2>
+      <p style="font-size:16px;line-height:1.8;margin-bottom:16px">Students use speech recognition when writing is the bottleneck, not the thinking. A student may understand the content and be able to explain it aloud, but handwriting, spelling, typing speed, or working memory get in the way of putting it on the page. Writing research shows that the mechanics of transcription can consume mental effort that would otherwise go into ideas and structure, which is why some students produce noticeably longer, more complete answers when they dictate.</p>
+      <p style="font-size:16px;line-height:1.8">For these students, speech recognition is not a shortcut. It is a way to show what they actually know.</p>
+    </div>
+  </section>
+
+  {imgSrc('students-break-dictating') && (
+    <div class="img-break"><img src={imgSrc('students-break-dictating')} alt={imgAlt('students-break-dictating')} loading="lazy" decoding="async" /></div>
+  )}
+
+  <section class="section-pad">
+    <div class="container" style="max-width:900px">
+      <h2 class="text-center" style="margin-bottom:40px">Which students benefit most?</h2>
+      <div class="benefit-grid">
+        <div class="benefit benefit-tint"><h3>Dysgraphia and written-expression difficulties</h3><p class="muted">The best-supported group in research. The ideas are there; letter formation, spelling, and writing speed are the barrier.</p></div>
+        <div class="benefit"><h3>Dyslexia</h3><p class="muted">Studies report students producing longer text with fewer spelling errors when dictating rather than handwriting.</p></div>
+        <div class="benefit"><h3>ADHD and executive load</h3><p class="muted">When spelling, typing, and holding ideas in memory all compete at once, dictation can free up attention for the actual answer.</p></div>
+        <div class="benefit benefit-tint"><h3>Motor, pain, and fatigue barriers</h3><p class="muted">Conditions like developmental coordination disorder, cerebral palsy, and juvenile arthritis can make handwriting slow, tiring, or painful. Dictating reduces the physical load.</p></div>
+        <div class="benefit benefit-tint"><h3>Temporary injuries</h3><p class="muted">A broken arm should not stop a student completing assignments.</p></div>
+        <div class="benefit"><h3>Students who think faster than they type</h3><p class="muted">No diagnosis required. Some students simply express ideas better aloud.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 style="margin-bottom:16px">How is speech recognition used in classrooms?</h2>
+      <p style="font-size:16px;line-height:1.8;margin-bottom:16px">Students typically dictate essays and extended responses, homework drafts, revision notes, and research summaries, directly at the cursor in Word, Google Docs, OneNote, or any Windows app. No special workflow and no copy-pasting between tools.</p>
+      <p style="font-size:16px;line-height:1.8;margin-bottom:16px">Most schools set students up with a simple headset microphone and a reasonably quiet space. Dictation works best when students review and edit what appears on screen, so teachers often pair it with read-back and proofreading as part of normal writing instruction. It supports literacy teaching; it does not replace it.</p>
+      <p style="font-size:16px;line-height:1.8">Speech recognition accuracy improves with age, and research indicates children's speech reaches adult-like recognition levels around early adolescence, which is why secondary students roughly 12 and up tend to get the most reliable results.</p>
+    </div>
+  </section>
+
+  <section class="section-pad section-dark">
+    <div class="container" style="max-width:900px">
+      <h2 class="text-center" style="margin-bottom:12px;color:#fff">Is Speech Recognition Cloud approved for schools?</h2>
+      <p class="text-center" style="color:#94A3B8;font-size:16px;line-height:1.7;max-width:680px;margin:0 auto 40px">Speech Recognition Cloud has passed the South Australian government's security and privacy assessment and is approved for use in schools.</p>
+      <div class="pillar-grid">
+        <div class="pillar"><h3>AI features disabled</h3><p>The student and education editions have all AI features disabled. Dictation only. Nothing else.</p></div>
+        <div class="pillar"><h3>Student privacy by design</h3><p>Schools can register every licence under a single administrator email address, so individual student names and email addresses never enter the system.</p></div>
+        <div class="pillar"><h3>Full anonymity coming</h3><p>Serial-number licensing for large deployments, removing student accounts entirely, and single sign-on (SSO) are in development.</p></div>
+      </div>
+    </div>
+  </section>
+
+  {imgSrc('students-break-teacher') && (
+    <div class="img-break"><img src={imgSrc('students-break-teacher')} alt={imgAlt('students-break-teacher')} loading="lazy" decoding="async" /></div>
+  )}
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="research-split">
+        <div>
+          <h2 style="margin-bottom:16px">What does the research say?</h2>
+          <p style="font-size:16px;line-height:1.8;margin-bottom:16px">The honest answer: it helps some students considerably, and it works best with the right setup. Studies of students with learning disabilities report longer written work and fewer spelling and mechanics errors when using speech to text, and students often say they prefer it because it is faster and helps them get their thoughts down.</p>
+          <p style="font-size:16px;line-height:1.8">Research also shows it works best when students can review and correct the output. Dictation removes the transcription bottleneck, but writing still takes thinking.</p>
+        </div>
+        {imgSrc('students-feature-reviewing') && (
+          <div class="research-img"><img src={imgSrc('students-feature-reviewing')} alt={imgAlt('students-feature-reviewing')} loading="lazy" decoding="async" /></div>
+        )}
+      </div>
+    </div>
+  </section>
+
   <section class="download-strip">
     <div class="container download-strip-inner">
-      <div><p class="download-strip-headline">Try free dictation for your studies</p><p class="download-strip-sub">20 minutes free per month. Upgrade to Personal for $79/year unlimited.</p></div>
+      <div><p class="download-strip-headline">Try free dictation at school or home</p><p class="download-strip-sub">20 minutes free per month. Personal plan is $79 USD/year for unlimited dictation. Pricing accurate at time of publication.</p></div>
       <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
     </div>
   </section>
+
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Built for student workflows</h2>
-      <div class="benefit-grid">
-        <div class="benefit"><h3>Essays and assignments</h3><p class="muted">Dictate full paragraphs with automatic punctuation. Get your thoughts down 3x faster than typing.</p></div>
-        <div class="benefit"><h3>Lecture notes</h3><p class="muted">Dictate notes during or after lectures. Works at the cursor in Word, Google Docs, OneNote, or any app.</p></div>
-        <div class="benefit"><h3>Research summaries</h3><p class="muted">Speak your analysis and summaries naturally. The AI handles formatting and punctuation.</p></div>
-        <div class="benefit"><h3>57 languages</h3><p class="muted">Study in your native language or practice dictation in a second language. Broad language support.</p></div>
-        <div class="benefit"><h3>Free plan available</h3><p class="muted">20 minutes per month free. Personal plan is $79/year for unlimited dictation.</p></div>
-        <div class="benefit"><h3>No training needed</h3><p class="muted">Install and start dictating immediately. Works with your laptop microphone or a headset.</p></div>
+      <h2 class="text-center" style="margin-bottom:32px">Common questions</h2>
+      <div class="faq-item"><h3>What age does speech recognition work well from?</h3><p class="muted">Recognition accuracy improves with age. Research indicates children's speech reaches adult-like recognition levels around early adolescence, which is why secondary students roughly 12 and up tend to get the most reliable results.</p></div>
+      <div class="faq-item"><h3>Does it replace learning to write?</h3><p class="muted">No. It supports written output while schools continue normal literacy and writing instruction. Dictation works best when students review and edit what appears on screen.</p></div>
+      <div class="faq-item"><h3>Is student data private?</h3><p class="muted">The student and education editions have AI features disabled. Schools can register every licence under a single administrator email address so individual student names and emails never enter the system.</p></div>
+      <div class="faq-item"><h3>Can students use it in exams?</h3><p class="muted">Access arrangements for exams and standardised tests are decided by schools and assessment authorities, and rules vary between assessment systems. Check with your school or exam authority.</p></div>
+      <div class="faq-item"><h3>What equipment is needed?</h3><p class="muted">A Windows 10 or 11 laptop or desktop. A simple headset microphone is recommended, and a reasonably quiet space helps accuracy. No voice training is required.</p></div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="contact">
+    <div class="container" style="max-width:560px">
+      <h2 class="text-center" style="margin-bottom:8px">Questions about school use?</h2>
+      <p class="muted text-center" style="margin-bottom:28px">Ask about school deployment, volume licensing, or the education edition.</p>
+      <form id="_form_291_" method="POST" action={site.form.actionUrl} novalidate>
+        <input type="hidden" name="u" value={site.form.formId} />
+        <input type="hidden" name="f" value={site.form.formId} />
+        <input type="hidden" name="s" value="" />
+        <input type="hidden" name="c" value="0" />
+        <input type="hidden" name="m" value="0" />
+        <input type="hidden" name="act" value="sub" />
+        <input type="hidden" name="v" value="2" />
+        <input type="hidden" name="or" value="6f14532c-4c20-4247-b59c-75f5be91bf66" />
+        <div class="form-field">
+          <label for="contact-name">Your name</label>
+          <input type="text" name="fullname" id="contact-name" required />
+        </div>
+        <div class="form-field">
+          <label for="contact-email">Your email</label>
+          <input type="email" name="email" id="contact-email" required />
+        </div>
+        <div class="form-field">
+          <label for="contact-message">Message</label>
+          <textarea name={`field[${Object.keys(site.form.cfields)[0]}]`} id="contact-message" rows="4"></textarea>
+        </div>
+        <div class="form-field">
+          <div class="g-recaptcha" data-sitekey="6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go"></div>
+        </div>
+        <button type="submit" id="_form_291_submit" class="btn-cta" style="width:100%;justify-content:center;margin-top:8px">{site.form.submitText}</button>
+      </form>
+      <div id="_form_291_thank_you" style="display:none;text-align:center;padding:32px 0">
+        <p style="font-size:18px;font-weight:600;margin-bottom:8px">Thank you!</p>
+        <p class="muted">We will get back to you shortly.</p>
       </div>
     </div>
   </section>
-  <section class="section-pad" id="demo">
-    <div class="container text-center">
-      <h2 style="margin-bottom:8px">See it in action</h2>
-      <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
-      <div class="yt-facade" data-ytid="vp0LFuRWdKI">
-        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
-        <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
-      </div>
-    </div>
-  </section>
-  <section class="section-pad section-dark" style="padding:60px 0">
-    <div class="container text-center">
-      <h2 style="margin-bottom:12px">Start dictating today</h2>
-      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
-      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
-    </div>
-  </section>
+
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
     .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
     .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+    .img-break{width:100%;height:260px;overflow:hidden}
+    .img-break img{width:100%;height:100%;object-fit:cover;display:block}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit-tint{background:#EEF2FF;border-color:#C7D2FE}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pillar{padding:24px;border-radius:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12)}
+    .pillar h3{font-size:16px;font-weight:700;color:#818CF8;margin-bottom:10px}
+    .pillar p{font-size:14px;line-height:1.7;color:#CBD5E1;margin:0}
+    .research-split{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+    .research-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
     .download-strip{background:#4338CA;padding:28px 0}
     .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
     .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
     .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
-    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
-    .benefit .muted{font-size:14px;line-height:1.7}
-    .btn-lg{padding:14px 36px;font-size:17px}
-    .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
+    .faq-item{padding:20px 0;border-bottom:1px solid var(--border)}
+    .faq-item h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .faq-item p{margin:0;line-height:1.7}
+    .form-field{margin-bottom:14px}
+    .form-field label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+    .form-field input,.form-field textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--brand)}
+    .form-field textarea{resize:vertical}
+    .btn-cta{display:inline-flex;align-items:center;justify-content:center;background:#EA580C;color:#fff;border:none;border-radius:8px;padding:13px 28px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.2s}
+    .btn-cta:hover{background:#C2410C}
+    .btn-cta:disabled{opacity:0.6;cursor:not-allowed}
+    @media (max-width:768px){
+      .usecase-hero-split{grid-template-columns:1fr}
+      .benefit-grid{grid-template-columns:1fr}
+      .pillar-grid{grid-template-columns:1fr}
+      .research-split{grid-template-columns:1fr}
+      .img-break{height:180px}
+    }
   </style>
+  <script is:inline src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script is:inline>
-    document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
+    (function(){
+      var form = document.getElementById('_form_291_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_291_thank_you');
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = form.querySelector('[name="email"]');
+        if (!email.value.trim()) { email.style.borderColor = '#F37C7B'; email.focus(); return; }
+        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) { email.style.borderColor = '#F37C7B'; return; }
+        var recap = form.querySelector('.g-recaptcha-response') || document.querySelector('[name="g-recaptcha-response"]');
+        if (recap && !recap.value) { alert('Please verify you are not a robot.'); return; }
+        var btn = document.getElementById('_form_291_submit');
+        btn.disabled = true; btn.textContent = 'Submitting...';
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() { btn.disabled = false; btn.textContent = 'Contact us'; };
+        document.head.appendChild(script);
+        window._show_thank_you = function() { form.style.display = 'none'; thankYou.style.display = 'block'; };
+      });
+    })();
   </script>
 </BaseLayout>
