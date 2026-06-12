@@ -124,7 +124,7 @@ const extraSchema = [
         <div>
           <h2 style="margin-bottom:16px">What does the research say?</h2>
           <p style="font-size:16px;line-height:1.8;margin-bottom:16px">The honest answer: it helps some students considerably, and it works best with the right setup. Studies of students with learning disabilities report longer written work and fewer spelling and mechanics errors when using speech to text, and students often say they prefer it because it is faster and helps them get their thoughts down.</p>
-          <p style="font-size:16px;line-height:1.8">Research also shows it works best when students can review and correct the output. Dictation removes the transcription bottleneck, but writing still takes thinking.</p>
+          <p style="font-size:16px;line-height:1.8">Research also shows it works best when students can review and correct the output. Dictation removes the transcription bottleneck, but writing still takes thinking. Schools comparing options often look for the <a href="https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic">best speech recognition for students</a> alongside the right training and classroom setup.</p>
         </div>
         {imgSrc('students-feature-reviewing') && (
           <div class="research-img"><img src={imgSrc('students-feature-reviewing')} alt={imgAlt('students-feature-reviewing')} loading="lazy" decoding="async" /></div>
@@ -155,6 +155,7 @@ const extraSchema = [
     <div class="container" style="max-width:560px">
       <h2 class="text-center" style="margin-bottom:8px">Questions about school use?</h2>
       <p class="muted text-center" style="margin-bottom:28px">Ask about school deployment, volume licensing, or the education edition.</p>
+      <div class="form-card">
       <form id="_form_291_" method="POST" action={site.form.actionUrl} novalidate>
         <input type="hidden" name="u" value={site.form.formId} />
         <input type="hidden" name="f" value={site.form.formId} />
@@ -185,6 +186,7 @@ const extraSchema = [
         <p style="font-size:18px;font-weight:600;margin-bottom:8px">Thank you!</p>
         <p class="muted">We will get back to you shortly.</p>
       </div>
+      </div>
     </div>
   </section>
 
@@ -211,6 +213,7 @@ const extraSchema = [
     .faq-item{padding:20px 0;border-bottom:1px solid var(--border)}
     .faq-item h3{font-size:16px;font-weight:600;margin-bottom:8px}
     .faq-item p{margin:0;line-height:1.7}
+    .form-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:32px;box-shadow:0 12px 40px rgba(15,23,42,0.08);margin-bottom:8px}
     .form-field{margin-bottom:14px}
     .form-field label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
     .form-field input,.form-field textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
@@ -225,6 +228,7 @@ const extraSchema = [
       .pillar-grid{grid-template-columns:1fr}
       .research-split{grid-template-columns:1fr}
       .img-break{height:180px}
+      .form-card{padding:20px}
     }
   </style>
   <script is:inline src="https://www.google.com/recaptcha/api.js" async defer></script>
