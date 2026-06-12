@@ -199,7 +199,7 @@ const icons = {
         <h1 class="m-h1">Medical Dictation Software for Clinicians: A Practical Guide</h1>
         <p class="m-lead">Verbatim voice dictation for Windows-based EMRs and clinical applications. $439 USD per year for the Medical plan. Free 30-day trial. Built and supported by a 28-year specialist in Australian healthcare voice technology.</p>
         <div class="m-cta-row">
-          <a href="#trial" class="btn-primary">Start free 30-day trial</a>
+          <button type="button" id="open-trial-modal" class="btn-primary">Start free 30-day trial</button>
           <a href="#quickstart" class="btn-secondary">Jump to quick start</a>
         </div>
         <p class="muted m-micro">No credit card. Reverts to the free tier (20 min/month) after the trial unless you upgrade.</p>
@@ -210,34 +210,33 @@ const icons = {
     </div>
   </section>
 
-  <!-- HORIZONTAL FORM STRIP (preserved verbatim — AC form 293) -->
-  <section class="form-strip" id="trial">
-    <div class="container">
-      <div class="form-strip-inner">
-        <div class="form-strip-text">
-          <h2 style="font-size:18px;font-weight:700;margin-bottom:2px;color:#fff">Download the Free Medical Ultra Trial</h2>
-          <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0">Get immediate access. No credit card required.</p>
-        </div>
-        <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form" novalidate>
-          <input type="hidden" name="u" value="293" />
-          <input type="hidden" name="f" value="293" />
-          <input type="hidden" name="s" value="" />
-          <input type="hidden" name="c" value="0" />
-          <input type="hidden" name="m" value="0" />
-          <input type="hidden" name="act" value="sub" />
-          <input type="hidden" name="v" value="2" />
-          <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
-          <input type="text" name="fullname" id="med-fullname" placeholder="Your name" required />
-          <input type="email" name="email" id="med-email" placeholder="Your email" required />
-          <button type="submit" id="_form_293_submit" class="btn-primary" style="white-space:nowrap;padding:12px 28px;font-size:15px">Get started free</button>
-        </form>
+  <!-- TRIAL MODAL OVERLAY -->
+  <div id="trial-modal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(15,23,42,0.65);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:20px">
+    <div style="background:#4338CA;border-radius:16px;max-width:680px;width:100%;padding:36px 32px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.35)">
+      <button id="close-trial-modal" type="button" aria-label="Close" style="position:absolute;top:14px;right:16px;background:transparent;border:none;color:rgba(255,255,255,0.7);font-size:26px;line-height:1;cursor:pointer;padding:4px 8px">&times;</button>
+      <div style="text-align:center;margin-bottom:24px">
+        <h2 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 6px">Start your free 30-day Medical Ultra trial</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0">No credit card. Immediate access. Reverts to free tier after 30 days.</p>
       </div>
+      <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate style="display:flex;flex-direction:column;gap:12px">
+        <input type="hidden" name="u" value="293" />
+        <input type="hidden" name="f" value="293" />
+        <input type="hidden" name="s" value="" />
+        <input type="hidden" name="c" value="0" />
+        <input type="hidden" name="m" value="0" />
+        <input type="hidden" name="act" value="sub" />
+        <input type="hidden" name="v" value="2" />
+        <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+        <input type="text" name="fullname" id="med-fullname" placeholder="Your name" required style="padding:14px 16px;border:2px solid rgba(255,255,255,0.3);border-radius:10px;background:rgba(255,255,255,0.12);color:#fff;font-size:16px;font-family:inherit;width:100%;box-sizing:border-box" />
+        <input type="email" name="email" id="med-email" placeholder="Your email" required style="padding:14px 16px;border:2px solid rgba(255,255,255,0.3);border-radius:10px;background:rgba(255,255,255,0.12);color:#fff;font-size:16px;font-family:inherit;width:100%;box-sizing:border-box" />
+        <button type="submit" id="_form_293_submit" style="padding:14px 28px;font-size:16px;font-weight:700;background:#F97316;color:#fff;border:none;border-radius:10px;cursor:pointer;font-family:inherit;margin-top:4px">Get started free &rarr;</button>
+      </form>
       <div id="_form_293_thank_you" style="display:none;text-align:center;padding:16px 0;color:#fff">
-        <p style="font-size:18px;font-weight:600;margin-bottom:4px">You're in!</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>
+        <p style="font-size:20px;font-weight:700;margin-bottom:6px">You're in!</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.85)">Check your email for download instructions and your 30-day Medical Ultra access.</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- WHAT IS IT? — NEW, UPFRONT -->
   <section class="section-pad section-neutral">
@@ -635,7 +634,7 @@ const icons = {
     <div class="container text-center">
       <h2 style="margin-bottom:12px">Try Medical Ultra free for 30 days</h2>
       <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes. Reverts to the free tier after 30 days unless you upgrade.</p>
-      <a href="#trial" class="btn-primary btn-lg">Get started free</a>
+      <button type="button" id="open-trial-modal-bottom" class="btn-primary btn-lg">Get started free</button>
     </div>
   </section>
 
@@ -749,6 +748,24 @@ const icons = {
       .m-figure figcaption{font-size:13px}
     }
   </style>
+
+
+  <!-- Modal open/close JS -->
+  <script is:inline>
+    (function(){
+      var modal = document.getElementById('trial-modal');
+      function openModal(){ modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+      function closeModal(){ modal.style.display = 'none'; document.body.style.overflow = ''; }
+      var btnOpen = document.getElementById('open-trial-modal');
+      var btnBottom = document.getElementById('open-trial-modal-bottom');
+      var btnClose = document.getElementById('close-trial-modal');
+      if(btnOpen) btnOpen.addEventListener('click', openModal);
+      if(btnBottom) btnBottom.addEventListener('click', openModal);
+      if(btnClose) btnClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+    })();
+  </script>
 
   <!-- AC Form 293 submission script (preserved verbatim) -->
   <script is:inline>
