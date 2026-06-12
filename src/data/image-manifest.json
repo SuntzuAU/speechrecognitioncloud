@@ -241,5 +241,41 @@
     "slot": "headshot",
     "contentType": "image/jpeg",
     "site": "speechrecognitioncloud"
+  },
+  "students-lab-hero": {
+    "key": "students-lab-hero",
+    "r2Key": "speechrecognitioncloud/2026/06/12/students-speech-recognition-school-computer-lab-hero-d6115fd5.jpg",
+    "altText": "Secondary school students aged 14 to 16 using speech recognition in a school computer lab, one student dictating with a headset",
+    "aspectRatio": "16:9",
+    "slot": "students-lab-hero",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "students-break-dictating": {
+    "key": "students-break-dictating",
+    "r2Key": "speechrecognitioncloud/2026/06/12/student-dictating-classroom-headset-laptop-f0de3da0.jpg",
+    "altText": "Teenage student dictating into a laptop with a headset microphone in an Australian classroom",
+    "aspectRatio": "21:9",
+    "slot": "students-break-dictating",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "students-break-teacher": {
+    "key": "students-break-teacher",
+    "r2Key": "speechrecognitioncloud/2026/06/12/teacher-helping-student-speech-to-text-classroom-8ac02b11.jpg",
+    "altText": "Teacher helping a secondary student review dictated text on a laptop in class",
+    "aspectRatio": "21:9",
+    "slot": "students-break-teacher",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
+  },
+  "students-feature-reviewing": {
+    "key": "students-feature-reviewing",
+    "r2Key": "speechrecognitioncloud/2026/06/12/student-reviewing-dictated-text-school-library-e10de9a8.jpg",
+    "altText": "Teenage student wearing a headset reviewing and editing dictated text in a school library",
+    "aspectRatio": "16:9",
+    "slot": "students-feature-reviewing",
+    "contentType": "image/jpeg",
+    "site": "speechrecognitioncloud"
   }
 }
