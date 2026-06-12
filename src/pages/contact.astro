@@ -16,72 +16,12 @@ const extraSchema = [{
     <div class="container" style="max-width:600px">
       <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:12px;text-align:center">Contact us</h1>
       <p class="muted text-center" style="margin-bottom:36px">Questions about Speech Recognition Cloud? Need help getting set up? Want volume pricing? Get in touch.</p>
-      <form id="_form_291_" method="POST" action={site.form.actionUrl} novalidate>
-        <input type="hidden" name="u" value={site.form.formId} />
-        <input type="hidden" name="f" value={site.form.formId} />
-        <input type="hidden" name="s" value="" />
-        <input type="hidden" name="c" value="0" />
-        <input type="hidden" name="m" value="0" />
-        <input type="hidden" name="act" value="sub" />
-        <input type="hidden" name="v" value="2" />
-        <input type="hidden" name="or" value={site.form.orUuid} />
-        <div class="form-field">
-          <label for="contact-name">Your name</label>
-          <input type="text" name="fullname" id="contact-name" required />
-        </div>
-        <div class="form-field">
-          <label for="contact-email">Your email</label>
-          <input type="email" name="email" id="contact-email" required />
-        </div>
-        <div class="form-field">
-          <label for="contact-message">Message</label>
-          <textarea name={`field[${Object.keys(site.form.cfields)[0]}]`} id="contact-message" rows="5"></textarea>
-        </div>
-        <button type="submit" id="_form_291_submit" class="btn-primary" style="width:100%;justify-content:center">{site.form.submitText}</button>
-      </form>
-      <div id="_form_291_thank_you" style="display:none;text-align:center;padding:32px 0">
-        <p style="font-size:18px;font-weight:600;margin-bottom:8px">Thank you!</p>
-        <p class="muted">We will get back to you shortly.</p>
-      </div>
+
+      <!-- AC hosted form 291 - speechrecognition.cloud contact form. -->
+      <!-- reCAPTCHA is configured on AC form 291 backend (sitekey 6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go). -->
+      <div class="_form_291"></div>
+      <script src="https://voicerecognition.activehosted.com/f/embed.php?id=291" charset="utf-8" is:inline></script>
     </div>
   </section>
-  <style is:inline>
-    .form-field{margin-bottom:16px}
-    .form-field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
-    .form-field input,.form-field textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
-    .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--brand)}
-    .form-field textarea{resize:vertical}
-  </style>
-  <script is:inline>
-    (function(){
-      var form = document.getElementById('_form_291_');
-      if (!form) return;
-      var thankYou = document.getElementById('_form_291_thank_you');
-      function serialize(f) {
-        var q = [];
-        for (var i = 0; i < f.elements.length; i++) {
-          var el = f.elements[i];
-          if (!el.name) continue;
-          if (el.type === 'submit' || el.type === 'button') continue;
-          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
-        }
-        return q.join('&');
-      }
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var email = form.querySelector('[name="email"]');
-        if (!email.value.trim()) return;
-        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) { email.style.borderColor = '#F37C7B'; return; }
-        var btn = document.getElementById('_form_291_submit');
-        btn.disabled = true; btn.textContent = 'Submitting...';
-        var data = serialize(form);
-        var script = document.createElement('script');
-        script.charset = 'utf-8';
-        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
-        script.onerror = function() { btn.disabled = false; btn.textContent = 'Contact us'; };
-        document.head.appendChild(script);
-        window._show_thank_you = function() { form.style.display = 'none'; thankYou.style.display = 'block'; };
-      });
-    })();
-  </script>
 </BaseLayout>
+
