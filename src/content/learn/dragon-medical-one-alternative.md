@@ -43,7 +43,7 @@ The **Medical** plan adds a continuously updated medical vocabulary — drug nam
 
 | | Speech Recognition Cloud (Medical) | Dragon Medical One |
 |---|---|---|
-| **Price & billing** | Flat US$439/year per clinician, cancel anytime | Per-clinician cloud subscription, monthly or multi-year terms |
+| **Price & billing** | Flat US$439/year per clinician, cancel anytime | US$99/clinician/month (about US$1,188/year) |
 | **Where you dictate** | At the cursor in any Windows EMR or app (OS-level, no plugin) | Into your app or a dictation box; deepest native integration with Epic, Cerner, Meditech |
 | **Voice training** | None | None |
 | **Dictation style** | Speak, then the finished, punctuated paragraph appears with full-sentence context | Real-time, word-by-word as you speak |
@@ -75,7 +75,7 @@ One thing we won't do is claim SRC is "HIPAA compliant" as a product, because co
 
 Speech Recognition Cloud Medical is **US$439/year**, flat, for one clinician — unlimited dictation, the medical vocabulary, Ultra Accuracy clinical mode, the companion mobile app, dedicated support and one-on-one training. Prices are shown in US dollars and convert to your local currency at checkout; Australian customers see an AUD price with GST included. Cancel anytime; there are no lock-in contracts.
 
-Against a per-clinician monthly subscription, a single flat annual fee is usually both the cheaper and the far more predictable path for individuals and small practices.
+At US$99 per clinician per month — about US$1,188 a year — Dragon Medical One runs well over double SRC Medical's flat US$439, and it keeps billing every month. For individuals and small practices, a single flat annual fee is usually both the cheaper and the more predictable path.
 
 ## An honest trade-off or two
 
