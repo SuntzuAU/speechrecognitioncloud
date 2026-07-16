@@ -61,12 +61,12 @@ Older dictation software made you read scripts aloud to "train" it before it wou
 
 ## Dragon vs Speech Recognition Cloud at a glance
 
-| | Dragon | Speech Recognition Cloud |
+| | Dragon Professional 16 | Speech Recognition Cloud |
 |---|---|---|
 | **Price** | Large one-off purchase + paid upgrades | Free Starter plan; Personal $99/yr; Professional $159/yr |
 | **Free version** | No | Yes — 20 min/month, no credit card, stays free |
 | **Install limit** | Standard licence limits the number of machines | One licence per user, unlimited computers |
-| **Windows 11** | Dragon 15 not compatible (per Nuance); documented issues | Cloud-based — stays current with Windows |
+| **Windows 11** | Dragon 15 not compatible (per Nuance); 16 is the paid fix | Cloud-based — stays current with Windows |
 | **Voice training** | Required | None — start talking immediately |
 | **Dictate into Windows apps** | Yes | Yes — types at the cursor in any standard app |
 | **Updates** | New paid version each time | Continuous, included in subscription |
