@@ -21,6 +21,7 @@ internalLinks:
 externalLinks:
   - to: "https://www.voicerecognition.com.au/pages/medical-speech-to-text-software"
     anchor: "Speech-to-Text Medical"
+    url: "https://www.voicerecognition.com.au/pages/medical-speech-to-text-software"
 ---
 
 If you're looking at Dragon Medical One — or already paying for it — you already know what you want from dictation software: your words, in your EMR, accurately, without fighting the tool. The real question is whether you need everything Dragon Medical One bundles in, at the price and commitment it asks for.
