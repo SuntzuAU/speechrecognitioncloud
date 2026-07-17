@@ -18,7 +18,11 @@ internalLinks:
     anchor: "dictation for clinicians"
   - to: "/legal"
     anchor: "dictation for legal work"
-externalLinks: []
+  - to: "/learn/dragon-medical-one-alternative"
+    anchor: "Dragon Medical One alternative"
+externalLinks:
+  - to: "https://voicerecognition.com.au/"
+    anchor: "Voice Recognition Australia"
 ---
 
 If you're weighing up Dragon Professional 16, you're probably in one of two camps. Either you already run it and it has stopped feeling worth the money — or you're on Dragon 15, you've been told it won't run properly on Windows 11, and Nuance's answer is to buy Professional 16. Either way, you're asking the same question: is paying (again) for Dragon really the best move in 2026?
@@ -27,7 +31,7 @@ You don't need another sales pitch — you've had enough of those. You need to k
 
 The best alternative to Dragon Professional 16 is **Speech Recognition Cloud (SRC)**. It does the one thing you actually want — put your words on the screen, in any Windows application, right at the cursor — without the cost, the install limits, the compatibility headaches, or the training. Below is exactly how it stacks up on the five things Dragon users tell us frustrate them most, worst first.
 
-*(Switching from Dragon Medical One instead? Clinicians have their own needs — EMR integration, patient privacy — so head to our [dictation for clinicians](/medical) page.)*
+*(Switching from Dragon Medical One instead? Clinicians have their own needs — EMR integration, patient privacy — read our dedicated [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison.)*
 
 ## 1. The cost
 
@@ -86,7 +90,7 @@ Yes. SRC types at the cursor in any standard Windows application — Microsoft W
 
 ## Who built it
 
-SRC isn't a fly-by-night AI startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran the largest Dragon reseller in the Southern Hemisphere — supporting more than 40,000 customers and over 15,000 Dragon users. In other words, it's built by someone who spent decades fixing the exact Dragon problems described above, and finally decided to build the simpler, cheaper tool he wished he could hand people instead.
+SRC isn't a fly-by-night AI startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran [Voice Recognition Australia](https://voicerecognition.com.au/), the largest Dragon reseller in the Southern Hemisphere — supporting more than 40,000 customers and over 15,000 Dragon users. In other words, it's built by someone who spent decades fixing the exact Dragon problems described above, and finally decided to build the simpler, cheaper tool he wished he could hand people instead.
 
 ## Try it free
 
@@ -119,6 +123,7 @@ Yes. SRC is cloud-based, which is what keeps it accurate, always up to date and 
 
 ### Related reading
 
+- [The best Dragon Medical One alternative in 2026](/learn/dragon-medical-one-alternative)
 - [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
 - [Compare plans and pricing](/pricing)
 - [Dictation for clinicians](/medical)
