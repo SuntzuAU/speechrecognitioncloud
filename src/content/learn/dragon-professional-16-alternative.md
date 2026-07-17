@@ -23,6 +23,7 @@ internalLinks:
 externalLinks:
   - to: "https://www.voicerecognition.com.au/collections/speech-to-text-software"
     anchor: "speech to text software"
+    url: "https://www.voicerecognition.com.au/collections/speech-to-text-software"
 ---
 
 If you're weighing up Dragon Professional 16, you're probably in one of two camps. Either you already run it and it has stopped feeling worth the money — or you're on Dragon 15, you've been told it won't run properly on Windows 11, and Nuance's answer is to buy Professional 16. Either way, you're asking the same question: is paying (again) for Dragon really the best move in 2026?
