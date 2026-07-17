@@ -21,8 +21,8 @@ internalLinks:
   - to: "/learn/dragon-medical-one-alternative"
     anchor: "Dragon Medical One alternative"
 externalLinks:
-  - to: "https://voicerecognition.com.au/"
-    anchor: "Voice Recognition Australia"
+  - to: "https://www.voicerecognition.com.au/collections/speech-to-text-software"
+    anchor: "speech to text software"
 ---
 
 If you're weighing up Dragon Professional 16, you're probably in one of two camps. Either you already run it and it has stopped feeling worth the money — or you're on Dragon 15, you've been told it won't run properly on Windows 11, and Nuance's answer is to buy Professional 16. Either way, you're asking the same question: is paying (again) for Dragon really the best move in 2026?
@@ -90,7 +90,7 @@ Yes. SRC types at the cursor in any standard Windows application — Microsoft W
 
 ## Who built it
 
-SRC isn't a fly-by-night AI startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran [Voice Recognition Australia](https://voicerecognition.com.au/), the largest Dragon reseller in the Southern Hemisphere — supporting more than 40,000 customers and over 15,000 Dragon users. In other words, it's built by someone who spent decades fixing the exact Dragon problems described above, and finally decided to build the simpler, cheaper tool he wished he could hand people instead.
+SRC isn't a fly-by-night AI startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran Voice Recognition Australia, the largest Dragon reseller in the Southern Hemisphere — supporting more than 40,000 customers and over 15,000 Dragon users. Voice Recognition Australia also carries a wider range of [speech to text software](https://www.voicerecognition.com.au/collections/speech-to-text-software) for professionals comparing their options. In other words, it's built by someone who spent decades fixing the exact Dragon problems described above, and finally decided to build the simpler, cheaper tool he wished he could hand people instead.
 
 ## Try it free
 
