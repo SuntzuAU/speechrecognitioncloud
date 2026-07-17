@@ -18,7 +18,9 @@ internalLinks:
     anchor: "compare plans and pricing"
   - to: "/healthcare"
     anchor: "dictation for healthcare teams"
-externalLinks: []
+externalLinks:
+  - to: "https://voicerecognition.com.au/"
+    anchor: "Voice Recognition Australia"
 ---
 
 If you're looking at Dragon Medical One — or already paying for it — you already know what you want from dictation software: your words, in your EMR, accurately, without fighting the tool. The real question is whether you need everything Dragon Medical One bundles in, at the price and commitment it asks for.
@@ -83,7 +85,7 @@ Because SRC is cloud-based, it needs an internet connection — that's the trade
 
 ## Who built it
 
-SRC isn't a startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran the largest Dragon reseller in the Southern Hemisphere — supporting more than 40,000 customers and over 15,000 Dragon users, across hospitals, GP practices, specialist clinics and government health departments. In other words, it's built by someone who spent decades inside the exact Dragon workflows described above.
+SRC isn't a startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran [Voice Recognition Australia](https://voicerecognition.com.au/), the largest Dragon reseller in the Southern Hemisphere — supporting more than 40,000 customers and over 15,000 Dragon users, across hospitals, GP practices, specialist clinics and government health departments. In other words, it's built by someone who spent decades inside the exact Dragon workflows described above.
 
 ## Try it in your own EMR, free for 30 days
 
