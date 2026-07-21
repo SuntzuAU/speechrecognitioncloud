@@ -1,0 +1,105 @@
+{
+  "_readme": [
+    "IMAGE PROMPT LIBRARY - shared across all VRA gateway sites",
+    "This file is identical in every site repo. Edit master, then propagate to sites.",
+    "DO NOT edit per-site. Changes here improve all sites on next image regeneration.",
+    "suffix: appended to every prompt automatically.",
+    "No emoji or special characters in this file."
+  ],
+  "suffix": "Photorealistic DSLR photography, warm natural lighting with soft highlights on faces, rich colour grading, shallow depth of field. Subjects should be prominently featured and clearly visible, attractive and fit Australian adults aged 28 to 45, warm genuine smiles or confident relaxed expressions, looking toward the camera or mid-conversation, professionally dressed and well-groomed. Equipment must be either a discreet Bluetooth headset with boom microphone, a compact gooseneck desktop microphone, or the subject speaking directly into a laptop built-in microphone. Never show a large bulky studio microphone, never a podcast-style microphone, never a Yeti or Yeti-style microphone. No text overlays, no logos, no UI mockups, no watermarks, no stock-photo cliches, no empty rooms.",
+  "heroSuffix": "Landscape hero banner composition, subject fills the frame with environmental context, editorial commercial photography style.",
+  "breakSuffix": "Editorial supporting image, people must be visible and central to the composition, warm premium atmosphere.",
+  "scenes": {
+    "doctor-surgery": {
+      "label": "Doctor surgery / GP clinic",
+      "hero": "Attractive fit female GP aged 32-42, wearing a discreet Bluetooth headset with boom mic, seated at a modern desk in an Australian GP clinic, reviewing clinical notes on a monitor while dictating, warm confident smile toward the camera, softly blurred clinic background.",
+      "break": "Attractive fit female GP aged 32-42 working at a modern clinic desk with a compact gooseneck desktop microphone and laptop, glancing toward the camera with a warm smile, clinic environment softly blurred behind her, warm natural window light.",
+      "altHero": "Australian GP using voice recognition software in a modern clinic",
+      "altBreak": "Australian GP at a clinic workstation using voice dictation hardware"
+    },
+    "hospital-office": {
+      "label": "Hospital specialist / clinical office",
+      "hero": "Attractive fit male specialist doctor aged 35-45, wearing a Bluetooth headset with boom mic, standing at a height-adjustable workstation in a modern hospital office, dictating while reviewing imaging on a large monitor, confident relaxed expression, busy hospital softly blurred behind glass partition.",
+      "break": "Attractive fit male specialist doctor aged 35-45 in a hospital office, mid-dictation into a discreet Bluetooth headset, warm smile toward camera, clinical workstation and corridor softly blurred behind him, strong clinical daylight.",
+      "altHero": "Hospital specialist using speech recognition for clinical notes",
+      "altBreak": "Australian hospital specialist dictating using a Bluetooth headset"
+    },
+    "lawyer-office": {
+      "label": "Lawyer / legal office",
+      "hero": "Attractive fit female lawyer aged 32-42, elegant business attire, seated at a large desk in a high-rise legal office, dictating into a compact gooseneck desktop microphone while reviewing legal documents on screen, warm confident smile, city skyline softly blurred through floor-to-ceiling windows, warm backlighting.",
+      "break": "Attractive fit male lawyer aged 35-45, tailored suit, standing at a desk in a law firm office, dictating toward a compact gooseneck desktop microphone while reviewing a document on screen, confident smile toward camera, skyline softly blurred behind, rich warm afternoon light.",
+      "altHero": "Australian lawyer dictating legal documents using voice recognition in a city office",
+      "altBreak": "Australian lawyer using a desktop microphone to dictate legal documents"
+    },
+    "legal-team": {
+      "label": "Legal team / law firm meeting",
+      "hero": "Small team of attractive fit adult Australian legal professionals aged 30-45 in a modern law firm meeting room, one dictating into a compact gooseneck desktop microphone while others review on a shared screen, collaborative warm atmosphere, genuine smiles, city skyline visible through windows.",
+      "break": "Two attractive fit Australian lawyers aged 32-45 collaborating at a desk in a law firm, one wearing a Bluetooth headset with boom mic, both engaged with warm smiles, document visible on a laptop between them, warm professional lighting.",
+      "altHero": "Australian legal team collaborating using voice recognition software",
+      "altBreak": "Two Australian lawyers collaborating at a desk using voice dictation"
+    },
+    "office-general": {
+      "label": "General modern office / corporate",
+      "hero": "Attractive fit adult professional aged 30-42, seated at an ergonomic workstation in a clean modern open-plan Australian office, speaking into a compact gooseneck desktop microphone while reviewing a document on a large monitor, warm genuine smile toward camera, blurred colleagues and glass partitions behind, bright natural light.",
+      "break": "Attractive fit professional aged 30-42 at an ergonomic workstation in an open-plan Australian office, mid-conversation while dictating into a laptop, warm confident expression, colleagues softly blurred in background, natural daylight.",
+      "altHero": "Australian professional using speech recognition at a modern office workstation",
+      "altBreak": "Australian professional dictating into a laptop in a modern open-plan office"
+    },
+    "office-executive": {
+      "label": "Executive / senior professional office",
+      "hero": "Attractive fit male executive aged 38-45, confident and polished, standing at a large executive desk in a private corner office, dictating while reviewing documents on screen, city skyline visible through large windows, confident relaxed smile, warm afternoon light.",
+      "break": "Attractive fit female executive aged 35-45 at an executive desk, wearing a discreet Bluetooth headset with boom mic, reviewing documents on a laptop, warm genuine smile toward camera, premium office environment softly blurred, warm directional light.",
+      "altHero": "Australian executive dictating using voice recognition in a premium corporate office",
+      "altBreak": "Australian executive using a Bluetooth headset to dictate in a premium office"
+    },
+    "government-office": {
+      "label": "Government / public sector office",
+      "hero": "Mixed team of attractive fit adult Australian public sector professionals aged 30-45 in a modern government office, one dictating into a compact gooseneck desktop microphone while colleagues review on shared monitor, warm collaborative atmosphere, genuine smiles, clean professional lighting.",
+      "break": "Two attractive fit Australian public sector professionals aged 32-45 at a shared workstation, one wearing a Bluetooth headset with boom mic, both engaged with warm smiles, document visible on monitor, professional warm lighting.",
+      "altHero": "Australian government professionals using speech recognition for documentation",
+      "altBreak": "Australian public sector professionals collaborating with voice dictation tools"
+    },
+    "clinic-desk": {
+      "label": "Clinical reception / practice manager",
+      "hero": "Attractive fit female practice manager aged 30-42, wearing a discreet Bluetooth headset with boom mic, at a modern clinic reception desk, managing bookings on a monitor, warm genuine smile toward camera, clinic softly blurred behind, warm clinical lighting.",
+      "break": "Attractive fit practice manager aged 30-42 at a clinic reception desk with a Bluetooth headset, mid-conversation with a warm smile, colleague and patient check-in area softly blurred in the background, warm inviting lighting.",
+      "altHero": "Australian medical practice manager using voice recognition at a clinic reception",
+      "altBreak": "Australian clinic practice manager using a Bluetooth headset at the reception desk"
+    },
+    "student-study": {
+      "label": "Student / university / education",
+      "hero": "Attractive fit adult postgraduate student aged 28-35, seated at a modern library study desk, wearing a discreet Bluetooth headset with boom microphone, dictating while editing on a laptop, warm focused smile, softly blurred bookshelves behind, warm focused desk lamp.",
+      "break": "Attractive fit postgraduate student aged 28-35 at a campus study hub, mid-dictation into a laptop built-in microphone, warm genuine smile toward camera, coffee and notebook on the desk, warm natural lighting.",
+      "altHero": "Australian postgraduate student using voice recognition in a university library",
+      "altBreak": "Australian postgraduate student dictating into a laptop at a campus study hub"
+    },
+    "box-shot": {
+      "label": "Software / product concept (people-focused)",
+      "hero": "Attractive fit adult professional aged 30-42 in a modern Australian office, holding or interacting with a sleek laptop displaying clean software interface, warm genuine smile toward camera, clean premium office environment, minimal product-focused composition, warm directional light.",
+      "break": "Attractive fit adult professional aged 30-42 in a bright modern workspace, interacting naturally with a laptop, compact gooseneck desktop microphone visible, warm smile, premium minimal composition.",
+      "altHero": "Australian professional using speech recognition software on a laptop",
+      "altBreak": "Australian professional working with voice recognition software at a modern desk"
+    },
+    "microphone-closeup": {
+      "label": "Hardware in use (person-focused)",
+      "hero": "Attractive fit adult professional aged 30-42 leaning toward a compact gooseneck desktop microphone on a tidy modern desk, mid-dictation with a warm smile, shallow depth of field with the subject sharp, warm side lighting, blurred monitor and office environment behind.",
+      "break": "Attractive fit adult professional aged 30-42 at a modern desk, hand near a compact gooseneck desktop microphone while reviewing a document on screen, warm confident smile, shallow depth of field.",
+      "altHero": "Australian professional using a gooseneck desktop microphone for speech recognition",
+      "altBreak": "Close-up of Australian professional at a desk with a gooseneck desktop microphone"
+    },
+    "pdf-workflow": {
+      "label": "PDF / document workflow (person-focused)",
+      "hero": "Attractive fit adult professional aged 32-42, reviewing and annotating documents on a large monitor in a modern Australian office, clean professional document workflow on screen, focused warm expression with a slight smile, warm office lighting, shallow depth of field.",
+      "break": "Attractive fit adult professional aged 32-42 at a modern desk with printed documents and laptop, mid-review with a warm smile, pen and notebook visible, warm directional light.",
+      "altHero": "Australian professional managing document workflow on a large monitor",
+      "altBreak": "Australian professional reviewing documents at a modern office desk"
+    },
+    "medical-admin": {
+      "label": "Medical administration / practice manager",
+      "hero": "Attractive fit female medical practice manager aged 30-42, wearing a professional Bluetooth headset with boom mic, at a busy administration workstation in a modern Australian clinic, managing patient bookings on screen, warm genuine smile toward camera, clinic reception softly blurred in background, warm clinical lighting.",
+      "break": "Attractive fit practice manager aged 30-42 at a clinic admin desk, Bluetooth headset with boom mic, mid-conversation with a warm smile, monitor and papers visible, clinic softly blurred behind, warm lighting.",
+      "altHero": "Australian medical practice manager using voice recognition for patient administration",
+      "altBreak": "Australian medical practice manager at a clinic admin workstation with a Bluetooth headset"
+    }
+  }
+}

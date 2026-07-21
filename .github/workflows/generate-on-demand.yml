@@ -1,0 +1,176 @@
+# Generate On-Demand Post Images
+#
+# Purpose: When Claude commits a news article with imagesPending:true in its frontmatter,
+# this workflow calls generate-images.js in post:<filename> mode to generate hero + 2 break
+# images via the master-image-generator Worker, then commits the R2 keys back into the post
+# and flips imagesPending to false.
+#
+# Guardrails in place:
+#   1. Triggers only on push to main touching src/content/learn/*.md
+#   2. Requires per-article opt-in flag `imagesPending: true` in frontmatter
+#   3. Hard cap: max 3 articles processed per run (fails if more flagged in one push)
+#   4. Concurrency: only one run of this workflow active at a time
+#   5. Daily quota: max 5 successful runs in trailing 24h (checked via gh CLI)
+#   6. Kill switch: repo variable IMAGE_GEN_ENABLED must equal "true"
+#   7. No self-trigger loop: skips if commit author is github-actions[bot]
+#   8. Audit log: appends to implementations/image-generation.log
+
+name: Generate On-Demand Post Images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/learn/*.md'
+
+concurrency:
+  group: generate-on-demand
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    outputs:
+      flagged_files: ${{ steps.scan.outputs.flagged_files }}
+      flagged_count: ${{ steps.scan.outputs.flagged_count }}
+      should_run: ${{ steps.gate.outputs.should_run }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Kill-switch check
+        env:
+          ENABLED: ${{ vars.IMAGE_GEN_ENABLED }}
+        run: |
+          if [ "$ENABLED" != "true" ]; then
+            echo "::error::IMAGE_GEN_ENABLED is not 'true'. Set repo variable IMAGE_GEN_ENABLED=true to enable."
+            exit 1
+          fi
+          echo "Kill switch: enabled"
+
+      - name: Daily quota check (max 5 successful runs in trailing 24h)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SINCE=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          COUNT=$(gh run list \
+            --workflow "Generate On-Demand Post Images" \
+            --status success \
+            --created ">=$SINCE" \
+            --limit 20 \
+            --json databaseId \
+            --jq 'length')
+          echo "Successful runs in last 24h: $COUNT"
+          if [ "$COUNT" -ge 5 ]; then
+            echo "::error::Daily quota exceeded: $COUNT successful runs in last 24h (max 5). Wait or raise quota in workflow."
+            exit 1
+          fi
+
+      - name: Scan pushed files for imagesPending flag
+        id: scan
+        run: |
+          # Get list of .md files changed in this push (added or modified)
+          CHANGED=$(git diff --name-only --diff-filter=AM \
+            ${{ github.event.before }}..${{ github.event.after }} \
+            -- 'src/content/learn/*.md' 2>/dev/null || \
+            git diff --name-only --diff-filter=AM HEAD~1..HEAD -- 'src/content/learn/*.md')
+
+          echo "Changed news files:"
+          echo "$CHANGED"
+
+          FLAGGED=""
+          COUNT=0
+          for FILE in $CHANGED; do
+            if [ -f "$FILE" ] && grep -q '^imagesPending:[ ]*true' "$FILE"; then
+              echo "  FLAGGED: $FILE"
+              FLAGGED="$FLAGGED $FILE"
+              COUNT=$((COUNT + 1))
+            else
+              echo "  skipped: $FILE (no imagesPending:true)"
+            fi
+          done
+
+          FLAGGED=$(echo "$FLAGGED" | xargs)
+          echo "flagged_files=$FLAGGED" >> $GITHUB_OUTPUT
+          echo "flagged_count=$COUNT" >> $GITHUB_OUTPUT
+          echo "Total flagged: $COUNT"
+
+      - name: Enforce per-run cap (max 3 articles)
+        run: |
+          COUNT="${{ steps.scan.outputs.flagged_count }}"
+          if [ "$COUNT" -gt 3 ]; then
+            echo "::error::Per-run cap exceeded: $COUNT articles flagged with imagesPending:true (max 3 per push). Split the commits."
+            exit 1
+          fi
+
+      - name: Decide whether to proceed
+        id: gate
+        run: |
+          COUNT="${{ steps.scan.outputs.flagged_count }}"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No flagged files. Exiting cleanly."
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          else
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          fi
+
+  generate:
+    needs: preflight
+    if: needs.preflight.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate images for each flagged article
+        env:
+          IMAGE_WORKER_URL: https://master-image-generator.speech-recognition-cloud.workers.dev/generate
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          R2_PUBLIC_BASE: ${{ vars.R2_PUBLIC_BASE }}
+          SITE_ID: speechrecognitioncloud
+          CONTENT_DIR: learn
+          FLAGGED: ${{ needs.preflight.outputs.flagged_files }}
+        run: |
+          mkdir -p implementations
+          touch implementations/image-generation.log
+          for FULLPATH in $FLAGGED; do
+            FNAME=$(basename "$FULLPATH")
+            echo "=== Generating for $FNAME ==="
+            node generate-images.js "post:$FNAME"
+
+            # Flip imagesPending:true -> false
+            if [ -f "$FULLPATH" ]; then
+              sed -i 's/^imagesPending:[ ]*true/imagesPending: false/' "$FULLPATH"
+              echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) generated_images slug=$FNAME run=${{ github.run_id }}" \
+                >> implementations/image-generation.log
+            fi
+          done
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add -A
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: generated on-demand post images [skip ci]"
+          git push

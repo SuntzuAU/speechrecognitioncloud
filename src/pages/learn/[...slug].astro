@@ -13,6 +13,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const R2_BASE = (import.meta.env.PUBLIC_R2_BASE ?? 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev').replace(/\/$/, '');
+const imgSrc = (key) => key ? (/^https?:\/\//.test(key) ? key : `${R2_BASE}/${key}`) : '';
 const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
 ---
 <BaseLayout title={post.data.title} description={post.data.description}>
@@ -27,6 +29,10 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
       </div>
       <h1 class="article-title">{post.data.title}</h1>
 
+      {post.data.heroImage && (
+        <div class="hero-img"><img src={imgSrc(post.data.heroImage)} alt={post.data.heroImageAlt ?? post.data.title} loading="eager" decoding="async" /></div>
+      )}
+
       {post.data.youtubeId && (
         <div class="yt-facade" data-ytid={post.data.youtubeId} style="margin-bottom:32px">
           <img src={`https://i.ytimg.com/vi/${post.data.youtubeId}/maxresdefault.jpg`} alt={post.data.title} loading="eager" />
@@ -34,7 +40,11 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
         </div>
       )}
 
-      <div class="article-body">
+      <div class="article-body" id="article-prose"
+        data-break1={post.data.breakImage1 ? imgSrc(post.data.breakImage1) : ''}
+        data-break1-alt={post.data.breakImage1Alt ?? ''}
+        data-break2={post.data.breakImage2 ? imgSrc(post.data.breakImage2) : ''}
+        data-break2-alt={post.data.breakImage2Alt ?? ''}>
         <Content />
       </div>
     </div>
@@ -55,6 +65,10 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
     .learn-tag--guide{color:#059669;background:#ECFDF5}
     .learn-tag--video{color:#DC2626;background:#FEF2F2}
     .learn-tag--tip{color:#D97706;background:#FFFBEB}
+    .hero-img{margin-bottom:32px;border-radius:16px;overflow:hidden;background:#F1F5F9}
+    .hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+    .img-break{margin:32px 0;border-radius:14px;overflow:hidden;background:#F1F5F9}
+    .img-break img{width:100%;max-height:360px;object-fit:cover;display:block}
     .article-title{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em}
     .article-body{font-size:16px;line-height:1.8;color:var(--text)}
     .article-body h2{font-size:24px;font-weight:700;margin-top:40px;margin-bottom:16px}
@@ -73,5 +87,26 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
   </style>
   <script is:inline>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.style.paddingBottom='56.25%';el.style.height='0';el.appendChild(iframe);});});
+  </script>
+  <script is:inline>
+    (function () {
+      var prose = document.getElementById('article-prose');
+      if (!prose) return;
+      var b1 = prose.getAttribute('data-break1'), b1a = prose.getAttribute('data-break1-alt') || '';
+      var b2 = prose.getAttribute('data-break2'), b2a = prose.getAttribute('data-break2-alt') || '';
+      if (!b1 && !b2) return;
+      var h2s = prose.querySelectorAll('h2');
+      if (!h2s.length) return;
+      function mk(src, alt) {
+        var w = document.createElement('div'); w.className = 'img-break';
+        var i = document.createElement('img'); i.src = src; i.alt = alt; i.loading = 'lazy'; i.decoding = 'async';
+        w.appendChild(i); return w;
+      }
+      if (b1 && h2s.length >= 2) prose.insertBefore(mk(b1, b1a), h2s[1]);
+      if (b2) {
+        var idx = Math.max(2, Math.floor(h2s.length * 2 / 3));
+        if (h2s.length > idx) prose.insertBefore(mk(b2, b2a), h2s[idx]);
+      }
+    })();
   </script>
 </BaseLayout>
