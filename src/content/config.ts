@@ -18,6 +18,13 @@ const learn = defineCollection({
     breakImage2: z.string().optional(),
     breakImage2Alt: z.string().optional(),
     breakPrompt2: z.string().optional(),
+    imagesPending: z.boolean().optional(),
+    heroAspectRatio: z.string().optional(),
+    breakAspectRatio1: z.string().optional(),
+    breakAspectRatio2: z.string().optional(),
+    heroImageSize: z.string().optional(),
+    breakImageSize1: z.string().optional(),
+    breakImageSize2: z.string().optional(),
     internalLinks: z.array(z.object({
       to: z.string(),
       anchor: z.string()
