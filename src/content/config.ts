@@ -19,6 +19,7 @@ const learn = defineCollection({
     breakImage2Alt: z.string().optional(),
     breakPrompt2: z.string().optional(),
     imagesPending: z.boolean().optional(),
+    promptSuffixOverride: z.string().optional(),
     heroAspectRatio: z.string().optional(),
     breakAspectRatio1: z.string().optional(),
     breakAspectRatio2: z.string().optional(),

@@ -152,7 +152,11 @@ function resolvePostPrompt(fm, role) {
   const altField = isHero ? 'heroImageAlt' : (role === 'break1' ? 'breakImage1Alt' : 'breakImage2Alt');
   if (fm[promptField]) {
     const sfx = isHero ? library.heroSuffix : library.breakSuffix;
-    return { prompt: `${fm[promptField]} ${library.suffix} ${sfx}`.trim(), altText: fm[altField] || '' };
+    // Optional per-article override of the global subject suffix. Used when an
+    // article's subject matter legitimately falls outside the network default
+    // (e.g. school content that must show children). Falls back to library.suffix.
+    const baseSuffix = fm.promptSuffixOverride || library.suffix;
+    return { prompt: `${fm[promptField]} ${baseSuffix} ${sfx}`.trim(), altText: fm[altField] || '' };
   }
   if (fm[sceneField]) {
     const scene = library.scenes?.[fm[sceneField]];
