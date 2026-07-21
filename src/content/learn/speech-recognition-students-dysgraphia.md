@@ -4,10 +4,10 @@ date: "2026-07-21"
 description: "Dictation software was age-gated for years — Dragon was trained on adult voices and struggled with children under about 16. Speech Recognition Cloud is built to recognise younger voices, making dictation a realistic accommodation for primary and early secondary students with dysgraphia."
 type: "article"
 context: "descriptive"
-heroImage: ""
-breakImage1: ""
+heroImage: "general/2026/07/21/images-speechrecognitioncloud-speech-recognition-students-dy-c9116723.jpg"
+breakImage1: "general/2026/07/21/images-speechrecognitioncloud-speech-recognition-students-dy-a4eb29bc.jpg"
 breakImage2: "general/2026/07/21/images-speechrecognitioncloud-speech-recognition-students-dy-ad5cd409.jpg"
-imagesPending: true
+imagesPending: false
 promptSuffixOverride: "Photorealistic DSLR photography, warm natural lighting, rich colour grading, shallow depth of field, authentic Australian school setting, natural and unposed rather than stock-photo styled. The person dictating is the student; any headset or microphone belongs to the student, never to the supervising adult. Headsets must be a slim discreet boom headset, or the student may speak directly into the laptop's built-in microphone. Never a bulky studio, podcast or Yeti-style microphone. No text overlays, no logos, no UI mockups, no watermarks, no empty rooms."
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
