@@ -27,6 +27,10 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
       </div>
       <h1 class="article-title">{post.data.title}</h1>
 
+      {post.data.heroImage && (
+        <img src={post.data.heroImage} alt={post.data.heroImageAlt || post.data.title} class="article-hero" loading="eager" width="1200" height="630" />
+      )}
+
       {post.data.youtubeId && (
         <div class="yt-facade" data-ytid={post.data.youtubeId} style="margin-bottom:32px">
           <img src={`https://i.ytimg.com/vi/${post.data.youtubeId}/maxresdefault.jpg`} alt={post.data.title} loading="eager" />
@@ -55,6 +59,8 @@ const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'T
     .learn-tag--guide{color:#059669;background:#ECFDF5}
     .learn-tag--video{color:#DC2626;background:#FEF2F2}
     .learn-tag--tip{color:#D97706;background:#FFFBEB}
+    .article-hero{width:100%;height:auto;border-radius:16px;margin-bottom:32px;display:block}
+    .article-body img{width:100%;height:auto;border-radius:16px;margin:32px 0;display:block}
     .article-title{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em}
     .article-body{font-size:16px;line-height:1.8;color:var(--text)}
     .article-body h2{font-size:24px;font-weight:700;margin-top:40px;margin-bottom:16px}

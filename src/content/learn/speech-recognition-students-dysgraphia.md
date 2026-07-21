@@ -4,10 +4,13 @@ date: "2026-07-21"
 description: "Dictation software was age-gated for years — Dragon was trained on adult voices and struggled with children under about 16. Speech Recognition Cloud is built to recognise younger voices, making dictation a realistic accommodation for primary and early secondary students with dysgraphia."
 type: "article"
 context: "descriptive"
+heroImage: "/learn/dysgraphia-hero.svg"
 heroImageAlt: "A student's spoken words flowing onto a page, bypassing the handwriting bottleneck"
 heroPrompt: "Clean, modern editorial illustration for an education software article: spoken words flowing as a soft ribbon of light into a school exercise book, bypassing a stalled pencil, suggesting ideas reaching the page without handwriting. Calm indigo (#4338CA) and white palette with soft slate accents, subtle depth, flat contemporary style. No text, no logos, no brand marks, no identifiable people or children. Landscape hero orientation."
+breakImage1: "/learn/dysgraphia-voices.svg"
 breakImage1Alt: "A younger voice recognised accurately where older adult-trained software failed"
 breakPrompt1: "Minimal conceptual illustration: two stylised soundwaves side by side — one smaller and lighter, one larger — both passing cleanly through the same recognition point and resolving into neat lines of text, suggesting software that handles younger and adult voices equally well. Indigo (#4338CA) accent on a clean white background, flat modern vector style, generous whitespace. No text, no logos, no people or children."
+breakImage2: "/learn/dysgraphia-cursor.svg"
 breakImage2Alt: "Dictation working at the cursor across schoolwork on a Windows laptop"
 breakPrompt2: "Minimal conceptual illustration: voice dictation appearing at the text cursor across typical schoolwork on a Windows laptop — an essay document, an online assignment form, a research note — connected by soft flowing lines, with a small headset microphone motif. Indigo and slate palette on white, flat modern vector style. No text, no logos, no people or children."
 internalLinks:
@@ -55,6 +58,8 @@ Three things, consistently.
 
 **Length and complexity go up.** Students with dysgraphia learn to write short, because short is survivable. Given a channel that isn't punishing, they write longer sentences, use the vocabulary they actually have rather than the words they can reliably spell, and revise — because revising no longer means writing the whole thing out again.
 
+![A younger voice and an adult voice both recognised accurately by the same system](/learn/dysgraphia-voices.svg)
+
 ## The research backs this up, with one important caveat
 
 A [2025 review in *Disability and Rehabilitation: Assistive Technology*](https://www.tandfonline.com/doi/abs/10.1080/17483107.2025.2493737) examined five years of studies on assistive technology for students with dysgraphia. Speech-to-text came out as one of the most widely used and effective supports, alongside word prediction and graphic organisers, with consistent gains in academic performance and classroom engagement where it reduced reliance on manual writing.
@@ -74,6 +79,8 @@ A few things separate the students for whom dictation sticks from the ones who a
 **Get the microphone right.** Recognition accuracy depends heavily on clean audio, and a laptop's built-in mic in a room with twenty-nine other children is not clean audio. A decent headset is the single cheapest accuracy improvement available.
 
 **Don't retire handwriting entirely.** Most students still benefit from handwriting and typing practice in low-stakes contexts. Reserve dictation for the work where the ideas are the point: extended writing, timed assessment, anything long enough that transcription load becomes the limiting factor.
+
+![Dictation appearing at the text cursor across schoolwork on a Windows laptop](/learn/dysgraphia-cursor.svg)
 
 ## Where Speech Recognition Cloud comes in
 
