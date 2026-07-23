@@ -5,46 +5,19 @@ import site from '../../site.config.json';
 // All downloadable PDF guides. To add a new guide, drop the PDF in
 // public/guides/ and add an entry here. Use clean filenames with no spaces.
 const guides = [
-  {
-    title: "User Guide",
-    description: "The complete guide to installing, setting up your microphone, and dictating with Speech Recognition Cloud.",
-    file: "/guides/SRC-User-Guide.pdf",
-  },
-  {
-    title: "AI Modes Guide",
-    description: "Write, Rewrite, Answer, Reply, and Run Command — how to use the AI-powered voice modes.",
-    file: "/guides/SRC-AI-Modes-Guide.pdf",
-  },
-  {
-    title: "Text Replacements Guide",
-    description: "Auto-replace words and phrases, expand abbreviations, fix common errors, and insert templates.",
-    file: "/guides/SRC-Replacements-Guide.pdf",
-  },
-  {
-    title: "Vocabulary Guide",
-    description: "Add specialised terms, names, and jargon so the transcription engine recognises your words.",
-    file: "/guides/SRC-Vocabulary-Guide.pdf",
-  },
-  {
-    title: "Preferences Guide",
-    description: "Configure preferences: hotkeys, startup behaviour, minimising to tray, and general options.",
-    file: "/guides/SRC-Preferences-Guide.pdf",
-  },
-  {
-    title: "Advanced Settings Guide",
-    description: "Advanced configuration options for power users who want finer control over the app.",
-    file: "/guides/SRC-Advanced-Settings-Guide.pdf",
-  },
-  {
-    title: "Mobile App Guide",
-    description: "Set up the iPhone or Android companion app as a wireless mic or for Voice Notes on the go.",
-    file: "/guides/SRC-Smartphone-Guide.pdf",
-  },
-  {
-    title: "Administrator Guide",
-    description: "Deployment, licensing, and configuration for IT administrators and volume rollouts.",
-    file: "/guides/SRC-Administrator-Guide.pdf",
-  },
+  { title: "Installation Guide", description: "Download, install, and activate Speech Recognition Cloud on your Windows PC.", file: "/guides/SRC-Installation-Guide.pdf" },
+  { title: "User Guide", description: "The complete guide to setting up and dictating with Speech Recognition Cloud.", file: "/guides/SRC-User-Guide.pdf" },
+  { title: "Microphone Guide", description: "Choose and set up your microphone for the best possible dictation accuracy.", file: "/guides/SRC-Microphone-Guide.pdf" },
+  { title: "Hotkeys Guide", description: "Set and customise the hotkeys that start and stop your dictation.", file: "/guides/SRC-Hotkeys-Guide.pdf" },
+  { title: "AI Modes Guide", description: "Write, Rewrite, Answer, Reply, and Run Command — how to use the AI-powered voice modes.", file: "/guides/SRC-AI-Modes-Guide.pdf" },
+  { title: "Text Replacements Guide", description: "Auto-replace words and phrases, expand abbreviations, fix common errors, and insert templates.", file: "/guides/SRC-Replacements-Guide.pdf" },
+  { title: "Vocabulary Guide", description: "Add specialised terms, names, and jargon so the transcription engine recognises your words.", file: "/guides/SRC-Vocabulary-Guide.pdf" },
+  { title: "General Tab Guide", description: "The General settings tab — account, usage, and core application options.", file: "/guides/SRC-General-Tab-Guide.pdf" },
+  { title: "Preferences Guide", description: "Configure preferences: startup behaviour, minimising to tray, and general options.", file: "/guides/SRC-Preferences-Guide.pdf" },
+  { title: "Advanced Settings Guide", description: "Advanced configuration options for power users who want finer control over the app.", file: "/guides/SRC-Advanced-Settings-Guide.pdf" },
+  { title: "History Guide", description: "Review, search, and reuse your previous dictations from the history panel.", file: "/guides/SRC-History-Guide.pdf" },
+  { title: "Mobile App Guide", description: "Set up the iPhone or Android companion app as a wireless mic or for Voice Notes on the go.", file: "/guides/SRC-Smartphone-Guide.pdf" },
+  { title: "Administrator Guide", description: "Deployment, licensing, and configuration for IT administrators and volume rollouts.", file: "/guides/SRC-Administrator-Guide.pdf" },
 ];
 ---
 <BaseLayout title="Guides" description="Download PDF user guides for Speech Recognition Cloud — user guide, AI modes, text replacements, vocabulary, mobile app, and more.">
