@@ -89,3 +89,5 @@ For a lot of families, that first paragraph settles a question they've been aski
 - [Dyslexia — healthdirect Australia](https://www.healthdirect.gov.au/dyslexia)
 - [International Dyslexia Association — Frequently Asked Questions (prevalence data)](https://dyslexiaida.org/frequently-asked-questions-2/)
 - [Technology-Based Writing — the writing process when students with dyslexia use speech-to-text, *Dyslexia* (2026)](https://onlinelibrary.wiley.com/doi/full/10.1002/dys.70024)
+
+<!-- published 20260723T014748Z -->
