@@ -4,7 +4,7 @@ date: "2026-07-22"
 description: "For many students with dyslexia the barrier isn't ideas, it's spelling — every word becomes a decision that interrupts the sentence. Dictation lets them compose in full, at the level they actually think. Here's where it helps, where it doesn't, and how to introduce it well."
 type: "article"
 context: "descriptive"
-imagesPending: false
+imagesPending: true
 promptSuffixOverride: "Photorealistic DSLR photography, warm natural lighting, rich colour grading, shallow depth of field, authentic Australian school setting, natural and unposed rather than stock-photo styled. The person dictating is the student; any headset or microphone belongs to the student, never to the supervising adult. Headsets must be a slim discreet boom headset, or the student may speak directly into the laptop's built-in microphone. Never a bulky studio, podcast or Yeti-style microphone. No text overlays, no logos, no UI mockups, no watermarks, no empty rooms."
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
@@ -90,4 +90,3 @@ For a lot of families, that first paragraph settles a question they've been aski
 - [International Dyslexia Association — Frequently Asked Questions (prevalence data)](https://dyslexiaida.org/frequently-asked-questions-2/)
 - [Technology-Based Writing — the writing process when students with dyslexia use speech-to-text, *Dyslexia* (2026)](https://onlinelibrary.wiley.com/doi/full/10.1002/dys.70024)
 
-<!-- published 20260723T014748Z -->
