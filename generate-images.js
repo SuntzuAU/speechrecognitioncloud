@@ -142,7 +142,11 @@ function parseFrontmatter(content) {
 function setFrontmatterField(content, field, value) {
   const re = new RegExp(`^(${field}:)[ \\t]*.*$`, 'm');
   if (re.test(content)) return content.replace(re, `${field}: "${value}"`);
-  return content.replace(/^(metaDescription:[ \t]*.*)$/m, `$1\n${field}: "${value}"`);
+  if (/^metaDescription:[ \t]*.*$/m.test(content)) {
+    return content.replace(/^(metaDescription:[ \t]*.*)$/m, `$1\n${field}: "${value}"`);
+  }
+  // Fallback: no existing field and no metaDescription anchor — insert at top of frontmatter
+  return content.replace(/^---\n/, `---\n${field}: "${value}"\n`);
 }
 
 function resolvePostPrompt(fm, role) {
