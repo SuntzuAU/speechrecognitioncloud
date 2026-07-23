@@ -159,7 +159,7 @@ const breadcrumbSchema = {
           link.dropdown ? (
             <div class="nav-dropdown-wrap">
               <button class="nav-link nav-dropdown-trigger" aria-expanded="false">{link.label}<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-              <div class="nav-dropdown-menu">{site.nav.useCases.map(uc => (<a href={uc.href} class="nav-dropdown-item">{uc.label}</a>))}</div>
+              <div class="nav-dropdown-menu">{(link.items || site.nav.useCases).map(uc => (<a href={uc.href} class="nav-dropdown-item">{uc.label}</a>))}</div>
             </div>
           ) : (<a href={link.href} class="nav-link">{link.label}</a>)
         ))}
@@ -170,7 +170,7 @@ const breadcrumbSchema = {
     <div class="mobile-nav">
       {site.nav.links.map(link => (
         link.dropdown ? (
-          <details class="mobile-dropdown"><summary class="nav-link">{link.label}</summary><div class="mobile-dropdown-items">{site.nav.useCases.map(uc => (<a href={uc.href} class="nav-link">{uc.label}</a>))}</div></details>
+          <details class="mobile-dropdown"><summary class="nav-link">{link.label}</summary><div class="mobile-dropdown-items">{(link.items || site.nav.useCases).map(uc => (<a href={uc.href} class="nav-link">{uc.label}</a>))}</div></details>
         ) : (<a href={link.href} class="nav-link">{link.label}</a>)
       ))}
       <a href={site.nav.ctaUrl} class="btn-primary" style="margin-top:12px;text-align:center;justify-content:center">{site.nav.ctaText}</a>

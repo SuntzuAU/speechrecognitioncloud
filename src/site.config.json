@@ -54,7 +54,7 @@
       { "label": "Who it's for", "href": "#", "dropdown": true },
       { "label": "Pricing", "href": "/pricing" },
       { "label": "Learn", "href": "/learn" },
-      { "label": "Support", "href": "/support" },
+      { "label": "Support", "href": "/support", "dropdown": true, "items": [ { "label": "Support home", "href": "/support" }, { "label": "Guides (PDF)", "href": "/support/guides" }, { "label": "Videos", "href": "/support/videos" } ] },
       { "label": "Contact", "href": "/contact" }
     ],
     "useCases": [
@@ -210,7 +210,7 @@
     "tagline": "AI voice dictation software for Windows. Built by Russell Bewsell.",
     "columns": [
       { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Volume licensing", "href": "/academic" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },
-      { "heading": "Learn", "links": [{ "label": "All guides and articles", "href": "/learn" },{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Support", "href": "/support" }] },
+      { "heading": "Learn", "links": [{ "label": "All guides and articles", "href": "/learn" },{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Guides (PDF)", "href": "/support/guides" },{ "label": "Videos", "href": "/support/videos" },{ "label": "Support", "href": "/support" }] },
       { "heading": "Who it's for", "links": [{ "label": "Medical", "href": "/medical" },{ "label": "Healthcare", "href": "/healthcare" },{ "label": "Legal", "href": "/legal" },{ "label": "Business", "href": "/business" },{ "label": "Government", "href": "/government" },{ "label": "Schools and universities", "href": "/academic" }] },
       { "heading": "Company", "links": [{ "label": "Contact", "href": "/contact" },{ "label": "Privacy and security", "href": "/privacy" },{ "label": "Terms of service", "href": "/terms" }] }
     ],

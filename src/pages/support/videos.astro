@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+
+// Video walkthroughs. To add a video, paste the YouTube ID (the part after
+// youtu.be/ or watch?v=) plus a title and short description.
+const videos = [
+  {
+    title: "Text Replacements & Vocabulary",
+    description: "How to auto-replace words and phrases and add custom vocabulary so the engine recognises your terms.",
+    youtubeId: "uCoHZFkfv-k",
+  },
+];
+---
+<BaseLayout title="Videos" description="Video walkthroughs for Speech Recognition Cloud — see features and setup in action.">
+  <section class="section-pad">
+    <div class="container" style="max-width:860px">
+      <p class="eyebrow">SUPPORT</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Videos</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:40px">Watch short walkthroughs of Speech Recognition Cloud features and setup.</p>
+
+      <div class="video-list">
+        {videos.map(v => (
+          <div class="video-item">
+            <div class="video-frame">
+              <iframe
+                src={`https://www.youtube.com/embed/${v.youtubeId}`}
+                title={v.title}
+                loading="lazy"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <h3 class="video-title">{v.title}</h3>
+            <p class="muted" style="font-size:15px">{v.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Prefer to read?</h2>
+      <p class="muted" style="margin-bottom:24px">Download our detailed PDF guides for every feature.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/support/guides" class="btn-secondary">Browse guides</a>
+        <a href="/support" class="btn-primary">Back to support</a>
+      </div>
+    </div>
+  </section>
+
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .video-list{display:flex;flex-direction:column;gap:48px}
+    .video-frame{position:relative;width:100%;padding-top:56.25%;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:var(--neutral);margin-bottom:16px}
+    .video-frame iframe{position:absolute;inset:0;width:100%;height:100%}
+    .video-title{font-size:20px;font-weight:700;margin-bottom:8px}
+  </style>
+</BaseLayout>
