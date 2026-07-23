@@ -54,7 +54,7 @@
       { "label": "Who it's for", "href": "#", "dropdown": true },
       { "label": "Pricing", "href": "/pricing" },
       { "label": "Learn", "href": "/learn" },
-      { "label": "Support", "href": "/support", "dropdown": true, "items": [ { "label": "Support home", "href": "/support" }, { "label": "Guides (PDF)", "href": "/support/guides" }, { "label": "Videos", "href": "/support/videos" } ] },
+      { "label": "Support", "href": "/support", "dropdown": true, "items": [ { "label": "Help centre", "href": "/support" }, { "label": "Guides (PDF)", "href": "/support/guides" }, { "label": "Videos", "href": "/support/videos" } ] },
       { "label": "Contact", "href": "/contact" }
     ],
     "useCases": [
