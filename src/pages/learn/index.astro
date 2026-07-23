@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import site from '../../site.config.json';
 const posts = (await getCollection('learn')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const R2_BASE = (import.meta.env.PUBLIC_R2_BASE ?? 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev').replace(/\/$/, '');
+const imgSrc = (key) => key ? (/^https?:\/\//.test(key) ? key : `${R2_BASE}/${key}`) : '';
 const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
 const typeColours = { article: { bg: '#EEF2FF', fg: '#4338CA' }, guide: { bg: '#ECFDF5', fg: '#059669' }, video: { bg: '#FEF2F2', fg: '#DC2626' }, tip: { bg: '#FFFBEB', fg: '#D97706' } };
 const typeIcons = {
@@ -32,7 +34,7 @@ const typeIcons = {
                 </div>
               ) : post.data.heroImage ? (
                 <div class="learn-thumb">
-                  <img src={post.data.heroImage} alt={post.data.heroImageAlt || post.data.title} loading="lazy" decoding="async" />
+                  <img src={imgSrc(post.data.heroImage)} alt={post.data.heroImageAlt || post.data.title} loading="lazy" decoding="async" />
                 </div>
               ) : (
                 <div class="learn-thumb learn-thumb-placeholder" style={`background:${tc.bg}`}>
