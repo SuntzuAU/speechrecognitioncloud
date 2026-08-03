@@ -5,6 +5,8 @@ import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
 function imgAlt(key) { return manifest[key]?.altText || key; }
+function imgW(key) { return manifest[key]?.width || undefined; }
+function imgH(key) { return manifest[key]?.height || undefined; }
 
 const pillars = [
   {

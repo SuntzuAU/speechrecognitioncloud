@@ -9,7 +9,6 @@ export default defineConfig({
   integrations: [sitemap({
     filter: (page) => !page.includes('/404') && !page.includes('/placeholder'),
     changefreq: 'weekly',
-    priority: 0.7,
-    lastmod: new Date()
+    priority: 0.7
   })]
 });

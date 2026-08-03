@@ -5,6 +5,8 @@ import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
 function imgAlt(key) { return manifest[key]?.altText || key; }
+function imgW(key) { return manifest[key]?.width || undefined; }
+function imgH(key) { return manifest[key]?.height || undefined; }
 const extraSchema = [{
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -26,7 +28,7 @@ const extraSchema = [{
           <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
         </div>
         {imgSrc('writer-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('writer-hero')} alt={imgAlt('writer-hero')} loading="eager" decoding="async" /></div>
+          <div class="usecase-hero-img"><img src={imgSrc('writer-hero')} width={imgW('writer-hero')} height={imgH('writer-hero')} alt={imgAlt('writer-hero')} loading="eager" decoding="async" /></div>
         )}
       </div>
     </div>

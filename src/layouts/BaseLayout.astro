@@ -1,6 +1,6 @@
 ---
 import site from '../site.config.json';
-const { title, description, canonicalUrl: canonicalUrlProp, extraSchema } = Astro.props;
+const { title, description, canonicalUrl: canonicalUrlProp, extraSchema, ogImage } = Astro.props;
 const pageTitle = title ? `${title} | ${site.siteName}` : site.seoTitle;
 const pageDescription = description || site.seoDescription;
 const c = site.colours;
@@ -10,6 +10,9 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 // This guarantees every page emits a self-referential canonical and prevents Google
 // from treating apex/www/preview-domain variants as duplicates.
 const canonicalUrl = canonicalUrlProp || new URL(Astro.url.pathname, site.siteUrl).href;
+
+// Absolute social share image. Per-page override via the ogImage prop.
+const ogImageUrl = ogImage ? new URL(ogImage, site.siteUrl).href : new URL('/logo.jpg', site.siteUrl).href;
 
 // Build breadcrumb from current URL path
 const pathname = Astro.url.pathname;
@@ -72,13 +75,29 @@ const breadcrumbSchema = {
 };
 ---
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription} />
   <link rel="canonical" href={canonicalUrl} />
+  <!-- Geo targeting: primary market is the United States; global English fallback. -->
+  <link rel="alternate" hreflang="en-us" href={canonicalUrl} />
+  <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.siteName} />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImageUrl} />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
+  <meta name="twitter:image" content={ogImageUrl} />
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

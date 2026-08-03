@@ -5,6 +5,8 @@ import manifest from '../data/image-manifest.json';
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
 function imgAlt(key) { return manifest[key]?.altText || key; }
+function imgW(key) { return manifest[key]?.width || undefined; }
+function imgH(key) { return manifest[key]?.height || undefined; }
 
 const extraSchema = [
   {
@@ -61,7 +63,7 @@ const extraSchema = [
           <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
         </div>
         {imgSrc('students-lab-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('students-lab-hero')} alt={imgAlt('students-lab-hero')} loading="eager" decoding="async" /></div>
+          <div class="usecase-hero-img"><img src={imgSrc('students-lab-hero')} width={imgW('students-lab-hero')} height={imgH('students-lab-hero')} alt={imgAlt('students-lab-hero')} loading="eager" decoding="async" /></div>
         )}
       </div>
     </div>
@@ -76,7 +78,7 @@ const extraSchema = [
   </section>
 
   {imgSrc('students-break-dictating') && (
-    <div class="img-break"><img src={imgSrc('students-break-dictating')} alt={imgAlt('students-break-dictating')} loading="lazy" decoding="async" /></div>
+    <div class="img-break"><img src={imgSrc('students-break-dictating')} width={imgW('students-break-dictating')} height={imgH('students-break-dictating')} alt={imgAlt('students-break-dictating')} loading="lazy" decoding="async" /></div>
   )}
 
   <section class="section-pad">
@@ -115,7 +117,7 @@ const extraSchema = [
   </section>
 
   {imgSrc('students-break-teacher') && (
-    <div class="img-break"><img src={imgSrc('students-break-teacher')} alt={imgAlt('students-break-teacher')} loading="lazy" decoding="async" /></div>
+    <div class="img-break"><img src={imgSrc('students-break-teacher')} width={imgW('students-break-teacher')} height={imgH('students-break-teacher')} alt={imgAlt('students-break-teacher')} loading="lazy" decoding="async" /></div>
   )}
 
   <section class="section-pad">
@@ -127,7 +129,7 @@ const extraSchema = [
           <p style="font-size:16px;line-height:1.8">Research also shows it works best when students can review and correct the output. Dictation removes the transcription bottleneck, but writing still takes thinking. Schools comparing options often look for the <a href="https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic">best speech recognition for students</a> alongside the right training and classroom setup.</p>
         </div>
         {imgSrc('students-feature-reviewing') && (
-          <div class="research-img"><img src={imgSrc('students-feature-reviewing')} alt={imgAlt('students-feature-reviewing')} loading="lazy" decoding="async" /></div>
+          <div class="research-img"><img src={imgSrc('students-feature-reviewing')} width={imgW('students-feature-reviewing')} height={imgH('students-feature-reviewing')} alt={imgAlt('students-feature-reviewing')} loading="lazy" decoding="async" /></div>
         )}
       </div>
     </div>
