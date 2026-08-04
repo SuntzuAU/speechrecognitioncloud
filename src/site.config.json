@@ -76,7 +76,7 @@
   "hero": {
     "headline": "Speech to Text Software",
     "headlineAccent": "Get documentation done faster.",
-    "subheadline": "Turn your voice into accurate, punctuated text in Word, Outlook, web forms, and any Windows application. No voice training required.",
+    "subheadline": "Free speech to text for Windows. Turn your voice into accurate, punctuated text in Word, Outlook, web forms, and any Windows application. No voice training required.",
     "bullets": [
       "3x faster than typing. Full paragraphs appear instantly.",
       "AI handles punctuation and grammar automatically.",
@@ -100,7 +100,7 @@
 
   "demo": {
     "youtubeId": "vp0LFuRWdKI",
-    "caption": "Watch a real dictation in 60 seconds",
+    "caption": "Watch speech to text in action in 60 seconds",
     "ctaText": "Download free",
     "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe"
   },
@@ -194,7 +194,7 @@
     { "question": "Why doesn't the Medical plan include AI Modes?", "answer": "AI Modes are deliberately excluded from the Medical plan to protect patient privacy. AI Modes involve sending text to AI models for processing (write, rewrite, answer, reply). In clinical contexts, this creates an unnecessary data flow with patient information. The Medical plan focuses on what clinicians actually need - fast, accurate dictation with specialised medical vocabularies - while keeping the data path as tight as possible. Professional plan users who do not handle clinical information get full access to AI Modes." },
     { "question": "How many languages are supported?", "answer": "57 languages are currently supported on Free, Personal, and Professional plans, and the list is growing. The Medical tier is English only for now." },
     { "question": "Is there a free version?", "answer": "Yes. The Free plan gives you 20 minutes of dictation per month with core features. No credit card required. AI modes, custom vocabulary, and Ultra Accuracy are available on higher tiers." },
-    { "question": "What is this? Is it a meeting transcription tool?", "answer": "No. Speech Recognition Cloud is cursor-based dictation software. You place your cursor where you want text to appear, speak, and the text is typed at the cursor. It is not a meeting recorder, not an AI note-taker, and not a transcription service. It replaces typing with voice." },
+    { "question": "What is this? Is it a meeting transcription tool?", "answer": "No. Speech Recognition Cloud is cursor-based speech to text software. You place your cursor where you want text to appear, speak, and the text is typed at the cursor. It is not a meeting recorder, not an AI note-taker, and not a transcription service. It replaces typing with voice." },
     { "question": "Can I cancel anytime?", "answer": "Yes. All paid plans are annual subscriptions and you can cancel anytime. There are no lock-in contracts." }
   ],
 
