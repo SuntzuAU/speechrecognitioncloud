@@ -1,7 +1,7 @@
 ---
-title: "Dragon Professional Anywhere End of Life: Final Purchase Date is 31 December 2026"
+title: "Dragon Professional Anywhere Alternatives: The Product Ends in 2027"
 date: "2026-08-05"
-description: "Dragon Professional Anywhere and Dragon Legal Anywhere reach end of life at the end of 2027, and cannot be purchased after 31 December 2026. What that means for your licence, your renewal and your migration timing."
+description: "Dragon Professional Anywhere and Dragon Legal Anywhere cannot be purchased after 31 December 2026 and end in 2027. The alternatives, what they cost, and how long you have to choose one."
 type: "article"
 context: "descriptive"
 heroImageAlt: "A calendar showing a circled date with following pages fading out"
@@ -20,17 +20,19 @@ breakPrompt2: "Wide cinematic strip, people prominent: a professional at a Windo
 internalLinks:
   - to: "/pricing"
     anchor: "speech to text software pricing"
-  - to: "/learn/dragon-alternatives-compared-2026"
-    anchor: "Dragon alternatives compared"
+  - to: "/learn/best-dragon-alternative"
+    anchor: "best Dragon alternative"
   - to: "/learn/dragon-medical-one-alternative"
     anchor: "Dragon Medical One alternative"
   - to: "/business"
     anchor: "dictation for business teams"
 ---
 
-Dragon Professional Anywhere and Dragon Legal Anywhere reach end of life at the end of 2027. Because both are sold as twelve-month subscriptions, the practical consequence is earlier than that date suggests: **31 December 2026 is the last date either product can be sold.**
+If you use Dragon Professional Anywhere or Dragon Legal Anywhere, you need an alternative — and sooner than you might think.
 
-That is under five months away.
+Both products reach end of life at the end of 2027. Because both are sold as twelve-month subscriptions, the practical consequence arrives earlier: **31 December 2026 is the last date either product can be sold.** That is under five months away.
+
+This page covers what is ending, how long you realistically have, and what the alternatives are.
 
 ## When is the last day I can buy Dragon Professional Anywhere?
 
@@ -99,13 +101,13 @@ That is what makes this a deadline rather than a recommendation.
 
 **4. If you are an organisation, scope it this quarter.** For one person a migration is a weekend. For a team of twenty on a standard operating environment it is a project with budget, IT approval and user training attached, and it cannot start with a purchase decision made in late December.
 
-## What can I move to?
+## What are the best Dragon Professional Anywhere alternatives?
 
-**Speech Recognition Cloud** is one option, and the one we build. It performs the same core function — verbatim dictation at the cursor in any Windows application, no voice training, unlimited installs per person — at **US$159 a year** on the Professional plan against roughly US$560 to US$630 for Dragon Professional Anywhere. There is a free Starter plan with no expiry, so it can be tested against your real work at no cost before any decision.
+The strongest alternative for most Dragon Professional Anywhere and Dragon Legal Anywhere users is **Speech Recognition Cloud**, which is the product we build. It performs the same core function — verbatim dictation at the cursor in any Windows application, no voice training, unlimited installs per person — at **US$159 a year** on the Professional plan against roughly US$560 to US$630 for Dragon Professional Anywhere. There is a free Starter plan with no expiry, so it can be tested against your real work at no cost before any decision.
 
 It is not a like-for-like replacement in every respect. It does not support VDI or virtual app deployment, has no central seat management console, has no macOS version, and requires an internet connection. If any of those are hard requirements, they need solving separately and early.
 
-The full comparison across the Dragon range is on the [Dragon alternatives compared](/learn/dragon-alternatives-compared-2026) page. Clinicians should see the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison. Teams should start at [dictation for business teams](/business), and current plan details are on [speech to text software pricing](/pricing).
+The full comparison across the whole Dragon range is on the [best Dragon alternative](/learn/best-dragon-alternative) page. Clinicians should see the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison. Teams should start at [dictation for business teams](/business), and current plan details are on [speech to text software pricing](/pricing).
 
 *Pricing accurate at time of publication. Verify current pricing before purchasing.*
 
