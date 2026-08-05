@@ -238,6 +238,12 @@
     "description": "AI voice dictation software that turns speech into accurate, punctuated text in any Windows application. No voice training required. 57 languages supported. Available worldwide, including the United States, Canada, the United Kingdom, Europe, Australia and New Zealand.",
     "downloadUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",
     "isAccessibleForFree": true,
+    "sameAs": [
+      "https://www.g2.com/products/speech-recognition-cloud/reviews",
+      "https://www.capterra.com/p/10035996/Speech-Recognition-Cloud",
+      "https://www.softwareadvice.com/product/537090-Speech-Recognition-Cloud/",
+      "https://alternativeto.net/software/speech-recognition-cloud/"
+    ],
     "availableLanguage": [
       { "@type": "Language", "name": "English", "identifier": "en" },
       { "@type": "Language", "name": "Afrikaans", "identifier": "af" },

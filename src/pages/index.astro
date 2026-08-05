@@ -33,6 +33,16 @@ const softwareSchema = {
   "isAccessibleForFree": site.structuredData.isAccessibleForFree,
   "areaServed": site.structuredData.areaServed,
   "availableLanguage": site.structuredData.availableLanguage,
+  "sameAs": site.structuredData.sameAs,
+  "publisher": {
+    "@type": "Organization",
+    "name": site.organization.name,
+    "url": site.organization.url
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": site.structuredData.name
+  },
   "featureList": site.structuredData.featureList,
   "offers": site.structuredData.offers.map(o => ({
     "@type": "Offer",

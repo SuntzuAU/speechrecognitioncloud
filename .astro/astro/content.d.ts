@@ -148,6 +148,13 @@ declare module 'astro:content' {
   collection: "learn";
   data: InferEntrySchema<"learn">
 } & { render(): Render[".md"] };
+"best-dragon-alternative.md": {
+	id: "best-dragon-alternative.md";
+  slug: "best-dragon-alternative";
+  body: string;
+  collection: "learn";
+  data: InferEntrySchema<"learn">
+} & { render(): Render[".md"] };
 "dragon-medical-one-alternative.md": {
 	id: "dragon-medical-one-alternative.md";
   slug: "dragon-medical-one-alternative";
@@ -165,6 +172,13 @@ declare module 'astro:content' {
 "dragon-professional-16-alternative.md": {
 	id: "dragon-professional-16-alternative.md";
   slug: "dragon-professional-16-alternative";
+  body: string;
+  collection: "learn";
+  data: InferEntrySchema<"learn">
+} & { render(): Render[".md"] };
+"dragon-professional-anywhere-alternatives.md": {
+	id: "dragon-professional-anywhere-alternatives.md";
+  slug: "dragon-professional-anywhere-alternatives";
   body: string;
   collection: "learn";
   data: InferEntrySchema<"learn">

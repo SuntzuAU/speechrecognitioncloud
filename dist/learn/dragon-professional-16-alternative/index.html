@@ -172,11 +172,49 @@ Yes. SRC is cloud-based, which is what keeps it accurate, always up to date and 
     .article-body ul,.article-body ol{margin-bottom:20px;padding-left:24px;color:var(--muted)}
     .article-body li{margin-bottom:8px;line-height:1.7}
     .article-body blockquote{border-left:3px solid var(--brand);padding-left:20px;margin:24px 0;font-style:italic;color:var(--muted)}
-    .article-body table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px;line-height:1.6;border:1px solid #E5E7EB}
-    .article-body th,.article-body td{padding:11px 16px;border:1px solid #E5E7EB;text-align:left;vertical-align:top}
-    .article-body thead th{background:var(--brand-lightest,#EEF2FF);color:var(--text);font-weight:700}
-    .article-body tbody tr:nth-child(even){background:#F9FAFB}
+    /* --- tables --- */
+    .article-body table{width:100%;border-collapse:separate;border-spacing:0;margin:30px 0;font-size:15px;line-height:1.6;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,0.04)}
+    .article-body th,.article-body td{padding:13px 16px;text-align:left;vertical-align:top;border:0;border-bottom:1px solid var(--border)}
+    .article-body thead th{background:linear-gradient(180deg,#EEF2FF 0%,#E7EAFD 100%);color:var(--text);font-weight:700;font-size:14px;letter-spacing:-0.01em;border-bottom:2px solid var(--brand-light,#818CF8);white-space:nowrap}
+    .article-body tbody tr:last-child td{border-bottom:0}
+    .article-body tbody tr:hover{background:#FAFBFF}
     .article-body td strong,.article-body th strong{color:var(--text)}
+    .article-body td:first-child{font-weight:600;color:var(--text)}
+
+    /* --- status pills --- */
+    .st{display:inline-block;font-size:12px;font-weight:700;padding:4px 11px;border-radius:99px;white-space:nowrap;letter-spacing:0.01em;line-height:1.4}
+    .st-live{background:#DCFCE7;color:#15803D;box-shadow:inset 0 0 0 1px #86EFAC}
+    .st-end{background:#FFEDD5;color:#C2410C;box-shadow:inset 0 0 0 1px #FDBA74}
+    .st-gone{background:#FEE2E2;color:#B91C1C;box-shadow:inset 0 0 0 1px #FCA5A5}
+    .st-best{background:var(--brand-lightest,#EEF2FF);color:var(--brand);box-shadow:inset 0 0 0 1px #A5B4FC}
+    .article-body tr.row-end td{background:#FFFBF5}
+    .article-body tr.row-best td{background:#F5F6FE}
+
+    /* --- callouts --- */
+    .callout{margin:30px 0;padding:22px 26px;border-radius:14px;border:1px solid var(--border);border-left:4px solid var(--brand);background:var(--brand-lightest,#EEF2FF)}
+    .callout--warn{border-left-color:#EA580C;background:#FFF7ED;border-color:#FDBA74}
+    .callout--stop{border-left-color:#B91C1C;background:#FEF2F2;border-color:#FCA5A5}
+    .callout h4{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--text);letter-spacing:-0.01em}
+    .callout p{margin:0 0 8px;font-size:15px;line-height:1.7;color:var(--text)}
+    .callout p:last-child{margin-bottom:0}
+    .callout--warn h4{color:#9A3412}
+    .callout--stop h4{color:#991B1B}
+
+    /* --- key figure cards --- */
+    .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:28px 0}
+    .kpi .k{padding:18px 20px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .kpi .k.win{border-color:var(--brand);background:linear-gradient(180deg,#F5F6FE 0%,#EEF2FF 100%)}
+    .kpi .k.bad{border-color:#FDBA74;background:linear-gradient(180deg,#FFFBF5 0%,#FFF7ED 100%)}
+    .kpi .k-l{font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.45}
+    .kpi .k-v{font-size:24px;font-weight:800;margin:0;letter-spacing:-0.025em;color:var(--text)}
+    .kpi .k.win .k-v{color:var(--brand)}
+    .kpi .k.bad .k-v{color:#C2410C}
+
+    /* --- article rhythm --- */
+    .article-body h2{padding-top:6px;border-top:1px solid var(--border);margin-top:44px}
+    .article-body h2:first-of-type{border-top:0;padding-top:0}
+    .article-body hr{border:0;border-top:1px solid var(--border);margin:36px 0}
+    @media(max-width:640px){.article-body table{font-size:13.5px}.article-body th,.article-body td{padding:10px 11px}.callout{padding:18px 20px}}
     .yt-facade{position:relative;max-width:100%;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12)}.yt-facade img{width:100%;aspect-ratio:16/9;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
   </style> <script>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.style.paddingBottom='56.25%';el.style.height='0';el.appendChild(iframe);});});
