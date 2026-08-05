@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+import languages from '../data/languages.json';
+
+const total = languages.length;
+const europeCount = languages.filter(l => l.region === 'Europe').length;
+const sorted = [...languages].sort((a, b) => a.name.localeCompare(b.name));
+
+const faq = [
+  {
+    question: `How many languages does Speech Recognition Cloud support?`,
+    answer: `Speech Recognition Cloud supports ${total} languages on the Free, Personal, and Professional plans. The full list is published on this page. The Medical plan is English only, because the specialised medical vocabularies are built for English clinical terminology.`
+  },
+  {
+    question: 'Do I need a different plan or licence for another language?',
+    answer: `No. All ${total} languages are included on the Free, Personal, and Professional plans at no extra cost. You select your language in the application settings, or leave it on Auto-Detect.`
+  },
+  {
+    question: 'Can I dictate in more than one language?',
+    answer: 'Yes. Leave the language setting on Auto-Detect and the application will identify the language you are speaking. If you work in a single language, selecting it explicitly gives the best accuracy.'
+  },
+  {
+    question: 'Is the interface translated into these languages?',
+    answer: 'No. The application interface is in English. The language setting controls the language you dictate in, not the language of the menus and settings.'
+  },
+  {
+    question: 'Does the Medical plan support other languages?',
+    answer: 'No. The Medical plan is English only. Medical vocabularies covering drug names, anatomical terminology, eponyms, and procedural language are built for English clinical documentation. Clinicians who need to dictate in another language should use the Professional plan.'
+  },
+  {
+    question: 'Does automatic punctuation work in every language?',
+    answer: `Automatic punctuation and capitalisation are applied across the supported languages. Accuracy is strongest in the widely spoken European and Asian languages, which have the largest training data. Every plan includes a free tier, so you can test your own language before you buy.`
+  }
+];
+
+const extraSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `Supported Languages — ${total} Languages for Voice Dictation`,
+    "description": `Speech Recognition Cloud supports ${total} languages for speech to text dictation on Windows, including ${europeCount} European languages. Full list with language codes.`,
+    "url": site.siteUrl + "/languages",
+    "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": site.structuredData.name,
+      "operatingSystem": site.structuredData.operatingSystem,
+      "applicationCategory": site.structuredData.applicationCategory,
+      "url": site.siteUrl,
+      "availableLanguage": languages.map(l => ({
+        "@type": "Language",
+        "name": l.name,
+        "alternateName": l.native,
+        "identifier": l.code
+      }))
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+    }))
+  }
+];
+---
+<BaseLayout
+  title={`Supported Languages — ${total} Languages for Speech to Text`}
+  description={`Speech Recognition Cloud supports ${total} languages for voice dictation on Windows, including ${europeCount} European languages. Included free on Personal and Professional plans. Full list with language codes.`}
+  extraSchema={extraSchema}
+>
+  <section class="section-pad">
+    <div class="container" style="max-width:900px">
+      <p class="eyebrow">LANGUAGES</p>
+      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">{total} languages for voice dictation</h1>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px">
+        Speech Recognition Cloud dictates in <strong>{total} languages</strong> on the Free, Personal, and Professional plans —
+        including <strong>{europeCount} European languages</strong>. Every language is included at no extra cost. Select one in
+        settings, or leave it on Auto-Detect and the application identifies what you are speaking.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+        <a href={site.download.url} class="btn-primary">Download free</a>
+        <a href="/pricing" class="btn-secondary">See pricing</a>
+      </div>
+      <p class="muted" style="font-size:13px">Free plan includes 20 minutes per month. Test your language before you buy.</p>
+    </div>
+  </section>
+
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:900px">
+      <h2 style="margin-bottom:8px">Full list of supported languages</h2>
+      <p class="muted" style="margin-bottom:24px">
+        All {total} languages below are available on the Free, Personal, and Professional plans. The Medical plan is English only.
+      </p>
+      <table class="lang-table">
+        <thead>
+          <tr><th>Language</th><th>Native name</th><th>Code</th><th>Region</th></tr>
+        </thead>
+        <tbody>
+          {sorted.map(l => (
+            <tr>
+              <td><strong>{l.name}</strong></td>
+              <td lang={l.code}>{l.native}</td>
+              <td><code>{l.code}</code></td>
+              <td class="muted">{l.region}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="muted" style="font-size:13px;margin-top:16px">
+        Plus <strong>Auto-Detect</strong>, which identifies the spoken language automatically — useful if you switch between languages.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">How language support works</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Included on every paid plan</h3><p class="muted">All {total} languages are included on Personal ($99/year) and Professional ($159/year). No language packs, no add-ons, no per-language pricing.</p></div>
+        <div class="benefit"><h3>Auto-Detect for multilingual work</h3><p class="muted">Leave the setting on Auto-Detect and the application identifies the language you are speaking. Select a single language explicitly for the best accuracy.</p></div>
+        <div class="benefit"><h3>No voice training in any language</h3><p class="muted">There are no voice profiles to build and no calibration step, in any supported language. Install and start dictating.</p></div>
+        <div class="benefit"><h3>Works in any Windows application</h3><p class="muted">Dictate at the cursor in Word, Outlook, Teams, Chrome, and web forms — in any of the supported languages.</p></div>
+        <div class="benefit"><h3>Automatic punctuation</h3><p class="muted">Punctuation and capitalisation are applied automatically across supported languages, not just English.</p></div>
+        <div class="benefit"><h3>Medical plan is English only</h3><p class="muted">Medical vocabularies are built for English clinical terminology. Clinicians dictating in another language should use the Professional plan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download-strip">
+    <div class="container download-strip-inner">
+      <div>
+        <p class="download-strip-headline">Test your language free</p>
+        <p class="download-strip-sub">20 minutes per month. No credit card. Install in 2 minutes.</p>
+      </div>
+      <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
+    </div>
+  </section>
+
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Language questions</h2>
+      {faq.map(item => (
+        <div class="faq-item">
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:8px">{item.question}</h3>
+          <p class="muted" style="line-height:1.7">{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lang-table { width:100%; border-collapse:collapse; font-size:15px; background:#fff; border-radius:8px; overflow:hidden; }
+  .lang-table th { text-align:left; padding:12px 14px; background:#f1f5f9; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.03em; border-bottom:1px solid #e2e8f0; }
+  .lang-table td { padding:11px 14px; border-bottom:1px solid #eef2f7; vertical-align:middle; }
+  .lang-table tr:last-child td { border-bottom:none; }
+  .lang-table code { background:#f1f5f9; padding:2px 7px; border-radius:4px; font-size:13px; }
+  .faq-item { padding:20px 0; border-bottom:1px solid #e2e8f0; }
+  .faq-item:last-child { border-bottom:none; }
+  @media (max-width:640px) {
+    .lang-table { font-size:14px; }
+    .lang-table th:nth-child(4), .lang-table td:nth-child(4) { display:none; }
+    .lang-table th, .lang-table td { padding:9px 10px; }
+  }
+</style>
