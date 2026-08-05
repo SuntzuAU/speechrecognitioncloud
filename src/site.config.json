@@ -43,12 +43,7 @@
     ],
     "addressCountry": "AU",
     "areaServed": [
-      { "@type": "Country", "name": "United States" },
-      { "@type": "Country", "name": "Canada" },
-      { "@type": "Country", "name": "United Kingdom" },
-      { "@type": "Country", "name": "Ireland" },
-      { "@type": "Country", "name": "Australia" },
-      { "@type": "Country", "name": "New Zealand" }
+      { "@type": "Place", "name": "Worldwide" }
     ],
     "contactPoint": {
       "contactType": "customer support",
@@ -240,16 +235,11 @@
     "name": "Speech Recognition Cloud",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Windows 10, Windows 11",
-    "description": "AI voice dictation software that turns speech into accurate, punctuated text in any Windows application. No voice training required. 57 languages supported.",
+    "description": "AI voice dictation software that turns speech into accurate, punctuated text in any Windows application. No voice training required. 57 languages supported. Available worldwide, including the United States, Canada, the United Kingdom, Europe, Australia and New Zealand.",
     "downloadUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe",
     "isAccessibleForFree": true,
     "areaServed": [
-      { "@type": "Country", "name": "United States" },
-      { "@type": "Country", "name": "Canada" },
-      { "@type": "Country", "name": "United Kingdom" },
-      { "@type": "Country", "name": "Ireland" },
-      { "@type": "Country", "name": "Australia" },
-      { "@type": "Country", "name": "New Zealand" }
+      { "@type": "Place", "name": "Worldwide" }
     ],
     "featureList": [
       "Dictates text at the cursor in any Windows 10 or 11 application",
@@ -261,7 +251,7 @@
       "Screen OCR vocabulary capture (Professional plan)",
       "Mobile companion app for iPhone and Android - wireless microphone and Voice Notes (Professional and Medical plans)",
       "Specialised medical vocabularies (Medical plan)",
-      "57+ languages supported (Medical plan is English only)",
+      "57+ languages supported worldwide, including English, and languages across Europe, Asia, the Americas and the Middle East (Medical plan is English only)",
       "Audio processed in memory and immediately discarded; transcripts not stored on servers"
     ],
     "offers": [
