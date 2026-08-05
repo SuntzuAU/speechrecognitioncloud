@@ -1,15 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+import manifest from '../data/image-manifest.json';
 import languages from '../data/languages.json';
 
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
+function imgAlt(key) { return manifest[key]?.altText || key; }
+function imgW(key) { return manifest[key]?.width || undefined; }
+function imgH(key) { return manifest[key]?.height || undefined; }
+
 const total = languages.length;
-const europeCount = languages.filter(l => l.region === 'Europe').length;
 const sorted = [...languages].sort((a, b) => a.name.localeCompare(b.name));
+
+const regions = ['Europe', 'Asia', 'Middle East', 'Africa', 'Oceania'];
+const regionCounts = regions.map(r => ({ region: r, count: languages.filter(l => l.region === r).length }));
+const europeCount = languages.filter(l => l.region === 'Europe').length;
 
 const faq = [
   {
-    question: `How many languages does Speech Recognition Cloud support?`,
+    question: 'How many languages does Speech Recognition Cloud support?',
     answer: `Speech Recognition Cloud supports ${total} languages on the Free, Personal, and Professional plans. The full list is published on this page. The Medical plan is English only, because the specialised medical vocabularies are built for English clinical terminology.`
   },
   {
@@ -21,7 +31,7 @@ const faq = [
     answer: 'Yes. Leave the language setting on Auto-Detect and the application will identify the language you are speaking. If you work in a single language, selecting it explicitly gives the best accuracy.'
   },
   {
-    question: 'Is the interface translated into these languages?',
+    question: 'Is the application interface translated into these languages?',
     answer: 'No. The application interface is in English. The language setting controls the language you dictate in, not the language of the menus and settings.'
   },
   {
@@ -30,7 +40,11 @@ const faq = [
   },
   {
     question: 'Does automatic punctuation work in every language?',
-    answer: `Automatic punctuation and capitalisation are applied across the supported languages. Accuracy is strongest in the widely spoken European and Asian languages, which have the largest training data. Every plan includes a free tier, so you can test your own language before you buy.`
+    answer: 'Automatic punctuation and capitalisation are applied across the supported languages. Accuracy is strongest in the widely spoken European and Asian languages. Every plan includes a free tier, so you can test your own language before you buy.'
+  },
+  {
+    question: 'Can I add my own words and terminology in another language?',
+    answer: 'Yes. Custom vocabulary and text replacements are available on Personal, Professional, and Medical plans, and can be maintained per language. Add names, technical terms, and jargon in whichever language you dictate in.'
   }
 ];
 
@@ -73,19 +87,37 @@ const extraSchema = [
   extraSchema={extraSchema}
 >
   <section class="section-pad">
-    <div class="container" style="max-width:900px">
-      <p class="eyebrow">LANGUAGES</p>
-      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">{total} languages for voice dictation</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px">
-        Speech Recognition Cloud dictates in <strong>{total} languages</strong> on the Free, Personal, and Professional plans —
-        including <strong>{europeCount} European languages</strong>. Every language is included at no extra cost. Select one in
-        settings, or leave it on Auto-Detect and the application identifies what you are speaking.
-      </p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
-        <a href={site.download.url} class="btn-primary">Download free</a>
-        <a href="/pricing" class="btn-secondary">See pricing</a>
+    <div class="container">
+      <div class="usecase-hero-split">
+        <div>
+          <p class="eyebrow">LANGUAGES</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">{total} languages for voice dictation</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">
+            Speech Recognition Cloud dictates in <strong>{total} languages</strong> on the Free, Personal, and Professional plans —
+            including <strong>{europeCount} European languages</strong>. Every language is included at no extra cost. Select one in
+            settings, or leave it on Auto-Detect and the application identifies what you are speaking.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+            <a href={site.download.url} class="btn-primary">Download free</a>
+            <a href="/pricing" class="btn-secondary">See pricing</a>
+          </div>
+          <p class="muted" style="font-size:13px">Free plan includes 20 minutes per month. Test your language before you buy.</p>
+        </div>
+        {imgSrc('business-hero') && (
+          <div class="usecase-hero-img"><img src={imgSrc('business-hero')} width={imgW('business-hero')} height={imgH('business-hero')} alt="Professional dictating in one of 57 supported languages on a Windows PC" loading="eager" decoding="async" /></div>
+        )}
       </div>
-      <p class="muted" style="font-size:13px">Free plan includes 20 minutes per month. Test your language before you buy.</p>
+    </div>
+  </section>
+
+  <section class="region-band">
+    <div class="container">
+      <div class="region-grid">
+        <div class="region-stat"><span class="region-num">{total}</span><span class="region-label">Languages total</span></div>
+        {regionCounts.map(r => (
+          <div class="region-stat"><span class="region-num">{r.count}</span><span class="region-label">{r.region}</span></div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -112,9 +144,14 @@ const extraSchema = [
       </table>
       <p class="muted" style="font-size:13px;margin-top:16px">
         Plus <strong>Auto-Detect</strong>, which identifies the spoken language automatically — useful if you switch between languages.
+        See the <a href="/support/settings" style="color:var(--brand);font-weight:600">settings guide</a> for how to change it.
       </p>
     </div>
   </section>
+
+  {imgSrc('students-break-dictating') && (
+    <div class="img-break"><img src={imgSrc('students-break-dictating')} width={imgW('students-break-dictating')} height={imgH('students-break-dictating')} alt="Dictating into a Windows application by voice" loading="lazy" decoding="async" /></div>
+  )}
 
   <section class="section-pad">
     <div class="container" style="max-width:800px">
@@ -125,7 +162,7 @@ const extraSchema = [
         <div class="benefit"><h3>No voice training in any language</h3><p class="muted">There are no voice profiles to build and no calibration step, in any supported language. Install and start dictating.</p></div>
         <div class="benefit"><h3>Works in any Windows application</h3><p class="muted">Dictate at the cursor in Word, Outlook, Teams, Chrome, and web forms — in any of the supported languages.</p></div>
         <div class="benefit"><h3>Automatic punctuation</h3><p class="muted">Punctuation and capitalisation are applied automatically across supported languages, not just English.</p></div>
-        <div class="benefit"><h3>Medical plan is English only</h3><p class="muted">Medical vocabularies are built for English clinical terminology. Clinicians dictating in another language should use the Professional plan.</p></div>
+        <div class="benefit"><h3>Custom vocabulary per language</h3><p class="muted">Add names, technical terms, and jargon in whichever language you dictate in. Available on Personal plans and above.</p></div>
       </div>
     </div>
   </section>
@@ -151,19 +188,65 @@ const extraSchema = [
       ))}
     </div>
   </section>
-</BaseLayout>
 
-<style>
-  .lang-table { width:100%; border-collapse:collapse; font-size:15px; background:#fff; border-radius:8px; overflow:hidden; }
-  .lang-table th { text-align:left; padding:12px 14px; background:#f1f5f9; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.03em; border-bottom:1px solid #e2e8f0; }
-  .lang-table td { padding:11px 14px; border-bottom:1px solid #eef2f7; vertical-align:middle; }
-  .lang-table tr:last-child td { border-bottom:none; }
-  .lang-table code { background:#f1f5f9; padding:2px 7px; border-radius:4px; font-size:13px; }
-  .faq-item { padding:20px 0; border-bottom:1px solid #e2e8f0; }
-  .faq-item:last-child { border-bottom:none; }
-  @media (max-width:640px) {
-    .lang-table { font-size:14px; }
-    .lang-table th:nth-child(4), .lang-table td:nth-child(4) { display:none; }
-    .lang-table th, .lang-table td { padding:9px 10px; }
-  }
-</style>
+  <section class="section-pad">
+    <div class="container" style="max-width:900px">
+      <h2 class="text-center" style="margin-bottom:12px">Related guides</h2>
+      <p class="muted text-center" style="margin-bottom:40px">More on setting up and getting the most out of dictation.</p>
+      <div class="link-grid">
+        <a class="link-card" href="/support/settings"><h3>Settings guide</h3><p class="muted">Where to change your language, transcription model, and custom vocabulary.</p></a>
+        <a class="link-card" href="/support/getting-started"><h3>Getting started</h3><p class="muted">Install, choose a microphone, and dictate your first document in two minutes.</p></a>
+        <a class="link-card" href="/support/spoken-punctuation"><h3>Spoken punctuation</h3><p class="muted">Punctuation and formatting commands you can speak as you dictate.</p></a>
+        <a class="link-card" href="/support/tips"><h3>Accuracy tips</h3><p class="muted">Microphone placement, dictation habits, and settings that improve results.</p></a>
+        <a class="link-card" href="/learn"><h3>All guides and articles</h3><p class="muted">Setup walkthroughs, comparisons, and how-to articles.</p></a>
+        <a class="link-card" href="/business"><h3>For business</h3><p class="muted">Multilingual teams, European operations, and cross-market documentation.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-dark" style="padding:60px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Start dictating in your language</h2>
+      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
+      <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
+    </div>
+  </section>
+
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .usecase-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+    .img-break{width:100%;height:260px;overflow:hidden}
+    .img-break img{width:100%;height:100%;object-fit:cover;display:block}
+    .download-strip{background:#4338CA;padding:28px 0}
+    .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
+    .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .region-band{background:var(--brand-lightest);padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .region-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;text-align:center}
+    .region-stat{display:flex;flex-direction:column;gap:2px}
+    .region-num{font-size:28px;font-weight:800;color:var(--brand);line-height:1.1}
+    .region-label{font-size:13px;color:var(--muted);font-weight:500}
+    .lang-table{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .lang-table th{text-align:left;padding:12px 14px;background:#f1f5f9;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border)}
+    .lang-table td{padding:11px 14px;border-bottom:1px solid #eef2f7;vertical-align:middle}
+    .lang-table tbody tr:last-child td{border-bottom:none}
+    .lang-table tbody tr:nth-child(even){background:#fcfdfe}
+    .lang-table code{background:#f1f5f9;padding:2px 7px;border-radius:4px;font-size:13px}
+    .faq-item{padding:20px 0;border-bottom:1px solid var(--border)}
+    .faq-item:last-child{border-bottom:none}
+    .link-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .link-card{display:block;padding:22px;border:1px solid var(--border);border-radius:14px;background:#fff;transition:box-shadow .2s,transform .2s}
+    .link-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.07);transform:translateY(-2px)}
+    .link-card h3{font-size:16px;font-weight:600;margin-bottom:6px;color:var(--brand)}
+    .link-card .muted{font-size:14px;line-height:1.6}
+    @media(max-width:900px){.region-grid{grid-template-columns:repeat(3,1fr);gap:20px}.link-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}.img-break{height:180px}.link-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.lang-table{font-size:14px}.lang-table th:nth-child(4),.lang-table td:nth-child(4){display:none}.lang-table th,.lang-table td{padding:9px 10px}.region-grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</BaseLayout>
