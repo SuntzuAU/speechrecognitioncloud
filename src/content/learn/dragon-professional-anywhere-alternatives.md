@@ -5,12 +5,12 @@ description: "Dragon Professional Anywhere and Dragon Legal Anywhere cannot be p
 type: "article"
 context: "descriptive"
 heroImageAlt: "A calendar showing a circled date with following pages fading out"
-heroImage: ""
+heroImage: "speechrecognitioncloud/2026/08/05/dragon-professional-anywhere-alternatives-hero-726248e5.jpg"
 breakImage1Alt: "Team discussing a software migration plan around a desk"
-breakImage1: ""
+breakImage1: "speechrecognitioncloud/2026/08/05/dragon-professional-anywhere-alternatives-migration-planning-dfd04b3f.jpg"
 breakImage2Alt: "Person testing dictation software on a Windows computer"
-breakImage2: ""
-imagesPending: true
+breakImage2: "speechrecognitioncloud/2026/08/05/dragon-professional-anywhere-alternatives-trialling-dictatio-84b3e1ff.jpg"
+imagesPending: false
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
 breakAspectRatio2: "21:9"

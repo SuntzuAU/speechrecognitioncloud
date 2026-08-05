@@ -5,12 +5,12 @@ description: "Looking for the best Dragon alternative? Every Dragon product comp
 type: "article"
 context: "descriptive"
 heroImageAlt: "Professional dictating at a Windows desktop with text appearing at the cursor"
-heroImage: ""
+heroImage: "speechrecognitioncloud/2026/08/05/best-dragon-alternative-hero-4aae3d95.jpg"
 breakImage1Alt: "Person comparing software options at a desk"
-breakImage1: ""
+breakImage1: "speechrecognitioncloud/2026/08/05/best-dragon-alternative-comparing-options-2e6f28dc.jpg"
 breakImage2Alt: "One licence in use across a laptop and a desktop computer"
-breakImage2: ""
-imagesPending: true
+breakImage2: "speechrecognitioncloud/2026/08/05/best-dragon-alternative-one-licence-many-computers-55e12e47.jpg"
+imagesPending: false
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
 breakAspectRatio2: "21:9"
