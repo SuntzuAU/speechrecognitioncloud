@@ -36,7 +36,12 @@ This page covers what is ending, how long you realistically have, and what the a
 
 ## When is the last day I can buy Dragon Professional Anywhere?
 
-**31 December 2026.**
+<div class="kpi">
+<div class="k bad"><p class="k-l">Last date to purchase</p><p class="k-v">31 Dec 2026</p></div>
+<div class="k bad"><p class="k-l">Service end of life</p><p class="k-v">End of 2027</p></div>
+<div class="k"><p class="k-l">Realistic decision window</p><p class="k-v">3–4 months</p></div>
+<div class="k"><p class="k-l">Announced successor</p><p class="k-v">None</p></div>
+</div>
 
 The arithmetic is straightforward. Both products are sold as twelve-month subscriptions, and both reach end of life at the end of 2027. A subscription sold on 1 January 2027 would expire after the product it pays for has already stopped. A full year cannot be sold on a product with eleven months remaining.
 
@@ -46,13 +51,17 @@ After 31 December 2026, Dragon Professional Anywhere and Dragon Legal Anywhere c
 
 | Product | Last day to buy | Service ends | Status as at August 2026 |
 |---|---|---|---|
-| **Dragon Anywhere Mobile** | Passed | Ended | Discontinued 1 July 2026 |
-| **Dragon Professional Anywhere** | **31 December 2026** | End of 2027 | Under five months to buy |
-| **Dragon Professional Anywhere Legal** (sold as Dragon Legal Anywhere) | **31 December 2026** | End of 2027 | Under five months to buy |
+| **Dragon Anywhere Mobile** | Passed | Ended | <span class="st st-gone">Discontinued 1 Jul 2026</span> |
+| **Dragon Professional Anywhere** | **31 December 2026** | End of 2027 | <span class="st st-end">Under 5 months to buy</span> |
+| **Dragon Professional Anywhere Legal** (sold as Dragon Legal Anywhere) | **31 December 2026** | End of 2027 | <span class="st st-end">Under 5 months to buy</span> |
 
 The first product on that list has already gone, on schedule. Dragon Anywhere Mobile was discontinued on 1 July 2026, with no direct replacement.
 
-These dates were communicated through the reseller channel. As at the date of publication no public end-of-life announcement carrying them has been issued by Nuance Communications or Microsoft, and we do not represent that they have been publicly confirmed. We publish them because one product on the same schedule has already been withdrawn as stated — that is corroboration rather than confirmation. Confirm the current status of any product directly with the vendor or an authorised partner before acting.
+<div class="callout">
+<h4>Where these dates come from</h4>
+<p>These dates were communicated through the reseller channel. As at the date of publication no public end-of-life announcement carrying them has been issued by Nuance Communications or Microsoft, and we do not represent that they have been publicly confirmed.</p>
+<p>We publish them because one product on the same schedule has already been withdrawn exactly as stated — that is corroboration rather than confirmation. Confirm the current status of any product directly with the vendor or an authorised partner before acting.</p>
+</div>
 
 **No successor product has been announced** in the Anywhere line. This is not a version upgrade with a migration path attached.
 
@@ -82,13 +91,18 @@ The hard deadline is 31 December 2026. Working backwards from it: evaluating an 
 
 When boxed software reaches end of life you can keep using it. It stops receiving updates and eventually falls out of step with Windows, but the copy on your machine continues to run for as long as you tolerate it.
 
-Dragon Professional Anywhere and Dragon Legal Anywhere are **cloud services**. The recognition runs on vendor infrastructure, not on your computer. When the service ends, the product ends — there is no offline copy to fall back on and no gradual decline to ride out.
-
-That is what makes this a deadline rather than a recommendation.
+<div class="callout callout--stop">
+<h4>These are cloud services, not installed software</h4>
+<p>Dragon Professional Anywhere and Dragon Legal Anywhere run the recognition on vendor infrastructure, not on your computer. When the service ends, the product ends — there is no offline copy to fall back on and no gradual decline to ride out.</p>
+<p>That is what makes this a deadline rather than a recommendation.</p>
+</div>
 
 ## What should I do?
 
-**1. Do not sign a multi-year agreement.** No multi-year term can be honoured past the end of 2027. If a discounted two or three-year deal is offered between now and December, the discount covers time the product will not exist for.
+<div class="callout callout--warn">
+<h4>1. Do not sign a multi-year agreement</h4>
+<p>No multi-year term can be honoured past the end of 2027. If a discounted two or three-year deal is offered between now and December, the discount covers time the product will not exist for.</p>
+</div>
 
 **2. Start evaluating while there is no pressure.** Migrations forced by a deadline tend to go badly; migrations chosen with runway tend to go fine. Running an alternative alongside your existing Dragon for a fortnight — real work, real documents, real vocabulary — costs nothing while your licence is still live.
 
@@ -109,7 +123,7 @@ It is not a like-for-like replacement in every respect. It does not support VDI 
 
 The full comparison across the whole Dragon range is on the [best Dragon alternative](/learn/best-dragon-alternative) page. Clinicians should see the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison. Teams should start at [dictation for business teams](/business), and current plan details are on [speech to text software pricing](/pricing).
 
-*Pricing accurate at time of publication. Verify current pricing before purchasing.*
+<div class="callout"><p><strong>Pricing accurate at time of publication.</strong> Verify current pricing before purchasing. Dragon figures are approximate and vary by vendor, territory, term and seat count.</p></div>
 
 ## Frequently asked questions
 

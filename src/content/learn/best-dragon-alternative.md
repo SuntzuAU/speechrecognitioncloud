@@ -42,21 +42,25 @@ For an individual, a professional, or a team of up to a few dozen people, the be
 
 It also has a free Starter plan with no expiry, so it can be tested against your actual work before you spend anything.
 
-Two things to be clear about up front. Dragon Professional Anywhere and Dragon Legal Anywhere cannot be purchased after 31 December 2026 and reach end of life at the end of 2027 — see the [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives) page for what that means in practice. And Speech Recognition Cloud does not do everything Dragon does; there is a section below setting out exactly what it does not do.
+<div class="callout callout--warn">
+<h4>Two things to be clear about up front</h4>
+<p><strong>Dragon Professional Anywhere and Dragon Legal Anywhere cannot be purchased after 31 December 2026</strong> and reach end of life at the end of 2027 — see the <a href="/learn/dragon-professional-anywhere-alternatives">Dragon Professional Anywhere alternatives</a> page for what that means in practice.</p>
+<p>And Speech Recognition Cloud does not do everything Dragon does. There is a section below setting out exactly what it does not do.</p>
+</div>
 
 ## How much does each Dragon product cost in 2026?
 
 | Dragon product | Status | Approximate cost | Notes |
 |---|---|---|---|
-| **Dragon Professional 16** | Current | ~US$700 one-off, or ~US$490/yr | Upgrade from v15 ~US$350. Local processing, works offline. |
-| **Dragon Professional Anywhere** | Final sale 31 Dec 2026 | ~US$560–630 per user, per year | Service ends end of 2027. No announced successor. |
-| **Dragon Legal Anywhere** | Final sale 31 Dec 2026 | ~US$595 first year, ~US$905/yr after | Service ends end of 2027. |
-| **Dragon Medical One** | Current | ~US$1,188 per clinician, per year | Sold per clinician through resellers. |
-| **Dragon Anywhere (mobile)** | Discontinued 1 Jul 2026 | No longer available | Standalone mobile app. No direct replacement. |
-| **Dragon Home** | Discontinued | No longer available | Entry-level consumer version, withdrawn. |
-| **Dragon Professional Individual 15** | Withdrawn | No longer sold | Replaced by the Anywhere line. Not Windows 11 compatible. |
-| **Dragon Legal Individual 15** | Withdrawn | No longer sold | Replaced by Dragon Legal Anywhere. |
-| **Dragon Dictate for Mac** | Discontinued Oct 2018 | No longer available | No Mac Dragon product has shipped since. |
+| **Dragon Professional 16** | <span class="st st-live">Current</span> | ~US$700 one-off, or ~US$490/yr | Upgrade from v15 ~US$350. Local processing, works offline. |
+| **Dragon Professional Anywhere** | <span class="st st-end">Final sale 31 Dec 2026</span> | ~US$560–630 per user, per year | Service ends end of 2027. No announced successor. |
+| **Dragon Legal Anywhere** | <span class="st st-end">Final sale 31 Dec 2026</span> | ~US$595 first year, ~US$905/yr after | Service ends end of 2027. |
+| **Dragon Medical One** | <span class="st st-live">Current</span> | ~US$1,188 per clinician, per year | Sold per clinician through resellers. |
+| **Dragon Anywhere (mobile)** | <span class="st st-gone">Discontinued 1 Jul 2026</span> | No longer available | Standalone mobile app. No direct replacement. |
+| **Dragon Home** | <span class="st st-gone">Discontinued</span> | No longer available | Entry-level consumer version, withdrawn. |
+| **Dragon Professional Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by the Anywhere line. Not Windows 11 compatible. |
+| **Dragon Legal Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by Dragon Legal Anywhere. |
+| **Dragon Dictate for Mac** | <span class="st st-gone">Discontinued Oct 2018</span> | No longer available | No Mac Dragon product has shipped since. |
 
 Dragon pricing above is approximate and varies by vendor, territory, subscription term and seat count. Obtain a current quotation before relying on any figure.
 
@@ -64,14 +68,14 @@ Dragon pricing above is approximate and varies by vendor, territory, subscriptio
 
 | Plan | Price | What you get |
 |---|---|---|
-| **Starter** | Free | 20 minutes per month, core features, no credit card, no expiry |
+| **Starter** | <span class="st st-live">Free</span> | 20 minutes per month, core features, no credit card, no expiry |
 | **Personal / Educational** | US$99/yr | Unlimited dictation, 57 languages |
-| **Professional** | US$159/yr | Unlimited dictation, optional AI Modes, mobile companion app |
+| **Professional** | <span class="st st-best">US$159/yr</span> | Unlimited dictation, optional AI Modes, mobile companion app |
 | **Medical** | US$439/yr | Clinical vocabulary, mobile app, AI Modes excluded by design |
 
 All plans are licensed per person with no limit on the number of computers. Prices display in US dollars and convert to your local currency at checkout. See [speech to text software pricing](/pricing) for full plan details.
 
-*Pricing accurate at time of publication. Verify current pricing before purchasing.*
+<div class="callout"><p><strong>Pricing accurate at time of publication.</strong> Verify current pricing before purchasing. Dragon figures are approximate and vary by vendor, territory, term and seat count.</p></div>
 
 ## Which Dragon products have been discontinued or are ending?
 
@@ -115,12 +119,14 @@ It was discontinued on 1 July 2026 with no direct replacement. Speech Recognitio
 
 Over three years, per person, at the approximate figures above:
 
-- Dragon Professional Anywhere — about US$1,680
-- Dragon Legal Anywhere — about US$2,400
-- Dragon Medical One — about US$3,560
-- Dragon Professional 16 — about US$700, plus whatever the next version costs
-- **Speech Recognition Cloud Professional — US$477**
-- **Speech Recognition Cloud Medical — US$1,317**
+<div class="kpi">
+<div class="k bad"><p class="k-l">Dragon Professional Anywhere</p><p class="k-v">~US$1,680</p></div>
+<div class="k bad"><p class="k-l">Dragon Legal Anywhere</p><p class="k-v">~US$2,400</p></div>
+<div class="k bad"><p class="k-l">Dragon Medical One</p><p class="k-v">~US$3,560</p></div>
+<div class="k"><p class="k-l">Dragon Professional 16</p><p class="k-v">~US$700</p></div>
+<div class="k win"><p class="k-l">Speech Recognition Cloud Professional</p><p class="k-v">US$477</p></div>
+<div class="k win"><p class="k-l">Speech Recognition Cloud Medical</p><p class="k-v">US$1,317</p></div>
+</div>
 
 For one person the gap is roughly US$1,200. For a team of four it is close to US$5,000 over three years.
 
