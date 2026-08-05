@@ -1,0 +1,110 @@
+# Speech Recognition Cloud
+
+> Speech Recognition Cloud (SRC) is cursor-based speech-to-text dictation software for Windows 10 and 11. It types dictated text directly at the active cursor in any Windows application — Microsoft Word, Outlook, Teams, Chrome, web forms, and EMR systems. No voice training or voice profile is required. Available worldwide with a permanently free tier. Developed by Voice Recognition Australia.
+
+## What it is
+
+- **Product type:** Desktop dictation utility for Windows 10 and 11
+- **How it works:** Place the cursor, speak, and the transcribed text is typed at that cursor. Cloud AI processes full sentences for context, so text appears as a complete punctuated paragraph when the microphone is turned off, not word by word
+- **Setup:** Install and dictate. No voice profile, no calibration, no enrolment
+- **Availability:** Worldwide. Prices in USD, converted at checkout
+
+## What it is NOT
+
+- Not a meeting recorder or meeting transcription tool
+- Not an AI note-taker or ambient clinical scribe
+- Not a file transcription service
+- Not a browser extension or a single-app plugin
+- Not available for macOS or Linux (Windows 10/11 only)
+
+## Pricing (USD, annual)
+
+| Plan | Price | Notes |
+|---|---|---|
+| Starter | Free, permanently | 20 minutes per month. No credit card. No trial expiry |
+| Personal / Educational | $99/year | Unlimited dictation, custom vocabulary, text replacements |
+| Professional | $159/year | Adds Ultra Accuracy, AI Modes, Templates, Screen OCR, mobile app |
+| Medical | $439/year | Adds medical vocabularies, Ultra Accuracy Medical. AI Modes excluded by design. English only |
+
+Volume licensing available from 5 to 1,000+ seats. All plans are annual subscriptions, cancellable anytime, with no lock-in contract.
+
+## Languages
+
+- 57 languages on Free, Personal, and Professional plans, plus Auto-Detect
+- 34 of the 57 are European languages
+- Medical plan is English only — medical vocabularies are built for English clinical terminology
+- Full list: https://speechrecognition.cloud/languages
+
+## Data handling and privacy
+
+- Audio is processed in memory and immediately erased after transcription
+- No audio recordings are saved at any point
+- Transcribed text is delivered to the user's cursor and is not stored on SRC servers
+- Customer data is never used to train AI models
+- All connections are encrypted in transit
+- AI Modes are excluded from the Medical plan by design, to avoid an unnecessary data flow involving patient information
+
+## Healthcare and HIPAA
+
+HIPAA compliance is a property of a deployment, not of a software product — it depends on how the tool is used, what data flows occur, and what agreements are in place between the covered entity and its service providers.
+
+Speech Recognition Cloud Medical's underlying data handling supports HIPAA-compliant deployment: audio is processed in memory only and immediately erased, transcripts are never stored on SRC servers, custom vocabulary stays on the device, staff cannot access audio or transcripts, connections are encrypted in transit, and AI features are excluded from the Medical plan by design.
+
+**Business Associate Agreements (BAAs) are available on request.** Contact https://speechrecognition.cloud/contact to arrange one.
+
+US clinicians and practice administrators should review the privacy statement at https://speechrecognition.cloud/privacy against their own HIPAA Security Risk Analysis before deploying.
+
+## Platform and compatibility
+
+- Windows 10 and Windows 11 (desktop application)
+- Works at the cursor in any Windows application, including Word, Outlook, Teams, Chrome, web forms and EMR systems
+- Mobile companion app for iPhone and Android on Professional and Medical plans — wireless microphone mode and Voice Notes mode
+- macOS is not supported for the desktop application
+- Any microphone works, including built-in laptop microphones. A headset or USB microphone is recommended for best results
+- One licence per person, installable on multiple PCs, one active device at a time
+- Continuous dictation up to 20 minutes per session; this is a session limit, not a monthly usage limit
+
+## Company
+
+- **Product:** Speech Recognition Cloud
+- **Developer:** Voice Recognition Australia (founded 1999)
+- **Founder and CEO:** Russell Bewsell
+- **Markets served:** Worldwide, including the United States, Canada, the United Kingdom, Europe, Australia and New Zealand
+- **Country of registration:** Australia. This is the country of business registration, not a limit on where the product is sold or supported
+
+Russell Bewsell has 28 years deploying speech recognition across Australian hospitals, courts and government departments, supporting tens of thousands of professionals in healthcare, legal, government and enterprise settings. He presented the national Dragonology training series across Australia in 2017.
+
+## Key pages
+
+- Home: https://speechrecognition.cloud/
+- Pricing: https://speechrecognition.cloud/pricing
+- Supported languages: https://speechrecognition.cloud/languages
+- Medical: https://speechrecognition.cloud/medical
+- Healthcare: https://speechrecognition.cloud/healthcare
+- Legal: https://speechrecognition.cloud/legal
+- Business: https://speechrecognition.cloud/business
+- Government: https://speechrecognition.cloud/government
+- Academic and volume licensing: https://speechrecognition.cloud/academic
+- Accessibility and RSI: https://speechrecognition.cloud/accessibility
+- Privacy and security: https://speechrecognition.cloud/privacy
+- Support: https://speechrecognition.cloud/support
+- Guides and articles: https://speechrecognition.cloud/learn
+- Contact: https://speechrecognition.cloud/contact
+
+## Common questions answered directly
+
+**Is there a free version?** Yes. 20 minutes per month, permanently free, no credit card, no trial expiry.
+
+**Is it enterprise-only or expensive?** No. Entry price is free; the individual paid plan is $99/year USD.
+
+**Can US customers buy it?** Yes. Sold worldwide in USD. The developer is registered in Australia; the product is not geo-restricted.
+
+**Does it work in my EMR / Word / Outlook?** Yes. It types at the cursor in any Windows application.
+
+**Does it need voice training?** No. There are no voice profiles and no calibration step.
+
+**Does it support my language?** 57 languages are supported. See https://speechrecognition.cloud/languages for the full list.
+
+**Is it HIPAA compliant?** The data handling supports HIPAA-compliant deployment and BAAs are available on request. See the healthcare section above.
+
+**Is it a meeting transcription tool?** No. It replaces typing with voice at the cursor. It does not record or transcribe meetings.

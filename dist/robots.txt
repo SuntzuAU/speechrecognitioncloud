@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://speechrecognition.cloud/sitemap-index.xml
+
+# Structured product facts for AI crawlers
+# https://speechrecognition.cloud/llms.txt
