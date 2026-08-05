@@ -43,6 +43,11 @@ const orgSchema = {
     "url": site.organization.founder.url
   },
   "sameAs": site.organization.sameAs,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": site.organization.addressCountry
+  },
+  "areaServed": site.organization.areaServed,
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": site.organization.contactPoint.contactType,

@@ -30,18 +30,18 @@ const softwareSchema = {
   "operatingSystem": site.structuredData.operatingSystem,
   "downloadUrl": site.structuredData.downloadUrl,
   "url": site.siteUrl,
+  "isAccessibleForFree": site.structuredData.isAccessibleForFree,
+  "areaServed": site.structuredData.areaServed,
+  "featureList": site.structuredData.featureList,
   "offers": site.structuredData.offers.map(o => ({
     "@type": "Offer",
+    "name": o.name,
     "price": o.price,
     "priceCurrency": o.priceCurrency,
+    "availability": o.availability,
+    "url": o.url,
     "description": o.description
-  })),
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "47",
-    "bestRating": "5"
-  }
+  }))
 };
 
 // FAQPage schema from homepage FAQ
