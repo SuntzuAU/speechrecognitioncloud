@@ -158,7 +158,7 @@
     { "icon": "sparkles", "title": "AI punctuation and grammar", "description": "Speak naturally. The AI adds punctuation, capitalisation, and formatting automatically." },
     { "icon": "book", "title": "Custom vocabulary", "description": "Add specialised terms, names, and jargon. The system learns your terminology." },
     { "icon": "ai-modes", "title": "AI Modes", "description": "Voice commands for AI assistance. Write, Rewrite, Answer, Reply, and Run Command modes built into your dictation.", "premium": true, "premiumTier": "pro" },
-    { "icon": "globe", "title": "57 languages", "description": "Broad language support on Free, Personal, and Professional. Medical is English only." },
+    { "icon": "globe", "title": "57 languages", "href": "/languages", "description": "Broad language support on Free, Personal, and Professional. Medical is English only. See the full list." },
     { "icon": "shield", "title": "Privacy controls", "description": "Audio is processed and not stored. Your data is never used for training." },
     { "icon": "target", "title": "Ultra Accuracy Mode", "description": "Enhanced accuracy processing for the moments precision matters most.", "premium": true, "premiumTier": "pro-medical" }
   ],
