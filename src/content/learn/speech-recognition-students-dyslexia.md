@@ -87,6 +87,8 @@ The honest way to judge whether it helps a particular student is to try it on re
 
 For a lot of families, that first paragraph settles a question they've been asking for years: the ideas were always there. The spelling was just in the way.
 
+If a school or university is licensing for a group rather than an individual, [volume licensing for schools and universities](/academic) covers how that works.
+
 ### Related reading
 
 - [Speech recognition for students with dysgraphia](/learn/speech-recognition-students-dysgraphia)

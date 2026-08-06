@@ -78,6 +78,8 @@ For a complete list of available commands and examples, see the [full AI Modes r
 
 AI Modes are available immediately when you upgrade to the Professional tier. [Compare plans and pricing](/pricing) to get started, or download the free version first and upgrade when you are ready.
 
+AI Modes are available in every language the product supports — see [all supported languages](/languages).
+
 ### Related reading
 
 - [AI Modes reference guide](/support/ai-modes)

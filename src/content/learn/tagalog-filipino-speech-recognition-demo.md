@@ -43,6 +43,8 @@ If you are new to Speech Recognition Cloud, start with the [getting started guid
 
 Tagalog dictation is available on all plans, including the free tier. See the full list of [supported languages](/languages), or [compare plans and pricing](/pricing) and test it with your own voice.
 
+Spoken punctuation works the same way across languages — see the [spoken punctuation reference](/support/spoken-punctuation).
+
 ### Related reading
 
 - [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)

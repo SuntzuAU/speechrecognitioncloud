@@ -113,13 +113,13 @@ The vendor's stated migration path is [Dragon Professional v16](https://dragonpr
 
 ### I am a clinician on Dragon Medical One
 
-At roughly US$1,188 per clinician per year, Dragon Medical One is the most expensive product in the range. Speech Recognition Cloud Medical is US$439 a year, includes clinical vocabulary and a mobile companion app, and excludes AI Modes entirely by design for patient privacy. See the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison and [dictation for clinicians](/medical).
+At roughly US$1,188 per clinician per year, Dragon Medical One is the most expensive product in the range. Speech Recognition Cloud Medical is US$439 a year, includes clinical vocabulary and a mobile companion app, and excludes [AI Modes](/support/ai-modes) entirely by design for patient privacy. See the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison and [dictation for clinicians](/medical).
 
 Speech Recognition Cloud is designed to assist documentation workflows. It is not a medical device and makes no clinical claims.
 
 ### I used Dragon Anywhere on my phone
 
-It went end of sale on 30 June 2026; existing users can renew on a pro rata basis until 30 June 2027, but no new subscriptions are available. Speech Recognition Cloud includes a mobile companion app on the Professional and Medical plans — usable as a wireless microphone for your PC, or in Voice Notes mode for dictating away from your desk.
+It went end of sale on 30 June 2026; existing users can renew on a pro rata basis until 30 June 2027, but no new subscriptions are available. Speech Recognition Cloud includes a [mobile companion app](/support/mobile-setup) on the Professional and Medical plans — usable as a wireless microphone for your PC, or in Voice Notes mode for dictating away from your desk.
 
 ## How much is the difference over three years?
 
@@ -144,7 +144,7 @@ Stated plainly, because it is better to find out here.
 - **No macOS version.** Windows 10 and Windows 11 only. Dragon has had no Mac product since 2018 either.
 - **No VDI or virtual app deployment.** If you run Citrix or a virtualised standard operating environment, Speech Recognition Cloud does not support it.
 - **No central seat management.** There is no administrator console for provisioning and revoking large numbers of licences with centrally governed vocabularies.
-- **Bespoke Dragon macros do not port.** Years of custom Dragon voice commands and scripted macros stay with Dragon.
+- **Bespoke Dragon macros do not port.** Years of custom Dragon voice commands and scripted macros stay with Dragon. Speech Recognition Cloud has its own [templates and text replacements](/support/text-replacements), but they have to be rebuilt rather than imported.
 
 If any of those are requirements for your deployment, Speech Recognition Cloud is unlikely to be the right fit.
 

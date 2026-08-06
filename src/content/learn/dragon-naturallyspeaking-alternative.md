@@ -29,7 +29,7 @@ If you searched "Dragon NaturallySpeaking alternative" or "Dragon Dictate altern
 
 ## Wait — what happened to Dragon NaturallySpeaking?
 
-A quick, honest history, because the naming genuinely is confusing. Dragon NaturallySpeaking was Nuance's flagship Windows dictation product for the better part of two decades, and it's still the name most people search for out of habit. Nuance later rebranded the Windows lineup into Dragon Professional, Dragon Home and Dragon Legal, and built separate cloud products — Dragon Professional Anywhere and Dragon Medical One — for enterprise and clinical use.
+A quick, honest history, because the naming genuinely is confusing. Dragon NaturallySpeaking was Nuance's flagship Windows dictation product for the better part of two decades, and it's still the name most people search for out of habit. Nuance later rebranded the Windows lineup into Dragon Professional, Dragon Home and Dragon Legal, and built separate cloud products — Dragon Professional Anywhere and Dragon Medical One — for enterprise and [clinical use](/medical).
 
 **Dragon Dictate** was the Mac-specific version of the same family. It was discontinued in October 2018, when Nuance dropped Mac support across its entire product line — there's been no Nuance or Microsoft Dragon product for Mac since. If you want the fuller product history, [Dragon NaturallySpeaking](https://dragonnaturallyspeaking.com.au/) covers the timeline and version changes in more detail.
 
@@ -89,7 +89,7 @@ SRC has a genuinely free Starter plan — 20 minutes of dictation a month, no cr
 No. SRC uses modern AI speech recognition — open it and start talking, first time, no enrolment.
 
 **Which Dragon product replaces Dragon NaturallySpeaking today?**
-For general Windows use, that's Dragon Professional 16. For clinicians, Dragon Medical One. For Mac, there is no current Nuance or Microsoft product.
+For general Windows use, that's Dragon Professional 16. For [clinicians](/medical), Dragon Medical One. For Mac, there is no current Nuance or Microsoft product.
 
 ### Related reading
 
