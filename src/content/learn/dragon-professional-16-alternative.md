@@ -5,7 +5,7 @@ description: "Thinking of leaving Dragon Professional 16 — or being told to up
 type: "article"
 context: "descriptive"
 youtubeId: "eg2rq2Y8xUA"
-heroImageAlt: "Voice dictation appearing at the cursor in a Windows document"
+heroImageAlt: "Professional dictating into a headset at a Windows laptop in an office"
 heroPrompt: "Clean, modern editorial illustration for a software-marketing article: a professional at a tidy Windows desktop speaking, with words flowing into a document at the text cursor. Calm indigo (#4338CA) and white palette with soft slate accents, subtle depth, flat contemporary style. No text, no logos, no brand marks, no identifiable real people. Landscape hero orientation."
 breakImage1Alt: "One licence used across a laptop, a desktop and another computer"
 breakPrompt1: "Minimal conceptual illustration: a single dictation licence working across several of one person's computers — a laptop, a desktop monitor and a small-form-factor PC connected by soft flowing lines. Indigo (#4338CA) accent on a clean white background, flat modern vector style, generous whitespace. No text, no logos, no real people."
@@ -24,6 +24,7 @@ externalLinks:
   - to: "https://www.voicerecognition.com.au/collections/speech-to-text-software"
     anchor: "speech to text software"
     url: "https://www.voicerecognition.com.au/collections/speech-to-text-software"
+heroImage: "speechrecognitioncloud/2026/08/06/dragon-professional-16-alternative-hero-photo-409ca3f7.jpg"
 ---
 
 If you're weighing up Dragon Professional 16, you're probably in one of two camps. Either you already run it and it has stopped feeling worth the money — or you're on Dragon 15, you've been told it won't run properly on Windows 11, and Nuance's answer is to buy Professional 16. Either way, you're asking the same question: is paying (again) for Dragon really the best move in 2026?

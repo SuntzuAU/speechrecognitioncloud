@@ -5,7 +5,7 @@ description: "Looking for a Dragon Medical One alternative? An honest comparison
 type: "article"
 context: "descriptive"
 youtubeId: "4rlay0Zx660"
-heroImageAlt: "Spoken clinical notes appearing at the cursor inside a Windows electronic medical record"
+heroImageAlt: "Doctor dictating clinical notes into a headset at a Windows laptop"
 heroPrompt: "Clean, modern editorial illustration for a medical software article: a clinician's tidy Windows workstation where spoken words flow into an electronic medical record at the text cursor, with a subtle privacy-shield motif. Calm indigo (#4338CA) and white palette with soft slate accents, subtle depth, flat contemporary style. No text, no logos, no brand marks, no identifiable real people or patients. Landscape hero orientation."
 breakImage1Alt: "One dictation licence working at the cursor across any Windows EMR"
 breakPrompt1: "Minimal conceptual illustration: voice dictation working directly at the text cursor across several Windows-based clinical systems — an EMR window, a referral letter, a results inbox — connected by soft flowing lines. Indigo (#4338CA) accent on a clean white background, flat modern vector style, generous whitespace. No text, no logos, no real people or patients."
@@ -22,6 +22,7 @@ externalLinks:
   - to: "https://www.voicerecognition.com.au/pages/medical-speech-to-text-software"
     anchor: "Speech-to-Text Medical"
     url: "https://www.voicerecognition.com.au/pages/medical-speech-to-text-software"
+heroImage: "speechrecognitioncloud/2026/08/06/dragon-medical-one-alternative-hero-photo-f07379c3.jpg"
 ---
 
 If you're looking at Dragon Medical One — or already paying for it — you already know what you want from dictation software: your words, in your EMR, accurately, without fighting the tool. The real question is whether you need everything Dragon Medical One bundles in, at the price and commitment it asks for.

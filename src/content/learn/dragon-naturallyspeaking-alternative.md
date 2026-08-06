@@ -19,6 +19,8 @@ externalLinks:
   - to: "https://dragonnaturallyspeaking.com.au/"
     anchor: "Dragon NaturallySpeaking"
     url: "https://dragonnaturallyspeaking.com.au/"
+heroImage: "speechrecognitioncloud/2026/08/06/dragon-naturallyspeaking-alternative-hero-photo-e392a4f5.jpg"
+heroImageAlt: "Long-time Dragon user dictating into a headset at a Windows laptop"
 ---
 
 If you searched "Dragon NaturallySpeaking alternative" or "Dragon Dictate alternative," you're not behind the times — you're using the name most people still know this software by. Nuance's dictation product was called Dragon NaturallySpeaking for most of its life, long before it split into today's lineup of Dragon Professional, Dragon Legal and Dragon Medical One. If that's the version you remember, this guide is for you.
