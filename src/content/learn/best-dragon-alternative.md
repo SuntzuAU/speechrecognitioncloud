@@ -113,7 +113,7 @@ The vendor's stated migration path is [Dragon Professional v16](https://dragonpr
 
 ### I am a clinician on Dragon Medical One
 
-At roughly US$1,188 per clinician per year, Dragon Medical One is the most expensive product in the range. Speech Recognition Cloud Medical is US$439 a year, includes clinical vocabulary and a mobile companion app, and excludes [AI Modes](/support/ai-modes) entirely by design for patient privacy. See the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison and [dictation for clinicians](/medical).
+At roughly US$1,188 per clinician per year, Dragon Medical One is the most expensive product in the range. Speech Recognition Cloud Medical is US$439 a year, includes clinical vocabulary and a mobile companion app, and excludes [AI Modes](/support/ai-modes) entirely by design for patient privacy — there is a [demonstration of what AI Modes do](/learn/ai-modes-demonstration) if you want to see what is being excluded. See the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison and [dictation for clinicians](/medical).
 
 Speech Recognition Cloud is designed to assist documentation workflows. It is not a medical device and makes no clinical claims.
 
@@ -188,6 +188,6 @@ No. Dragon Professional Anywhere is a cloud service; Dragon Professional v16 run
 - [Dragon Professional Anywhere alternatives — end of life 31 December 2027](/learn/dragon-professional-anywhere-alternatives)
 - [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
 - [The best Dragon Medical One alternative for clinicians](/learn/dragon-medical-one-alternative)
-- [The best Dragon NaturallySpeaking alternative in 2026](/learn/dragon-naturallyspeaking-alternative)
+- [Dragon NaturallySpeaking and Dragon Dictate alternative](/learn/dragon-naturallyspeaking-alternative)
 - [how to set up Speech Recognition Cloud](/learn/getting-started-setup-microphone)
 - [speech to text software pricing](/pricing)

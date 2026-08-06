@@ -51,9 +51,14 @@ You do not need to say "comma" or "full stop" — the AI handles punctuation aut
 
 Once you are comfortable with basic dictation, explore these features:
 
-- **Custom vocabulary** — add specialised terms, names, and jargon in Settings
-- **Text replacements** — set up shortcuts that expand into longer phrases
-- **AI Modes** — use voice commands to rewrite, summarise, or format your text (Professional and Medical tiers)
+- **Custom vocabulary** — add specialised terms, names, and jargon in [Settings](/support/settings)
+- **[Text replacements](/support/text-replacements)** — set up shortcuts that expand into longer phrases
+- **[AI Modes](/support/ai-modes)** — use voice commands to rewrite, summarise, or format your text (Professional and Medical tiers). There is a [walkthrough of AI Modes in action](/learn/ai-modes-demonstration) if you would rather see them demonstrated.
 - **Templates** — auto-insert text blocks with a single voice command
+- **[Spoken punctuation](/support/spoken-punctuation)** — for the times you do want to dictate punctuation explicitly
 
-For more detail, see the [full getting started guide](/support/getting-started) in our support section.
+For more detail, see the [full getting started guide](/support/getting-started) in our support section, or browse the [tips and shortcuts](/support/tips) collection.
+
+Dictating in a language other than English? Speech Recognition Cloud supports [57 languages](/languages) — there is a [Tagalog and Filipino dictation demonstration](/learn/tagalog-filipino-speech-recognition-demo) showing how non-English recognition performs.
+
+Switching from Dragon? Start with [the best Dragon alternative in 2026](/learn/best-dragon-alternative), which compares every Dragon product against Speech Recognition Cloud on price, licensing and features.
