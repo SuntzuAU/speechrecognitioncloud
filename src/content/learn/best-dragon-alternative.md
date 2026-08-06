@@ -44,7 +44,7 @@ It also has a free Starter plan with no expiry, so it can be tested against your
 
 <div class="callout callout--warn">
 <h4>Two things to be clear about up front</h4>
-<p><strong>Dragon Professional Anywhere and Dragon Legal Anywhere cannot be purchased after 31 December 2026</strong> and reach end of life at the end of 2027 — see the <a href="/learn/dragon-professional-anywhere-alternatives">Dragon Professional Anywhere alternatives</a> page for what that means in practice.</p>
+<p><strong>New orders for Dragon Professional Anywhere and Dragon Legal Anywhere stop on 31 December 2026, and both reach end of life on 31 December 2027.</strong> Existing users can keep using them and renewing on a pro rata basis in between, and Dragon Professional v16 is the stated migration path — see the <a href="/learn/dragon-professional-anywhere-alternatives">Dragon Professional Anywhere alternatives</a> page for the detail.</p>
 <p>And Speech Recognition Cloud does not do everything Dragon does. There is a section below setting out exactly what it does not do.</p>
 </div>
 
@@ -166,7 +166,7 @@ It types at the cursor in any standard Windows application — Microsoft Word, O
 Yes. The Starter plan provides 20 minutes of dictation a month with core features, no credit card, and no countdown. It does not expire into a paywall.
 
 **Is Dragon being discontinued?**
-Progressively. Four products have already gone and two more close to new customers at the end of 2026. Dragon Professional 16 and Dragon Medical One remain available.
+Progressively. Several products have already gone. Dragon Professional Anywhere and Dragon Legal Anywhere close to new orders on 31 December 2026 and reach end of life on 31 December 2027, with Dragon Professional v16 named as the migration path. Dragon Professional v16 and Dragon Medical One remain available.
 
 ---
 
