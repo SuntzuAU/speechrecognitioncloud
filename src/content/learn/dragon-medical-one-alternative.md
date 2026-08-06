@@ -117,6 +117,7 @@ The desktop app is Windows-only, the Medical tier is English-only, and it needs 
 
 ### Related reading
 
+- [The best Dragon alternative in 2026 — every Dragon product compared](/learn/best-dragon-alternative)
 - [The best Dragon NaturallySpeaking alternative in 2026](/learn/dragon-naturallyspeaking-alternative)
 - [Dictation for clinicians](/medical)
 - [Dictation for healthcare teams](/healthcare)

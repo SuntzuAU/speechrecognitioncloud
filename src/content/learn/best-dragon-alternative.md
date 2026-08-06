@@ -182,3 +182,12 @@ No. Dragon Professional Anywhere is a cloud service; Dragon Professional v16 run
 *Dragon, Dragon NaturallySpeaking, Dragon Professional, Dragon Professional Anywhere, Dragon Legal Anywhere, Dragon Medical One and Dragon Anywhere are trade marks or registered trade marks of Nuance Communications, Inc. and/or Microsoft Corporation. Windows, Microsoft Word and Outlook are trade marks of Microsoft Corporation. These marks are used solely to identify and describe those products in a factual comparison. Speech Recognition Cloud is not affiliated with, authorised by, endorsed by or sponsored by Nuance Communications, Inc. or Microsoft Corporation.*
 
 *Third-party pricing shown is approximate, drawn from publicly available vendor and reseller listings, and varies by vendor, territory, term, seat count and applicable taxes. Nothing on this page constitutes an offer or quotation in respect of any third-party product. Information is believed accurate at the date of publication; confirm current details with the relevant vendor before purchasing. If you believe any statement here is inaccurate, please contact us and we will review it.*
+
+### Related reading
+
+- [Dragon Professional Anywhere alternatives — end of life 31 December 2027](/learn/dragon-professional-anywhere-alternatives)
+- [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
+- [The best Dragon Medical One alternative for clinicians](/learn/dragon-medical-one-alternative)
+- [The best Dragon NaturallySpeaking alternative in 2026](/learn/dragon-naturallyspeaking-alternative)
+- [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
+- [Compare plans and pricing](/pricing)

@@ -93,6 +93,8 @@ For general Windows use, that's Dragon Professional 16. For clinicians, Dragon M
 
 ### Related reading
 
+- [The best Dragon alternative in 2026 — every Dragon product compared](/learn/best-dragon-alternative)
+- [Dragon Professional Anywhere alternatives — end of life 31 December 2027](/learn/dragon-professional-anywhere-alternatives)
 - [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
 - [The best Dragon Medical One alternative for clinicians](/learn/dragon-medical-one-alternative)
 - [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)

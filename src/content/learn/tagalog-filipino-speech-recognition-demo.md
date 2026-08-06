@@ -41,4 +41,10 @@ If you are new to Speech Recognition Cloud, start with the [getting started guid
 
 ## Try it yourself
 
-Tagalog dictation is available on all plans, including the free tier. Download Speech Recognition Cloud from [speechrecognition.cloud](https://speechrecognition.cloud) and test it with your own voice.
+Tagalog dictation is available on all plans, including the free tier. See the full list of [supported languages](/languages), or [compare plans and pricing](/pricing) and test it with your own voice.
+
+### Related reading
+
+- [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
+- [All supported languages](/languages)
+- [Compare plans and pricing](/pricing)

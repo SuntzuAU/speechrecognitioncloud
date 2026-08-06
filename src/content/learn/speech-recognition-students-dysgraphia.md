@@ -95,6 +95,13 @@ The honest way to evaluate it is not to read about it. Put it in front of a stud
 
 For a lot of families, that first paragraph is the moment it becomes obvious the problem was never the child.
 
+### Related reading
+
+- [Speech to text for students with dyslexia](/learn/speech-recognition-students-dyslexia)
+- [Dictation for students and education](/students)
+- [Accessibility and RSI](/accessibility)
+- [Volume licensing for schools and universities](/academic)
+
 **Sources**
 
 - [Empowering students with dysgraphia: the educational benefits of assistive technologies, *Disability and Rehabilitation: Assistive Technology* (2025)](https://www.tandfonline.com/doi/abs/10.1080/17483107.2025.2493737)

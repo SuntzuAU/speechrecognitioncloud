@@ -76,4 +76,11 @@ For a complete list of available commands and examples, see the [full AI Modes r
 
 ## Try it yourself
 
-AI Modes are available immediately when you upgrade to the Professional tier. Visit [speechrecognition.cloud/pricing](/pricing) to get started, or download the free version first and upgrade when you are ready.
+AI Modes are available immediately when you upgrade to the Professional tier. [Compare plans and pricing](/pricing) to get started, or download the free version first and upgrade when you are ready.
+
+### Related reading
+
+- [AI Modes reference guide](/support/ai-modes)
+- [Dictation for business and professionals](/business)
+- [Dictation for writers and creators](/writers)
+- [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
