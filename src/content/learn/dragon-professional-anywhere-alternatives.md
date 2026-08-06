@@ -17,6 +17,13 @@ breakAspectRatio2: "21:9"
 heroPrompt: "Clean modern editorial illustration: a wall calendar with a single date circled and the following pages softly fading away, suggesting a closing window. Warm orange (#EA580C) accent with slate and white, flat contemporary style, subtle depth. No text, no numerals, no logos, no identifiable real people. Landscape hero."
 breakPrompt1: "Wide cinematic strip, people prominent: three colleagues around a desk planning a software migration, one pointing at a laptop screen while another takes notes. Bright modern office, warm natural light, orange and indigo accents, flat modern editorial illustration style. Subject centred vertically. No text, no logos, no brand marks."
 breakPrompt2: "Wide cinematic strip, people prominent: a professional at a Windows computer trialling dictation software, speaking while reviewing text on screen, relaxed and unhurried. Clean bright workspace, indigo accents on white, flat modern editorial illustration. Subject centred vertically. No text, no logos."
+externalLinks:
+  - to: "https://dragonprofessional16.com.au/"
+    anchor: "Dragon Professional v16"
+    url: "https://dragonprofessional16.com.au/"
+  - to: "https://www.voicerecognition.com.au/collections/dragon-software"
+    anchor: "Dragon software range"
+    url: "https://www.voicerecognition.com.au/collections/dragon-software"
 internalLinks:
   - to: "/pricing"
     anchor: "speech to text software pricing"
@@ -76,7 +83,7 @@ In other words: if you are already a customer, you have until the end of 2027. I
 
 ### What is the official replacement for Dragon Professional Anywhere?
 
-**Dragon Professional v16**, available as a subscription. ORdigiNAL have stated they will assist in moving users with existing DPA or DLA profiles across to v16, which offers more voice commands, integrated control of desktop applications and high levels of accuracy. That is the vendor-sanctioned path, it comes with migration assistance, and for a good number of users it will be the right answer.
+**[Dragon Professional v16](https://dragonprofessional16.com.au/)**, available as a subscription. ORdigiNAL have stated they will assist in moving users with existing DPA or DLA profiles across to v16, which offers more voice commands, integrated control of desktop applications and high levels of accuracy. That is the vendor-sanctioned path, it comes with migration assistance, and for a good number of users it will be the right answer.
 
 It is worth understanding what the move actually involves, because **Dragon Professional v16 is a locally installed desktop product, not a cloud service.** That is a change of category rather than a version upgrade, and it changes several things you may currently take for granted.
 
@@ -91,7 +98,7 @@ It is worth understanding what the move actually involves, because **Dragon Prof
 | **Works offline** | No | **Yes** | No |
 | **VDI / virtual app deployment** | Yes | Varies by deployment | No |
 
-**Read that table in both directions.** If offline dictation matters to you — you work somewhere with poor connectivity, or your security posture rules out cloud processing — then v16 is genuinely the better product and the fact that it runs locally is the whole point. Take the migration assistance.
+**Read that table in both directions.** If offline dictation matters to you — you work somewhere with poor connectivity, or your security posture rules out cloud processing — then v16 is genuinely the better product and the fact that it runs locally is the whole point. Take the migration assistance. There is a detailed specification and feature breakdown at [dragonprofessional16.com.au](https://dragonprofessional16.com.au/), and Australian buyers can see current pricing across the [Dragon software range](https://www.voicerecognition.com.au/collections/dragon-software).
 
 But if what you valued about Dragon Professional Anywhere was the cloud model — a profile that follows you between machines, no installation ceiling, improvements arriving without a version purchase, a phone in your pocket acting as a microphone — then moving to a locally installed product gives those things up. **On architecture, the closest equivalent to what you have now is another cloud product, not a desktop one.**
 
