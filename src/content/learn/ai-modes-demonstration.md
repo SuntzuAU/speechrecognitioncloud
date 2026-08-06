@@ -40,7 +40,7 @@ AI Modes are included with the **Professional** ($159/year) and **Medical** ($43
 
 The Medical tier includes **restricted AI modes** that limit processing to approved clinical transformations only, providing an additional layer of privacy for healthcare environments.
 
-To [compare plans](/pricing) and see all the features included at each tier, visit the pricing page.
+To [Professional plan pricing](/pricing) and see all the features included at each tier, visit the pricing page.
 
 ## What you can do with AI Modes
 
@@ -85,4 +85,4 @@ AI Modes are available in every language the product supports — see [all suppo
 - [AI Modes reference guide](/support/ai-modes)
 - [Dictation for business and professionals](/business)
 - [Dictation for writers and creators](/writers)
-- [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
+- [how to get started](/learn/getting-started-setup-microphone)

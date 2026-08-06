@@ -189,5 +189,5 @@ No. Dragon Professional Anywhere is a cloud service; Dragon Professional v16 run
 - [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
 - [The best Dragon Medical One alternative for clinicians](/learn/dragon-medical-one-alternative)
 - [The best Dragon NaturallySpeaking alternative in 2026](/learn/dragon-naturallyspeaking-alternative)
-- [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
-- [Compare plans and pricing](/pricing)
+- [how to set up Speech Recognition Cloud](/learn/getting-started-setup-microphone)
+- [speech to text software pricing](/pricing)

@@ -98,7 +98,7 @@ SRC isn't a fly-by-night AI startup that discovered dictation last year. It's bu
 
 You can test SRC properly without spending anything: the free **Starter** plan needs no credit card, no voice training, and about two minutes to set up. If you dictate a lot, move up to Personal ($99/yr) or Professional ($159/yr) whenever you're ready.
 
-**[Download free](https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe)**  ·  **[See full pricing](/pricing)**
+**[Download free](https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe)**  ·  **[dictation software pricing](/pricing)**
 
 ## Frequently asked questions
 

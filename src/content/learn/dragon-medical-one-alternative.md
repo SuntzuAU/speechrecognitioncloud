@@ -93,7 +93,7 @@ SRC isn't a startup that discovered dictation last year. It's built by **Russell
 
 You don't have to take any of this on faith. Start the free 30-day Medical Ultra trial, install in about two minutes on Windows 10 or 11, and dictate straight into your EMR and everyday Windows apps. After the trial it reverts to the free Starter tier (20 minutes a month) unless you upgrade — so there's nothing to cancel and nothing to lose.
 
-**[Start your free 30-day Medical Ultra trial](/medical)**  ·  **[Download Speech Recognition Cloud](https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe)**  ·  **[See full pricing](/pricing)**
+**[Start your free 30-day Medical Ultra trial](/medical)**  ·  **[Download Speech Recognition Cloud](https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe)**  ·  **[medical dictation pricing](/pricing)**
 
 ## Frequently asked questions
 

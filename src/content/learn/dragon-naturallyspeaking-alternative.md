@@ -66,7 +66,7 @@ Dragon's current lineup splits by use case, and so does ours — pick the one th
 - **On Dragon Professional 16, or told to upgrade from Dragon 15 for Windows 11?** Read the [Dragon Professional 16 alternative](/learn/dragon-professional-16-alternative) comparison — it goes deep on cost, install limits and the Windows 11 situation specifically.
 - **A clinician on Dragon Medical One?** Clinical work has different needs — EMR integration, patient privacy, medical vocabulary — covered in the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) guide.
 - **Legal work?** See our [dictation for legal work](/legal) page.
-- **On Dragon Dictate for Mac, now discontinued?** SRC's desktop app is Windows-only, but the companion mobile app lets Mac users dictate into a Windows EMR, document or session — see [pricing](/pricing) for the full plan breakdown.
+- **On Dragon Dictate for Mac, now discontinued?** SRC's desktop app is Windows-only, but the companion mobile app lets Mac users dictate into a Windows EMR, document or session — see [what Speech Recognition Cloud costs](/pricing) for the full plan breakdown.
 
 ## Try it free
 
@@ -97,5 +97,5 @@ For general Windows use, that's Dragon Professional 16. For [clinicians](/medica
 - [Dragon Professional Anywhere alternatives — end of life 31 December 2027](/learn/dragon-professional-anywhere-alternatives)
 - [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
 - [The best Dragon Medical One alternative for clinicians](/learn/dragon-medical-one-alternative)
-- [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
+- [setting up your microphone](/learn/getting-started-setup-microphone)
 - [Compare plans and pricing](/pricing)
