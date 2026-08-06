@@ -49,4 +49,4 @@ Spoken punctuation works the same way across languages — see the [spoken punct
 
 - [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
 - [All supported languages](/languages)
-- [Compare plans and pricing](/pricing)
+- [Plans and pricing](/pricing)

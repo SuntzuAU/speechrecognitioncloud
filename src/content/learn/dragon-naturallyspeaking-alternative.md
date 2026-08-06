@@ -72,7 +72,7 @@ Dragon's current lineup splits by use case, and so does ours — pick the one th
 
 You can test SRC properly without spending anything: the free Starter plan needs no credit card, no voice training, and about two minutes to set up.
 
-**[Download free](https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe)**  ·  **[See full pricing](/pricing)**
+**[Download free](https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe)**  ·  **[Pricing and plan comparison](/pricing)**
 
 ## Frequently asked questions
 
@@ -98,4 +98,4 @@ For general Windows use, that's Dragon Professional 16. For [clinicians](/medica
 - [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
 - [The best Dragon Medical One alternative for clinicians](/learn/dragon-medical-one-alternative)
 - [setting up your microphone](/learn/getting-started-setup-microphone)
-- [Compare plans and pricing](/pricing)
+- [Pricing and plan comparison](/pricing)

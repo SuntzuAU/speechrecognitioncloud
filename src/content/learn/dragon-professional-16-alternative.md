@@ -130,6 +130,6 @@ Yes. SRC is cloud-based, which is what keeps it accurate, always up to date and 
 - [The best Dragon NaturallySpeaking alternative in 2026](/learn/dragon-naturallyspeaking-alternative)
 - [The best Dragon Medical One alternative in 2026](/learn/dragon-medical-one-alternative)
 - [Getting started with Speech Recognition Cloud](/learn/getting-started-setup-microphone)
-- [Compare plans and pricing](/pricing)
-- [Dictation for clinicians](/medical)
+- [Speech Recognition Cloud plans and pricing](/pricing)
+- [dictation for medical practice](/medical)
 - [Dictation for legal work](/legal)

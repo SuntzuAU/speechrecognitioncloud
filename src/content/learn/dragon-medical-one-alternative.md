@@ -122,4 +122,4 @@ The desktop app is Windows-only, the Medical tier is English-only, and it needs 
 - [Dictation for clinicians](/medical)
 - [Dictation for healthcare teams](/healthcare)
 - [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
-- [Compare plans and pricing](/pricing)
+- [Medical plan pricing](/pricing)
