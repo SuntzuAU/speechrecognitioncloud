@@ -151,7 +151,10 @@ We do not describe the product as compliant with any particular framework, becau
 ## Frequently asked questions
 
 **Do I have to train Speech Recognition Cloud to my voice?**
-No, and neither do the current Dragon cloud products. Both adapt to your accent automatically. Setup takes about two minutes. Voice training is a difference only against older boxed Dragon versions such as Dragon 15 and earlier.
+No. Speech Recognition Cloud performs no voice training of any kind. There is no enrolment step, no voice profile is built, and no training or adaptation data about how you speak is stored on our servers. Setup takes about two minutes.
+
+**Does Dragon train on my voice?**
+The Anywhere products do not require the old enrolment routine, so you can start dictating straight away — but they do build a voice profile and continuously adapt it, and that profile is held in the cloud alongside your custom vocabulary. Older boxed versions such as Dragon 15 required enrolment up front as well. This is a genuine architectural difference: Speech Recognition Cloud trains on nothing and stores no voice data at all.
 
 **How many computers can I install it on?**
 As many of your own as you like. It is licensed per person, not per machine. Licences cannot be shared between people, because personal vocabulary and preferences are tied to the individual account.
@@ -167,6 +170,6 @@ Progressively. Four products have already gone and two more close to new custome
 
 ---
 
-*Dragon, Dragon NaturallySpeaking, Dragon Professional, Dragon Professional Anywhere, Dragon Legal Anywhere, Dragon Medical One, Dragon Anywhere and Dragon Home are trade marks or registered trade marks of Nuance Communications, Inc. and/or Microsoft Corporation. Windows, Microsoft Word and Outlook are trade marks of Microsoft Corporation. These marks are used solely to identify and describe those products in a factual comparison. Speech Recognition Cloud is not affiliated with, authorised by, endorsed by or sponsored by Nuance Communications, Inc. or Microsoft Corporation.*
+*Dragon, Dragon NaturallySpeaking, Dragon Professional, Dragon Professional Anywhere, Dragon Legal Anywhere, Dragon Medical One and Dragon Anywhere are trade marks or registered trade marks of Nuance Communications, Inc. and/or Microsoft Corporation. Windows, Microsoft Word and Outlook are trade marks of Microsoft Corporation. These marks are used solely to identify and describe those products in a factual comparison. Speech Recognition Cloud is not affiliated with, authorised by, endorsed by or sponsored by Nuance Communications, Inc. or Microsoft Corporation.*
 
 *Third-party pricing shown is approximate, drawn from publicly available vendor and reseller listings, and varies by vendor, territory, term, seat count and applicable taxes. Nothing on this page constitutes an offer or quotation in respect of any third-party product. Information is believed accurate at the date of publication; confirm current details with the relevant vendor before purchasing. If you believe any statement here is inaccurate, please contact us and we will review it.*
