@@ -30,62 +30,81 @@ internalLinks:
 
 If you use Dragon Professional Anywhere or Dragon Legal Anywhere, you need an alternative — and sooner than you might think.
 
-Both products reach end of life at the end of 2027. Because both are sold as twelve-month subscriptions, the practical consequence arrives earlier: **31 December 2026 is the last date either product can be sold.** That is under five months away.
+Microsoft have confirmed that Dragon Professional Anywhere and Dragon Legal Anywhere reach **end of life on 31 December 2027**. **New orders stop on 31 December 2026** — under five months away.
 
-This page covers what is ending, how long you realistically have, and what the alternatives are.
+If you already have a licence you are not cut off in December. Existing users can keep using both products and renew on a pro rata basis through to 31 December 2027. What closes at the end of this year is the ability to place a new order.
+
+This page covers exactly what changes and when, what the vendor-sanctioned migration path is, and what the alternatives are.
 
 ## When is the last day I can buy Dragon Professional Anywhere?
 
 <div class="kpi">
-<div class="k bad"><p class="k-l">Last date to purchase</p><p class="k-v">31 Dec 2026</p></div>
-<div class="k bad"><p class="k-l">Service end of life</p><p class="k-v">End of 2027</p></div>
-<div class="k"><p class="k-l">Realistic decision window</p><p class="k-v">3–4 months</p></div>
-<div class="k"><p class="k-l">Announced successor</p><p class="k-v">None</p></div>
+<div class="k bad"><p class="k-l">New orders stop</p><p class="k-v">31 Dec 2026</p></div>
+<div class="k bad"><p class="k-l">End of life</p><p class="k-v">31 Dec 2027</p></div>
+<div class="k"><p class="k-l">Existing users can renew until</p><p class="k-v">31 Dec 2027</p></div>
+<div class="k"><p class="k-l">Vendor migration path</p><p class="k-v">Dragon Professional v16</p></div>
 </div>
 
-The arithmetic is straightforward. Both products are sold as twelve-month subscriptions, and both reach end of life at the end of 2027. A subscription sold on 1 January 2027 would expire after the product it pays for has already stopped. A full year cannot be sold on a product with eleven months remaining.
+**31 December 2026 for new orders. 31 December 2027 for the product itself.**
 
-After 31 December 2026, Dragon Professional Anywhere and Dragon Legal Anywhere cannot be purchased, renewed, or added to.
+Those are two different dates and the distinction matters. After 31 December 2026 you cannot place a new order for Dragon Professional Anywhere or Dragon Legal Anywhere. If you already hold a subscription, the solutions remain available to you and you can continue renewing on a pro rata basis right up to 31 December 2027, when both reach end of life.
+
+In other words: if you are already a customer, you have until the end of 2027. If you are not, you have until the end of 2026 to become one.
 
 ## What is ending, and when?
 
-| Product | Last day to buy | Service ends | Status as at August 2026 |
+| Product | New orders stop | Existing users can renew until | End of life |
 |---|---|---|---|
-| **Dragon Anywhere Mobile** | Passed | Ended | <span class="st st-gone">Discontinued 1 Jul 2026</span> |
-| **Dragon Professional Anywhere** | **31 December 2026** | End of 2027 | <span class="st st-end">Under 5 months to buy</span> |
-| **Dragon Professional Anywhere Legal** (sold as Dragon Legal Anywhere) | **31 December 2026** | End of 2027 | <span class="st st-end">Under 5 months to buy</span> |
+| **Dragon Professional Anywhere** | <span class="st st-end">31 Dec 2026</span> | 31 Dec 2027 (pro rata) | 31 Dec 2027 |
+| **Dragon Legal Anywhere** | <span class="st st-end">31 Dec 2026</span> | 31 Dec 2027 (pro rata) | 31 Dec 2027 |
+| **Dragon Anywhere Mobile** | <span class="st st-gone">Ended 30 Jun 2026</span> | 30 Jun 2027 (pro rata) | 30 Jun 2027 |
+| **DPA+DAM / DLA+DAM bundles** | <span class="st st-end">31 Dec 2026</span> | DAM element to 30 Jun 2027 | See above |
 
-The first product on that list has already gone, on schedule. Dragon Anywhere Mobile was discontinued on 1 July 2026, with no direct replacement.
+**Dragon Anywhere Mobile went end of sale on 30 June 2026.** It has not vanished — existing users can renew on a pro rata basis until 30 June 2027 — but no new DAM-only subscriptions have been possible since July 2026.
+
+**If you hold a DPA+DAM or DLA+DAM bundle**, you keep the mobile element until 30 June 2027, provided your subscription covers that period. Any new subscription purchased after July 2026 is DPA or DLA only, with no mobile app included.
+
+
 
 <div class="callout">
 <h4>Where these dates come from</h4>
-<p>These dates were communicated through the reseller channel. As at the date of publication no public end-of-life announcement carrying them has been issued by Nuance Communications or Microsoft, and we do not represent that they have been publicly confirmed.</p>
-<p>We publish them because one product on the same schedule has already been withdrawn exactly as stated — that is corroboration rather than confirmation. Confirm the current status of any product directly with the vendor or an authorised partner before acting.</p>
+<p>These dates are set out in a partner statement issued by ORdigiNAL, the authorised distributor, which states that Microsoft have confirmed the changes. We are not reproducing the statement here; if you hold a subscription, your own supplier or Partner Success Manager can confirm the position for your account.</p>
+<p>Confirm the current status of any product directly with your vendor or authorised partner before acting on it.</p>
 </div>
-
-**No successor product has been announced** in the Anywhere line. This is not a version upgrade with a migration path attached.
 
 ## What does this mean for me?
 
+### What is the official replacement for Dragon Professional Anywhere?
+
+**Dragon Professional v16**, available as a subscription. ORdigiNAL have stated they will assist in moving users with existing DPA or DLA profiles across to v16, which offers more voice commands, integrated control of desktop applications and high accuracy.
+
+If you want to stay inside the Dragon range, that is the vendor-sanctioned path and it comes with migration help for your existing profile. It is a genuine option and worth getting a quote on before you look anywhere else.
+
+The trade-off is what v16 is: a locally installed desktop product rather than a cloud service. That changes the deployment model, and it is a different proposition from the cloud product you are on now.
+
 ### Should I buy Dragon Professional Anywhere now?
 
-There is limited benefit in doing so. A licence purchased now expires at the end of 2027 with nothing to renew onto and no announced successor. The practical position is that the product is already closed to new customers in all but name. If you are choosing dictation software at the moment, it is worth choosing something with a longer runway.
+There is limited benefit in starting fresh on it. A new subscription taken now runs to the end of 2027 at the latest, after which you migrate anyway. If you are choosing dictation software from scratch at the moment, you are choosing between Dragon Professional v16, Speech Recognition Cloud, and everything else — not between those and DPA.
 
 ### What happens to my existing licence?
 
-It runs its term normally. You can also take one further renewal before 31 December 2026, which carries you through to the end of 2027 — the maximum life available to anyone.
+You are in a better position than a new buyer. The solutions remain available to existing users, and you can continue renewing on a pro rata basis until 31 December 2027. You are not cut off at the end of this year.
 
-That is the last renewal that will be offered. After it expires there is nothing to move to within the Anywhere line, so a migration is coming regardless. The question is whether you plan it or it arrives.
+What you do lose at the end of 2026 is the ability to place new orders — and at the end of 2027, the product itself. So a migration is coming, but you have roughly seventeen months to plan it rather than five.
 
 ### Can I add seats for new staff during 2027?
 
-No. The 31 December 2026 cut-off applies to additional seats as well as to new customers. An organisation that grows during 2027 will not be able to license new people on Dragon Professional Anywhere at all. For any team expecting to add headcount, that effectively brings the decision forward into this year.
+Check with your supplier. The statement says new orders stop on 31 December 2026 and that existing users may continue to use and renew their subscriptions — it does not spell out whether adding seats to an existing subscription counts as a new order.
+
+If your team is likely to grow in 2027, that ambiguity is worth resolving now rather than discovering the answer when you need the seat.
 
 ### How long do I realistically have to decide?
 
-**Three to four months.**
+It depends which side of the line you are on.
 
-The hard deadline is 31 December 2026. Working backwards from it: evaluating an alternative properly takes a fortnight of real use, an organisation needs budget and IT approval on top of that, and December is not a month in which decisions move quickly. That puts the decision around October or November.
+**If you do not yet have a licence** and want one, you have until 31 December 2026 — realistically three to four months of decision time once evaluation, budget and approval are accounted for, since December is not a month in which decisions move quickly.
+
+**If you already have a licence**, you have until 31 December 2027. That is roughly seventeen months, which is enough to plan a migration properly rather than react to one. Organisations with a standard operating environment should still start scoping in 2026, because seventeen months disappears quickly once budget cycles and user training are factored in.
 
 ## Why this is different from Dragon 15 reaching end of life
 
@@ -101,7 +120,7 @@ When boxed software reaches end of life you can keep using it. It stops receivin
 
 <div class="callout callout--warn">
 <h4>1. Do not sign a multi-year agreement</h4>
-<p>No multi-year term can be honoured past the end of 2027. If a discounted two or three-year deal is offered between now and December, the discount covers time the product will not exist for.</p>
+<p>No term can run past 31 December 2027. Renewals are on a pro rata basis for exactly this reason. If a multi-year deal is offered between now and December, check what happens to the portion beyond the end-of-life date.</p>
 </div>
 
 **2. Start evaluating while there is no pressure.** Migrations forced by a deadline tend to go badly; migrations chosen with runway tend to go fine. Running an alternative alongside your existing Dragon for a fortnight — real work, real documents, real vocabulary — costs nothing while your licence is still live.
