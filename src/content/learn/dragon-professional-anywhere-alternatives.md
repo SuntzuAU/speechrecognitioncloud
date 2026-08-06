@@ -1,7 +1,7 @@
 ---
-title: "Dragon Professional Anywhere Alternatives: The Product Ends in 2027"
+title: "Dragon Professional Anywhere Alternatives: End of Life 31 December 2027"
 date: "2026-08-05"
-description: "Dragon Professional Anywhere and Dragon Legal Anywhere cannot be purchased after 31 December 2026 and end in 2027. The alternatives, what they cost, and how long you have to choose one."
+description: "Dragon Professional Anywhere and Dragon Legal Anywhere reach end of life 31 December 2027. New orders stop 31 December 2026; existing users can renew pro rata until end of life. The migration path and the alternatives."
 type: "article"
 context: "descriptive"
 heroImageAlt: "Businesswoman planning ahead at her desk beside a wall planner and a Windows laptop"
