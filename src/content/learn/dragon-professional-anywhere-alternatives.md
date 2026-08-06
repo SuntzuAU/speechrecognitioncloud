@@ -76,11 +76,28 @@ In other words: if you are already a customer, you have until the end of 2027. I
 
 ### What is the official replacement for Dragon Professional Anywhere?
 
-**Dragon Professional v16**, available as a subscription. ORdigiNAL have stated they will assist in moving users with existing DPA or DLA profiles across to v16, which offers more voice commands, integrated control of desktop applications and high accuracy.
+**Dragon Professional v16**, available as a subscription. ORdigiNAL have stated they will assist in moving users with existing DPA or DLA profiles across to v16, which offers more voice commands, integrated control of desktop applications and high levels of accuracy. That is the vendor-sanctioned path, it comes with migration assistance, and for a good number of users it will be the right answer.
 
-If you want to stay inside the Dragon range, that is the vendor-sanctioned path and it comes with migration help for your existing profile. It is a genuine option and worth getting a quote on before you look anywhere else.
+It is worth understanding what the move actually involves, because **Dragon Professional v16 is a locally installed desktop product, not a cloud service.** That is a change of category rather than a version upgrade, and it changes several things you may currently take for granted.
 
-The trade-off is what v16 is: a locally installed desktop product rather than a cloud service. That changes the deployment model, and it is a different proposition from the cloud product you are on now.
+| | Dragon Professional Anywhere / Legal Anywhere<br><span class="muted">what you have now</span> | Dragon Professional v16<br><span class="muted">the stated migration path</span> | Speech Recognition Cloud<br><span class="muted">a cloud alternative</span> |
+|---|---|---|---|
+| **Where recognition happens** | Cloud | On your PC | Cloud |
+| **Voice profile** | Held in the cloud, follows you | Held locally on the machine | None — no profile is created |
+| **Voice training / adaptation** | Adapts continuously | Builds and adapts a local profile | No training of any kind |
+| **Installing on several machines** | No limit | Limited under the standard licence; volume and group licensing differ | No limit — per person |
+| **Companion mobile app** | Was available via Dragon Anywhere Mobile, now end of sale | No | Yes, on Professional and Medical |
+| **Improvements** | Delivered server-side | Arrive with a new version | Delivered server-side |
+| **Works offline** | No | **Yes** | No |
+| **VDI / virtual app deployment** | Yes | Varies by deployment | No |
+
+**Read that table in both directions.** If offline dictation matters to you — you work somewhere with poor connectivity, or your security posture rules out cloud processing — then v16 is genuinely the better product and the fact that it runs locally is the whole point. Take the migration assistance.
+
+But if what you valued about Dragon Professional Anywhere was the cloud model — a profile that follows you between machines, no installation ceiling, improvements arriving without a version purchase, a phone in your pocket acting as a microphone — then moving to a locally installed product gives those things up. **On architecture, the closest equivalent to what you have now is another cloud product, not a desktop one.**
+
+That is not a criticism of Dragon Professional v16. It is a well-regarded product doing a different job. It is simply worth knowing which of the two things you are being offered before you accept the default, because the official path and the closest-equivalent path are not the same path.
+
+Speech Recognition Cloud is one cloud option and it is the one we build, so weigh that accordingly. Price it against v16, run both if you can, and choose on evidence.
 
 ### Should I buy Dragon Professional Anywhere now?
 
@@ -156,7 +173,10 @@ End of life is 31 December 2027. New orders stop earlier, on 31 December 2026. I
 No. These are cloud services and the recognition runs on vendor infrastructure rather than your computer. There is no local copy that keeps working after 31 December 2027.
 
 **Is there a replacement product?**
-Yes. Dragon Professional v16 is the stated replacement for Dragon Professional Anywhere and Dragon Legal Anywhere. It is available as a subscription, and ORdigiNAL have said they will assist in moving users with existing DPA or DLA profiles across to it. It is a locally installed desktop product rather than a cloud service, so the deployment model differs from what you are on now. Dragon Medical One continues separately for clinicians.
+Yes. Dragon Professional v16 is the stated replacement, available as a subscription, and ORdigiNAL have said they will assist in moving existing DPA or DLA profiles across to it.
+
+**Is Dragon Professional v16 a like-for-like replacement for Dragon Professional Anywhere?**
+Not architecturally. Dragon Professional Anywhere is a cloud service; Dragon Professional v16 is installed and runs on your own computer. That means the voice profile is held locally rather than following you between machines, the standard licence limits how many computers you can install on, improvements arrive with a new version rather than server-side, and there is no companion mobile app now that Dragon Anywhere Mobile has gone. In exchange, v16 works offline, which the cloud products do not. If offline capability is what you need, v16 is the stronger choice. If the cloud model is what you valued, the closest equivalent is another cloud product.
 
 **Does this affect Dragon Medical One?**
 Dragon Medical One is not on this end-of-life schedule, which covers Dragon Professional Anywhere, Dragon Professional Anywhere Legal and Dragon Anywhere Mobile. Clinicians should not assume Dragon Medical One is affected on the basis of this page.

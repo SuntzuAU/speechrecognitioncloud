@@ -52,7 +52,7 @@ It also has a free Starter plan with no expiry, so it can be tested against your
 
 | Dragon product | Status | Approximate cost | Notes |
 |---|---|---|---|
-| **Dragon Professional 16** | <span class="st st-live">Current</span> | ~US$700 one-off, or ~US$490/yr | Upgrade from v15 ~US$350. Local processing, works offline. |
+| **Dragon Professional v16** | <span class="st st-live">Current</span> | ~US$700 one-off, or ~US$490/yr | Upgrade from v15 ~US$350. Installed locally, works offline. Local voice profile, install limits under the standard licence, no companion mobile app. Stated migration path from DPA and DLA. |
 | **Dragon Professional Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | ~US$560–630 per user, per year | End of life 31 Dec 2027. Existing users renew pro rata until then. Migration path to Dragon Professional v16. |
 | **Dragon Legal Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | ~US$595 first year, ~US$905/yr after | End of life 31 Dec 2027. Existing users renew pro rata until then. |
 | **Dragon Medical One** | <span class="st st-live">Current</span> | ~US$1,188 per clinician, per year | Sold per clinician through resellers. |
@@ -167,6 +167,9 @@ Yes. The Starter plan provides 20 minutes of dictation a month with core feature
 
 **Is Dragon being discontinued?**
 Progressively. Several products have already gone. Dragon Professional Anywhere and Dragon Legal Anywhere close to new orders on 31 December 2026 and reach end of life on 31 December 2027, with Dragon Professional v16 named as the migration path. Dragon Professional v16 and Dragon Medical One remain available.
+
+**Is Dragon Professional v16 the same thing as Dragon Professional Anywhere?**
+No. Dragon Professional Anywhere is a cloud service; Dragon Professional v16 runs locally on your own computer. The practical differences are the voice profile living on the machine rather than following you, install limits under the standard licence, improvements arriving with a new version rather than server-side, and no companion mobile app. v16 does work offline, which the cloud products do not.
 
 ---
 
