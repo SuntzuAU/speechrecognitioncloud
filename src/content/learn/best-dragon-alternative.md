@@ -107,7 +107,9 @@ On capability there is not a great deal between these and Speech Recognition Clo
 
 There is one real difference in how they work. **Dragon Professional Anywhere and Dragon Legal Anywhere do train on your voice** — you can start using them without doing the old enrolment routine, but the software builds and continuously adapts a voice profile, and that profile is stored in the cloud along with your custom vocabulary. **Speech Recognition Cloud does no voice training at all.** There is no voice profile, no adaptation data, and nothing about how you speak is retained on our servers.
 
-The differences are price — roughly three to four times — and the end-of-life timetable: new orders stop 31 December 2026 and both products end 31 December 2027. Read the [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives) page before signing any renewal.
+The differences are price — roughly three to four times — and the end-of-life timetable: new orders stop 31 December 2026 and both products end 31 December 2027. Existing users can renew pro rata in between, so there is time to plan.
+
+The vendor's stated migration path is [Dragon Professional v16](https://dragonprofessional16.com.au/), with assistance moving your existing profile across. It is the right answer if you need offline dictation. Be aware it is a locally installed desktop product rather than a cloud service, so the voice profile sits on the machine instead of following you between computers, the standard licence limits how many machines you can install on, improvements arrive with a new version, and there is no companion mobile app. If the cloud model is what you valued, the closest architectural equivalent is another cloud product. Read the [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives) page before signing any renewal.
 
 ### I am a clinician on Dragon Medical One
 
