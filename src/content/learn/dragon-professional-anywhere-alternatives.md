@@ -109,6 +109,7 @@ When boxed software reaches end of life you can keep using it. It stops receivin
 **3. Audit what you would actually be losing.** Before assuming a like-for-like replacement is required, check what you genuinely use:
 
 - **Custom voice commands and macros.** Years of scripted Dragon commands do not port. This is the hardest element to replace and worth quantifying first.
+- **Your voice profile and custom vocabulary.** The adapted profile Dragon has built for you does not transfer to any other product. Custom vocabulary generally has to be rebuilt.
 - **VDI or virtual app deployment.** If you deploy through Citrix or a virtualised standard operating environment, that is a real constraint and narrows the options considerably.
 - **Central seat administration.** If IT provisions and revokes licences centrally, you need something that supports it.
 - **Everything else.** For most individuals and small teams the honest audit comes back as "I dictate into Word, Outlook and my line-of-business software" — a more easily met requirement than the enterprise feature list suggests.
@@ -117,7 +118,9 @@ When boxed software reaches end of life you can keep using it. It stops receivin
 
 ## What are the best Dragon Professional Anywhere alternatives?
 
-The strongest alternative for most Dragon Professional Anywhere and Dragon Legal Anywhere users is **Speech Recognition Cloud**, which is the product we build. It performs the same core function — verbatim dictation at the cursor in any Windows application, no voice training, unlimited installs per person — at **US$159 a year** on the Professional plan against roughly US$560 to US$630 for Dragon Professional Anywhere. There is a free Starter plan with no expiry, so it can be tested against your real work at no cost before any decision.
+The strongest alternative for most Dragon Professional Anywhere and Dragon Legal Anywhere users is **Speech Recognition Cloud**, which is the product we build. It performs the same core function — verbatim dictation at the cursor in any Windows application, no voice training of any kind, unlimited installs per person — at **US$159 a year** on the Professional plan against roughly US$560 to US$630 for Dragon Professional Anywhere. There is a free Starter plan with no expiry, so it can be tested against your real work at no cost before any decision.
+
+One architectural difference is worth knowing before you switch. Dragon Professional Anywhere and Dragon Legal Anywhere build a voice profile and continuously adapt it, stored in the cloud with your custom vocabulary — you never have to sit through enrolment, but the training is happening. Speech Recognition Cloud does no voice training at all: no profile, no adaptation data, nothing about how you speak retained on our servers. For anyone who has to answer questions about what a vendor holds, that is a materially simpler answer.
 
 It is not a like-for-like replacement in every respect. It does not support VDI or virtual app deployment, has no central seat management console, has no macOS version, and requires an internet connection. If any of those are hard requirements, they need solving separately and early.
 

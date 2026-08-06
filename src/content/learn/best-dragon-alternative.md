@@ -32,7 +32,7 @@ internalLinks:
     anchor: "Dragon Professional Anywhere alternatives"
 ---
 
-If you use Dragon, or you are about to buy it, the range has changed a great deal in the last few years. Four products have been discontinued outright, two more close to new customers at the end of 2026, and what remains is largely per-user annual subscription at professional and enterprise prices.
+If you use Dragon, or you are about to buy it, the range has changed a great deal in the last few years. Several products have been discontinued outright, and two more close to new customers at the end of 2026, and what remains is largely per-user annual subscription at professional and enterprise prices.
 
 This page sets out what each Dragon product currently costs, which are ending, and which alternative is the best fit depending on the Dragon product you are on today. Where a figure is approximate it says so.
 
@@ -57,7 +57,6 @@ It also has a free Starter plan with no expiry, so it can be tested against your
 | **Dragon Legal Anywhere** | <span class="st st-end">Final sale 31 Dec 2026</span> | ~US$595 first year, ~US$905/yr after | Service ends end of 2027. |
 | **Dragon Medical One** | <span class="st st-live">Current</span> | ~US$1,188 per clinician, per year | Sold per clinician through resellers. |
 | **Dragon Anywhere (mobile)** | <span class="st st-gone">Discontinued 1 Jul 2026</span> | No longer available | Standalone mobile app. No direct replacement. |
-| **Dragon Home** | <span class="st st-gone">Discontinued</span> | No longer available | Entry-level consumer version, withdrawn. |
 | **Dragon Professional Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by the Anywhere line. Not Windows 11 compatible. |
 | **Dragon Legal Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by Dragon Legal Anywhere. |
 | **Dragon Dictate for Mac** | <span class="st st-gone">Discontinued Oct 2018</span> | No longer available | No Mac Dragon product has shipped since. |
@@ -82,8 +81,7 @@ All plans are licensed per person with no limit on the number of computers. Pric
 - **Dragon Professional Anywhere and Dragon Legal Anywhere** — final sale 31 December 2026, end of life at the end of 2027. Both are cloud services, so end of life means the service stops; there is no local copy that continues to run.
 - **Dragon Anywhere (mobile)** — discontinued 1 July 2026, with no direct replacement. This is a different product from Dragon Professional Anywhere, and the two are frequently confused.
 - **Dragon Dictate for Mac** — discontinued October 2018. The final release was Dragon Professional Individual 6 in 2016, and no Mac Dragon product has shipped since.
-- **Dragon Home** — withdrawn. The entry-level consumer version is no longer sold.
-- **Dragon Professional Individual 15 and Dragon Legal Individual 15** — withdrawn, replaced by the Anywhere subscriptions. Dragon 15 is also not compatible with Windows 11 per Nuance's own guidance.
+- **Dragon Professional Individual 15 and Dragon Legal Individual 15** — withdrawn, replaced by the Anywhere subscriptions. Dragon 15 is also not supported on Windows 11.
 
 The pattern is consistent: the lower-cost, one-off, install-and-own Dragon products are the ones that have gone.
 
@@ -91,7 +89,7 @@ The pattern is consistent: the lower-cost, one-off, install-and-own Dragon produ
 
 ### I have Dragon 15 and it will not run properly on Windows 11
 
-Nuance states that Dragon 15 is not compatible with Windows 11. It often runs, but with the lag, freezing and instability widely reported by users moved onto Windows 11 by a new machine or an IT policy. The upgrade path offered is Dragon Professional 16 — around US$700 outright, or about US$350 to upgrade.
+Dragon 15 is not supported on Windows 11. It often runs, but with the lag, freezing and instability widely reported by users moved onto Windows 11 by a new machine or an IT policy. The upgrade path offered is Dragon Professional 16 — around US$700 outright, or about US$350 to upgrade.
 
 Speech Recognition Cloud is US$159 a year and cloud-based, so there is no local version to fall out of step with Windows and no upgrade purchase to chase compatibility. See the [Dragon Professional 16 alternative](/learn/dragon-professional-16-alternative) comparison for detail.
 
@@ -101,7 +99,9 @@ You own a working product and nothing is forcing a decision. The question is wha
 
 ### I am on Dragon Professional Anywhere or Dragon Legal Anywhere
 
-On capability there is not a great deal between these and Speech Recognition Cloud. Both require no voice training, install on as many of your own machines as you need, and adapt to your accent automatically. Dragon Professional Anywhere additionally supports virtual desktop deployment, which Speech Recognition Cloud does not.
+On capability there is not a great deal between these and Speech Recognition Cloud. Neither requires an enrolment step before you start dictating, and both install on as many of your own machines as you need. Dragon Professional Anywhere additionally supports virtual desktop deployment, which Speech Recognition Cloud does not.
+
+There is one real difference in how they work. **Dragon Professional Anywhere and Dragon Legal Anywhere do train on your voice** — you can start using them without doing the old enrolment routine, but the software builds and continuously adapts a voice profile, and that profile is stored in the cloud along with your custom vocabulary. **Speech Recognition Cloud does no voice training at all.** There is no voice profile, no adaptation data, and nothing about how you speak is retained on our servers.
 
 The differences are price — roughly three to four times — and the fact that neither Dragon product can be purchased after 31 December 2026. Read the [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives) page before signing any renewal.
 
