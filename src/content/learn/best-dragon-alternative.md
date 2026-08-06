@@ -53,10 +53,10 @@ It also has a free Starter plan with no expiry, so it can be tested against your
 | Dragon product | Status | Approximate cost | Notes |
 |---|---|---|---|
 | **Dragon Professional 16** | <span class="st st-live">Current</span> | ~US$700 one-off, or ~US$490/yr | Upgrade from v15 ~US$350. Local processing, works offline. |
-| **Dragon Professional Anywhere** | <span class="st st-end">Final sale 31 Dec 2026</span> | ~US$560–630 per user, per year | Service ends end of 2027. No announced successor. |
-| **Dragon Legal Anywhere** | <span class="st st-end">Final sale 31 Dec 2026</span> | ~US$595 first year, ~US$905/yr after | Service ends end of 2027. |
+| **Dragon Professional Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | ~US$560–630 per user, per year | End of life 31 Dec 2027. Existing users renew pro rata until then. Migration path to Dragon Professional v16. |
+| **Dragon Legal Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | ~US$595 first year, ~US$905/yr after | End of life 31 Dec 2027. Existing users renew pro rata until then. |
 | **Dragon Medical One** | <span class="st st-live">Current</span> | ~US$1,188 per clinician, per year | Sold per clinician through resellers. |
-| **Dragon Anywhere (mobile)** | <span class="st st-gone">Discontinued 1 Jul 2026</span> | No longer available | Standalone mobile app. No direct replacement. |
+| **Dragon Anywhere Mobile** | <span class="st st-gone">End of sale 30 Jun 2026</span> | Renewals only, to 30 Jun 2027 | Standalone mobile app. No new subscriptions since July 2026. |
 | **Dragon Professional Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by the Anywhere line. Not Windows 11 compatible. |
 | **Dragon Legal Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by Dragon Legal Anywhere. |
 | **Dragon Dictate for Mac** | <span class="st st-gone">Discontinued Oct 2018</span> | No longer available | No Mac Dragon product has shipped since. |
@@ -78,8 +78,8 @@ All plans are licensed per person with no limit on the number of computers. Pric
 
 ## Which Dragon products have been discontinued or are ending?
 
-- **Dragon Professional Anywhere and Dragon Legal Anywhere** — final sale 31 December 2026, end of life at the end of 2027. Both are cloud services, so end of life means the service stops; there is no local copy that continues to run.
-- **Dragon Anywhere (mobile)** — discontinued 1 July 2026, with no direct replacement. This is a different product from Dragon Professional Anywhere, and the two are frequently confused.
+- **Dragon Professional Anywhere and Dragon Legal Anywhere** — new orders stop 31 December 2026, end of life 31 December 2027. Existing users can continue using both and renewing on a pro rata basis in between. Dragon Professional v16 is the stated migration path. Both are cloud services, so at end of life the service stops; there is no local copy that continues to run.
+- **Dragon Anywhere Mobile** — end of sale 30 June 2026. Existing users can renew on a pro rata basis until 30 June 2027, but no new subscriptions are available. This is a different product from Dragon Professional Anywhere, and the two are frequently confused.
 - **Dragon Dictate for Mac** — discontinued October 2018. The final release was Dragon Professional Individual 6 in 2016, and no Mac Dragon product has shipped since.
 - **Dragon Professional Individual 15 and Dragon Legal Individual 15** — withdrawn, replaced by the Anywhere subscriptions. Dragon 15 is also not supported on Windows 11.
 
@@ -103,7 +103,7 @@ On capability there is not a great deal between these and Speech Recognition Clo
 
 There is one real difference in how they work. **Dragon Professional Anywhere and Dragon Legal Anywhere do train on your voice** — you can start using them without doing the old enrolment routine, but the software builds and continuously adapts a voice profile, and that profile is stored in the cloud along with your custom vocabulary. **Speech Recognition Cloud does no voice training at all.** There is no voice profile, no adaptation data, and nothing about how you speak is retained on our servers.
 
-The differences are price — roughly three to four times — and the fact that neither Dragon product can be purchased after 31 December 2026. Read the [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives) page before signing any renewal.
+The differences are price — roughly three to four times — and the end-of-life timetable: new orders stop 31 December 2026 and both products end 31 December 2027. Read the [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives) page before signing any renewal.
 
 ### I am a clinician on Dragon Medical One
 
@@ -113,7 +113,7 @@ Speech Recognition Cloud is designed to assist documentation workflows. It is no
 
 ### I used Dragon Anywhere on my phone
 
-It was discontinued on 1 July 2026 with no direct replacement. Speech Recognition Cloud includes a mobile companion app on the Professional and Medical plans — usable as a wireless microphone for your PC, or in Voice Notes mode for dictating away from your desk.
+It went end of sale on 30 June 2026; existing users can renew on a pro rata basis until 30 June 2027, but no new subscriptions are available. Speech Recognition Cloud includes a mobile companion app on the Professional and Medical plans — usable as a wireless microphone for your PC, or in Voice Notes mode for dictating away from your desk.
 
 ## How much is the difference over three years?
 

@@ -149,23 +149,29 @@ The full comparison across the whole Dragon range is on the [best Dragon alterna
 
 ## Frequently asked questions
 
-**Can I keep using it after end of life, like old boxed Dragon?**
-No. These are cloud services and the recognition runs on vendor infrastructure rather than your computer. There is no local copy that keeps working.
+**When exactly do Dragon Professional Anywhere and Dragon Legal Anywhere end?**
+End of life is 31 December 2027. New orders stop earlier, on 31 December 2026. In between, existing users can continue using both solutions and renewing on a pro rata basis.
 
-**Is there a replacement product from Nuance?**
-None has been announced in the Anywhere line as at August 2026. Dragon Professional 16 remains available as a boxed perpetual product, and Dragon Medical One continues for clinicians.
+**Can I keep using it after end of life, like old boxed Dragon?**
+No. These are cloud services and the recognition runs on vendor infrastructure rather than your computer. There is no local copy that keeps working after 31 December 2027.
+
+**Is there a replacement product?**
+Yes. Dragon Professional v16 is the stated replacement for Dragon Professional Anywhere and Dragon Legal Anywhere. It is available as a subscription, and ORdigiNAL have said they will assist in moving users with existing DPA or DLA profiles across to it. It is a locally installed desktop product rather than a cloud service, so the deployment model differs from what you are on now. Dragon Medical One continues separately for clinicians.
 
 **Does this affect Dragon Medical One?**
 Dragon Medical One is not on this end-of-life schedule, which covers Dragon Professional Anywhere, Dragon Professional Anywhere Legal and Dragon Anywhere Mobile. Clinicians should not assume Dragon Medical One is affected on the basis of this page.
 
-**What happened to Dragon Anywhere on my phone?**
-Discontinued 1 July 2026, with no direct replacement. It is a separate product from Dragon Professional Anywhere, the cloud-hosted desktop product; the names are frequently confused.
+**What happened to Dragon Anywhere Mobile on my phone?**
+It went end of sale on 30 June 2026. Existing users can renew on a pro rata basis until 30 June 2027, but no new DAM-only subscriptions have been available since July 2026. It is a separate product from Dragon Professional Anywhere, the cloud-hosted desktop product; the names are frequently confused. Speech Recognition Cloud includes a mobile companion app on its Professional and Medical plans.
 
-**How reliable are these dates, given they have not been publicly announced?**
-Part of the schedule has already occurred as stated, which is the strongest available indication. It is not a guarantee. Confirm with the vendor or an authorised partner before making a commitment.
+**What happened to my DPA+DAM bundle?**
+Existing bundles keep access to the Dragon Anywhere Mobile element until 30 June 2027, provided the subscription covers that period. Any new subscription purchased after July 2026 includes DPA or DLA only, without the mobile app.
+
+**How reliable are these dates?**
+They are set out in a partner statement issued by ORdigiNAL, the authorised distributor, which states that Microsoft have confirmed the changes. Dates can still change. Confirm the position for your own account with your supplier or Partner Success Manager before making a commitment.
 
 ---
 
 *Dragon, Dragon Professional Anywhere, Dragon Legal Anywhere, Dragon Medical One and Dragon Anywhere are trade marks or registered trade marks of Nuance Communications, Inc. and/or Microsoft Corporation. Windows is a trade mark of Microsoft Corporation. These marks are used solely to identify and describe those products factually. Speech Recognition Cloud is not affiliated with, authorised by, endorsed by or sponsored by Nuance Communications, Inc. or Microsoft Corporation.*
 
-*End-of-life and final-sale dates stated on this page were communicated through the reseller channel and have not been publicly confirmed by the vendor. They are subject to change and may be brought forward, deferred or withdrawn. Third-party pricing is approximate and varies by vendor, territory, term and seat count; nothing here constitutes an offer or quotation. Information is believed accurate at the date of publication. If you believe any statement here is inaccurate, please contact us and we will review it promptly.*
+*End-of-life and end-of-sale dates stated on this page are drawn from a partner statement issued by ORdigiNAL, the authorised distributor, which states that Microsoft have confirmed them. They are summarised here in good faith and remain subject to change by the vendor. Confirm the position for your own subscription with your supplier before acting. Third-party pricing is approximate and varies by vendor, territory, term and seat count; nothing here constitutes an offer or quotation. Information is believed accurate at the date of publication. If you believe any statement here is inaccurate, please contact us and we will review it promptly.*
