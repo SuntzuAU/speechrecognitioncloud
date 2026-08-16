@@ -19,6 +19,10 @@ const learn = defineCollection({
     breakImage2Alt: z.string().optional(),
     breakPrompt2: z.string().optional(),
     imagesPending: z.boolean().optional(),
+    updated: z.string().optional(),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+    articleSection: z.string().optional(),
     faq: z.array(z.object({
       q: z.string(),
       a: z.string()

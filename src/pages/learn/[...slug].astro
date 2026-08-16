@@ -12,7 +12,14 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
+const toc = (headings || []).filter(h => h.depth === 2 && h.slug && h.text !== 'Who wrote this?');
+const allPosts = (await getCollection('learn'))
+  .filter(p => p.slug !== post.slug)
+  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+  .slice(0, 3);
+const wordCount = post.body.trim().split(/\s+/).length;
+const modified = post.data.updated || post.data.date;
 const R2_BASE = (import.meta.env.PUBLIC_R2_BASE ?? 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev').replace(/\/$/, '');
 const imgSrc = (key) => key ? (/^https?:\/\//.test(key) ? key : `${R2_BASE}/${key}`) : '';
 const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
@@ -35,7 +42,9 @@ const articleSchema = {
   "headline": post.data.title,
   "description": post.data.description,
   "datePublished": post.data.date,
-  "dateModified": post.data.date,
+  "dateModified": modified,
+  "wordCount": wordCount,
+  "articleSection": post.data.articleSection || "Speech recognition",
   "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
   ...(post.data.heroImage ? { "image": imgSrc(post.data.heroImage) } : {}),
   "author": {
@@ -49,7 +58,14 @@ const articleSchema = {
 
 const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
 ---
-<BaseLayout title={post.data.title} description={post.data.description} extraSchema={extraSchema}>
+<BaseLayout
+  title={post.data.title}
+  seoTitle={post.data.seoTitle}
+  description={post.data.seoDescription || post.data.description}
+  extraSchema={extraSchema}
+  ogImage={post.data.heroImage ? imgSrc(post.data.heroImage) : undefined}
+  ogType="article"
+  articleMeta={{ publishedTime: post.data.date, modifiedTime: modified, author: 'Russell Bewsell', section: post.data.articleSection || 'Speech recognition' }}>
   <article class="section-pad">
     <div class="container" style="max-width:760px">
       <div class="article-meta">
@@ -62,7 +78,7 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
       <h1 class="article-title">{post.data.title}</h1>
 
       {post.data.heroImage && (
-        <div class="hero-img"><img src={imgSrc(post.data.heroImage)} alt={post.data.heroImageAlt ?? post.data.title} loading="eager" decoding="async" /></div>
+        <div class="hero-img"><img src={imgSrc(post.data.heroImage)} alt={post.data.heroImageAlt ?? post.data.title} width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" /></div>
       )}
 
       {post.data.youtubeId && (
@@ -72,6 +88,14 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
         </div>
       )}
 
+      {toc.length >= 4 && (
+        <nav class="toc" aria-label="On this page">
+          <h2 class="toc-title">On this page</h2>
+          <ul>
+            {toc.map(h => (<li><a href={`#${h.slug}`}>{h.text}</a></li>))}
+          </ul>
+        </nav>
+      )}
       <div class="article-body" id="article-prose"
         data-break1={post.data.breakImage1 ? imgSrc(post.data.breakImage1) : ''}
         data-break1-alt={post.data.breakImage1Alt ?? ''}
@@ -81,6 +105,23 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
       </div>
     </div>
   </article>
+  {allPosts.length > 0 && (
+    <section class="section-pad">
+      <div class="container" style="max-width:760px">
+        <h2 style="font-size:24px;margin-bottom:20px">Related reading</h2>
+        <ul class="related-list">
+          {allPosts.map(p => (
+            <li>
+              <a href={`/learn/${p.slug}/`}>
+                <span class="related-title">{p.data.title}</span>
+                <span class="related-desc">{p.data.description}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
   <section class="section-pad section-neutral">
     <div class="container text-center" style="max-width:600px">
       <h2 style="margin-bottom:12px">Try Speech Recognition Cloud</h2>
@@ -99,6 +140,18 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
     .learn-tag--tip{color:#D97706;background:#FFFBEB}
     .hero-img{margin-bottom:32px;border-radius:16px;overflow:hidden;background:#F1F5F9}
     .hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+    .toc{margin:0 0 36px;padding:20px 24px;border:1px solid var(--border);border-radius:14px;background:var(--neutral)}
+    .toc-title{font-size:14px!important;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin:0 0 12px!important;padding:0!important;border:0!important}
+    .toc ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    .toc li{margin:0;line-height:1.5}
+    .toc a{color:var(--brand);font-weight:500;font-size:15px}
+    .toc a:hover{text-decoration:underline}
+    .related-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+    .related-list li{margin:0}
+    .related-list a{display:block;padding:18px 20px;border:1px solid var(--border);border-radius:14px;transition:box-shadow .2s,border-color .2s}
+    .related-list a:hover{border-color:var(--brand-light);box-shadow:0 4px 16px rgba(15,23,42,.06)}
+    .related-title{display:block;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4}
+    .related-desc{display:block;font-size:14px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .img-break{margin:32px 0;border-radius:14px;overflow:hidden;background:#F1F5F9}
     .img-break img{width:100%;max-height:360px;object-fit:cover;display:block}
     .article-title{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em}
@@ -169,7 +222,7 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
       if (!h2s.length) return;
       function mk(src, alt) {
         var w = document.createElement('div'); w.className = 'img-break';
-        var i = document.createElement('img'); i.src = src; i.alt = alt; i.loading = 'lazy'; i.decoding = 'async';
+        var i = document.createElement('img'); i.src = src; i.alt = alt; i.width = 1600; i.height = 686; i.loading = 'lazy'; i.decoding = 'async';
         w.appendChild(i); return w;
       }
       if (b1 && h2s.length >= 2) prose.insertBefore(mk(b1, b1a), h2s[1]);

@@ -35,6 +35,8 @@ Credit where it's due. Dragon Medical One is Microsoft's (Nuance's) cloud-based 
 
 That depth is exactly right for a large health system with an Epic or Cerner build, IT support and an enterprise Microsoft agreement. But it comes as a per-clinician cloud subscription, billed monthly or on multi-year terms — and if you're a solo GP, a specialist, an allied health practitioner or a small practice, you can end up paying for enterprise machinery you'll never switch on.
 
+If you are a psychologist, counsellor or allied health practitioner rather than a doctor, the trade-offs are different again — see [dictation for psychologists and allied health](/learn/dictation-for-psychologists-allied-health/), which covers session notes, verbatim documentation and why many therapists rule out ambient AI scribes entirely.
+
 ## The alternative: Speech Recognition Cloud (Medical)
 
 Speech Recognition Cloud is cursor-based dictation for Windows. You put your cursor where you want text, press your hotkey, speak naturally, and the full, punctuated paragraph appears at the cursor — in your EMR, Microsoft Word, Outlook, a hospital intranet form or a clinical portal. No voice training. No dictation-box detour unless you want one.

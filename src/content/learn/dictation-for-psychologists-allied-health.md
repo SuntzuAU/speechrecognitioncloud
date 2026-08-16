@@ -11,6 +11,10 @@ breakImage1Alt: "Allied health practitioners dictating into practice management 
 breakImage2: "speechrecognitioncloud/2026/08/15/dictation-psychologists-no-recording-in-session-privacy-phot-0df13336.jpg"
 breakImage2Alt: "A quiet therapy room with no recording device, and a psychologist writing up notes by voice afterwards"
 imagesPending: false
+updated: "2026-08-16"
+seoTitle: "Dictation for Psychologists & Allied Health (No AI Scribe)"
+seoDescription: "Verbatim dictation for psychologists and allied health. Types into any Windows EHR - no integration, no lock-in, nothing records your session."
+articleSection: "Healthcare and allied health"
 faq:
   - q: "Why are psychologists and therapists reluctant to use AI scribes?"
     a: "Ambient AI scribes require the session to be recorded, which many psychologists and counsellors consider a change to the therapeutic relationship rather than an administrative one. Reporting through 2026 has documented concerns that a third party in the room alters what clients disclose, and that a verbatim transcript of a psychotherapy session is a uniquely sensitive artefact to create and store. Psychological notes are also often a clinician's formulation rather than a summary of what was said, so a tool that summarises the conversation solves a problem many psychologists do not have."
