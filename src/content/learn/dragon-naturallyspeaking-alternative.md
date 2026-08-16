@@ -5,6 +5,17 @@ description: "Still calling it Dragon NaturallySpeaking or Dragon Dictate? An ho
 type: "article"
 seoTitle: "The Best Dragon NaturallySpeaking Alternative in 2026"
 seoDescription: "Still using Dragon NaturallySpeaking or Dragon Dictate? How Speech Recognition Cloud compares on price, accuracy and Windows 11 support."
+faq:
+  - q: "Is Dragon NaturallySpeaking still around?"
+    a: "Not under that name. Nuance rebranded the Windows lineup into Dragon Professional, Dragon Home and Dragon Legal, and built Dragon Medical One and Dragon Professional Anywhere for cloud/enterprise use. \"Dragon NaturallySpeaking\" is still what a lot of people call the software out of habit."
+  - q: "What happened to Dragon Dictate?"
+    a: "Dragon Dictate was the Mac version. Nuance discontinued it in October 2018 when it dropped Mac support entirely — there's been no Dragon product for Mac since."
+  - q: "Is there a free alternative to Dragon?"
+    a: "SRC has a genuinely free Starter plan — 20 minutes of dictation a month, no credit card, and it stays free rather than expiring."
+  - q: "Do I have to train it to my voice, like Dragon?"
+    a: "No. SRC uses modern AI speech recognition — open it and start talking, first time, no enrolment."
+  - q: "Which Dragon product replaces Dragon NaturallySpeaking today?"
+    a: "For general Windows use, that's Dragon Professional 16. For clinicians, Dragon Medical One. For Mac, there is no current Nuance or Microsoft product."
 context: "descriptive"
 internalLinks:
   - to: "/pricing"
