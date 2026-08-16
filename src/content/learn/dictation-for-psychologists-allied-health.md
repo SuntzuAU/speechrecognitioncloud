@@ -18,6 +18,10 @@ internalLinks:
     anchor: "dictation for clinicians"
   - to: "/pricing"
     anchor: "compare plans and pricing"
+  - to: "/learn/dragon-medical-one-alternative"
+    anchor: "Dragon Medical One comparison"
+  - to: "/support/getting-started"
+    anchor: "getting started guide"
 externalLinks:
   - to: "https://www.voicerecognition.com.au"
     anchor: "28 years deploying speech recognition"
@@ -76,7 +80,7 @@ It is worth clearing up, because "speech to text" now covers three quite differe
 
 Speech Recognition Cloud is the third kind. You write the note; you just write it with your voice instead of your hands. Two things follow from that, and they are the two things this article is really about: it is **verbatim**, and it needs **no integration with anything**.
 
-Modern dictation is also nothing like the Dragon-era experience some practitioners remember. There is no voice profile to train, no reading passages aloud for twenty minutes before it works, and no per-application plugin to install. Speak a full paragraph naturally and the punctuated paragraph lands at the cursor.
+Modern dictation is also nothing like the [Dragon-era experience](/learn/best-dragon-alternative) some practitioners remember. There is no voice profile to train, no reading passages aloud for twenty minutes before it works, and no per-application plugin to install. Speak a full paragraph naturally and the punctuated paragraph lands at the cursor — and you control the punctuation, headings and line breaks by voice as you go, which is covered in the [spoken punctuation guide](/support/spoken-punctuation). Getting from download to first dictated note takes a couple of minutes; the [getting started guide](/support/getting-started) walks through it.
 
 <div class="img-break"><img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/08/16/dictation-therapists-international-ehr-platforms-photo-aa54bc87.jpg" alt="A counsellor dictating notes by headset into practice management software on a Windows laptop in a home consulting room" loading="lazy" decoding="async" /></div>
 
@@ -150,9 +154,9 @@ The audio side matches. Speech is transcribed and the audio is then erased — i
 
 General-purpose dictation stumbles on the words that matter most in a clinical note: drug names, diagnostic terminology, anatomical language, assessment instrument names. The Medical plan adds continuously updated medical vocabularies and an Ultra Accuracy medical mode for exactly this reason.
 
-If your notes are heavy on psychometric instruments, medication names or specialist terminology, that vocabulary is the difference between dictation saving you time and dictation costing you time in corrections. Custom vocabulary lets you add the terms specific to your practice — including the acronyms and shorthand your discipline uses that no general model will know.
+If your notes are heavy on psychometric instruments, medication names or specialist terminology, that vocabulary is the difference between dictation saving you time and dictation costing you time in corrections. [Custom vocabulary](/support/settings) lets you add the terms specific to your practice — including the acronyms and shorthand your discipline uses that no general model will know — and [text replacements](/support/text-replacements) let a short spoken trigger expand into a full standard paragraph.
 
-Deliberately, the Medical plan **excludes** the AI Modes available on other tiers. AI Modes send text to an AI model for rewriting or summarising, which is an unnecessary data flow when the text is clinical — and it is the one route by which generated wording could get into a note. On the Medical plan that pathway is closed, which is what keeps the output verbatim end to end.
+Deliberately, the Medical plan **excludes** the [AI Modes](/support/ai-modes) available on other tiers. AI Modes send text to an AI model for rewriting or summarising, which is an unnecessary data flow when the text is clinical — and it is the one route by which generated wording could get into a note. On the Medical plan that pathway is closed, which is what keeps the output verbatim end to end.
 
 ## Be honest about what it does not do
 
@@ -169,7 +173,7 @@ Dictation is for practitioners who intend to write the note themselves and want 
 
 ## What it costs
 
-The Medical plan is **US$439 per year**, flat, per user — one annual licence rather than a monthly per-seat subscription, with no lock-in contract. It includes the medical vocabularies, Ultra Accuracy medical mode, dedicated remote support and one-on-one training, and the mobile companion app. It is English only.
+The Medical plan is **US$439 per year**, flat, per user — one annual licence rather than a monthly per-seat subscription, with no lock-in contract. It includes the medical vocabularies, Ultra Accuracy medical mode, dedicated remote support and one-on-one training, and the [mobile companion app](/support/mobile-setup) that turns your phone into a wireless microphone. It is English only.
 
 Practitioners who do not handle clinical information — practice managers, admin staff, or clinicians dictating non-clinical correspondence — may be better served by the Professional plan at US$159 per year, which includes AI Modes.
 
@@ -183,22 +187,31 @@ There is also a free Starter tier with 20 minutes a month and no credit card req
 
 The realistic way in is not to convert your whole workflow on a Monday morning.
 
-1. Install it and dictate three or four session notes at the end of one day. Notes are short and forgiving.
-2. Add your ten most-used clinical terms to custom vocabulary. This is the step people skip, and it is the step that makes the difference.
+1. Install it and dictate three or four session notes at the end of one day. Notes are short and forgiving. The [getting started guide](/support/getting-started) covers microphone setup.
+2. Add your ten most-used clinical terms to [custom vocabulary](/support/settings). This is the step people skip, and it is the step that makes the difference.
 3. Once notes feel natural, use it on one long report. That is where you will actually feel the time come back.
-4. Set up text replacements for the phrases you type identically every single time.
+4. Set up [text replacements](/support/text-replacements) for the phrases you type identically every single time.
+5. If anything behaves unexpectedly, the [troubleshooting guide](/support/troubleshooting) and [FAQ](/support/faq) cover the common causes.
 
 Most practitioners find the adjustment is not technical — it is learning to speak in finished sentences rather than composing as you type. That takes a few days.
 
-## The short version
+## The short version, and what to do next
 
-If you have been avoiding speech technology because every product being marketed to you wants to record your clients, dictation is worth a second look. It is a narrower tool and it deliberately does less. What it gives you in return is three things AI-generated documentation cannot:
+Work through the three questions in order, because they narrow quickly.
 
-- **Verbatim.** Exactly what you said, not a plausible version of it.
-- **No integration, no compatibility question, no lock-in.** Works in any Windows program, any EHR, any browser-based practice management platform, and everywhere your reports and letters actually get written.
-- **Nothing recorded.** No audio of the session ever exists, and dictation audio is purged after transcription.
+**One: do you actually want something listening to your sessions?** If the answer is yes — and for many clinicians it legitimately is — use an ambient scribe, with consent and with review. If the answer is no, you have not opted out of technology. You have ruled out one category.
 
-You can read more about [dictation for clinicians](/medical) or [dictation for healthcare teams](/healthcare).
+**Two: does your documentation have to be verbatim?** Formulations, risk notes, direct client quotes, insurer reports and court reports all have to say precisely what you meant, in your language, because you may have to stand behind every line. Generated prose cannot give you that, however good it is — it can only give you a plausible version you then have to police.
+
+**Three: does it need to type directly into whatever you already use?** Not into one certified EHR. Into your practice management notes *and* Word *and* Outlook *and* PDF forms *and* payer portals — because that is where the long documents actually get written.
+
+Very few products satisfy all three at once. Enterprise clinical dictation gives you verbatim but ties you to a supported-systems list. Ambient scribes give you convenience but record the session and generate the prose. Speech Recognition Cloud is built for the intersection: verbatim, direct into any Windows application, and nothing listening to the room.
+
+**So here is the ask: install the free version and dictate four session notes with it.** That is a twenty-minute test, it costs nothing, and it will tell you more than any comparison table.
+
+<p><strong><a href="https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe">Download Speech Recognition Cloud free →</a></strong> &nbsp;No credit card, no voice training, installs in about two minutes.</p>
+
+If you want more detail before you install, the [dictation for clinicians](/medical) page covers clinical workflows in depth, [dictation for healthcare teams](/healthcare) covers multi-practitioner settings, and [plans and pricing](/pricing) sets out what each tier includes. If you are currently weighing up Dragon, the [Dragon Medical One comparison](/learn/dragon-medical-one-alternative) covers that decision directly. And if you would rather ask a person, [get in touch](/contact).
 
 ## Who wrote this
 
