@@ -25,18 +25,20 @@ externalLinks:
 ---
 
 <div class="callout">
-<h4>TL;DR — the short version from SRC</h4>
-<p>Every speech product being marketed to clinicians right now wants to sit in the room and record the appointment. For psychologists, counsellors and much of allied health, that is the one thing they don't want. Dictation is the other option.</p>
+<h4>TL;DR — Speech Recognition Cloud for psychologists and allied health</h4>
+<p>Put your cursor in any text field on Windows, press a key, and speak. Your exact words appear as punctuated text, right where the cursor is. You still write the note — you just say it instead of typing it.</p>
 <ul>
-<li><strong>Nothing is recorded.</strong> You write the note after the client leaves. No audio of the session ever exists, and dictation audio is purged after transcription — so the consent, storage and cross-border questions that govern ambient scribes don't arise in the same form.</li>
-<li><strong>Verbatim, not generated.</strong> Generative AI predicts a plausible version of what was said. Dictation types exactly what you said. That matters for risk documentation, direct client quotes, insurer reports and court reports.</li>
-<li><strong>No integration, no compatibility list, no lock-in.</strong> It types at the cursor at the operating-system level, so it works in SimplePractice, TherapyNotes, Jane, Owl, WriteUpp, Cliniko, Halaxy, Epic — and in Word, Outlook, PDF forms and payer portals where your long reports actually get written. Windows only.</li>
-<li><strong>What it won't do.</strong> It won't sit in the session, won't summarise, won't structure a SOAP note for you. If you want that, use an ambient scribe — with consent and review.</li>
-<li><strong>Cost.</strong> Medical plan US$439/year flat per user, no monthly per-seat fee. Free tier available to try it.</li>
+<li><strong>Your words, word for word.</strong> Nothing is summarised, rephrased or generated. What you say is what goes in the record — which is what risk notes, direct client quotes, insurer reports and court reports demand.</li>
+<li><strong>Works in everything, integrates with nothing.</strong> It types at the operating-system level, so there is no plugin, no API, no compatibility list and no lock-in. SimplePractice, TherapyNotes, Valant, Jane, Owl, WriteUpp, Cliniko, Halaxy, Epic — and Word, Outlook, PDF forms and payer portals, where the long reports actually get written.</li>
+<li><strong>Your session stays private.</strong> You dictate after the client leaves, so no recording of the appointment is ever made, and dictation audio is purged once transcribed.</li>
+<li><strong>Built for clinical language.</strong> Medical vocabularies covering drug names, diagnostic terminology and assessment instruments, plus custom terms you add yourself.</li>
+<li><strong>US$439 a year, flat.</strong> One annual licence per user. No monthly per-seat billing, no contract, cancel anytime. Windows only.</li>
 </ul>
+<p>It is dictation, not an AI scribe: it will not sit in your session and draft the note for you. If that is what you want, use a scribe. If you want your own words on the page in a fraction of the typing time, read on.</p>
+<p><strong><a href="https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe">Download it free →</a></strong> 20 minutes a month, no credit card, no voice training, installs in two minutes. Or <a href="/pricing">compare plans and pricing</a>.</p>
 </div>
 
-Most of the speech technology being sold into healthcare right now assumes one thing: that you want a machine in the room, listening to the whole appointment, turning it into a note for you. For a lot of clinicians that trade is worth it. For psychologists, counsellors and a good chunk of allied health, it is not — and the software market has been slow to notice.
+Almost all the *new* speech technology being marketed into healthcare assumes one thing: that you want a machine in the room, listening to the whole appointment and turning it into a note for you. Ambient AI scribes are where the investment and the sales effort have gone, and for a lot of clinicians that trade is worth it. For psychologists, counsellors and a good chunk of allied health, it is not — and the market has been slow to notice that the objection is not reluctance about technology.
 
 If you write session notes for a living and you have quietly decided you do not want an ambient AI scribe recording your clients, you have not opted out of technology. You have opted out of *one* technology. Dictation is the other one, and it solves a large part of the same problem without ever putting a recorder between you and the person in front of you.
 
