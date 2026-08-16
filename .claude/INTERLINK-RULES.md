@@ -15,6 +15,14 @@ SpeechRecognition.cloud is the SaaS product. It is NOT part of the gateway cross
 - Approved anchor text: "best free speech to text", "cloud speech recognition", "Speech Recognition Cloud"
 - SRC does not need to reciprocate these links
 
+### Approved exception — dragonmedicalone.au (16 Aug 2026)
+
+Russ has explicitly approved linking from SRC content to **dragonmedicalone.au**, anchor text `dragon medical one`, where Dragon Medical One is discussed. This is a deliberate override of the no-gateway-links rule above.
+
+Rationale: dragonmedicalone.au already links inbound to speechrecognition.cloud/medical/, and DMO is a genuine consideration set for the same clinical buyer. The link is contextual and framed for Australian readers.
+
+This exception covers dragonmedicalone.au only. All other gateway sites remain off-limits unless Russ says otherwise.
+
 ### Why this policy exists
 - SRC targets international users (USD pricing). Gateway sites target Australian buyers.
 - Cross-linking SRC into the Australian gateway network dilutes its international positioning

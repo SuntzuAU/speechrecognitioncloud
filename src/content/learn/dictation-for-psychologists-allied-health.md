@@ -26,6 +26,9 @@ externalLinks:
   - to: "https://www.voicerecognition.com.au"
     anchor: "28 years deploying speech recognition"
     url: "https://www.voicerecognition.com.au"
+  - to: "https://dragonmedicalone.au"
+    anchor: "dragon medical one"
+    url: "https://dragonmedicalone.au"
 ---
 
 <div class="callout">
@@ -211,7 +214,7 @@ Very few products satisfy all three at once. Enterprise clinical dictation gives
 
 <p><strong><a href="https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe">Download Speech Recognition Cloud free →</a></strong> &nbsp;No credit card, no voice training, installs in about two minutes.</p>
 
-If you want more detail before you install, the [dictation for clinicians](/medical) page covers clinical workflows in depth, [dictation for healthcare teams](/healthcare) covers multi-practitioner settings, and [plans and pricing](/pricing) sets out what each tier includes. If you are currently weighing up Dragon, the [Dragon Medical One comparison](/learn/dragon-medical-one-alternative) covers that decision directly. And if you would rather ask a person, [get in touch](/contact).
+If you want more detail before you install, the [dictation for clinicians](/medical) page covers clinical workflows in depth, [dictation for healthcare teams](/healthcare) covers multi-practitioner settings, and [plans and pricing](/pricing) sets out what each tier includes. If you are currently weighing up Dragon, the [Dragon Medical One comparison](/learn/dragon-medical-one-alternative) covers that decision directly, and Australian clinicians can find local pricing, trial and support information for [dragon medical one](https://dragonmedicalone.au) itself. And if you would rather ask a person, [get in touch](/contact).
 
 ## Who wrote this
 
