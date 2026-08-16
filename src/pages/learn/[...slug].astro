@@ -16,8 +16,40 @@ const { Content } = await post.render();
 const R2_BASE = (import.meta.env.PUBLIC_R2_BASE ?? 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev').replace(/\/$/, '');
 const imgSrc = (key) => key ? (/^https?:\/\//.test(key) ? key : `${R2_BASE}/${key}`) : '';
 const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
+
+// AEO: FAQPage schema from question-style headings, plus BlogPosting with author
+const faqSchema = post.data.faq && post.data.faq.length ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": post.data.faq.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+} : null;
+
+const canonical = `${site.siteUrl.replace(/\/$/, "")}/learn/${post.slug}/`;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.date,
+  "dateModified": post.data.date,
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
+  ...(post.data.heroImage ? { "image": imgSrc(post.data.heroImage) } : {}),
+  "author": {
+    "@type": "Person",
+    "name": "Russell Bewsell",
+    "jobTitle": "Founder",
+    "url": "https://www.linkedin.com/in/rbewsell/"
+  },
+  "publisher": { "@type": "Organization", "name": "Speech Recognition Cloud" }
+};
+
+const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
 ---
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.data.title} description={post.data.description} extraSchema={extraSchema}>
   <article class="section-pad">
     <div class="container" style="max-width:760px">
       <div class="article-meta">

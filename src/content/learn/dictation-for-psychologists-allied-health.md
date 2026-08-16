@@ -11,6 +11,29 @@ breakImage1Alt: "Allied health practitioners dictating into practice management 
 breakImage2: "speechrecognitioncloud/2026/08/15/dictation-psychologists-no-recording-in-session-privacy-phot-0df13336.jpg"
 breakImage2Alt: "A quiet therapy room with no recording device, and a psychologist writing up notes by voice afterwards"
 imagesPending: false
+faq:
+  - q: "Why are psychologists and therapists reluctant to use AI scribes?"
+    a: "Ambient AI scribes require the session to be recorded, which many psychologists and counsellors consider a change to the therapeutic relationship rather than an administrative one. Reporting through 2026 has documented concerns that a third party in the room alters what clients disclose, and that a verbatim transcript of a psychotherapy session is a uniquely sensitive artefact to create and store. Psychological notes are also often a clinician's formulation rather than a summary of what was said, so a tool that summarises the conversation solves a problem many psychologists do not have."
+  - q: "Do I need client consent to use an AI scribe?"
+    a: "Requirements differ by country, but the consistent themes are that the registered practitioner remains responsible for the accuracy of the record, informed consent must be obtained and documented, clients must be free to decline without any effect on their care, and the practitioner must understand where the tool sends and stores data. Relevant guidance includes the APA and HIPAA in the United States alongside fast-moving state law, HCPC guidance and UK GDPR in the United Kingdom, AHPRA and ACPA guidance in Australia, and PIPEDA and provincial legislation such as PHIPA in Canada. Cursor-based dictation does not record the client, so these obligations do not arise in the same form."
+  - q: "What is the difference between dictation, transcription and an AI scribe?"
+    a: "An ambient AI scribe listens to the whole appointment and generates a structured note that you review and sign. Audio file transcription means recording a memo, uploading it, and receiving a transcript later. Cursor-based dictation means placing your cursor in a text field, pressing a key, and speaking, so your words appear as punctuated text exactly where the cursor is. Nothing is listening unless you press the key, and nothing is summarised or interpreted."
+  - q: "Does dictation software work with my EHR or practice management system?"
+    a: "Cursor-based dictation types at the operating-system level, so it does not connect to your EHR, does not need an API, and does not install a plugin. If you can click into a text field on Windows and type into it, you can dictate into it. That covers browser-based platforms such as SimplePractice, TherapyNotes, Valant, ICANotes, Jane App, Owl Practice, WriteUpp, Semble, Pabau, Cliniko, Halaxy, Zanda and coreplus, as well as Epic and Oracle Health, and also Microsoft Word, Outlook, PDF forms and payer portals. Speech Recognition Cloud is Windows software and is not available for Mac or iPad."
+  - q: "Why does verbatim matter in clinical and therapy notes?"
+    a: "Generative AI predicts rather than transcribes, so an AI-generated note is a plausible version of the encounter that may be restructured, rephrased or contain content that was never said. That is why guidance requires clinicians to review and correct every AI-generated note. Verbatim dictation types exactly what you said, which matters most for risk documentation, direct client quotes, medico-legal and insurer reports, court and tribunal reports, and standardised assessment language where instrument names and scoring conventions must be reproduced precisely."
+  - q: "Which allied health professions get the most out of dictation?"
+    a: "Psychologists and counsellors use it for session notes and case formulation written after the client leaves, plus assessment, court and insurer reports. Physiotherapists, chiropractors and osteopaths benefit from its handling of repetitive objective findings. Occupational therapists arguably gain the most, because functional capacity assessments and disability funding reports are long and highly structured. Speech pathologists, dietitians, social workers and case managers use it for assessment write-ups, progress reporting and high-volume case notes."
+  - q: "Can dictation handle clinical terminology, drug names and assessment instruments?"
+    a: "The Medical plan includes continuously updated medical vocabularies and an Ultra Accuracy medical mode covering drug names, diagnostic terminology, anatomical language and assessment instrument names. Custom vocabulary allows practitioners to add terms, acronyms and shorthand specific to their discipline, and text replacements let a short spoken trigger expand into a full standard paragraph."
+  - q: "What can dictation not do?"
+    a: "Cursor-based dictation will not sit in the session and write the note for you, will not summarise or structure a note into SOAP or DAP format on its own, and will not extract goals, risks or actions from a conversation. If you want a draft note ready when the session ends, an ambient scribe is the product that does that, used with consent and review. Dictation is designed to assist documentation workflows, is not a medical device, and does not provide clinical advice."
+  - q: "How much does dictation software cost for a therapist or allied health practitioner?"
+    a: "The Speech Recognition Cloud Medical plan is US$439 per year, flat, per user, as a single annual licence rather than a monthly per-seat subscription, with no lock-in contract. It includes medical vocabularies, Ultra Accuracy medical mode, dedicated remote support, one-on-one training and the mobile companion app, and is English only. The Professional plan is US$159 per year for practitioners not handling clinical information. A free Starter tier provides 20 minutes per month with no credit card required. Pricing accurate at time of publication and subject to change."
+  - q: "How do I start using dictation without disrupting my week?"
+    a: "Install it and dictate three or four session notes at the end of one day, since notes are short and forgiving. Add your ten most-used clinical terms to custom vocabulary, which is the step most people skip and the one that makes the difference. Once notes feel natural, use it on one long report, where the time saving is most noticeable. Then set up text replacements for phrases you type identically every time. Most practitioners find the adjustment is learning to speak in finished sentences rather than composing as they type, which takes a few days."
+  - q: "Should I use dictation or an AI scribe?"
+    a: "Work through three questions. First, do you want something listening to your sessions? If yes, use an ambient scribe with consent and review. Second, does your documentation need to be verbatim? Formulations, risk notes, direct quotes, insurer reports and court reports generally do, and generated prose cannot provide that. Third, does it need to type directly into whatever application you already use, rather than one certified EHR? Enterprise clinical dictation offers verbatim output but ties you to a supported-systems list, while ambient scribes record the session and generate the prose. Speech Recognition Cloud is built for the intersection of all three."
 internalLinks:
   - to: "/healthcare"
     anchor: "dictation for healthcare teams"
@@ -49,7 +72,7 @@ Almost all the *new* speech technology being marketed into healthcare assumes on
 
 If you write session notes for a living and you have quietly decided you do not want an ambient AI scribe recording your clients, you have not opted out of technology. You have opted out of *one* technology. Dictation is the other one, and it solves a large part of the same problem without ever putting a recorder between you and the person in front of you.
 
-## Why ambient AI scribes sit awkwardly in a therapy room
+## Why are psychologists and therapists reluctant to use AI scribes?
 
 AI scribes have been adopted quickly in general practice and hospital medicine, and there are good reasons for that. A GP consultation is largely a structured information exchange, and turning it into a summary is genuinely useful.
 
@@ -59,7 +82,7 @@ There is also a practical point that gets less attention. Psychological notes ar
 
 None of that makes AI scribes wrong. Plenty of allied health practitioners use them happily, particularly in high-volume physical disciplines where the appointment content is objective and repetitive. It just means the question is not "which AI scribe should I use" but "do I want one at all".
 
-## What the guidance actually asks of you
+## Do I need client consent to use an AI scribe?
 
 If you do decide to use an ambient scribe, there is a body of professional guidance you should read first rather than take second-hand from an article like this one — and it differs by country.
 
@@ -71,7 +94,7 @@ The themes running through all of it are consistent, wherever you practise: the 
 
 The relevant point for this article is simpler. Every one of those obligations exists *because* the tool is recording the client. Dictation does not record the client, so the consent, storage and offshore-processing questions do not arise in the same form. That is not a loophole — it is just a narrower tool that never creates the artefact those obligations are written to govern.
 
-## What dictation actually is, in 2026
+## What is the difference between dictation, transcription and an AI scribe?
 
 It is worth clearing up, because "speech to text" now covers three quite different products.
 
@@ -87,7 +110,7 @@ Modern dictation is also nothing like the [Dragon-era experience](/learn/best-dr
 
 <div class="img-break"><img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/08/16/dictation-therapists-international-ehr-platforms-photo-aa54bc87.jpg" alt="A counsellor dictating notes by headset into practice management software on a Windows laptop in a home consulting room" loading="lazy" decoding="async" /></div>
 
-## Does it work with my EHR?
+## Does dictation software work with my EHR or practice management system?
 
 This is always the first question, and the honest answer is that it is the wrong question — because with cursor-based dictation there is nothing to check.
 
@@ -117,7 +140,7 @@ That has three consequences worth spelling out.
 
 **One tool for everything, not just the EHR.** The same hotkey works in your practice management notes, a Microsoft Word assessment report, an Outlook referral letter, a funder or insurer progress report, a PDF form, a payer portal, a court report template, and your email. Clinicians consistently find the report writing is where the hours actually disappear — and that work happens outside the EHR, where an EHR-integrated tool cannot follow.
 
-## Verbatim: you get exactly what you said
+## Why does verbatim matter in clinical and therapy notes?
 
 This is the part that gets underrated until the first time it bites you.
 
@@ -141,7 +164,7 @@ The audio side matches. Speech is transcribed and the audio is then erased — i
 
 <div class="img-break"><img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/08/16/verbatim-dictation-clinical-psychologist-detailed-report-pho-720eaf89.jpg" alt="A clinical psychologist dictating a detailed report word for word in a quiet office" loading="lazy" decoding="async" /></div>
 
-## Where it fits by discipline
+## Which allied health professions get the most out of dictation?
 
 **Psychologists and counsellors.** Session notes and case formulation written after the client leaves, plus the long-form work — assessment reports, court and insurer reports, treatment summaries, letters back to referring GPs. The reports are where the hours actually go, and they are the part an ambient scribe cannot help with at all.
 
@@ -153,7 +176,7 @@ The audio side matches. Speech is transcribed and the audio is then erased — i
 
 **Social workers and case managers.** Case notes, file notes, reports to agencies — usually written in volume, usually written late.
 
-## Accuracy and clinical vocabulary
+## Can dictation handle clinical terminology, drug names and assessment instruments?
 
 General-purpose dictation stumbles on the words that matter most in a clinical note: drug names, diagnostic terminology, anatomical language, assessment instrument names. The Medical plan adds continuously updated medical vocabularies and an Ultra Accuracy medical mode for exactly this reason.
 
@@ -161,7 +184,7 @@ If your notes are heavy on psychometric instruments, medication names or special
 
 Deliberately, the Medical plan **excludes** the [AI Modes](/support/ai-modes) available on other tiers. AI Modes send text to an AI model for rewriting or summarising, which is an unnecessary data flow when the text is clinical — and it is the one route by which generated wording could get into a note. On the Medical plan that pathway is closed, which is what keeps the output verbatim end to end.
 
-## Be honest about what it does not do
+## What can dictation not do?
 
 Dictation is not a scribe and does not pretend to be. It will not:
 
@@ -174,7 +197,7 @@ If what you want is to walk out of a session with a draft note already written, 
 
 Dictation is for practitioners who intend to write the note themselves and want the writing to take a fraction of the time. It is designed to assist documentation workflows, not to make clinical judgements. It is not a medical device and it does not provide clinical advice.
 
-## What it costs
+## How much does dictation software cost for a therapist or allied health practitioner?
 
 The Medical plan is **US$439 per year**, flat, per user — one annual licence rather than a monthly per-seat subscription, with no lock-in contract. It includes the medical vocabularies, Ultra Accuracy medical mode, dedicated remote support and one-on-one training, and the [mobile companion app](/support/mobile-setup) that turns your phone into a wireless microphone. It is English only.
 
@@ -186,7 +209,7 @@ There is also a free Starter tier with 20 minutes a month and no credit card req
 
 <div class="img-break"><img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/08/16/occupational-therapist-dictating-long-assessment-report-phot-8400eb4f.jpg" alt="An occupational therapist dictating a long assessment report by headset in a clinic office" loading="lazy" decoding="async" /></div>
 
-## Trying it without disrupting your week
+## How do I start using dictation without disrupting my week?
 
 The realistic way in is not to convert your whole workflow on a Monday morning.
 
@@ -198,7 +221,7 @@ The realistic way in is not to convert your whole workflow on a Monday morning.
 
 Most practitioners find the adjustment is not technical — it is learning to speak in finished sentences rather than composing as you type. That takes a few days.
 
-## The short version, and what to do next
+## Should I use dictation or an AI scribe?
 
 Work through the three questions in order, because they narrow quickly.
 
@@ -216,7 +239,7 @@ Very few products satisfy all three at once. Enterprise clinical dictation gives
 
 If you want more detail before you install, the [dictation for clinicians](/medical) page covers clinical workflows in depth, [dictation for healthcare teams](/healthcare) covers multi-practitioner settings, and [plans and pricing](/pricing) sets out what each tier includes. If you are currently weighing up Dragon, the [Dragon Medical One comparison](/learn/dragon-medical-one-alternative) covers that decision directly, and Australian clinicians can find local pricing, trial and support information for [dragon medical one](https://dragonmedicalone.au) itself. And if you would rather ask a person, [get in touch](/contact).
 
-## Who wrote this
+## Who wrote this?
 
 I'm Russell Bewsell, and I built Speech Recognition Cloud.
 
