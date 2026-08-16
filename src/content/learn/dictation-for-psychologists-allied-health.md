@@ -20,9 +20,21 @@ internalLinks:
     anchor: "compare plans and pricing"
 externalLinks:
   - to: "https://www.voicerecognition.com.au"
-    anchor: "Voice Recognition Australia"
+    anchor: "28 years deploying speech recognition"
     url: "https://www.voicerecognition.com.au"
 ---
+
+<div class="callout">
+<h4>TL;DR — the short version from SRC</h4>
+<p>Every speech product being marketed to clinicians right now wants to sit in the room and record the appointment. For psychologists, counsellors and much of allied health, that is the one thing they don't want. Dictation is the other option.</p>
+<ul>
+<li><strong>Nothing is recorded.</strong> You write the note after the client leaves. No audio of the session ever exists, and dictation audio is purged after transcription — so the consent, storage and cross-border questions that govern ambient scribes don't arise in the same form.</li>
+<li><strong>Verbatim, not generated.</strong> Generative AI predicts a plausible version of what was said. Dictation types exactly what you said. That matters for risk documentation, direct client quotes, insurer reports and court reports.</li>
+<li><strong>No integration, no compatibility list, no lock-in.</strong> It types at the cursor at the operating-system level, so it works in SimplePractice, TherapyNotes, Jane, Owl, WriteUpp, Cliniko, Halaxy, Epic — and in Word, Outlook, PDF forms and payer portals where your long reports actually get written. Windows only.</li>
+<li><strong>What it won't do.</strong> It won't sit in the session, won't summarise, won't structure a SOAP note for you. If you want that, use an ambient scribe — with consent and review.</li>
+<li><strong>Cost.</strong> Medical plan US$439/year flat per user, no monthly per-seat fee. Free tier available to try it.</li>
+</ul>
+</div>
 
 Most of the speech technology being sold into healthcare right now assumes one thing: that you want a machine in the room, listening to the whole appointment, turning it into a note for you. For a lot of clinicians that trade is worth it. For psychologists, counsellors and a good chunk of allied health, it is not — and the software market has been slow to notice.
 
@@ -63,6 +75,8 @@ It is worth clearing up, because "speech to text" now covers three quite differe
 Speech Recognition Cloud is the third kind. You write the note; you just write it with your voice instead of your hands. Two things follow from that, and they are the two things this article is really about: it is **verbatim**, and it needs **no integration with anything**.
 
 Modern dictation is also nothing like the Dragon-era experience some practitioners remember. There is no voice profile to train, no reading passages aloud for twenty minutes before it works, and no per-application plugin to install. Speak a full paragraph naturally and the punctuated paragraph lands at the cursor.
+
+<div class="img-break"><img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/08/16/dictation-therapists-international-ehr-platforms-photo-aa54bc87.jpg" alt="A counsellor dictating notes by headset into practice management software on a Windows laptop in a home consulting room" loading="lazy" decoding="async" /></div>
 
 ## Does it work with my EHR?
 
@@ -116,6 +130,8 @@ And because it is verbatim, there is no second question about whether the note r
 
 The audio side matches. Speech is transcribed and the audio is then erased — it is not retained, not stored, and not used to build a profile. Combined with the fact that nothing is recorded during the session in the first place, there is simply no audio artefact of your client's appointment sitting anywhere.
 
+<div class="img-break"><img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/08/16/verbatim-dictation-clinical-psychologist-detailed-report-pho-720eaf89.jpg" alt="A clinical psychologist dictating a detailed report word for word in a quiet office" loading="lazy" decoding="async" /></div>
+
 ## Where it fits by discipline
 
 **Psychologists and counsellors.** Session notes and case formulation written after the client leaves, plus the long-form work — assessment reports, court and insurer reports, treatment summaries, letters back to referring GPs. The reports are where the hours actually go, and they are the part an ambient scribe cannot help with at all.
@@ -159,6 +175,8 @@ There is also a free Starter tier with 20 minutes a month and no credit card req
 
 *Pricing accurate at time of publication. Prices in USD and will convert to your local currency at checkout. Verify current pricing before purchasing.*
 
+<div class="img-break"><img src="https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev/speechrecognitioncloud/2026/08/16/occupational-therapist-dictating-long-assessment-report-phot-8400eb4f.jpg" alt="An occupational therapist dictating a long assessment report by headset in a clinic office" loading="lazy" decoding="async" /></div>
+
 ## Trying it without disrupting your week
 
 The realistic way in is not to convert your whole workflow on a Monday morning.
@@ -178,6 +196,18 @@ If you have been avoiding speech technology because every product being marketed
 - **No integration, no compatibility question, no lock-in.** Works in any Windows program, any EHR, any browser-based practice management platform, and everywhere your reports and letters actually get written.
 - **Nothing recorded.** No audio of the session ever exists, and dictation audio is purged after transcription.
 
-Speech Recognition Cloud is built and supported by [Voice Recognition Australia](https://www.voicerecognition.com.au), which has worked in speech recognition for more than 25 years. You can read more about [dictation for clinicians](/medical) or [dictation for healthcare teams](/healthcare).
+You can read more about [dictation for clinicians](/medical) or [dictation for healthcare teams](/healthcare).
+
+## Who wrote this
+
+I'm Russell Bewsell, and I built Speech Recognition Cloud.
+
+I have spent [28 years deploying speech recognition](https://www.voicerecognition.com.au) — across hospitals, GP and specialist practices, allied health, courts and government departments, with customers in Australia, the US, UK, Canada, New Zealand and across Europe. I ran what became the largest Dragon reseller in the Southern Hemisphere, supporting more than 40,000 customers and over 15,000 Dragon users, and in 2017 I presented the national Dragonology clinical training series on behalf of Nuance.
+
+Most of that time was spent fixing other people's dictation software for clinicians. SRC is the simpler, cheaper tool I wished I could hand people instead.
+
+So the argument above is not a marketing brief. It is what I have watched actually happen in practices: the people who write formulations and long reports want their own words on the page, and a lot of them do not want a recorder in the room. If your setting does not fit the patterns I have described, [get in touch](/contact) and I will tell you honestly whether dictation is likely to suit your work.
+
+— Russell Bewsell, Founder, Speech Recognition Cloud
 
 Sources: [NPR — Mental health therapists who use AI to take notes face questions about trust](https://www.npr.org/2026/05/26/nx-s1-5826943/talk-therapy-mental-health-ai-artificial-intelligence-privacy-trust) · [Proof News — Why AI scribes, widely embraced by doctors, spook therapists](https://www.proofnews.org/why-ai-scribes-spook-therapists/) · [ACPA Practice Guidance: Use of AI-Assisted Tools in Clinical Psychology](https://acpa.org.au/common/Uploaded%20files/Web/Resources/ACPA%20AI%20Practice%20Guidelines_Version1_Sept2025.pdf)
