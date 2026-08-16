@@ -40,9 +40,13 @@ None of that makes AI scribes wrong. Plenty of allied health practitioners use t
 
 ## What the guidance actually asks of you
 
-If you do decide to use an ambient scribe, there is a body of professional guidance you should read first rather than take second-hand from an article like this one. The Australian Clinical Psychology Association has published practice guidance on AI-assisted tools in clinical psychology ([ACPA, September 2025](https://acpa.org.au/common/Uploaded%20files/Web/Resources/ACPA%20AI%20Practice%20Guidelines_Version1_Sept2025.pdf)), AHPRA has published guidance on the use of AI in practice, and your own professional association and indemnity insurer will have a position. Check the current version of each — this is a fast-moving area and guidance issued even a year ago may have been superseded.
+If you do decide to use an ambient scribe, there is a body of professional guidance you should read first rather than take second-hand from an article like this one — and it differs by country.
 
-The themes that run through it are consistent, though: the registered practitioner remains responsible for the accuracy of the record, informed consent matters and needs to be documented, and you are expected to understand where the tool sends and stores the data.
+In the **United States**, the American Psychological Association has published ethical guidance on AI in clinical practice, HIPAA governs how session data is handled, and state law is moving quickly: Texas introduced explicit AI disclosure requirements from January 2026, and a large number of AI-and-mental-health bills are in progress across other state legislatures. In the **United Kingdom**, the HCPC has published AI guidance, and UK GDPR applies to any recording of a client. In **Australia**, AHPRA has published guidance on AI in practice and the Australian Clinical Psychology Association has published practice guidance on AI-assisted tools in clinical psychology ([ACPA, September 2025](https://acpa.org.au/common/Uploaded%20files/Web/Resources/ACPA%20AI%20Practice%20Guidelines_Version1_Sept2025.pdf)). In **Canada**, PIPEDA and provincial legislation such as PHIPA apply.
+
+Check the current version of whatever applies to you, and check with your own professional association and indemnity insurer. This area is moving fast enough that guidance issued a year ago may already have been superseded.
+
+The themes running through all of it are consistent, wherever you practise: the registered practitioner remains responsible for the accuracy of the record, informed consent needs to be obtained and documented, clients must be free to decline without any effect on their care, and you are expected to understand where the tool sends and stores the data — including whether it crosses a border.
 
 The relevant point for this article is simpler. Every one of those obligations exists *because* the tool is recording the client. Dictation does not record the client, so the consent, storage and offshore-processing questions do not arise in the same form. That is not a loophole — it is just a narrower tool that never creates the artefact those obligations are written to govern.
 
@@ -60,13 +64,27 @@ Speech Recognition Cloud is the third kind. You write the note; you just write i
 
 Modern dictation is also nothing like the Dragon-era experience some practitioners remember. There is no voice profile to train, no reading passages aloud for twenty minutes before it works, and no per-application plugin to install. Speak a full paragraph naturally and the punctuated paragraph lands at the cursor.
 
-## Does it work with Cliniko, Halaxy, Zanda and coreplus?
+## Does it work with my EHR?
 
-This is usually the first real question, and the honest answer is that it is the wrong question — because there is nothing to check.
+This is always the first question, and the honest answer is that it is the wrong question — because with cursor-based dictation there is nothing to check.
 
-Most Australian allied health practices run browser-based practice management software: Cliniko, Halaxy, Zanda (formerly Power Diary), coreplus, Splose, Nookal. Historically that was a problem for clinical dictation. The enterprise products were built around deep, certified integrations with a handful of large hospital systems, so the first thing you had to do was look up whether your platform was on the supported list. For a two-person psychology practice on a browser-based platform, it never was, and it was never going to be.
+Mental health and allied health practitioners are spread across dozens of platforms, and the list looks completely different depending on which country you practise in. A rough map of what is in common use, purely descriptively:
 
-Cursor-based dictation removes the question entirely. Speech Recognition Cloud types at the cursor at the operating-system level. It does not connect to your practice management software, does not need an API, does not install a plugin, and does not need to know what program is in front of it. **If you can click into a text field on Windows and type into it, you can dictate into it.**
+**United States.** SimplePractice and TherapyNotes are widely used by solo and small practices for scheduling, notes, telehealth and billing. Valant is a behavioural health EHR built around measurement-based care and outcome measures. ICANotes offers structured narrative note-building with a large library of built-in clinical rating scales. Ensora Mental Health (formerly TheraNest) provides EHR, scheduling, telehealth and billing for practices and clinics. CounSol and Sessions Health are web-based systems used by independent counsellors. Practitioners inside health systems are typically working in Epic or Oracle Health (Cerner) behavioural health modules instead.
+
+**United Kingdom and Ireland.** WriteUpp is a UK-built practice management system used across therapy and allied health. Semble is commonly used where private medical insurance billing is involved. Pabau is positioned as a broader clinic operations platform for larger teams. Cliniko is also used widely in the UK.
+
+**Canada.** Jane App is used across both physical and mental health disciplines. Owl Practice was built specifically for therapists, counsellors, psychologists, social workers and speech-language pathologists, and stores data in Canada.
+
+**Australia and New Zealand.** Cliniko, Halaxy, Zanda (formerly Power Diary), coreplus, Splose and Nookal.
+
+Those descriptions are deliberately factual. Which platform suits your practice depends on your discipline, your size, your billing model and your jurisdiction, and that is your call to make — not something a dictation vendor should be ranking for you.
+
+The point is what they have in common. Almost all of them are browser-based, and almost none of them will ever appear on a dictation vendor's certified-integration list. The enterprise dictation products were built around deep integrations with a handful of large hospital systems, so the first thing you traditionally had to do was check whether your platform was supported. For a two-person practice on a browser-based platform, it never was, and it was never going to be.
+
+Cursor-based dictation removes the question entirely. Speech Recognition Cloud types at the cursor at the operating-system level. It does not connect to your EHR, does not need an API, does not install a plugin, and does not need to know what program is in front of it. **If you can click into a text field on Windows and type into it, you can dictate into it.**
+
+One honest limitation: Speech Recognition Cloud is Windows software. If your practice runs entirely on Mac or iPad, this is not the tool for you.
 
 That has three consequences worth spelling out.
 
@@ -74,7 +92,7 @@ That has three consequences worth spelling out.
 
 **No lock-in, in either direction.** Because there is no integration, switching practice management software does not break your dictation, and switching dictation does not touch your clinical records. Practices that have been burned by a platform migration understand exactly what that is worth. Your dictation licence is not a hostage to your EHR decision, and your EHR decision is not constrained by your dictation.
 
-**One tool for everything, not just the EHR.** The same hotkey works in your practice management notes, a Microsoft Word assessment report, an Outlook referral letter, an NDIS progress report, a PDF form, a Medicare portal, a court report template, and your email. Clinicians consistently find the report writing is where the hours actually disappear — and that work happens outside the EHR, where an EHR-integrated tool cannot follow.
+**One tool for everything, not just the EHR.** The same hotkey works in your practice management notes, a Microsoft Word assessment report, an Outlook referral letter, a funder or insurer progress report, a PDF form, a payer portal, a court report template, and your email. Clinicians consistently find the report writing is where the hours actually disappear — and that work happens outside the EHR, where an EHR-integrated tool cannot follow.
 
 ## Verbatim: you get exactly what you said
 
@@ -104,7 +122,7 @@ The audio side matches. Speech is transcribed and the audio is then erased — i
 
 **Physiotherapists, chiropractors and osteopaths.** Objective findings, treatment applied, plan. Highly repetitive language, which makes text replacements and templates unusually effective.
 
-**Occupational therapists.** Functional capacity assessments and NDIS reports are long, structured, and brutal to type. This is arguably the single strongest use case in allied health.
+**Occupational therapists.** Functional capacity assessments and disability funding reports — NDIS reports in Australia, similar assessments for insurers, workers' compensation schemes and disability programmes elsewhere — are long, structured, and brutal to type. This is arguably the single strongest use case in allied health.
 
 **Speech pathologists and dietitians.** Assessment write-ups, goal setting, progress reporting against plans.
 
