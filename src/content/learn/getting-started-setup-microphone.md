@@ -3,6 +3,8 @@ title: "Getting started with Speech Recognition Cloud"
 date: "2026-03-23"
 description: "How to download, install, and configure your microphone in Speech Recognition Cloud so you can start dictating straight away."
 type: "guide"
+seoTitle: "Getting Started with Speech Recognition Cloud"
+seoDescription: "How to download, install and set up your microphone in Speech Recognition Cloud, so you can start dictating in Windows within a couple of minutes."
 youtubeId: "eg2rq2Y8xUA"
 context: "descriptive"
 internalLinks:

@@ -3,6 +3,11 @@ title: "Welcome to Speech Recognition Cloud"
 date: "2026-03-18"
 description: "Introducing Speech Recognition Cloud -- AI-powered voice dictation for Windows that works in any application."
 type: "article"
+seoTitle: "Welcome to Speech Recognition Cloud"
+seoDescription: "An introduction to Speech Recognition Cloud, AI-powered voice dictation for Windows that types your words into any application, at the cursor."
+heroImage: "speechrecognitioncloud/2026/08/16/welcome-to-speech-recognition-cloud-windows-dictation-hero-p-ed4058f9.jpg"
+heroImageAlt: "A professional dictating into a headset microphone at a Windows laptop in a bright modern office"
+imagesPending: false
 context: "descriptive"
 ---
 

@@ -3,6 +3,8 @@ title: "AI Modes: rewrite, summarise, and transform text by voice"
 date: "2026-03-23"
 description: "Watch how AI Modes in Speech Recognition Cloud let you rewrite emails, summarise documents, change tone, translate, and complete tasks without leaving your dictation workflow. Available on Professional and Medical tiers."
 type: "video"
+seoTitle: "AI Modes: Rewrite & Summarise Text by Voice"
+seoDescription: "See how AI Modes rewrite emails, summarise documents, change tone and translate by voice, without leaving the app you are working in."
 youtubeId: "5YlOzjs_paA"
 context: "descriptive"
 internalLinks:

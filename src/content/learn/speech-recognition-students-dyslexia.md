@@ -3,6 +3,8 @@ title: "Speech to Text for Students With Dyslexia: When Spelling Is the Thing St
 date: "2026-07-22"
 description: "For many students with dyslexia the barrier isn't ideas, it's spelling — every word becomes a decision that interrupts the sentence. Dictation lets them compose in full, at the level they actually think. Here's where it helps, where it doesn't, and how to introduce it well."
 type: "article"
+seoTitle: "Speech to Text for Students With Dyslexia"
+seoDescription: "When spelling is the barrier rather than ideas, dictation lets students get the sentence down. A practical guide to speech to text for dyslexia."
 context: "descriptive"
 imagesPending: false
 heroImage: "general/2026/07/23/images-speechrecognitioncloud-speech-recognition-students-dy-116d5580.jpg"

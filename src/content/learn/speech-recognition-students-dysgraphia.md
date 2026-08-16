@@ -3,6 +3,8 @@ title: "Speech Recognition for Students With Dysgraphia: Why It Finally Works fo
 date: "2026-07-21"
 description: "Dictation software was age-gated for years — Dragon was trained on adult voices and struggled with children under about 16. Speech Recognition Cloud is built to recognise younger voices, making dictation a realistic accommodation for primary and early secondary students with dysgraphia."
 type: "article"
+seoTitle: "Speech Recognition for Students With Dysgraphia"
+seoDescription: "Dictation was age-gated for years because Dragon struggled with children's voices. How speech recognition now works for younger students with dysgraphia."
 context: "descriptive"
 heroImage: "general/2026/07/21/images-speechrecognitioncloud-speech-recognition-students-dy-c9116723.jpg"
 breakImage1: "general/2026/07/21/images-speechrecognitioncloud-speech-recognition-students-dy-a4eb29bc.jpg"

@@ -3,6 +3,8 @@ title: "Tagalog speech recognition demo (Filipino)"
 date: "2026-03-23"
 description: "Watch Speech Recognition Cloud transcribe Tagalog (Filipino) in real time. See how accurately it handles one of the 57 supported languages."
 type: "video"
+seoTitle: "Tagalog (Filipino) Speech Recognition Demo"
+seoDescription: "Watch Speech Recognition Cloud transcribe Tagalog in real time, and see how it handles one of the 57 languages supported for voice dictation."
 youtubeId: "CeZbHFjFj-s"
 context: "descriptive"
 internalLinks:
