@@ -52,6 +52,7 @@ const articleSchema = {
   "dateModified": modified,
   "wordCount": wordCount,
   "articleSection": post.data.articleSection || "Speech recognition",
+  "inLanguage": post.data.lang || "en-US",
   "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
   ...(post.data.heroImage ? { "image": imgSrc(post.data.heroImage) } : {}),
   "author": {
@@ -68,6 +69,7 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
 <BaseLayout
   title={post.data.title}
   seoTitle={post.data.seoTitle}
+  lang={post.data.lang}
   description={post.data.seoDescription || post.data.description}
   extraSchema={extraSchema}
   ogImage={post.data.heroImage ? imgSrc(post.data.heroImage) : (post.data.youtubeId ? `https://i.ytimg.com/vi/${post.data.youtubeId}/maxresdefault.jpg` : undefined)}

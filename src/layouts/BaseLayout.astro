@@ -1,6 +1,9 @@
 ---
 import site from '../site.config.json';
-const { title, description, canonicalUrl: canonicalUrlProp, extraSchema, ogImage, seoTitle, ogType, articleMeta } = Astro.props;
+const { title, description, canonicalUrl: canonicalUrlProp, extraSchema, ogImage, seoTitle, ogType, articleMeta, lang } = Astro.props;
+const pageLang = lang || 'en-US';
+const isEnglish = pageLang.toLowerCase().startsWith('en');
+const ogLocale = pageLang.replace('-', '_');
 const pageTitle = seoTitle || (title ? `${title} | ${site.siteName}` : site.seoTitle);
 const pageDescription = description || site.seoDescription;
 const c = site.colours;
@@ -80,7 +83,7 @@ const breadcrumbSchema = {
 };
 ---
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang={pageLang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -88,15 +91,16 @@ const breadcrumbSchema = {
   <meta name="description" content={pageDescription} />
   <link rel="canonical" href={canonicalUrl} />
   <!-- Geo targeting: primary market is the United States; global English fallback. -->
-  <link rel="alternate" hreflang="en-us" href={canonicalUrl} />
-  <link rel="alternate" hreflang="en-gb" href={canonicalUrl} />
-  <link rel="alternate" hreflang="en-au" href={canonicalUrl} />
-  <link rel="alternate" hreflang="en-ca" href={canonicalUrl} />
-  <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+  {isEnglish && <link rel="alternate" hreflang="en-us" href={canonicalUrl} />}
+  {isEnglish && <link rel="alternate" hreflang="en-gb" href={canonicalUrl} />}
+  {isEnglish && <link rel="alternate" hreflang="en-au" href={canonicalUrl} />}
+  {isEnglish && <link rel="alternate" hreflang="en-ca" href={canonicalUrl} />}
+  {!isEnglish && <link rel="alternate" hreflang={pageLang.split("-")[0]} href={canonicalUrl} />}
+  {isEnglish && <link rel="alternate" hreflang="x-default" href={canonicalUrl} />}
   <!-- Open Graph -->
   <meta property="og:type" content={ogType || "website"} />
   <meta property="og:site_name" content={site.siteName} />
-  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale" content={isEnglish ? "en_US" : ogLocale} />
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={pageDescription} />
   <meta property="og:url" content={canonicalUrl} />
