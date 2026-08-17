@@ -10,8 +10,6 @@ seoDescription: "Deutsche Spracherkennung für Windows: diktieren Sie in jedem P
 articleSection: "Sprachen"
 youtubeId: "V67_C0kq7gs"
 context: "descriptive"
-heroImage: "speechrecognitioncloud/2026/08/17/spracherkennung-deutsch-diktieren-windows-hero-photo-172989b2.jpg"
-heroImageAlt: "Frau diktiert mit Headset-Mikrofon Text an einem Windows-Notebook in einem hellen Büro"
 breakImage1: "speechrecognitioncloud/2026/08/17/diktiersoftware-deutsch-jedes-windows-programm-photo-95038305.jpg"
 breakImage1Alt: "Zwei Kollegen diktieren an Windows-PCs in einem modernen Büro"
 breakImage2: "speechrecognitioncloud/2026/08/17/spracherkennung-57-sprachen-mehrsprachig-diktieren-photo-df1bc6c1.jpg"
