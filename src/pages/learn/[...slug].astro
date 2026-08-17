@@ -64,7 +64,17 @@ const articleSchema = {
   "publisher": { "@type": "Organization", "name": "Speech Recognition Cloud" }
 };
 
-const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
+const howtoSchema = post.data.howto ? {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": post.data.howto.name,
+  "inLanguage": post.data.lang || "en-US",
+  "step": post.data.howto.steps.map((t, i) => ({
+    "@type": "HowToStep", "position": i + 1, "name": t, "text": t
+  }))
+} : null;
+
+const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : []), ...(howtoSchema ? [howtoSchema] : [])];
 ---
 <BaseLayout
   title={post.data.title}

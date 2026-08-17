@@ -17,6 +17,13 @@ breakImage1Alt: "Zwei Kollegen diktieren an Windows-PCs in einem modernen Büro"
 breakImage2: "speechrecognitioncloud/2026/08/17/spracherkennung-57-sprachen-mehrsprachig-diktieren-photo-df1bc6c1.jpg"
 breakImage2Alt: "Mehrsprachiges Team diktiert an Windows-Notebooks in einem Coworking-Büro"
 imagesPending: false
+howto:
+  name: "Spracherkennung auf Deutsch umstellen"
+  steps:
+    - "Speech Recognition Cloud öffnen"
+    - "Zu den Einstellungen wechseln"
+    - "Deutsch aus der Sprachauswahl wählen"
+    - "Diktieren beginnen — die Zeichensetzung erfolgt automatisch"
 faq:
   - q: "Funktioniert Spracherkennung auf Deutsch zuverlässig?"
     a: "Ja. Deutsch gehört zu den 57 Sprachen, die Speech Recognition Cloud unterstützt, und wird von denselben Cloud-Sprachmodellen verarbeitet wie Englisch. Zusammengesetzte Substantive und die deutsche Groß- und Kleinschreibung werden kontextbezogen erkannt, was ältere lokal installierte Systeme mit festem Wörterbuch oft nicht leisten konnten. Ausgeprägte regionale Dialekte und Fachjargon erreichen jedoch nicht dieselbe Genauigkeit wie Standarddeutsch."
@@ -69,9 +76,26 @@ Deutsche Spracherkennung hatte lange denselben Haken: Bevor die Software brauchb
 
 Die folgende Demonstration dauert knapp zwei Minuten und zeigt gesprochenes Deutsch, das in Echtzeit an der Cursorposition in fertigen, korrekt interpungierten Text umgewandelt wird — ohne vorheriges Sprachtraining und ohne Nachformatierung.
 
+## Speech Recognition Cloud auf einen Blick
+
+| Merkmal | Speech Recognition Cloud |
+|---|---|
+| **Sprachen** | 57, darunter Deutsch |
+| **Deutsch verfügbar ab** | Starter-Tarif (kostenlos) |
+| **Sprachtraining** | Nicht erforderlich |
+| **Plattform** | Windows 10 und 11 |
+| **Programme** | Jedes Windows-Programm, kein Plug-in, keine Schnittstelle |
+| **Zeichensetzung** | Automatisch, zusätzlich per Sprachbefehl steuerbar |
+| **Offline-Betrieb** | Nein — Internetverbindung erforderlich |
+| **Kostenloser Tarif** | 20 Minuten pro Monat, ohne Kreditkarte, unbefristet |
+| **Preise** | Personal 99 USD/Jahr, Professional 159 USD/Jahr, Medical 439 USD/Jahr |
+| **macOS / iPad** | Nicht verfügbar |
+
+*Stand: August 2026. Angaben zum Zeitpunkt der Veröffentlichung.*
+
 ## Funktioniert Spracherkennung auf Deutsch zuverlässig?
 
-Ja. Deutsch gehört zu den 57 Sprachen, die Speech Recognition Cloud unterstützt, und wird von denselben Cloud-Sprachmodellen verarbeitet wie Englisch.
+**Ja. Speech Recognition Cloud unterstützt Deutsch als eine von 57 Sprachen und verarbeitet es mit denselben Cloud-Sprachmodellen wie Englisch.** Ein Sprachtraining ist nicht erforderlich.
 
 Für das Deutsche ist das aus zwei Gründen relevant. Erstens waren zusammengesetzte Substantive — die berüchtigten langen Wörter — für ältere, lokal installierte Erkennungssysteme oft ein Problem, weil sie gegen ein festes Wörterbuch abgeglichen wurden. Cloudbasierte Modelle arbeiten kontextbezogen und kommen damit deutlich besser zurecht. Zweitens hilft der Kontext bei der Groß- und Kleinschreibung, die im Deutschen bekanntlich mehr Arbeit macht als in den meisten anderen Sprachen.
 
@@ -79,31 +103,33 @@ Eine ehrliche Einschränkung: ausgeprägte regionale Dialekte und Fachjargon err
 
 ## Gibt es eine kostenlose Diktiersoftware für Windows?
 
-Der **Starter-Tarif** ist dauerhaft kostenlos: 20 Minuten Diktat pro Monat mit den Kernfunktionen, ohne Kreditkarte. Es handelt sich nicht um eine befristete Testphase, die anschließend in eine Bezahlschranke läuft — der Tarif bleibt kostenlos.
+**Ja. Der Starter-Tarif von Speech Recognition Cloud ist dauerhaft kostenlos und umfasst 20 Minuten Diktat pro Monat, ohne Kreditkarte.** Es handelt sich nicht um eine befristete Testphase, die anschließend in eine Bezahlschranke läuft — der Tarif bleibt kostenlos.
 
 Alle 57 Sprachen, Deutsch eingeschlossen, stehen auch im kostenlosen Tarif zur Verfügung. Das reicht aus, um in einer Viertelstunde herauszufinden, ob Diktieren zu Ihrer Arbeitsweise passt.
 
 ## In welchen Programmen kann ich diktieren?
 
-In allen. Speech Recognition Cloud schreibt auf Betriebssystemebene an der Cursorposition und muss deshalb gar nicht wissen, welches Programm gerade geöffnet ist.
+**In jedem Windows-Programm. Speech Recognition Cloud schreibt auf Betriebssystemebene an der Cursorposition und muss deshalb nicht wissen, welches Programm geöffnet ist.**
 
 **Wenn Sie unter Windows in ein Textfeld klicken und tippen können, können Sie hineindiktieren.** Das gilt für Microsoft Word und Outlook ebenso wie für Browser und Webformulare, Praxisverwaltungs- und Kanzleisoftware, PDF-Formulare oder firmeneigene Anwendungen. Es gibt keine Liste unterstützter Programme, die Sie vorher prüfen müssten, und keine Bindung an einen bestimmten Anbieter.
 
 ## Wie diktiere ich Text in Microsoft Word?
 
-Setzen Sie den Cursor an die gewünschte Stelle im Dokument, drücken Sie die Diktattaste und sprechen Sie in ganzen Sätzen. Der Text erscheint mit automatischer Zeichensetzung genau dort, wo der Cursor steht.
+**Cursor an die gewünschte Stelle im Word-Dokument setzen, die Diktattaste von Speech Recognition Cloud drücken und in ganzen Sätzen sprechen.** Der Text erscheint mit automatischer Zeichensetzung genau dort, wo der Cursor steht.
 
 Ein Word-Add-in ist nicht erforderlich, weil die Software programmunabhängig arbeitet. Satzzeichen, Absätze und Überschriften lassen sich zusätzlich per Sprachbefehl steuern — eine Übersicht finden Sie unter [Zeichensetzung per Sprache](/support/spoken-punctuation). Wiederkehrende Textbausteine können Sie über [Textersetzungen](/support/text-replacements) hinterlegen und mit einem kurzen Stichwort abrufen.
 
 ## Gibt es eine Alternative zu Dragon für deutsche Spracherkennung?
 
-Speech Recognition Cloud ist eine cloudbasierte Alternative für Windows. Die wesentlichen Unterschiede: kein Sprachtraining, Lizenzierung pro Person statt pro Rechner, also keine Installationsbegrenzung auf Ihren eigenen Geräten, laufende Verbesserungen ohne kostenpflichtigen Versionswechsel und ein dauerhaft kostenloser Einstiegstarif.
+**Speech Recognition Cloud ist eine cloudbasierte Alternative zu Dragon für deutsche Spracherkennung unter Windows.** Die wesentlichen Unterschiede: kein Sprachtraining, Lizenzierung pro Person statt pro Rechner, also keine Installationsbegrenzung auf Ihren eigenen Geräten, laufende Verbesserungen ohne kostenpflichtigen Versionswechsel und ein dauerhaft kostenloser Einstiegstarif.
 
 Fairerweise gehört dazu: Dragon-Produkte, die lokal installiert werden, funktionieren offline. Cloudbasierte Lösungen können das nicht. Wenn Sie ohne Internetverbindung arbeiten müssen, ist das ein echtes Argument.
 
 Einen ausführlichen englischsprachigen Vergleich aller Dragon-Produkte finden Sie unter [Dragon-Alternativen im Vergleich](/learn/best-dragon-alternative).
 
 ## Wie stelle ich die Sprache auf Deutsch um?
+
+**In vier Schritten über die Einstellungen von Speech Recognition Cloud:**
 
 1. Speech Recognition Cloud öffnen
 2. Zu den Einstellungen wechseln
@@ -114,7 +140,7 @@ Sie können jederzeit zwischen Sprachen wechseln, ohne getrennte Profile anzuleg
 
 ## Für wen eignet sich Diktieren am PC?
 
-Am meisten profitieren Menschen, die viel schreiben oder denen das Tippen schwerfällt:
+**Speech Recognition Cloud eignet sich für alle, die viel schreiben oder denen das Tippen schwerfällt.** Am meisten profitieren:
 
 - **Beruf und Selbstständigkeit** — E-Mails, Angebote, Berichte und Protokolle. Siehe [Diktieren im Beruf](/business).
 - **Kanzleien** — Schriftsätze und Aktenvermerke. Siehe [Diktieren für Juristinnen und Juristen](/legal).
@@ -123,7 +149,9 @@ Am meisten profitieren Menschen, die viel schreiben oder denen das Tippen schwer
 
 ## Was kostet deutsche Diktiersoftware?
 
-Der **Starter-Tarif** ist dauerhaft kostenlos: 20 Minuten Diktat pro Monat, ohne Kreditkarte und ohne Ablauffrist. **Personal** kostet 99 US-Dollar pro Jahr, **Professional** 159 US-Dollar pro Jahr — beide mit unbegrenztem Diktat und Zugriff auf alle 57 Sprachen. Der **Medical-Tarif** richtet sich an medizinisches Fachpersonal, kostet 439 US-Dollar pro Jahr und ist derzeit ausschließlich englischsprachig.
+**Speech Recognition Cloud kostet 99 US-Dollar pro Jahr im Tarif Personal und 159 US-Dollar pro Jahr im Tarif Professional. Der Starter-Tarif ist dauerhaft kostenlos mit 20 Minuten Diktat pro Monat.**
+
+Der Starter-Tarif läuft nicht ab und verlangt keine Kreditkarte. **Personal** und **Professional** bieten unbegrenztes Diktat und Zugriff auf alle 57 Sprachen. Der **Medical-Tarif** richtet sich an medizinisches Fachpersonal, kostet 439 US-Dollar pro Jahr und ist derzeit ausschließlich englischsprachig.
 
 Einzelheiten finden Sie unter [Tarife und Preise](/pricing).
 

@@ -20,6 +20,10 @@ const learn = defineCollection({
     breakPrompt2: z.string().optional(),
     imagesPending: z.boolean().optional(),
     lang: z.string().optional(),
+    howto: z.object({
+      name: z.string(),
+      steps: z.array(z.string())
+    }).optional(),
     updated: z.string().optional(),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
