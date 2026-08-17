@@ -7,68 +7,375 @@ function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return '';
 function imgAlt(key) { return manifest[key]?.altText || key; }
 function imgW(key) { return manifest[key]?.width || undefined; }
 function imgH(key) { return manifest[key]?.height || undefined; }
-const extraSchema = [{
+
+const pageUrl = site.siteUrl + '/accessibility';
+const lastReviewed = '2026-08-17';
+
+// FAQ items — single source of truth for both rendering and schema
+const faqItems = [
+  {
+    question: "Can I use a computer without typing?",
+    answer: "For writing, largely yes. Speech Recognition Cloud lets you place the cursor in any text field on Windows and dictate instead of typing, with punctuation added automatically. It covers the writing part of computer use — emails, documents, forms, messages, notes. It does not replace the mouse or provide full voice control of the operating system, so you will still need some way to navigate and click. Windows Voice Access, built into Windows 11, handles navigation and can be used alongside dictation."
+  },
+  {
+    question: "Does voice dictation help with RSI?",
+    answer: "Dictation reduces the amount of keyboard and mouse use required to produce written work, which is why it is commonly recommended as a workplace adjustment for people with repetitive strain injury. It is an input method, not a treatment. Speech Recognition Cloud is not a medical device, does not treat or prevent any condition, and any decision about managing an injury should be made with your doctor, physiotherapist or occupational therapist."
+  },
+  {
+    question: "Who uses voice dictation for accessibility reasons?",
+    answer: "Commonly: people with repetitive strain injury, carpal tunnel syndrome, tendonitis or arthritis; people with limited hand function from spinal cord injury, multiple sclerosis, cerebral palsy, stroke or limb difference; people with chronic pain or fatigue conditions where sustained typing is costly; people with dyslexia or dysgraphia, where the barrier is spelling or handwriting rather than movement; and people with a temporary injury such as a broken wrist who need to keep working."
+  },
+  {
+    question: "Will voice dictation work in the programs I already use?",
+    answer: "Yes. Speech Recognition Cloud types at the cursor at the operating-system level, so it does not need an integration, a plug-in or a compatibility list. If you can click into a text field on Windows and type into it, you can dictate into it. That covers Microsoft Word and Outlook, browsers and web forms, chat and email clients, PDF forms, and line-of-business applications."
+  },
+  {
+    question: "Can I control my whole computer by voice with Speech Recognition Cloud?",
+    answer: "No. Speech Recognition Cloud is dictation software: it converts what you say into text at the cursor. It does not move the mouse, click buttons, open programs or navigate menus by voice. If you need full hands-free computer control, look at Windows Voice Access, which is built into Windows 11 and handles navigation, clicking and application control. Many people use a navigation tool for control and dedicated dictation software for writing, because the writing accuracy is noticeably better."
+  },
+  {
+    question: "Does it work if my speech is affected by a condition or injury?",
+    answer: "It depends on the individual, and the honest answer is that you need to test it rather than take our word for it. Speech Recognition Cloud is trained on a broad range of voices and accents and needs no voice training, which helps. But recognition accuracy can fall where speech is significantly affected by dysarthria, motor neurone disease, a stroke, Parkinson's disease or a tracheostomy. The free tier exists precisely so this can be tested at no cost before anyone commits money."
+  },
+  {
+    question: "Do I need to train the software to my voice?",
+    answer: "No. There is no voice profile to build, no enrolment passages to read aloud and no calibration step — which matters if reading long passages aloud is itself tiring or difficult. You install it, choose your microphone and start dictating. Recognition is handled by cloud AI and works from the first sentence."
+  },
+  {
+    question: "What microphone should I use?",
+    answer: "A headset microphone is usually the best starting point because it stays a consistent distance from your mouth without you having to hold or reposition anything. If a headset is uncomfortable or hard to put on independently, a desktop or boom microphone on a stand works well and requires no handling at all. A laptop's built-in microphone will work in a quiet room but is more error-prone, and correcting errors means more keyboard use, which defeats the purpose."
+  },
+  {
+    question: "Can I get funding for dictation software as a workplace adjustment?",
+    answer: "Often, yes, though the scheme depends on where you live. In Australia, assistive technology may be funded through the NDIS, through workers' compensation where the condition is work-related, or directly by an employer as a reasonable adjustment. In the United Kingdom, Access to Work commonly funds assistive software and equipment. In the United States, vocational rehabilitation agencies and employer accommodation processes under the ADA are the usual routes. Check the current requirements with the relevant scheme, since eligibility and evidence requirements change."
+  },
+  {
+    question: "How much does voice dictation software cost?",
+    answer: "The Speech Recognition Cloud Starter plan is free permanently and includes 20 minutes of dictation per month with no credit card required. Personal is US$99 per year and Professional US$159 per year, both with unlimited dictation. Pricing is in US dollars and converts to your local currency at checkout. Pricing accurate at time of publication; verify current pricing before purchasing."
+  },
+  {
+    question: "Does Speech Recognition Cloud work on Mac or iPad?",
+    answer: "No. Speech Recognition Cloud is Windows 10 and Windows 11 software. There is no Mac or iPad version. If your setup is Mac-based, macOS has built-in Voice Control and dictation which may suit, and this is not the right tool for you."
+  },
+  {
+    question: "How long does it take to get comfortable with dictation?",
+    answer: "Most people are dictating usable text within the first session, and comfortable within a few days. The adjustment is not technical — it is learning to speak in finished sentences rather than composing as you type. Start on low-stakes writing such as an email to yourself, and move to real work once it feels natural."
+  }
+];
+
+const howToSteps = [
+  {
+    name: "Install and choose a microphone",
+    text: "Download and install Speech Recognition Cloud on Windows 10 or 11. Installation takes about two minutes and no account is needed for the free tier. Plug in a headset or desktop microphone before opening the app, then select it from the microphone dropdown in settings. There is no voice training and no enrolment reading to complete."
+  },
+  {
+    name: "Test with a short phrase",
+    text: "Open Notepad or an email draft, place your cursor in the text area and dictate a single sentence. This confirms the right microphone is selected and gives you a feel for the pace. Speak in complete sentences at a normal conversational speed rather than word by word, which is how the punctuation is worked out."
+  },
+  {
+    name: "Set up your own vocabulary",
+    text: "Add the words the software will not know — names of colleagues and clients, workplace acronyms, technical terms, place names. This is the step most people skip and it is the one that most reduces correction time, which matters when correcting means using the keyboard you are trying to avoid."
+  },
+  {
+    name: "Use it on real work, and add a navigation tool if you need one",
+    text: "Move on to real emails and documents. If you also need hands-free navigation and clicking, turn on Windows Voice Access in Windows 11 settings and use it alongside dictation. Voice Access handles moving around the system; Speech Recognition Cloud handles the writing."
+  }
+];
+
+// Author Person schema for Russell Bewsell (cross-domain EEAT graph)
+const russellPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "name": "Russell Bewsell",
+  "jobTitle": "Founder and CEO, Voice Recognition Australia",
+  "url": "https://www.voicerecognition.com.au",
+  "sameAs": ["https://www.linkedin.com/in/rbewsell/"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au"
+  }
+};
+
+const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": pageUrl + "#webpage",
+  "url": pageUrl,
   "name": "Voice Dictation for Accessibility and RSI",
-  "description": "Reduce keyboard use with voice input. An alternative for anyone with motor limitations.",
-  "url": site.siteUrl + "/accessibility",
-  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
-}];
+  "description": "Voice dictation as an alternative input method for people with RSI, limited hand function, chronic pain, dyslexia or a temporary injury. Works in any Windows program, no voice training, free tier available.",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
+  "datePublished": "2026-05-15",
+  "dateModified": lastReviewed,
+  "lastReviewed": lastReviewed,
+  "about": [
+    { "@type": "Thing", "name": "Assistive technology" },
+    { "@type": "Thing", "name": "Voice dictation" },
+    { "@type": "Thing", "name": "Repetitive strain injury" },
+    { "@type": "Thing", "name": "Accessibility software" },
+    { "@type": "Thing", "name": "Alternative input methods" }
+  ],
+  "audience": { "@type": "Audience", "audienceType": "People with disability, injury or limited hand function" },
+  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "publisher": { "@type": "Organization", "name": site.organization.name, "url": site.organization.url }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": pageUrl + "#faq",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": pageUrl + "#howto",
+  "name": "How to start using voice dictation instead of typing",
+  "description": "A four-step setup for anyone reducing keyboard use because of injury, pain or limited hand function.",
+  "totalTime": "PT15M",
+  "tool": [
+    { "@type": "HowToTool", "name": "Windows 10 or Windows 11 computer" },
+    { "@type": "HowToTool", "name": "Headset or desktop microphone" },
+    { "@type": "HowToTool", "name": "Speech Recognition Cloud (free tier)" }
+  ],
+  "step": howToSteps.map((s, i) => ({
+    "@type": "HowToStep", "position": i + 1, "name": s.name, "text": s.text
+  }))
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Speech Recognition Cloud",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Starter — 20 minutes per month, free permanently" },
+    { "@type": "Offer", "price": "99", "priceCurrency": "USD", "description": "Personal — annual, unlimited dictation" },
+    { "@type": "Offer", "price": "159", "priceCurrency": "USD", "description": "Professional — annual, unlimited dictation with advanced features" }
+  ]
+};
+
+const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softwareSchema];
 ---
-<BaseLayout title="Voice Dictation for Accessibility and RSI" description="Reduce keyboard use with voice input. Speech Recognition Cloud as an alternative input method for anyone with motor limitations." extraSchema={extraSchema}>
+<BaseLayout
+  title="Voice Dictation for Accessibility and RSI"
+  description="Voice dictation as an alternative to typing for RSI, limited hand function, chronic pain or dyslexia. Works in any Windows program. No voice training. Free tier available."
+  extraSchema={extraSchema}
+>
+  <!-- HERO -->
   <section class="section-pad">
     <div class="container">
       <div class="usecase-hero-split">
         <div>
-          <p class="eyebrow">ACCESSIBILITY</p>
-          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Voice input for accessibility and RSI</h1>
-          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:500px">Reduce keyboard use with accurate voice dictation. An alternative input method for anyone with repetitive strain injury, motor limitations, or who simply works better by voice.</p>
+          <p class="eyebrow">ACCESSIBILITY AND RSI</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Voice dictation when typing is the problem</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:520px">If keyboard use is limited by injury, pain, hand function or spelling, dictation lets you write at the speed you think. Speech Recognition Cloud types your words at the cursor in any Windows program — no plug-in, no voice training, free to try.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.download.url} class="btn-primary">Download free</a><a href="/contact" class="btn-secondary">Contact us</a></div>
           <p class="muted" style="font-size:13px">No credit card required. Windows 10/11.</p>
+          <div class="m-stat-pills">
+            <span class="m-pill">No voice training</span>
+            <span class="m-pill">Any Windows program</span>
+            <span class="m-pill">Free tier</span>
+            <span class="m-pill">57 languages</span>
+          </div>
         </div>
         {imgSrc('accessibility-hero') && (
-          <div class="usecase-hero-img"><img src={imgSrc('accessibility-hero')} width={imgW('accessibility-hero')} height={imgH('accessibility-hero')} alt={imgAlt('accessibility-hero')} loading="eager" decoding="async" /></div>
+          <div class="usecase-hero-img"><img src={imgSrc('accessibility-hero')} width={imgW('accessibility-hero')} height={imgH('accessibility-hero')} alt={imgAlt('accessibility-hero')} loading="eager" fetchpriority="high" decoding="async" /></div>
         )}
       </div>
     </div>
   </section>
+
   <section class="download-strip">
     <div class="container download-strip-inner">
-      <div><p class="download-strip-headline">Try free voice dictation today</p><p class="download-strip-sub">No credit card. No voice training. Install in 2 minutes.</p></div>
+      <div><p class="download-strip-headline">Try it free before you spend anything</p><p class="download-strip-sub">20 minutes a month, permanently free. No credit card. Install in 2 minutes.</p></div>
       <a href={site.download.url} class="btn-primary" style="background:#fff;color:#4338CA;font-weight:700;white-space:nowrap">Download free</a>
     </div>
   </section>
+
+  <!-- WHAT IT IS -->
   <section class="section-pad section-neutral">
-    <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">How voice input helps</h2>
-      <div class="benefit-grid">
-        <div class="benefit"><h3>Reduce keyboard strain</h3><p class="muted">Dictate emails, documents, and notes without sustained keyboard use. Rest your hands while staying productive.</p></div>
-        <div class="benefit"><h3>Works in any application</h3><p class="muted">Dictate at the cursor in Word, Outlook, Chrome, web forms, and any Windows application. No special plugins needed.</p></div>
-        <div class="benefit"><h3>Automatic punctuation</h3><p class="muted">Speak naturally. The AI handles punctuation, capitalisation, and formatting automatically.</p></div>
-        <div class="benefit"><h3>No voice training</h3><p class="muted">Install and start dictating immediately. Works with accents and diverse speakers.</p></div>
-        <div class="benefit"><h3>Use your own microphone</h3><p class="muted">Works with your laptop mic, USB headset, or any microphone. Use whatever is comfortable for you.</p></div>
-        <div class="benefit"><h3>Free plan available</h3><p class="muted">20 minutes per month free. Personal plan is $99/year for unlimited dictation.</p></div>
+    <div class="container" style="max-width:820px">
+      <h2>Can I use a computer without typing?</h2>
+      <p class="a-lead"><strong>For the writing part, largely yes.</strong> Speech Recognition Cloud lets you put the cursor in any text field on Windows, press a key, and speak. Your words appear as punctuated text exactly where the cursor is — in an email, a document, a web form, a chat window.</p>
+      <p>There is an important limit, and it is better stated up front than discovered later. Speech Recognition Cloud is <strong>dictation, not full voice control</strong>. It writes; it does not move the mouse, click buttons or open programs by voice. If you need hands-free navigation as well, see the section on <a href="#voice-control" class="m-link">controlling your computer by voice</a> below — the two jobs are usually best done by two different tools.</p>
+      <p>What it does remove is the sustained keyboard use that producing written work normally requires. For a lot of people that is the whole problem.</p>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section class="section-pad">
+    <div class="container" style="max-width:820px">
+      <h2>Who uses voice dictation for accessibility reasons?</h2>
+      <p><strong>People whose hands, wrists or arms make typing painful, slow or impossible — and people for whom the barrier is spelling rather than movement.</strong> In practice that includes:</p>
+      <ul class="a-list">
+        <li><strong>Repetitive strain injury, carpal tunnel syndrome, tendonitis and arthritis.</strong> Dictation reduces the keystrokes needed to produce the same output. It is one of the most common workplace adjustments recommended for keyboard-related strain.</li>
+        <li><strong>Limited hand function.</strong> Spinal cord injury, multiple sclerosis, cerebral palsy, stroke, essential tremor, limb difference and similar. Where typing is slow or unavailable, speech is often the fastest available input.</li>
+        <li><strong>Chronic pain and fatigue conditions.</strong> Where every activity has an energy cost, removing the physical effort of typing leaves more capacity for the work itself.</li>
+        <li><strong>Dyslexia and dysgraphia.</strong> Here the barrier is not movement but spelling or handwriting. Dictation takes it out of the way of composing — covered in detail for <a href="/learn/speech-recognition-students-dyslexia/" class="m-link">students with dyslexia</a> and <a href="/learn/speech-recognition-students-dysgraphia/" class="m-link">students with dysgraphia</a>.</li>
+        <li><strong>Temporary injury.</strong> A broken wrist, a burn, post-surgical recovery. Dictation is the difference between working and not working for a few weeks, and the free tier means it costs nothing to bridge the gap.</li>
+        <li><strong>Vision impairment.</strong> Dictation is often paired with a screen reader, replacing the typing half of the interaction.</li>
+      </ul>
+      <div class="callout callout--warn">
+        <h4>An honest note on what this is</h4>
+        <p>Speech Recognition Cloud is dictation software. It is <strong>not a medical device</strong>, it does not treat, prevent or manage any condition, and nothing here is medical advice. It reduces how much you need to type. Decisions about managing an injury or condition belong with your doctor, physiotherapist or occupational therapist.</p>
       </div>
     </div>
   </section>
-  <section class="section-pad" id="demo">
+
+  <!-- WORKS WHERE -->
+  <section class="section-pad section-brand-soft">
+    <div class="container" style="max-width:820px">
+      <h2>Will voice dictation work in the programs I already use?</h2>
+      <p><strong>Yes — Speech Recognition Cloud types at the operating-system level, so there is no integration, no plug-in and no compatibility list to check.</strong> If you can click into a text field on Windows and type into it, you can dictate into it.</p>
+      <p>That covers Microsoft Word and Outlook, Chrome, Edge and Firefox, web forms and online portals, Teams and Slack, PDF forms, and the line-of-business software your employer uses. It also means switching employers or software does not break your setup.</p>
+      <p>One limitation worth stating plainly: <strong>Speech Recognition Cloud is Windows 10 and Windows 11 only.</strong> There is no Mac or iPad version. If your setup is Mac-based, macOS has built-in Voice Control and dictation which may suit you better.</p>
+    </div>
+  </section>
+
+  <!-- VOICE CONTROL -->
+  <section class="section-pad" id="voice-control">
+    <div class="container" style="max-width:820px">
+      <h2>Can I control my whole computer by voice?</h2>
+      <p><strong>Not with Speech Recognition Cloud alone — it writes text, it does not drive the interface.</strong> It will not move the mouse, click buttons, open applications or navigate menus by voice.</p>
+      <p>If you need genuinely hands-free operation, the practical setup is two tools:</p>
+      <ul class="a-list">
+        <li><strong>Windows Voice Access</strong> — built into Windows 11 at no cost. Handles navigation, clicking, opening programs and controlling windows by voice.</li>
+        <li><strong>Speech Recognition Cloud</strong> — for the writing itself, where accuracy and automatic punctuation matter most and where a general-purpose control tool tends to be weakest.</li>
+      </ul>
+      <p>We would rather tell you this before you download than have you find out afterwards. If full voice control is your primary requirement and writing is secondary, start with Voice Access and add dictation later if the writing accuracy is not good enough.</p>
+    </div>
+  </section>
+
+  <!-- SPEECH AFFECTED -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:820px">
+      <h2>Does it work if my speech is affected?</h2>
+      <p><strong>It depends on the individual, and the only honest way to find out is to test it.</strong> Speech Recognition Cloud is trained on a wide range of voices and accents and requires no voice training, which helps a great deal — there is no enrolment step to fail at.</p>
+      <p>But accuracy can fall where speech is significantly affected by dysarthria, motor neurone disease, a stroke, Parkinson's disease, a tracheostomy or similar. We are not going to claim otherwise. The free tier exists so this can be tested at no cost and no commitment — twenty minutes a month is enough to find out within an afternoon.</p>
+      <p>If you are assessing this on behalf of a client, the same applies: try it on their real speech and real work rather than on a specification sheet.</p>
+    </div>
+  </section>
+
+  <!-- MICROPHONE -->
+  <section class="section-pad">
+    <div class="container" style="max-width:820px">
+      <h2>What microphone works best if handling equipment is difficult?</h2>
+      <p><strong>A headset is usually the best accuracy for the money, and a stand-mounted microphone is usually the best for independence.</strong></p>
+      <ul class="a-list">
+        <li><strong>Headset microphone.</strong> Stays a fixed distance from your mouth, which is what makes recognition consistent. Best accuracy, but it has to be put on and taken off.</li>
+        <li><strong>Desktop or boom microphone on a stand.</strong> Requires no handling at all once positioned — often the right answer where putting on a headset independently is difficult.</li>
+        <li><strong>Built-in laptop microphone.</strong> Works in a quiet room, but produces more errors. Worth remembering that correcting errors means using the keyboard, which is the thing you are trying to avoid.</li>
+      </ul>
+      <p>Accuracy matters more here than in most settings, for exactly that reason: every misrecognition costs keystrokes. Spending a little on a decent microphone usually pays for itself immediately. See the <a href="/support/tips" class="m-link">accuracy tips</a> for placement and settings.</p>
+    </div>
+  </section>
+
+  <!-- FUNDING -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:820px">
+      <h2>Can I get funding for dictation software as a workplace adjustment?</h2>
+      <p><strong>Often, yes — assistive software is routinely funded, though the scheme depends on where you live.</strong></p>
+      <ul class="a-list">
+        <li><strong>Australia.</strong> Assistive technology may be funded through the NDIS where it relates to a participant's goals, through workers' compensation where the condition is work-related, or directly by an employer as a reasonable adjustment.</li>
+        <li><strong>United Kingdom.</strong> Access to Work commonly funds assistive software and equipment for people in work or starting work.</li>
+        <li><strong>United States.</strong> State vocational rehabilitation agencies, and employer accommodation processes under the ADA.</li>
+      </ul>
+      <p>Eligibility rules and evidence requirements change, so check the current position with the relevant scheme rather than relying on this page. If you need a quote or written product information for a funding application, <a href="/contact" class="m-link">get in touch</a> and we will provide it.</p>
+      <p>It is also worth knowing that the free tier is genuinely free and permanent, so there is no need to wait for funding to be approved before starting.</p>
+    </div>
+  </section>
+
+  <!-- COST -->
+  <section class="section-pad">
+    <div class="container" style="max-width:820px">
+      <h2>How much does voice dictation software cost?</h2>
+      <p><strong>The Starter plan is free permanently — 20 minutes of dictation a month, no credit card.</strong> Personal is US$99 per year and Professional US$159 per year, both with unlimited dictation and all 57 languages.</p>
+      <p>Most people using dictation for accessibility reasons need Personal or Professional, because 20 minutes a month will not cover a working week. Professional adds templates, higher-accuracy mode and the mobile companion app. Full detail on the <a href="/pricing" class="m-link">pricing page</a>.</p>
+      <p class="muted" style="font-size:14px"><em>Pricing accurate at time of publication. Prices in USD and will convert to your local currency at checkout. Verify current pricing before purchasing.</em></p>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section class="section-pad section-neutral" id="demo">
     <div class="container text-center">
       <h2 style="margin-bottom:8px">See it in action</h2>
       <p class="muted" style="font-size:16px;margin-bottom:24px">Watch a real dictation in 60 seconds</p>
       <div class="yt-facade" data-ytid="vp0LFuRWdKI">
-        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud demo video" loading="lazy" decoding="async" />
+        <img src="https://i.ytimg.com/vi/vp0LFuRWdKI/maxresdefault.jpg" alt="Speech Recognition Cloud dictation demonstration" loading="lazy" decoding="async" />
         <div class="yt-play"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.8.7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.6 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.8-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s0-11-1.5-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10-18 10z" fill="#FFF"/></svg></div>
       </div>
     </div>
   </section>
+
+  <!-- QUICK START -->
+  <section class="section-pad" id="quickstart">
+    <div class="container" style="max-width:820px">
+      <h2>How do I start using dictation instead of typing?</h2>
+      <ol class="m-numbered">
+        {howToSteps.map(s => (<li><strong>{s.name}.</strong><br/>{s.text}</li>))}
+      </ol>
+      <p>Most people are dictating usable text in the first session and comfortable within a few days. The adjustment is learning to speak in finished sentences rather than composing as you type. More detail in the <a href="/support/getting-started" class="m-link">getting-started guide</a> and the <a href="/learn/getting-started-setup-microphone/" class="m-link">setup walkthrough</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS NOT -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:820px">
+      <h2>What Speech Recognition Cloud is <em>not</em></h2>
+      <ul class="a-list">
+        <li><strong>Not a medical device.</strong> It does not treat, prevent, diagnose or manage any condition.</li>
+        <li><strong>Not full voice control.</strong> It writes text. It does not drive the mouse or the interface.</li>
+        <li><strong>Not a screen reader.</strong> It converts speech to text, not text to speech.</li>
+        <li><strong>Not available on Mac or iPad.</strong> Windows 10 and 11 only.</li>
+        <li><strong>Not usable offline.</strong> Recognition happens in the cloud, so it needs an internet connection.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad">
+    <div class="container" style="max-width:820px">
+      <h2 style="margin-bottom:24px">Frequently asked questions</h2>
+      {faqItems.map(item => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:820px">
+      <div class="m-author-panel">
+        <h2>About this page</h2>
+        <p>This page is written and maintained by Russell Bewsell. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years deploying speech recognition</a> across Australian schools, workplaces, hospitals, courts and government departments, working with people across a wide range of disabilities and support needs — primarily in Australia, with customers in the US, UK, Canada, New Zealand and across Europe.</p>
+        <p>A lot of that time has been spent watching capable people handed software that could not hear them properly and then written off as someone dictation "doesn't suit". Usually the tool did not fit the person. If your situation does not match the patterns described here, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to help.</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder, Speech Recognition Cloud</p>
+        <p class="m-reviewed muted">Last reviewed: 17 August 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="section-pad section-dark" style="padding:60px 0">
     <div class="container text-center">
-      <h2 style="margin-bottom:12px">Start dictating today</h2>
-      <p class="muted" style="margin-bottom:24px">No credit card. No voice training. Install in 2 minutes.</p>
+      <h2 style="margin-bottom:12px">Try it free — it costs nothing to find out</h2>
+      <p class="muted" style="margin-bottom:24px">20 minutes a month, permanently free. No credit card. No voice training. Install in 2 minutes.</p>
       <a href={site.download.url} class="btn-primary btn-lg">Download free</a>
     </div>
   </section>
+
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
     .usecase-hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -77,13 +384,35 @@ const extraSchema = [{
     .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
     .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
     .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.8);margin:0}
-    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
-    .benefit .muted{font-size:14px;line-height:1.7}
     .btn-lg{padding:14px 36px;font-size:17px}
+    .m-stat-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .m-pill{font-size:13px;font-weight:600;color:var(--brand);background:#EEF2FF;border:1px solid #C7D2FE;border-radius:999px;padding:5px 12px}
+    .m-link{color:var(--brand);font-weight:600}
+    .a-lead{font-size:17px;line-height:1.75}
+    section h2{font-size:26px;font-weight:700;margin-bottom:16px;line-height:1.3;letter-spacing:-0.01em}
+    section p{color:var(--muted);line-height:1.8;margin-bottom:18px}
+    .a-list{margin:0 0 20px;padding-left:22px;color:var(--muted);line-height:1.8}
+    .a-list li{margin-bottom:12px}
+    .a-list strong,section p strong{color:var(--text)}
+    .m-numbered{margin:0 0 20px;padding-left:22px;color:var(--muted);line-height:1.8}
+    .m-numbered li{margin-bottom:16px}
+    .callout{margin:30px 0;padding:22px 26px;border-radius:14px;border:1px solid var(--border);border-left:4px solid var(--brand);background:var(--brand-lightest,#EEF2FF)}
+    .callout--warn{border-left-color:#EA580C;background:#FFF7ED;border-color:#FDBA74}
+    .callout h4{margin:0 0 8px;font-size:16px;font-weight:700;color:#9A3412}
+    .callout p{margin:0;font-size:15px;line-height:1.7;color:var(--text)}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';font-size:20px;color:var(--muted);flex-shrink:0}
+    .faq-item[open] .faq-question::after{content:'-'}
+    .faq-answer{padding:0 0 20px}
+    .faq-answer p{color:var(--muted);font-size:15px;line-height:1.7;margin:0}
+    .m-author-panel{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px}
+    .m-author-panel h2{font-size:20px}
+    .m-author-sig{font-weight:600;color:var(--text)!important}
+    .m-reviewed{font-size:13px}
     .yt-facade{position:relative;max-width:720px;margin:0 auto;cursor:pointer;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,0.12);aspect-ratio:16/9}.yt-facade img{width:100%;height:100%;object-fit:cover}.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.9;transition:opacity 0.2s}.yt-facade:hover .yt-play{opacity:1}.yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
+    @media(max-width:768px){.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}}
   </style>
   <script is:inline>
     document.querySelectorAll('.yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;el.innerHTML='';el.appendChild(iframe);});});
