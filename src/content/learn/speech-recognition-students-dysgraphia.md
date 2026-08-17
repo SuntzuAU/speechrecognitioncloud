@@ -5,6 +5,20 @@ description: "Dictation software was age-gated for years — Dragon was trained 
 type: "article"
 seoTitle: "Speech Recognition for Students With Dysgraphia"
 seoDescription: "Dictation was age-gated for years because Dragon struggled with children's voices. How speech recognition now works for younger students with dysgraphia."
+faq:
+  - q: "Does speech to text help students with dysgraphia?"
+    a: "Yes. Dysgraphia is a transcription difficulty rather than a comprehension one, so dictation removes the limiting factor entirely and lets the student spend their full attention on the idea. A 2025 review in Disability and Rehabilitation: Assistive Technology found speech-to-text to be one of the most widely used and effective supports for students with dysgraphia, with consistent gains in academic performance and classroom engagement."
+  - q: "Can younger children use speech recognition software?"
+    a: "Yes, with current software. Older dictation products such as Dragon were trained on adult voices and lost accuracy badly with children, which effectively age-gated the accommodation. Speech Recognition Cloud is built to recognise younger, still-developing voices, so dictation is a realistic accommodation for a nine-year-old rather than only for senior students."
+  - q: "Is dysgraphia just bad handwriting?"
+    a: "No. Writing by hand requires visuospatial processing, graphomotor control, working memory, spelling, grammar and punctuation to run simultaneously. In a student with dysgraphia one or more of those systems demands conscious effort, and effort spent on letter formation is effort not available for the idea. The result is written work that understates what the student knows."
+  - q: "Is typing enough, or is dictation better for dysgraphia?"
+    a: "Typing helps some students and not others, because typing still requires spelling, spacing and motor sequencing in parallel with composing. Dictation is different in kind: it removes the transcription load entirely. Most students still benefit from handwriting and typing practice in low-stakes contexts, with dictation reserved for extended writing and assessment where transcription load becomes the limiting factor."
+  - q: "Does dictation work for every student with dysgraphia?"
+    a: "Outcomes are strongest when the tool is matched to the individual student. Dysgraphia is not one profile. Some students are held up mainly by the motor act of handwriting, some by spelling, and some by organising thought into written structure. Dictation solves the first two decisively. For the third it works best paired with planning support such as an outline, a graphic organiser, or talking the argument through before dictating."
+  - q: "How do I get a student started with dictation?"
+    a: "Frame it as an accommodation rather than a shortcut, budget two or three low-stakes practice sessions before it is used on assessed work, and get a decent USB headset because a built-in laptop microphone in a busy classroom is not clean audio. Dictating well is a skill: full sentences, punctuation commands and a beat between ideas."
+articleSection: "Education and accessibility"
 context: "descriptive"
 heroImage: "general/2026/07/21/images-speechrecognitioncloud-speech-recognition-students-dy-c9116723.jpg"
 breakImage1: "general/2026/07/21/images-speechrecognitioncloud-speech-recognition-students-dy-a4eb29bc.jpg"
@@ -87,7 +101,7 @@ A few things separate the students for whom dictation sticks from the ones who a
 
 ## Where Speech Recognition Cloud comes in
 
-Speech Recognition Cloud was built by Russell Busill, who has spent almost 27 years working with Australian schools, students and people across a wide range of disabilities and support needs.
+Speech Recognition Cloud was built by Russell Bewsell, who has spent 28 years working with Australian schools, students and people across a wide range of disabilities and support needs.
 
 That's a long time watching the same failure repeat: a capable student handed software that couldn't hear them properly, then quietly written off as someone dictation "doesn't suit." It suited them fine. The tool didn't fit the user — and for younger students especially, nobody was building for that user, because the market was adult professionals.
 

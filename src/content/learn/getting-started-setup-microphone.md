@@ -5,6 +5,27 @@ description: "How to download, install, and configure your microphone in Speech 
 type: "guide"
 seoTitle: "Getting Started with Speech Recognition Cloud"
 seoDescription: "How to download, install and set up your microphone in Speech Recognition Cloud, so you can start dictating in Windows within a couple of minutes."
+howto:
+  name: "Set up Speech Recognition Cloud and dictate for the first time"
+  steps:
+    - "Download the installer from speechrecognition.cloud and run it on Windows 10 or 11"
+    - "Open Speech Recognition Cloud and select your microphone from the settings dropdown"
+    - "Test with a short phrase to confirm the correct microphone is selected"
+    - "Place your cursor where you want text, press your hotkey and speak naturally"
+faq:
+  - q: "How do I install Speech Recognition Cloud on Windows?"
+    a: "Go to speechrecognition.cloud and select Download free. The installer is a small Windows executable that takes about two minutes to install on Windows 10 or 11. No account is required for the free tier, and there is no voice training or enrolment step before you can start dictating."
+  - q: "What microphone should I use for dictation?"
+    a: "A built-in laptop or webcam microphone will work, but a quality USB headset or desktop microphone gives noticeably better accuracy. Position the microphone about two finger-widths from your mouth, use a headset or directional microphone in noisy environments, and avoid Bluetooth microphones where possible because USB connections are more reliable for dictation."
+  - q: "How do I select my microphone in Speech Recognition Cloud?"
+    a: "Open Speech Recognition Cloud, go to the microphone settings and choose your microphone from the dropdown. If you are using a USB headset, plug it in before launching the application. Test with a short phrase first to confirm the correct microphone is selected."
+  - q: "Do I have to say the punctuation when I dictate?"
+    a: "No. Speech Recognition Cloud punctuates automatically, so you can speak naturally in full sentences and paragraphs without saying comma or full stop. Spoken punctuation commands are available for the times you do want to control punctuation, formatting or line breaks explicitly."
+  - q: "Where does the dictated text appear?"
+    a: "At your cursor, in whatever Windows application is in front of you. Place the cursor where you want text, press your hotkey, speak, and the punctuated text appears when you stop. This works in Microsoft Word, Outlook, EMR and practice management systems, web forms and any other Windows application you can type into."
+  - q: "Do I need to train the software to my voice?"
+    a: "No. There is no voice training, enrolment or calibration step. Speech Recognition Cloud uses cloud AI recognition and is accurate from the first sentence. Setup from download to first dictated sentence takes about two minutes."
+articleSection: "Getting started"
 youtubeId: "eg2rq2Y8xUA"
 context: "descriptive"
 internalLinks:
