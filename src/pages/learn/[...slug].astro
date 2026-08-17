@@ -24,6 +24,13 @@ const R2_BASE = (import.meta.env.PUBLIC_R2_BASE ?? 'https://pub-c7a09e1ddb7c45e6
 const imgSrc = (key) => key ? (/^https?:\/\//.test(key) ? key : `${R2_BASE}/${key}`) : '';
 const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
 
+// Cloudflare image transformations (enabled on the speechrecognition.cloud zone,
+// with pub-...r2.dev registered as an allowed source origin).
+const CF_WIDTHS = [380, 760, 1140, 1520];
+const cfImg = (url, w) => `/cdn-cgi/image/width=${w},format=auto,quality=85/${url}`;
+const cfSrcset = (url) => url ? CF_WIDTHS.map(w => `${cfImg(url, w)} ${w}w`).join(', ') : '';
+const CF_SIZES = '(max-width: 800px) 100vw, 760px';
+
 // AEO: FAQPage schema from question-style headings, plus BlogPosting with author
 const faqSchema = post.data.faq && post.data.faq.length ? {
   "@context": "https://schema.org",
@@ -78,7 +85,7 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
       <h1 class="article-title">{post.data.title}</h1>
 
       {post.data.heroImage && (
-        <div class="hero-img"><img src={imgSrc(post.data.heroImage)} alt={post.data.heroImageAlt ?? post.data.title} width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" /></div>
+        <div class="hero-img"><img src={cfImg(imgSrc(post.data.heroImage), 1140)} srcset={cfSrcset(imgSrc(post.data.heroImage))} sizes={CF_SIZES} alt={post.data.heroImageAlt ?? post.data.title} width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" /></div>
       )}
 
       {post.data.youtubeId && (
@@ -97,9 +104,11 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
         </nav>
       )}
       <div class="article-body" id="article-prose"
-        data-break1={post.data.breakImage1 ? imgSrc(post.data.breakImage1) : ''}
+        data-break1={post.data.breakImage1 ? cfImg(imgSrc(post.data.breakImage1), 1140) : ''}
+        data-break1-srcset={post.data.breakImage1 ? cfSrcset(imgSrc(post.data.breakImage1)) : ''}
         data-break1-alt={post.data.breakImage1Alt ?? ''}
-        data-break2={post.data.breakImage2 ? imgSrc(post.data.breakImage2) : ''}
+        data-break2={post.data.breakImage2 ? cfImg(imgSrc(post.data.breakImage2), 1140) : ''}
+        data-break2-srcset={post.data.breakImage2 ? cfSrcset(imgSrc(post.data.breakImage2)) : ''}
         data-break2-alt={post.data.breakImage2Alt ?? ''}>
         <Content />
       </div>
@@ -215,20 +224,21 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : [])];
     (function () {
       var prose = document.getElementById('article-prose');
       if (!prose) return;
-      var b1 = prose.getAttribute('data-break1'), b1a = prose.getAttribute('data-break1-alt') || '';
-      var b2 = prose.getAttribute('data-break2'), b2a = prose.getAttribute('data-break2-alt') || '';
+      var b1 = prose.getAttribute('data-break1'), b1a = prose.getAttribute('data-break1-alt') || '', b1s = prose.getAttribute('data-break1-srcset') || '';
+      var b2 = prose.getAttribute('data-break2'), b2a = prose.getAttribute('data-break2-alt') || '', b2s = prose.getAttribute('data-break2-srcset') || '';
       if (!b1 && !b2) return;
       var h2s = prose.querySelectorAll('h2');
       if (!h2s.length) return;
-      function mk(src, alt) {
+      function mk(src, alt, ss) {
         var w = document.createElement('div'); w.className = 'img-break';
         var i = document.createElement('img'); i.src = src; i.alt = alt; i.width = 1600; i.height = 686; i.loading = 'lazy'; i.decoding = 'async';
+        if (ss) { i.srcset = ss; i.sizes = '(max-width: 800px) 100vw, 760px'; }
         w.appendChild(i); return w;
       }
-      if (b1 && h2s.length >= 2) prose.insertBefore(mk(b1, b1a), h2s[1]);
+      if (b1 && h2s.length >= 2) prose.insertBefore(mk(b1, b1a, b1s), h2s[1]);
       if (b2) {
         var idx = Math.max(2, Math.floor(h2s.length * 2 / 3));
-        if (h2s.length > idx) prose.insertBefore(mk(b2, b2a), h2s[idx]);
+        if (h2s.length > idx) prose.insertBefore(mk(b2, b2a, b2s), h2s[idx]);
       }
     })();
   </script>
