@@ -86,7 +86,7 @@ Die folgende Demonstration dauert knapp zwei Minuten und zeigt gesprochenes Deut
 | **Zeichensetzung** | Automatisch, zusätzlich per Sprachbefehl steuerbar |
 | **Offline-Betrieb** | Nein — Internetverbindung erforderlich |
 | **Kostenloser Tarif** | 20 Minuten pro Monat, ohne Kreditkarte, unbefristet |
-| **Preise** | Personal 99 USD/Jahr, Professional 159 USD/Jahr, Medical 439 USD/Jahr |
+| **Preise** | Personal 99 USD/Jahr, Professional 159 USD/Jahr, Medical Ultra 439 USD/Jahr |
 | **macOS / iPad** | Nicht verfügbar |
 
 *Stand: August 2026. Angaben zum Zeitpunkt der Veröffentlichung.*

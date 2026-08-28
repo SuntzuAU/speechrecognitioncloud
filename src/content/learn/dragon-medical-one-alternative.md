@@ -15,9 +15,9 @@ faq:
   - q: "Is my patient data safe?"
     a: "Audio is processed and immediately erased, transcribed text is delivered to your cursor and not stored on our servers, your transcript history stays on your own computer, and your data is never used to train AI models."
   - q: "What does it cost, and is there a trial?"
-    a: "The Medical plan is US$439/year, flat, per clinician, with a free 30-day Medical Ultra trial so you can test it in your real workflow before paying."
+    a: "The Medical Ultra plan is US$439/year, flat, per clinician, with a free 30-day Medical Ultra trial so you can test it in your real workflow before paying."
   - q: "What are the limitations?"
-    a: "The desktop app is Windows-only, the Medical tier is English-only, and it needs an internet connection — the trade for always-current accuracy and no voice training."
+    a: "The desktop app is Windows-only, the Medical Ultra tier is English-only, and it needs an internet connection — the trade for always-current accuracy and no voice training."
 context: "descriptive"
 youtubeId: "4rlay0Zx660"
 heroImageAlt: "Doctor dictating clinical notes into a headset at a Windows laptop"
@@ -58,7 +58,7 @@ Speech Recognition Cloud is cursor-based dictation for Windows. You put your cur
 
 The important part for clinicians is *how* it reaches your EMR. SRC dictates at the cursor at the operating-system level — not as a per-EMR plugin or integration — so it works in every Windows-based clinical system without certification or setup for each one. That includes Best Practice, Medical Director, Genie, Zedmed, Communicare and Helix in Australia; EMIS Web, SystmOne and Vision in the UK; and Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks and NextGen in the US.
 
-The **Medical** plan adds a continuously updated medical vocabulary — drug names, anatomical terminology, eponyms, procedural language — plus an Ultra Accuracy clinical mode, dedicated remote support and one-on-one training, for a flat **US$439/year**. It's English-only, and by deliberate design it restricts the AI "modes" available on other tiers, so nothing is quietly analysing or storing your consultations.
+The **Medical Ultra** plan adds a continuously updated medical vocabulary — drug names, anatomical terminology, eponyms, procedural language — plus an Ultra Accuracy clinical mode, dedicated remote support and one-on-one training, for a flat **US$439/year**. It's English-only, and by deliberate design it restricts the AI "modes" available on other tiers, so nothing is quietly analysing or storing your consultations.
 
 ## Dragon Medical One vs Speech Recognition Cloud at a glance
 
@@ -70,7 +70,7 @@ The **Medical** plan adds a continuously updated medical vocabulary — drug nam
 | **Dictation style** | Speak, then the finished, punctuated paragraph appears with full-sentence context | Real-time, word-by-word as you speak |
 | **AI / ambient notes** | Restricted by design on Medical — private, verbatim dictation only | Optional ambient AI assistant (Dragon Copilot) |
 | **Privacy** | Audio erased after transcription; text not stored on our servers; never used to train AI | Cloud processing; enterprise security |
-| **Platform** | Windows 10/11; English (Medical tier) | Windows; broad clinical language models |
+| **Platform** | Windows 10/11; English (Medical Ultra tier) | Windows; broad clinical language models |
 | **Best fit** | Solo & small-practice clinicians, specialists, allied health | Large hospital systems on Epic/Cerner needing deep integration or ambient AI |
 | **Try before you buy** | Free 30-day Medical Ultra trial | Via reseller / enterprise process |
 
@@ -78,7 +78,7 @@ The **Medical** plan adds a continuously updated medical vocabulary — drug nam
 
 - **You want one predictable price.** US$439 for the year, not a per-seat monthly line item that grows with your headcount.
 - **You're not on Epic or Cerner.** Because SRC types at the cursor in any Windows application, it sidesteps the "does it integrate with my EMR?" question entirely — it works in your practice-management system, your letters, your results inbox and your web forms alike.
-- **You want dictation, full stop — not AI in the room.** SRC's Medical tier keeps AI modes off by design. Your voice becomes text and nothing more; there's no ambient model interpreting the encounter.
+- **You want dictation, full stop — not AI in the room.** SRC's Medical Ultra tier keeps AI modes off by design. Your voice becomes text and nothing more; there's no ambient model interpreting the encounter.
 - **You want to be running in minutes.** A two-minute install, no voice profile, no IT project.
 - **You want to try it for real first.** The free 30-day Medical Ultra trial lets you test it in your actual workflow, in your actual EMR, before you pay anything.
 
@@ -88,19 +88,19 @@ Being straight about it: if you're part of a hospital or large group built aroun
 
 ## The privacy difference — and an honest word on HIPAA
 
-Clinical software increasingly wants to listen to the whole visit. That has real upside for some workflows and real questions for others. Speech Recognition Cloud's Medical tier answers those questions by not participating: it dictates, it doesn't interpret. Audio is processed and erased immediately, your transcribed text is delivered to your cursor and not stored on our servers, your transcript history stays on your own computer, and your data is never used to train AI models.
+Clinical software increasingly wants to listen to the whole visit. That has real upside for some workflows and real questions for others. Speech Recognition Cloud's Medical Ultra tier answers those questions by not participating: it dictates, it doesn't interpret. Audio is processed and erased immediately, your transcribed text is delivered to your cursor and not stored on our servers, your transcript history stays on your own computer, and your data is never used to train AI models.
 
 One thing we won't do is claim SRC is "HIPAA compliant" as a product, because compliance is a property of a *deployment*, not a piece of software — a distinction any serious vendor should make. What we can tell you is exactly how the software handles your audio and text, which is the part under our control. You can read the full detail on our [privacy and security page](/privacy).
 
 ## What it costs
 
-Speech Recognition Cloud Medical is **US$439/year**, flat, for one clinician — unlimited dictation, the medical vocabulary, Ultra Accuracy clinical mode, the companion mobile app, dedicated support and one-on-one training. Prices are shown in US dollars and convert to your local currency at checkout; Australian customers see an AUD price with GST included. Cancel anytime; there are no lock-in contracts.
+Speech Recognition Cloud Medical Ultra is **US$439/year**, flat, for one clinician — unlimited dictation, the medical vocabulary, Ultra Accuracy clinical mode, the companion mobile app, dedicated support and one-on-one training. Prices are shown in US dollars and convert to your local currency at checkout; Australian customers see an AUD price with GST included. Cancel anytime; there are no lock-in contracts.
 
-At US$99 per clinician per month — about US$1,188 a year — Dragon Medical One runs well over double SRC Medical's flat US$439, and it keeps billing every month. For individuals and small practices, a single flat annual fee is usually both the cheaper and the more predictable path.
+At US$99 per clinician per month — about US$1,188 a year — Dragon Medical One runs well over double SRC Medical Ultra's flat US$439, and it keeps billing every month. For individuals and small practices, a single flat annual fee is usually both the cheaper and the more predictable path.
 
 ## An honest trade-off or two
 
-Because SRC is cloud-based, it needs an internet connection — that's the trade for always-current accuracy, no local training and never falling out of step with Windows. The desktop application is Windows-only (the companion mobile app helps Mac-based clinicians dictate into a Windows EMR session), and the Medical tier is English-only. For almost everyone working at a desk or in a clinic, none of that is a barrier — but you should know it going in.
+Because SRC is cloud-based, it needs an internet connection — that's the trade for always-current accuracy, no local training and never falling out of step with Windows. The desktop application is Windows-only (the companion mobile app helps Mac-based clinicians dictate into a Windows EMR session), and the Medical Ultra tier is English-only. For almost everyone working at a desk or in a clinic, none of that is a barrier — but you should know it going in.
 
 ## Who built it
 
@@ -127,10 +127,10 @@ No. There's no voice profile and no calibration. Install it and start dictating;
 Audio is processed and immediately erased, transcribed text is delivered to your cursor and not stored on our servers, your transcript history stays on your own computer, and your data is never used to train AI models.
 
 **What does it cost, and is there a trial?**
-The Medical plan is US$439/year, flat, per clinician, with a free 30-day Medical Ultra trial so you can test it in your real workflow before paying.
+The Medical Ultra plan is US$439/year, flat, per clinician, with a free 30-day Medical Ultra trial so you can test it in your real workflow before paying.
 
 **What are the limitations?**
-The desktop app is Windows-only, the Medical tier is English-only, and it needs an internet connection — the trade for always-current accuracy and no voice training.
+The desktop app is Windows-only, the Medical Ultra tier is English-only, and it needs an internet connection — the trade for always-current accuracy and no voice training.
 
 ### Related reading
 
@@ -139,4 +139,4 @@ The desktop app is Windows-only, the Medical tier is English-only, and it needs 
 - [Dictation for clinicians](/medical)
 - [Dictation for healthcare teams](/healthcare)
 - [The best Dragon Professional 16 alternative in 2026](/learn/dragon-professional-16-alternative)
-- [Medical plan pricing](/pricing)
+- [Medical Ultra plan pricing](/pricing)

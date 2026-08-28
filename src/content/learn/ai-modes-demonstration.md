@@ -1,7 +1,7 @@
 ---
 title: "AI Modes: rewrite, summarise, and transform text by voice"
 date: "2026-03-23"
-description: "Watch how AI Modes in Speech Recognition Cloud let you rewrite emails, summarise documents, change tone, translate, and complete tasks without leaving your dictation workflow. Available on Professional and Medical tiers."
+description: "Watch how AI Modes in Speech Recognition Cloud let you rewrite emails, summarise documents, change tone, translate, and complete tasks without leaving your dictation workflow. Available on Professional and Medical Ultra tiers."
 type: "video"
 seoTitle: "AI Modes: Rewrite & Summarise Text by Voice"
 seoDescription: "See how AI Modes rewrite emails, summarise documents, change tone and translate by voice, without leaving the app you are working in."
@@ -36,11 +36,11 @@ For example, you might say:
 
 The AI processes your instruction and places the result at your cursor, just like regular dictation.
 
-## Available on Professional and Medical tiers
+## Available on Professional and Medical Ultra tiers
 
-AI Modes are included with the **Professional** ($159/year) and **Medical** ($439/year) plans. They are not available on the Free or Personal tiers.
+AI Modes are included with the **Professional** ($159/year) and **Medical Ultra** ($439/year) plans. They are not available on the Free or Personal tiers.
 
-The Medical tier includes **restricted AI modes** that limit processing to approved clinical transformations only, providing an additional layer of privacy for healthcare environments.
+The Medical Ultra tier includes **restricted AI modes** that limit processing to approved clinical transformations only, providing an additional layer of privacy for healthcare environments.
 
 To [Professional plan pricing](/pricing) and see all the features included at each tier, visit the pricing page.
 
@@ -60,7 +60,7 @@ To [Professional plan pricing](/pricing) and see all the features included at ea
 
 ## How to get started with AI Modes
 
-1. Make sure you are on the Professional or Medical plan
+1. Make sure you are on the Professional or Medical Ultra plan
 2. Copy any text you want to work with to your clipboard (optional — some modes work without clipboard content)
 3. Press your hotkey to start recording
 4. Speak your instruction naturally (e.g. "rewrite this in a formal tone")

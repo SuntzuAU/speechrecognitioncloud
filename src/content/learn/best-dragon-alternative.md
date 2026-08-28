@@ -91,7 +91,7 @@ Dragon pricing above is approximate and varies by vendor, territory, subscriptio
 | **Starter** | <span class="st st-live">Free</span> | 20 minutes per month, core features, no credit card, no expiry |
 | **Personal / Educational** | US$99/yr | Unlimited dictation, 57 languages |
 | **Professional** | <span class="st st-best">US$159/yr</span> | Unlimited dictation, optional AI Modes, mobile companion app |
-| **Medical** | US$439/yr | Clinical vocabulary, mobile app, AI Modes excluded by design |
+| **Medical Ultra** | US$439/yr | Clinical vocabulary, mobile app, AI Modes excluded by design |
 
 All plans are licensed per person with no limit on the number of computers. Prices display in US dollars and convert to your local currency at checkout. See [speech to text software pricing](/pricing) for full plan details.
 
@@ -130,13 +130,13 @@ The vendor's stated migration path is [Dragon Professional v16](https://dragonpr
 
 ### I am a clinician on Dragon Medical One
 
-At roughly US$1,188 per clinician per year, Dragon Medical One is the most expensive product in the range. Speech Recognition Cloud Medical is US$439 a year, includes clinical vocabulary and a mobile companion app, and excludes [AI Modes](/support/ai-modes) entirely by design for patient privacy — there is a [demonstration of what AI Modes do](/learn/ai-modes-demonstration) if you want to see what is being excluded. See the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison and [dictation for clinicians](/medical).
+At roughly US$1,188 per clinician per year, Dragon Medical One is the most expensive product in the range. Speech Recognition Cloud Medical Ultra is US$439 a year, includes clinical vocabulary and a mobile companion app, and excludes [AI Modes](/support/ai-modes) entirely by design for patient privacy — there is a [demonstration of what AI Modes do](/learn/ai-modes-demonstration) if you want to see what is being excluded. See the [Dragon Medical One alternative](/learn/dragon-medical-one-alternative) comparison and [dictation for clinicians](/medical).
 
 Speech Recognition Cloud is designed to assist documentation workflows. It is not a medical device and makes no clinical claims.
 
 ### I used Dragon Anywhere on my phone
 
-It went end of sale on 30 June 2026; existing users can renew on a pro rata basis until 30 June 2027, but no new subscriptions are available. Speech Recognition Cloud includes a [mobile companion app](/support/mobile-setup) on the Professional and Medical plans — usable as a wireless microphone for your PC, or in Voice Notes mode for dictating away from your desk.
+It went end of sale on 30 June 2026; existing users can renew on a pro rata basis until 30 June 2027, but no new subscriptions are available. Speech Recognition Cloud includes a [mobile companion app](/support/mobile-setup) on the Professional and Medical Ultra plans — usable as a wireless microphone for your PC, or in Voice Notes mode for dictating away from your desk.
 
 ## How much is the difference over three years?
 
@@ -148,7 +148,7 @@ Over three years, per person, at the approximate figures above:
 <div class="k bad"><p class="k-l">Dragon Medical One</p><p class="k-v">~US$3,560</p></div>
 <div class="k"><p class="k-l">Dragon Professional 16</p><p class="k-v">~US$700</p></div>
 <div class="k win"><p class="k-l">Speech Recognition Cloud Professional</p><p class="k-v">US$477</p></div>
-<div class="k win"><p class="k-l">Speech Recognition Cloud Medical</p><p class="k-v">US$1,317</p></div>
+<div class="k win"><p class="k-l">Speech Recognition Cloud Medical Ultra</p><p class="k-v">US$1,317</p></div>
 </div>
 
 For one person the gap is roughly US$1,200. For a team of four it is close to US$5,000 over three years.
@@ -169,7 +169,7 @@ If any of those are requirements for your deployment, Speech Recognition Cloud i
 
 Audio is processed in memory and erased immediately; it is not written to disk on our servers. Transcribed text is not stored on our servers. Data is not used to train AI models. The only item retained is an encrypted email address for the account.
 
-We do not describe the product as compliant with any particular framework, because compliance is a property of a deployment — your policies, your network, your risk assessment — rather than a property of software. The Medical plan excludes AI Modes entirely by design. Practitioners should make their own assessment against their obligations. See [dictation for legal work](/legal).
+We do not describe the product as compliant with any particular framework, because compliance is a property of a deployment — your policies, your network, your risk assessment — rather than a property of software. The Medical Ultra plan excludes AI Modes entirely by design. Practitioners should make their own assessment against their obligations. See [dictation for legal work](/legal).
 
 ## Frequently asked questions
 

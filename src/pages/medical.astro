@@ -25,7 +25,7 @@ const faqItems = [
   },
   {
     question: "Is Speech Recognition Cloud HIPAA-compliant?",
-    answer: "HIPAA compliance is a property of a deployment, not a software product — it depends on how the tool is used, what data flows occur, and what agreements are in place between the covered entity and any service providers. What we can tell you about Speech Recognition Cloud Medical is the underlying data handling: audio is processed in memory only and immediately erased after transcription, transcripts are delivered to the cursor on your own computer and never stored on our servers, our staff cannot access audio or transcripts, and AI Modes are excluded by design from the Medical tier to keep the data path as narrow as possible. US clinicians and practice administrators should review our privacy statement against their own HIPAA Security Risk Analysis before deploying."
+    answer: "HIPAA compliance is a property of a deployment, not a software product — it depends on how the tool is used, what data flows occur, and what agreements are in place between the covered entity and any service providers. What we can tell you about Speech Recognition Cloud Medical Ultra is the underlying data handling: audio is processed in memory only and immediately erased after transcription, transcripts are delivered to the cursor on your own computer and never stored on our servers, our staff cannot access audio or transcripts, and AI Modes are excluded by design from the Medical Ultra tier to keep the data path as narrow as possible. US clinicians and practice administrators should review our privacy statement against their own HIPAA Security Risk Analysis before deploying."
   },
   {
     question: "Can I use it for telehealth consultations?",
@@ -56,8 +56,8 @@ const faqItems = [
     answer: "Medical Ultra is free for 30 days with full functionality. After that the software reverts to the non-medical Free tier (20 minutes of dictation per month, general vocabulary, no medical mode) unless you upgrade to a paid plan. There is no automatic charge — your card is not held, nothing renews silently. You either choose to upgrade or the software remains on the free tier."
   },
   {
-    question: "I am a solo practitioner — is the Medical plan overkill for me?",
-    answer: "It depends on how much you dictate. The Medical plan is $439 USD per year for unlimited dictation with the medical vocabulary, ultra-accuracy mode, dedicated support, and one-on-one training. A solo GP doing 25–30 consults a day with a notes-heavy workflow typically finds the cost recovers itself in time saved within the first month. A specialist doing fewer but longer consultations, or a clinician who writes most notes from templates anyway, may find the Professional plan ($159 USD per year) with general vocabulary is enough. The 30-day Medical trial is the honest answer — try it on your real workflow and see what you actually need."
+    question: "I am a solo practitioner — is the Medical Ultra plan overkill for me?",
+    answer: "It depends on how much you dictate. The Medical Ultra plan is $439 USD per year for unlimited dictation with the medical vocabulary, ultra-accuracy mode, dedicated support, and one-on-one training. A solo GP doing 25–30 consults a day with a notes-heavy workflow typically finds the cost recovers itself in time saved within the first month. A specialist doing fewer but longer consultations, or a clinician who writes most notes from templates anyway, may find the Professional plan ($159 USD per year) with general vocabulary is enough. The 30-day Medical Ultra trial is the honest answer — try it on your real workflow and see what you actually need."
   }
 ];
 
@@ -150,7 +150,7 @@ const howToSchema = {
   "tool": [
     { "@type": "HowToTool", "name": "Windows 10 or Windows 11 computer" },
     { "@type": "HowToTool", "name": "USB headset or smartphone as wireless microphone" },
-    { "@type": "HowToTool", "name": "Speech Recognition Cloud Medical (30-day trial)" }
+    { "@type": "HowToTool", "name": "Speech Recognition Cloud Medical Ultra (30-day trial)" }
   ],
   "step": howToSteps.map((s, i) => ({
     "@type": "HowToStep",
@@ -163,12 +163,12 @@ const howToSchema = {
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Speech Recognition Cloud Medical",
+  "name": "Speech Recognition Cloud Medical Ultra",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Windows 10, Windows 11",
   "offers": [
     { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Medical Ultra — 30-day free trial" },
-    { "@type": "Offer", "price": "439", "priceCurrency": "USD", "description": "Medical — annual" }
+    { "@type": "Offer", "price": "439", "priceCurrency": "USD", "description": "Medical Ultra — annual" }
   ]
 };
 
@@ -197,7 +197,7 @@ const icons = {
       <div class="m-hero-text">
         <p class="eyebrow">FOR CLINICIANS</p>
         <h1 class="m-h1">Medical Dictation Software for Windows EMRs</h1>
-        <p class="m-lead">Verbatim voice dictation for Windows-based EMRs and clinical applications. $439 USD per year for the Medical plan. Free 30-day trial. Built and supported by a 28-year specialist in Australian healthcare voice technology.</p>
+        <p class="m-lead">Verbatim voice dictation for Windows-based EMRs and clinical applications. $439 USD per year for the Medical Ultra plan. Free 30-day trial. Built and supported by a 28-year specialist in Australian healthcare voice technology.</p>
         <div class="m-trial-inline" id="trial-inline">
           <p class="m-trial-inline-title">Start your free 30-day Medical Ultra trial</p>
           <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate class="m-trial-form">
@@ -250,7 +250,7 @@ const icons = {
     <div class="container m-prose">
       <h2>What is Speech Recognition Cloud for clinicians?</h2>
       <p><strong>Speech Recognition Cloud is verbatim voice dictation software for Windows 10 and Windows 11, built specifically for clinicians.</strong> A clinician speaks into a microphone, the words appear at the cursor in whatever Windows application is open — an EMR, Microsoft Word, Outlook, Teams, a hospital intranet form, a clinical portal. It has a continuously updated medical vocabulary covering drug names, anatomical terminology, eponyms, and procedural language.</p>
-      <p>The Medical plan is $439 USD per year. The free 30-day trial includes full Medical Ultra functionality. It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian hospitals, GP practices, specialist clinics, and government health departments — with customers in the US, UK, Canada, New Zealand, and across Europe.</p>
+      <p>The Medical Ultra plan is $439 USD per year. The free 30-day trial includes full Medical Ultra functionality. It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian hospitals, GP practices, specialist clinics, and government health departments — with customers in the US, UK, Canada, New Zealand, and across Europe.</p>
 
       <div class="data-table-wrap">
         <table class="data-table">
@@ -282,9 +282,9 @@ const icons = {
   <!-- HOW MUCH DOES IT COST? -->
   <section class="section-pad section-neutral">
     <div class="container m-prose">
-      <h2>How much does Speech Recognition Cloud Medical cost?</h2>
-      <p><strong>Speech Recognition Cloud Medical costs $439 USD per year</strong>, with a free 30-day trial of full Medical Ultra functionality. That includes unlimited dictation, the medical vocabulary, ultra-accuracy clinical mode, the companion mobile app, dedicated support, and one-on-one training. After the trial, the software reverts to the non-medical Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently.</p>
-      <p>For a solo GP doing 25–30 notes-heavy consults a day, the cost typically recovers itself in time saved within the first month. For specialists doing fewer but longer consultations, or clinicians whose notes are mostly templated, the lower-tier Professional plan ($159 USD per year) with general vocabulary is often enough. The 30-day Medical trial is the honest answer to "which plan do I need" — try it on your real workflow and see.</p>
+      <h2>How much does Speech Recognition Cloud Medical Ultra cost?</h2>
+      <p><strong>Speech Recognition Cloud Medical Ultra costs $439 USD per year</strong>, with a free 30-day trial of full Medical Ultra functionality. That includes unlimited dictation, the medical vocabulary, ultra-accuracy clinical mode, the companion mobile app, dedicated support, and one-on-one training. After the trial, the software reverts to the non-medical Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently.</p>
+      <p>For a solo GP doing 25–30 notes-heavy consults a day, the cost typically recovers itself in time saved within the first month. For specialists doing fewer but longer consultations, or clinicians whose notes are mostly templated, the lower-tier Professional plan ($159 USD per year) with general vocabulary is often enough. The 30-day Medical Ultra trial is the honest answer to "which plan do I need" — try it on your real workflow and see.</p>
       <p>For the full plan breakdown, see the <a href="/pricing" class="m-link">pricing page</a>.</p>
     </div>
   </section>
@@ -344,7 +344,7 @@ const icons = {
         <li><strong>Internal team correspondence.</strong> Inside Microsoft Teams, Outlook, the messaging panes in EMRs that have them, or any other Windows messaging surface — SRC dictates at the cursor in all of them.</li>
         <li><strong>Difficult correspondence.</strong> Complaint responses, condolence letters, sensitive disclosures to families, replies to medicolegal queries. The pattern most clinicians find works: dictate a full draft into a Word document, leave it for an hour, read it back, then paste it into the destination. The draft-and-cool-off pattern is much faster when the draft is dictated than when it is typed, and the resulting tone tends to be warmer.</li>
       </ul>
-      <p>Clinical correspondence is also where the AI Modes <em>exclusion</em> on the Medical plan matters. The Medical tier deliberately does not include the AI Modes (Write, Rewrite, Answer, Reply, Run Command) that are available on the Professional plan. The reason is straightforward: AI Modes send the text you are working with to an external model for rewriting or answering, and in clinical correspondence that means sending patient-identifiable content into a generative AI flow. The Medical plan removes that data path entirely. What you dictate is what you get — verbatim, no AI generation step.</p>
+      <p>Clinical correspondence is also where the AI Modes <em>exclusion</em> on the Medical Ultra plan matters. The Medical Ultra tier deliberately does not include the AI Modes (Write, Rewrite, Answer, Reply, Run Command) that are available on the Professional plan. The reason is straightforward: AI Modes send the text you are working with to an external model for rewriting or answering, and in clinical correspondence that means sending patient-identifiable content into a generative AI flow. The Medical Ultra plan removes that data path entirely. What you dictate is what you get — verbatim, no AI generation step.</p>
     </div>
   </section>
 
@@ -410,7 +410,7 @@ const icons = {
       <div class="m-regional-panel" style="margin-top:24px">
         <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
         <h2>Is Speech Recognition Cloud HIPAA compliant for US clinicians?</h2>
-        <p><strong>Speech Recognition Cloud's data handling supports HIPAA-compliant deployment, but HIPAA compliance itself is a property of a <em>deployment</em>, not a software product</strong> — it depends on how the tool is used and what agreements are in place between the covered entity and any service providers. Audio is processed in memory only and immediately erased, transcripts are never stored on our servers, our staff cannot access audio or transcripts, all connections are encrypted in transit, and AI Modes are excluded from the Medical tier by design. US clinicians and practice administrators should review our privacy statement against their own Security Risk Analysis before deploying.</p>
+        <p><strong>Speech Recognition Cloud's data handling supports HIPAA-compliant deployment, but HIPAA compliance itself is a property of a <em>deployment</em>, not a software product</strong> — it depends on how the tool is used and what agreements are in place between the covered entity and any service providers. Audio is processed in memory only and immediately erased, transcripts are never stored on our servers, our staff cannot access audio or transcripts, all connections are encrypted in transit, and AI Modes are excluded from the Medical Ultra tier by design. US clinicians and practice administrators should review our privacy statement against their own Security Risk Analysis before deploying.</p>
 
         <p><strong>US EMRs.</strong> The cursor-based approach works inside Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks, NextGen, Allscripts (Veradigm), Practice Fusion, and the other major US clinical systems. The same caveats apply: no per-EMR certification, no plugin, no per-system configuration. SRC dictates at the cursor in the Windows desktop application, the browser-based portal, or wherever your clinical workflow puts text input.</p>
 
@@ -431,7 +431,7 @@ const icons = {
 
         <p><strong>EU GDPR.</strong> The data-flow position is the same across the EU under GDPR — health data is special category data under Article 9, the lawful basis for processing is provided through the clinician's relationship with the patient, and the data-handling questions for cloud dictation are the same as in the UK. EU-based clinicians should confirm with their national data-protection authority and their practice's data-protection officer whether SRC's data flows align with their organisation's processing register.</p>
 
-        <p><strong>Languages and the EU.</strong> The non-medical Speech Recognition Cloud tiers support 57 languages, which makes it useful for the broader administrative and correspondence work of European clinicians working in their native language. The Medical tier is currently English-only — the specialised medical vocabulary is only available in English at present.</p>
+        <p><strong>Languages and the EU.</strong> The non-medical Speech Recognition Cloud tiers support 57 languages, which makes it useful for the broader administrative and correspondence work of European clinicians working in their native language. The Medical Ultra tier is currently English-only — the specialised medical vocabulary is only available in English at present.</p>
       </div>
 
     </div>
@@ -464,7 +464,7 @@ const icons = {
       <p>Patient surnames that do not transcribe correctly on first pass, your colleagues' names, local hospital ward names, any specialty-specific abbreviations your team uses, and the small handful of drug names the medical vocabulary does not catch first time — add them to your personal vocabulary as you go. Five minutes of vocabulary-building in your first session saves hours of corrections across the clinical year.</p>
 
       <h4>Save your standard clinical phrases as templates</h4>
-      <p>The standard opening for a new-patient consult, the wording you use for medication reviews, the formula for a routine post-operative follow-up, the boilerplate around a referral — save each as a named template you can insert with a short voice command. The personalised middle of each note is what you dictate; the standard scaffolding is one command. Templates and text replacements are available on the Professional and Medical plans.</p>
+      <p>The standard opening for a new-patient consult, the wording you use for medication reviews, the formula for a routine post-operative follow-up, the boilerplate around a referral — save each as a named template you can insert with a short voice command. The personalised middle of each note is what you dictate; the standard scaffolding is one command. Templates and text replacements are available on the Professional and Medical Ultra plans.</p>
 
       <h4>Draft first, polish later</h4>
       <p>Do not try to dictate a perfect first sentence. Dictate the rough version of the whole note, then read it back and tighten the bits that need tightening. Trying to speak polished prose in real time slows almost everyone down — and clinical notes do not need to be polished prose. They need to be accurate, complete, and timely.</p>
@@ -493,7 +493,7 @@ const icons = {
           <div class="benefit-icon" set:html={icons.phone} />
           <div>
             <h3>Your phone becomes a wireless microphone</h3>
-            <p class="muted">The Medical plan includes a companion app for iPhone and Android that turns your smartphone into a wireless microphone for SRC on your PC. In hospital environments this eliminates shared desktop microphones entirely — no hygiene concerns, no theft, no cleaning protocols. The app also tunnels audio through remote desktop connections, so a clinician on a Mac remoting into a Windows EMR machine can dictate normally without additional hardware.</p>
+            <p class="muted">The Medical Ultra plan includes a companion app for iPhone and Android that turns your smartphone into a wireless microphone for SRC on your PC. In hospital environments this eliminates shared desktop microphones entirely — no hygiene concerns, no theft, no cleaning protocols. The app also tunnels audio through remote desktop connections, so a clinician on a Mac remoting into a Windows EMR machine can dictate normally without additional hardware.</p>
           </div>
         </div>
 
@@ -533,7 +533,7 @@ const icons = {
           <div class="benefit-icon" set:html={icons.text} />
           <div>
             <h3>Text replacements and clinical templates</h3>
-            <p class="muted">Save acronyms, organisation names, or complete boilerplate text sections that expand on voice command. If you regularly dictate the same referral framing, discharge sections, or standard clinical phrases, you can trigger them with a short spoken keyword instead of dictating them from scratch every time. Available on the Professional and Medical plans.</p>
+            <p class="muted">Save acronyms, organisation names, or complete boilerplate text sections that expand on voice command. If you regularly dictate the same referral framing, discharge sections, or standard clinical phrases, you can trigger them with a short spoken keyword instead of dictating them from scratch every time. Available on the Professional and Medical Ultra plans.</p>
           </div>
         </div>
 
@@ -549,7 +549,7 @@ const icons = {
           <div class="benefit-icon" set:html={icons.dollar} />
           <div>
             <h3>One third the cost of legacy medical dictation</h3>
-            <p class="muted">Speech Recognition Cloud Medical is $439 USD per year. That is roughly a third of the cost of established legacy clinical dictation products. There are no upgrade fees, no serial numbers, no version compatibility headaches, and no per-seat infrastructure costs. The cloud-based model means you always have the latest version without paying for major upgrades.</p>
+            <p class="muted">Speech Recognition Cloud Medical Ultra is $439 USD per year. That is roughly a third of the cost of established legacy clinical dictation products. There are no upgrade fees, no serial numbers, no version compatibility headaches, and no per-seat infrastructure costs. The cloud-based model means you always have the latest version without paying for major upgrades.</p>
           </div>
         </div>
       </div>
@@ -609,7 +609,7 @@ const icons = {
   <section class="section-pad section-dark">
     <div class="container text-center" style="max-width:600px">
       <h2 style="margin-bottom:12px">Your voice, vocabulary, and patient data are never stored or shared</h2>
-      <p class="muted" style="margin-bottom:32px">Audio is processed in the cloud and immediately erased. No recordings saved. No data used for training. All connections encrypted. AI Modes excluded from the Medical tier by design.</p>
+      <p class="muted" style="margin-bottom:32px">Audio is processed in the cloud and immediately erased. No recordings saved. No data used for training. All connections encrypted. AI Modes excluded from the Medical Ultra tier by design.</p>
       <a href="/privacy" style="color:var(--dark-accent);font-weight:600">Read our privacy policy &rarr;</a>
     </div>
   </section>

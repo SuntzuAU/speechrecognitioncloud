@@ -37,7 +37,7 @@ You can switch between languages at any time. There is no need to create separat
 
 ## Supported languages
 
-Speech Recognition Cloud currently supports 57 languages on the Free, Personal, and Professional plans. The Medical tier is English only for now due to the specialised medical vocabulary requirements.
+Speech Recognition Cloud currently supports 57 languages on the Free, Personal, and Professional plans. The Medical Ultra tier is English only for now due to the specialised medical vocabulary requirements.
 
 If you are new to Speech Recognition Cloud, start with the [getting started guide](/learn/getting-started-setup-microphone) to download, install, and configure your microphone.
 

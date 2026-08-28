@@ -20,7 +20,7 @@ const europeCount = languages.filter(l => l.region === 'Europe').length;
 const faq = [
   {
     question: 'How many languages does Speech Recognition Cloud support?',
-    answer: `Speech Recognition Cloud supports ${total} languages on the Free, Personal, and Professional plans. The full list is published on this page. The Medical plan is English only, because the specialised medical vocabularies are built for English clinical terminology.`
+    answer: `Speech Recognition Cloud supports ${total} languages on the Free, Personal, and Professional plans. The full list is published on this page. The Medical Ultra plan is English only, because the specialised medical vocabularies are built for English clinical terminology.`
   },
   {
     question: 'Do I need a different plan or licence for another language?',
@@ -35,8 +35,8 @@ const faq = [
     answer: 'No. The application interface is in English. The language setting controls the language you dictate in, not the language of the menus and settings.'
   },
   {
-    question: 'Does the Medical plan support other languages?',
-    answer: 'No. The Medical plan is English only. Medical vocabularies covering drug names, anatomical terminology, eponyms, and procedural language are built for English clinical documentation. Clinicians who need to dictate in another language should use the Professional plan.'
+    question: 'Does the Medical Ultra plan support other languages?',
+    answer: 'No. The Medical Ultra plan is English only. Medical vocabularies covering drug names, anatomical terminology, eponyms, and procedural language are built for English clinical documentation. Clinicians who need to dictate in another language should use the Professional plan.'
   },
   {
     question: 'Does automatic punctuation work in every language?',
@@ -44,7 +44,7 @@ const faq = [
   },
   {
     question: 'Can I add my own words and terminology in another language?',
-    answer: 'Yes. Custom vocabulary and text replacements are available on Personal, Professional, and Medical plans, and can be maintained per language. Add names, technical terms, and jargon in whichever language you dictate in.'
+    answer: 'Yes. Custom vocabulary and text replacements are available on Personal, Professional, and Medical Ultra plans, and can be maintained per language. Add names, technical terms, and jargon in whichever language you dictate in.'
   }
 ];
 
@@ -125,7 +125,7 @@ const extraSchema = [
     <div class="container" style="max-width:900px">
       <h2 style="margin-bottom:8px">Full list of supported languages</h2>
       <p class="muted" style="margin-bottom:24px">
-        All {total} languages below are available on the Free, Personal, and Professional plans. The Medical plan is English only.
+        All {total} languages below are available on the Free, Personal, and Professional plans. The Medical Ultra plan is English only.
       </p>
       <table class="lang-table">
         <thead>

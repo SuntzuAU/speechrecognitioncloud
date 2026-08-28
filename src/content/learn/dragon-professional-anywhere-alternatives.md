@@ -17,7 +17,7 @@ faq:
   - q: "Does this affect Dragon Medical One?"
     a: "Dragon Medical One is not on this end-of-life schedule, which covers Dragon Professional Anywhere, Dragon Professional Anywhere Legal and Dragon Anywhere Mobile. Clinicians should not assume Dragon Medical One is affected on the basis of this page."
   - q: "What happened to Dragon Anywhere Mobile on my phone?"
-    a: "It went end of sale on 30 June 2026. Existing users can renew on a pro rata basis until 30 June 2027, but no new DAM-only subscriptions have been available since July 2026. It is a separate product from Dragon Professional Anywhere, the cloud-hosted desktop product; the names are frequently confused. Speech Recognition Cloud includes a mobile companion app on its Professional and Medical plans."
+    a: "It went end of sale on 30 June 2026. Existing users can renew on a pro rata basis until 30 June 2027, but no new DAM-only subscriptions have been available since July 2026. It is a separate product from Dragon Professional Anywhere, the cloud-hosted desktop product; the names are frequently confused. Speech Recognition Cloud includes a mobile companion app on its Professional and Medical Ultra plans."
   - q: "What happened to my DPA+DAM bundle?"
     a: "Existing bundles keep access to the Dragon Anywhere Mobile element until 30 June 2027, provided the subscription covers that period. Any new subscription purchased after July 2026 includes DPA or DLA only, without the mobile app."
   - q: "How reliable are these dates?"
@@ -112,7 +112,7 @@ It is worth understanding what the move actually involves, because **Dragon Prof
 | **Voice profile** | Held in the cloud, follows you | Held locally on the machine | None — no profile is created |
 | **Voice training / adaptation** | Adapts continuously | Builds and adapts a local profile | No training of any kind |
 | **Installing on several machines** | No limit | Limited under the standard licence; volume and group licensing differ | No limit — per person |
-| **Companion mobile app** | Was available via Dragon Anywhere Mobile, now end of sale | No | Yes, on Professional and Medical |
+| **Companion mobile app** | Was available via Dragon Anywhere Mobile, now end of sale | No | Yes, on Professional and Medical Ultra |
 | **Improvements** | Delivered server-side | Arrive with a new version | Delivered server-side |
 | **Works offline** | No | **Yes** | No |
 | **VDI / virtual app deployment** | Yes | Varies by deployment | No |
@@ -208,7 +208,7 @@ Not architecturally. Dragon Professional Anywhere is a cloud service; Dragon Pro
 Dragon Medical One is not on this end-of-life schedule, which covers Dragon Professional Anywhere, Dragon Professional Anywhere Legal and Dragon Anywhere Mobile. Clinicians should not assume Dragon Medical One is affected on the basis of this page.
 
 **What happened to Dragon Anywhere Mobile on my phone?**
-It went end of sale on 30 June 2026. Existing users can renew on a pro rata basis until 30 June 2027, but no new DAM-only subscriptions have been available since July 2026. It is a separate product from Dragon Professional Anywhere, the cloud-hosted desktop product; the names are frequently confused. Speech Recognition Cloud includes a mobile companion app on its Professional and Medical plans.
+It went end of sale on 30 June 2026. Existing users can renew on a pro rata basis until 30 June 2027, but no new DAM-only subscriptions have been available since July 2026. It is a separate product from Dragon Professional Anywhere, the cloud-hosted desktop product; the names are frequently confused. Speech Recognition Cloud includes a mobile companion app on its Professional and Medical Ultra plans.
 
 **What happened to my DPA+DAM bundle?**
 Existing bundles keep access to the Dragon Anywhere Mobile element until 30 June 2027, provided the subscription covers that period. Any new subscription purchased after July 2026 includes DPA or DLA only, without the mobile app.

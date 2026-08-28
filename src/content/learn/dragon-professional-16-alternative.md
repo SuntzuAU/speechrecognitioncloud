@@ -15,7 +15,7 @@ faq:
   - q: "Does it work on Windows 11?"
     a: "Yes. SRC is cloud-based and stays current with Windows, so there's no version to fall out of compatibility."
   - q: "What does it cost?"
-    a: "There's a free Starter plan, then Personal at $99/year and Professional at $159/year, both with unlimited dictation. Clinicians have a dedicated Medical plan — see our dictation for clinicians page. Prices are in USD and convert to your local currency at checkout."
+    a: "There's a free Starter plan, then Personal at $99/year and Professional at $159/year, both with unlimited dictation. Clinicians have a dedicated Medical Ultra plan — see our dictation for clinicians page. Prices are in USD and convert to your local currency at checkout."
   - q: "Does it work in the applications I already use?"
     a: "Yes — it types at the cursor in any standard Windows application, including Word, Outlook, browsers and web forms, and clinical or practice-management software."
   - q: "Do I need an internet connection?"
@@ -132,7 +132,7 @@ SRC is licensed per user, so you can install it on as many of your own computers
 Yes. SRC is cloud-based and stays current with Windows, so there's no version to fall out of compatibility.
 
 **What does it cost?**
-There's a free Starter plan, then Personal at $99/year and Professional at $159/year, both with unlimited dictation. Clinicians have a dedicated Medical plan — see our [dictation for clinicians](/medical) page. Prices are in USD and convert to your local currency at checkout.
+There's a free Starter plan, then Personal at $99/year and Professional at $159/year, both with unlimited dictation. Clinicians have a dedicated Medical Ultra plan — see our [dictation for clinicians](/medical) page. Prices are in USD and convert to your local currency at checkout.
 
 **Does it work in the applications I already use?**
 Yes — it types at the cursor in any standard Windows application, including Word, Outlook, browsers and web forms, and clinical or practice-management software.

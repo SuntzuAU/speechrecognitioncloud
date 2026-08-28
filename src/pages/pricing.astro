@@ -9,8 +9,8 @@ const pricingFaqItems = [
   { question: "What currency are prices in?", answer: "Prices are listed in USD and will convert to your local currency at checkout." },
   { question: "Can I upgrade or downgrade later?", answer: "Yes. You can upgrade at any time and your new plan starts immediately. Contact us to arrange a downgrade at your next billing cycle." },
   { question: "Do you offer volume or enterprise pricing?", answer: "Yes. Volume licensing is available for schools, universities, and institutions from 5 users upward. See our volume licensing page or contact us for a tailored quote." },
-  { question: "What is the mobile companion app?", answer: "Professional and Medical plans include a mobile companion app for iPhone and Android. It has two modes: a wireless microphone mode that uses your phone as a mic for your PC, and Voice Notes mode that lets you dictate full documents on your phone and send them to your active PC. See the mobile setup guide for instructions." },
-  { question: "Why doesn't the Medical plan include AI Modes?", answer: "AI Modes are deliberately excluded from the Medical plan to protect patient privacy. AI Modes send text to AI models for processing, which creates an unnecessary data flow when handling clinical information. The Medical plan focuses on fast, accurate dictation with specialised medical vocabularies. Professional users who do not handle clinical information get full access to AI Modes." }
+  { question: "What is the mobile companion app?", answer: "Professional and Medical Ultra plans include a mobile companion app for iPhone and Android. It has two modes: a wireless microphone mode that uses your phone as a mic for your PC, and Voice Notes mode that lets you dictate full documents on your phone and send them to your active PC. See the mobile setup guide for instructions." },
+  { question: "Why doesn't the Medical Ultra plan include AI Modes?", answer: "AI Modes are deliberately excluded from the Medical Ultra plan to protect patient privacy. AI Modes send text to AI models for processing, which creates an unnecessary data flow when handling clinical information. The Medical Ultra plan focuses on fast, accurate dictation with specialised medical vocabularies. Professional users who do not handle clinical information get full access to AI Modes." }
 ];
 
 const faqSchema = {
@@ -62,7 +62,7 @@ const extraSchema = [faqSchema];
       <div class="comparison-table-wrap">
         <table class="comparison-table">
           <thead>
-            <tr><th></th><th>Starter</th><th>Personal</th><th class="highlighted-col">Professional</th><th>Medical</th></tr>
+            <tr><th></th><th>Starter</th><th>Personal</th><th class="highlighted-col">Professional</th><th>Medical Ultra</th></tr>
           </thead>
           <tbody>
             <tr><td>Monthly usage</td><td>20 min/month</td><td>Unlimited</td><td class="highlighted-col">Unlimited</td><td>Unlimited</td></tr>

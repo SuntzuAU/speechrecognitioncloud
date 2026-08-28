@@ -76,7 +76,7 @@ Once you are comfortable with basic dictation, explore these features:
 
 - **Custom vocabulary** — add specialised terms, names, and jargon in [Settings](/support/settings)
 - **[Text replacements](/support/text-replacements)** — set up shortcuts that expand into longer phrases
-- **[AI Modes](/support/ai-modes)** — use voice commands to rewrite, summarise, or format your text (Professional and Medical tiers). There is a [walkthrough of AI Modes in action](/learn/ai-modes-demonstration) if you would rather see them demonstrated.
+- **[AI Modes](/support/ai-modes)** — use voice commands to rewrite, summarise, or format your text (Professional and Medical Ultra tiers). There is a [walkthrough of AI Modes in action](/learn/ai-modes-demonstration) if you would rather see them demonstrated.
 - **Templates** — auto-insert text blocks with a single voice command
 - **[Spoken punctuation](/support/spoken-punctuation)** — for the times you do want to dictate punctuation explicitly
 
