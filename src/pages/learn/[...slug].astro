@@ -212,15 +212,7 @@ const extraSchema = [articleSchema, ...(faqSchema ? [faqSchema] : []), ...(howto
     .callout--warn h4{color:#9A3412}
     .callout--stop h4{color:#991B1B}
 
-    /* --- key figure cards --- */
-    .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:28px 0}
-    .kpi .k{padding:18px 20px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .kpi .k.win{border-color:var(--brand);background:linear-gradient(180deg,#F5F6FE 0%,#EEF2FF 100%)}
-    .kpi .k.bad{border-color:#FDBA74;background:linear-gradient(180deg,#FFFBF5 0%,#FFF7ED 100%)}
-    .kpi .k-l{font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.45}
-    .kpi .k-v{font-size:24px;font-weight:800;margin:0;letter-spacing:-0.025em;color:var(--text)}
-    .kpi .k.win .k-v{color:var(--brand)}
-    .kpi .k.bad .k-v{color:#C2410C}
+    /* key figure cards: canonical styles live in BaseLayout.astro */
 
     /* --- article rhythm --- */
     .article-body h2{padding-top:6px;border-top:1px solid var(--border);margin-top:44px}
