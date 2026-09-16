@@ -5,6 +5,7 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 
 const imgBase = `${R2}/speechrecognitioncloud/2026/03/19`;
 const newImgBase = `${R2}/speechrecognitioncloud/2026/05/16`;
+const sepImgBase = `${R2}/speechrecognitioncloud/2026/09/16`;
 
 const pageUrl = site.siteUrl + '/medical';
 const lastReviewed = '2026-08-16';
@@ -200,7 +201,7 @@ const icons = {
         <p class="m-lead">Verbatim voice dictation for Windows-based EMRs and clinical applications. $439 USD per year for the Medical Ultra plan. Free 30-day trial. Built and supported by a 28-year specialist in Australian healthcare voice technology.</p>
         <div class="m-trial-inline" id="trial-inline">
           <p class="m-trial-inline-title">Start your free 30-day Medical Ultra trial</p>
-          <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate class="m-trial-form">
+          <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate class="m-trial-form ac-form-293">
             <input type="hidden" name="u" value="293" />
             <input type="hidden" name="f" value="293" />
             <input type="hidden" name="s" value="" />
@@ -213,7 +214,7 @@ const icons = {
             <input type="email" name="email" id="med-email" placeholder="Your email" required class="m-trial-input" />
             <button type="submit" id="_form_293_submit" class="btn-primary m-trial-submit">Get started free &rarr;</button>
           </form>
-          <div id="_form_293_thank_you" class="m-trial-thankyou" style="display:none">
+          <div id="_form_293_thank_you" class="m-trial-thankyou ac-thanks-293" style="display:none">
             <p style="font-size:18px;font-weight:700;margin:0 0 4px;color:#166534">You're in!</p>
             <p style="font-size:14px;color:#166534;margin:0">Check your email for download instructions and your 30-day Medical Ultra access.</p>
           </div>
@@ -227,7 +228,7 @@ const icons = {
         </div>
       </div>
       <div class="m-hero-img-wrap">
-        <img src={`${imgBase}/Speech-to-Text-Medical-Doctor-hero.jpg`} alt="Medical professional dictating clinical notes using speech recognition software" loading="eager" decoding="async" width="560" height="420" />
+        <img src={`${sepImgBase}/medical-dictation-busy-gp-clinic-doctor-hero-e7fd51ae.jpg`} alt="A GP in scrubs dictating clinical notes into her practice software at a busy consulting desk using a headset microphone" loading="eager" decoding="async" width="560" height="315" />
       </div>
     </div>
   </section>
@@ -249,6 +250,12 @@ const icons = {
   <section class="section-pad section-neutral">
     <div class="container m-prose">
       <h2>What is Speech Recognition Cloud for clinicians?</h2>
+      <div class="kpi">
+        <div class="k win"><p class="k-l">Medical Ultra, per year</p><p class="k-v">$439 USD</p></div>
+        <div class="k win"><p class="k-l">Free trial</p><p class="k-v">30 days</p></div>
+        <div class="k"><p class="k-l">Voice training required</p><p class="k-v">None</p></div>
+        <div class="k"><p class="k-l">Works in</p><p class="k-v">Any Windows app</p></div>
+      </div>
       <p><strong>Speech Recognition Cloud is verbatim voice dictation software for Windows 10 and Windows 11, built specifically for clinicians.</strong> A clinician speaks into a microphone, the words appear at the cursor in whatever Windows application is open — an EMR, Microsoft Word, Outlook, Teams, a hospital intranet form, a clinical portal. It has a continuously updated medical vocabulary covering drug names, anatomical terminology, eponyms, and procedural language.</p>
       <p>The Medical Ultra plan is $439 USD per year. The free 30-day trial includes full Medical Ultra functionality. It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian hospitals, GP practices, specialist clinics, and government health departments — with customers in the US, UK, Canada, New Zealand, and across Europe.</p>
 
@@ -274,6 +281,9 @@ const icons = {
   <section class="section-pad section-brand-soft">
     <div class="container m-prose">
       <h2>What EMRs and clinical applications does Speech Recognition Cloud work with?</h2>
+      <figure class="m-figure m-figure--band">
+        <img src={`${sepImgBase}/medical-dictation-clinic-team-workstation-band-f7d08589.jpg`} alt="A GP and a practice nurse at a clinic workstation, dictating into a Windows PC with a headset microphone" loading="lazy" decoding="async" width="880" height="373" />
+      </figure>
       <p><strong>Yes. Speech Recognition Cloud works with every Windows-based EMR and practice management system</strong>, because it dictates at the cursor at the operating-system level — not as a plugin or integration. That includes Best Practice, Medical Director, Genie, Zedmed, Communicare, and Helix in Australia; EMIS Web, SystmOne, Vision, and Adastra in the UK; Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks, NextGen, Allscripts (Veradigm), and Practice Fusion in the US; plus Microsoft Word, Outlook, Teams, OneNote, browser-based hospital portals, and any other Windows application you can click into and type into. There is no per-EMR certification, no plugin required, and no per-system setup.</p>
       <p>The trade-off: the desktop application is Windows-only — there is no macOS or ChromeOS version. The companion mobile app for iPhone and Android partially mitigates this for Mac-based clinicians: it tunnels audio through remote-desktop connections so a Mac user can dictate normally into a Windows EMR session, and the Voice Notes mode lets a clinician on any phone deliver dictated text to a Windows PC anywhere in the practice. But the desktop application itself is Windows only.</p>
     </div>
@@ -315,6 +325,10 @@ const icons = {
       <p>The first day will feel awkward. By the end of the first half-day clinic, most clinicians describe the workflow as faster than typing. The compounding effect across a five-day clinical week is where the actual time recovery shows up — though we would encourage you to time your own first session before trusting any general claim about speed.</p>
 
       <h3>Discharge summaries, referrals, and clinical letters</h3>
+      <figure class="m-figure m-figure--inset">
+        <img src={`${sepImgBase}/medical-dictation-specialist-discharge-summary-letter-f0d1ee43.jpg`} alt="A hospital specialist dictating a discharge letter into a Windows PC using a headset microphone" loading="lazy" decoding="async" width="520" height="293" />
+        <figcaption>Discharge summaries and referral letters are the longest-form documents most clinicians write — and where dictation tends to save the most time.</figcaption>
+      </figure>
       <p>Discharge summaries and specialist referrals are the highest-stakes writing in clinical practice. They are read by the next clinician in the care chain, they sit permanently in the medical record, and they are scrutinised in audit, complaint, and medicolegal review. Most clinicians write them slowly because they are being careful — about tone, about what to include, about what the receiving clinician needs to act on.</p>
       <p>Dictation fits this work in two ways. First, the structured sections of a discharge summary — admission summary, principal diagnosis, secondary diagnoses, procedures, complications, discharge medications, follow-up plan — reward consistency of phrasing across patients. Saved templates for each section let you keep the framing consistent while the patient-specific detail is dictated in. Most clinicians find this faster than typing, and the templates also serve as a quiet checklist that nothing important is being missed.</p>
       <p>Second, the prose sections — the narrative summary, the reasoning behind the plan, the social and contextual notes — are usually easier to describe than to write. "The patient was admitted with a three-day history of progressive shortness of breath on a background of well-controlled COPD. Examination on admission demonstrated bibasal crackles and oxygen saturation of 88% on room air. Chest X-ray showed bilateral lower zone consolidation consistent with community-acquired pneumonia." That paragraph is faster to speak than to type for most clinicians, and the clinical detail tends to be more specific when dictated.</p>
@@ -348,11 +362,46 @@ const icons = {
     </div>
   </section>
 
+
+  <!-- MID-PAGE CONVERSION BAND -->
+  <section class="form-strip">
+    <div class="container">
+      <div class="form-strip-inner">
+        <div class="form-strip-text">
+          <h2 class="form-strip-h">Try it on your own clinic notes</h2>
+          <p class="form-strip-p">Free 30-day Medical Ultra trial. No credit card. Install in about two minutes.</p>
+        </div>
+        <form id="_form_293_b" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form ac-form-293" novalidate>
+            <input type="hidden" name="u" value="293" />
+            <input type="hidden" name="f" value="293" />
+            <input type="hidden" name="s" value="" />
+            <input type="hidden" name="c" value="0" />
+            <input type="hidden" name="m" value="0" />
+            <input type="hidden" name="act" value="sub" />
+            <input type="hidden" name="v" value="2" />
+            <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <input type="text" name="fullname" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <button type="submit" class="btn-primary form-strip-btn">Get started free</button>
+        </form>
+      </div>
+      <div class="ac-thanks-293 form-strip-thanks" style="display:none">
+        <p class="fs-ty-1">You're in!</p>
+        <p class="fs-ty-2">Check your email for download instructions and your 30-day Medical Ultra access.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- WHAT IT IS NOT — QUESTION-FORM H3s -->
   <section class="section-pad section-neutral" id="what-this-is-not">
     <div class="container m-prose">
       <h2>What Speech Recognition Cloud is <em>not</em></h2>
       <p>Speech recognition, AI scribes, and ambient clinical documentation tools are different categories of product. They are often discussed as if they were interchangeable, and the resulting confusion costs clinicians money on the wrong tool for their workflow. Worth being explicit about what Speech Recognition Cloud does not do.</p>
+
+      <div class="callout callout--warn">
+        <h4>The one distinction worth getting right before you buy</h4>
+        <p>Dictation puts down exactly the words you say. An ambient AI scribe listens to the consultation and writes a note for you. They solve different problems, they carry different consent and record-keeping considerations, and buying the wrong one is the most common and most expensive mistake clinicians make in this category.</p>
+      </div>
 
       <h3>Is Speech Recognition Cloud an AI scribe like Heidi or Lyrebird?</h3>
       <p>No. Speech Recognition Cloud is verbatim cursor-based dictation, not ambient AI documentation. The clinician speaks, the words appear at the cursor, the clinician edits. There is no background listening during consultations, no AI-generated summary of what was said, and no automatic structuring of conversation into SOAP notes. If you want ambient documentation, an AI scribe is the right category of product — they are different tools for different workflows. If you want fast, accurate, predictable dictation with no AI generation step in the data path, that is what SRC does.</p>
@@ -556,6 +605,46 @@ const icons = {
     </div>
   </section>
 
+
+  <!-- WARD ROUNDS BAND IMAGE -->
+  <section class="band-img-sec">
+    <div class="container">
+      <figure class="m-figure m-figure--band m-figure--pop">
+        <img src={`${sepImgBase}/medical-dictation-hospital-corridor-registrar-ward-band-a66d35ff.jpg`} alt="A hospital registrar dictating a ward round note into his phone in a hospital corridor between patients" loading="lazy" decoding="async" width="1040" height="441" />
+        <figcaption>Ward rounds: the companion app records offline and delivers the note to whichever PC you next log into.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CONVERSION BAND -->
+  <section class="form-strip form-strip--alt">
+    <div class="container">
+      <div class="form-strip-inner">
+        <div class="form-strip-text">
+          <h2 class="form-strip-h">Start dictating today</h2>
+          <p class="form-strip-p">$439 USD per year after the trial. Reverts to the free tier if you do nothing.</p>
+        </div>
+        <form id="_form_293_c" method="POST" action="https://voicerecognition.activehosted.com/proc.php" class="form-strip-form ac-form-293" novalidate>
+            <input type="hidden" name="u" value="293" />
+            <input type="hidden" name="f" value="293" />
+            <input type="hidden" name="s" value="" />
+            <input type="hidden" name="c" value="0" />
+            <input type="hidden" name="m" value="0" />
+            <input type="hidden" name="act" value="sub" />
+            <input type="hidden" name="v" value="2" />
+            <input type="hidden" name="or" value="2141af45-6060-403b-ba24-78485ac2c0c8" />
+          <input type="text" name="fullname" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <button type="submit" class="btn-primary form-strip-btn">Get started free</button>
+        </form>
+      </div>
+      <div class="ac-thanks-293 form-strip-thanks" style="display:none">
+        <p class="fs-ty-1">You're in!</p>
+        <p class="fs-ty-2">Check your email for download instructions and your 30-day Medical Ultra access.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section class="section-pad">
     <div class="container">
@@ -614,6 +703,52 @@ const icons = {
     </div>
   </section>
 
+
+  <!-- DRAGON MEDICAL ONE COMPARISON -->
+  <section class="section-pad" id="vs-dragon-medical-one">
+    <div class="container m-prose" style="max-width:880px">
+      <h2>How does Speech Recognition Cloud compare to Dragon Medical One?</h2>
+      <p class="m-answer"><strong>Speech Recognition Cloud and Dragon Medical One are the same category of product — verbatim, cursor-based clinical dictation for Windows — and differ mainly in licensing model, vocabulary scope and how each is bought and supported.</strong> Neither is an ambient AI scribe. If you want a tool that listens to the consultation and drafts the note for you, both are the wrong category and you should be looking at products like Heidi or Lyrebird instead.</p>
+
+      <figure class="m-figure m-figure--inset">
+        <img src={`${sepImgBase}/medical-dictation-vs-dragon-medical-one-clinician-comparing-62eacb30.jpg`} alt="A doctor dictating clinical notes at the cursor into a Windows PC using a headset microphone" loading="lazy" decoding="async" width="520" height="293" />
+        <figcaption>Both Speech Recognition Cloud and Dragon Medical One put verbatim text at the cursor in your EMR. The differences are in licensing, vocabulary scope and how you buy them.</figcaption>
+      </figure>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th scope="col">&nbsp;</th>
+              <th scope="col" class="cmp-us">Speech Recognition Cloud<br/><span>Medical Ultra</span></th>
+              <th scope="col">Dragon Medical One</th>
+              <th scope="col">Ambient AI scribes<br/><span>e.g. Heidi, Lyrebird</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">What it does</th><td class="cmp-us">Verbatim dictation at the cursor</td><td>Verbatim dictation at the cursor</td><td>Listens to the consultation and drafts a note</td></tr>
+            <tr><th scope="row">Output</th><td class="cmp-us">Exactly what you said</td><td>Exactly what you said</td><td>An AI-generated summary you review and edit</td></tr>
+            <tr><th scope="row">Platform</th><td class="cmp-us">Windows 10 and 11 desktop</td><td>Windows desktop</td><td>Typically browser and mobile</td></tr>
+            <tr><th scope="row">Works inside your EMR</th><td class="cmp-us">Any Windows application, at the cursor</td><td>Any Windows application, at the cursor</td><td>Varies — often copy-paste or a specific integration</td></tr>
+            <tr><th scope="row">Voice training</th><td class="cmp-us">None</td><td>None required</td><td>Not applicable</td></tr>
+            <tr><th scope="row">Medical vocabulary</th><td class="cmp-us">Cloud-updated medical vocabulary. English only on the Medical tier.</td><td>Clinical vocabularies and specialty language models</td><td>Model-generated; varies by product</td></tr>
+            <tr><th scope="row">How it is bought</th><td class="cmp-us">Direct self-service subscription, $439 USD per year</td><td>Through a licensing agreement or reseller; pricing varies by region and agreement</td><td>Direct subscription; pricing varies by product</td></tr>
+            <tr><th scope="row">Mobile phone as microphone</th><td class="cmp-us">Included companion app for iPhone and Android</td><td>Available; depends on your licensing and hardware</td><td>Not applicable — the phone is usually the capture device</td></tr>
+            <tr><th scope="row">Needs internet</th><td class="cmp-us">Yes. No offline dictation mode.</td><td>Yes — cloud-based</td><td>Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cmp-note muted">Pricing accurate at time of publication and may change. Verify current pricing before purchasing. Dragon Medical One is a Microsoft product; availability, pricing and licensing terms vary by country and are set by Microsoft and its partners, not by us.</p>
+
+      <div class="callout">
+        <h4>Which one suits you</h4>
+        <p><strong>You may prefer Dragon Medical One</strong> if you are part of a hospital or health service with an existing enterprise licensing agreement, you need the specialty language models it ships with, or your organisation's IT has already standardised on it.</p>
+        <p><strong>You may prefer Speech Recognition Cloud</strong> if you are an individual clinician or a small practice buying for yourself, you want to trial and subscribe without going through a procurement process, and verbatim dictation at the cursor is what you actually need.</p>
+        <p><strong>Neither may suit you</strong> if what you want is the note written for you rather than dictated by you. That is an ambient scribe, and it is a different product category with different accuracy, consent and record-keeping considerations.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:780px">
@@ -637,6 +772,21 @@ const icons = {
         <p class="m-further">Further reading: <a href="/learn/dictation-for-psychologists-allied-health/" class="m-link">dictation for psychologists and allied health</a> — session notes, verbatim documentation, and why many therapists rule out ambient AI scribes.</p>
         <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
         <p class="m-reviewed muted">Last reviewed: 16 August 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING IMAGE -->
+  <section class="section-pad section-warm">
+    <div class="container closer-split">
+      <figure class="m-figure m-figure--pop closer-img">
+        <img src={`${sepImgBase}/medical-dictation-gp-finishing-notes-end-of-clinic-7ede9d8e.jpg`} alt="A GP finishing his clinical notes by dictation at the end of a clinic day" loading="lazy" decoding="async" width="520" height="293" />
+      </figure>
+      <div class="closer-text">
+        <p class="closer-eyebrow">THE POINT OF ALL THIS</p>
+        <h2 class="closer-h">Finish your notes before you leave</h2>
+        <p>Most clinicians who stick with dictation say the same thing: it is not that any single note is dramatically faster, it is that the notes are finished at the end of the session instead of following them home. Whether that holds for you depends on how you work — which is what the 30-day trial is for.</p>
+        <a href="#trial-inline" class="closer-link">Start the free trial &uarr;</a>
       </div>
     </div>
   </section>
@@ -787,6 +937,99 @@ const icons = {
       .m-figure{margin:20px 0 24px}
       .m-figure figcaption{font-size:13px}
     }
+
+    /* ---- Design refresh: bands, callouts, KPI, comparison ---- */
+    .form-strip{background:linear-gradient(135deg,#4338CA 0%,#312E81 100%);padding:28px 0;border-top:1px solid #312E81;border-bottom:1px solid #312E81}
+    .form-strip--alt{background:linear-gradient(135deg,#312E81 0%,#4338CA 100%)}
+    .form-strip-h{font-size:19px;font-weight:800;margin:0 0 3px;color:#fff;letter-spacing:-0.01em}
+    .form-strip-p{font-size:13.5px;color:rgba(255,255,255,0.78);margin:0;max-width:340px;line-height:1.5}
+    .form-strip-btn{white-space:nowrap;padding:12px 28px;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,0.22)}
+    .form-strip-thanks{text-align:center;padding:16px 0;color:#fff}
+    .fs-ty-1{font-size:18px;font-weight:700;margin:0 0 4px}
+    .fs-ty-2{font-size:14px;color:rgba(255,255,255,0.82);margin:0}
+    @media(max-width:720px){.form-strip-inner{gap:18px}.form-strip-p{max-width:none}}
+
+    .m-answer{font-size:17px;line-height:1.7;background:#F5F6FF;border-left:4px solid #4338CA;border-radius:0 12px 12px 0;padding:16px 20px;margin:0 0 22px}
+
+    .callout{margin:28px 0;padding:22px 26px;border-radius:14px;border:1px solid #C7D2FE;border-left:4px solid #4338CA;background:#EEF2FF}
+    .callout h4{margin:0 0 10px;font-size:16px;font-weight:700;color:#312E81;letter-spacing:-0.01em}
+    .callout p{margin:0 0 10px;font-size:15px;line-height:1.7}
+    .callout p:last-child{margin-bottom:0}
+    .callout--warn{border-left-color:#EA580C;background:#FFF7ED;border-color:#FDBA74}
+    .callout--warn h4{color:#9A3412}
+
+    .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:26px 0}
+    .kpi .k{padding:18px 20px;border:1px solid #E5E7EB;border-radius:14px;background:#fff;box-shadow:0 2px 10px rgba(17,24,39,0.04)}
+    .kpi .k.win{border-color:#C7D2FE;background:linear-gradient(180deg,#F8F9FF 0%,#EEF2FF 100%)}
+    .kpi .k-l{font-size:13px;color:#6B7280;margin:0 0 6px;line-height:1.45}
+    .kpi .k-v{font-size:25px;font-weight:800;margin:0;letter-spacing:-0.025em;color:#111}
+    .kpi .k.win .k-v{color:#4338CA}
+
+    .cmp-wrap{overflow-x:auto;margin:22px 0 10px;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 4px 18px rgba(17,24,39,0.05)}
+    .cmp-table{width:100%;border-collapse:collapse;font-size:14px;min-width:720px;background:#fff}
+    .cmp-table th,.cmp-table td{padding:13px 16px;text-align:left;border-bottom:1px solid #EEF0F4;vertical-align:top;line-height:1.5}
+    .cmp-table thead th{font-size:13px;font-weight:700;color:#374151;background:#F8F9FB;border-bottom:2px solid #E5E7EB;letter-spacing:-0.005em}
+    .cmp-table thead th span{display:block;font-weight:500;font-size:12px;color:#6B7280;margin-top:2px}
+    .cmp-table tbody th{width:180px;font-weight:600;font-size:13px;color:#4338CA;background:#F8F9FB}
+    .cmp-table .cmp-us{background:#F5F6FF}
+    .cmp-table thead th.cmp-us{background:#EEF2FF;color:#312E81;border-bottom-color:#4338CA}
+    .cmp-table tbody tr:last-child th,.cmp-table tbody tr:last-child td{border-bottom:none}
+    .cmp-note{font-size:12.5px;line-height:1.6;margin:0 0 6px}
+
+    /* image pop */
+    .m-figure img,.m-hero-img-wrap img{
+      box-shadow:0 22px 50px -12px rgba(49,46,129,0.42), 0 8px 18px -8px rgba(17,24,39,0.24);
+      border:3px solid #fff;
+      outline:1px solid rgba(67,56,202,0.18);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .m-figure img:hover,.m-hero-img-wrap img:hover{
+      transform:translateY(-4px);
+      box-shadow:0 30px 64px -12px rgba(49,46,129,0.5), 0 10px 22px -8px rgba(17,24,39,0.28);
+    }
+    .m-hero-img-wrap{position:relative}
+    .m-hero-img-wrap::before{
+      content:"";position:absolute;inset:auto -10px -14px 22px;height:70%;
+      background:linear-gradient(135deg,#EEF2FF 0%,#C7D2FE 100%);border-radius:18px;z-index:0;
+    }
+    .m-hero-img-wrap img{position:relative;z-index:1}
+    .m-figure--pop{position:relative}
+    .m-figure--pop::before{
+      content:"";position:absolute;left:-12px;bottom:-12px;width:62%;height:58%;
+      background:linear-gradient(135deg,#C7D2FE 0%,#EEF2FF 100%);border-radius:16px;z-index:0;
+    }
+    .m-figure--pop img,.m-figure--pop figcaption{position:relative;z-index:1}
+    .m-figure{margin:26px 0}
+    .m-figure img{border-radius:14px;width:100%;height:auto;display:block}
+    .m-figure figcaption{font-size:13.5px;color:#6B7280;margin-top:10px;line-height:1.55;border-left:3px solid #C7D2FE;padding-left:12px}
+    .m-figure--inset{max-width:520px;margin-left:auto;margin-right:auto}
+    .m-figure--band img{border-radius:14px;aspect-ratio:21/9;object-fit:cover}
+    .m-figure--band{margin:20px 0 26px}
+    .band-img-sec{padding:8px 0 40px;background:#F8F9FB}
+
+    .section-warm{background:linear-gradient(135deg,#FFF9F2 0%,#FDF3E7 100%);border-top:1px solid #F5E3CE;border-bottom:1px solid #F5E3CE}
+    .closer-split{display:grid;grid-template-columns:0.95fr 1.05fr;gap:44px;align-items:center;max-width:960px}
+    .closer-img{margin:0}
+    .closer-img img{width:100%;height:auto;display:block;border-radius:14px}
+    .closer-eyebrow{font-size:12px;font-weight:700;color:#B45309;letter-spacing:0.08em;margin:0 0 10px}
+    .closer-h{font-size:clamp(22px,3vw,29px);font-weight:800;margin:0 0 14px;letter-spacing:-0.02em;color:#1F2937}
+    .closer-text p{font-size:16px;line-height:1.72;color:#374151;margin:0 0 18px}
+    .closer-link{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#4338CA;font-size:16px;border-bottom:2px solid #C7D2FE;padding-bottom:2px;text-decoration:none}
+    .closer-link:hover{border-bottom-color:#4338CA}
+    @media(max-width:760px){.closer-split{grid-template-columns:1fr;gap:26px}}
+
+    /* colour break on the lower sections */
+    .med-testimonials{gap:18px}
+    .med-quote-card{border:1px solid #EEF0F4;border-radius:14px;padding:20px 22px;background:#fff;box-shadow:0 4px 16px rgba(17,24,39,0.05);border-top:3px solid #4338CA}
+    .faq-item{border:1px solid #E7E9EF;border-radius:12px;background:#fff;margin-bottom:10px;padding:2px 4px}
+    .faq-item[open]{border-color:#C7D2FE;box-shadow:0 4px 18px rgba(49,46,129,0.08)}
+    .m-author-panel{border:1px solid #E7E9EF;border-left:4px solid #4338CA;border-radius:0 14px 14px 0;background:#fff;padding:26px 28px;box-shadow:0 4px 18px rgba(49,46,129,0.06)}
+
+    /* section rhythm */
+    .section-neutral{background:#F8F9FB}
+    .benefit-rich{border:1px solid #EEF0F4;border-radius:14px;padding:20px 22px;background:#fff;transition:border-color .18s,box-shadow .18s}
+    .benefit-rich:hover{border-color:#C7D2FE;box-shadow:0 6px 22px rgba(49,46,129,0.08)}
+    .m-regional-panel{border:1px solid #C7D2FE;border-left:4px solid #4338CA;border-radius:0 14px 14px 0;background:#fff;padding:24px 26px;box-shadow:0 4px 18px rgba(49,46,129,0.06)}
   </style>
 
 
@@ -803,12 +1046,11 @@ const icons = {
     })();
   </script>
 
-  <!-- AC Form 293 submission script (preserved verbatim) -->
+  <!-- AC Form 293 submission — binds every trial form on the page -->
   <script is:inline>
     (function(){
-      var form = document.getElementById('_form_293_');
-      if (!form) return;
-      var thankYou = document.getElementById('_form_293_thank_you');
+      var forms = document.querySelectorAll('.ac-form-293');
+      if (!forms.length) return;
 
       function serialize(f) {
         var q = [];
@@ -821,35 +1063,37 @@ const icons = {
         return q.join('&');
       }
 
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var name = form.querySelector('[name="fullname"]');
-        var email = form.querySelector('[name="email"]');
-        if (!name.value.trim() || !email.value.trim()) return;
-        if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
-          email.style.borderColor = '#F37C7B';
-          return;
-        }
-        var btn = document.getElementById('_form_293_submit');
-        btn.disabled = true;
-        btn.textContent = 'Submitting...';
+      forms.forEach(function(form){
+        var scope = form.closest('.container') || form.parentNode;
+        var thankYou = scope.querySelector('.ac-thanks-293');
+        var btn = form.querySelector('button[type="submit"]');
 
-        var data = serialize(form);
-        var script = document.createElement('script');
-        script.charset = 'utf-8';
-        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
-        script.onerror = function() {
-          btn.disabled = false;
-          btn.textContent = 'Get started free';
-          alert('Something went wrong. Please try again.');
-        };
-        document.head.appendChild(script);
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var name = form.querySelector('[name="fullname"]');
+          var email = form.querySelector('[name="email"]');
+          if (!name.value.trim() || !email.value.trim()) return;
+          if (!/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) {
+            email.style.borderColor = '#F37C7B';
+            return;
+          }
+          if (btn) { btn.disabled = true; btn.textContent = 'Submitting...'; }
 
-        window._show_thank_you = function(id, message) {
-          form.style.display = 'none';
-          thankYou.style.display = 'block';
-          thankYou.innerHTML = message || '<p style="font-size:18px;font-weight:600;margin-bottom:8px">You\'re in!</p><p style="font-size:14px;color:rgba(255,255,255,0.8)">Check your email for download instructions and your 30-day Medical Ultra access.</p>';
-        };
+          var data = serialize(form);
+          var script = document.createElement('script');
+          script.charset = 'utf-8';
+          script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+          script.onerror = function() {
+            if (btn) { btn.disabled = false; btn.textContent = 'Get started free'; }
+            alert('Something went wrong. Please try again.');
+          };
+          document.head.appendChild(script);
+
+          window._show_thank_you = function(id, message) {
+            form.style.display = 'none';
+            if (thankYou) thankYou.style.display = 'block';
+          };
+        });
       });
     })();
   </script>
