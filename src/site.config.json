@@ -120,7 +120,7 @@
     "founderName": "Russell Bewsell",
     "founderTitle": "Founder and CEO",
     "founderLinkedIn": "https://www.linkedin.com/in/rbewsell/",
-    "quote": "I built Speech Recognition Cloud after 28 years of deploying speech technology for tens of thousands of professionals. I have watched what works, what frustrates people, and what they actually need. Legacy dictation systems are overpriced, overcomplicated, and overdue for replacement. This product is the answer for most users.",
+    "quote": "After 28 years deploying speech recognition, we built a simpler alternative to traditional dictation systems. I have watched what works, what frustrates people, and what they actually need. This product is the answer for most users.",
     "credentials": [
       "28 years deploying speech recognition in Australian hospitals, courts, and government departments",
       "Supported tens of thousands of professionals across healthcare, legal, government, and enterprise",
@@ -186,7 +186,7 @@
   },
 
   "faq": [
-    { "question": "Why doesn't text appear while I'm speaking?", "answer": "Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context." },
+    {"question": "What happens after the 30 days?", "answer": "Every new account gets 30 days of Professional with unlimited dictation. After 30 days you move to the Free plan, 20 minutes a month, unless you choose a paid plan. Your account and settings stay as they are."}, { "question": "Why doesn't text appear while I'm speaking?", "answer": "Speech Recognition Cloud uses cloud-based AI processing rather than older word-by-word dictation. You turn the microphone on, dictate naturally, then turn it off and the full paragraph appears at once, fully punctuated and formatted. This approach gives much higher accuracy because the AI uses full-sentence context." },
     { "question": "Do I need to train it or set anything up?", "answer": "No. Install and start dictating. No voice profiles, no calibration. The cloud AI handles accuracy from day one and improves automatically as models are updated." },
     { "question": "Is my data secure?", "answer": "Yes. Audio is processed and immediately discarded. Transcribed text is delivered to your cursor and not stored on our servers. Your data is never used to train AI models. All connections are encrypted. The Medical Ultra tier deliberately excludes AI Modes to further protect patient privacy." },
     { "question": "Can I use this on Mac or mobile?", "answer": "The PC application is Windows only (Windows 10/11). However, Professional and Medical Ultra plans include a mobile companion app for iPhone and Android. The mobile app acts as a wireless microphone for your PC, or in Voice Notes mode it lets you dictate complete documents on your phone and send them to your active PC. Mac support for the main application is not yet available - subscribe to our newsletter for updates." },
