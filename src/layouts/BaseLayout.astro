@@ -188,7 +188,7 @@ const breadcrumbSchema = {
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo-link"><img src="/logo.png" alt={site.siteName} class="logo-img" width="180" height="46" loading="eager" /></a>
+      <a href="/" class="logo-link"><img src={Astro.url.pathname === '/' ? '/logo-2026.png' : '/logo.png'} alt={site.siteName} class="logo-img" width="180" height="46" loading="eager" /></a>
       <nav class="nav-desktop">
         {site.nav.links.map(link => (
           link.dropdown ? (
