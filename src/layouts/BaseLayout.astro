@@ -199,7 +199,7 @@ const breadcrumbSchema = {
           ) : (<a href={link.href} class="nav-link">{link.label}</a>)
         ))}
       </nav>
-      <a href={site.nav.ctaUrl} class="btn-primary header-cta">{site.nav.ctaText}</a>
+      <a href={site.nav.ctaUrl} class="btn-primary header-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>{site.nav.ctaText}</a>
       <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-nav">
@@ -208,7 +208,7 @@ const breadcrumbSchema = {
           <details class="mobile-dropdown"><summary class="nav-link">{link.label}</summary><div class="mobile-dropdown-items">{(link.items || site.nav.useCases).map(uc => (<a href={uc.href} class="nav-link">{uc.label}</a>))}</div></details>
         ) : (<a href={link.href} class="nav-link">{link.label}</a>)
       ))}
-      <a href={site.nav.ctaUrl} class="btn-primary" style="margin-top:12px;text-align:center;justify-content:center">{site.nav.ctaText}</a>
+      <a href={site.nav.ctaUrl} class="btn-primary" style="margin-top:12px;text-align:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>{site.nav.ctaText}</a>
     </div>
   </header>
   <slot />

@@ -73,7 +73,7 @@
       { "label": "Writers and creators", "href": "/writers" },
       { "label": "Accessibility and RSI", "href": "/accessibility" }
     ],
-    "ctaText": "Start 30 days free",
+    "ctaText": "Download free",
     "ctaUrl": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe"
   },
 
