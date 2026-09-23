@@ -33,7 +33,7 @@ imagesPending: false
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
 breakAspectRatio2: "21:9"
-heroPrompt: "Clean modern editorial illustration: a wall calendar with a single date circled and the following pages softly fading away, suggesting a closing window. Warm orange (#EA580C) accent with slate and white, flat contemporary style, subtle depth. No text, no numerals, no logos, no identifiable real people. Landscape hero."
+heroPrompt: "Clean modern editorial illustration: a wall calendar with a single date circled and the following pages softly fading away, suggesting a closing window. Warm orange (#B23A26) accent with slate and white, flat contemporary style, subtle depth. No text, no numerals, no logos, no identifiable real people. Landscape hero."
 breakPrompt1: "Wide cinematic strip, people prominent: three colleagues around a desk planning a software migration, one pointing at a laptop screen while another takes notes. Bright modern office, warm natural light, orange and indigo accents, flat modern editorial illustration style. Subject centred vertically. No text, no logos, no brand marks."
 breakPrompt2: "Wide cinematic strip, people prominent: a professional at a Windows computer trialling dictation software, speaking while reviewing text on screen, relaxed and unhurried. Clean bright workspace, indigo accents on white, flat modern editorial illustration. Subject centred vertically. No text, no logos."
 externalLinks:

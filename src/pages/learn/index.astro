@@ -6,7 +6,7 @@ const posts = (await getCollection('learn')).sort((a, b) => new Date(b.data.date
 const R2_BASE = (import.meta.env.PUBLIC_R2_BASE ?? 'https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev').replace(/\/$/, '');
 const imgSrc = (key) => key ? (/^https?:\/\//.test(key) ? key : `${R2_BASE}/${key}`) : '';
 const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
-const typeColours = { article: { bg: '#EEF2FF', fg: '#4338CA' }, guide: { bg: '#ECFDF5', fg: '#059669' }, video: { bg: '#FEF2F2', fg: '#DC2626' }, tip: { bg: '#FFFBEB', fg: '#D97706' } };
+const typeColours = { article: { bg: '#F7ECE8', fg: '#B23A26' }, guide: { bg: '#ECFDF5', fg: '#059669' }, video: { bg: '#FEF2F2', fg: '#DC2626' }, tip: { bg: '#FFFBEB', fg: '#D97706' } };
 const typeIcons = {
   article: 'M4 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4z',
   guide: 'M12 2L4 7v11a2 2 0 002 2h12a2 2 0 002-2V7L12 2zm0 3.5L17 9v8H7V9l5-3.5zM9 11v2h6v-2H9zm0 3v2h4v-2H9z',
@@ -77,7 +77,7 @@ const typeIcons = {
     .learn-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px}
     .learn-meta time{font-size:12px}
     .learn-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em}
-    .learn-tag--article{color:var(--brand);background:var(--brand-lightest, #EEF2FF)}
+    .learn-tag--article{color:var(--brand);background:var(--brand-lightest, #F7ECE8)}
     .learn-tag--guide{color:#059669;background:#ECFDF5}
     .learn-tag--video{color:#DC2626;background:#FEF2F2}
     .learn-tag--tip{color:#D97706;background:#FFFBEB}

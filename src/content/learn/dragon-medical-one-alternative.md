@@ -21,9 +21,9 @@ faq:
 context: "descriptive"
 youtubeId: "4rlay0Zx660"
 heroImageAlt: "Doctor dictating clinical notes into a headset at a Windows laptop"
-heroPrompt: "Clean, modern editorial illustration for a medical software article: a clinician's tidy Windows workstation where spoken words flow into an electronic medical record at the text cursor, with a subtle privacy-shield motif. Calm indigo (#4338CA) and white palette with soft slate accents, subtle depth, flat contemporary style. No text, no logos, no brand marks, no identifiable real people or patients. Landscape hero orientation."
+heroPrompt: "Clean, modern editorial illustration for a medical software article: a clinician's tidy Windows workstation where spoken words flow into an electronic medical record at the text cursor, with a subtle privacy-shield motif. Calm indigo (#B23A26) and white palette with soft slate accents, subtle depth, flat contemporary style. No text, no logos, no brand marks, no identifiable real people or patients. Landscape hero orientation."
 breakImage1Alt: "One dictation licence working at the cursor across any Windows EMR"
-breakPrompt1: "Minimal conceptual illustration: voice dictation working directly at the text cursor across several Windows-based clinical systems — an EMR window, a referral letter, a results inbox — connected by soft flowing lines. Indigo (#4338CA) accent on a clean white background, flat modern vector style, generous whitespace. No text, no logos, no real people or patients."
+breakPrompt1: "Minimal conceptual illustration: voice dictation working directly at the text cursor across several Windows-based clinical systems — an EMR window, a referral letter, a results inbox — connected by soft flowing lines. Indigo (#B23A26) accent on a clean white background, flat modern vector style, generous whitespace. No text, no logos, no real people or patients."
 breakImage2Alt: "Audio transcribed then immediately erased, with no AI listening to the consultation"
 breakPrompt2: "Minimal conceptual illustration: privacy-first dictation — a stylised soundwave passing through a shield and dissolving, suggesting audio that is transcribed and then immediately erased, never stored. Indigo and slate palette on white, flat modern vector style. No text, no logos, no real people."
 internalLinks:

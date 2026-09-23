@@ -23,9 +23,9 @@ faq:
 context: "descriptive"
 youtubeId: "eg2rq2Y8xUA"
 heroImageAlt: "Professional dictating into a headset at a Windows laptop in an office"
-heroPrompt: "Clean, modern editorial illustration for a software-marketing article: a professional at a tidy Windows desktop speaking, with words flowing into a document at the text cursor. Calm indigo (#4338CA) and white palette with soft slate accents, subtle depth, flat contemporary style. No text, no logos, no brand marks, no identifiable real people. Landscape hero orientation."
+heroPrompt: "Clean, modern editorial illustration for a software-marketing article: a professional at a tidy Windows desktop speaking, with words flowing into a document at the text cursor. Calm indigo (#B23A26) and white palette with soft slate accents, subtle depth, flat contemporary style. No text, no logos, no brand marks, no identifiable real people. Landscape hero orientation."
 breakImage1Alt: "One licence used across a laptop, a desktop and another computer"
-breakPrompt1: "Minimal conceptual illustration: a single dictation licence working across several of one person's computers — a laptop, a desktop monitor and a small-form-factor PC connected by soft flowing lines. Indigo (#4338CA) accent on a clean white background, flat modern vector style, generous whitespace. No text, no logos, no real people."
+breakPrompt1: "Minimal conceptual illustration: a single dictation licence working across several of one person's computers — a laptop, a desktop monitor and a small-form-factor PC connected by soft flowing lines. Indigo (#B23A26) accent on a clean white background, flat modern vector style, generous whitespace. No text, no logos, no real people."
 breakImage2Alt: "Cloud-based dictation staying current as Windows updates"
 breakPrompt2: "Minimal conceptual illustration: cloud-based software staying continuously up to date — a stylised cloud linked to a desktop computer with gentle upward motion lines suggesting automatic updates. Indigo and slate palette on white, flat modern vector style. No text, no logos, no real people."
 internalLinks:

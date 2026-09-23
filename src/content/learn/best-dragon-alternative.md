@@ -31,7 +31,7 @@ imagesPending: false
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
 breakAspectRatio2: "21:9"
-heroPrompt: "Clean modern editorial illustration for a software comparison article: a professional at a tidy Windows desktop speaking, with words flowing into a document at the text cursor. Calm indigo (#4338CA) and white palette with soft slate accents, flat contemporary style, subtle depth. No text, no logos, no brand marks, no identifiable real people. Landscape hero."
+heroPrompt: "Clean modern editorial illustration for a software comparison article: a professional at a tidy Windows desktop speaking, with words flowing into a document at the text cursor. Calm indigo (#B23A26) and white palette with soft slate accents, flat contemporary style, subtle depth. No text, no logos, no brand marks, no identifiable real people. Landscape hero."
 breakPrompt1: "Wide cinematic strip, people prominent: two professionals at a desk reviewing software options together on a laptop screen, one gesturing while explaining. Warm natural light, indigo and slate accents on a clean bright office background, flat modern editorial illustration style. Subject centred vertically. No text, no logos, no brand marks."
 breakPrompt2: "Wide cinematic strip, people prominent: one person working across a desktop computer at an office desk and a laptop at home, shown as two connected moments in the same frame, suggesting a single licence used in both places. Indigo accent on clean white, flat modern editorial illustration, generous whitespace. Subject centred vertically. No text, no logos."
 externalLinks:

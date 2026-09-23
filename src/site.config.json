@@ -9,20 +9,20 @@
   "_buildNote": "v1.16.0 - /languages page (57 languages) + availableLanguage/areaServed schema",
 
   "colours": {
-    "brand": "#4338CA",
-    "brandLight": "#818CF8",
-    "brandLightest": "#EEF2FF",
-    "cta": "#EA580C",
-    "ctaHover": "#C2410C",
-    "text": "#0F172A",
-    "muted": "#64748B",
+    "brand": "#B23A26",
+    "brandLight": "#E9A393",
+    "brandLightest": "#F7ECE8",
+    "cta": "#B23A26",
+    "ctaHover": "#962F1E",
+    "text": "#16150F",
+    "muted": "#5E5A4F",
     "background": "#FFFFFF",
-    "neutral": "#F8FAFC",
-    "border": "#E2E8F0",
-    "darkSection": "#0F172A",
-    "darkSectionText": "#E2E8F0",
-    "darkSectionMuted": "#94A3B8",
-    "darkSectionAccent": "#818CF8"
+    "neutral": "#F6F3EC",
+    "border": "#E5DFD3",
+    "darkSection": "#16150F",
+    "darkSectionText": "#E5DFD3",
+    "darkSectionMuted": "#BDB6A6",
+    "darkSectionAccent": "#E9A393"
   },
 
   "organization": {

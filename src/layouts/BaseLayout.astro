@@ -123,20 +123,20 @@ const breadcrumbSchema = {
   <style is:inline>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --brand: #4338CA;
-      --brand-light: #818CF8;
-      --brand-lightest: #EEF2FF;
-      --cta: #EA580C;
-      --cta-hover: #C2410C;
-      --text: #0F172A;
-      --muted: #64748B;
+      --brand: #B23A26;
+      --brand-light: #E9A393;
+      --brand-lightest: #F7ECE8;
+      --cta: #B23A26;
+      --cta-hover: #962F1E;
+      --text: #16150F;
+      --muted: #5E5A4F;
       --bg: #FFFFFF;
-      --neutral: #F8FAFC;
-      --dark: #0F172A;
-      --dark-text: #E2E8F0;
-      --dark-muted: #94A3B8;
-      --dark-accent: #818CF8;
-      --border: #E2E8F0;
+      --neutral: #F6F3EC;
+      --dark: #16150F;
+      --dark-text: #E5DFD3;
+      --dark-muted: #BDB6A6;
+      --dark-accent: #E9A393;
+      --border: #E5DFD3;
       --font: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --max-width: 1140px;
     }
@@ -261,12 +261,12 @@ const breadcrumbSchema = {
     /* --- key figure cards (canonical: used by money pages and /learn articles) --- */
     .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:26px 0}
     .kpi .k{padding:16px 18px;border:1px solid var(--border);border-radius:14px;background:#fff;box-shadow:0 2px 10px rgba(17,24,39,0.04);display:flex;flex-direction:column;justify-content:flex-start}
-    .kpi .k.win{border-color:#C7D2FE;background:linear-gradient(180deg,#F8F9FF 0%,#EEF2FF 100%)}
-    .kpi .k.bad{border-color:#FDBA74;background:linear-gradient(180deg,#FFFBF5 0%,#FFF7ED 100%)}
+    .kpi .k.win{border-color:#EBCFC6;background:linear-gradient(180deg,#F8F9FF 0%,#F7ECE8 100%)}
+    .kpi .k.bad{border-color:#E9A393;background:linear-gradient(180deg,#FFFBF5 0%,#FBF1EC 100%)}
     .kpi .k-l{font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.35}
     .kpi .k-v{font-size:22px;font-weight:800;margin:0;letter-spacing:-0.02em;color:var(--text);line-height:1.25;text-wrap:balance}
-    .kpi .k.win .k-v{color:#4338CA}
-    .kpi .k.bad .k-v{color:#C2410C}
+    .kpi .k.win .k-v{color:#B23A26}
+    .kpi .k.bad .k-v{color:#962F1E}
     @media (max-width:640px){.kpi{grid-template-columns:repeat(2,1fr);gap:10px}.kpi .k-v{font-size:19px}}
   </style>
   <script is:inline>
