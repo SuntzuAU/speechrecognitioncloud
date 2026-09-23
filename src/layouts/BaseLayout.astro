@@ -188,7 +188,7 @@ const breadcrumbSchema = {
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo-link"><img src={Astro.url.pathname === '/' ? '/logo-2026.png' : '/logo.png'} alt={site.siteName} class="logo-img" width="180" height="46" loading="eager" /></a>
+      <a href="/" class="logo-link"><img src="/logo-2026.png" alt={site.siteName} class="logo-img" width="180" height="46" loading="eager" /></a>
       <nav class="nav-desktop">
         {site.nav.links.map(link => (
           link.dropdown ? (
@@ -228,7 +228,12 @@ const breadcrumbSchema = {
     </div>
   </footer>
   <style is:inline>
-    .site-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .site-header { position: sticky; top: 0; z-index: 100; background: rgba(246,243,236,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid #D9D3C4; }
+    .site-header .nav-link { color: #16150F; }
+    .site-header .nav-link:hover { background: rgba(22,21,15,0.06); }
+    .site-header .btn-primary { background: #B23A26; border-radius: 4px; }
+    .site-header .btn-primary:hover { background: #962F1E; }
+    .site-header .mobile-nav { background: #F6F3EC; }
     .header-inner { display: flex; align-items: center; height: 72px; gap: 32px; }
     .logo-link { display: flex; align-items: center; }
     .logo-img { height: 46px; width: auto; }
