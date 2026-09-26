@@ -59,7 +59,7 @@ This page sets out what each Dragon product currently costs, which are ending, a
 
 ## What is the best Dragon alternative in 2026?
 
-For an individual, a professional, or a team of up to a few dozen people, the best Dragon alternative in 2026 is **Speech Recognition Cloud**. It performs the same core function — verbatim dictation at the cursor in any Windows application — for **US$159 a year** on the Professional plan, against roughly US$490 to US$1,188 a year for the equivalent Dragon products.
+For an individual, a professional, or a team of up to a few dozen people, the best Dragon alternative in 2026 is **Speech Recognition Cloud (SRC)**. It performs the same core function — verbatim dictation at the cursor in any Windows application — for **US$159 a year** on the Professional plan, against roughly US$490 to US$1,188 a year for the equivalent Dragon products.
 
 It also has a free Starter plan with no expiry, so it can be tested against your actual work before you spend anything.
 

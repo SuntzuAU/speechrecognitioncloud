@@ -108,7 +108,7 @@ It is worth clearing up, because "speech to text" now covers three quite differe
 
 **Cursor-based dictation.** You put your cursor in a field, press a key, and speak. Your words appear as text, punctuated, exactly where the cursor is — in whatever program is in front of you. Nothing is listening unless you press the key. Nothing is summarised. Nothing is interpreted.
 
-Speech Recognition Cloud is the third kind. You write the note; you just write it with your voice instead of your hands. Two things follow from that, and they are the two things this article is really about: it is **verbatim**, and it needs **no integration with anything**.
+Speech Recognition Cloud (SRC) is the third kind. You write the note; you just write it with your voice instead of your hands. Two things follow from that, and they are the two things this article is really about: it is **verbatim**, and it needs **no integration with anything**.
 
 Modern dictation is also nothing like the [Dragon-era experience](/learn/best-dragon-alternative) some practitioners remember. There is no voice profile to train, no reading passages aloud for twenty minutes before it works, and no per-application plugin to install. Speak a full paragraph naturally and the punctuated paragraph lands at the cursor — and you control the punctuation, headings and line breaks by voice as you go, which is covered in the [spoken punctuation guide](/support/spoken-punctuation). Getting from download to first dictated note takes a couple of minutes; the [getting started guide](/support/getting-started) walks through it.
 

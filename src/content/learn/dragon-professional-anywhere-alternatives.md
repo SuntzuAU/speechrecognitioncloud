@@ -123,7 +123,7 @@ But if what you valued about Dragon Professional Anywhere was the cloud model â€
 
 That is not a criticism of Dragon Professional v16. It is a well-regarded product doing a different job. It is simply worth knowing which of the two things you are being offered before you accept the default, because the official path and the closest-equivalent path are not the same path.
 
-Speech Recognition Cloud is one cloud option and it is the one we build, so weigh that accordingly. Price it against v16, run both if you can, and choose on evidence.
+Speech Recognition Cloud (SRC) is one cloud option and it is the one we build, so weigh that accordingly. Price it against v16, run both if you can, and choose on evidence.
 
 ### Should I buy Dragon Professional Anywhere now?
 

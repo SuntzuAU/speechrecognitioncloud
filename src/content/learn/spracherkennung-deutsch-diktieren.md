@@ -93,7 +93,7 @@ Die folgende Demonstration dauert knapp zwei Minuten und zeigt gesprochenes Deut
 
 ## Funktioniert Spracherkennung auf Deutsch zuverlässig?
 
-**Ja. Speech Recognition Cloud unterstützt Deutsch als eine von 57 Sprachen und verarbeitet es mit denselben Cloud-Sprachmodellen wie Englisch.** Ein Sprachtraining ist nicht erforderlich.
+**Ja. Speech Recognition Cloud (SRC) unterstützt Deutsch als eine von 57 Sprachen und verarbeitet es mit denselben Cloud-Sprachmodellen wie Englisch.** Ein Sprachtraining ist nicht erforderlich.
 
 Für das Deutsche ist das aus zwei Gründen relevant. Erstens waren zusammengesetzte Substantive — die berüchtigten langen Wörter — für ältere, lokal installierte Erkennungssysteme oft ein Problem, weil sie gegen ein festes Wörterbuch abgeglichen wurden. Cloudbasierte Modelle arbeiten kontextbezogen und kommen damit deutlich besser zurecht. Zweitens hilft der Kontext bei der Groß- und Kleinschreibung, die im Deutschen bekanntlich mehr Arbeit macht als in den meisten anderen Sprachen.
 

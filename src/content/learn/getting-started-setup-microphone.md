@@ -37,7 +37,7 @@ externalLinks:
     url: "https://www.voicerecognition.com.au/collections/dragon-microphone"
 ---
 
-This video walks you through everything you need to get up and running with Speech Recognition Cloud in just a few minutes.
+This video walks you through everything you need to get up and running with Speech Recognition Cloud (SRC) in just a few minutes.
 
 ## What you will learn
 

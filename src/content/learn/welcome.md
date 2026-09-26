@@ -11,7 +11,7 @@ imagesPending: false
 context: "descriptive"
 ---
 
-Speech Recognition Cloud is voice dictation software for Windows 10 and Windows 11. You speak, and your words appear at the cursor in whatever application you are working in — Microsoft Word, Outlook, a browser, your practice management or clinical software. There is no enrolment step and no voice training of any kind.
+Speech Recognition Cloud (SRC) is voice dictation software for Windows 10 and Windows 11. You speak, and your words appear at the cursor in whatever application you are working in — Microsoft Word, Outlook, a browser, your practice management or clinical software. There is no enrolment step and no voice training of any kind.
 
 ## Where to start
 

@@ -95,7 +95,7 @@ Dyslexia and [students with dysgraphia](/learn/speech-recognition-students-dysgr
 
 ## Where Speech Recognition Cloud comes in
 
-Speech Recognition Cloud was built by Russell Bewsell, who has spent 28 years working with Australian schools, students and people across a wide range of disabilities and support needs — backed by [Voice Recognition Australia](https://www.voicerecognition.com.au) and 25-plus years of speech recognition expertise.
+Speech Recognition Cloud (SRC) was built by Russell Bewsell, who has spent 28 years working with Australian schools, students and people across a wide range of disabilities and support needs — backed by [Voice Recognition Australia](https://www.voicerecognition.com.au) and 25-plus years of speech recognition expertise.
 
 It's designed to be put to work with as little setup as possible: no voice-profile training to sit through, no calibration. You place the cursor where you want text, press a hotkey, speak naturally, and the punctuated sentence appears — in Word, in Google Docs, in an online assignment form, anywhere on Windows. It's the same [speech to text for students and academics](https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic) range used in schools around the country, with dedicated pages on [speech to text for students](/students) and [speech to text in the classroom](/teachers) for specific settings.
 

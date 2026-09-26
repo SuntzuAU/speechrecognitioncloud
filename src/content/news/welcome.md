@@ -5,4 +5,4 @@ description: "Introducing Speech Recognition Cloud -- AI-powered voice dictation
 context: "descriptive"
 ---
 
-Speech Recognition Cloud is now available. Download the free version and start dictating today.
+Speech Recognition Cloud (SRC) is now available. Download the free version and start dictating today.

@@ -57,7 +57,7 @@ Dragon was trained on adult voices — adult pitch, adult pace, adult vocabulary
 
 That was the state of things for a long time: the accommodation that should have been transformative for primary and early secondary students was effectively age-gated, and nobody said so out loud.
 
-**This is what has changed. Speech Recognition Cloud is built to recognise younger, still-developing voices accurately — so dictation is now a realistic accommodation for a nine-year-old with dysgraphia, not just a sixteen-year-old.** For a learning difference that shows up in Year 2 and does its worst damage long before senior school, that difference is not a minor upgrade. It is the whole point.
+**This is what has changed. Speech Recognition Cloud (SRC) is built to recognise younger, still-developing voices accurately — so dictation is now a realistic accommodation for a nine-year-old with dysgraphia, not just a sixteen-year-old.** For a learning difference that shows up in Year 2 and does its worst damage long before senior school, that difference is not a minor upgrade. It is the whole point.
 
 ## Dysgraphia is not bad handwriting
 

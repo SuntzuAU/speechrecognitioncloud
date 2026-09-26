@@ -9,7 +9,7 @@ const posts = (await getCollection('news')).sort((a, b) => new Date(b.data.date)
     <div class="container" style="max-width:800px">
       <p class="eyebrow">NEWS</p>
       <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">News and updates</h1>
-      <p class="muted" style="font-size:16px;margin-bottom:48px">Product updates, tips, and industry news from Speech Recognition Cloud.</p>
+      <p class="muted" style="font-size:16px;margin-bottom:48px">Product updates, tips, and industry news from Speech Recognition Cloud (SRC).</p>
       {posts.length > 0 ? (
         <div class="news-list">
           {posts.map(post => (
