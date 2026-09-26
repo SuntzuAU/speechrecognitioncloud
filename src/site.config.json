@@ -211,7 +211,7 @@
   },
 
   "footer": {
-    "tagline": "AI voice dictation software for Windows. Built by Russell Bewsell.",
+    "tagline": "Speech Recognition Cloud™ (SRC). AI voice dictation software for Windows. Built by Russell Bewsell.",
     "columns": [
       { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" },{ "label": "Pricing", "href": "/pricing" },{ "label": "Languages", "href": "/languages" },{ "label": "Volume licensing", "href": "/academic" },{ "label": "Download", "href": "https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe" }] },
       { "heading": "Learn", "links": [{ "label": "All guides and articles", "href": "/learn" },{ "label": "Getting started", "href": "/support/getting-started" },{ "label": "FAQ", "href": "/support/faq" },{ "label": "Tips", "href": "/support/tips" },{ "label": "Guides (PDF)", "href": "/support/guides" },{ "label": "Videos", "href": "/support/videos" },{ "label": "Support", "href": "/support" }] },
@@ -222,7 +222,7 @@
       { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61584787324455" },
       { "platform": "LinkedIn", "url": "https://www.linkedin.com/company/speech-recognition-cloud/" }
     ],
-    "copyright": "2026 Speech Recognition Cloud. All rights reserved."
+    "copyright": "2026 Speech Recognition Cloud™. All rights reserved."
   },
 
   "download": {
