@@ -26,9 +26,9 @@
   },
 
   "organization": {
-    "name": "Voice Recognition Australia",
-    "legalName": "Voice Recognition Australia",
-    "url": "https://www.voicerecognition.com.au",
+    "name": "Speech Recognition Cloud",
+    "legalName": "voicerecognition.com.au pty ltd",
+    "url": "https://speechrecognition.cloud",
     "logo": "https://speechrecognition.cloud/logo.jpg",
     "foundingDate": "1999",
     "founder": {
@@ -38,8 +38,7 @@
     },
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61584787324455",
-      "https://www.linkedin.com/company/speech-recognition-cloud/",
-      "https://www.voicerecognition.com.au"
+      "https://www.linkedin.com/company/speech-recognition-cloud/"
     ],
     "addressCountry": "AU",
     "areaServed": [
@@ -91,7 +90,7 @@
     "ctaSecondary": "Contact us",
     "ctaSecondaryUrl": "/contact",
     "microcopy": "No credit card required. Installs in 2 minutes. Windows 10/11.",
-    "trustLine": "Built by Russell Bewsell. 28 years deploying speech technology across Australian healthcare, legal, and government."
+    "trustLine": "Built by Russell Bewsell. 28 years deploying speech technology across healthcare, legal, and government."
   },
 
   "clarityStrip": {
@@ -122,7 +121,7 @@
     "founderLinkedIn": "https://www.linkedin.com/in/rbewsell/",
     "quote": "After 28 years deploying speech recognition, we built a simpler alternative to traditional dictation systems. I have watched what works, what frustrates people, and what they actually need. This product is the answer for most users.",
     "credentials": [
-      "28 years deploying speech recognition in Australian hospitals, courts, and government departments",
+      "28 years deploying speech recognition in hospitals, courts, and government departments",
       "Supported tens of thousands of professionals across healthcare, legal, government, and enterprise",
       "Presented the national Dragonology training series across Australia in 2017",
       "Built this product based on what real users need, not what a marketing department imagines"

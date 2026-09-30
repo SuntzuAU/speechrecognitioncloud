@@ -43,10 +43,6 @@ internalLinks:
     anchor: "accessibility and assistive technology"
   - to: "/pricing"
     anchor: "compare plans and pricing"
-externalLinks:
-  - to: "https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic"
-    anchor: "speech to text for students"
-    url: "https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic"
 ---
 
 Ask a learning support teacher what they were advised to do about dysgraphia fifteen years ago and you'll hear the same answer: put the student on Dragon.
@@ -105,7 +101,7 @@ Speech Recognition Cloud was built by Russell Bewsell, who has spent 28 years wo
 
 That's a long time watching the same failure repeat: a capable student handed software that couldn't hear them properly, then quietly written off as someone dictation "doesn't suit." It suited them fine. The tool didn't fit the user — and for younger students especially, nobody was building for that user, because the market was adult professionals.
 
-Speech Recognition Cloud was designed from that starting point rather than adapted toward it. You put the cursor where you want text, press a hotkey, speak naturally, and the full punctuated paragraph appears — in Word, in Google Docs, in an online assignment form, anywhere on Windows. It sits within the same [speech to text for students](https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic) range from Voice Recognition Australia used in schools around the country, and there are dedicated pages on [dictation for students](/students) and [speech to text in the classroom](/teachers) if you want the detail for a specific setting.
+Speech Recognition Cloud was designed from that starting point rather than adapted toward it. You put the cursor where you want text, press a hotkey, speak naturally, and the full punctuated paragraph appears — in Word, in Google Docs, in an online assignment form, anywhere on Windows. There are dedicated pages on [dictation for students](/students) and [speech to text in the classroom](/teachers) if you want the detail for a specific setting.
 
 The honest way to evaluate it is not to read about it. Put it in front of a student on real work — a piece of homework, a draft they've been avoiding. The free edition includes 20 minutes of dictation a month, which is more than enough to watch a child dictate a paragraph and see whether the screen shows what they actually said.
 

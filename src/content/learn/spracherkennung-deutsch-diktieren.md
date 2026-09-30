@@ -52,10 +52,6 @@ internalLinks:
     anchor: "Einrichtungsanleitung"
   - to: "/learn/best-dragon-alternative"
     anchor: "Dragon-Alternativen im Vergleich"
-externalLinks:
-  - to: "https://www.voicerecognition.com.au"
-    anchor: "28 Jahre Erfahrung mit Spracherkennung"
-    url: "https://www.voicerecognition.com.au"
 ---
 
 <div class="callout">
@@ -165,6 +161,6 @@ Wenn Sie neu einsteigen, führt Sie die [Einrichtungsanleitung](/learn/getting-s
 
 ## Wer hat Speech Recognition Cloud entwickelt?
 
-Speech Recognition Cloud stammt von Russell Bewsell. Er arbeitet seit [28 Jahren mit Spracherkennung](https://www.voicerecognition.com.au) — in Krankenhäusern, Arzt- und Facharztpraxen, Gerichten und Behörden, mit Kundinnen und Kunden in Australien, den USA, Großbritannien, Kanada, Neuseeland und Europa. Er leitete den größten Dragon-Fachhändler der Südhalbkugel mit mehr als 40.000 Kunden und über 15.000 Dragon-Anwendern.
+Speech Recognition Cloud stammt von Russell Bewsell. Er arbeitet seit 28 Jahren mit Spracherkennung — in Krankenhäusern, Arzt- und Facharztpraxen, Gerichten und Behörden, mit Kundinnen und Kunden in den USA, Großbritannien, Kanada, Australien, Neuseeland und Europa. Er leitete einen der größten und langjährigsten Dragon-Fachhändler weltweit, spezialisiert auf Dragon und Spracherkennung, mit mehr als 40.000 Kunden und über 15.000 Dragon-Anwendern.
 
 — Russell Bewsell, Gründer, Speech Recognition Cloud

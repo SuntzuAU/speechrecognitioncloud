@@ -45,10 +45,6 @@ internalLinks:
     anchor: "assistive technology for learning"
   - to: "/pricing"
     anchor: "speech recognition pricing plans"
-externalLinks:
-  - to: "https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic"
-    anchor: "speech to text for students and academics"
-    url: "https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic"
 ---
 
 There's a particular kind of sentence a student with dyslexia writes when they're being careful. It's short. It uses small, safe words. It says much less than the student knows, because every longer word they reached for was a word they weren't sure how to spell — so they didn't reach.
@@ -95,9 +91,9 @@ Dyslexia and [students with dysgraphia](/learn/speech-recognition-students-dysgr
 
 ## Where Speech Recognition Cloud comes in
 
-Speech Recognition Cloud (SRC) was built by Russell Bewsell, who has spent 28 years working with Australian schools, students and people across a wide range of disabilities and support needs — backed by [Voice Recognition Australia](https://www.voicerecognition.com.au) and 25-plus years of speech recognition expertise.
+Speech Recognition Cloud (SRC) was built by Russell Bewsell, who has spent 28 years working with schools, students and people across a wide range of disabilities and support needs.
 
-It's designed to be put to work with as little setup as possible: no voice-profile training to sit through, no calibration. You place the cursor where you want text, press a hotkey, speak naturally, and the punctuated sentence appears — in Word, in Google Docs, in an online assignment form, anywhere on Windows. It's the same [speech to text for students and academics](https://www.voicerecognition.com.au/products/speech-recognition-cloud-student-academic) range used in schools around the country, with dedicated pages on [speech to text for students](/students) and [speech to text in the classroom](/teachers) for specific settings.
+It's designed to be put to work with as little setup as possible: no voice-profile training to sit through, no calibration. You place the cursor where you want text, press a hotkey, speak naturally, and the punctuated sentence appears — in Word, in Google Docs, in an online assignment form, anywhere on Windows. There are dedicated pages on [speech to text for students](/students) and [speech to text in the classroom](/teachers) for specific settings.
 
 The honest way to judge whether it helps a particular student is to try it on real work — a piece of writing they've been avoiding. The free edition includes 20 minutes of dictation a month, which is enough to watch a student say a paragraph they'd never have written by hand, and see the difference for yourself.
 

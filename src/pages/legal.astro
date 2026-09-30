@@ -16,7 +16,7 @@ const faqItems = [
   },
   {
     question: "Will it work inside our practice management and document management systems?",
-    answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application — Microsoft Word, Outlook, and the rest of the Microsoft 365 stack; document management systems (NetDocuments, iManage, SharePoint, Worldox) in their browser or desktop interfaces; the major Australian and international practice management platforms (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, Clio, MyCase, PracticePanther, Filevine); legal research platforms (Westlaw, LexisNexis, Practical Law) in a browser; matter and time-billing applications; and any other Windows application you can click into and type into. No per-system certification, no plugin to install, no per-application configuration."
+    answer: "Yes. Speech Recognition Cloud dictates at the cursor in any Windows application — Microsoft Word, Outlook, and the rest of the Microsoft 365 stack; document management systems (NetDocuments, iManage, SharePoint, Worldox) in their browser or desktop interfaces; the major practice management platforms (Clio, MyCase, PracticePanther, Filevine, Smokeball, LEAP, Actionstep, Practice Evolve, Open Practice); legal research platforms (Westlaw, LexisNexis, Practical Law) in a browser; matter and time-billing applications; and any other Windows application you can click into and type into. No per-system certification, no plugin to install, no per-application configuration."
   },
   {
     question: "Is what I dictate confidential? What happens to client information?",
@@ -83,17 +83,17 @@ const howToSteps = [
 const russellPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "@id": "https://speechrecognition.cloud/#russellbewsell",
   "name": "Russell Bewsell",
-  "jobTitle": "Founder and CEO, Voice Recognition Australia",
-  "url": "https://www.voicerecognition.com.au",
+  "jobTitle": "Founder, Speech Recognition Cloud",
+  "url": "https://speechrecognition.cloud",
   "sameAs": [
     "https://www.linkedin.com/in/rbewsell/"
   ],
   "worksFor": {
     "@type": "Organization",
-    "name": "Voice Recognition Australia",
-    "url": "https://www.voicerecognition.com.au"
+    "name": "Speech Recognition Cloud",
+    "url": "https://speechrecognition.cloud"
   }
 };
 
@@ -103,7 +103,7 @@ const legalPageSchema = {
   "@id": pageUrl + "#webpage",
   "url": pageUrl,
   "name": "Voice Dictation for Lawyers and Legal Practice: A Practical Guide",
-  "description": "Practical guide to voice dictation for lawyers, barristers, in-house counsel, and legal professionals. Speech Recognition Cloud Professional: verbatim dictation, no data stored beyond an encrypted email. Written by Russell Bewsell, Voice Recognition Australia.",
+  "description": "Practical guide to voice dictation for lawyers, attorneys, in-house counsel, and legal professionals. Speech Recognition Cloud Professional: verbatim dictation, no data stored beyond an encrypted email. Written by Russell Bewsell, founder of Speech Recognition Cloud.",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
   "datePublished": "2026-05-16",
@@ -121,7 +121,7 @@ const legalPageSchema = {
     "@type": "Audience",
     "audienceType": "Legal professionals"
   },
-  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "author": { "@id": "https://speechrecognition.cloud/#russellbewsell" },
   "publisher": {
     "@type": "Organization",
     "name": site.organization.name,
@@ -188,7 +188,7 @@ const icons = {
 ---
 <BaseLayout
   title="Voice Dictation for Lawyers and Legal Practice: A Practical Guide"
-  description="Practical guide to voice dictation for lawyers, barristers, in-house counsel, and legal professionals. Verbatim dictation, no data stored. Free 30-day Professional trial."
+  description="Practical guide to voice dictation for lawyers, attorneys, in-house counsel, and legal professionals. Verbatim dictation, no data stored. Free 30-day Professional trial."
   extraSchema={extraSchema}
 >
   <!-- HERO -->
@@ -244,7 +244,7 @@ const icons = {
     <div class="container m-prose">
       <h2>What is Speech Recognition Cloud for lawyers?</h2>
       <p>Speech Recognition Cloud (SRC) Professional is verbatim voice dictation software for Windows 10 and Windows 11 built for the writing legal practice generates. A lawyer speaks into a microphone, the words appear at the cursor in whatever Windows application is open — Microsoft Word, a document management system, a practice management platform, Outlook, a research database, a court filing portal, anywhere you can click and type. The default behaviour is verbatim: what you say is what appears, with no AI rewriting in between. The Professional plan also includes optional AI Modes you can trigger on demand if you want to tighten, formalise, or summarise a passage you have already dictated.</p>
-      <p>It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian law firms, barristers' chambers, in-house counsel teams, government legal practice, and the courts. The product is in daily use across solo practices, mid-size commercial firms, and chambers floors in Australia, with customers across the US, UK, Canada, New Zealand, and Europe.</p>
+      <p>It is built and supported by a team with 28 years of speech-technology deployment across law firms, barristers' chambers, in-house counsel teams, government legal practice, and the courts. The product is in daily use across solo practices, mid-size commercial firms, and chambers floors, with customers across the US, UK, Canada, Australia, New Zealand, and Europe.</p>
     </div>
   </section>
 
@@ -252,7 +252,7 @@ const icons = {
   <section class="section-pad">
     <div class="container m-prose">
       <h2>What legal applications does Speech Recognition Cloud work with?</h2>
-      <p>It works with every Windows-based legal application because it dictates at the cursor at the operating-system level — not as a plugin or per-system integration. In Australia that includes Microsoft Word and the rest of Microsoft 365; the major Australian practice management systems (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, FilePro); the international practice management platforms used in Australian and offshore practice (Clio, MyCase, PracticePanther, Filevine); document management systems (NetDocuments, iManage, SharePoint document libraries, Worldox); legal research databases (Westlaw AU, LexisNexis, AustLII, Practical Law) in their browser interfaces; time-billing and matter management overlays; and court filing portals where they run in a Windows browser. Internationally it works inside the equivalent UK and US legal applications.</p>
+      <p>It works with every Windows-based legal application because it dictates at the cursor at the operating-system level — not as a plugin or per-system integration. That includes Microsoft Word and the rest of Microsoft 365; the major US practice management platforms (Clio, MyCase, PracticePanther, Filevine, Smokeball); legal research in Westlaw and LexisNexis; and e-filing portals that run in a Windows browser. In Australia it includes the major Australian practice management systems (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, FilePro); the international practice management platforms used in Australian and offshore practice (Clio, MyCase, PracticePanther, Filevine); document management systems (NetDocuments, iManage, SharePoint document libraries, Worldox); legal research databases (Westlaw AU, LexisNexis, AustLII, Practical Law) in their browser interfaces; time-billing and matter management overlays; and court filing portals where they run in a Windows browser. It works the same way inside UK legal applications.</p>
       <p>The trade-off: the desktop application is Windows 10 and Windows 11 only — there is no native macOS or ChromeOS version. The mobile app for iPhone and Android partially mitigates this for Mac-based lawyers through remote-desktop tunnelling and Voice Notes mode, but the desktop application itself is Windows only.</p>
     </div>
   </section>
@@ -378,25 +378,8 @@ const icons = {
   <section class="section-pad section-neutral">
     <div class="container m-prose" style="max-width:820px">
 
-      <!-- AUSTRALIA -->
-      <div class="m-regional-panel">
-        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
-        <h2>Is Speech Recognition Cloud suitable for Australian legal practice under state law society and bar association rules?</h2>
-        <p>That is a determination each firm or barrister should make under the professional conduct rules of the relevant jurisdiction — the Legal Profession Uniform Law and the Australian Solicitors' Conduct Rules in New South Wales, Victoria, and Western Australia; the equivalent state-based conduct rules in Queensland, South Australia, Tasmania, the ACT, and the Northern Territory; and the relevant bar association rules for barristers. The product is designed in a way that simplifies the analysis: no client content is stored on our infrastructure, only an encrypted email address. Audio is processed in memory and immediately erased; transcripts are not retained on our servers; custom vocabulary stays on the lawyer's own device.</p>
-
-        <p><strong>Australian practice management and document management systems.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365; the major Australian PMS platforms (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, FilePro); the international PMS systems used in Australian practice (Clio, MyCase, PracticePanther); document management systems (NetDocuments, iManage, SharePoint document libraries); and the major Australian legal research databases in a browser (Westlaw AU, LexisNexis AU, AustLII, Practical Law). No per-system certification, no plugin, no configuration.</p>
-
-        <p><strong>Australian Privacy Principles and client information.</strong> Most law firms are APP entities under the Privacy Act 1988 once they reach the small-business turnover threshold or by virtue of their work (for example, where they handle health information). The relevant material to provide your principal or risk partner is our privacy and data-handling statement, which sets out that we store no client content of any kind beyond the lawyer's encrypted email address. For firms subject to the Notifiable Data Breaches scheme, that materially simplifies the breach-response analysis for this tool.</p>
-
-        <p><strong>Court documents and electronic filing.</strong> Dictation does not change what court documents must contain or how they must be filed; that is set by the court rules, practice notes, and the relevant electronic filing portals. What changes is the time it takes to produce the document. Some practitioners use Voice Notes mode to dictate the substantive content of submissions and affidavits while the brief is fresh and edit at the firm afterwards; others draft directly in Word at the desktop. Both work.</p>
-
-        <p><strong>Costs agreements and client correspondence.</strong> Costs agreement updates, scope-of-work letters, and the standard client correspondence required under the relevant uniform-law or state-based costs rules are heavily prose and well-suited to dictation plus templates. The 30-day trial is the standard way to evaluate fit on the real correspondence load.</p>
-
-        <p>For broader voice-technology procurement in Australian legal practice — including firm-wide rollouts, Dragon Legal licensing for practices that specifically require that product, on-site training, and integration with established PMS environments — our parent business, Voice Recognition Australia, has been supplying Australian legal practice for over 25 years.</p>
-      </div>
-
       <!-- UNITED STATES -->
-      <div class="m-regional-panel" style="margin-top:24px">
+      <div class="m-regional-panel">
         <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
         <h2>Can US lawyers use Speech Recognition Cloud consistent with ABA Model Rule 1.6 client confidentiality?</h2>
         <p>That is a determination each US lawyer or firm should make under ABA Model Rule 1.6, the relevant state's version of the rule, and the applicable state bar ethics opinions on lawyers' use of cloud services. ABA Formal Opinion 477R and the state ethics opinions that have followed it generally hold that lawyers may use cloud-based services consistent with Rule 1.6 provided they make reasonable efforts to prevent unauthorised access to client information — which usually turns on the cloud vendor's data-handling practices and the lawyer's diligence in selecting and supervising the vendor. Speech Recognition Cloud's data-handling makes that diligence assessment straightforward: audio is processed in memory and immediately erased, transcripts are never stored on our servers, custom vocabulary stays on the lawyer's device, only an encrypted email address is stored on our infrastructure, and all connections are encrypted in transit. We do not have access to any client content because there is no client content to access.</p>
@@ -421,6 +404,22 @@ const icons = {
         <p><strong>Cross-border data flows.</strong> UK firms transferring data outside the UK, and EU firms transferring outside the EEA, need to consider the relevant adequacy frameworks (the UK-US Data Bridge, the EU-US Data Privacy Framework, and the SCCs where applicable). The simplification that helps here: there is no client content to transfer. The cross-border data inventory for Speech Recognition Cloud is essentially the lawyer's encrypted email address.</p>
 
         <p><strong>Languages.</strong> The Professional tier supports 57 languages, which is useful for UK and EU lawyers practising across multiple language markets and for the EU member states whose practice happens in languages other than English.</p>
+      </div>
+
+      <!-- AUSTRALIA -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
+        <h2>Is Speech Recognition Cloud suitable for Australian legal practice under state law society and bar association rules?</h2>
+        <p>That is a determination each firm or barrister should make under the professional conduct rules of the relevant jurisdiction — the Legal Profession Uniform Law and the Australian Solicitors' Conduct Rules in New South Wales, Victoria, and Western Australia; the equivalent state-based conduct rules in Queensland, South Australia, Tasmania, the ACT, and the Northern Territory; and the relevant bar association rules for barristers. The product is designed in a way that simplifies the analysis: no client content is stored on our infrastructure, only an encrypted email address. Audio is processed in memory and immediately erased; transcripts are not retained on our servers; custom vocabulary stays on the lawyer's own device.</p>
+
+        <p><strong>Australian practice management and document management systems.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365; the major Australian PMS platforms (LEAP, Actionstep, Smokeball, Practice Evolve, Open Practice, FilePro); the international PMS systems used in Australian practice (Clio, MyCase, PracticePanther); document management systems (NetDocuments, iManage, SharePoint document libraries); and the major Australian legal research databases in a browser (Westlaw AU, LexisNexis AU, AustLII, Practical Law). No per-system certification, no plugin, no configuration.</p>
+
+        <p><strong>Australian Privacy Principles and client information.</strong> Most law firms are APP entities under the Privacy Act 1988 once they reach the small-business turnover threshold or by virtue of their work (for example, where they handle health information). The relevant material to provide your principal or risk partner is our privacy and data-handling statement, which sets out that we store no client content of any kind beyond the lawyer's encrypted email address. For firms subject to the Notifiable Data Breaches scheme, that materially simplifies the breach-response analysis for this tool.</p>
+
+        <p><strong>Court documents and electronic filing.</strong> Dictation does not change what court documents must contain or how they must be filed; that is set by the court rules, practice notes, and the relevant electronic filing portals. What changes is the time it takes to produce the document. Some practitioners use Voice Notes mode to dictate the substantive content of submissions and affidavits while the brief is fresh and edit at the firm afterwards; others draft directly in Word at the desktop. Both work.</p>
+
+        <p><strong>Costs agreements and client correspondence.</strong> Costs agreement updates, scope-of-work letters, and the standard client correspondence required under the relevant uniform-law or state-based costs rules are heavily prose and well-suited to dictation plus templates. The 30-day trial is the standard way to evaluate fit on the real correspondence load.</p>
+
       </div>
 
     </div>
@@ -580,8 +579,8 @@ const icons = {
     <div class="container" style="max-width:780px">
       <div class="m-author-panel">
         <h2>About this page</h2>
-        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years implementing dictation systems</a> across Australian law firms, barristers' chambers, in-house counsel teams, government legal practice, and the courts — primarily in Australia, with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your legal practice does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
-        <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p>This page is written and maintained by Russell Bewsell, founder of Speech Recognition Cloud. I have spent 28 years implementing dictation systems across law firms, barristers' chambers, in-house counsel teams, government legal practice, and the courts, with customers and deployments in the US, UK, Canada, Australia, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your legal practice does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder, Speech Recognition Cloud</p>
         <p class="m-reviewed muted">Last reviewed: 16 May 2026</p>
       </div>
     </div>

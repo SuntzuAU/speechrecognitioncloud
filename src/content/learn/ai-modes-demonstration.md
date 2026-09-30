@@ -12,10 +12,6 @@ internalLinks:
     anchor: "full AI Modes reference"
   - to: "/pricing"
     anchor: "compare plans"
-externalLinks:
-  - to: "voicerecognition.com.au"
-    anchor: "professional voice dictation solutions"
-    url: "https://www.voicerecognition.com.au/pages/speech-to-text-download"
 ---
 
 AI Modes are one of the most powerful features in Speech Recognition Cloud (SRC). Instead of just converting speech to text, AI Modes let you use your voice to transform, rewrite, and work with text in ways that go far beyond traditional dictation.

@@ -31,10 +31,6 @@ context: "descriptive"
 internalLinks:
   - to: "/support/getting-started"
     anchor: "full getting started guide"
-externalLinks:
-  - to: "voicerecognition.com.au"
-    anchor: "recommended USB microphones for dictation"
-    url: "https://www.voicerecognition.com.au/collections/dragon-microphone"
 ---
 
 This video walks you through everything you need to get up and running with Speech Recognition Cloud (SRC) in just a few minutes.
@@ -47,7 +43,7 @@ This video walks you through everything you need to get up and running with Spee
 
 ## Before you start
 
-You will need a Windows 10 or 11 computer and a microphone. Your built-in laptop microphone or webcam mic will work, but for the best accuracy we recommend a quality USB headset or desktop microphone. If you are looking for a [recommended USB microphone for dictation](https://www.voicerecognition.com.au/collections/dragon-microphone), Voice Recognition Australia stocks a range of tested options.
+You will need a Windows 10 or 11 computer and a microphone. Your built-in laptop microphone or webcam mic will work, but for the best accuracy we recommend a quality USB headset or desktop microphone. A USB headset or desktop microphone designed for dictation is the simplest upgrade if accuracy matters to you.
 
 ## Step 1: Download and install
 

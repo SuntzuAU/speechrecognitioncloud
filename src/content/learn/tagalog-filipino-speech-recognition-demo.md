@@ -10,10 +10,6 @@ context: "descriptive"
 internalLinks:
   - to: "/learn/getting-started-setup-microphone"
     anchor: "getting started guide"
-externalLinks:
-  - to: "voicerecognition.com.au"
-    anchor: "Australian speech recognition specialists"
-    url: "https://www.voicerecognition.com.au/pages/about-voice-recognition-australia"
 ---
 
 Speech Recognition Cloud (SRC) supports 57 languages, and Tagalog (Filipino) is one of them. This short demonstration shows the software transcribing spoken Tagalog in real time with automatic punctuation.

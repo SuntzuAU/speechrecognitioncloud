@@ -40,9 +40,6 @@ externalLinks:
   - to: "https://dragonprofessional16.com.au/"
     anchor: "Dragon Professional v16"
     url: "https://dragonprofessional16.com.au/"
-  - to: "https://www.voicerecognition.com.au/collections/dragon-software"
-    anchor: "Dragon software range"
-    url: "https://www.voicerecognition.com.au/collections/dragon-software"
 internalLinks:
   - to: "/pricing"
     anchor: "speech to text software pricing"
@@ -117,7 +114,7 @@ It is worth understanding what the move actually involves, because **Dragon Prof
 | **Works offline** | No | **Yes** | No |
 | **VDI / virtual app deployment** | Yes | Varies by deployment | No |
 
-**Read that table in both directions.** If offline dictation matters to you — you work somewhere with poor connectivity, or your security posture rules out cloud processing — then v16 is genuinely the better product and the fact that it runs locally is the whole point. Take the migration assistance. Specifications, feature detail and current pricing for v16 are on the [Dragon software range](https://www.voicerecognition.com.au/collections/dragon-software).
+**Read that table in both directions.** If offline dictation matters to you — you work somewhere with poor connectivity, or your security posture rules out cloud processing — then v16 is genuinely the better product and the fact that it runs locally is the whole point. Take the migration assistance. Specifications, feature detail and current pricing for v16 are available from Microsoft and authorised Dragon resellers.
 
 But if what you valued about Dragon Professional Anywhere was the cloud model — a profile that follows you between machines, no installation ceiling, improvements arriving without a version purchase, a phone in your pocket acting as a microphone — then moving to a locally installed product gives those things up. **On architecture, the closest equivalent to what you have now is another cloud product, not a desktop one.**
 

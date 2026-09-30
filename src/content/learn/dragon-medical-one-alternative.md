@@ -33,10 +33,6 @@ internalLinks:
     anchor: "compare plans and pricing"
   - to: "/healthcare"
     anchor: "dictation for healthcare teams"
-externalLinks:
-  - to: "https://www.voicerecognition.com.au/pages/medical-speech-to-text-software"
-    anchor: "Speech-to-Text Medical"
-    url: "https://www.voicerecognition.com.au/pages/medical-speech-to-text-software"
 heroImage: "speechrecognitioncloud/2026/08/06/dragon-medical-one-alternative-hero-photo-f07379c3.jpg"
 ---
 
@@ -104,7 +100,7 @@ Because SRC is cloud-based, it needs an internet connection — that's the trade
 
 ## Who built it
 
-SRC isn't a startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran Voice Recognition Australia, the largest Dragon reseller in the Southern Hemisphere — supporting more than 40,000 customers and over 15,000 Dragon users, across hospitals, GP practices, specialist clinics and government health departments. Voice Recognition Australia also offers a dedicated [Speech-to-Text Medical](https://www.voicerecognition.com.au/pages/medical-speech-to-text-software) product line for clinicians weighing up their options. In other words, it's built by someone who spent decades inside the exact Dragon workflows described above.
+SRC isn't a startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition — supporting more than 40,000 customers and over 15,000 Dragon users, across hospitals, primary care and specialist practices, and government health departments. In other words, it's built by someone who spent decades inside the exact Dragon workflows described above.
 
 ## Try it in your own EMR, free for 30 days
 

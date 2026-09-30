@@ -70,17 +70,17 @@ const howToSteps = [
 const russellPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "@id": "https://speechrecognition.cloud/#russellbewsell",
   "name": "Russell Bewsell",
-  "jobTitle": "Founder and CEO, Voice Recognition Australia",
-  "url": "https://www.voicerecognition.com.au",
+  "jobTitle": "Founder, Speech Recognition Cloud",
+  "url": "https://speechrecognition.cloud",
   "sameAs": [
     "https://www.linkedin.com/in/rbewsell/"
   ],
   "worksFor": {
     "@type": "Organization",
-    "name": "Voice Recognition Australia",
-    "url": "https://www.voicerecognition.com.au"
+    "name": "Speech Recognition Cloud",
+    "url": "https://speechrecognition.cloud"
   }
 };
 
@@ -90,7 +90,7 @@ const webPageSchema = {
   "@id": pageUrl + "#webpage",
   "url": pageUrl,
   "name": "Speech to Text for Teachers: A Practical Guide",
-  "description": "Practical guide to voice dictation for teachers — report comments, individual education plans, parent communication, and lesson planning. Written by Russell Bewsell, Voice Recognition Australia.",
+  "description": "Practical guide to voice dictation for teachers — report card comments, IEP notes, parent emails, and lesson planning. Written by Russell Bewsell, founder of Speech Recognition Cloud.",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
   "datePublished": "2026-05-12",
@@ -108,7 +108,7 @@ const webPageSchema = {
     "@type": "EducationalAudience",
     "educationalRole": "teacher"
   },
-  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "author": { "@id": "https://speechrecognition.cloud/#russellbewsell" },
   "publisher": {
     "@type": "Organization",
     "name": site.organization.name,
@@ -163,7 +163,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
 ---
 <BaseLayout
   title="Speech to Text for Teachers: A Practical Guide"
-  description="Practical guide to voice dictation for teachers — report comments, individual education plans, parent communication, and lesson planning. Free Windows download."
+  description="Practical guide to voice dictation for teachers — report card comments, IEP notes, parent emails, and lesson planning. Free Windows download."
   extraSchema={extraSchema}
 >
   <!-- HERO -->
@@ -371,7 +371,6 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
     <div class="container t-prose" style="max-width:820px">
       <h2>School and education licensing</h2>
       <p>Speech Recognition Cloud is available on individual plans suitable for a single teacher, and on volume licensing suitable for a whole department, faculty, or school. The Personal/Educational annual plan covers most individual teachers who want unlimited dictation; school-level deployment is also available for IT departments rolling it out across classrooms.</p>
-      <p>For broader voice-technology procurement for schools — including microphones, classroom Dragon licensing for students with disabilities, NDIS-funded student deployments, and Learning Support teacher training — our parent business operates a dedicated <a href="https://www.voicerecognition.com.au/collections/education-academic-student" rel="noopener" class="t-link">education licensing collection at Voice Recognition Australia</a>, which has been supplying Australian schools, universities, and Learning Support teachers for over 25 years.</p>
       <p>See the <a href="/pricing" class="t-link">pricing page</a> for current individual plans, or <a href="/contact" class="t-link">contact us</a> for school volume quotes.</p>
     </div>
   </section>
@@ -382,7 +381,7 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
       <div class="t-regional-panel">
         <p class="t-regional-eyebrow">REGIONAL CONTEXT</p>
         <h2>For Australian teachers: NCCD, Sentral, Compass, and Australian Curriculum v9</h2>
-        <p>Speech Recognition Cloud is built and supported by an Australian company with 28 years of speech-technology deployment across Australian schools, hospitals, courts, and government departments. A few notes specifically for teachers working in the Australian system:</p>
+        <p>Speech Recognition Cloud is built and supported by a team with 28 years of speech-technology deployment across schools, hospitals, courts, and government departments. A few notes specifically for teachers working in the Australian system:</p>
         <p><strong>Australian school platforms.</strong> The cursor-based approach works inside Sentral (report comments, behaviour notes, the welfare module), Compass (chronicle entries, learning task feedback, parent-portal communications), Edval, EdSmart, and other Australian school management systems — anywhere the platform presents a text field.</p>
         <p><strong>NCCD evidence.</strong> The Nationally Consistent Collection of Data on School Students with Disability rewards contemporaneous, specific evidence and consistent phrasing across the four levels of adjustment — support provided within quality differentiated teaching practice, supplementary, substantial, and extensive. Saved templates for each level let you keep the framing consistent while the personalised detail is dictated in. The same approach extends to IEPs, IBMPs, and the chronicle entries that feed into student-support team meetings.</p>
         <p><strong>Australian Curriculum v9.</strong> Australian Curriculum v9.0 is the current published F-10 curriculum (with NSW, WA, and Victoria following their own implementation paths), and most schools are continuing their phased rollout through 2026. Dictation works well for annotating existing unit plans, drafting learning intentions and success criteria, and writing context paragraphs that connect a lesson to v9 content descriptors.</p>
@@ -396,8 +395,8 @@ const extraSchema = [russellPerson, webPageSchema, faqSchema, howToSchema, softw
     <div class="container" style="max-width:780px">
       <div class="t-author-panel">
         <h2>About this page</h2>
-        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I've spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="t-link">28 years deploying voice-to-text systems</a> across schools, hospitals, courts, and government departments — primarily in Australia, but with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your situation doesn't fit any of the four patterns, <a href="/contact" class="t-link">get in touch</a> and I'll tell you honestly whether dictation is likely to suit your work.</p>
-        <p class="t-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p>This page is written and maintained by Russell Bewsell, founder of Speech Recognition Cloud. I've spent 28 years deploying voice-to-text systems across schools, hospitals, courts, and government departments, with customers and deployments in the US, UK, Canada, Australia, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your situation doesn't fit any of the four patterns, <a href="/contact" class="t-link">get in touch</a> and I'll tell you honestly whether dictation is likely to suit your work.</p>
+        <p class="t-author-sig">— Russell Bewsell, Founder, Speech Recognition Cloud</p>
         <p class="t-reviewed muted">Last reviewed: 12 May 2026</p>
       </div>
     </div>

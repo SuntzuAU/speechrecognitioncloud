@@ -14,7 +14,7 @@ const lastReviewed = '2026-08-16';
 const faqItems = [
   {
     question: "Will it work inside my EMR or practice management system?",
-    answer: "Almost certainly, yes. Speech Recognition Cloud dictates at the cursor in any Windows application — that includes Australian systems like Best Practice, Medical Director, Genie, Zedmed, and Communicare; UK systems like EMIS, SystmOne, and Vision; US systems like Epic, Cerner, Athenahealth, and eClinicalWorks; and any other Windows-based EMR you can click into and type into. It does not integrate with the platforms specifically — it operates at the operating-system level — which is why it works across all of them without per-platform setup or certification."
+    answer: "Almost certainly, yes. Speech Recognition Cloud dictates at the cursor in any Windows application — that includes US systems like Epic, Cerner (Oracle Health), Athenahealth, and eClinicalWorks; UK systems like EMIS, SystmOne, and Vision; Australian systems like Best Practice, Medical Director, Genie, Zedmed, and Communicare; and any other Windows-based EMR you can click into and type into. It does not integrate with the platforms specifically — it operates at the operating-system level — which is why it works across all of them without per-platform setup or certification."
   },
   {
     question: "Is this an AI scribe or ambient documentation tool?",
@@ -85,17 +85,17 @@ const howToSteps = [
 const russellPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "@id": "https://speechrecognition.cloud/#russellbewsell",
   "name": "Russell Bewsell",
-  "jobTitle": "Founder and CEO, Voice Recognition Australia",
-  "url": "https://www.voicerecognition.com.au",
+  "jobTitle": "Founder, Speech Recognition Cloud",
+  "url": "https://speechrecognition.cloud",
   "sameAs": [
     "https://www.linkedin.com/in/rbewsell/"
   ],
   "worksFor": {
     "@type": "Organization",
-    "name": "Voice Recognition Australia",
-    "url": "https://www.voicerecognition.com.au"
+    "name": "Speech Recognition Cloud",
+    "url": "https://speechrecognition.cloud"
   }
 };
 
@@ -105,7 +105,7 @@ const medicalPageSchema = {
   "@id": pageUrl + "#webpage",
   "url": pageUrl,
   "name": "Medical Dictation Software for Windows",
-  "description": "Practical guide to voice dictation for clinicians — progress notes, discharge summaries, ward rounds, and clinical correspondence. Written by Russell Bewsell, Voice Recognition Australia.",
+  "description": "Practical guide to voice dictation for clinicians — progress notes, H&amp;Ps, discharge summaries, and referral letters in any Windows EHR. Written by Russell Bewsell, founder of Speech Recognition Cloud.",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
   "datePublished": "2026-05-15",
@@ -122,7 +122,7 @@ const medicalPageSchema = {
     "@type": "MedicalAudience",
     "audienceType": "Clinician"
   },
-  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "author": { "@id": "https://speechrecognition.cloud/#russellbewsell" },
   "publisher": {
     "@type": "Organization",
     "name": site.organization.name,
@@ -189,7 +189,7 @@ const icons = {
 ---
 <BaseLayout
   title="Medical Dictation Software for Windows | Free 30-Day Trial"
-  description="Practical guide to voice dictation for clinicians — progress notes, discharge summaries, ward rounds, and clinical correspondence. Free 30-day Medical Ultra trial."
+  description="Practical guide to voice dictation for clinicians — progress notes, H&amp;Ps, discharge summaries, and referral letters in any Windows EHR. Free 30-day Medical Ultra trial."
   extraSchema={extraSchema}
 >
   <!-- HERO -->
@@ -198,7 +198,7 @@ const icons = {
       <div class="m-hero-text">
         <p class="eyebrow">FOR CLINICIANS</p>
         <h1 class="m-h1">Medical Dictation Software for Windows EMRs</h1>
-        <p class="m-lead">Verbatim voice dictation for Windows-based EMRs and clinical applications. $439 USD per year for the Medical Ultra plan. Free 30-day trial. Built and supported by a 28-year specialist in Australian healthcare voice technology.</p>
+        <p class="m-lead">Verbatim voice dictation for Windows-based EMRs and clinical applications. $439 USD per year for the Medical Ultra plan. Free 30-day trial. Built and supported by a 28-year specialist in clinical voice technology.</p>
         <div class="m-trial-inline" id="trial-inline">
           <p class="m-trial-inline-title">Start your free 30-day Medical Ultra trial</p>
           <form id="_form_293_" method="POST" action="https://voicerecognition.activehosted.com/proc.php" novalidate class="m-trial-form ac-form-293">
@@ -257,7 +257,7 @@ const icons = {
         <div class="k"><p class="k-l">Works in</p><p class="k-v">Any Windows app</p></div>
       </div>
       <p><strong>Speech Recognition Cloud (SRC) is verbatim voice dictation software for Windows 10 and Windows 11, built specifically for clinicians.</strong> A clinician speaks into a microphone, the words appear at the cursor in whatever Windows application is open — an EMR, Microsoft Word, Outlook, Teams, a hospital intranet form, a clinical portal. It has a continuously updated medical vocabulary covering drug names, anatomical terminology, eponyms, and procedural language.</p>
-      <p>The Medical Ultra plan is $439 USD per year. The free 30-day trial includes full Medical Ultra functionality. It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian hospitals, GP practices, specialist clinics, and government health departments — with customers in the US, UK, Canada, New Zealand, and across Europe.</p>
+      <p>The Medical Ultra plan is $439 USD per year. The free 30-day trial includes full Medical Ultra functionality. It is built and supported by a team with 28 years of speech-technology deployment across hospitals, GP practices, specialist clinics, and government health departments, with customers across the US, UK, Canada, Australia, New Zealand, and Europe.</p>
 
       <div class="data-table-wrap">
         <table class="data-table">
@@ -284,7 +284,7 @@ const icons = {
       <figure class="m-figure m-figure--band">
         <img src={`${sepImgBase}/medical-dictation-clinic-team-workstation-band-f7d08589.jpg`} alt="A GP and a practice nurse at a clinic workstation, dictating into a Windows PC with a headset microphone" loading="lazy" decoding="async" width="880" height="373" />
       </figure>
-      <p><strong>Yes. Speech Recognition Cloud works with every Windows-based EMR and practice management system</strong>, because it dictates at the cursor at the operating-system level — not as a plugin or integration. That includes Best Practice, Medical Director, Genie, Zedmed, Communicare, and Helix in Australia; EMIS Web, SystmOne, Vision, and Adastra in the UK; Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks, NextGen, Allscripts (Veradigm), and Practice Fusion in the US; plus Microsoft Word, Outlook, Teams, OneNote, browser-based hospital portals, and any other Windows application you can click into and type into. There is no per-EMR certification, no plugin required, and no per-system setup.</p>
+      <p><strong>Yes. Speech Recognition Cloud works with every Windows-based EMR and practice management system</strong>, because it dictates at the cursor at the operating-system level — not as a plugin or integration. That includes Epic, Cerner (Oracle Health), Athenahealth, eClinicalWorks, NextGen, Allscripts (Veradigm), and Practice Fusion in the US; EMIS Web, SystmOne, Vision, and Adastra in the UK; Best Practice, Medical Director, Genie, Zedmed, Communicare, and Helix in Australia; plus Microsoft Word, Outlook, Teams, OneNote, browser-based hospital portals, and any other Windows application you can click into and type into. There is no per-EMR certification, no plugin required, and no per-system setup.</p>
       <p>The trade-off: the desktop application is Windows-only — there is no macOS or ChromeOS version. The companion mobile app for iPhone and Android partially mitigates this for Mac-based clinicians: it tunnels audio through remote-desktop connections so a Mac user can dictate normally into a Windows EMR session, and the Voice Notes mode lets a clinician on any phone deliver dictated text to a Windows PC anywhere in the practice. But the desktop application itself is Windows only.</p>
     </div>
   </section>
@@ -413,7 +413,7 @@ const icons = {
       <p>No. Speech Recognition Cloud transcribes what the clinician says. It does not suggest differentials, flag drug interactions, prompt for missing history, or contribute clinical content beyond what the clinician dictates. The medical vocabulary helps the system transcribe clinical terminology accurately — it does not introduce clinical reasoning. This is intentional: clinical decision support and clinical documentation are separate concerns, and combining them in a single transcription path creates risk that is not justified by the productivity gain.</p>
 
       <h3>Is Speech Recognition Cloud regulated as a medical device?</h3>
-      <p>No. Speech Recognition Cloud is general-purpose dictation software with a medical vocabulary. It is not regulated as a medical device under the TGA (Australia), the FDA (United States), the MHRA (United Kingdom), or equivalent regulators elsewhere. It has not been clinically validated for diagnostic, therapeutic, or patient-management use. Clinicians use it as a documentation tool — the same way a clinician uses a word processor or a dictaphone — and the clinician retains full responsibility for the accuracy and clinical appropriateness of what enters the record. Reading dictated text back before saving it to the medical record is the clinician's responsibility, the same as reading a typed note before saving.</p>
+      <p>No. Speech Recognition Cloud is general-purpose dictation software with a medical vocabulary. It is not regulated as a medical device under the FDA (United States), the MHRA (United Kingdom), the TGA (Australia), or equivalent regulators elsewhere. It has not been clinically validated for diagnostic, therapeutic, or patient-management use. Clinicians use it as a documentation tool — the same way a clinician uses a word processor or a dictaphone — and the clinician retains full responsibility for the accuracy and clinical appropriateness of what enters the record. Reading dictated text back before saving it to the medical record is the clinician's responsibility, the same as reading a typed note before saving.</p>
 
       <h3>Will dictation fix my clinical documentation burden?</h3>
       <p>No — and it would be dishonest to suggest otherwise. Voice dictation is a productivity tool. The administrative burden on clinicians is structural: it comes from accreditation frameworks, MBS and audit requirements, indemnity and medicolegal documentation expectations, hospital reporting obligations, and EMR systems that prioritise data capture over clinician workflow. The relief dictation offers is real but bounded — it changes how <em>fast</em> you can produce a given paragraph of clinical prose, not how many fields and forms the system requires you to fill. For some clinicians that is enough to claw back an hour or two a week, which compounds across a clinical year. For others — particularly clinicians whose admin time is dominated by structured-field data entry rather than prose — the gains are smaller. Try it for a fortnight on the workflows that actually involve writing, and form a view based on your own experience rather than on a vendor's claim.</p>
@@ -438,25 +438,8 @@ const icons = {
   <section class="section-pad section-neutral">
     <div class="container m-prose" style="max-width:820px">
 
-      <!-- AUSTRALIA -->
-      <div class="m-regional-panel">
-        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
-        <h2>Is Speech Recognition Cloud suitable for Australian clinicians under AHPRA record-keeping standards?</h2>
-        <p><strong>Yes. Speech Recognition Cloud supports AHPRA's record-keeping standards for Australian clinicians.</strong> AHPRA's professional standards and the codes of conduct published by the National Boards expect clinical records to be contemporaneous, accurate, complete, and legible. Voice dictation supports all four directly: the note is produced at or near the time of the consultation rather than retrospectively, the dictating clinician is the named author with no intermediary, the prose form encourages more complete reasoning than typed shorthand, and the typed output is by definition legible. The clinician's responsibility — reading the note back before saving — is the same as for typed notes.</p>
-
-        <p><strong>Australian EMRs.</strong> The cursor-based approach works inside Best Practice, Medical Director, Genie, Zedmed, Communicare, Helix, and the other major Australian clinical systems. Progress notes, consult notes, recall notes, referrals, prescription notes, and any other free-text field in the patient record — anywhere the system presents a text input, SRC dictates at the cursor. There is no per-system certification, plugin, or configuration required.</p>
-
-        <p><strong>Australian Privacy Principles and the Notifiable Data Breaches scheme.</strong> Health information is treated as sensitive information under the Privacy Act 1988 and the APPs, with stricter handling expectations than general personal information. Speech Recognition Cloud's relevant data handling: audio is processed in memory and immediately erased, transcripts are not retained on our servers, our staff cannot access either, and the privacy statement documents the data flow in detail. Practices subject to the Notifiable Data Breaches scheme should review the privacy statement against their own breach-response plan.</p>
-
-        <p><strong>Telehealth and the MBS.</strong> SRC handles the documentation side of telehealth consultations — the clinician dictates the consult note during or immediately after the call, the same as for face-to-face. The software does not transcribe the patient's speech and does not record the consultation. Documentation requirements for MBS-billable telehealth items are the same as for in-person consultations; dictation just changes how the note gets written, not what the note has to contain.</p>
-
-        <p><strong>NDIS, allied health, and Medicare Mental Health Care Plans.</strong> The free-text sections of allied health reports, mental health care plan reviews, NDIS progress reports, and the longer narrative components of these documents are well-suited to dictation. The structured fields and tick-box sections are not — those still need clicks. The cost-benefit usually favours dictation for clinicians whose reports are more prose than form.</p>
-
-        <p>For broader voice-technology procurement in Australian healthcare — including hospital deployments, Dragon Medical One licensing for clinicians who specifically need that product, NDIS-funded clinician deployments, and on-site training — our parent business operates a dedicated <a href="https://www.voicerecognition.com.au/collections/medical" rel="noopener" class="m-link">medical and healthcare collection at Voice Recognition Australia</a>, which has been supplying Australian healthcare for over 25 years.</p>
-      </div>
-
       <!-- UNITED STATES -->
-      <div class="m-regional-panel" style="margin-top:24px">
+      <div class="m-regional-panel">
         <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
         <h2>Is Speech Recognition Cloud HIPAA compliant for US clinicians?</h2>
         <p><strong>Speech Recognition Cloud's data handling supports HIPAA-compliant deployment, but HIPAA compliance itself is a property of a <em>deployment</em>, not a software product</strong> — it depends on how the tool is used and what agreements are in place between the covered entity and any service providers. Audio is processed in memory only and immediately erased, transcripts are never stored on our servers, our staff cannot access audio or transcripts, all connections are encrypted in transit, and AI Modes are excluded from the Medical Ultra tier by design. US clinicians and practice administrators should review our privacy statement against their own Security Risk Analysis before deploying.</p>
@@ -481,6 +464,22 @@ const icons = {
         <p><strong>EU GDPR.</strong> The data-flow position is the same across the EU under GDPR — health data is special category data under Article 9, the lawful basis for processing is provided through the clinician's relationship with the patient, and the data-handling questions for cloud dictation are the same as in the UK. EU-based clinicians should confirm with their national data-protection authority and their practice's data-protection officer whether SRC's data flows align with their organisation's processing register.</p>
 
         <p><strong>Languages and the EU.</strong> The non-medical Speech Recognition Cloud tiers support 57 languages, which makes it useful for the broader administrative and correspondence work of European clinicians working in their native language. The Medical Ultra tier is currently English-only — the specialised medical vocabulary is only available in English at present.</p>
+      </div>
+
+      <!-- AUSTRALIA -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
+        <h2>Is Speech Recognition Cloud suitable for Australian clinicians under AHPRA record-keeping standards?</h2>
+        <p><strong>Yes. Speech Recognition Cloud supports AHPRA's record-keeping standards for Australian clinicians.</strong> AHPRA's professional standards and the codes of conduct published by the National Boards expect clinical records to be contemporaneous, accurate, complete, and legible. Voice dictation supports all four directly: the note is produced at or near the time of the consultation rather than retrospectively, the dictating clinician is the named author with no intermediary, the prose form encourages more complete reasoning than typed shorthand, and the typed output is by definition legible. The clinician's responsibility — reading the note back before saving — is the same as for typed notes.</p>
+
+        <p><strong>Australian EMRs.</strong> The cursor-based approach works inside Best Practice, Medical Director, Genie, Zedmed, Communicare, Helix, and the other major Australian clinical systems. Progress notes, consult notes, recall notes, referrals, prescription notes, and any other free-text field in the patient record — anywhere the system presents a text input, SRC dictates at the cursor. There is no per-system certification, plugin, or configuration required.</p>
+
+        <p><strong>Australian Privacy Principles and the Notifiable Data Breaches scheme.</strong> Health information is treated as sensitive information under the Privacy Act 1988 and the APPs, with stricter handling expectations than general personal information. Speech Recognition Cloud's relevant data handling: audio is processed in memory and immediately erased, transcripts are not retained on our servers, our staff cannot access either, and the privacy statement documents the data flow in detail. Practices subject to the Notifiable Data Breaches scheme should review the privacy statement against their own breach-response plan.</p>
+
+        <p><strong>Telehealth and the MBS.</strong> SRC handles the documentation side of telehealth consultations — the clinician dictates the consult note during or immediately after the call, the same as for face-to-face. The software does not transcribe the patient's speech and does not record the consultation. Documentation requirements for MBS-billable telehealth items are the same as for in-person consultations; dictation just changes how the note gets written, not what the note has to contain.</p>
+
+        <p><strong>NDIS, allied health, and Medicare Mental Health Care Plans.</strong> The free-text sections of allied health reports, mental health care plan reviews, NDIS progress reports, and the longer narrative components of these documents are well-suited to dictation. The structured fields and tick-box sections are not — those still need clicks. The cost-benefit usually favours dictation for clinicians whose reports are more prose than form.</p>
+
       </div>
 
     </div>
@@ -768,9 +767,9 @@ const icons = {
     <div class="container" style="max-width:780px">
       <div class="m-author-panel">
         <h2>About this page</h2>
-        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years deploying speech recognition</a> across Australian hospitals, GP practices, specialist clinics, courts, government departments, and the wider healthcare sector — primarily in Australia, with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. I presented the national Dragonology clinical training series across Australia in 2017 on behalf of Nuance. The workflows above are drawn from that experience rather than from a marketing brief. If your clinical setting does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
+        <p>This page is written and maintained by Russell Bewsell, founder of Speech Recognition Cloud. I have spent 28 years deploying speech recognition across hospitals, primary care practices, specialist clinics, courts, government departments, and the wider healthcare sector, with customers and deployments in the US, UK, Canada, Australia, New Zealand, and across Europe. I presented the national Dragonology clinical training series across Australia in 2017 on behalf of Nuance. The workflows above are drawn from that experience rather than from a marketing brief. If your clinical setting does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
         <p class="m-further">Further reading: <a href="/learn/dictation-for-psychologists-allied-health/" class="m-link">dictation for psychologists and allied health</a> — session notes, verbatim documentation, and why many therapists rule out ambient AI scribes.</p>
-        <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder, Speech Recognition Cloud</p>
         <p class="m-reviewed muted">Last reviewed: 16 August 2026</p>
       </div>
     </div>

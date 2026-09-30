@@ -52,7 +52,7 @@ const faqItems = [
   },
   {
     question: "Does the department need to procure this centrally?",
-    answer: "Not necessarily for trial use — the 30-day Professional trial is free and accessed by the individual officer through the form on this page. For broader deployment across a team, branch, or department, our parent business Voice Recognition Australia handles government procurement, volume licensing, and ICT panel arrangements for Commonwealth and state agencies. Contact us through the form on this page if your department is considering coordinated rollout and we can route the conversation appropriately."
+    answer: "Not necessarily for trial use — the 30-day Professional trial is free and accessed by the individual officer through the form on this page. For broader deployment across a team, branch, or department, contact us through the form on this page about volume licensing and coordinated rollout."
   },
   {
     question: "How does Speech Recognition Cloud compare to dictation built into Windows or Microsoft 365?",
@@ -83,17 +83,17 @@ const howToSteps = [
 const russellPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://www.voicerecognition.com.au/#russellbewsell",
+  "@id": "https://speechrecognition.cloud/#russellbewsell",
   "name": "Russell Bewsell",
-  "jobTitle": "Founder and CEO, Voice Recognition Australia",
-  "url": "https://www.voicerecognition.com.au",
+  "jobTitle": "Founder, Speech Recognition Cloud",
+  "url": "https://speechrecognition.cloud",
   "sameAs": [
     "https://www.linkedin.com/in/rbewsell/"
   ],
   "worksFor": {
     "@type": "Organization",
-    "name": "Voice Recognition Australia",
-    "url": "https://www.voicerecognition.com.au"
+    "name": "Speech Recognition Cloud",
+    "url": "https://speechrecognition.cloud"
   }
 };
 
@@ -103,7 +103,7 @@ const governmentPageSchema = {
   "@id": pageUrl + "#webpage",
   "url": pageUrl,
   "name": "Voice Dictation for Government: A Practical Guide",
-  "description": "Practical guide to voice dictation for public servants, policy officers, ministerial correspondence writers, FOI officers, and government lawyers. Verbatim dictation, no data stored. Written by Russell Bewsell, Voice Recognition Australia.",
+  "description": "Practical guide to voice dictation for public servants, policy officers, ministerial correspondence writers, FOI officers, and government lawyers. Verbatim dictation, no data stored. Written by Russell Bewsell, founder of Speech Recognition Cloud.",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl },
   "datePublished": "2026-05-16",
@@ -121,7 +121,7 @@ const governmentPageSchema = {
     "@type": "Audience",
     "audienceType": "Government professionals"
   },
-  "author": { "@id": "https://www.voicerecognition.com.au/#russellbewsell" },
+  "author": { "@id": "https://speechrecognition.cloud/#russellbewsell" },
   "publisher": {
     "@type": "Organization",
     "name": site.organization.name,
@@ -188,7 +188,7 @@ const icons = {
 ---
 <BaseLayout
   title="Voice Dictation for Government: A Practical Guide"
-  description="Practical guide to voice dictation for public servants — policy briefings, ministerial correspondence, FOI decision statements, government legal advice. Verbatim dictation, no data stored. Free 30-day Professional trial."
+  description="Practical guide to voice dictation for public servants — policy briefings, official correspondence, FOIA and public-records responses, government legal advice. Verbatim dictation, no data stored. Free 30-day Professional trial."
   extraSchema={extraSchema}
 >
   <!-- HERO -->
@@ -244,7 +244,7 @@ const icons = {
     <div class="container m-prose">
       <h2>What is Speech Recognition Cloud for government?</h2>
       <p>Speech Recognition Cloud (SRC) Professional is verbatim voice dictation software for Windows 10 and Windows 11 built for the writing public servants actually produce. You speak into a microphone, the words appear at the cursor in whatever Windows application is open — Microsoft Word, Outlook, your records system, your case or grants management platform, a policy submission portal, a departmental workflow tool, anywhere you can click and type. The default behaviour is verbatim: what you say is what appears, with no AI rewriting in between. The Professional plan also includes optional AI Modes you can trigger on demand if you want to tighten, formalise, or summarise a passage you have already dictated.</p>
-      <p>It is built and supported by an Australian company with 28 years of speech-technology deployment across Australian Commonwealth and state agencies, healthcare, legal, and enterprise sectors. The product is in daily use across departments and agencies in Australia, with customers across the US, UK, Canada, New Zealand, and Europe.</p>
+      <p>It is built and supported by a team with 28 years of speech-technology deployment across Commonwealth and state agencies, healthcare, legal, and enterprise sectors. The product is in daily use across departments and agencies, with customers across the US, UK, Canada, Australia, New Zealand, and Europe.</p>
     </div>
   </section>
 
@@ -262,7 +262,7 @@ const icons = {
     <div class="container m-prose">
       <h2>How much does Speech Recognition Cloud Professional cost?</h2>
       <p>$159 USD per year per person, with a free 30-day trial of full Professional functionality available through the form on this page. The licence is per person and can be used on as many computers as that officer works on — desk PC at the department, laptop for working from home, a workstation at a regional or interstate office, all on the same licence at no extra cost. Licences cannot be shared between officers because each personal vocabulary, template library, and preference set is tied to the individual account.</p>
-      <p>After the 30-day trial, the software reverts to the non-business Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. For broader deployment across a team, branch, or department, our parent business Voice Recognition Australia handles government procurement, volume licensing, and ICT panel arrangements for Commonwealth and state agencies. The 30-day trial is the standard way to evaluate fit on real workflows before broader rollout.</p>
+      <p>After the 30-day trial, the software reverts to the non-business Free tier (20 minutes per month, general vocabulary) unless you upgrade. There is no automatic charge — your card is not held, nothing renews silently. For broader deployment across a team, branch, or department, contact us about volume licensing. The 30-day trial is the standard way to evaluate fit on real workflows before broader rollout.</p>
     </div>
   </section>
 
@@ -379,23 +379,8 @@ const icons = {
   <section class="section-pad section-neutral">
     <div class="container m-prose" style="max-width:820px">
 
-      <!-- AUSTRALIA -->
-      <div class="m-regional-panel">
-        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
-        <h2>Is Speech Recognition Cloud suitable for Australian Commonwealth and state government use?</h2>
-        <p>That is a determination each agency should make under its own IT security, information governance, and procurement frameworks — including the Protective Security Policy Framework for Commonwealth entities, the relevant state government information security frameworks, and the agency's own assessment of fit for purpose. The product is designed in a way that simplifies the analysis: no departmental content is stored on our infrastructure, only an encrypted email address. Audio is processed in memory and immediately erased; transcripts are not retained on our servers; custom vocabulary stays on the officer's own device.</p>
-
-        <p><strong>Australian government applications.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365 (standard across Commonwealth and state agencies); the major records and document management systems used in Australian government (TRIM/HPE Content Manager/Micro Focus Content Manager, Objective, Records Online, SharePoint document libraries, eDOCS); case and grants management systems; FOI workflow tools; the cabinet and policy submission portals in their browser interfaces; parliamentary committee secretariat tools; departmental intranets; and the workflow overlays deployed across state and Commonwealth practice. No per-system certification, no plugin, no per-application configuration.</p>
-
-        <p><strong>Privacy Act and APP entities.</strong> Most Commonwealth entities and many state agencies are subject to the Privacy Act 1988 and the Australian Privacy Principles. The fact that we store no departmental content beyond the officer's encrypted email address simplifies the privacy impact assessment for this tool considerably. Our <a href="/privacy" class="m-link">privacy and data-handling statement</a> is the document to provide to your agency Privacy Officer for that assessment.</p>
-
-        <p><strong>FOI and RTI frameworks.</strong> Voice dictation does not change what is and is not subject to the Freedom of Information Act 1982 or the equivalent state Right to Information / Government Information frameworks. The dictated document is the same document under FOI/RTI law as the typed equivalent. What changes is the time it takes the FOI or records officer to produce decision statements, schedules, and notifications.</p>
-
-        <p><strong>Volume licensing and government procurement.</strong> For broader deployment across a team, branch, or department, our parent business Voice Recognition Australia handles government procurement and volume licensing for Commonwealth and state agencies. Voice Recognition Australia has been supplying Australian government for over 25 years across the Commonwealth and the states, with experience in standard government procurement processes including panel arrangements.</p>
-      </div>
-
       <!-- UNITED STATES -->
-      <div class="m-regional-panel" style="margin-top:24px">
+      <div class="m-regional-panel">
         <p class="m-regional-eyebrow">REGIONAL CONTEXT — UNITED STATES</p>
         <h2>Is Speech Recognition Cloud suitable for US federal, state, and local government use?</h2>
         <p>That is a determination each agency should make under its own information security, privacy, and procurement frameworks — including agency-specific FISMA categorisations, NIST 800-53 mappings, the relevant state information security frameworks, and the agency's own assessment of fit for purpose. The product is not currently FedRAMP-authorised; agencies subject to FedRAMP requirements for cloud services should treat this as a constraint relevant to their own framework rather than a claim of compliance from us. What we can say is what the software actually does with data: audio is processed in memory and immediately erased, transcripts are delivered to the user's own cursor and never copied to our servers, custom vocabulary stays on the device, only an encrypted email address is stored on our infrastructure.</p>
@@ -420,6 +405,21 @@ const icons = {
         <p><strong>Cross-border data flows.</strong> UK departments transferring data outside the UK, and EU agencies transferring outside the EEA, need to consider the relevant adequacy frameworks (the UK-US Data Bridge, the EU-US Data Privacy Framework, and the standard contractual clauses where applicable). The simplification that helps here: there is no government content to transfer. The cross-border data inventory for Speech Recognition Cloud is essentially the officer's encrypted email address.</p>
 
         <p><strong>Languages.</strong> The Professional tier supports 57 languages, which is useful for EU agencies working in multiple member-state languages and for UK and EU multilateral and consular contexts.</p>
+      </div>
+
+      <!-- AUSTRALIA -->
+      <div class="m-regional-panel" style="margin-top:24px">
+        <p class="m-regional-eyebrow">REGIONAL CONTEXT — AUSTRALIA</p>
+        <h2>Is Speech Recognition Cloud suitable for Australian Commonwealth and state government use?</h2>
+        <p>That is a determination each agency should make under its own IT security, information governance, and procurement frameworks — including the Protective Security Policy Framework for Commonwealth entities, the relevant state government information security frameworks, and the agency's own assessment of fit for purpose. The product is designed in a way that simplifies the analysis: no departmental content is stored on our infrastructure, only an encrypted email address. Audio is processed in memory and immediately erased; transcripts are not retained on our servers; custom vocabulary stays on the officer's own device.</p>
+
+        <p><strong>Australian government applications.</strong> The cursor-based approach works inside Microsoft Word and Microsoft 365 (standard across Commonwealth and state agencies); the major records and document management systems used in Australian government (TRIM/HPE Content Manager/Micro Focus Content Manager, Objective, Records Online, SharePoint document libraries, eDOCS); case and grants management systems; FOI workflow tools; the cabinet and policy submission portals in their browser interfaces; parliamentary committee secretariat tools; departmental intranets; and the workflow overlays deployed across state and Commonwealth practice. No per-system certification, no plugin, no per-application configuration.</p>
+
+        <p><strong>Privacy Act and APP entities.</strong> Most Commonwealth entities and many state agencies are subject to the Privacy Act 1988 and the Australian Privacy Principles. The fact that we store no departmental content beyond the officer's encrypted email address simplifies the privacy impact assessment for this tool considerably. Our <a href="/privacy" class="m-link">privacy and data-handling statement</a> is the document to provide to your agency Privacy Officer for that assessment.</p>
+
+        <p><strong>FOI and RTI frameworks.</strong> Voice dictation does not change what is and is not subject to the Freedom of Information Act 1982 or the equivalent state Right to Information / Government Information frameworks. The dictated document is the same document under FOI/RTI law as the typed equivalent. What changes is the time it takes the FOI or records officer to produce decision statements, schedules, and notifications.</p>
+
+        <p><strong>Volume licensing and government procurement.</strong> For broader deployment across a team, branch, or department, contact us about volume licensing and standard government procurement processes, including panel arrangements.</p>
       </div>
 
     </div>
@@ -579,8 +579,8 @@ const icons = {
     <div class="container" style="max-width:780px">
       <div class="m-author-panel">
         <h2>About this page</h2>
-        <p>This page is written and maintained by Russell Bewsell, founder of Voice Recognition Australia. I have spent <a href="https://www.voicerecognition.com.au" rel="noopener" class="m-link">28 years deploying voice technology</a> across Australian Commonwealth and state government agencies, healthcare, legal, and enterprise — primarily in Australia, with customers and deployments in the US, UK, Canada, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your government role does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
-        <p class="m-author-sig">— Russell Bewsell, Founder and CEO, Voice Recognition Australia</p>
+        <p>This page is written and maintained by Russell Bewsell, founder of Speech Recognition Cloud. I have spent 28 years deploying voice technology across national and state government agencies, healthcare, legal, and enterprise, with customers and deployments in the US, UK, Canada, Australia, New Zealand, and across Europe. The workflows above are drawn from that experience rather than from a marketing brief. If your government role does not fit the patterns described, <a href="/contact" class="m-link">get in touch</a> and I will tell you honestly whether dictation is likely to suit your work.</p>
+        <p class="m-author-sig">— Russell Bewsell, Founder, Speech Recognition Cloud</p>
         <p class="m-reviewed muted">Last reviewed: 16 May 2026</p>
       </div>
     </div>
