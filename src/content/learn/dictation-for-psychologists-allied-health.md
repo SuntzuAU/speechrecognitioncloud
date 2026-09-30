@@ -242,7 +242,7 @@ If you want more detail before you install, the [dictation for clinicians](/medi
 
 ## Who wrote this?
 
-I'm Russell Bewsell, and I built Speech Recognition Cloud.
+I'm Russell Bewsell, founder of Speech Recognition Cloud.
 
 I have spent 28 years deploying speech recognition — across hospitals, primary care and specialist practices, allied health, courts and government departments, with customers in the US, UK, Canada, Australia, New Zealand and across Europe. I ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition, supporting more than 40,000 customers and over 15,000 Dragon users, and in 2017 I presented the national Dragonology clinical training series on behalf of Nuance.
 

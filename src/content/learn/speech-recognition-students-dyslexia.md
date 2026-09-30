@@ -91,7 +91,7 @@ Dyslexia and [students with dysgraphia](/learn/speech-recognition-students-dysgr
 
 ## Where Speech Recognition Cloud comes in
 
-Speech Recognition Cloud (SRC) was built by Russell Bewsell, who has spent 28 years working with schools, students and people across a wide range of disabilities and support needs.
+Speech Recognition Cloud (SRC) was founded by Russell Bewsell, who has spent 28 years working with schools, students and people across a wide range of disabilities and support needs.
 
 It's designed to be put to work with as little setup as possible: no voice-profile training to sit through, no calibration. You place the cursor where you want text, press a hotkey, speak naturally, and the punctuated sentence appears — in Word, in Google Docs, in an online assignment form, anywhere on Windows. There are dedicated pages on [speech to text for students](/students) and [speech to text in the classroom](/teachers) for specific settings.
 

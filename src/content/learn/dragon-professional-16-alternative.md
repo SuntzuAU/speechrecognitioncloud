@@ -105,7 +105,7 @@ Yes. SRC types at the cursor in any standard Windows application — Microsoft W
 
 ## Who built it
 
-SRC isn't a fly-by-night AI startup that discovered dictation last year. It's built by **Russell Bewsell**, who has spent 28 years in speech recognition and ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition — supporting more than 40,000 customers and over 15,000 Dragon users. In other words, it's built by someone who spent decades fixing the exact Dragon problems described above, and finally decided to build the simpler, cheaper tool he wished he could hand people instead.
+SRC isn't a fly-by-night AI startup that discovered dictation last year. It was founded by **Russell Bewsell**, who has spent 28 years in speech recognition and ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition — supporting more than 40,000 customers and over 15,000 Dragon users. In other words, it was designed by someone who spent decades fixing the exact Dragon problems described above, and finally decided to create the simpler, cheaper tool he wished he could hand people instead.
 
 ## Try it free
 
