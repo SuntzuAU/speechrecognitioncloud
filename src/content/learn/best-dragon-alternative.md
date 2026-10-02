@@ -79,7 +79,8 @@ It also has a free Starter plan with no expiry, so it can be tested against your
 | **Dragon Medical One** | <span class="st st-live">Current</span> | ~US$1,188 per clinician, per year | Sold per clinician through resellers. |
 | **Dragon Anywhere Mobile** | <span class="st st-gone">End of sale 30 Jun 2026</span> | Renewals only, to 30 Jun 2027 | Standalone mobile app. No new subscriptions since July 2026. |
 | **Dragon Professional Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by the Anywhere line. Not Windows 11 compatible. |
-| **Dragon Legal Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by Dragon Legal Anywhere. |
+| **Dragon Legal 16** | <span class="st st-live">Current in the US</span> | ~US$799 one-off | Desktop software installed on each computer; not a cloud equivalent of Dragon Legal Anywhere. The Australian and New Zealand Dragon Legal editions were discontinued in 2020. |
+| **Dragon Legal Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by Dragon Legal 16 in the US. Not Windows 11 compatible. |
 | **Dragon Dictate for Mac** | <span class="st st-gone">Discontinued Oct 2018</span> | No longer available | No Mac Dragon product has shipped since. |
 
 Dragon pricing above is approximate and varies by vendor, territory, subscription term and seat count. Obtain a current quotation before relying on any figure.
@@ -102,7 +103,7 @@ All plans are licensed per person with no limit on the number of computers. Pric
 - **Dragon Professional Anywhere and Dragon Legal Anywhere** — new orders stop 31 December 2026, end of life 31 December 2027. Existing users can continue using both and renewing on a pro rata basis in between. Dragon Professional v16 is the stated migration path. Both are cloud services, so at end of life the service stops; there is no local copy that continues to run.
 - **Dragon Anywhere Mobile** — end of sale 30 June 2026. Existing users can renew on a pro rata basis until 30 June 2027, but no new subscriptions are available. This is a different product from Dragon Professional Anywhere, and the two are frequently confused.
 - **Dragon Dictate for Mac** — discontinued October 2018. The final release was Dragon Professional Individual 6 in 2016, and no Mac Dragon product has shipped since.
-- **Dragon Professional Individual 15 and Dragon Legal Individual 15** — withdrawn, replaced by the Anywhere subscriptions. Dragon 15 is also not supported on Windows 11.
+- **Dragon Professional Individual 15 and Dragon Legal Individual 15** — withdrawn. In the US, Dragon Legal 16 is the current desktop legal edition; there is no current Dragon Legal desktop edition in Australia or New Zealand. Dragon 15 is also not supported on Windows 11.
 
 The pattern is consistent: the lower-cost, one-off, install-and-own Dragon products are the ones that have gone.
 

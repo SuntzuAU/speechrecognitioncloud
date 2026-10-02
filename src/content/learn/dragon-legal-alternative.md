@@ -1,9 +1,10 @@
 ---
-title: "The Best Dragon Legal Alternative in 2026: Options for Lawyers After Dragon Legal Anywhere"
+title: "Dragon Legal Anywhere Alternative for Lawyers in 2026: Cloud Dictation, Dragon Legal 16 and Costs Compared"
 date: "2026-09-30"
-description: "Dragon Legal Individual has been withdrawn and Dragon Legal Anywhere closes to new orders on 31 December 2026, with end of life on 31 December 2027. An honest guide for lawyers and legal staff: the options, the costs, confidentiality, legal vocabulary, and where Dragon still fits better."
-seoTitle: "Dragon Legal Alternative for Lawyers (2026)"
-seoDescription: "Dragon Legal Anywhere closes to new orders 31 Dec 2026. The options for lawyers and legal staff, compared on cost, confidentiality and legal vocabulary."
+updated: "2026-10-02"
+description: "Dragon Legal Anywhere closes to new orders on 31 December 2026 and reaches end of life on 31 December 2027. An honest guide for lawyers: Speech Recognition Cloud as the cloud alternative, how Dragon Legal 16 differs, costs, confidentiality and legal vocabulary."
+seoTitle: "Dragon Legal Anywhere Alternative for Lawyers"
+seoDescription: "Dragon Legal Anywhere ends in 2027. A cloud alternative for lawyers, how Dragon Legal 16 differs, and the costs compared side by side."
 type: "article"
 context: "descriptive"
 articleSection: "Legal"
@@ -18,20 +19,20 @@ breakPrompt1: "Photorealistic corporate lifestyle photograph. A friendly male la
 breakImage2Alt: "A solo attorney dictating by headset at his home office desk"
 breakPrompt2: "Photorealistic corporate lifestyle photograph. A relaxed solo-practice attorney in his forties, in a sweater, dictates into a laptop with a slim boom headset at a tidy home office desk with bookshelves behind him, smiling, a legal pad beside the laptop. Natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, subjects centred vertically with generous space above and below, 21:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
 faq:
-  - q: "What is happening to Dragon Legal?"
-    a: "Dragon Legal Individual 15 has been withdrawn and is no longer sold. Its replacement, Dragon Legal Anywhere, closes to new orders on 31 December 2026 and reaches end of life on 31 December 2027; existing subscribers can renew pro rata until then. Dragon Professional v16 is the vendor's stated migration path. Speech Recognition Cloud is a cloud-based alternative for lawyers who want to keep dictating in any Windows application."
-  - q: "What are the alternatives to Dragon Legal Anywhere?"
-    a: "The two most direct options are Dragon Professional v16, a locally installed desktop product that works offline and is the vendor's stated migration path, and a cloud dictation service such as Speech Recognition Cloud, which works at the cursor in any Windows application with no voice training. Built-in operating system dictation is a free third option for light use. The right choice depends on whether offline use, voice commands or cost matter most."
+  - q: "What is happening to Dragon Legal Anywhere?"
+    a: "Dragon Legal Anywhere closes to new orders on 31 December 2026 and reaches end of life on 31 December 2027. Existing subscribers can renew pro rata until then. Because it is a cloud service, there is no local copy that keeps running after end of life. Dragon Legal 16, a desktop product, is still sold in the US; the Australian and New Zealand Dragon Legal editions were discontinued in 2020."
+  - q: "What is the alternative to Dragon Legal Anywhere?"
+    a: "Speech Recognition Cloud Professional is a cloud dictation alternative to Dragon Legal Anywhere. Like Dragon Legal Anywhere, it runs in the cloud, is licensed per user rather than per computer, and includes a mobile app, with no voice profile to train. Dragon Legal 16 is still sold in the US but is a different kind of product: desktop software installed on each computer, with a limit on how many computers each licence can be activated on."
   - q: "Can Speech Recognition Cloud handle legal terminology and case names?"
     a: "Mostly, yes. Speech Recognition Cloud Professional uses an Ultra Accuracy recognition model that handles general legal language well from the first sentence, and you can add custom vocabulary and unlimited text replacements for party names, case names and standard clauses. Custom vocabulary has a character limit, so heavy users lean on text replacements. A Dragon user with years of trained profile data may still see better accuracy on rare specialist terms."
   - q: "Is cloud dictation confidential enough for client work?"
     a: "Speech Recognition Cloud stores no dictated audio or text: audio is transcribed and discarded, the text is returned to your computer, and nothing is used to train AI models. Under ABA Model Rule 1.6, lawyers must make reasonable efforts to protect client information, which includes vetting technology vendors. We don't describe the product as compliant with any rule, because that assessment belongs to you, your firm and your state bar's guidance."
   - q: "Does Speech Recognition Cloud work in Clio, Word and Westlaw?"
     a: "Yes. Speech Recognition Cloud dictates at the cursor at the operating-system level, so it works in Microsoft Word and Outlook, practice management platforms such as Clio, MyCase, PracticePanther, Filevine and Smokeball, legal research in Westlaw and LexisNexis in a browser, and e-filing portals — anywhere in Windows you can click into a text field. There is no plugin or integration to install."
-  - q: "Where is Dragon still the better choice for lawyers?"
-    a: "Dragon Professional v16 is the better fit if you need to dictate offline, if you rely heavily on voice commands, macros or scripting to control Word and other applications, if your firm prohibits cloud processing, or if you have years of trained Dragon profile data on specialist vocabulary that you do not want to give up. Speech Recognition Cloud is focused on dictation rather than voice control."
+  - q: "Where is desktop Dragon still the better choice for lawyers?"
+    a: "Desktop Dragon, such as Dragon Legal 16 in the US, is the better fit if you need to dictate offline, if you rely heavily on voice commands, macros or scripting to control Word and other applications, if your firm prohibits cloud processing, or if you have years of trained Dragon profile data on specialist vocabulary that you do not want to give up. Speech Recognition Cloud is focused on dictation rather than voice control."
   - q: "How much does a Dragon Legal alternative cost?"
-    a: "Speech Recognition Cloud Professional is US$159 a year, with a free 30-day Professional trial and a free plan of 20 minutes a month. Dragon Legal Anywhere has been around US$595 for the first year and about US$905 a year after, and Dragon Professional v16 around US$700 one-off. Dragon pricing varies by vendor and term; get a current quote. SRC pricing is accurate at time of publication, in US dollars; verify before purchasing."
+    a: "Speech Recognition Cloud Professional is US$159 a year, about US$477 over three years, with a free 30-day trial. Dragon Legal Anywhere has been around US$595 for the first year and about US$905 a year after, roughly US$2,405 over three years, though it ends in 2027. Dragon Legal 16 is about US$799 one-time in the US. Dragon pricing varies by reseller; SRC pricing is accurate at time of publication, in US dollars."
   - q: "How do I switch from Dragon Legal to Speech Recognition Cloud?"
     a: "Install the free version, start the 30-day Professional trial, and dictate your normal work for a week alongside Dragon. Recreate your most-used Dragon auto-texts as text replacements and add frequent party and case names to custom vocabulary. There is no voice profile to train or migrate. Keep Dragon Legal Anywhere until you are satisfied; existing subscribers can renew pro rata until end of life on 31 December 2027."
 internalLinks:
@@ -53,51 +54,56 @@ breakImage2: "speechrecognitioncloud/2026/10/02/dragon-legal-alternative-solo-at
 ---
 
 <div class="callout">
-<h4>TL;DR — a Dragon Legal alternative for lawyers</h4>
-<p>Speech Recognition Cloud is verbatim dictation that types at your cursor in any Windows application — Word, Outlook, Clio, Westlaw in a browser, e-filing portals — with no voice training and nothing stored on our servers.</p>
+<h4>TL;DR — an alternative to Dragon Legal Anywhere</h4>
+<p>Speech Recognition Cloud Professional is cloud dictation that types at your cursor in any Windows application — Word, Outlook, Clio, Westlaw in a browser, e-filing portals — with no voice training and nothing stored on our servers. It works the way Dragon Legal Anywhere does: cloud-based, licensed to you rather than to a machine, with a mobile app.</p>
 <ul>
-<li><strong>Dragon Legal is winding down.</strong> Dragon Legal Anywhere closes to new orders on 31 December 2026 and ends on 31 December 2027.</li>
-<li><strong>Start dictating on day one.</strong> No voice profile to train, move or lose when you change computer.</li>
-<li><strong>US$159 a year</strong> for Professional, with a free 30-day trial.</li>
+<li><strong>Dragon Legal Anywhere is ending.</strong> New orders stop on 31 December 2026 and it reaches end of life on 31 December 2027.</li>
+<li><strong>The desktop product is a different kind of tool.</strong> Dragon Legal 16 is still sold in the US, but it is installed locally on each computer, not cloud-based.</li>
+<li><strong>US$159 a year</strong> for Speech Recognition Cloud Professional, against roughly US$905 a year to renew Dragon Legal Anywhere.</li>
 </ul>
-<p>The honest limitation: it's a dictation tool, not a voice-control system. If you run Word by voice command and macro, Dragon Professional v16 still does that better.</p>
+<p>The honest limitation: it's a dictation tool, not a voice-control system. If you run Word by voice command and macro, desktop Dragon still does that better.</p>
 <p><strong><a href="https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe">Download it free →</a></strong> No credit card, no voice training, installs in two minutes.</p>
 </div>
 
 Lawyers were some of Dragon's most loyal users for a simple reason: legal work is writing, and most lawyers talk faster than they type. Letters, memos, briefs, file notes, emails to opposing counsel — dictation turns a day of typing into an hour of talking.
 
-That's why the changes to the Dragon Legal line matter. If you use Dragon Legal today, you need a plan within the next year. This guide sets out what is happening, the realistic options, and where each one fits.
+If you use Dragon Legal Anywhere today, you need a plan within the next year. This guide sets out what is happening, how the remaining options differ, and what each one costs.
 
-## What is happening to Dragon Legal?
+## What is happening to Dragon Legal Anywhere?
 
-**Dragon Legal Individual 15 has been withdrawn, and its replacement, Dragon Legal Anywhere, closes to new orders on 31 December 2026 and reaches end of life on 31 December 2027.** Existing Dragon Legal Anywhere subscribers can keep using it and renew on a pro rata basis until end of life. Dragon Professional v16 is the vendor's stated migration path.
+**Dragon Legal Anywhere closes to new orders on 31 December 2026 and reaches end of life on 31 December 2027.** Existing subscribers can keep using it and renew on a pro rata basis until then. Because it is a cloud service, there is no local copy that keeps running after end of life.
 
-| Product | Status | What it means for you |
+| Product | Status | What it is |
 |---|---|---|
-| **Dragon Legal Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold. Dragon 15 is also not supported on Windows 11. |
-| **Dragon Legal Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | End of life 31 Dec 2027. Cloud service, so it stops working at end of life. |
-| **Dragon Professional v16** | <span class="st st-live">Current</span> | The stated migration path. Installed locally and works offline. |
+| **Dragon Legal Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | Cloud subscription. End of life 31 Dec 2027. |
+| **Dragon Legal 16** | <span class="st st-live">Sold in the US</span> | Desktop software installed on each computer. One-time licence. The Australian and New Zealand Dragon Legal editions were discontinued in 2020. |
+| **Dragon Legal Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold. Dragon 15 is not supported on Windows 11. |
+| **Speech Recognition Cloud Professional** | <span class="st st-live">Current</span> | Cloud dictation subscription, worldwide. |
 
-Because Dragon Legal Anywhere is a cloud service, there is no local copy that keeps running after end of life. The full timetable for every Dragon product is in [every Dragon product compared](/learn/best-dragon-alternative/), and the cloud line specifically is covered in [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives/).
+The full timetable for every Dragon product is in [every Dragon product compared](/learn/best-dragon-alternative/), and the wider Anywhere line is covered in [Dragon Professional Anywhere alternatives](/learn/dragon-professional-anywhere-alternatives/).
 
-## What are the alternatives to Dragon Legal Anywhere?
+## What is the alternative to Dragon Legal Anywhere?
 
-**The two direct options are Dragon Professional v16, which is local and works offline, and a cloud dictation service such as Speech Recognition Cloud, which works in any Windows application with no voice training.**
+**Speech Recognition Cloud Professional is a cloud dictation alternative to Dragon Legal Anywhere.** Like Dragon Legal Anywhere, it runs in the cloud, is licensed to you rather than to one computer, and includes a mobile app. Unlike it, there is no voice profile to build or maintain.
 
-| | Dragon Legal Anywhere<br><span class="muted">what you have now</span> | Dragon Professional v16<br><span class="muted">stated migration path</span> | Speech Recognition Cloud Professional<br><span class="muted">cloud alternative</span> |
+Dragon Legal 16 is still sold in the US, but it is not an equivalent of Dragon Legal Anywhere. It is a different kind of product:
+
+| | Dragon Legal Anywhere<br><span class="muted">what you have now</span> | Speech Recognition Cloud Professional<br><span class="muted">cloud alternative</span> | Dragon Legal 16<br><span class="muted">US desktop software</span> |
 |---|---|---|---|
-| Status | Ends 31 Dec 2027 | Current | Current |
-| Where it runs | Cloud | Your computer | Cloud |
-| Works offline | No | **Yes** | No |
-| Voice training | Builds and adapts a cloud voice profile | Local voice profile | **None** |
-| Works in any Windows app | Yes | Yes, with best support in apps it integrates with | Yes, at the cursor |
-| Voice commands and macros | Yes | **Extensive** | Limited — dictation focused |
-| Mobile app | Separate product, now end of sale | No | Included |
-| Approximate cost | ~US$595 first year, ~US$905/yr after | ~US$700 one-off | US$159/yr |
+| Status | Ends 31 Dec 2027 | Current | Current in the US only |
+| Where it runs | Cloud | Cloud | Installed on each computer |
+| Licence | Subscription, per user | Subscription, per user | One-time licence |
+| Computers | Any you sign in to | **Unlimited computers per user** | Limited number of computers per licence |
+| Voice profile | Built and adapted in the cloud | **None — nothing to train** | Stored on each computer |
+| New computer | Sign in | **Install and sign in** | Reinstall, reactivate, move or rebuild the profile |
+| Works offline | No | No | **Yes** |
+| Voice commands and macros | Yes | Limited — dictation focused | **Extensive** |
+| Mobile app | Separate product, now end of sale | **Included** | No |
+| Approximate cost | ~US$595 first year, ~US$905/yr after | **US$159/yr** | ~US$799 one-time |
 
-Dragon pricing is approximate and varies by vendor, territory and term — get a current quotation before relying on it.
+Dragon pricing is approximate and varies by reseller and term — get a current quotation before relying on it.
 
-Built-in operating system dictation, such as Windows voice typing, is a free third option. It's fine for short emails and light use, but most lawyers dictating letters and documents all day find its accuracy and punctuation too limited for the work.
+What that means in practice: moving from Dragon Legal Anywhere to Dragon Legal 16 means going back to software tied to individual machines. The licence limits how many computers you can activate it on, the voice profile lives on each computer, and a new laptop means reinstalling and moving or rebuilding your profile. If you valued Dragon Legal Anywhere because it followed you between your office, home and laptop, a cloud product keeps that way of working.
 
 ## Can Speech Recognition Cloud handle legal terminology and case names?
 
@@ -135,30 +141,32 @@ We don't describe the product as compliant with any rule or opinion, because com
 
 There's no plugin or integration to install, and nothing to reconfigure when your firm changes practice management software.
 
-## Where is Dragon still the better choice for lawyers?
+## Where is desktop Dragon still the better choice for lawyers?
 
-Being straight about it, Dragon Professional v16 is the better fit if:
+Being straight about it, desktop Dragon — Dragon Legal 16 in the US — is the better fit if:
 
-1. **You need to dictate offline.** Speech Recognition Cloud needs an internet connection. Dragon v16 runs entirely on your computer.
+1. **You need to dictate offline.** Speech Recognition Cloud needs an internet connection. Desktop Dragon runs entirely on your computer.
 2. **You run your computer by voice.** Dragon's command, macro and scripting capability is far more developed. If you navigate Word, format documents and control applications by voice, Speech Recognition Cloud is not a replacement for that.
 3. **Your firm prohibits cloud processing.** Some firms and clients rule out any cloud service for client material.
 4. **You have years of trained profile data** on deep specialist vocabulary and your accuracy depends on it.
 
-It's also Windows only, like Dragon. There is no Mac version.
+Both are Windows only. Neither has a Mac version.
 
-For everyone else — most lawyers and legal staff dictating letters, memos, file notes and emails — Speech Recognition Cloud does the core job with no training, no serial numbers, no profile to rebuild on a new computer, and at a fraction of the cost.
+For lawyers and legal staff dictating letters, memos, file notes and emails who liked the cloud way of working, Speech Recognition Cloud does the core job with no training, no machine limits, no profile to rebuild on a new computer, and at a fraction of the cost.
 
 ## How much does a Dragon Legal alternative cost?
 
 **Speech Recognition Cloud Professional is US$159 a year**, with a free 30-day Professional trial and a free plan of 20 minutes a month.
 
-| | Approximate cost |
-|---|---|
-| Speech Recognition Cloud Professional | US$159/yr (~US$477 over three years) |
-| Dragon Legal Anywhere | ~US$595 first year, ~US$905/yr after (~US$2,400 over three years) |
-| Dragon Professional v16 | ~US$700 one-off |
+| Per user | Year one | Each year after | Over three years |
+|---|---|---|---|
+| **Speech Recognition Cloud Professional** | **US$159** | **US$159** | **US$477** |
+| Dragon Legal Anywhere | ~US$595 | ~US$905 | ~US$2,405 |
+| Dragon Legal 16 (US only) | ~US$799 | Upgrades bought separately | ~US$799 plus any upgrade |
 
-Dragon figures are approximate; obtain a current quotation. Full plans are on the [pricing page](/pricing).
+Over three years, Speech Recognition Cloud Professional costs roughly a fifth of Dragon Legal Anywhere at its renewal price, and less than the one-time price of Dragon Legal 16. Dragon Legal Anywhere's three-year figure is shown for comparison only — it reaches end of life on 31 December 2027.
+
+Dragon figures are approximate and vary by reseller; obtain a current quotation. Full plans are on the [pricing page](/pricing).
 
 *Pricing accurate at time of publication. Prices in USD and will convert to your local currency at checkout. Verify current pricing before purchasing.*
 
@@ -178,9 +186,9 @@ There's no voice profile to export or migrate, which also means there's nothing 
 
 Three questions settle it:
 
-1. **Do you need offline dictation, or full voice control of your computer?** If yes, choose Dragon Professional v16.
-2. **Does your firm allow cloud services for client work?** If no, Dragon Professional v16 again.
-3. **Otherwise** — test Speech Recognition Cloud on a week of real work.
+1. **Do you need offline dictation, or full voice control of your computer?** If yes, look at Dragon Legal 16 (US) or another desktop product.
+2. **Does your firm allow cloud services for client work?** If no, desktop software is the route.
+3. **Otherwise** — test Speech Recognition Cloud Professional on a week of real work.
 
 <p><strong><a href="https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe">Download Speech Recognition Cloud free →</a></strong></p>
 
