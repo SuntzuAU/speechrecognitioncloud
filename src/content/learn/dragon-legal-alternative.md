@@ -101,7 +101,7 @@ Dragon Legal 16 is still sold in the US, but it is not an equivalent of Dragon L
 | Mobile app | Separate product, now end of sale | **Included** | No |
 | Approximate cost | US$780/yr list (resellers ~US$540–699) | **US$159/yr** | ~US$799 one-time |
 
-Dragon pricing is approximate and varies by reseller and term — get a current quotation before relying on it.
+*Dragon prices are approximate US prices as at 2 October 2026, based on a scan of US resellers' list prices. Resellers often discount, and prices vary by reseller, territory, term and seat count. Get a current quote from your reseller before relying on any figure.*
 
 What that means in practice: moving from Dragon Legal Anywhere to Dragon Legal 16 means going back to software tied to individual machines. The licence limits how many computers you can activate it on, the voice profile lives on each computer, and a new laptop means reinstalling and moving or rebuilding your profile. If you valued Dragon Legal Anywhere because it followed you between your office, home and laptop, a cloud product keeps that way of working.
 
@@ -166,7 +166,9 @@ For lawyers and legal staff dictating letters, memos, file notes and emails who 
 
 Over three years, Speech Recognition Cloud Professional costs roughly a fifth of Dragon Legal Anywhere at its US list price, and less than the one-time price of Dragon Legal 16. Dragon Legal Anywhere's three-year figure is shown for comparison only — it reaches end of life on 31 December 2027.
 
-Dragon figures are approximate and vary by reseller; obtain a current quotation. Full plans are on the [pricing page](/pricing).
+*Dragon prices are approximate US prices as at 2 October 2026, based on a scan of US resellers' list prices. Resellers often discount, and prices vary by reseller, territory, term and seat count. Get a current quote from your reseller before relying on any figure.*
+
+Full Speech Recognition Cloud plans are on the [pricing page](/pricing).
 
 *Pricing accurate at time of publication. Prices in USD and will convert to your local currency at checkout. Verify current pricing before purchasing.*
 
