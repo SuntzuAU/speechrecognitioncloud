@@ -75,7 +75,7 @@ It also has a free Starter plan with no expiry, so it can be tested against your
 |---|---|---|---|
 | **Dragon Professional v16** | <span class="st st-live">Current</span> | ~US$700 one-off, or ~US$490/yr | Upgrade from v15 ~US$350. Installed locally, works offline. Local voice profile, install limits under the standard licence, no companion mobile app. Stated migration path from DPA and DLA. |
 | **Dragon Professional Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | ~US$560–630 per user, per year | End of life 31 Dec 2027. Existing users renew pro rata until then. Migration path to Dragon Professional v16. |
-| **Dragon Legal Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | ~US$595 first year, ~US$905/yr after | End of life 31 Dec 2027. Existing users renew pro rata until then. See the [Dragon Legal alternative](/learn/dragon-legal-alternative/). |
+| **Dragon Legal Anywhere** | <span class="st st-end">New orders stop 31 Dec 2026</span> | US$780/yr list (resellers ~US$540–699) | End of life 31 Dec 2027. Existing users renew pro rata until then. See the [Dragon Legal alternative](/learn/dragon-legal-alternative/). |
 | **Dragon Medical One** | <span class="st st-live">Current</span> | ~US$1,188 per clinician, per year | Sold per clinician through resellers. |
 | **Dragon Anywhere Mobile** | <span class="st st-gone">End of sale 30 Jun 2026</span> | Renewals only, to 30 Jun 2027 | Standalone mobile app. No new subscriptions since July 2026. |
 | **Dragon Professional Individual 15** | <span class="st st-gone">Withdrawn</span> | No longer sold | Replaced by the Anywhere line. Not Windows 11 compatible. |
@@ -145,7 +145,7 @@ Over three years, per person, at the approximate figures above:
 
 <div class="kpi">
 <div class="k bad"><p class="k-l">Dragon Professional Anywhere</p><p class="k-v">~US$1,680</p></div>
-<div class="k bad"><p class="k-l">Dragon Legal Anywhere</p><p class="k-v">~US$2,400</p></div>
+<div class="k bad"><p class="k-l">Dragon Legal Anywhere</p><p class="k-v">~US$2,340</p></div>
 <div class="k bad"><p class="k-l">Dragon Medical One</p><p class="k-v">~US$3,560</p></div>
 <div class="k"><p class="k-l">Dragon Professional 16</p><p class="k-v">~US$700</p></div>
 <div class="k win"><p class="k-l">Speech Recognition Cloud Professional</p><p class="k-v">US$477</p></div>

@@ -32,7 +32,7 @@ faq:
   - q: "Where is desktop Dragon still the better choice for lawyers?"
     a: "Desktop Dragon, such as Dragon Legal 16 in the US, is the better fit if you need to dictate offline, if you rely heavily on voice commands, macros or scripting to control Word and other applications, if your firm prohibits cloud processing, or if you have years of trained Dragon profile data on specialist vocabulary that you do not want to give up. Speech Recognition Cloud is focused on dictation rather than voice control."
   - q: "How much does a Dragon Legal alternative cost?"
-    a: "Speech Recognition Cloud Professional is US$159 a year, about US$477 over three years, with a free 30-day trial. Dragon Legal Anywhere has been around US$595 for the first year and about US$905 a year after, roughly US$2,405 over three years, though it ends in 2027. Dragon Legal 16 is about US$799 one-time in the US. Dragon pricing varies by reseller; SRC pricing is accurate at time of publication, in US dollars."
+    a: "Speech Recognition Cloud Professional is US$159 a year, about US$477 over three years, with a free 30-day trial. Dragon Legal Anywhere lists at US$780 a year in the US (resellers have discounted it to around US$540–699), about US$2,340 over three years at list price, though it ends in 2027. Dragon Legal 16 is about US$799 one-time in the US. Dragon pricing varies by reseller; SRC pricing is accurate at time of publication, in US dollars."
   - q: "How do I switch from Dragon Legal to Speech Recognition Cloud?"
     a: "Install the free version, start the 30-day Professional trial, and dictate your normal work for a week alongside Dragon. Recreate your most-used Dragon auto-texts as text replacements and add frequent party and case names to custom vocabulary. There is no voice profile to train or migrate. Keep Dragon Legal Anywhere until you are satisfied; existing subscribers can renew pro rata until end of life on 31 December 2027."
 internalLinks:
@@ -59,7 +59,7 @@ breakImage2: "speechrecognitioncloud/2026/10/02/dragon-legal-alternative-solo-at
 <ul>
 <li><strong>Dragon Legal Anywhere is ending.</strong> New orders stop on 31 December 2026 and it reaches end of life on 31 December 2027.</li>
 <li><strong>The desktop product is a different kind of tool.</strong> Dragon Legal 16 is still sold in the US, but it is installed locally on each computer, not cloud-based.</li>
-<li><strong>US$159 a year</strong> for Speech Recognition Cloud Professional, against roughly US$905 a year to renew Dragon Legal Anywhere.</li>
+<li><strong>US$159 a year</strong> for Speech Recognition Cloud Professional, against a US list price of US$780 a year for Dragon Legal Anywhere.</li>
 </ul>
 <p>The honest limitation: it's a dictation tool, not a voice-control system. If you run Word by voice command and macro, desktop Dragon still does that better.</p>
 <p><strong><a href="https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe">Download it free →</a></strong> No credit card, no voice training, installs in two minutes.</p>
@@ -99,7 +99,7 @@ Dragon Legal 16 is still sold in the US, but it is not an equivalent of Dragon L
 | Works offline | No | No | **Yes** |
 | Voice commands and macros | Yes | Limited — dictation focused | **Extensive** |
 | Mobile app | Separate product, now end of sale | **Included** | No |
-| Approximate cost | ~US$595 first year, ~US$905/yr after | **US$159/yr** | ~US$799 one-time |
+| Approximate cost | US$780/yr list (resellers ~US$540–699) | **US$159/yr** | ~US$799 one-time |
 
 Dragon pricing is approximate and varies by reseller and term — get a current quotation before relying on it.
 
@@ -161,10 +161,10 @@ For lawyers and legal staff dictating letters, memos, file notes and emails who 
 | Per user | Year one | Each year after | Over three years |
 |---|---|---|---|
 | **Speech Recognition Cloud Professional** | **US$159** | **US$159** | **US$477** |
-| Dragon Legal Anywhere | ~US$595 | ~US$905 | ~US$2,405 |
+| Dragon Legal Anywhere (US list price) | US$780 | US$780 | ~US$2,340 |
 | Dragon Legal 16 (US only) | ~US$799 | Upgrades bought separately | ~US$799 plus any upgrade |
 
-Over three years, Speech Recognition Cloud Professional costs roughly a fifth of Dragon Legal Anywhere at its renewal price, and less than the one-time price of Dragon Legal 16. Dragon Legal Anywhere's three-year figure is shown for comparison only — it reaches end of life on 31 December 2027.
+Over three years, Speech Recognition Cloud Professional costs roughly a fifth of Dragon Legal Anywhere at its US list price, and less than the one-time price of Dragon Legal 16. Dragon Legal Anywhere's three-year figure is shown for comparison only — it reaches end of life on 31 December 2027.
 
 Dragon figures are approximate and vary by reseller; obtain a current quotation. Full plans are on the [pricing page](/pricing).
 
