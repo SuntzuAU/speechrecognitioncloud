@@ -365,11 +365,11 @@ const extraSchema = [softwareSchema, faqSchema];
     .hp-btn-red{background:var(--red)}.hp-btn-red:hover{background:#962F1E}
     .hp-btn-light{background:#F6F3EC;color:var(--ink)!important;align-self:flex-start}
     .hp-link{font-size:16px}
-    .hp-section{padding:72px 0;border-top:1px solid var(--rule)}
-    .hp-rowhead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+    .hp-section{padding:52px 0;border-top:1px solid var(--rule)}
+    .hp-rowhead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:24px;flex-wrap:wrap}
 
     /* hero */
-    .hp-hero{padding:48px 0 72px}
+    .hp-hero{padding:40px 0 36px}
     .hp-hero-sub{max-width:760px;margin:24px 0 36px}
     .hp-hero-line{margin:0 0 8px;font-size:23px;line-height:1.3}
     .hp-hero-note{margin:0;font-family:'Newsreader',Georgia,serif;font-size:19px;line-height:1.45;color:var(--muted)}
@@ -415,7 +415,7 @@ const extraSchema = [softwareSchema, faqSchema];
     #hp-demo .ptt{animation:hp-pulse 1.8s ease-out infinite}
     @keyframes hp-pulse{0%{box-shadow:0 0 0 0 rgba(178,58,38,.55)}70%{box-shadow:0 0 0 16px rgba(178,58,38,0)}100%{box-shadow:0 0 0 0 rgba(178,58,38,0)}}
     @media (prefers-reduced-motion:reduce){#hp-demo .ptt{animation:none}}
-    .hp-challenge{display:flex;justify-content:center;margin-top:16px}
+    .hp-challenge{display:flex;justify-content:center;margin-top:8px}
     .hp-taskbar{height:48px;flex-shrink:0;background:#F3F3F3;border-top:1px solid #D6D6D6;display:flex;align-items:center;justify-content:center;gap:6px;position:relative;font-size:12px;color:#1F1F1F}
     .hp-start{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center}
     .hp-start::before{content:'';width:20px;height:20px;border-radius:5px;border:2px solid #1F6FC5;box-sizing:border-box}
@@ -424,13 +424,13 @@ const extraSchema = [softwareSchema, faqSchema];
     .hp-ticon.on{background:#E4EAF2}
     .hp-srcicon{width:22px;height:22px;border-radius:6px;background:var(--red);display:flex;align-items:center;justify-content:center}
     .hp-tray{position:absolute;right:16px}
-    .hp-tips{justify-content:center;margin-top:28px}
+    .hp-tips{justify-content:center;margin-top:10px}
     .hp-mobile-demo{display:none}
-    .hp-hero-cta{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:28px;flex-wrap:wrap}
+    .hp-hero-cta{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:16px;flex-wrap:wrap}
     .hp-hero-cta p{margin:0;max-width:520px;font-size:15px;color:var(--body)}
 
     /* see it working: desk / phone tabs */
-    .hp-see .hp-h2{margin-bottom:24px}
+    .hp-see .hp-h2{margin-bottom:20px}
     .hp-tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
     .hp-tab{all:unset;cursor:pointer;box-sizing:border-box;padding:18px 22px;border:2px solid var(--rule);border-radius:8px;background:#fff;display:flex;flex-direction:column;gap:4px}
     .hp-tab b{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:26px;color:var(--ink);letter-spacing:-.01em}
@@ -458,7 +458,7 @@ const extraSchema = [softwareSchema, faqSchema];
     @media (prefers-reduced-motion:reduce){.hp-play-i{animation:none}}
 
     /* trial */
-    .hp-trial{padding:72px 0;background:var(--sand);border-top:4px solid var(--red)}
+    .hp-trial{padding:52px 0;background:var(--sand);border-top:4px solid var(--red)}
     .hp-days{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;border-top:1px solid var(--ink)}
     .hp-days>div{padding-top:28px}
     .hp-day{display:block;font-size:26px;margin-bottom:8px}
@@ -479,13 +479,13 @@ const extraSchema = [softwareSchema, faqSchema];
     .hp-vthumb{width:150px;flex-shrink:0;border-radius:3px}
     .hp-vtitle{font-size:15px;font-weight:600;line-height:1.3}
     .hp-vmeta{font-size:13px;margin-top:4px}
-    .hp-loop{display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:center;margin-top:56px}
+    .hp-loop{display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:center;margin-top:40px}
     .hp-loop-line{margin:0;font-size:26px;line-height:1.2}
     .hp-loop-video{border-radius:4px;overflow:hidden;background:var(--sand)}
     .hp-loop-video video{width:100%;display:block}
 
     /* founder */
-    .hp-founder{padding:80px 0;background:var(--sand)}
+    .hp-founder{padding:56px 0;background:var(--sand)}
     .hp-founder-grid{display:grid;grid-template-columns:1fr 2fr;gap:32px}
     .hp-quote{margin:0;padding:0;border:0}
     .hp-quote p{margin:0;font-size:clamp(22px,2.4vw,29px);line-height:1.3;letter-spacing:-.01em}
@@ -503,7 +503,7 @@ const extraSchema = [softwareSchema, faqSchema];
     .hp-spec-d{font-size:15px;line-height:1.5;color:var(--body)}
 
     /* paths + pricing */
-    .hp-paths{padding:80px 0;background:var(--ink);color:#F6F3EC}
+    .hp-paths{padding:56px 0;background:var(--ink);color:#F6F3EC}
     .hp-paths .hp-kicker{color:#BDB6A6}
     .hp-paths-grid{display:grid;grid-template-columns:7fr 1fr 4fr;gap:32px;align-items:end}
     .hp-paths-grid>.hp-price{grid-column:3}
@@ -538,7 +538,7 @@ const extraSchema = [softwareSchema, faqSchema];
       .hp-hero-sub,.hp-days,.hp-videos,.hp-loop,.hp-founder-grid,.hp-faq-grid,.hp-creds{grid-template-columns:1fr}
       .hp-spec>div{grid-template-columns:1fr;gap:6px}
       .hp-spec-v{font-size:22px}
-      .hp-section,.hp-trial,.hp-founder,.hp-paths{padding:56px 0}
+      .hp-section,.hp-trial,.hp-founder,.hp-paths{padding:40px 0}
       .hp-hero-cta{justify-content:flex-start}
       .hp-pathlist a{font-size:19px}
     }
