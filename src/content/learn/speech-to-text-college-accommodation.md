@@ -7,15 +7,15 @@ seoDescription: "Your IEP doesn't carry over to college. How to get speech to te
 type: "article"
 context: "descriptive"
 articleSection: "Education and accessibility"
-imagesPending: true
+imagesPending: false
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
 breakAspectRatio2: "21:9"
 heroImageAlt: "A college student dictating an essay into a Windows laptop in a campus library"
 heroPrompt: "Photorealistic corporate lifestyle photograph. A smiling American college student of about twenty, in a casual sweater, sits in a bright campus library dictating an essay into a laptop through a slim boom headset, relaxed and mid-sentence, face clearly visible and in focus. Natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, 16:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
-breakImage1Alt: "A student meeting a disability services adviser in a campus office"
+breakImage1Alt: "A college student meeting a disability services adviser in a campus office"
 breakPrompt1: "Photorealistic corporate lifestyle photograph. A friendly disability services adviser in his fifties, in an open-collared shirt, talks with a smiling college student across a small table in a bright campus office, a laptop open between them. Natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, subjects centred vertically with generous space above and below, 21:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
-breakImage2Alt: "A student writing by voice late in the evening in a dorm room"
+breakImage2Alt: "A college student dictating an assignment in his dorm room in the evening"
 breakPrompt2: "Photorealistic corporate lifestyle photograph. A relaxed college student of about nineteen sits at a desk in a tidy dorm room in the evening, dictating into a laptop with a slim boom headset, smiling, textbooks stacked beside the laptop. Warm lamp light and natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, subjects centred vertically with generous space above and below, 21:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
 faq:
   - q: "Does my IEP or 504 plan carry over to college?"
@@ -51,6 +51,9 @@ internalLinks:
     anchor: "dictation for long-form writing"
   - to: "/pricing"
     anchor: "compare plans and pricing"
+heroImage: "speechrecognitioncloud/2026/10/02/speech-to-text-college-accommodation-student-library-photo-825b8431.jpg"
+breakImage1: "speechrecognitioncloud/2026/10/02/speech-to-text-college-accommodation-disability-services-pho-8cc1a8aa.jpg"
+breakImage2: "speechrecognitioncloud/2026/10/02/speech-to-text-college-accommodation-dorm-evening-photo-8ba57e88.jpg"
 ---
 
 <div class="callout">
@@ -169,12 +172,12 @@ Still in high school? See [speech to text in an IEP or 504 plan](/learn/speech-t
 
 ## Who wrote this?
 
-I'm Russell Bewsell, founder of Speech Recognition Cloud.
+I'm Russell Bewsell, founder and CEO of Speech Recognition Cloud.
 
-I have spent 28 years deploying speech recognition across schools, universities, hospitals, courts and government departments, working with students and people across a wide range of disabilities and support needs, with customers in the US, UK, Canada, Australia, New Zealand and across Europe. I ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition.
+I've worked with Dragon and other speech recognition engines since 1999, deploying them across schools, universities, hospitals, courts and government departments, and I'm still in the industry today.
 
 This page describes federal guidance in general terms. It is not legal advice, and every college sets its own procedures — your disability services office is the authority on yours.
 
-— Russell Bewsell, Founder, Speech Recognition Cloud
+— Russell Bewsell, Founder and CEO, Speech Recognition Cloud
 
 *Microsoft Word and Windows are trade marks of Microsoft Corporation. Google Docs and Chromebook are trade marks of Google LLC. Mac, macOS and iPad are trade marks of Apple Inc. These marks are used solely to identify products factually.*

@@ -242,14 +242,12 @@ If you want more detail before you install, the [dictation for clinicians](/medi
 
 ## Who wrote this?
 
-I'm Russell Bewsell, founder of Speech Recognition Cloud.
+I'm Russell Bewsell, founder and CEO of Speech Recognition Cloud.
 
-I have spent 28 years deploying speech recognition — across hospitals, primary care and specialist practices, allied health, courts and government departments, with customers in the US, UK, Canada, Australia, New Zealand and across Europe. I ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition, supporting more than 40,000 customers and over 15,000 Dragon users, and in 2017 I presented the national Dragonology clinical training series on behalf of Nuance.
-
-Most of that time was spent fixing other people's dictation software for clinicians. SRC is the simpler, cheaper tool I wished I could hand people instead.
+I've worked with Dragon and other speech recognition engines since 1999, deploying them across hospitals, primary care and specialist practices, allied health, courts and government departments, and I'm still in the industry today. SRC is the simpler, cheaper tool I wished I could hand people instead.
 
 So the argument above is not a marketing brief. It is what I have watched actually happen in practices: the people who write formulations and long reports want their own words on the page, and a lot of them do not want a recorder in the room. If your setting does not fit the patterns I have described, [get in touch](/contact) and I will tell you honestly whether dictation is likely to suit your work.
 
-— Russell Bewsell, Founder, Speech Recognition Cloud
+— Russell Bewsell, Founder and CEO, Speech Recognition Cloud
 
 Sources: [NPR — Mental health therapists who use AI to take notes face questions about trust](https://www.npr.org/2026/05/26/nx-s1-5826943/talk-therapy-mental-health-ai-artificial-intelligence-privacy-trust) · [Proof News — Why AI scribes, widely embraced by doctors, spook therapists](https://www.proofnews.org/why-ai-scribes-spook-therapists/) · [ACPA Practice Guidance: Use of AI-Assisted Tools in Clinical Psychology](https://acpa.org.au/common/Uploaded%20files/Web/Resources/ACPA%20AI%20Practice%20Guidelines_Version1_Sept2025.pdf)

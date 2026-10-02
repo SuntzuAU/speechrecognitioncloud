@@ -7,15 +7,15 @@ seoDescription: "How to add speech to text to an IEP or 504 plan for dyslexia, d
 type: "article"
 context: "descriptive"
 articleSection: "Education and accessibility"
-imagesPending: true
+imagesPending: false
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
 breakAspectRatio2: "21:9"
 heroImageAlt: "A middle school student dictating an essay into a Windows laptop with a slim headset"
 heroPrompt: "Photorealistic corporate lifestyle photograph. A smiling American middle school student of about thirteen sits at a classroom desk dictating an essay into a laptop, wearing a slim discreet boom headset, mid-sentence and visibly at ease, face clearly visible and in focus. Bright modern US classroom, natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, 16:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
-breakImage1Alt: "A special education teacher and a student reviewing dictated writing together"
+breakImage1Alt: "A special education teacher and a high school student with a headset reviewing dictated writing together"
 breakPrompt1: "Photorealistic corporate lifestyle photograph. A friendly special education teacher in her forties, in a cardigan, sits beside a high school student wearing a slim boom headset; both look at a laptop screen and smile while talking it through. Warm US classroom, natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, subjects centred vertically with generous space above and below, 21:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
-breakImage2Alt: "A parent and a teenager doing homework by voice at the kitchen table"
+breakImage2Alt: "A teenager dictating homework at the kitchen table while her mother looks on"
 breakPrompt2: "Photorealistic corporate lifestyle photograph. A relaxed American teenager of about fifteen dictates homework into a laptop at a kitchen table in the early evening while a smiling parent looks on, an open notebook beside the laptop. Warm domestic light, natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, subjects centred vertically with generous space above and below, 21:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
 faq:
   - q: "Can speech to text be written into an IEP as assistive technology?"
@@ -51,6 +51,9 @@ internalLinks:
     anchor: "voice dictation for accessibility"
   - to: "/pricing"
     anchor: "compare plans and pricing"
+heroImage: "speechrecognitioncloud/2026/09/30/speech-to-text-iep-504-plan-student-dictating-classroom-phot-a1665187.jpg"
+breakImage1: "speechrecognitioncloud/2026/10/02/speech-to-text-iep-504-plan-teacher-student-review-photo-86bf2419.jpg"
+breakImage2: "speechrecognitioncloud/2026/10/02/speech-to-text-iep-504-plan-homework-kitchen-table-photo-3704ed5d.jpg"
 ---
 
 <div class="callout">
@@ -180,12 +183,12 @@ Heading to college? Plans don't carry over — see [speech to text as a college 
 
 ## Who wrote this?
 
-I'm Russell Bewsell, founder of Speech Recognition Cloud.
+I'm Russell Bewsell, founder and CEO of Speech Recognition Cloud.
 
-I have spent 28 years deploying speech recognition across schools, hospitals, courts and government departments, working with students and people across a wide range of disabilities and support needs, with customers in the US, UK, Canada, Australia, New Zealand and across Europe. I ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition.
+I've worked with Dragon and other speech recognition engines since 1999, deploying them across schools, hospitals, courts and government departments, and I'm still in the industry today.
 
 This page describes federal guidance in general terms. It is not legal advice, and it does not replace your IEP or 504 team's judgement or your district's policies.
 
-— Russell Bewsell, Founder, Speech Recognition Cloud
+— Russell Bewsell, Founder and CEO, Speech Recognition Cloud
 
 *Microsoft Word and Windows are trade marks of Microsoft Corporation. Google Docs, Google Classroom and Chromebook are trade marks of Google LLC. These marks are used solely to identify products factually.*

@@ -7,15 +7,15 @@ seoDescription: "Dragon Legal Anywhere closes to new orders 31 Dec 2026. The opt
 type: "article"
 context: "descriptive"
 articleSection: "Legal"
-imagesPending: true
+imagesPending: false
 heroAspectRatio: "16:9"
 breakAspectRatio1: "21:9"
 breakAspectRatio2: "21:9"
 heroImageAlt: "An attorney dictating a letter into a Windows laptop in a law office"
 heroPrompt: "Photorealistic corporate lifestyle photograph. A smiling American attorney in her late thirties, in a navy blazer, sits at a desk in a bright law office dictating into a laptop through a slim boom headset, relaxed and mid-sentence, face clearly visible and in focus, legal files neatly stacked beside her. Natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, 16:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
-breakImage1Alt: "A paralegal and a lawyer reviewing a dictated draft together"
+breakImage1Alt: "A senior lawyer and a paralegal reviewing a draft together on a laptop"
 breakPrompt1: "Photorealistic corporate lifestyle photograph. A friendly male lawyer in his fifties with an open-collared shirt and a smiling paralegal in her twenties review a document on a laptop together at a conference table in a modern law office. Natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, subjects centred vertically with generous space above and below, 21:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
-breakImage2Alt: "A solo practitioner dictating from a home office"
+breakImage2Alt: "A solo attorney dictating by headset at his home office desk"
 breakPrompt2: "Photorealistic corporate lifestyle photograph. A relaxed solo-practice attorney in his forties, in a sweater, dictates into a laptop with a slim boom headset at a tidy home office desk with bookshelves behind him, smiling, a legal pad beside the laptop. Natural window light, shallow depth of field, sharp professional stock photography, 85mm lens look, subjects centred vertically with generous space above and below, 21:9. IMPORTANT: the laptop must be a generic Windows PC laptop, NOT an Apple MacBook. CRITICAL: the laptop lid and all surfaces must be completely blank — no logo, no emblem, no badge, no brand mark of any kind. CRITICAL: absolutely no readable text, words, letters or interface labels anywhere, including on any screen."
 faq:
   - q: "What is happening to Dragon Legal?"
@@ -47,6 +47,9 @@ internalLinks:
     anchor: "text replacements"
   - to: "/pricing"
     anchor: "compare plans and pricing"
+heroImage: "speechrecognitioncloud/2026/10/02/dragon-legal-alternative-attorney-dictating-office-photo-a79037bb.jpg"
+breakImage1: "speechrecognitioncloud/2026/10/02/dragon-legal-alternative-lawyer-paralegal-review-photo-2ac8dc89.jpg"
+breakImage2: "speechrecognitioncloud/2026/10/02/dragon-legal-alternative-solo-attorney-home-office-photo-928b2441.jpg"
 ---
 
 <div class="callout">
@@ -185,12 +188,12 @@ For firm-wide use and legal workflows in more depth, see [voice dictation for la
 
 ## Who wrote this?
 
-I'm Russell Bewsell, founder of Speech Recognition Cloud.
+I'm Russell Bewsell, founder and CEO of Speech Recognition Cloud.
 
-I have spent 28 years deploying speech recognition across law firms, courts, hospitals and government departments, with customers in the US, UK, Canada, Australia, New Zealand and across Europe. I ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition.
+I've worked with Dragon and other speech recognition engines since 1999, deploying them across law firms, courts, hospitals and government departments, and I'm still in the industry today.
 
 Nothing on this page is legal or ethics advice. Check your state bar's current guidance before adopting any cloud tool for client work.
 
-— Russell Bewsell, Founder, Speech Recognition Cloud
+— Russell Bewsell, Founder and CEO, Speech Recognition Cloud
 
 *Dragon, Dragon Legal, Dragon Legal Anywhere and Dragon Professional are trade marks or registered trade marks of Nuance Communications, Inc. and/or Microsoft Corporation. Windows, Microsoft Word, Outlook and Teams are trade marks of Microsoft Corporation. Clio, MyCase, PracticePanther, Filevine, Smokeball, Westlaw, LexisNexis, NetDocuments and iManage are trade marks of their respective owners. These marks are used solely to identify products factually. Speech Recognition Cloud is not affiliated with or endorsed by any of these companies.*

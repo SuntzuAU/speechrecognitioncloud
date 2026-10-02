@@ -161,6 +161,6 @@ Wenn Sie neu einsteigen, führt Sie die [Einrichtungsanleitung](/learn/getting-s
 
 ## Wer hat Speech Recognition Cloud entwickelt?
 
-Speech Recognition Cloud stammt von Russell Bewsell. Er arbeitet seit 28 Jahren mit Spracherkennung — in Krankenhäusern, Arzt- und Facharztpraxen, Gerichten und Behörden, mit Kundinnen und Kunden in den USA, Großbritannien, Kanada, Australien, Neuseeland und Europa. Er leitete einen der größten und langjährigsten Dragon-Fachhändler weltweit, spezialisiert auf Dragon und Spracherkennung, mit mehr als 40.000 Kunden und über 15.000 Dragon-Anwendern.
+Speech Recognition Cloud stammt von Russell Bewsell. Er ist Gründer und CEO und arbeitet seit 1999 mit Dragon und anderen Spracherkennungssystemen — in Krankenhäusern, Arzt- und Facharztpraxen, Gerichten und Behörden — und ist bis heute in der Branche tätig.000 Kunden und über 15.000 Dragon-Anwendern.
 
 — Russell Bewsell, Gründer, Speech Recognition Cloud

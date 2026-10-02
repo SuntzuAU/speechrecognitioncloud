@@ -97,7 +97,7 @@ A few things separate the students for whom dictation sticks from the ones who a
 
 ## Where Speech Recognition Cloud comes in
 
-Speech Recognition Cloud was founded by Russell Bewsell, who has spent 28 years working with schools, students and people across a wide range of disabilities and support needs.
+Speech Recognition Cloud was founded by Russell Bewsell, who has worked with Dragon and other speech recognition engines since 1999 alongside schools, students and people across a wide range of disabilities and support needs.
 
 That's a long time watching the same failure repeat: a capable student handed software that couldn't hear them properly, then quietly written off as someone dictation "doesn't suit." It suited them fine. The tool didn't fit the user — and for younger students especially, nobody was building for that user, because the market was adult professionals.
 

@@ -100,7 +100,7 @@ Because SRC is cloud-based, it needs an internet connection — that's the trade
 
 ## Who built it
 
-SRC isn't a startup that discovered dictation last year. It was founded by **Russell Bewsell**, who has spent 28 years in speech recognition and ran one of the largest and longest-running Dragon resellers in the world, a business specialising in Dragon and speech recognition — supporting more than 40,000 customers and over 15,000 Dragon users, across hospitals, primary care and specialist practices, and government health departments. In other words, it was designed by someone who spent decades inside the exact Dragon workflows described above.
+SRC isn't a startup that discovered dictation last year. It was founded by **Russell Bewsell**, its CEO, who has worked with Dragon and other speech recognition engines since 1999 and is still in the industry today. In other words, it was designed by someone who spent decades inside the exact Dragon workflows described above.
 
 ## Try it in your own EMR, free for 30 days
 
