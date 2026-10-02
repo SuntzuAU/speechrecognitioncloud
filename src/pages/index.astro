@@ -189,6 +189,47 @@ const extraSchema = [softwareSchema, faqSchema];
     </div>
   </section>
 
+  <!-- 1b. SEE IT WORKING: desk / phone tabs (same pattern as voicerecognition.com.au) -->
+  <section class="hp-section hp-see" id="see-it-working">
+    <div class="hp-wrap">
+      <h2 class="hp-h2">Speech Recognition Cloud&hellip;</h2>
+      <div class="hp-tabs" role="tablist">
+        <button class="hp-tab" role="tab" type="button" id="hp-tab-desk" aria-selected="true" aria-controls="hp-pane-desk"><b>At your desk</b><span>Talk, and it types into any Windows program</span></button>
+        <button class="hp-tab" role="tab" type="button" id="hp-tab-phone" aria-selected="false" aria-controls="hp-pane-phone"><b>On your phone</b><span>Record a voice note, the text lands on your PC</span></button>
+      </div>
+      <div class="hp-pane" id="hp-pane-desk" role="tabpanel" aria-labelledby="hp-tab-desk">
+        <div class="hp-media">
+          <video src="/video/live-dictation-desk.mp4" poster="/video/live-dictation-desk.jpg" muted playsinline preload="none" aria-label="Live dictation into email, a web form and a Word-style letter"></video>
+          <button type="button" class="hp-play" aria-label="Play the video with sound"><span class="hp-play-i" aria-hidden="true"></span><span class="hp-play-t">Play the 25-second demo</span></button>
+        </div>
+        <div>
+          <h3 class="hp-ph">Your cursor is the microphone.</h3>
+          <ol class="hp-psteps">
+            <li><b>Click where the text should go</b><span>Email, a web form, a document. Any Windows program.</span></li>
+            <li><b>Talk normally</b><span>No voice training. No need to say the punctuation.</span></li>
+            <li><b>It types as you go</b><span>Punctuated text appears at your cursor.</span></li>
+          </ol>
+          <a href={site.hero.ctaPrimaryUrl} class="hp-btn hp-btn-red">Download free for Windows</a>
+        </div>
+      </div>
+      <div class="hp-pane" id="hp-pane-phone" role="tabpanel" aria-labelledby="hp-tab-phone" hidden>
+        <div class="hp-media">
+          <video src="/video/voice-notes-usd.mp4" poster="/video/voice-notes.jpg" muted playsinline preload="none" aria-label="Voice notes: record on your phone, the text lands on your PC"></video>
+          <button type="button" class="hp-play" aria-label="Play the video with sound"><span class="hp-play-i" aria-hidden="true"></span><span class="hp-play-t">Play the 25-second demo</span></button>
+        </div>
+        <div>
+          <h3 class="hp-ph">Away from your desk? Record a voice note.</h3>
+          <ol class="hp-psteps">
+            <li><b>Record on your phone</b><span>On rounds, in the car or between appointments.</span></li>
+            <li><b>Transcribed in seconds</b><span>Encrypted end to end. Medical vocabulary on Medical Ultra.</span></li>
+            <li><b>Review, copy, paste</b><span>Plain text on your receptionist's PC, ready for your records.</span></li>
+          </ol>
+          <a href="/medical" class="hp-btn hp-btn-red">Try Medical Ultra free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 2. HOW THE 30 DAYS WORK -->
   <section class="hp-trial">
     <div class="hp-wrap">
@@ -388,6 +429,34 @@ const extraSchema = [softwareSchema, faqSchema];
     .hp-hero-cta{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:28px;flex-wrap:wrap}
     .hp-hero-cta p{margin:0;max-width:520px;font-size:15px;color:var(--body)}
 
+    /* see it working: desk / phone tabs */
+    .hp-see .hp-h2{margin-bottom:24px}
+    .hp-tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+    .hp-tab{all:unset;cursor:pointer;box-sizing:border-box;padding:18px 22px;border:2px solid var(--rule);border-radius:8px;background:#fff;display:flex;flex-direction:column;gap:4px}
+    .hp-tab b{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:26px;color:var(--ink);letter-spacing:-.01em}
+    .hp-tab span{font-size:15px;color:var(--muted)}
+    .hp-tab[aria-selected="true"]{border-color:var(--red);background:#FBEFEC}
+    .hp-tab[aria-selected="true"] b{color:var(--red)}
+    .hp-tab:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+    .hp-pane{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center}
+    .hp-pane[hidden]{display:none}
+    .hp-media{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 18px 40px -12px rgba(22,21,15,.3);background:#EDE8DD}
+    .hp-media video{display:block;width:100%;height:auto}
+    .hp-play{all:unset;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer;background:rgba(22,21,15,.14)}
+    .hp-play:hover{background:rgba(22,21,15,.26)}
+    .hp-play[hidden]{display:none}
+    .hp-play-i{display:block;width:84px;height:84px;border-radius:50%;background:var(--red);position:relative;animation:hp-pulse 1.8s ease-out infinite}
+    .hp-play-i::after{content:'';position:absolute;left:33px;top:26px;border-left:26px solid #fff;border-top:16px solid transparent;border-bottom:16px solid transparent}
+    .hp-play-t{background:rgba(22,21,15,.88);color:#fff;font-weight:600;font-size:15px;padding:8px 14px;border-radius:6px}
+    .hp-ph{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:32px;line-height:1.1;margin:0 0 8px}
+    .hp-psteps{list-style:none;margin:16px 0 26px;padding:0;counter-reset:hps}
+    .hp-psteps li{counter-increment:hps;padding:10px 0 10px 40px;position:relative;border-top:1px solid var(--rule)}
+    .hp-psteps li::before{content:counter(hps);position:absolute;left:0;top:12px;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center}
+    .hp-psteps b{display:block;font-size:17px;color:var(--ink)}
+    .hp-psteps span{color:var(--muted);font-size:15px}
+    @media (max-width:860px){.hp-pane{grid-template-columns:1fr;gap:24px}.hp-tabs{grid-template-columns:1fr}.hp-tab b{font-size:22px}}
+    @media (prefers-reduced-motion:reduce){.hp-play-i{animation:none}}
+
     /* trial */
     .hp-trial{padding:72px 0;background:var(--sand);border-top:4px solid var(--red)}
     .hp-days{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;border-top:1px solid var(--ink)}
@@ -474,6 +543,19 @@ const extraSchema = [softwareSchema, faqSchema];
       .hp-pathlist a{font-size:19px}
     }
   </style>
+  <script is:inline>
+    (function(){
+      var tabs=[].slice.call(document.querySelectorAll('.hp-tab'));
+      tabs.forEach(function(t){t.addEventListener('click',function(){
+        tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');var p=document.getElementById(x.getAttribute('aria-controls'));if(p){p.hidden=!on;if(!on){var v=p.querySelector('video');if(v)v.pause();}}});
+      });});
+      [].slice.call(document.querySelectorAll('.hp-play')).forEach(function(b){
+        var v=b.parentElement.querySelector('video'); if(!v) return;
+        b.addEventListener('click',function(){v.muted=false;v.controls=true;b.hidden=true;var p=v.play();if(p&&p.catch)p.catch(function(){});});
+        v.addEventListener('ended',function(){v.controls=false;v.currentTime=0;b.hidden=false;});
+      });
+    })();
+  </script>
   <script is:inline>
     document.querySelectorAll('.hp .yt-facade').forEach(function(el){el.addEventListener('click',function(){var id=el.dataset.ytid;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title='YouTube video';el.innerHTML='';el.appendChild(f);},{once:true});});
   </script>
