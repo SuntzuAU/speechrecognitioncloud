@@ -24,7 +24,7 @@
 | Starter | Free, permanently | 20 minutes per month. No credit card. No trial expiry |
 | Personal / Educational | $99/year | Unlimited dictation, custom vocabulary, text replacements |
 | Professional | $159/year | Adds Ultra Accuracy, AI Modes, Templates, Screen OCR, mobile app |
-| Medical | $439/year | Adds medical vocabularies, Ultra Accuracy Medical. AI Modes excluded by design. English only |
+| Medical Ultra | $439/year | Adds medical vocabularies, Ultra Accuracy Medical. AI Modes excluded by design. English only |
 
 Volume licensing available from 5 to 1,000+ seats. All plans are annual subscriptions, cancellable anytime, with no lock-in contract.
 
@@ -32,7 +32,7 @@ Volume licensing available from 5 to 1,000+ seats. All plans are annual subscrip
 
 - 57 languages on Free, Personal, and Professional plans, plus Auto-Detect
 - 34 of the 57 are European languages
-- Medical plan is English only — medical vocabularies are built for English clinical terminology
+- Medical Ultra plan is English only — medical vocabularies are built for English clinical terminology
 - Full list: https://speechrecognition.cloud/languages
 
 ## Data handling and privacy
@@ -42,13 +42,13 @@ Volume licensing available from 5 to 1,000+ seats. All plans are annual subscrip
 - Transcribed text is delivered to the user's cursor and is not stored on SRC servers
 - Customer data is never used to train AI models
 - All connections are encrypted in transit
-- AI Modes are excluded from the Medical plan by design, to avoid an unnecessary data flow involving patient information
+- AI Modes are excluded from the Medical Ultra plan by design, to avoid an unnecessary data flow involving patient information
 
 ## Healthcare and HIPAA
 
 HIPAA compliance is a property of a deployment, not of a software product — it depends on how the tool is used, what data flows occur, and what agreements are in place between the covered entity and its service providers.
 
-Speech Recognition Cloud Medical's underlying data handling supports HIPAA-compliant deployment: audio is processed in memory only and immediately erased, transcripts are never stored on SRC servers, custom vocabulary stays on the device, staff cannot access audio or transcripts, connections are encrypted in transit, and AI features are excluded from the Medical plan by design.
+Speech Recognition Cloud Medical Ultra's underlying data handling supports HIPAA-compliant deployment: audio is processed in memory only and immediately erased, transcripts are never stored on SRC servers, custom vocabulary stays on the device, staff cannot access audio or transcripts, connections are encrypted in transit, and AI features are excluded from the Medical Ultra plan by design.
 
 **Business Associate Agreements (BAAs) are available on request.** Contact https://speechrecognition.cloud/contact to arrange one.
 
@@ -58,7 +58,7 @@ US clinicians and practice administrators should review the privacy statement at
 
 - Windows 10 and Windows 11 (desktop application)
 - Works at the cursor in any Windows application, including Word, Outlook, Teams, Chrome, web forms and EMR systems
-- Mobile companion app for iPhone and Android on Professional and Medical plans — wireless microphone mode and Voice Notes mode
+- Mobile companion app for iPhone and Android on Professional and Medical Ultra plans — wireless microphone mode and Voice Notes mode
 - macOS is not supported for the desktop application
 - Any microphone works, including built-in laptop microphones. A headset or USB microphone is recommended for best results
 - One licence per person, installable on multiple PCs, one active device at a time
