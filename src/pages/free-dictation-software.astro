@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+
+const dl = site.download.url;
+
+const faqs = [
+  { q: "Is this dictation software really free?", a: "Yes. The free plan includes 20 minutes of dictation every month, with no credit card required. Every new signup also gets 30 days of Professional with unlimited dictation, so you can try every feature before deciding whether you need a paid plan." },
+  { q: "Does it work on Windows 10 and Windows 11?", a: "Yes. Speech Recognition Cloud is dictation software for Windows 10 and 11. It installs in about two minutes." },
+  { q: "Which programs can I dictate into?", a: "Any Windows program with a text cursor: Word, Outlook, Google Docs and Gmail in your browser, web forms, chat apps and business systems. Your words appear where your cursor is." },
+  { q: "Do I need to train it to my voice?", a: "No. There is no voice training. Speak naturally and the text appears with punctuation added automatically." },
+  { q: "What languages does it support?", a: "57 languages on the Free, Personal and Professional plans." },
+  { q: "What happens after the 30 days of Professional?", a: "You stay on the free plan with 20 minutes a month, or upgrade. Personal is $99 USD a year for unlimited dictation and Professional is $159 USD a year. Pricing accurate at time of publication." },
+  { q: "Is it the same as Windows voice typing?", a: "Both let you speak instead of type. Speech Recognition Cloud also offers custom vocabulary, text replacements and templates on paid plans, and a 30-day Professional trial so you can compare for yourself." }
+];
+
+const extraSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Speech Recognition Cloud",
+    "operatingSystem": "Windows 10, Windows 11",
+    "applicationCategory": "BusinessApplication",
+    "url": site.siteUrl + "/free-dictation-software",
+    "downloadUrl": dl,
+    "offers": [
+      { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Personal", "price": "99", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Professional", "price": "159", "priceCurrency": "USD" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
+  }
+];
+---
+<BaseLayout
+  title="Free Dictation Software for Windows"
+  seoTitle="Free Dictation Software for Windows | Speech to Text Download"
+  description="Free dictation software for Windows 10 and 11. Speech to text in Word, Outlook and any program. No voice training. Free plan plus 30 days of Professional."
+  extraSchema={extraSchema}>
+
+  <section class="fd-hero">
+    <div class="container fd-hero-inner">
+      <p class="eyebrow">FREE DOWNLOAD · WINDOWS 10/11</p>
+      <h1>Free Dictation Software for Windows</h1>
+      <p class="fd-sub">Speech to text that types where your cursor is. Talk into Word, Outlook, your browser or any Windows program and get punctuated text. No voice training.</p>
+      <div class="fd-cta-row">
+        <a href={dl} class="btn-primary fd-btn">Download free for Windows</a>
+      </div>
+      <p class="fd-micro">Free forever plan · 30 days of Professional on us · No credit card required · Installs in 2 minutes</p>
+      <ul class="fd-ticks">
+        <li>Works in any Windows program</li>
+        <li>Automatic punctuation</li>
+        <li>No voice training</li>
+        <li>57 languages</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:960px">
+      <h2 class="text-center" style="margin-bottom:12px">How does the free dictation software work?</h2>
+      <p class="muted text-center" style="max-width:640px;margin:0 auto 36px;font-size:16px;line-height:1.7">Three steps. Most people are dictating within a few minutes of downloading.</p>
+      <div class="fd-steps">
+        <div class="fd-step"><span class="fd-num">1</span><h3>Download and install</h3><p class="muted">Run the free installer on Windows 10 or 11. It takes about two minutes.</p></div>
+        <div class="fd-step"><span class="fd-num">2</span><h3>Click where you want to type</h3><p class="muted">An email, a Word document, a web form. Anywhere with a cursor.</p></div>
+        <div class="fd-step"><span class="fd-num">3</span><h3>Speak naturally</h3><p class="muted">Your words appear as punctuated text. No voice training, no special commands to learn.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container" style="max-width:960px">
+      <h2 class="text-center" style="margin-bottom:36px">What do you get with the free plan?</h2>
+      <div class="fd-plans">
+        <div class="fd-plan">
+          <p class="fd-plan-name">Free</p>
+          <p class="fd-plan-price">$0</p>
+          <ul>
+            <li>20 minutes of dictation every month</li>
+            <li>Works in any Windows program</li>
+            <li>Automatic punctuation</li>
+            <li>57 languages</li>
+          </ul>
+        </div>
+        <div class="fd-plan fd-plan-hi">
+          <p class="fd-plan-name">Included on signup</p>
+          <p class="fd-plan-price">30 days of Professional</p>
+          <ul>
+            <li>Unlimited dictation for 30 days</li>
+            <li>ULTRA Accuracy Mode</li>
+            <li>Custom vocabulary and text replacements</li>
+            <li>AI Modes and templates</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted text-center" style="font-size:13px;margin-top:20px">After 30 days you stay on Free, or upgrade: Personal $99 USD/year, Professional $159 USD/year. Pricing accurate at time of publication. <a href="/pricing">See all plans</a>.</p>
+    </div>
+  </section>
+
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:960px">
+      <h2 class="text-center" style="margin-bottom:36px">Who uses speech to text software on Windows?</h2>
+      <div class="fd-grid">
+        <div class="fd-card"><h3>Emails and documents</h3><p class="muted">Dictate emails in Outlook and reports in Word instead of typing them.</p></div>
+        <div class="fd-card"><h3>Students and writers</h3><p class="muted">Get essays, notes and drafts down as fast as you can say them. <a href="/students">For students</a> · <a href="/writers">For writers</a></p></div>
+        <div class="fd-card"><h3>Typing is slow or painful</h3><p class="muted">Talk instead of type when typing is tiring or difficult. <a href="/accessibility">Accessibility</a></p></div>
+        <div class="fd-card"><h3>Busy professionals</h3><p class="muted">Notes, forms and replies in business systems and web apps. <a href="/business">For business</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download-strip">
+    <div class="container download-strip-inner">
+      <div><p class="download-strip-headline">Start dictating free today</p><p class="download-strip-sub">Free plan plus 30 days of Professional. No credit card required. Windows 10/11.</p></div>
+      <a href={dl} class="btn-primary" style="background:#fff;color:#B23A26;font-weight:700;white-space:nowrap">Download free</a>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:24px">Free dictation software: common questions</h2>
+      {faqs.map(f => (
+        <div class="faq-item"><h3>{f.q}</h3><p class="muted">{f.a}</p></div>
+      ))}
+      <p class="muted text-center" style="font-size:14px;margin-top:28px">{site.hero.trustLine}</p>
+      <div class="text-center" style="margin-top:20px"><a href={dl} class="btn-primary fd-btn">Download free for Windows</a></div>
+    </div>
+  </section>
+
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .fd-hero{padding:56px 0 48px;text-align:center}
+    .fd-hero-inner{max-width:820px}
+    .fd-hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin:0 0 16px}
+    .fd-sub{font-size:18px;line-height:1.6;color:var(--color-text-light,#5E5A4F);max-width:640px;margin:0 auto 28px}
+    .fd-cta-row{display:flex;justify-content:center;margin-bottom:14px}
+    .fd-btn{font-size:17px;padding:15px 32px}
+    .fd-micro{font-size:13px;color:#5E5A4F;margin:0 0 24px}
+    .fd-ticks{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px}
+    .fd-ticks li{font-size:14px;font-weight:600;position:relative;padding-left:22px}
+    .fd-ticks li::before{content:"\2713";position:absolute;left:0;top:0;color:#B23A26;font-weight:800}
+    .fd-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .fd-step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px}
+    .fd-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#B23A26;color:#fff;font-weight:700;margin-bottom:12px}
+    .fd-step h3,.fd-card h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .fd-step p,.fd-card p{margin:0;line-height:1.6}
+    .fd-plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .fd-plan{border:1px solid var(--border);border-radius:16px;padding:28px;background:#fff}
+    .fd-plan-hi{background:#F7ECE8;border-color:#EBCFC6}
+    .fd-plan-name{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#B23A26;margin:0 0 6px}
+    .fd-plan-price{font-size:26px;font-weight:800;margin:0 0 16px}
+    .fd-plan ul{margin:0;padding-left:18px;line-height:1.9}
+    .fd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .fd-card{border:1px solid var(--border);border-radius:14px;padding:24px;background:#fff}
+    .download-strip{background:#B23A26;padding:28px 0}
+    .download-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .download-strip-headline{font-size:18px;font-weight:700;color:#fff;margin:0 0 4px}
+    .download-strip-sub{font-size:14px;color:rgba(255,255,255,0.85);margin:0}
+    .faq-item{padding:20px 0;border-bottom:1px solid var(--border)}
+    .faq-item h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .faq-item p{margin:0;line-height:1.7}
+    @media (max-width:768px){
+      .fd-hero{padding:36px 0 32px}
+      .fd-sub{font-size:16px}
+      .fd-steps,.fd-plans,.fd-grid{grid-template-columns:1fr}
+    }
+  </style>
+</BaseLayout>
