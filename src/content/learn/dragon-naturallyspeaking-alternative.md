@@ -62,7 +62,7 @@ Across every version of Dragon — NaturallySpeaking, Professional, Home, Dictat
 
 | | Dragon (NaturallySpeaking / Professional 16) | Speech Recognition Cloud |
 |---|---|---|
-| **Price** | Large one-off purchase + paid upgrades | Free Starter plan; Personal $99/yr; Professional $159/yr |
+| **Price** | Large one-off purchase + paid upgrades | Free Starter plan; Personal $99/yr; Professional $199/yr |
 | **Free version** | No | Yes — 20 min/month, no credit card, stays free |
 | **Install limit** | Standard licence limits the number of machines | One licence per user, unlimited computers |
 | **Windows 11** | Dragon 15 not compatible (per Nuance); 16 is the paid fix | Cloud-based — stays current with Windows |
@@ -70,7 +70,7 @@ Across every version of Dragon — NaturallySpeaking, Professional, Home, Dictat
 | **Voice training** | Required | None — start talking immediately |
 | **Updates** | New paid version each time | Continuous, included in subscription |
 
-SRC dictates at the cursor — not into a separate dictation box — so it works directly inside Word, Outlook, your browser and any standard Windows application. There's a free **Starter** plan (20 minutes a month, no credit card, no trial clock), then Personal at $99/year and Professional at $159/year, both unlimited. Prices are shown in USD and convert to your local currency at checkout.
+SRC dictates at the cursor — not into a separate dictation box — so it works directly inside Word, Outlook, your browser and any standard Windows application. There's a free **Starter** plan (20 minutes a month, no credit card, no trial clock), then Personal at $99/year and Professional at $199/year, both unlimited. Prices are shown in USD and convert to your local currency at checkout.
 
 ## Which guide to read next
 

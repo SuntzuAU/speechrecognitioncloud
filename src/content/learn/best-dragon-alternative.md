@@ -1,7 +1,7 @@
 ---
 title: "The Best Dragon Alternative in 2026: Every Dragon Product Compared"
 date: "2026-08-05"
-description: "Looking for the best Dragon alternative? Every Dragon product compared on price and status in 2026, and how Speech Recognition Cloud stacks up at US$159 a year with a free tier that does not expire."
+description: "Looking for the best Dragon alternative? Every Dragon product compared on price and status in 2026, and how Speech Recognition Cloud stacks up at US$199 a year with a free tier that does not expire."
 type: "article"
 seoTitle: "The Best Dragon Alternative in 2026 (All Products Compared)"
 seoDescription: "Every Dragon product compared on price and status in 2026, and how Speech Recognition Cloud stacks up on cost, accuracy and Windows support."
@@ -59,7 +59,7 @@ This page sets out what each Dragon product currently costs, which are ending, a
 
 ## What is the best Dragon alternative in 2026?
 
-For an individual, a professional, or a team of up to a few dozen people, the best Dragon alternative in 2026 is **Speech Recognition Cloud (SRC)**. It performs the same core function — verbatim dictation at the cursor in any Windows application — for **US$159 a year** on the Professional plan, against roughly US$660 to US$1,188 a year at US list prices for Dragon's subscription products.
+For an individual, a professional, or a team of up to a few dozen people, the best Dragon alternative in 2026 is **Speech Recognition Cloud (SRC)**. It performs the same core function — verbatim dictation at the cursor in any Windows application — for **US$199 a year** on the Professional plan, against roughly US$660 to US$1,188 a year at US list prices for Dragon's subscription products.
 
 It also has a free Starter plan with no expiry, so it can be tested against your actual work before you spend anything.
 
@@ -91,7 +91,7 @@ It also has a free Starter plan with no expiry, so it can be tested against your
 |---|---|---|
 | **Starter** | <span class="st st-live">Free</span> | 20 minutes per month, core features, no credit card, no expiry |
 | **Personal / Educational** | US$99/yr | Unlimited dictation, 57 languages |
-| **Professional** | <span class="st st-best">US$159/yr</span> | Unlimited dictation, optional AI Modes, mobile companion app |
+| **Professional** | <span class="st st-best">US$199/yr</span> | Unlimited dictation, optional AI Modes, mobile companion app |
 | **Medical Ultra** | US$439/yr | Clinical vocabulary, mobile app, AI Modes excluded by design |
 
 All plans are licensed per person with no limit on the number of computers. Prices display in US dollars and convert to your local currency at checkout. See [speech to text software pricing](/pricing) for full plan details.
@@ -113,7 +113,7 @@ The pattern is consistent: the lower-cost, one-off, install-and-own Dragon produ
 
 Dragon 15 is not supported on Windows 11. It often runs, but with the lag, freezing and instability widely reported by users moved onto Windows 11 by a new machine or an IT policy. The upgrade path offered is Dragon Professional 16 — around US$699 outright, or about US$399 to upgrade (US list prices).
 
-Speech Recognition Cloud is US$159 a year and cloud-based, so there is no local version to fall out of step with Windows and no upgrade purchase to chase compatibility. See the [Dragon Professional 16 alternative](/learn/dragon-professional-16-alternative) comparison for detail.
+Speech Recognition Cloud is US$199 a year and cloud-based, so there is no local version to fall out of step with Windows and no upgrade purchase to chase compatibility. See the [Dragon Professional 16 alternative](/learn/dragon-professional-16-alternative) comparison for detail.
 
 ### I have Dragon Professional 16
 
@@ -148,11 +148,11 @@ Over three years, per person, at the approximate US list prices above:
 <div class="k bad"><p class="k-l">Dragon Legal Anywhere</p><p class="k-v">~US$2,340</p></div>
 <div class="k bad"><p class="k-l">Dragon Medical One</p><p class="k-v">~US$3,560</p></div>
 <div class="k"><p class="k-l">Dragon Professional 16</p><p class="k-v">~US$699</p></div>
-<div class="k win"><p class="k-l">Speech Recognition Cloud Professional</p><p class="k-v">US$477</p></div>
+<div class="k win"><p class="k-l">Speech Recognition Cloud Professional</p><p class="k-v">US$597</p></div>
 <div class="k win"><p class="k-l">Speech Recognition Cloud Medical Ultra</p><p class="k-v">US$1,317</p></div>
 </div>
 
-Against Dragon Professional Anywhere at list price, the gap for one person is roughly US$1,500 over three years, and for a team of four about US$6,000.
+Against Dragon Professional Anywhere at list price, the gap for one person is roughly US$1,400 over three years, and for a team of four about US$5,500.
 
 *Dragon prices are approximate US prices as at 2 October 2026, based on a scan of US resellers' list prices. Resellers often discount, and prices vary by reseller, territory, term and seat count. Get a current quote from your reseller before relying on any figure.*
 

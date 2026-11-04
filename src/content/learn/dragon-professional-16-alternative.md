@@ -15,7 +15,7 @@ faq:
   - q: "Does it work on Windows 11?"
     a: "Yes. SRC is cloud-based and stays current with Windows, so there's no version to fall out of compatibility."
   - q: "What does it cost?"
-    a: "There's a free Starter plan, then Personal at $99/year and Professional at $159/year, both with unlimited dictation. Clinicians have a dedicated Medical Ultra plan — see our dictation for clinicians page. Prices are in USD and convert to your local currency at checkout."
+    a: "There's a free Starter plan, then Personal at $99/year and Professional at $199/year, both with unlimited dictation. Clinicians have a dedicated Medical Ultra plan — see our dictation for clinicians page. Prices are in USD and convert to your local currency at checkout."
   - q: "Does it work in the applications I already use?"
     a: "Yes — it types at the cursor in any standard Windows application, including Word, Outlook, browsers and web forms, and clinical or practice-management software."
   - q: "Do I need an internet connection?"
@@ -52,7 +52,7 @@ The best alternative to Dragon Professional 16 is **Speech Recognition Cloud (SR
 
 This is the one almost everyone raises. Dragon Professional 16 is a large one-off purchase — several hundred dollars — and that's before you count paying again for the next upgrade. At some point the maths simply stops making sense.
 
-**How SRC compares:** SRC is $99/year for the Personal plan and $159/year for Professional — both with *unlimited* dictation. There's also a genuinely free **Starter** plan: 20 minutes of dictation a month, core features, no credit card, and no trial clock counting down. It just stays free. That means you can try the real product — not a locked-down demo — before you spend a cent. (Prices are shown in US dollars and convert to your local currency at checkout; Australian customers see an AUD price with GST included.)
+**How SRC compares:** SRC is $99/year for the Personal plan and $199/year for Professional — both with *unlimited* dictation. There's also a genuinely free **Starter** plan: 20 minutes of dictation a month, core features, no credit card, and no trial clock counting down. It just stays free. That means you can try the real product — not a locked-down demo — before you spend a cent. (Prices are shown in US dollars and convert to your local currency at checkout; Australian customers see an AUD price with GST included.)
 
 ## 2. The two-computer install limit
 
@@ -82,7 +82,7 @@ Older dictation software made you read scripts aloud to "train" it before it wou
 
 | | Dragon Professional 16 | Speech Recognition Cloud |
 |---|---|---|
-| **Price** | Large one-off purchase + paid upgrades | Free Starter plan; Personal $99/yr; Professional $159/yr |
+| **Price** | Large one-off purchase + paid upgrades | Free Starter plan; Personal $99/yr; Professional $199/yr |
 | **Free version** | No | Yes — 20 min/month, no credit card, stays free |
 | **Install limit** | Standard licence limits the number of machines | One licence per user, unlimited computers |
 | **Windows 11** | Dragon 15 not compatible (per Nuance); 16 is the paid fix | Cloud-based — stays current with Windows |
@@ -109,7 +109,7 @@ SRC isn't a fly-by-night AI startup that discovered dictation last year. It was 
 
 ## Try it free
 
-You can test SRC properly without spending anything: the free **Starter** plan needs no credit card, no voice training, and about two minutes to set up. If you dictate a lot, move up to Personal ($99/yr) or Professional ($159/yr) whenever you're ready.
+You can test SRC properly without spending anything: the free **Starter** plan needs no credit card, no voice training, and about two minutes to set up. If you dictate a lot, move up to Personal ($99/yr) or Professional ($199/yr) whenever you're ready.
 
 **[Download free](https://download.speechrecognition.cloud/src/SpeechRecognitionCloudInstaller.exe)**  ·  **[dictation software pricing](/pricing)**
 
@@ -128,7 +128,7 @@ SRC is licensed per user, so you can install it on as many of your own computers
 Yes. SRC is cloud-based and stays current with Windows, so there's no version to fall out of compatibility.
 
 **What does it cost?**
-There's a free Starter plan, then Personal at $99/year and Professional at $159/year, both with unlimited dictation. Clinicians have a dedicated Medical Ultra plan — see our [dictation for clinicians](/medical) page. Prices are in USD and convert to your local currency at checkout.
+There's a free Starter plan, then Personal at $99/year and Professional at $199/year, both with unlimited dictation. Clinicians have a dedicated Medical Ultra plan — see our [dictation for clinicians](/medical) page. Prices are in USD and convert to your local currency at checkout.
 
 **Does it work in the applications I already use?**
 Yes — it types at the cursor in any standard Windows application, including Word, Outlook, browsers and web forms, and clinical or practice-management software.

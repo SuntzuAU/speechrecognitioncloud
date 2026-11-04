@@ -40,7 +40,7 @@ faq:
   - q: "Kann ich zwischen Sprachen wechseln?"
     a: "Ja, jederzeit über die Einstellungen. Es sind keine getrennten Profile nötig und es muss nichts neu eingelernt werden. Sie können beispielsweise eine deutsche E-Mail diktieren und unmittelbar danach auf Englisch weiterarbeiten."
   - q: "Was kostet deutsche Diktiersoftware?"
-    a: "Bei Speech Recognition Cloud ist der Starter-Tarif dauerhaft kostenlos mit 20 Minuten pro Monat. Personal kostet 99 US-Dollar pro Jahr, Professional 159 US-Dollar pro Jahr, beide mit unbegrenztem Diktat und Zugriff auf alle 57 Sprachen. Der Medical-Tarif für medizinisches Fachpersonal kostet 439 US-Dollar pro Jahr und ist derzeit ausschließlich englischsprachig. Preise in US-Dollar, Umrechnung beim Bezahlvorgang. Preise zum Zeitpunkt der Veröffentlichung; bitte vor dem Kauf den aktuellen Stand prüfen."
+    a: "Bei Speech Recognition Cloud ist der Starter-Tarif dauerhaft kostenlos mit 20 Minuten pro Monat. Personal kostet 99 US-Dollar pro Jahr, Professional 199 US-Dollar pro Jahr, beide mit unbegrenztem Diktat und Zugriff auf alle 57 Sprachen. Der Medical-Tarif für medizinisches Fachpersonal kostet 439 US-Dollar pro Jahr und ist derzeit ausschließlich englischsprachig. Preise in US-Dollar, Umrechnung beim Bezahlvorgang. Preise zum Zeitpunkt der Veröffentlichung; bitte vor dem Kauf den aktuellen Stand prüfen."
   - q: "Welche Systemvoraussetzungen gibt es?"
     a: "Speech Recognition Cloud ist eine Windows-Anwendung und benötigt eine Internetverbindung, da die Spracherkennung in der Cloud erfolgt. Für macOS oder iPad steht die Software nicht zur Verfügung. Ein einfaches Headset-Mikrofon genügt; spezielle Hardware ist nicht erforderlich."
 internalLinks:
@@ -82,7 +82,7 @@ Die folgende Demonstration dauert knapp zwei Minuten und zeigt gesprochenes Deut
 | **Zeichensetzung** | Automatisch, zusätzlich per Sprachbefehl steuerbar |
 | **Offline-Betrieb** | Nein — Internetverbindung erforderlich |
 | **Kostenloser Tarif** | 20 Minuten pro Monat, ohne Kreditkarte, unbefristet |
-| **Preise** | Personal 99 USD/Jahr, Professional 159 USD/Jahr, Medical Ultra 439 USD/Jahr |
+| **Preise** | Personal 99 USD/Jahr, Professional 199 USD/Jahr, Medical Ultra 439 USD/Jahr |
 | **macOS / iPad** | Nicht verfügbar |
 
 *Stand: August 2026. Angaben zum Zeitpunkt der Veröffentlichung.*
@@ -143,7 +143,7 @@ Sie können jederzeit zwischen Sprachen wechseln, ohne getrennte Profile anzuleg
 
 ## Was kostet deutsche Diktiersoftware?
 
-**Speech Recognition Cloud kostet 99 US-Dollar pro Jahr im Tarif Personal und 159 US-Dollar pro Jahr im Tarif Professional. Der Starter-Tarif ist dauerhaft kostenlos mit 20 Minuten Diktat pro Monat.**
+**Speech Recognition Cloud kostet 99 US-Dollar pro Jahr im Tarif Personal und 199 US-Dollar pro Jahr im Tarif Professional. Der Starter-Tarif ist dauerhaft kostenlos mit 20 Minuten Diktat pro Monat.**
 
 Der Starter-Tarif läuft nicht ab und verlangt keine Kreditkarte. **Personal** und **Professional** bieten unbegrenztes Diktat und Zugriff auf alle 57 Sprachen. Der **Medical-Tarif** richtet sich an medizinisches Fachpersonal, kostet 439 US-Dollar pro Jahr und ist derzeit ausschließlich englischsprachig.
 

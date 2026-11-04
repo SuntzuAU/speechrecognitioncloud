@@ -34,7 +34,7 @@ The AI processes your instruction and places the result at your cursor, just lik
 
 ## Available on Professional and Medical Ultra tiers
 
-AI Modes are included with the **Professional** ($159/year) and **Medical Ultra** ($439/year) plans. They are not available on the Free or Personal tiers.
+AI Modes are included with the **Professional** ($199/year) and **Medical Ultra** ($439/year) plans. They are not available on the Free or Personal tiers.
 
 The Medical Ultra tier includes **restricted AI modes** that limit processing to approved clinical transformations only, providing an additional layer of privacy for healthcare environments.
 
