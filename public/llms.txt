@@ -23,7 +23,7 @@
 |---|---|---|
 | Starter | Free, permanently | 20 minutes per month. No credit card. No trial expiry |
 | Personal / Educational | $99/year | Unlimited dictation, custom vocabulary, text replacements |
-| Professional | $159/year | Adds Ultra Accuracy, AI Modes, Templates, Screen OCR, mobile app |
+| Professional | $199/year | Adds Ultra Accuracy, AI Modes, Templates, Screen OCR, mobile app |
 | Medical Ultra | $439/year | Adds medical vocabularies, Ultra Accuracy Medical. AI Modes excluded by design. English only |
 
 Volume licensing available from 5 to 1,000+ seats. All plans are annual subscriptions, cancellable anytime, with no lock-in contract.

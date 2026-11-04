@@ -155,6 +155,20 @@ declare module 'astro:content' {
   collection: "learn";
   data: InferEntrySchema<"learn">
 } & { render(): Render[".md"] };
+"dictation-for-psychologists-allied-health.md": {
+	id: "dictation-for-psychologists-allied-health.md";
+  slug: "dictation-for-psychologists-allied-health";
+  body: string;
+  collection: "learn";
+  data: InferEntrySchema<"learn">
+} & { render(): Render[".md"] };
+"dragon-legal-alternative.md": {
+	id: "dragon-legal-alternative.md";
+  slug: "dragon-legal-alternative";
+  body: string;
+  collection: "learn";
+  data: InferEntrySchema<"learn">
+} & { render(): Render[".md"] };
 "dragon-medical-one-alternative.md": {
 	id: "dragon-medical-one-alternative.md";
   slug: "dragon-medical-one-alternative";
@@ -200,6 +214,27 @@ declare module 'astro:content' {
 "speech-recognition-students-dyslexia.md": {
 	id: "speech-recognition-students-dyslexia.md";
   slug: "speech-recognition-students-dyslexia";
+  body: string;
+  collection: "learn";
+  data: InferEntrySchema<"learn">
+} & { render(): Render[".md"] };
+"speech-to-text-college-accommodation.md": {
+	id: "speech-to-text-college-accommodation.md";
+  slug: "speech-to-text-college-accommodation";
+  body: string;
+  collection: "learn";
+  data: InferEntrySchema<"learn">
+} & { render(): Render[".md"] };
+"speech-to-text-iep-504-plan.md": {
+	id: "speech-to-text-iep-504-plan.md";
+  slug: "speech-to-text-iep-504-plan";
+  body: string;
+  collection: "learn";
+  data: InferEntrySchema<"learn">
+} & { render(): Render[".md"] };
+"spracherkennung-deutsch-diktieren.md": {
+	id: "spracherkennung-deutsch-diktieren.md";
+  slug: "spracherkennung-deutsch-diktieren";
   body: string;
   collection: "learn";
   data: InferEntrySchema<"learn">
