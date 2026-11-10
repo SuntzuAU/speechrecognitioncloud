@@ -1,0 +1,113 @@
+{
+  "htmlLang": "de-DE",
+  "meta": {
+    "title": "Spracherkennung auf Deutsch für Windows",
+    "seoTitle": "Spracherkennung Deutsch – Diktiersoftware für Windows | Speech Recognition Cloud",
+    "description": "Deutsche Spracherkennung für Windows: in jedem Programm diktieren, automatische Zeichensetzung, kein Sprachtraining. Kostenlos testen, Preise ab {personalPrice} USD pro Jahr."
+  },
+  "hero": {
+    "eyebrow": "DEUTSCH",
+    "h1": "Diktieren auf Deutsch – in jedem Windows-Programm",
+    "lead": "Speech Recognition Cloud wandelt Ihre Sprache in Text um, direkt an der Cursorposition: in Word, Outlook, im Browser oder in jeder anderen Windows-Anwendung. Mit automatischer Zeichensetzung und ohne Sprachtraining. Deutsch ist eine von {total} unterstützten Sprachen.",
+    "ctaDownload": "Kostenlos herunterladen",
+    "ctaPrices": "Preise ansehen",
+    "note": "Neue Konten erhalten 30 Tage Professional mit unbegrenztem Diktat. Danach bleibt der kostenlose Tarif mit 20 Minuten pro Monat. Für Windows 10 und 11."
+  },
+  "benefits": {
+    "heading": "Warum Speech Recognition Cloud",
+    "items": [
+      {
+        "title": "Funktioniert überall",
+        "text": "Text erscheint dort, wo Ihr Cursor steht – in jedem Windows-Programm, ohne Kopieren und Einfügen."
+      },
+      {
+        "title": "Kein Training nötig",
+        "text": "Installieren und loslegen. Kein Stimmprofil, keine Kalibrierung. Die Cloud-KI erkennt ganze Sätze im Zusammenhang."
+      },
+      {
+        "title": "Datenschutz",
+        "text": "Audio wird verarbeitet und sofort verworfen. Ihre Texte werden nicht auf unseren Servern gespeichert und nicht zum Training von KI-Modellen verwendet."
+      }
+    ]
+  },
+  "steps": {
+    "heading": "So funktioniert es",
+    "items": [
+      {
+        "title": "Herunterladen und installieren.",
+        "text": "Das Konto legen Sie direkt in der Anwendung an."
+      },
+      {
+        "title": "Deutsch wählen.",
+        "text": "In den Einstellungen Deutsch auswählen oder die automatische Spracherkennung eingeschaltet lassen."
+      },
+      {
+        "title": "Diktieren.",
+        "text": "Mikrofon einschalten, natürlich sprechen, Mikrofon ausschalten – der fertige Absatz erscheint mit Zeichensetzung."
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Preise",
+    "sub": "Alle Sprachen, einschließlich Deutsch, sind in jedem Tarif ohne Aufpreis enthalten.",
+    "badge": "Beliebteste Wahl",
+    "freeLabel": "Kostenlos",
+    "perYear": "pro Jahr",
+    "disclaimer": "Preise in US-Dollar; die Umrechnung in Ihre Währung erfolgt an der Kasse. Jahresabonnement, jederzeit kündbar. Preise können sich ändern.",
+    "tiers": {
+      "free": {
+        "name": "Starter",
+        "description": "Für gelegentliche Nutzung.",
+        "features": [
+          "20 Minuten pro Monat",
+          "Funktioniert in jedem Windows-Programm",
+          "Automatische Zeichensetzung"
+        ],
+        "cta": "Kostenlos herunterladen"
+      },
+      "personal": {
+        "name": "Personal / Bildung",
+        "description": "Unbegrenztes Diktat für Studium, Arbeit und Alltag.",
+        "features": [
+          "Unbegrenzte Nutzung",
+          "Eigenes Vokabular",
+          "Textersetzungen",
+          "E-Mail-Support"
+        ],
+        "cta": "Jetzt kaufen"
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Für Profis, die Genauigkeit und Geschwindigkeit brauchen.",
+        "features": [
+          "Alles aus Personal",
+          "ULTRA-Genauigkeitsmodus",
+          "Vorlagen (automatische Texteingabe)",
+          "KI-Modi",
+          "Mobile App (kabelloses Mikrofon + Voice Notes)"
+        ],
+        "cta": "Jetzt kaufen"
+      }
+    }
+  },
+  "faqHeading": "Häufige Fragen",
+  "faq": [
+    {
+      "q": "Ist die Benutzeroberfläche auf Deutsch?",
+      "a": "Nein. Die Menüs und Einstellungen der Anwendung sind auf Englisch. Die Spracheinstellung bestimmt, in welcher Sprache Sie diktieren – nicht die Sprache der Oberfläche."
+    },
+    {
+      "q": "Kann ich mehrere Sprachen diktieren?",
+      "a": "Ja. Mit der automatischen Spracherkennung erkennt die Anwendung, welche Sprache Sie sprechen. Wenn Sie nur Deutsch diktieren, liefert die feste Auswahl von Deutsch die beste Genauigkeit."
+    },
+    {
+      "q": "Funktioniert es auf dem Mac?",
+      "a": "Die Anwendung läuft nur unter Windows 10 und 11. Die Tarife Professional und Medical Ultra enthalten zusätzlich eine mobile App für iPhone und Android."
+    },
+    {
+      "q": "Kann ich jederzeit kündigen?",
+      "a": "Ja. Alle kostenpflichtigen Tarife sind Jahresabonnements und jederzeit kündbar. Es gibt keine langfristige Vertragsbindung."
+    }
+  ],
+  "allLanguagesLink": "Alle {total} unterstützten Sprachen ansehen →"
+}
