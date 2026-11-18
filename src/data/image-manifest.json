@@ -339,5 +339,11 @@
     "site": "speechrecognitioncloud",
     "width": 2752,
     "height": 1536
+  },
+  "lang-es-hero": {
+    "r2Key": "speechrecognitioncloud/2026/11/18/dictado-por-voz-espanol-profesional-windows-photo-dcc268fd.jpg",
+    "altText": "Profesional dictando un correo en español en un portátil con Windows",
+    "width": 2752,
+    "height": 1536
   }
 }
