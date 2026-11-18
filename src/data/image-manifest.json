@@ -345,5 +345,17 @@
     "altText": "Profesional dictando un correo en español en un portátil con Windows",
     "width": 2752,
     "height": 1536
+  },
+  "lang-fr-hero": {
+    "r2Key": "speechrecognitioncloud/2026/11/18/dictee-vocale-francais-professionnel-windows-photo-0c165c7f.jpg",
+    "altText": "Professionnel dictant un document en français sur un PC portable Windows",
+    "width": 2752,
+    "height": 1536
+  },
+  "lang-ja-hero": {
+    "r2Key": "speechrecognitioncloud/2026/11/18/onsei-nyuryoku-pasokon-japanese-professional-windows-photo-6d45ab1b.jpg",
+    "altText": "Windowsノートパソコンで日本語の文書を音声入力するビジネスパーソン",
+    "width": 2752,
+    "height": 1536
   }
 }

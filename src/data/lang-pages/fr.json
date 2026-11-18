@@ -1,0 +1,225 @@
+{
+  "htmlLang": "fr",
+  "meta": {
+    "title": "Dictée vocale en français pour Windows",
+    "seoTitle": "Dictée vocale en français – Logiciel de reconnaissance vocale pour Windows | Speech Recognition Cloud",
+    "description": "Logiciel de dictée vocale en français pour Windows : dictez dans n'importe quel programme, ponctuation automatique, sans entraînement de la voix. Essai gratuit ; offres à partir de {personalPrice} USD par an."
+  },
+  "hero": {
+    "eyebrow": "FRANÇAIS",
+    "h1": "Dictée vocale en français, dans tous vos programmes Windows",
+    "lead": "Speech Recognition Cloud transforme votre voix en texte directement à l'emplacement du curseur : dans Word, Outlook, votre navigateur ou n'importe quelle autre application Windows. Avec ponctuation automatique et sans entraînement de la voix. Le français fait partie des {total} langues prises en charge.",
+    "ctaDownload": "Télécharger gratuitement",
+    "ctaPrices": "Voir les tarifs",
+    "note": "Les nouveaux comptes bénéficient de 30 jours de Professional avec dictée illimitée. Ensuite, l'offre gratuite inclut 20 minutes par mois. Pour Windows 10 et 11.",
+    "image": "lang-fr-hero",
+    "imageAlt": "Professionnel dictant un document en français sur un PC portable Windows"
+  },
+  "benefits": {
+    "heading": "Pourquoi Speech Recognition Cloud ?",
+    "items": [
+      {
+        "title": "Fonctionne partout",
+        "text": "Le texte apparaît là où se trouve votre curseur, dans n'importe quel programme Windows, sans copier-coller."
+      },
+      {
+        "title": "Aucun entraînement",
+        "text": "Installez et commencez à dicter. Pas de profil vocal ni de calibrage. L'IA dans le cloud reconnaît des phrases entières dans leur contexte."
+      },
+      {
+        "title": "Confidentialité",
+        "text": "L'audio est traité puis supprimé. Vos textes ne sont pas conservés sur nos serveurs et ne servent pas à entraîner des modèles d'IA."
+      }
+    ]
+  },
+  "steps": {
+    "heading": "Comment ça marche",
+    "items": [
+      {
+        "title": "Téléchargez et installez.",
+        "text": "Le compte se crée directement dans l'application."
+      },
+      {
+        "title": "Choisissez le français.",
+        "text": "Sélectionnez le français dans les paramètres ou laissez la détection automatique de la langue activée."
+      },
+      {
+        "title": "Dictez.",
+        "text": "Activez le micro, parlez naturellement, puis désactivez-le : le paragraphe apparaît avec la ponctuation."
+      }
+    ]
+  },
+  "features": {
+    "heading": "Fonctions principales",
+    "items": [
+      {
+        "title": "Ponctuation automatique",
+        "text": "Parlez naturellement. L'IA ajoute points, virgules, majuscules et mise en forme sans que vous ayez à les dicter."
+      },
+      {
+        "title": "Vocabulaire personnalisé",
+        "text": "Ajoutez des noms, des termes techniques et le jargon de votre métier pour qu'ils soient bien orthographiés. Inclus dans Personal et Professional."
+      },
+      {
+        "title": "Remplacements de texte et modèles",
+        "text": "Avec les remplacements de texte (Personal et Professional), un mot-clé devient un texte complet : signature, paragraphe type ou coordonnées. Les modèles sont inclus dans Professional."
+      },
+      {
+        "title": "Mode de précision ULTRA",
+        "text": "Un traitement plus précis pour les moments où chaque mot compte. Inclus dans Professional."
+      },
+      {
+        "title": "Modes IA",
+        "text": "Des commandes vocales pour solliciter l'IA : rédiger, reformuler, répondre à une question ou préparer une réponse pendant la dictée. Inclus dans Professional."
+      },
+      {
+        "title": "{total} langues",
+        "text": "Français, anglais et bien d'autres : {total} langues au total avec la même licence, sans supplément."
+      }
+    ]
+  },
+  "useCases": {
+    "heading": "Qui utilise la dictée vocale ?",
+    "sub": "Toute personne qui écrit beaucoup sur un PC Windows. Quelques usages courants (les guides détaillés sont en anglais) :",
+    "items": [
+      {
+        "title": "E-mails et documents",
+        "text": "Dictez vos e-mails dans Outlook et vos rapports dans Word au lieu de les taper.",
+        "href": "/business",
+        "linkText": "Pour les entreprises (en anglais) →"
+      },
+      {
+        "title": "Avocats et cabinets",
+        "text": "Conclusions, notes de dossier et courriers dictés directement dans le traitement de texte ou le logiciel du cabinet.",
+        "href": "/legal",
+        "linkText": "Pour les juristes (en anglais) →"
+      },
+      {
+        "title": "Médecins et professionnels de santé",
+        "text": "Conçu pour faciliter la documentation administrative : notes, courriers et comptes rendus. En français, on utilise l'offre Professional ; l'offre Medical Ultra, avec vocabulaire médical spécialisé, est uniquement en anglais.",
+        "href": "/medical",
+        "linkText": "Pour la santé (en anglais) →"
+      },
+      {
+        "title": "Étudiants et auteurs",
+        "text": "Devoirs, notes et brouillons au rythme de la parole. Notez vos idées d'abord, retravaillez-les ensuite.",
+        "href": "/students",
+        "linkText": "Pour les étudiants (en anglais) →"
+      },
+      {
+        "title": "Quand taper est difficile",
+        "text": "Si la frappe est lente, fatigante ou douloureuse, parlez à la place et continuez à travailler normalement.",
+        "href": "/accessibility",
+        "linkText": "Accessibilité (en anglais) →"
+      },
+      {
+        "title": "Formulaires et logiciels métier",
+        "text": "Notes et réponses dans les applications web, les CRM et tout champ de texte sous Windows, sans copier-coller.",
+        "href": "/business",
+        "linkText": "En savoir plus (en anglais) →"
+      }
+    ]
+  },
+  "compare": {
+    "heading": "Dictée en ligne, dictée Windows ou Speech Recognition Cloud",
+    "paragraphs": [
+      "Les sites de dictée en ligne sont pratiques pour une phrase rapide, mais ils fonctionnent généralement dans le navigateur : vous dictez dans une zone de texte, puis vous devez copier-coller le résultat dans votre document.",
+      "Speech Recognition Cloud est un logiciel de dictée vocale pour Windows. Le texte s'inscrit directement à l'emplacement du curseur, dans n'importe quelle application : Word, Outlook, Gmail ou Google Docs dans le navigateur, formulaires web et logiciels métier.",
+      "La dictée intégrée à Windows comme Speech Recognition Cloud vous permettent de parler au lieu de taper. Speech Recognition Cloud ajoute, dans les offres payantes, le vocabulaire personnalisé, les remplacements de texte et les modèles, et vous offre 30 jours de Professional pour comparer par vous-même."
+    ]
+  },
+  "mobile": {
+    "heading": "Dictez aussi depuis votre téléphone",
+    "paragraphs": [
+      "L'offre Professional inclut une application mobile pour iPhone et Android. Sans casque, votre téléphone sert de micro sans fil pour votre PC.",
+      "En mode Voice Notes, enregistrez une note sur votre téléphone et le texte apparaît en quelques secondes sur le PC de votre choix, par exemple celui de votre assistant ou de l'accueil. Cela fonctionne de n'importe où."
+    ]
+  },
+  "pricing": {
+    "heading": "Tarifs",
+    "sub": "Toutes les langues, y compris le français, sont incluses dans chaque offre sans supplément.",
+    "badge": "Le plus choisi",
+    "freeLabel": "Gratuit",
+    "perYear": "par an",
+    "disclaimer": "Prix en dollars américains ; la conversion dans votre devise se fait au paiement. Abonnement annuel, résiliable à tout moment. Les prix peuvent changer.",
+    "tiers": {
+      "free": {
+        "name": "Starter",
+        "description": "Pour un usage occasionnel.",
+        "features": [
+          "20 minutes par mois",
+          "Fonctionne dans tout programme Windows",
+          "Ponctuation automatique"
+        ],
+        "cta": "Télécharger gratuitement"
+      },
+      "personal": {
+        "name": "Personal / Éducation",
+        "description": "Dictée illimitée pour les études, le travail et le quotidien.",
+        "features": [
+          "Utilisation illimitée",
+          "Vocabulaire personnalisé",
+          "Remplacements de texte",
+          "Assistance par e-mail"
+        ],
+        "cta": "Acheter"
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Pour les professionnels qui ont besoin de précision et de rapidité.",
+        "features": [
+          "Tout Personal",
+          "Mode de précision ULTRA",
+          "Modèles (saisie automatique de texte)",
+          "Modes IA",
+          "Application mobile (micro sans fil + Voice Notes)"
+        ],
+        "cta": "Acheter"
+      }
+    }
+  },
+  "faqHeading": "Questions fréquentes",
+  "faq": [
+    {
+      "q": "La dictée vocale est-elle gratuite ?",
+      "a": "Oui. L'offre gratuite inclut 20 minutes de dictée par mois, sans carte bancaire. Chaque nouveau compte reçoit aussi 30 jours de Professional avec dictée illimitée pour tester toutes les fonctions."
+    },
+    {
+      "q": "Faut-il un micro spécial ?",
+      "a": "Un casque avec micro donne la meilleure précision. Sans casque, l'application mobile de l'offre Professional transforme votre téléphone en micro sans fil pour le PC."
+    },
+    {
+      "q": "Dans quels programmes puis-je dicter ?",
+      "a": "Dans tout programme Windows doté d'un curseur de texte : Word, Outlook, Google Docs et Gmail dans le navigateur, formulaires web, messageries et logiciels métier."
+    },
+    {
+      "q": "Dois-je entraîner le logiciel à ma voix ?",
+      "a": "Non. Il n'y a aucun entraînement de la voix. Parlez naturellement et le texte apparaît avec la ponctuation ajoutée automatiquement."
+    },
+    {
+      "q": "L'interface est-elle en français ?",
+      "a": "Non. Les menus et les paramètres de l'application sont en anglais. Le réglage de langue détermine la langue dans laquelle vous dictez, pas celle de l'interface."
+    },
+    {
+      "q": "Puis-je dicter dans plusieurs langues ?",
+      "a": "Oui. Avec la détection automatique, l'application reconnaît la langue que vous parlez. Si vous dictez uniquement en français, sélectionner le français donne la meilleure précision."
+    },
+    {
+      "q": "Est-ce que ça fonctionne sur Mac ?",
+      "a": "L'application fonctionne uniquement sous Windows 10 et 11. Les offres Professional et Medical Ultra incluent en plus une application mobile pour iPhone et Android."
+    },
+    {
+      "q": "Puis-je résilier à tout moment ?",
+      "a": "Oui. Toutes les offres payantes sont des abonnements annuels résiliables à tout moment. Aucun engagement de longue durée."
+    },
+    {
+      "q": "Que se passe-t-il après les 30 jours de Professional ?",
+      "a": "Vous restez sur l'offre gratuite avec 20 minutes par mois, ou vous passez à une offre payante : Personal à {personalPrice} USD par an avec dictée illimitée, ou Professional. Les prix peuvent changer."
+    },
+    {
+      "q": "Mes enregistrements sont-ils conservés ?",
+      "a": "Non. L'audio est traité puis supprimé. Vos textes ne sont pas conservés sur nos serveurs et ne servent pas à entraîner des modèles d'IA."
+    }
+  ],
+  "allLanguagesLink": "Voir les {total} langues prises en charge →"
+}
