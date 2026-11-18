@@ -11,6 +11,10 @@ function imgW(key) { return manifest[key]?.width || undefined; }
 function imgH(key) { return manifest[key]?.height || undefined; }
 
 const total = languages.length;
+// Languages with their own landing page (/es/, /de/ ...) — built from src/data/lang-pages/
+const langPageFiles = import.meta.glob('../data/lang-pages/*.json', { eager: true });
+const langPageCodes = Object.keys(langPageFiles).map(p => p.split('/').pop().replace('.json', ''));
+const langPages = languages.filter(l => langPageCodes.includes(l.code)).sort((a, b) => a.name.localeCompare(b.name));
 const sorted = [...languages].sort((a, b) => a.name.localeCompare(b.name));
 
 const regions = ['Europe', 'Asia', 'Middle East', 'Africa', 'Oceania'];
@@ -127,6 +131,14 @@ const extraSchema = [
       <p class="muted" style="margin-bottom:24px">
         All {total} languages below are available on the Free, Personal, and Professional plans. The Medical Ultra plan is English only.
       </p>
+      {langPages.length > 0 && (
+        <div class="lang-pages">
+          <p class="lang-pages-label">Read about Speech Recognition Cloud in your language:</p>
+          <div class="lang-pages-links">
+            {langPages.map(l => (<a href={`/${l.code}/`} hreflang={l.code} lang={l.code} class="lang-pill">{l.native}</a>))}
+          </div>
+        </div>
+      )}
       <table class="lang-table">
         <thead>
           <tr><th>Language</th><th>Native name</th><th>Code</th><th>Region</th></tr>
@@ -135,7 +147,7 @@ const extraSchema = [
           {sorted.map(l => (
             <tr>
               <td><strong>{l.name}</strong></td>
-              <td lang={l.code}>{l.native}</td>
+              <td lang={l.code}>{langPageCodes.includes(l.code) ? <a href={`/${l.code}/`} hreflang={l.code} style="color:var(--brand);font-weight:600">{l.native} →</a> : l.native}</td>
               <td><code>{l.code}</code></td>
               <td class="muted">{l.region}</td>
             </tr>
@@ -250,5 +262,10 @@ const extraSchema = [
     @media(max-width:900px){.region-grid{grid-template-columns:repeat(3,1fr);gap:20px}.link-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.download-strip-inner{flex-direction:column;text-align:center}.img-break{height:180px}.link-grid{grid-template-columns:1fr}}
     @media(max-width:640px){.lang-table{font-size:14px}.lang-table th:nth-child(4),.lang-table td:nth-child(4){display:none}.lang-table th,.lang-table td{padding:9px 10px}.region-grid{grid-template-columns:repeat(2,1fr)}}
-  </style>
+    .lang-pages { background:#F7ECE8; border:1px solid #EBCFC6; border-radius:12px; padding:18px 20px; margin-bottom:24px; }
+  .lang-pages-label { font-weight:600; margin:0 0 10px; }
+  .lang-pages-links { display:flex; flex-wrap:wrap; gap:10px; }
+  .lang-pill { background:#fff; border:1px solid #EBCFC6; border-radius:999px; padding:6px 16px; font-weight:600; color:#B23A26; }
+  .lang-pill:hover { background:#B23A26; color:#fff; }
+</style>
 </BaseLayout>
