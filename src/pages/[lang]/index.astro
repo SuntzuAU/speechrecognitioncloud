@@ -6,6 +6,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 import languages from '../../data/languages.json';
+import manifest from '../../data/image-manifest.json';
+
+const R2 = (import.meta.env.PUBLIC_R2_BASE || '').replace(/\/$/, '');
+const img = (key) => { const e = manifest[key]; return e?.r2Key && R2 ? { src: `${R2}/${e.r2Key}`, w: e.width, h: e.height } : null; };
 
 export function getStaticPaths() {
   const files = import.meta.glob('../../data/lang-pages/*.json', { eager: true });
@@ -16,6 +20,8 @@ export function getStaticPaths() {
 }
 
 const { t } = Astro.props;
+const hero = t.hero.image ? img(t.hero.image) : null;
+const breakImg = t.breakImage ? img(t.breakImage.key) : null;
 const total = languages.length;
 const tiers = site.pricing.tiers;
 const tier = (name) => tiers.find(x => x.name.startsWith(name));
@@ -62,6 +68,7 @@ const extraSchema = [
         <a href="#prices" class="btn-secondary">{t.hero.ctaPrices}</a>
       </div>
       <p class="muted lp-small">{fill(t.hero.note)}</p>
+      {hero && <div class="lp-hero-img"><img src={hero.src} width={hero.w} height={hero.h} alt={t.hero.imageAlt} loading="eager" decoding="async" /></div>}
     </div>
   </section>
 
@@ -84,6 +91,49 @@ const extraSchema = [
       </ol>
     </div>
   </section>
+
+  {t.features && (
+  <section class="section-pad section-neutral">
+    <div class="container">
+      <h2 class="lp-h2">{t.features.heading}</h2>
+      <div class="lp-grid3">
+        {t.features.items.map(b => (<div class="lp-card"><h3>{b.title}</h3><p class="muted">{fill(b.text)}</p></div>))}
+      </div>
+    </div>
+  </section>
+  )}
+
+  {t.useCases && (
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="lp-h2">{t.useCases.heading}</h2>
+      <p class="muted lp-intro">{t.useCases.sub}</p>
+      <div class="lp-grid2">
+        {t.useCases.items.map(u => (<div class="lp-card"><h3>{u.title}</h3><p class="muted">{u.text}</p>{u.href && <a href={u.href} class="lp-more" hreflang="en">{u.linkText}</a>}</div>))}
+      </div>
+    </div>
+  </section>
+  )}
+
+  {breakImg && <div class="container"><div class="lp-break-img"><img src={breakImg.src} width={breakImg.w} height={breakImg.h} alt={t.breakImage.alt} loading="lazy" decoding="async" /></div></div>}
+
+  {t.compare && (
+  <section class="section-pad section-neutral">
+    <div class="container lp-narrow">
+      <h2 class="lp-h2">{t.compare.heading}</h2>
+      {t.compare.paragraphs.map(p => <p class="lp-p">{fill(p)}</p>)}
+    </div>
+  </section>
+  )}
+
+  {t.mobile && (
+  <section class="section-pad">
+    <div class="container lp-narrow">
+      <h2 class="lp-h2">{t.mobile.heading}</h2>
+      {t.mobile.paragraphs.map(p => <p class="lp-p">{fill(p)}</p>)}
+    </div>
+  </section>
+  )}
 
   <section class="section-pad section-neutral" id="prices">
     <div class="container">
@@ -137,9 +187,17 @@ const extraSchema = [
     .lp-amount span { font-size: 14px; font-weight: 500; opacity: .7; }
     .lp-hl { border: 2px solid #B23A26; }
     .lp-badge { position: absolute; top: -12px; left: 24px; background: #B23A26; color: #fff; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+    .lp-hero-img { margin-top: 32px; border-radius: 12px; overflow: hidden; box-shadow: 0 18px 40px -12px rgba(22,21,15,.25); }
+    .lp-hero-img img, .lp-break-img img { display: block; width: 100%; height: auto; }
+    .lp-break-img { border-radius: 12px; overflow: hidden; margin: 8px 0 0; max-height: 420px; }
+    .lp-break-img img { object-fit: cover; max-height: 420px; }
+    .lp-grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .lp-intro { margin: -8px 0 24px; max-width: 720px; }
+    .lp-p { font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+    .lp-more { display: inline-block; margin-top: 10px; font-weight: 600; color: #B23A26; }
     .lp-faq { border-bottom: 1px solid rgba(0,0,0,.1); padding: 14px 0; }
     .lp-faq summary { cursor: pointer; font-weight: 600; }
     .lp-faq p { margin-top: 10px; line-height: 1.7; }
-    @media (max-width: 860px) { .lp-grid3 { grid-template-columns: 1fr; } }
+    @media (max-width: 860px) { .lp-grid3, .lp-grid2 { grid-template-columns: 1fr; } }
   </style>
 </BaseLayout>

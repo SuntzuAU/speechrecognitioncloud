@@ -11,7 +11,9 @@
     "lead": "Speech Recognition Cloud convierte su voz a texto justo donde está el cursor: en Word, Outlook, el navegador o cualquier otra aplicación de Windows. Con puntuación automática y sin entrenamiento de voz. El español es uno de los {total} idiomas compatibles.",
     "ctaDownload": "Descargar gratis",
     "ctaPrices": "Ver precios",
-    "note": "Las cuentas nuevas reciben 30 días de Professional con dictado ilimitado. Después, el plan gratuito incluye 20 minutos al mes. Para Windows 10 y 11."
+    "note": "Las cuentas nuevas reciben 30 días de Professional con dictado ilimitado. Después, el plan gratuito incluye 20 minutos al mes. Para Windows 10 y 11.",
+    "image": "business-hero",
+    "imageAlt": "Profesional dictando un texto en español en un PC con Windows"
   },
   "benefits": {
     "heading": "¿Por qué Speech Recognition Cloud?",
@@ -97,6 +99,18 @@
       "a": "Sí. El plan gratuito incluye 20 minutos de dictado al mes, sin tarjeta de crédito. Además, cada cuenta nueva recibe 30 días de Professional con dictado ilimitado para probar todas las funciones."
     },
     {
+      "q": "¿Necesito un micrófono especial?",
+      "a": "Un auricular con micrófono ofrece la mejor precisión. Si no tiene uno, la app móvil del plan Professional convierte su teléfono en un micrófono inalámbrico para el PC."
+    },
+    {
+      "q": "¿En qué programas puedo dictar?",
+      "a": "En cualquier programa de Windows con un cursor de texto: Word, Outlook, Google Docs y Gmail en el navegador, formularios web, aplicaciones de chat y programas de gestión."
+    },
+    {
+      "q": "¿Tengo que entrenar el programa con mi voz?",
+      "a": "No. No hay entrenamiento de voz. Hable con naturalidad y el texto aparece con la puntuación añadida automáticamente."
+    },
+    {
       "q": "¿La interfaz está en español?",
       "a": "No. Los menús y la configuración de la aplicación están en inglés. El ajuste de idioma determina en qué idioma dicta, no el idioma de la interfaz."
     },
@@ -115,7 +129,105 @@
     {
       "q": "¿Puedo cancelar en cualquier momento?",
       "a": "Sí. Todos los planes de pago son suscripciones anuales y se pueden cancelar en cualquier momento. No hay permanencia."
+    },
+    {
+      "q": "¿Qué pasa después de los 30 días de Professional?",
+      "a": "Se queda en el plan gratuito con 20 minutos al mes, o pasa a un plan de pago: Personal por {personalPrice} USD al año con dictado ilimitado, o Professional. Los precios pueden cambiar."
+    },
+    {
+      "q": "¿Se guardan mis grabaciones?",
+      "a": "No. El audio se procesa y se descarta. Sus textos no se guardan en nuestros servidores y no se usan para entrenar modelos de IA."
     }
   ],
-  "allLanguagesLink": "Ver los {total} idiomas compatibles →"
+  "allLanguagesLink": "Ver los {total} idiomas compatibles →",
+  "features": {
+    "heading": "Funciones principales",
+    "items": [
+      {
+        "title": "Puntuación automática",
+        "text": "Hable con naturalidad. La IA añade puntos, comas, mayúsculas y formato sin que tenga que dictarlos."
+      },
+      {
+        "title": "Vocabulario personalizado",
+        "text": "Añada nombres, términos técnicos y la jerga de su sector para que se escriban correctamente."
+      },
+      {
+        "title": "Reemplazos de texto y plantillas",
+        "text": "Diga una palabra clave y el programa inserta un texto completo: firmas, párrafos habituales o datos de contacto."
+      },
+      {
+        "title": "Modo de precisión ULTRA",
+        "text": "Procesamiento de mayor precisión para los momentos en que cada palabra cuenta. Incluido en Professional."
+      },
+      {
+        "title": "Modos de IA",
+        "text": "Comandos de voz para pedir ayuda a la IA: escribir, reescribir, responder o redactar una respuesta mientras dicta. Incluido en Professional."
+      },
+      {
+        "title": "{total} idiomas",
+        "text": "Dicte en español, inglés y otros {total} idiomas en total con la misma licencia, sin coste adicional."
+      }
+    ]
+  },
+  "useCases": {
+    "heading": "¿Quién usa el dictado por voz?",
+    "sub": "Cualquiera que escriba mucho en un PC con Windows. Estos son los usos más habituales. Las guías detalladas están en inglés.",
+    "items": [
+      {
+        "title": "Correos y documentos",
+        "text": "Dicte correos en Outlook e informes en Word en lugar de escribirlos.",
+        "href": "/business",
+        "linkText": "Para empresas (en inglés) →"
+      },
+      {
+        "title": "Abogados y despachos",
+        "text": "Escritos, notas de casos y correspondencia dictados directamente en el procesador de textos o en el sistema de gestión del despacho.",
+        "href": "/legal",
+        "linkText": "Para abogados (en inglés) →"
+      },
+      {
+        "title": "Médicos y profesionales sanitarios",
+        "text": "Diseñado para ayudar en la documentación administrativa: notas, cartas e informes. En español se usa el plan Professional; el plan Medical Ultra, con vocabulario médico especializado, es solo en inglés.",
+        "href": "/medical",
+        "linkText": "Para el sector sanitario (en inglés) →"
+      },
+      {
+        "title": "Estudiantes y escritores",
+        "text": "Trabajos, apuntes y borradores al ritmo con el que habla. Ideal para sacar las ideas antes de editarlas.",
+        "href": "/students",
+        "linkText": "Para estudiantes (en inglés) →"
+      },
+      {
+        "title": "Cuando escribir cuesta",
+        "text": "Si teclear le resulta lento, cansado o doloroso, puede hablar en su lugar y seguir trabajando con normalidad.",
+        "href": "/accessibility",
+        "linkText": "Accesibilidad (en inglés) →"
+      },
+      {
+        "title": "Formularios y sistemas de gestión",
+        "text": "Notas y respuestas en aplicaciones web, CRM y cualquier campo de texto de Windows, sin copiar y pegar.",
+        "href": "/business",
+        "linkText": "Más información (en inglés) →"
+      }
+    ]
+  },
+  "breakImage": {
+    "key": "writer-hero",
+    "alt": "Escritor dictando un texto en su despacho con un micrófono"
+  },
+  "compare": {
+    "heading": "Voz a texto en línea, dictado de Windows o Speech Recognition Cloud",
+    "paragraphs": [
+      "Las páginas de voz a texto en línea son cómodas para una frase rápida, pero suelen funcionar solo dentro del navegador: dicta en una caja de texto y después tiene que copiar y pegar el resultado en su documento.",
+      "Speech Recognition Cloud es un programa de dictado por voz para Windows. El texto aparece directamente donde está el cursor, en cualquier aplicación: Word, Outlook, Gmail o Google Docs en el navegador, formularios web y programas de gestión.",
+      "Tanto el dictado integrado de Windows como Speech Recognition Cloud le permiten hablar en lugar de escribir. Speech Recognition Cloud añade vocabulario personalizado, reemplazos de texto y plantillas en los planes de pago, y le da 30 días de Professional para que compare por su cuenta."
+    ]
+  },
+  "mobile": {
+    "heading": "Dicte también desde el móvil",
+    "paragraphs": [
+      "El plan Professional incluye una app móvil para iPhone y Android. Puede usar el teléfono como micrófono inalámbrico para su PC si no tiene un auricular con micrófono.",
+      "Con el modo Voice Notes, grabe una nota en el teléfono y el texto aparece en segundos en el PC que elija, por ejemplo el de su asistente o recepción. Funciona desde cualquier lugar."
+    ]
+  }
 }

@@ -11,7 +11,9 @@
     "lead": "Speech Recognition Cloud wandelt Ihre Sprache in Text um, direkt an der Cursorposition: in Word, Outlook, im Browser oder in jeder anderen Windows-Anwendung. Mit automatischer Zeichensetzung und ohne Sprachtraining. Deutsch ist eine von {total} unterstützten Sprachen.",
     "ctaDownload": "Kostenlos herunterladen",
     "ctaPrices": "Preise ansehen",
-    "note": "Neue Konten erhalten 30 Tage Professional mit unbegrenztem Diktat. Danach bleibt der kostenlose Tarif mit 20 Minuten pro Monat. Für Windows 10 und 11."
+    "note": "Neue Konten erhalten 30 Tage Professional mit unbegrenztem Diktat. Danach bleibt der kostenlose Tarif mit 20 Minuten pro Monat. Für Windows 10 und 11.",
+    "image": "legal-hero",
+    "imageAlt": "Berufstätiger diktiert einen deutschen Text am Windows-PC"
   },
   "benefits": {
     "heading": "Warum Speech Recognition Cloud",
@@ -93,6 +95,22 @@
   "faqHeading": "Häufige Fragen",
   "faq": [
     {
+      "q": "Ist die Spracherkennung kostenlos?",
+      "a": "Ja. Der kostenlose Tarif enthält 20 Minuten Diktat pro Monat, ohne Kreditkarte. Jedes neue Konto erhält außerdem 30 Tage Professional mit unbegrenztem Diktat, um alle Funktionen zu testen."
+    },
+    {
+      "q": "Brauche ich ein spezielles Mikrofon?",
+      "a": "Ein Headset mit Mikrofon liefert die beste Genauigkeit. Ohne Headset macht die mobile App im Tarif Professional Ihr Smartphone zum kabellosen Mikrofon für den PC."
+    },
+    {
+      "q": "In welche Programme kann ich diktieren?",
+      "a": "In jedes Windows-Programm mit einem Textcursor: Word, Outlook, Google Docs und Gmail im Browser, Webformulare, Chat-Programme und Fachanwendungen."
+    },
+    {
+      "q": "Muss ich die Software auf meine Stimme trainieren?",
+      "a": "Nein. Es gibt kein Sprachtraining. Sprechen Sie natürlich, und der Text erscheint mit automatischer Zeichensetzung."
+    },
+    {
       "q": "Ist die Benutzeroberfläche auf Deutsch?",
       "a": "Nein. Die Menüs und Einstellungen der Anwendung sind auf Englisch. Die Spracheinstellung bestimmt, in welcher Sprache Sie diktieren – nicht die Sprache der Oberfläche."
     },
@@ -107,7 +125,105 @@
     {
       "q": "Kann ich jederzeit kündigen?",
       "a": "Ja. Alle kostenpflichtigen Tarife sind Jahresabonnements und jederzeit kündbar. Es gibt keine langfristige Vertragsbindung."
+    },
+    {
+      "q": "Was passiert nach den 30 Tagen Professional?",
+      "a": "Sie bleiben im kostenlosen Tarif mit 20 Minuten pro Monat oder wechseln in einen kostenpflichtigen Tarif: Personal für {personalPrice} USD pro Jahr mit unbegrenztem Diktat oder Professional. Preise können sich ändern."
+    },
+    {
+      "q": "Werden meine Aufnahmen gespeichert?",
+      "a": "Nein. Audio wird verarbeitet und verworfen. Ihre Texte werden nicht auf unseren Servern gespeichert und nicht zum Training von KI-Modellen verwendet."
     }
   ],
-  "allLanguagesLink": "Alle {total} unterstützten Sprachen ansehen →"
+  "allLanguagesLink": "Alle {total} unterstützten Sprachen ansehen →",
+  "features": {
+    "heading": "Die wichtigsten Funktionen",
+    "items": [
+      {
+        "title": "Automatische Zeichensetzung",
+        "text": "Sprechen Sie ganz natürlich. Die KI setzt Punkte, Kommas, Großschreibung und Formatierung, ohne dass Sie diese diktieren müssen."
+      },
+      {
+        "title": "Eigenes Vokabular",
+        "text": "Fügen Sie Namen, Fachbegriffe und Branchenjargon hinzu, damit sie korrekt geschrieben werden."
+      },
+      {
+        "title": "Textersetzungen und Vorlagen",
+        "text": "Ein Stichwort sagen, und das Programm fügt einen ganzen Text ein: Signaturen, Standardabsätze oder Kontaktdaten."
+      },
+      {
+        "title": "ULTRA-Genauigkeitsmodus",
+        "text": "Verarbeitung mit erhöhter Genauigkeit für Momente, in denen jedes Wort zählt. In Professional enthalten."
+      },
+      {
+        "title": "KI-Modi",
+        "text": "Sprachbefehle für KI-Unterstützung: schreiben, umformulieren, beantworten oder eine Antwort entwerfen, während Sie diktieren. In Professional enthalten."
+      },
+      {
+        "title": "{total} Sprachen",
+        "text": "Diktieren Sie auf Deutsch, Englisch und in insgesamt {total} Sprachen mit derselben Lizenz, ohne Aufpreis."
+      }
+    ]
+  },
+  "useCases": {
+    "heading": "Wer nutzt Spracherkennung?",
+    "sub": "Alle, die viel am Windows-PC schreiben. Das sind die häufigsten Einsatzbereiche. Die ausführlichen Ratgeber sind auf Englisch.",
+    "items": [
+      {
+        "title": "E-Mails und Dokumente",
+        "text": "Diktieren Sie E-Mails in Outlook und Berichte in Word, statt sie zu tippen.",
+        "href": "/business",
+        "linkText": "Für Unternehmen (Englisch) →"
+      },
+      {
+        "title": "Kanzleien und Juristen",
+        "text": "Schriftsätze, Aktennotizen und Korrespondenz direkt in die Textverarbeitung oder die Kanzleisoftware diktieren.",
+        "href": "/legal",
+        "linkText": "Für Juristen (Englisch) →"
+      },
+      {
+        "title": "Ärzte und Gesundheitswesen",
+        "text": "Entwickelt zur Unterstützung der administrativen Dokumentation: Notizen, Briefe und Berichte. Auf Deutsch nutzen Sie den Tarif Professional; Medical Ultra mit medizinischem Fachvokabular ist nur auf Englisch verfügbar.",
+        "href": "/medical",
+        "linkText": "Für das Gesundheitswesen (Englisch) →"
+      },
+      {
+        "title": "Studierende und Autoren",
+        "text": "Hausarbeiten, Notizen und Entwürfe so schnell, wie Sie sprechen. Erst die Gedanken festhalten, dann überarbeiten.",
+        "href": "/students",
+        "linkText": "Für Studierende (Englisch) →"
+      },
+      {
+        "title": "Wenn Tippen schwerfällt",
+        "text": "Wenn Tippen langsam, ermüdend oder schmerzhaft ist, sprechen Sie stattdessen und arbeiten ganz normal weiter.",
+        "href": "/accessibility",
+        "linkText": "Barrierefreiheit (Englisch) →"
+      },
+      {
+        "title": "Formulare und Fachanwendungen",
+        "text": "Notizen und Antworten in Webanwendungen, CRM-Systemen und jedem Textfeld unter Windows, ohne Kopieren und Einfügen.",
+        "href": "/business",
+        "linkText": "Mehr erfahren (Englisch) →"
+      }
+    ]
+  },
+  "breakImage": {
+    "key": "journalist-hero",
+    "alt": "Journalistin diktiert einen Artikel am PC in einer Redaktion"
+  },
+  "compare": {
+    "heading": "Online-Spracheingabe, Windows-Diktat oder Speech Recognition Cloud",
+    "paragraphs": [
+      "Online-Dienste für Sprache zu Text sind praktisch für einen kurzen Satz, funktionieren aber meist nur im Browser: Sie diktieren in ein Textfeld und müssen das Ergebnis anschließend in Ihr Dokument kopieren.",
+      "Speech Recognition Cloud ist eine Diktiersoftware für Windows. Der Text erscheint direkt an der Cursorposition, in jeder Anwendung: Word, Outlook, Gmail oder Google Docs im Browser, Webformulare und Fachsoftware.",
+      "Sowohl die in Windows integrierte Spracheingabe als auch Speech Recognition Cloud lassen Sie sprechen statt tippen. Speech Recognition Cloud bietet in den kostenpflichtigen Tarifen zusätzlich eigenes Vokabular, Textersetzungen und Vorlagen – und 30 Tage Professional, damit Sie selbst vergleichen können."
+    ]
+  },
+  "mobile": {
+    "heading": "Auch unterwegs diktieren",
+    "paragraphs": [
+      "Der Tarif Professional enthält eine mobile App für iPhone und Android. Ohne Headset nutzen Sie Ihr Smartphone als kabelloses Mikrofon für den PC.",
+      "Im Modus Voice Notes nehmen Sie eine Notiz auf dem Smartphone auf, und der Text erscheint in Sekunden auf dem PC Ihrer Wahl, zum Beispiel bei Ihrem Sekretariat oder Empfang. Das funktioniert von überall."
+    ]
+  }
 }
