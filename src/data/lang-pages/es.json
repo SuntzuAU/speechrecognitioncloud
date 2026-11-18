@@ -149,11 +149,11 @@
       },
       {
         "title": "Vocabulario personalizado",
-        "text": "Añada nombres, términos técnicos y la jerga de su sector para que se escriban correctamente."
+        "text": "Añada nombres, términos técnicos y la jerga de su sector para que se escriban correctamente. Incluido en Personal y Professional."
       },
       {
         "title": "Reemplazos de texto y plantillas",
-        "text": "Diga una palabra clave y el programa inserta un texto completo: firmas, párrafos habituales o datos de contacto."
+        "text": "Con los reemplazos de texto (Personal y Professional), una palabra clave se convierte en un texto completo: firmas, párrafos habituales o datos de contacto. Las plantillas están incluidas en Professional."
       },
       {
         "title": "Modo de precisión ULTRA",
@@ -165,13 +165,13 @@
       },
       {
         "title": "{total} idiomas",
-        "text": "Dicte en español, inglés y otros {total} idiomas en total con la misma licencia, sin coste adicional."
+        "text": "Español, inglés y muchos más: {total} idiomas en total con la misma licencia, sin coste adicional."
       }
     ]
   },
   "useCases": {
     "heading": "¿Quién usa el dictado por voz?",
-    "sub": "Cualquiera que escriba mucho en un PC con Windows. Estos son los usos más habituales. Las guías detalladas están en inglés.",
+    "sub": "Cualquiera que escriba mucho en un PC con Windows. Algunos usos habituales (las guías detalladas están en inglés):",
     "items": [
       {
         "title": "Correos y documentos",

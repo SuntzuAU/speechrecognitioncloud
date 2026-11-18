@@ -145,11 +145,11 @@
       },
       {
         "title": "Eigenes Vokabular",
-        "text": "Fügen Sie Namen, Fachbegriffe und Branchenjargon hinzu, damit sie korrekt geschrieben werden."
+        "text": "Fügen Sie Namen, Fachbegriffe und Branchenjargon hinzu, damit sie korrekt geschrieben werden. In Personal und Professional enthalten."
       },
       {
         "title": "Textersetzungen und Vorlagen",
-        "text": "Ein Stichwort sagen, und das Programm fügt einen ganzen Text ein: Signaturen, Standardabsätze oder Kontaktdaten."
+        "text": "Mit Textersetzungen (Personal und Professional) wird ein Stichwort zu einem ganzen Text: Signaturen, Standardabsätze oder Kontaktdaten. Vorlagen sind in Professional enthalten."
       },
       {
         "title": "ULTRA-Genauigkeitsmodus",
@@ -161,13 +161,13 @@
       },
       {
         "title": "{total} Sprachen",
-        "text": "Diktieren Sie auf Deutsch, Englisch und in insgesamt {total} Sprachen mit derselben Lizenz, ohne Aufpreis."
+        "text": "Deutsch, Englisch und viele mehr: insgesamt {total} Sprachen mit derselben Lizenz, ohne Aufpreis."
       }
     ]
   },
   "useCases": {
     "heading": "Wer nutzt Spracherkennung?",
-    "sub": "Alle, die viel am Windows-PC schreiben. Das sind die häufigsten Einsatzbereiche. Die ausführlichen Ratgeber sind auf Englisch.",
+    "sub": "Alle, die viel am Windows-PC schreiben. Typische Einsatzbereiche (die ausführlichen Ratgeber sind auf Englisch):",
     "items": [
       {
         "title": "E-Mails und Dokumente",
