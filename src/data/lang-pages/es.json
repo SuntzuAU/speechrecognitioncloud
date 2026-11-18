@@ -1,0 +1,121 @@
+{
+  "htmlLang": "es",
+  "meta": {
+    "title": "Dictado por voz en español para Windows",
+    "seoTitle": "Dictado por voz en español – Programa de voz a texto para Windows | Speech Recognition Cloud",
+    "description": "Programa de dictado por voz en español para Windows: convierta voz a texto en cualquier programa, con puntuación automática y sin entrenamiento de voz. Pruébelo gratis; planes desde {personalPrice} USD al año."
+  },
+  "hero": {
+    "eyebrow": "ESPAÑOL",
+    "h1": "Dictado por voz en español, en cualquier programa de Windows",
+    "lead": "Speech Recognition Cloud convierte su voz a texto justo donde está el cursor: en Word, Outlook, el navegador o cualquier otra aplicación de Windows. Con puntuación automática y sin entrenamiento de voz. El español es uno de los {total} idiomas compatibles.",
+    "ctaDownload": "Descargar gratis",
+    "ctaPrices": "Ver precios",
+    "note": "Las cuentas nuevas reciben 30 días de Professional con dictado ilimitado. Después, el plan gratuito incluye 20 minutos al mes. Para Windows 10 y 11."
+  },
+  "benefits": {
+    "heading": "¿Por qué Speech Recognition Cloud?",
+    "items": [
+      {
+        "title": "Funciona en todas partes",
+        "text": "El texto aparece donde está su cursor, en cualquier programa de Windows, sin copiar ni pegar."
+      },
+      {
+        "title": "Sin entrenamiento",
+        "text": "Instale y empiece a dictar. Sin perfil de voz ni calibración. La IA en la nube reconoce frases completas en su contexto."
+      },
+      {
+        "title": "Privacidad",
+        "text": "El audio se procesa y se descarta de inmediato. Sus textos no se guardan en nuestros servidores ni se usan para entrenar modelos de IA."
+      }
+    ]
+  },
+  "steps": {
+    "heading": "Cómo funciona",
+    "items": [
+      {
+        "title": "Descargue e instale.",
+        "text": "La cuenta se crea directamente dentro de la aplicación."
+      },
+      {
+        "title": "Elija español.",
+        "text": "Seleccione español en la configuración o deje activada la detección automática de idioma."
+      },
+      {
+        "title": "Dicte.",
+        "text": "Active el micrófono, hable con naturalidad y desactívelo: el párrafo aparece con la puntuación ya puesta."
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Precios",
+    "sub": "Todos los idiomas, incluido el español, están incluidos en cada plan sin coste adicional.",
+    "badge": "El más elegido",
+    "freeLabel": "Gratis",
+    "perYear": "al año",
+    "disclaimer": "Precios en dólares estadounidenses; la conversión a su moneda se realiza al pagar. Suscripción anual, cancelable en cualquier momento. Los precios pueden cambiar.",
+    "tiers": {
+      "free": {
+        "name": "Starter",
+        "description": "Para un uso ocasional.",
+        "features": [
+          "20 minutos al mes",
+          "Funciona en cualquier programa de Windows",
+          "Puntuación automática"
+        ],
+        "cta": "Descargar gratis"
+      },
+      "personal": {
+        "name": "Personal / Educación",
+        "description": "Dictado ilimitado para estudiar, trabajar y el día a día.",
+        "features": [
+          "Uso ilimitado",
+          "Vocabulario personalizado",
+          "Reemplazos de texto",
+          "Soporte por correo electrónico"
+        ],
+        "cta": "Comprar ahora"
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Para profesionales que necesitan precisión y velocidad.",
+        "features": [
+          "Todo lo de Personal",
+          "Modo de precisión ULTRA",
+          "Plantillas (inserción automática de texto)",
+          "Modos de IA",
+          "App móvil (micrófono inalámbrico + Voice Notes)"
+        ],
+        "cta": "Comprar ahora"
+      }
+    }
+  },
+  "faqHeading": "Preguntas frecuentes",
+  "faq": [
+    {
+      "q": "¿Es gratis el dictado por voz?",
+      "a": "Sí. El plan gratuito incluye 20 minutos de dictado al mes, sin tarjeta de crédito. Además, cada cuenta nueva recibe 30 días de Professional con dictado ilimitado para probar todas las funciones."
+    },
+    {
+      "q": "¿La interfaz está en español?",
+      "a": "No. Los menús y la configuración de la aplicación están en inglés. El ajuste de idioma determina en qué idioma dicta, no el idioma de la interfaz."
+    },
+    {
+      "q": "¿Puedo dictar en varios idiomas?",
+      "a": "Sí. Con la detección automática, la aplicación reconoce qué idioma está hablando. Si solo dicta en español, seleccionar el español de forma fija ofrece la mejor precisión."
+    },
+    {
+      "q": "¿En qué se diferencia del dictado de Windows o de las páginas de voz a texto en línea?",
+      "a": "Las herramientas de voz a texto en línea suelen funcionar solo dentro del navegador y hay que copiar el texto. Speech Recognition Cloud escribe directamente en cualquier programa de Windows y, en los planes de pago, añade vocabulario personalizado, reemplazos de texto y plantillas."
+    },
+    {
+      "q": "¿Funciona en Mac?",
+      "a": "La aplicación funciona solo en Windows 10 y 11. El plan Professional incluye además una app móvil."
+    },
+    {
+      "q": "¿Puedo cancelar en cualquier momento?",
+      "a": "Sí. Todos los planes de pago son suscripciones anuales y se pueden cancelar en cualquier momento. No hay permanencia."
+    }
+  ],
+  "allLanguagesLink": "Ver los {total} idiomas compatibles →"
+}
