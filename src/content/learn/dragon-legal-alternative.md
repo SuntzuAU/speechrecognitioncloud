@@ -3,7 +3,7 @@ title: "Dragon Legal Anywhere Alternative for Lawyers in 2026: Cloud Dictation, 
 date: "2026-09-30"
 updated: "2026-10-02"
 description: "Dragon Legal Anywhere closes to new orders on 31 December 2026 and reaches end of life on 31 December 2027. An honest guide for lawyers: Speech Recognition Cloud as the cloud alternative, how Dragon Legal 16 differs, costs, confidentiality and legal vocabulary."
-seoTitle: "Dragon Legal Anywhere Alternative for Lawyers"
+seoTitle: "Dragon Legal Anywhere Alternatives for Lawyers (End of Life 2027)"
 seoDescription: "Dragon Legal Anywhere ends in 2027. A cloud alternative for lawyers, how Dragon Legal 16 differs, and the costs compared side by side."
 type: "article"
 context: "descriptive"
