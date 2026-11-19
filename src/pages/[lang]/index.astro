@@ -25,6 +25,10 @@ const breakImg = t.breakImage ? img(t.breakImage.key) : null;
 const total = languages.length;
 const tiers = site.pricing.tiers;
 const tier = (name) => tiers.find(x => x.name.startsWith(name));
+// Send buyers to the Shopify checkout in this page's language (store has the locale published).
+const localiseCheckout = (url) => url && url.includes('voicerecognition.com.au/cart/')
+  ? url.replace('voicerecognition.com.au/cart/', `voicerecognition.com.au/${t.htmlLang.split("-")[0]}/cart/`).replaceAll('return_to=/cart/', `return_to=/${t.htmlLang.split("-")[0]}/cart/`).replaceAll('return_to=/checkout', `return_to=/${t.htmlLang.split("-")[0]}/checkout`)
+  : url;
 const free = tier('Starter');
 const personal = tier('Personal');
 const pro = tier('Professional');
@@ -147,7 +151,7 @@ const extraSchema = [
             <div class="lp-amount">{c.key === 'free' ? t.pricing.freeLabel : `${c.cfg.price} USD`}<span>{c.key === 'free' ? '' : ` ${t.pricing.perYear}`}</span></div>
             <p class="muted">{c.copy.description}</p>
             <ul>{c.copy.features.map(f => <li>{f}</li>)}</ul>
-            <a href={c.cfg.ctaUrl} class={c.highlighted ? 'btn-primary' : 'btn-secondary'}>{c.copy.cta}</a>
+            <a href={localiseCheckout(c.cfg.ctaUrl)} class={c.highlighted ? 'btn-primary' : 'btn-secondary'}>{c.copy.cta}</a>
           </div>
         ))}
       </div>
