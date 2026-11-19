@@ -1,0 +1,226 @@
+{
+  "htmlLang": "pt-BR",
+  "checkoutLocale": null,
+  "meta": {
+    "title": "Digitação por voz em português para Windows",
+    "seoTitle": "Digitação por voz em português – Programa de voz para texto para Windows | Speech Recognition Cloud",
+    "description": "Programa de digitação por voz em português para Windows: dite em qualquer programa, com pontuação automática e sem treinar a voz. Teste grátis; planos a partir de US$ {personalPrice} por ano."
+  },
+  "hero": {
+    "eyebrow": "PORTUGUÊS",
+    "h1": "Digitação por voz em português, em qualquer programa do Windows",
+    "lead": "O Speech Recognition Cloud transforma sua voz em texto exatamente onde está o cursor: no Word, no Outlook, no navegador ou em qualquer outro aplicativo do Windows. Com pontuação automática e sem treinamento de voz. O português é um dos {total} idiomas compatíveis.",
+    "ctaDownload": "Baixar grátis",
+    "ctaPrices": "Ver preços",
+    "note": "Contas novas ganham 30 dias do Professional com ditado ilimitado. Depois, o plano gratuito inclui 20 minutos por mês. Para Windows 10 e 11.",
+    "image": "lang-pt-hero",
+    "imageAlt": "Profissional ditando um texto em português em um notebook com Windows"
+  },
+  "benefits": {
+    "heading": "Por que o Speech Recognition Cloud?",
+    "items": [
+      {
+        "title": "Funciona em todo lugar",
+        "text": "O texto aparece onde está o cursor, em qualquer programa do Windows, sem copiar e colar."
+      },
+      {
+        "title": "Sem treinamento",
+        "text": "Instale e comece a ditar. Sem perfil de voz nem calibração. A IA na nuvem reconhece frases inteiras no contexto."
+      },
+      {
+        "title": "Privacidade",
+        "text": "O áudio é processado e descartado. Seus textos não ficam armazenados em nossos servidores e não são usados para treinar modelos de IA."
+      }
+    ]
+  },
+  "steps": {
+    "heading": "Como funciona",
+    "items": [
+      {
+        "title": "Baixe e instale.",
+        "text": "A conta é criada dentro do próprio aplicativo."
+      },
+      {
+        "title": "Escolha português.",
+        "text": "Selecione português nas configurações ou deixe a detecção automática de idioma ativada."
+      },
+      {
+        "title": "Dite.",
+        "text": "Ligue o microfone, fale naturalmente e desligue: o parágrafo aparece já com a pontuação."
+      }
+    ]
+  },
+  "features": {
+    "heading": "Principais recursos",
+    "items": [
+      {
+        "title": "Pontuação automática",
+        "text": "Fale naturalmente. A IA acrescenta pontos, vírgulas, maiúsculas e formatação sem que você precise ditá-los."
+      },
+      {
+        "title": "Vocabulário personalizado",
+        "text": "Adicione nomes, termos técnicos e o jargão da sua área para que sejam escritos corretamente. Incluído no Personal e no Professional."
+      },
+      {
+        "title": "Substituições de texto e modelos",
+        "text": "Com as substituições de texto (Personal e Professional), uma palavra-chave vira um texto completo: assinatura, parágrafo padrão ou dados de contato. Os modelos estão incluídos no Professional."
+      },
+      {
+        "title": "Modo de precisão ULTRA",
+        "text": "Processamento mais preciso para os momentos em que cada palavra conta. Incluído no Professional."
+      },
+      {
+        "title": "Modos de IA",
+        "text": "Comandos de voz para pedir ajuda à IA: escrever, reescrever, responder a uma pergunta ou preparar uma resposta enquanto você dita. Incluídos no Professional."
+      },
+      {
+        "title": "{total} idiomas",
+        "text": "Português, inglês e muitos outros: {total} idiomas no total com a mesma licença, sem custo adicional."
+      }
+    ]
+  },
+  "useCases": {
+    "heading": "Quem usa digitação por voz?",
+    "sub": "Qualquer pessoa que escreve muito em um PC com Windows. Alguns usos comuns (os guias detalhados estão em inglês):",
+    "items": [
+      {
+        "title": "E-mails e documentos",
+        "text": "Dite e-mails no Outlook e relatórios no Word em vez de digitá-los.",
+        "href": "/business",
+        "linkText": "Para empresas (em inglês) →"
+      },
+      {
+        "title": "Advogados e escritórios",
+        "text": "Petições, anotações de processos e correspondência ditadas diretamente no editor de texto ou no sistema do escritório.",
+        "href": "/legal",
+        "linkText": "Para advogados (em inglês) →"
+      },
+      {
+        "title": "Médicos e profissionais de saúde",
+        "text": "Desenvolvido para apoiar a documentação administrativa: anotações, cartas e relatórios. Em português, use o plano Professional; o plano Medical Ultra, com vocabulário médico especializado, é somente em inglês.",
+        "href": "/medical",
+        "linkText": "Para a área da saúde (em inglês) →"
+      },
+      {
+        "title": "Estudantes e escritores",
+        "text": "Trabalhos, anotações e rascunhos na velocidade da fala. Primeiro registre as ideias, depois revise.",
+        "href": "/students",
+        "linkText": "Para estudantes (em inglês) →"
+      },
+      {
+        "title": "Quando digitar é difícil",
+        "text": "Se digitar é lento, cansativo ou dolorido, você pode falar em vez de digitar e continuar trabalhando normalmente.",
+        "href": "/accessibility",
+        "linkText": "Acessibilidade (em inglês) →"
+      },
+      {
+        "title": "Formulários e sistemas",
+        "text": "Anotações e respostas em aplicativos web, CRMs e qualquer campo de texto do Windows, sem copiar e colar.",
+        "href": "/business",
+        "linkText": "Saiba mais (em inglês) →"
+      }
+    ]
+  },
+  "compare": {
+    "heading": "Voz para texto online, ditado do Windows ou Speech Recognition Cloud",
+    "paragraphs": [
+      "Os sites de voz para texto online são práticos para uma frase rápida, mas normalmente funcionam só no navegador: você dita em uma caixa de texto e depois precisa copiar e colar o resultado no documento.",
+      "O Speech Recognition Cloud é um programa de digitação por voz para Windows. O texto aparece direto onde está o cursor, em qualquer aplicativo: Word, Outlook, Gmail ou Google Docs no navegador, formulários web e sistemas de gestão.",
+      "Tanto o ditado integrado do Windows quanto o Speech Recognition Cloud deixam você falar em vez de digitar. O Speech Recognition Cloud acrescenta, nos planos pagos, vocabulário personalizado, substituições de texto e modelos, e oferece 30 dias do Professional para você comparar por conta própria."
+    ]
+  },
+  "mobile": {
+    "heading": "Dite também pelo celular",
+    "paragraphs": [
+      "O plano Professional inclui um aplicativo para iPhone e Android. Se você não tem headset, pode usar o celular como microfone sem fio para o PC.",
+      "No modo Voice Notes, grave uma nota no celular e o texto aparece em segundos no PC que você escolher, por exemplo o da secretária ou da recepção. Funciona de qualquer lugar."
+    ]
+  },
+  "pricing": {
+    "heading": "Preços",
+    "sub": "Todos os idiomas, inclusive o português, estão incluídos em todos os planos sem custo adicional.",
+    "badge": "O mais escolhido",
+    "freeLabel": "Grátis",
+    "perYear": "por ano",
+    "disclaimer": "Preços em dólares americanos; a conversão para a sua moeda é feita no pagamento. Assinatura anual, cancelável a qualquer momento. Os preços podem mudar.",
+    "tiers": {
+      "free": {
+        "name": "Starter",
+        "description": "Para uso ocasional.",
+        "features": [
+          "20 minutos por mês",
+          "Funciona em qualquer programa do Windows",
+          "Pontuação automática"
+        ],
+        "cta": "Baixar grátis"
+      },
+      "personal": {
+        "name": "Personal / Educação",
+        "description": "Ditado ilimitado para estudo, trabalho e o dia a dia.",
+        "features": [
+          "Uso ilimitado",
+          "Vocabulário personalizado",
+          "Substituições de texto",
+          "Suporte por e-mail"
+        ],
+        "cta": "Comprar"
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Para profissionais que precisam de precisão e rapidez.",
+        "features": [
+          "Tudo do Personal",
+          "Modo de precisão ULTRA",
+          "Modelos (inserção automática de texto)",
+          "Modos de IA",
+          "Aplicativo móvel (microfone sem fio + Voice Notes)"
+        ],
+        "cta": "Comprar"
+      }
+    }
+  },
+  "faqHeading": "Perguntas frequentes",
+  "faq": [
+    {
+      "q": "A digitação por voz é grátis?",
+      "a": "Sim. O plano gratuito inclui 20 minutos de ditado por mês, sem cartão de crédito. Além disso, toda conta nova ganha 30 dias do Professional com ditado ilimitado para testar todos os recursos."
+    },
+    {
+      "q": "Preciso de um microfone especial?",
+      "a": "Um headset com microfone oferece a melhor precisão. Sem headset, o aplicativo do plano Professional transforma o celular em um microfone sem fio para o PC."
+    },
+    {
+      "q": "Em quais programas posso ditar?",
+      "a": "Em qualquer programa do Windows com cursor de texto: Word, Outlook, Google Docs e Gmail no navegador, formulários web, aplicativos de chat e sistemas de gestão."
+    },
+    {
+      "q": "Preciso treinar o programa com a minha voz?",
+      "a": "Não. Não há treinamento de voz. Fale naturalmente e o texto aparece com a pontuação incluída automaticamente."
+    },
+    {
+      "q": "A interface está em português?",
+      "a": "Não. Os menus e as configurações do aplicativo estão em inglês. A configuração de idioma define em que idioma você dita, não o idioma da interface."
+    },
+    {
+      "q": "Posso ditar em vários idiomas?",
+      "a": "Sim. Com a detecção automática, o aplicativo reconhece o idioma que você está falando. Se você dita só em português, selecionar o português oferece a melhor precisão."
+    },
+    {
+      "q": "Funciona no Mac?",
+      "a": "O aplicativo funciona apenas no Windows 10 e 11. Os planos Professional e Medical Ultra também incluem um aplicativo para iPhone e Android."
+    },
+    {
+      "q": "Posso cancelar a qualquer momento?",
+      "a": "Sim. Todos os planos pagos são assinaturas anuais e podem ser cancelados a qualquer momento. Sem fidelidade de longo prazo."
+    },
+    {
+      "q": "O que acontece depois dos 30 dias do Professional?",
+      "a": "Você continua no plano gratuito com 20 minutos por mês ou muda para um plano pago: Personal por US$ {personalPrice} por ano com ditado ilimitado, ou Professional. Os preços podem mudar."
+    },
+    {
+      "q": "Minhas gravações ficam armazenadas?",
+      "a": "Não. O áudio é processado e descartado. Seus textos não ficam armazenados em nossos servidores e não são usados para treinar modelos de IA."
+    }
+  ],
+  "allLanguagesLink": "Ver todos os {total} idiomas compatíveis →"
+}

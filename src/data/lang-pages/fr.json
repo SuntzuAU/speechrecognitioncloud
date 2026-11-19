@@ -221,5 +221,6 @@
       "a": "Non. L'audio est traité puis supprimé. Vos textes ne sont pas conservés sur nos serveurs et ne servent pas à entraîner des modèles d'IA."
     }
   ],
-  "allLanguagesLink": "Voir les {total} langues prises en charge →"
+  "allLanguagesLink": "Voir les {total} langues prises en charge →",
+  "checkoutLocale": "fr"
 }

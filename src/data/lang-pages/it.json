@@ -1,0 +1,226 @@
+{
+  "htmlLang": "it",
+  "checkoutLocale": null,
+  "meta": {
+    "title": "Dettatura vocale in italiano per Windows",
+    "seoTitle": "Dettatura vocale in italiano – Software di riconoscimento vocale per Windows | Speech Recognition Cloud",
+    "description": "Software di dettatura vocale in italiano per Windows: detti in qualsiasi programma, punteggiatura automatica, nessun addestramento della voce. Prova gratuita; piani da {personalPrice} USD all'anno."
+  },
+  "hero": {
+    "eyebrow": "ITALIANO",
+    "h1": "Dettatura vocale in italiano, in tutti i programmi Windows",
+    "lead": "Speech Recognition Cloud trasforma la voce in testo direttamente nel punto in cui si trova il cursore: in Word, Outlook, nel browser o in qualsiasi altra applicazione Windows. Con punteggiatura automatica e senza addestramento della voce. L'italiano è una delle {total} lingue supportate.",
+    "ctaDownload": "Scarica gratis",
+    "ctaPrices": "Vedi i prezzi",
+    "note": "I nuovi account ricevono 30 giorni di Professional con dettatura illimitata. Poi il piano gratuito include 20 minuti al mese. Per Windows 10 e 11.",
+    "image": "lang-it-hero",
+    "imageAlt": "Professionista che detta un documento in italiano su un portatile Windows"
+  },
+  "benefits": {
+    "heading": "Perché Speech Recognition Cloud?",
+    "items": [
+      {
+        "title": "Funziona ovunque",
+        "text": "Il testo compare dove si trova il cursore, in qualsiasi programma Windows, senza copiare e incollare."
+      },
+      {
+        "title": "Nessun addestramento",
+        "text": "Installi e inizi a dettare. Nessun profilo vocale né calibrazione. L'IA nel cloud riconosce frasi intere nel loro contesto."
+      },
+      {
+        "title": "Privacy",
+        "text": "L'audio viene elaborato e poi eliminato. I suoi testi non vengono conservati sui nostri server e non vengono usati per addestrare modelli di IA."
+      }
+    ]
+  },
+  "steps": {
+    "heading": "Come funziona",
+    "items": [
+      {
+        "title": "Scarichi e installi.",
+        "text": "L'account si crea direttamente nell'applicazione."
+      },
+      {
+        "title": "Scelga l'italiano.",
+        "text": "Selezioni l'italiano nelle impostazioni oppure lasci attivo il rilevamento automatico della lingua."
+      },
+      {
+        "title": "Detti.",
+        "text": "Attivi il microfono, parli in modo naturale e lo disattivi: il paragrafo compare con la punteggiatura già inserita."
+      }
+    ]
+  },
+  "features": {
+    "heading": "Funzioni principali",
+    "items": [
+      {
+        "title": "Punteggiatura automatica",
+        "text": "Parli in modo naturale. L'IA aggiunge punti, virgole, maiuscole e formattazione senza che debba dettarli."
+      },
+      {
+        "title": "Vocabolario personalizzato",
+        "text": "Aggiunga nomi, termini tecnici e il gergo del suo settore perché vengano scritti correttamente. Incluso in Personal e Professional."
+      },
+      {
+        "title": "Sostituzioni di testo e modelli",
+        "text": "Con le sostituzioni di testo (Personal e Professional) una parola chiave diventa un testo completo: firma, paragrafo standard o recapiti. I modelli sono inclusi in Professional."
+      },
+      {
+        "title": "Modalità di precisione ULTRA",
+        "text": "Un'elaborazione più precisa per i momenti in cui ogni parola conta. Inclusa in Professional."
+      },
+      {
+        "title": "Modalità IA",
+        "text": "Comandi vocali per chiedere aiuto all'IA: scrivere, riformulare, rispondere a una domanda o preparare una risposta mentre detta. Incluse in Professional."
+      },
+      {
+        "title": "{total} lingue",
+        "text": "Italiano, inglese e molte altre: {total} lingue in totale con la stessa licenza, senza costi aggiuntivi."
+      }
+    ]
+  },
+  "useCases": {
+    "heading": "Chi usa la dettatura vocale?",
+    "sub": "Chiunque scriva molto su un PC Windows. Alcuni usi comuni (le guide dettagliate sono in inglese):",
+    "items": [
+      {
+        "title": "Email e documenti",
+        "text": "Detti le email in Outlook e i report in Word invece di digitarli.",
+        "href": "/business",
+        "linkText": "Per le aziende (in inglese) →"
+      },
+      {
+        "title": "Avvocati e studi legali",
+        "text": "Atti, note di pratica e corrispondenza dettati direttamente nel programma di videoscrittura o nel gestionale dello studio.",
+        "href": "/legal",
+        "linkText": "Per i legali (in inglese) →"
+      },
+      {
+        "title": "Medici e professionisti sanitari",
+        "text": "Pensato per supportare la documentazione amministrativa: note, lettere e relazioni. In italiano si usa il piano Professional; il piano Medical Ultra, con vocabolario medico specializzato, è solo in inglese.",
+        "href": "/medical",
+        "linkText": "Per la sanità (in inglese) →"
+      },
+      {
+        "title": "Studenti e scrittori",
+        "text": "Tesine, appunti e bozze alla velocità della voce. Prima fissi le idee, poi le rifinisca.",
+        "href": "/students",
+        "linkText": "Per gli studenti (in inglese) →"
+      },
+      {
+        "title": "Quando scrivere è faticoso",
+        "text": "Se digitare è lento, faticoso o doloroso, può parlare al posto di scrivere e continuare a lavorare normalmente.",
+        "href": "/accessibility",
+        "linkText": "Accessibilità (in inglese) →"
+      },
+      {
+        "title": "Moduli e gestionali",
+        "text": "Note e risposte in applicazioni web, CRM e qualsiasi campo di testo di Windows, senza copiare e incollare.",
+        "href": "/business",
+        "linkText": "Scopri di più (in inglese) →"
+      }
+    ]
+  },
+  "compare": {
+    "heading": "Dettatura online, dettatura di Windows o Speech Recognition Cloud",
+    "paragraphs": [
+      "I siti di dettatura online sono comodi per una frase veloce, ma di solito funzionano solo nel browser: si detta in una casella di testo e poi bisogna copiare e incollare il risultato nel documento.",
+      "Speech Recognition Cloud è un software di dettatura vocale per Windows. Il testo compare direttamente dove si trova il cursore, in qualsiasi applicazione: Word, Outlook, Gmail o Google Docs nel browser, moduli web e gestionali.",
+      "Sia la dettatura integrata di Windows sia Speech Recognition Cloud le permettono di parlare invece di digitare. Speech Recognition Cloud aggiunge, nei piani a pagamento, vocabolario personalizzato, sostituzioni di testo e modelli, e le offre 30 giorni di Professional per confrontare di persona."
+    ]
+  },
+  "mobile": {
+    "heading": "Detti anche dallo smartphone",
+    "paragraphs": [
+      "Il piano Professional include un'app mobile per iPhone e Android. Se non ha una cuffia, può usare il telefono come microfono wireless per il PC.",
+      "In modalità Voice Notes registri una nota sul telefono e il testo compare in pochi secondi sul PC che preferisce, per esempio quello della segreteria o della reception. Funziona da qualsiasi luogo."
+    ]
+  },
+  "pricing": {
+    "heading": "Prezzi",
+    "sub": "Tutte le lingue, italiano compreso, sono incluse in ogni piano senza costi aggiuntivi.",
+    "badge": "Il più scelto",
+    "freeLabel": "Gratis",
+    "perYear": "all'anno",
+    "disclaimer": "Prezzi in dollari statunitensi; la conversione nella sua valuta avviene al pagamento. Abbonamento annuale, disdicibile in qualsiasi momento. I prezzi possono cambiare.",
+    "tiers": {
+      "free": {
+        "name": "Starter",
+        "description": "Per un uso occasionale.",
+        "features": [
+          "20 minuti al mese",
+          "Funziona in qualsiasi programma Windows",
+          "Punteggiatura automatica"
+        ],
+        "cta": "Scarica gratis"
+      },
+      "personal": {
+        "name": "Personal / Istruzione",
+        "description": "Dettatura illimitata per studio, lavoro e vita quotidiana.",
+        "features": [
+          "Uso illimitato",
+          "Vocabolario personalizzato",
+          "Sostituzioni di testo",
+          "Assistenza via email"
+        ],
+        "cta": "Acquista"
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Per i professionisti che cercano precisione e velocità.",
+        "features": [
+          "Tutto di Personal",
+          "Modalità di precisione ULTRA",
+          "Modelli (inserimento automatico di testo)",
+          "Modalità IA",
+          "App mobile (microfono wireless + Voice Notes)"
+        ],
+        "cta": "Acquista"
+      }
+    }
+  },
+  "faqHeading": "Domande frequenti",
+  "faq": [
+    {
+      "q": "La dettatura vocale è gratuita?",
+      "a": "Sì. Il piano gratuito include 20 minuti di dettatura al mese, senza carta di credito. Ogni nuovo account riceve inoltre 30 giorni di Professional con dettatura illimitata per provare tutte le funzioni."
+    },
+    {
+      "q": "Serve un microfono particolare?",
+      "a": "Una cuffia con microfono offre la massima precisione. Senza cuffia, l'app mobile del piano Professional trasforma il telefono in un microfono wireless per il PC."
+    },
+    {
+      "q": "In quali programmi posso dettare?",
+      "a": "In qualsiasi programma Windows con un cursore di testo: Word, Outlook, Google Docs e Gmail nel browser, moduli web, app di chat e gestionali."
+    },
+    {
+      "q": "Devo addestrare il programma sulla mia voce?",
+      "a": "No. Non c'è alcun addestramento della voce. Parli in modo naturale e il testo compare con la punteggiatura inserita automaticamente."
+    },
+    {
+      "q": "L'interfaccia è in italiano?",
+      "a": "No. I menu e le impostazioni dell'applicazione sono in inglese. L'impostazione della lingua determina la lingua in cui detta, non quella dell'interfaccia."
+    },
+    {
+      "q": "Posso dettare in più lingue?",
+      "a": "Sì. Con il rilevamento automatico, l'applicazione riconosce la lingua che sta parlando. Se detta solo in italiano, selezionare l'italiano offre la massima precisione."
+    },
+    {
+      "q": "Funziona su Mac?",
+      "a": "L'applicazione funziona solo con Windows 10 e 11. I piani Professional e Medical Ultra includono anche un'app mobile per iPhone e Android."
+    },
+    {
+      "q": "Posso disdire in qualsiasi momento?",
+      "a": "Sì. Tutti i piani a pagamento sono abbonamenti annuali disdicibili in qualsiasi momento. Nessun vincolo a lungo termine."
+    },
+    {
+      "q": "Cosa succede dopo i 30 giorni di Professional?",
+      "a": "Resta sul piano gratuito con 20 minuti al mese, oppure passa a un piano a pagamento: Personal a {personalPrice} USD all'anno con dettatura illimitata, oppure Professional. I prezzi possono cambiare."
+    },
+    {
+      "q": "Le mie registrazioni vengono conservate?",
+      "a": "No. L'audio viene elaborato e poi eliminato. I suoi testi non vengono conservati sui nostri server e non vengono usati per addestrare modelli di IA."
+    }
+  ],
+  "allLanguagesLink": "Vedi tutte le {total} lingue supportate →"
+}

@@ -357,5 +357,23 @@
     "altText": "Windowsノートパソコンで日本語の文書を音声入力するビジネスパーソン",
     "width": 2752,
     "height": 1536
+  },
+  "lang-it-hero": {
+    "r2Key": "speechrecognitioncloud/2026/11/19/dettatura-vocale-italiano-professionista-windows-photo-88e8244f.jpg",
+    "altText": "Professionista che detta un documento in italiano su un portatile Windows",
+    "width": 2752,
+    "height": 1536
+  },
+  "lang-pt-hero": {
+    "r2Key": "speechrecognitioncloud/2026/11/19/digitacao-por-voz-portugues-profissional-windows-photo-v2-6eae0af9.jpg",
+    "altText": "Profissional ditando um texto em português em um notebook com Windows",
+    "width": 2752,
+    "height": 1536
+  },
+  "lang-ar-hero": {
+    "r2Key": "speechrecognitioncloud/2026/11/19/arabic-speech-to-text-professional-windows-photo-v2-473e2c0f.jpg",
+    "altText": "موظف يملي نصًا باللغة العربية على حاسوب محمول بنظام ويندوز",
+    "width": 2752,
+    "height": 1536
   }
 }

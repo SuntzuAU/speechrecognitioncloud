@@ -221,5 +221,6 @@
       "a": "いいえ。音声は処理後に破棄されます。テキストが当社のサーバーに保存されることはなく、AIモデルの学習にも使われません。"
     }
   ],
-  "allLanguagesLink": "対応している{total}言語の一覧を見る →"
+  "allLanguagesLink": "対応している{total}言語の一覧を見る →",
+  "checkoutLocale": "ja"
 }

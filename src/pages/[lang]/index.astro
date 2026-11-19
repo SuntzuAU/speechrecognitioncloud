@@ -26,8 +26,9 @@ const total = languages.length;
 const tiers = site.pricing.tiers;
 const tier = (name) => tiers.find(x => x.name.startsWith(name));
 // Send buyers to the Shopify checkout in this page's language (store has the locale published).
-const localiseCheckout = (url) => url && url.includes('voicerecognition.com.au/cart/')
-  ? url.replace('voicerecognition.com.au/cart/', `voicerecognition.com.au/${t.htmlLang.split("-")[0]}/cart/`).replaceAll('return_to=/cart/', `return_to=/${t.htmlLang.split("-")[0]}/cart/`).replaceAll('return_to=/checkout', `return_to=/${t.htmlLang.split("-")[0]}/checkout`)
+const loc = t.checkoutLocale;
+const localiseCheckout = (url) => (loc && url && url.includes('voicerecognition.com.au/cart/'))
+  ? url.replace('voicerecognition.com.au/cart/', `voicerecognition.com.au/${loc}/cart/`).replaceAll('return_to=/cart/', `return_to=/${loc}/cart/`).replaceAll('return_to=/checkout', `return_to=/${loc}/checkout`)
   : url;
 const free = tier('Starter');
 const personal = tier('Personal');
@@ -62,6 +63,7 @@ const extraSchema = [
   lang={t.htmlLang}
   extraSchema={extraSchema}
 >
+  <div dir={t.dir ?? 'ltr'}>
   <section class="section-pad lp-hero">
     <div class="container lp-narrow">
       <p class="eyebrow">{t.hero.eyebrow}</p>
@@ -204,4 +206,5 @@ const extraSchema = [
     .lp-faq p { margin-top: 10px; line-height: 1.7; }
     @media (max-width: 860px) { .lp-grid3, .lp-grid2 { grid-template-columns: 1fr; } }
   </style>
+  </div>
 </BaseLayout>
